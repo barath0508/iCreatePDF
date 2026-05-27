@@ -2,7 +2,7 @@
 
 import React, { useState, useRef } from 'react';
 import { Upload, CheckCircle2, AlertTriangle, ShieldCheck, Loader2, Calendar, FileCheck, Info, Download } from 'lucide-react';
-import { PDFDocument, rgb } from 'pdf-lib';
+import { PDFDocument, rgb, StandardFonts } from 'pdf-lib';
 import { Button } from '@/components/ui/button';
 
 interface SignatureReport {
@@ -122,38 +122,65 @@ export function VerifySignatureTool() {
       // Generate visual certification stamp (ticked copy)
       if (hasIntegrity) {
         const pdfDoc = await PDFDocument.load(buffer);
+        // Embed Helvetica so all drawText calls use WinAnsi-safe glyphs
+        const font = await pdfDoc.embedFont(StandardFonts.Helvetica);
+        const fontBold = await pdfDoc.embedFont(StandardFonts.HelveticaBold);
         const firstPage = pdfDoc.getPage(0);
         const { width, height } = firstPage.getSize();
 
-        // Draw a neat verified green card/badge at the top right of the first page
+        // Badge background
         firstPage.drawRectangle({
-          x: width - 260,
-          y: height - 60,
-          width: 240,
-          height: 45,
+          x: width - 262,
+          y: height - 68,
+          width: 248,
+          height: 58,
           color: rgb(0.9, 0.98, 0.93),
           borderColor: rgb(0.18, 0.65, 0.35),
           borderWidth: 1.5,
         });
 
-        firstPage.drawText('✔ VERIFIED DIGITAL SIGNATURE', {
-          x: width - 245,
-          y: height - 32,
+        // Green filled circle as visual checkmark indicator
+        firstPage.drawEllipse({
+          x: width - 248,
+          y: height - 30,
+          xScale: 6,
+          yScale: 6,
+          color: rgb(0.18, 0.65, 0.35),
+        });
+
+        // "v" tick character inside circle (ASCII-safe)
+        firstPage.drawText('v', {
+          x: width - 252,
+          y: height - 33,
+          size: 7,
+          font: fontBold,
+          color: rgb(1, 1, 1),
+        });
+
+        // Title: ASCII-safe, no Unicode symbols
+        firstPage.drawText('VERIFIED DIGITAL SIGNATURE', {
+          x: width - 238,
+          y: height - 29,
           size: 9,
+          font: fontBold,
           color: rgb(0.1, 0.5, 0.2),
         });
 
-        firstPage.drawText(`Signer: ${signerName}`, {
-          x: width - 245,
+        // Signer line — truncate to prevent overflow
+        const signerDisplay = signerName.length > 30 ? signerName.slice(0, 30) + '...' : signerName;
+        firstPage.drawText(`Signer: ${signerDisplay}`, {
+          x: width - 238,
           y: height - 42,
           size: 7.5,
+          font,
           color: rgb(0.2, 0.4, 0.25),
         });
 
-        firstPage.drawText(`Verified by iCreatePDF Security Shield`, {
-          x: width - 245,
-          y: height - 52,
+        firstPage.drawText('Verified by iCreatePDF Security Shield', {
+          x: width - 238,
+          y: height - 54,
           size: 6.5,
+          font,
           color: rgb(0.3, 0.5, 0.35),
         });
 
