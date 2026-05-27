@@ -9,7 +9,7 @@ import { CtaSection } from '@/components/landing/cta-section';
 import { FooterSection } from '@/components/landing/footer-section';
 import { 
   Combine, Scissors, Sliders, Type, Hash, FileImage, Image,
-  Minimize2, RotateCw, Unlock
+  Minimize2, RotateCw, Unlock, Camera, FileText
 } from 'lucide-react';
 
 const tools = [
@@ -42,6 +42,18 @@ const tools = [
     title: 'PDF to JPG',
     desc: 'Extract each page of a PDF document as high-fidelity JPEG images.',
     href: '/pdf-to-jpg',
+  },
+  {
+    icon: FileText,
+    title: 'Word to PDF',
+    desc: 'Convert standard Microsoft Word (.docx) documents into clean PDFs.',
+    href: '/word-to-pdf',
+  },
+  {
+    icon: Camera,
+    title: 'Scan to PDF',
+    desc: 'Capture document pages using your camera and compile into a PDF.',
+    href: '/scan-to-pdf',
   },
   {
     icon: Minimize2,

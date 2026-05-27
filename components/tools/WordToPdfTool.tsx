@@ -1,17 +1,16 @@
 'use client';
 
 import React, { useState, useRef } from 'react';
-import { Upload, Layers, Loader2, Download, FileText } from 'lucide-react';
+import { Upload, FileText, Loader2, Download, FileCode } from 'lucide-react';
+import { convertDocxToPdf } from '@/lib/pdf';
 import { Button } from '@/components/ui/button';
 
-export function CompressTool() {
+export function WordToPdfTool() {
   const [file, setFile] = useState<File | null>(null);
-  const [pagesCount, setPagesCount] = useState(0);
   const [isProcessing, setIsProcessing] = useState(false);
   const [progress, setProgress] = useState(0);
   const [error, setError] = useState<string | null>(null);
   const [downloadUrl, setDownloadUrl] = useState<string | null>(null);
-  const [compressedSize, setCompressedSize] = useState(0);
   const [isDraggingOver, setIsDraggingOver] = useState(false);
 
   const fileInputRef = useRef<HTMLInputElement>(null);
@@ -24,22 +23,12 @@ export function CompressTool() {
     if (!uploadedFile) return;
 
     const ext = uploadedFile.name.split('.').pop()?.toLowerCase();
-    if (ext !== 'pdf') {
-      setError('Only PDF files are supported.');
+    if (ext !== 'docx') {
+      setError('Only Word (.docx) files are supported.');
       return;
     }
 
-    try {
-      const arrayBuffer = await uploadedFile.arrayBuffer();
-      const { PDFDocument } = await import('pdf-lib');
-      const pdf = await PDFDocument.load(arrayBuffer);
-      
-      setFile(uploadedFile);
-      setPagesCount(pdf.getPageCount());
-    } catch (err) {
-      console.error(err);
-      setError(`Failed to read PDF file: ${uploadedFile.name}`);
-    }
+    setFile(uploadedFile);
   };
 
   const onDragOver = (e: React.DragEvent) => {
@@ -59,7 +48,7 @@ export function CompressTool() {
     }
   };
 
-  const triggerCompress = async () => {
+  const triggerWordToPdf = async () => {
     if (!file) return;
     setIsProcessing(true);
     setProgress(0);
@@ -67,28 +56,15 @@ export function CompressTool() {
 
     try {
       const buffer = await file.arrayBuffer();
-      const { PDFDocument } = await import('pdf-lib');
+      const pdfBytes = await convertDocxToPdf(buffer, (p) => setProgress(Math.round(p)));
       
-      setProgress(30);
-      const pdfDoc = await PDFDocument.load(buffer);
-      
-      setProgress(60);
-      // Save with compression options enabled (object stream compression compresses streams)
-      const compressedBytes = await pdfDoc.save({
-        useObjectStreams: true,
-        addGlossaryMap: false,
-      });
-      
-      setProgress(90);
-      const blob = new Blob([compressedBytes as any], { type: 'application/pdf' });
-      setCompressedSize(blob.size);
-      
+      const blob = new Blob([pdfBytes as any], { type: 'application/pdf' });
       const url = URL.createObjectURL(blob);
       setDownloadUrl(url);
       setProgress(100);
     } catch (err: any) {
       console.error(err);
-      setError(err?.message || 'Failed to compress PDF.');
+      setError(err?.message || 'Failed to convert Word file. Make sure the file is not password-protected.');
     } finally {
       setIsProcessing(false);
     }
@@ -98,14 +74,14 @@ export function CompressTool() {
     if (!downloadUrl) return;
     const link = document.createElement('a');
     link.href = downloadUrl;
-    link.download = `compressed-${file?.name}`;
+    link.download = `${file?.name.replace('.docx', '')}.pdf`;
     document.body.appendChild(link);
     link.click();
     document.body.removeChild(link);
   };
 
   return (
-    <div className="w-full max-w-6xl mx-auto px-6 lg:px-12 py-16">
+    <div className="w-full max-w-4xl mx-auto px-6 py-16">
       <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
         
         {/* Workspace */}
@@ -126,27 +102,32 @@ export function CompressTool() {
                 type="file"
                 ref={fileInputRef}
                 onChange={(e) => e.target.files && handleFiles(e.target.files)}
-                accept=".pdf"
+                accept=".docx"
                 className="hidden"
               />
               <div className="p-4 rounded-full bg-white/5 mb-4 border border-white/10">
                 <Upload className="w-6 h-6 text-purple-400" />
               </div>
               <h3 className="text-xl font-display text-white mb-2">
-                Select or drag a PDF file to compress
+                Select or drag a Word (.docx) file
               </h3>
               <p className="text-xs text-white/40">
-                Compression is processed 100% locally on your browser.
+                Word files are parsed and translated to PDF 100% locally.
               </p>
             </div>
           ) : (
             <div className="p-6 bg-zinc-950 border border-white/10 rounded-2xl space-y-4">
               <div className="flex justify-between items-start">
-                <div>
-                  <h4 className="text-lg font-display text-white">{file.name}</h4>
-                  <p className="text-xs text-white/40">
-                    {pagesCount} pages • {(file.size / (1024 * 1024)).toFixed(2)} MB
-                  </p>
+                <div className="flex items-center gap-3">
+                  <div className="p-3 bg-blue-500/10 border border-blue-500/20 rounded-xl text-blue-400">
+                    <FileCode className="w-6 h-6" />
+                  </div>
+                  <div>
+                    <h4 className="text-lg font-display text-white">{file.name}</h4>
+                    <p className="text-xs text-white/40">
+                      Word Document • {(file.size / (1024 * 1024)).toFixed(2)} MB
+                    </p>
+                  </div>
                 </div>
                 <Button
                   variant="ghost"
@@ -160,15 +141,6 @@ export function CompressTool() {
                   Change File
                 </Button>
               </div>
-
-              {downloadUrl && (
-                <div className="p-4 rounded-xl bg-emerald-500/10 border border-emerald-500/20 text-emerald-200 text-xs font-mono space-y-1">
-                  <p>✓ Compression Complete</p>
-                  <p>Original Size: {(file.size / (1024 * 1024)).toFixed(2)} MB</p>
-                  <p>Compressed Size: {(compressedSize / (1024 * 1024)).toFixed(2)} MB</p>
-                  <p>Reduction: {Math.max(0, Math.round(((file.size - compressedSize) / file.size) * 100))}%</p>
-                </div>
-              )}
             </div>
           )}
 
@@ -182,12 +154,12 @@ export function CompressTool() {
         {/* Action Panel */}
         <div className="lg:col-span-4 bg-zinc-950 border border-white/10 rounded-2xl p-6 space-y-6">
           <div className="flex items-center gap-2 border-b border-white/5 pb-4">
-            <Layers className="w-4 h-4 text-purple-400" />
-            <h3 className="font-mono text-sm uppercase tracking-wider text-white">Compress PDF</h3>
+            <FileText className="w-4 h-4 text-purple-400" />
+            <h3 className="font-mono text-sm uppercase tracking-wider text-white">Word to PDF</h3>
           </div>
 
           <p className="text-xs text-white/50 leading-relaxed">
-            Compress your PDF streams and objects locally to decrease the file size for attachments and emails.
+            Convert standard Microsoft Word (.docx) text formatting into clean, portable PDF layouts client-side. Zero cloud uploads.
           </p>
 
           <div className="pt-4 border-t border-white/5">
@@ -196,7 +168,7 @@ export function CompressTool() {
                 <div className="flex justify-between items-center text-xs font-mono text-white/60">
                   <span className="flex items-center gap-2">
                     <Loader2 className="w-3.5 h-3.5 text-purple-500 animate-spin" />
-                    Compressing...
+                    Converting...
                   </span>
                   <span>{progress}%</span>
                 </div>
@@ -211,7 +183,7 @@ export function CompressTool() {
                   className="w-full bg-emerald-600 hover:bg-emerald-700 text-white font-medium py-6 rounded-xl flex items-center justify-center gap-2"
                 >
                   <Download className="w-5 h-5" />
-                  Download Compressed PDF
+                  Download PDF
                 </Button>
                 <Button
                   variant="ghost"
@@ -221,19 +193,19 @@ export function CompressTool() {
                   }}
                   className="w-full text-white/50 hover:text-white text-xs h-8"
                 >
-                  Compress new file
+                  Convert new file
                 </Button>
               </div>
             ) : (
               <Button
                 disabled={!file}
-                onClick={triggerCompress}
+                onClick={triggerWordToPdf}
                 className={`w-full font-medium py-6 rounded-xl flex items-center justify-center gap-2 ${
                   file ? 'bg-purple-600 hover:bg-purple-700 text-white' : 'bg-white/5 text-white/30 cursor-not-allowed'
                 }`}
               >
                 <FileText className="w-4 h-4" />
-                Compress PDF
+                Convert to PDF
               </Button>
             )}
           </div>

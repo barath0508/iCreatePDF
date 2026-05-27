@@ -51,9 +51,13 @@ export function FooterSection() {
         <div className="py-16 lg:py-20">
           <div className="grid grid-cols-2 md:grid-cols-5 gap-12 lg:gap-8">
             <div className="col-span-2">
-              <Link href="/" className="inline-flex items-center gap-2 mb-6">
-                <span className="text-2xl font-display text-white">iCreate</span>
-                <span className="text-xs text-purple-400 font-mono font-bold">PDF</span>
+              <Link href="/" className="inline-flex items-center gap-1 mb-6 group hover:opacity-90 transition-opacity">
+                <span className="font-extrabold tracking-tight select-none text-white text-4xl font-display" style={{ letterSpacing: '-0.03em', lineHeight: 1 }}>
+                  <span className="bg-gradient-to-r from-purple-400 to-pink-400 bg-clip-text text-transparent">i</span>Create
+                </span>
+                <span className="font-extrabold tracking-tight select-none text-4xl font-display" style={{ letterSpacing: '-0.03em', lineHeight: 1, background: 'linear-gradient(135deg, #a78bfa 0%, #eca8d6 100%)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent', backgroundClip: 'text' }}>
+                  PDF
+                </span>
               </Link>
 
               <p className="text-white/50 leading-relaxed mb-8 max-w-xs text-sm">

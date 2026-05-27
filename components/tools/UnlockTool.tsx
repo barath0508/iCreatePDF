@@ -110,7 +110,7 @@ export function UnlockTool() {
   };
 
   return (
-    <div className="w-full max-w-4xl mx-auto px-6 py-16">
+    <div className="w-full max-w-6xl mx-auto px-6 lg:px-12 py-16">
       <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
         
         {/* Workspace */}

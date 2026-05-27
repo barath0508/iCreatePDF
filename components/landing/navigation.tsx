@@ -7,10 +7,9 @@ import { Button } from '@/components/ui/button';
 import { Menu, X, FileText } from 'lucide-react';
 
 const navLinks = [
-  { name: 'JPG to PDF', href: '/jpg-to-pdf' },
-  { name: 'PNG to PDF', href: '/png-to-pdf' },
-  { name: 'HEIC to PDF', href: '/heic-to-pdf' },
+  { name: 'Home', href: '/' },
   { name: 'Blog', href: '/blog' },
+  { name: 'Contact', href: '/contact' },
 ];
 
 export function Navigation() {
@@ -47,9 +46,13 @@ export function Navigation() {
           }`}
         >
           {/* Logo */}
-          <Link href="/" className="flex items-center gap-2 group">
-            <span className={`font-display tracking-tight transition-all duration-500 ${isScrolled ? 'text-xl text-foreground' : 'text-2xl text-white'}`}>iCreate</span>
-            <span className={`font-mono transition-all duration-500 ${isScrolled ? 'text-[10px] mt-0.5 text-purple-400 font-bold' : 'text-xs mt-1 text-purple-400 font-bold'}`}>PDF</span>
+          <Link href="/" className="inline-flex items-center gap-1 group transition-all duration-500 hover:opacity-90">
+            <span className="font-extrabold tracking-tight select-none text-white text-4xl font-display" style={{ letterSpacing: '-0.03em', lineHeight: 1 }}>
+              <span className="bg-gradient-to-r from-purple-400 to-pink-400 bg-clip-text text-transparent">i</span>Create
+            </span>
+            <span className="font-extrabold tracking-tight select-none text-4xl font-display" style={{ letterSpacing: '-0.03em', lineHeight: 1, background: 'linear-gradient(135deg, #a78bfa 0%, #eca8d6 100%)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent', backgroundClip: 'text' }}>
+              PDF
+            </span>
           </Link>
 
           {/* Desktop Navigation */}

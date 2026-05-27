@@ -32,7 +32,7 @@ export function PageNumbersTool() {
       try {
         const arrayBuffer = await file.arrayBuffer();
         const pdfjsLib = await import('pdfjs-dist');
-        pdfjsLib.GlobalWorkerOptions.workerSrc = `//cdnjs.cloudflare.com/ajax/libs/pdf.js/${pdfjsLib.version}/pdf.worker.min.mjs`;
+        pdfjsLib.GlobalWorkerOptions.workerSrc = `https://cdn.jsdelivr.net/npm/pdfjs-dist@${pdfjsLib.version}/build/pdf.worker.min.mjs`;
 
         const loadingTask = pdfjsLib.getDocument({ data: new Uint8Array(arrayBuffer) });
         const pdf = await loadingTask.promise;
@@ -147,7 +147,7 @@ export function PageNumbersTool() {
   };
 
   return (
-    <div className="w-full max-w-4xl mx-auto px-6 py-16">
+    <div className="w-full max-w-6xl mx-auto px-6 lg:px-12 py-16">
       <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
         
         {/* Workspace */}

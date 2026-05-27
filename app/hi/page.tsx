@@ -9,7 +9,7 @@ import { CtaSection } from '@/components/landing/cta-section';
 import { FooterSection } from '@/components/landing/footer-section';
 import { 
   Combine, Scissors, Sliders, Type, Hash, FileImage, Image,
-  Minimize2, RotateCw, Unlock
+  Minimize2, RotateCw, Unlock, Camera, FileText
 } from 'lucide-react';
 
 export const metadata: Metadata = {
@@ -30,7 +30,7 @@ const toolsHi = [
   {
     icon: Combine,
     title: 'पीडीएफ मर्ज करें',
-    desc: 'किसी भी पेज क्रम में कई पीडीएफ दस्तावेजों को एक फाइल में संयोजित करें।',
+    desc: 'किसी भी पेज क्रम में कई पीडीएफ दस्तावेजों को एक फाइल मेंसंयोजित करें।',
     href: '/merge-pdf',
   },
   {
@@ -56,6 +56,18 @@ const toolsHi = [
     title: 'पीडीएफ टू जेपीजी',
     desc: 'पीडीएफ दस्तावेज़ के प्रत्येक पेज को उच्च गुणवत्ता वाली जेपीईजी इमेज के रूप में निकालें।',
     href: '/pdf-to-jpg',
+  },
+  {
+    icon: FileText,
+    title: 'वर्ड टू पीडीएफ',
+    desc: 'मानक Microsoft Word (.docx) दस्तावेज़ों को साफ़ पीडीएफ में बदलें।',
+    href: '/word-to-pdf',
+  },
+  {
+    icon: Camera,
+    title: 'पीडीएफ में स्कैन करें',
+    desc: 'कैमरे से दस्तावेज़ के पेजों को कैप्चर करें और उन्हें पीडीएफ में संकलित करें।',
+    href: '/scan-to-pdf',
   },
   {
     icon: Minimize2,

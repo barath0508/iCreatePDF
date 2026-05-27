@@ -386,3 +386,98 @@ export async function addPageNumbersToPdf(
 
   return await pdfDoc.save();
 }
+
+// 6. Convert Word (.docx) to PDF (100% Client-Side XML parsing)
+export async function convertDocxToPdf(
+  docxArrayBuffer: ArrayBuffer,
+  onProgress?: (progress: number) => void
+): Promise<Uint8Array> {
+  const JSZip = (await import('jszip')).default;
+  const zip = await JSZip.loadAsync(docxArrayBuffer);
+  const docXmlText = await zip.file('word/document.xml')?.async('text');
+  
+  if (!docXmlText) {
+    throw new Error('Invalid DOCX format: word/document.xml not found.');
+  }
+
+  const parser = new DOMParser();
+  const xmlDoc = parser.parseFromString(docXmlText, 'application/xml');
+  const paragraphs = xmlDoc.getElementsByTagName('w:p');
+
+  const pdfDoc = await PDFDocument.create();
+  const font = await pdfDoc.embedFont(StandardFonts.Helvetica);
+  let page = pdfDoc.addPage();
+  let { width, height } = page.getSize();
+  let y = height - 50;
+  const margin = 50;
+  const fontSize = 11;
+  const lineHeight = 15;
+
+  const total = paragraphs.length;
+
+  for (let i = 0; i < total; i++) {
+    const p = paragraphs[i];
+    
+    // Extract text runs inside this paragraph
+    const textRuns = p.getElementsByTagName('w:t');
+    let paragraphText = '';
+    for (let j = 0; j < textRuns.length; j++) {
+      paragraphText += textRuns[j].textContent || '';
+    }
+
+    if (paragraphText.trim() === '') {
+      y -= lineHeight; // line break spacing
+      continue;
+    }
+
+    // Split text into wrapped lines
+    const words = paragraphText.split(' ');
+    let currentLine = '';
+
+    for (const word of words) {
+      const testLine = currentLine ? `${currentLine} ${word}` : word;
+      const testWidth = font.widthOfTextAtSize(testLine, fontSize);
+
+      if (testWidth > width - margin * 2) {
+        // Draw current line
+        page.drawText(currentLine, {
+          x: margin,
+          y,
+          size: fontSize,
+          font,
+          color: rgb(0.15, 0.15, 0.15),
+        });
+
+        y -= lineHeight;
+        if (y < margin) {
+          page = pdfDoc.addPage();
+          y = height - 50;
+        }
+
+        currentLine = word;
+      } else {
+        currentLine = testLine;
+      }
+    }
+
+    // Draw remaining text of paragraph
+    if (currentLine) {
+      page.drawText(currentLine, {
+        x: margin,
+        y,
+        size: fontSize,
+        font,
+        color: rgb(0.15, 0.15, 0.15),
+      });
+      y -= lineHeight * 1.5; // space between paragraphs
+      if (y < margin) {
+        page = pdfDoc.addPage();
+        y = height - 50;
+      }
+    }
+
+    if (onProgress) onProgress(((i + 1) / total) * 100);
+  }
+
+  return await pdfDoc.save();
+}

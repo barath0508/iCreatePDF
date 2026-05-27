@@ -10,7 +10,7 @@ import { CtaSection } from '@/components/landing/cta-section';
 import { FooterSection } from '@/components/landing/footer-section';
 import { 
   Combine, Scissors, Sliders, Type, Hash, FileImage, Image,
-  Minimize2, RotateCw, Unlock
+  Minimize2, RotateCw, Unlock, Camera, FileText
 } from 'lucide-react';
 
 export const metadata: Metadata = {
@@ -57,6 +57,18 @@ const toolsEs = [
     title: 'PDF a JPG',
     desc: 'Extraiga cada página de un documento PDF como imágenes JPEG de alta calidad.',
     href: '/pdf-to-jpg',
+  },
+  {
+    icon: FileText,
+    title: 'Word a PDF',
+    desc: 'Convierta documentos estándar de Microsoft Word (.docx) en archivos PDF.',
+    href: '/word-to-pdf',
+  },
+  {
+    icon: Camera,
+    title: 'Escanear a PDF',
+    desc: 'Capture páginas de documentos con su cámara y compílelas en un PDF.',
+    href: '/scan-to-pdf',
   },
   {
     icon: Minimize2,

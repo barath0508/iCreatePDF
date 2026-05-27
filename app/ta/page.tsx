@@ -9,7 +9,7 @@ import { CtaSection } from '@/components/landing/cta-section';
 import { FooterSection } from '@/components/landing/footer-section';
 import { 
   Combine, Scissors, Sliders, Type, Hash, FileImage, Image,
-  Minimize2, RotateCw, Unlock
+  Minimize2, RotateCw, Unlock, Camera, FileText
 } from 'lucide-react';
 
 export const metadata: Metadata = {
@@ -56,6 +56,18 @@ const toolsTa = [
     title: 'PDF டு JPG',
     desc: 'ஒவ்வொரு PDF பக்கத்தையும் உயர்தர JPEG படங்களாக பிரித்தெடுக்கவும்.',
     href: '/pdf-to-jpg',
+  },
+  {
+    icon: FileText,
+    title: 'Word கோப்பை PDF ஆக மாற்ற',
+    desc: 'மைக்ரோசாஃப்ட் வேர்ட் (.docx) கோப்புகளை சுத்தமான PDF கோப்பாக மாற்றவும்.',
+    href: '/word-to-pdf',
+  },
+  {
+    icon: Camera,
+    title: 'கேமரா மூலம் PDF ஸ்கேன்',
+    desc: 'கேமரா மூலம் ஆவணப் பக்கங்களை எடுத்து உடனடியாக PDF ஆக மாற்றவும்.',
+    href: '/scan-to-pdf',
   },
   {
     icon: Minimize2,

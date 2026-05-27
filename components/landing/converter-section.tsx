@@ -230,7 +230,7 @@ export function ConverterSection({ initialFormatFilter }: ConverterSectionProps)
 
   return (
     <section id="convert" className="w-full py-16 bg-black relative z-10">
-      <div className="max-w-[1200px] mx-auto px-6">
+      <div className="max-w-[1400px] mx-auto px-6 lg:px-12">
         
         {initialFormatFilter && (
           <div className="mb-6 p-4 rounded-xl bg-purple-500/10 border border-purple-500/20 text-purple-200 text-sm flex items-center gap-2">
