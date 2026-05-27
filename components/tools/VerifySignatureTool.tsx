@@ -2,7 +2,7 @@
 
 import React, { useState, useRef } from 'react';
 import { Upload, CheckCircle2, AlertTriangle, ShieldCheck, Loader2, Calendar, FileCheck, Info, Download } from 'lucide-react';
-import { PDFDocument, rgb, StandardFonts } from 'pdf-lib';
+
 import { Button } from '@/components/ui/button';
 
 interface SignatureReport {
@@ -119,134 +119,9 @@ export function VerifySignatureTool() {
         byteRange
       });
 
-      // Generate visual certification stamp (ticked copy)
+      // Offer the original unmodified PDF as the validated download — no marks added
       if (hasIntegrity) {
-        const pdfDoc = await PDFDocument.load(buffer);
-        const font = await pdfDoc.embedFont(StandardFonts.Helvetica);
-        const fontBold = await pdfDoc.embedFont(StandardFonts.HelveticaBold);
-        const firstPage = pdfDoc.getPage(0);
-        const { width, height } = firstPage.getSize();
-
-        // --- Official Circular Seal Stamp (bottom-right) ---
-        const cx = width - 72;   // seal center X
-        const cy = 72;           // seal center Y (from bottom)
-        const R = 62;            // outer radius
-
-        // Outer ring (dark green border)
-        firstPage.drawEllipse({
-          x: cx, y: cy,
-          xScale: R, yScale: R,
-          color: rgb(0.08, 0.42, 0.22),
-        });
-
-        // White inner fill
-        firstPage.drawEllipse({
-          x: cx, y: cy,
-          xScale: R - 4, yScale: R - 4,
-          color: rgb(1, 1, 1),
-        });
-
-        // Second inner ring (thin dark green)
-        firstPage.drawEllipse({
-          x: cx, y: cy,
-          xScale: R - 7, yScale: R - 7,
-          color: rgb(0.08, 0.42, 0.22),
-          borderColor: rgb(0.08, 0.42, 0.22),
-          borderWidth: 0,
-        });
-
-        // White fill inside second ring
-        firstPage.drawEllipse({
-          x: cx, y: cy,
-          xScale: R - 9, yScale: R - 9,
-          color: rgb(1, 1, 1),
-        });
-
-        // Green header band across the top of the seal
-        firstPage.drawRectangle({
-          x: cx - (R - 9),
-          y: cy + 18,
-          width: (R - 9) * 2,
-          height: 22,
-          color: rgb(0.08, 0.42, 0.22),
-        });
-
-        // Clip the green band to not exceed the inner circle edges (visual trick using white ellipses)
-        firstPage.drawEllipse({
-          x: cx, y: cy + 40,
-          xScale: R - 9, yScale: R - 9,
-          color: rgb(1, 1, 1),
-        });
-        firstPage.drawEllipse({
-          x: cx, y: cy - 4,
-          xScale: R - 9, yScale: R - 9,
-          color: rgb(1, 1, 1),
-        });
-
-        // Re-draw green band clipped area
-        firstPage.drawRectangle({
-          x: cx - (R - 16),
-          y: cy + 20,
-          width: (R - 16) * 2,
-          height: 18,
-          color: rgb(0.08, 0.42, 0.22),
-        });
-
-        // "VERIFIED" label in the green band
-        firstPage.drawText('VERIFIED', {
-          x: cx - 22,
-          y: cy + 23,
-          size: 11,
-          font: fontBold,
-          color: rgb(1, 1, 1),
-        });
-
-        // Large checkmark-like "OK" emblem in center
-        firstPage.drawEllipse({
-          x: cx, y: cy + 6,
-          xScale: 13, yScale: 13,
-          color: rgb(0.08, 0.42, 0.22),
-        });
-        firstPage.drawText('OK', {
-          x: cx - 7,
-          y: cy + 2,
-          size: 9,
-          font: fontBold,
-          color: rgb(1, 1, 1),
-        });
-
-        // Signer name (truncated)
-        const signerDisplay = signerName.length > 18 ? signerName.slice(0, 18) + '..' : signerName;
-        const signerFontSize = 6.5;
-        firstPage.drawText(signerDisplay, {
-          x: cx - (signerDisplay.length * signerFontSize * 0.28),
-          y: cy - 12,
-          size: signerFontSize,
-          font: fontBold,
-          color: rgb(0.05, 0.3, 0.15),
-        });
-
-        // Signing date
-        const dateDisplay = signingTime !== 'Unknown Time' ? signingTime.split(' ')[0] : 'Date Unknown';
-        firstPage.drawText(dateDisplay, {
-          x: cx - (dateDisplay.length * 5.5 * 0.28),
-          y: cy - 22,
-          size: 5.5,
-          font,
-          color: rgb(0.2, 0.4, 0.25),
-        });
-
-        // Bottom label: iCreatePDF
-        firstPage.drawText('iCreatePDF', {
-          x: cx - 18,
-          y: cy - 36,
-          size: 5.5,
-          font: fontBold,
-          color: rgb(0.08, 0.42, 0.22),
-        });
-
-        const certifiedBytes = await pdfDoc.save();
-        const blob = new Blob([certifiedBytes], { type: 'application/pdf' });
+        const blob = new Blob([buffer], { type: 'application/pdf' });
         const certifiedUrl = URL.createObjectURL(blob);
         setValidatedPdfUrl(certifiedUrl);
       }

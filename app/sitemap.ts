@@ -32,6 +32,10 @@ export default function sitemap(): MetadataRoute.Sitemap {
 
   const blogRoutes = [
     '/blog',
+    '/blog/how-to-compress-pdf-without-losing-quality',
+    '/blog/how-to-merge-pdf-files-free',
+    '/blog/how-to-sign-pdf-online-free',
+    '/blog/jpg-to-pdf-complete-guide',
     '/blog/how-to-convert-iphone-photos-to-pdf',
     '/blog/best-free-image-to-pdf-tools-2026',
   ];
