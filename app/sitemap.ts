@@ -2,15 +2,17 @@ import { MetadataRoute } from 'next';
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const baseUrl = 'https://icreatepdf.com';
-  
-  const routes = [
-    '',
+  const today = new Date().toISOString().split('T')[0];
+
+  const toolRoutes = [
     '/jpg-to-pdf',
     '/png-to-pdf',
     '/heic-to-pdf',
     '/merge-pdf',
     '/split-pdf',
+    '/compress-pdf',
     '/organize-pdf',
+    '/rotate-pdf',
     '/watermark-pdf',
     '/add-page-numbers',
     '/pdf-to-jpg',
@@ -26,21 +28,61 @@ export default function sitemap(): MetadataRoute.Sitemap {
     '/flatten-pdf',
     '/grayscale-pdf',
     '/compare-pdf',
-    '/contact',
+  ];
+
+  const blogRoutes = [
     '/blog',
     '/blog/how-to-convert-iphone-photos-to-pdf',
     '/blog/best-free-image-to-pdf-tools-2026',
+  ];
+
+  const staticRoutes = [
+    '/contact',
     '/privacy',
     '/terms',
+  ];
+
+  const langRoutes = [
     '/es',
     '/hi',
     '/ta',
   ];
 
-  return routes.map((route) => ({
-    url: `${baseUrl}${route}`,
-    lastModified: new Date().toISOString().split('T')[0],
-    changeFrequency: 'weekly',
-    priority: route === '' ? 1.0 : 0.8,
-  }));
+  return [
+    // Homepage — highest priority
+    {
+      url: baseUrl,
+      lastModified: today,
+      changeFrequency: 'daily',
+      priority: 1.0,
+    },
+    // Tool pages — core content
+    ...toolRoutes.map((route) => ({
+      url: `${baseUrl}${route}`,
+      lastModified: today,
+      changeFrequency: 'weekly' as const,
+      priority: 0.9,
+    })),
+    // Blog pages
+    ...blogRoutes.map((route) => ({
+      url: `${baseUrl}${route}`,
+      lastModified: today,
+      changeFrequency: 'weekly' as const,
+      priority: 0.8,
+    })),
+    // Static pages (Contact, Privacy, Terms)
+    ...staticRoutes.map((route) => ({
+      url: `${baseUrl}${route}`,
+      lastModified: today,
+      changeFrequency: 'monthly' as const,
+      priority: 0.5,
+    })),
+    // Localised landing pages
+    ...langRoutes.map((route) => ({
+      url: `${baseUrl}${route}`,
+      lastModified: today,
+      changeFrequency: 'weekly' as const,
+      priority: 0.7,
+    })),
+  ];
 }
