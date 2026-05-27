@@ -18,6 +18,8 @@ const searchTools = [
   { title: 'Split PDF', href: '/split-pdf', desc: 'Extract page ranges or split a PDF into separate files.' },
   { title: 'Organize PDF', href: '/organize-pdf', desc: 'Rearrange, rotate, or delete specific pages visually.' },
   { title: 'JPG to PDF', href: '/jpg-to-pdf', desc: 'Convert JPG, PNG, WEBP, HEIC, and BMP images into a clean PDF.' },
+  { title: 'PNG to PDF', href: '/png-to-pdf', desc: 'Convert PNG images into a high-quality PDF document locally.' },
+  { title: 'HEIC to PDF', href: '/heic-to-pdf', desc: 'Convert Apple iPhone HEIC photos to PDF without uploading.' },
   { title: 'PDF to JPG', href: '/pdf-to-jpg', desc: 'Extract each page of a PDF document as high-fidelity JPEG images.' },
   { title: 'Word to PDF', href: '/word-to-pdf', desc: 'Convert standard Microsoft Word (.docx) documents into clean PDFs.' },
   { title: 'Scan to PDF', href: '/scan-to-pdf', desc: 'Capture document pages using your camera and compile into a PDF.' },
@@ -46,6 +48,7 @@ const searchTools = [
   { title: 'Bates Numbering', href: '/bates-numbering', desc: 'Sequential legal stamping with custom prefix, suffix, and padding.' },
   { title: 'Invert PDF', href: '/invert-pdf', desc: 'Pixel-invert every page for dark mode reading.' },
   { title: 'QR to PDF', href: '/qr-to-pdf', desc: 'Generate a clean A4 PDF with an embedded QR code.' },
+  { title: 'Delete PDF Pages', href: '/delete-pdf-pages', desc: 'Remove individual pages or complete ranges of pages from your PDF file.' },
 ];
 
 export function Navigation() {

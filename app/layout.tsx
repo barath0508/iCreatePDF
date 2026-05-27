@@ -10,7 +10,7 @@ export const metadata: Metadata = {
     template: '%s | iCreatePDF'
   },
   description: 'Convert JPG, PNG, WEBP, HEIC, and BMP to PDF 100% locally in your browser. Zero sign-up, zero server uploads, privacy first.',
-  keywords: 'image to pdf, convert jpg to pdf, png to pdf, heic to pdf, merge pdf, split pdf, rotate pdf, compress pdf, client side pdf, icreatepdf',
+  keywords: 'pdf editor, edit pdf, merge pdf online, split pdf free, compress pdf tool, crop pdf page, redact pdf text, bates numbering legal, convert to pdf, image to pdf, pdf metadata editor, sign pdf digitally, client-side pdf converter, secure pdf processor, local pdf tools, document converter, pdf utility, word to pdf converter, scan to pdf online, unlock password pdf, protect pdf file, delete pdf pages, crop pdf margins, pdf converter free, offline pdf editor, heic to pdf, png to pdf, jpeg to pdf, extract pages from pdf, combine pdf files, split pdf pages, compress pdf size, secure client-side pdf, pdf watermark creator, add page numbers to pdf, draw signature on pdf, flat pdf converter, black out pdf text, fix corrupted pdf, change author pdf, bates stamp generator, dark mode pdf, invert pdf background, scan documents to pdf, generate qr code pdf, compare two pdfs, pdf comparison tool, extract text from pdf, html to pdf free, compile markdown to pdf, smallpdf alternative, ilovepdf alternative, free online pdf merger, best pdf splitter, sign pdf free online, how to edit pdf document, online pdf manager, secure pdf sandbox',
   alternates: {
     canonical: '/',
     languages: {
@@ -81,6 +81,41 @@ export default function RootLayout({
                 "price": "0.00",
                 "priceCurrency": "USD"
               }
+            })
+          }}
+        />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "FAQPage",
+              "mainEntity": [
+                {
+                  "@type": "Question",
+                  "name": "Is iCreatePDF completely free?",
+                  "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Yes, iCreatePDF is 100% free with no page limits, file size restrictions, or registration requirements. All conversion features are unlocked."
+                  }
+                },
+                {
+                  "@type": "Question",
+                  "name": "Are my documents secure on iCreatePDF?",
+                  "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Absolutely. iCreatePDF works entirely client-side. Your files are processed locally in your browser sandbox using WebAssembly and Javascript. They are never uploaded to any external server."
+                  }
+                },
+                {
+                  "@type": "Question",
+                  "name": "Can I use iCreatePDF offline?",
+                  "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Yes. Since all processing runs locally within your browser sandbox, once the page is loaded, the tools do not need an internet connection to modify, merge, or convert your PDF files."
+                  }
+                }
+              ]
             })
           }}
         />

@@ -39,6 +39,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     '/bates-numbering',
     '/invert-pdf',
     '/qr-to-pdf',
+    '/delete-pdf-pages',
   ];
 
   const blogRoutes = [

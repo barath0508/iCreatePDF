@@ -11,7 +11,7 @@ import {
   Combine, Scissors, Sliders, Type, Hash, FileImage, Image,
   Minimize2, RotateCw, Unlock, Camera, FileText, Shield, FileSignature, Edit, ShieldCheck,
   Code, Layers, Printer, Columns, EyeOff, Crop, BookOpen, Wrench, Info,
-  AlignCenter, Maximize2, Moon, QrCode, BookMarked
+  AlignCenter, Maximize2, Moon, QrCode, BookMarked, Trash2
 } from 'lucide-react';
 
 const tools = [
@@ -38,6 +38,18 @@ const tools = [
     title: 'JPG to PDF',
     desc: 'Convert JPG, PNG, WEBP, HEIC, and BMP images into a clean PDF.',
     href: '/jpg-to-pdf',
+  },
+  {
+    icon: FileImage,
+    title: 'PNG to PDF',
+    desc: 'Convert PNG images into a high-quality PDF document locally.',
+    href: '/png-to-pdf',
+  },
+  {
+    icon: FileImage,
+    title: 'HEIC to PDF',
+    desc: 'Convert Apple iPhone HEIC photos to PDF without uploading.',
+    href: '/heic-to-pdf',
   },
   {
     icon: FileImage,
@@ -206,6 +218,12 @@ const tools = [
     title: 'QR to PDF',
     desc: 'Generate a clean A4 PDF with an embedded QR code for any URL or text.',
     href: '/qr-to-pdf',
+  },
+  {
+    icon: Trash2,
+    title: 'Delete Pages',
+    desc: 'Remove individual pages or complete ranges of pages from your PDF file.',
+    href: '/delete-pdf-pages',
   },
 ];
 
