@@ -1,0 +1,134 @@
+import Link from 'next/link';
+import { Navigation } from '@/components/landing/navigation';
+import { HeroSection } from '@/components/landing/hero-section';
+import { FeaturesSection } from '@/components/landing/features-section';
+import { HowItWorksSection } from '@/components/landing/how-it-works-section';
+import { InfrastructureSection } from '@/components/landing/infrastructure-section';
+import { SecuritySection } from '@/components/landing/security-section';
+import { CtaSection } from '@/components/landing/cta-section';
+import { FooterSection } from '@/components/landing/footer-section';
+import { 
+  Combine, Scissors, Sliders, Type, Hash, FileImage, Image,
+  Minimize2, RotateCw, Unlock
+} from 'lucide-react';
+
+const tools = [
+  {
+    icon: Combine,
+    title: 'Merge PDF',
+    desc: 'Combine multiple PDF documents into a single document in any page order.',
+    href: '/merge-pdf',
+  },
+  {
+    icon: Scissors,
+    title: 'Split PDF',
+    desc: 'Extract page ranges or split a PDF into separate files.',
+    href: '/split-pdf',
+  },
+  {
+    icon: Sliders,
+    title: 'Organize PDF',
+    desc: 'Rearrange, rotate, or delete specific pages visually with previews.',
+    href: '/organize-pdf',
+  },
+  {
+    icon: Image,
+    title: 'JPG to PDF',
+    desc: 'Convert JPG, PNG, WEBP, HEIC, and BMP images into a clean PDF.',
+    href: '/jpg-to-pdf',
+  },
+  {
+    icon: FileImage,
+    title: 'PDF to JPG',
+    desc: 'Extract each page of a PDF document as high-fidelity JPEG images.',
+    href: '/pdf-to-jpg',
+  },
+  {
+    icon: Minimize2,
+    title: 'Compress PDF',
+    desc: 'Optimize file streams locally to decrease PDF document sizes.',
+    href: '/compress-pdf',
+  },
+  {
+    icon: RotateCw,
+    title: 'Rotate PDF',
+    desc: 'Rotate PDF document pages clockwise in bulk or individually.',
+    href: '/rotate-pdf',
+  },
+  {
+    icon: Unlock,
+    title: 'Unlock PDF',
+    desc: 'Strip password encryption locks from PDF files client-side.',
+    href: '/unlock-pdf',
+  },
+  {
+    icon: Type,
+    title: 'Watermark PDF',
+    desc: 'Stamp configurable text overlays on all pages of a PDF document.',
+    href: '/watermark-pdf',
+  },
+  {
+    icon: Hash,
+    title: 'Page Numbers',
+    desc: 'Add page numbers with custom layout positioning and labels.',
+    href: '/add-page-numbers',
+  },
+];
+
+export default function Home() {
+  return (
+    <main className="relative min-h-screen overflow-x-hidden bg-black text-white selection:bg-purple-500/30">
+      <Navigation />
+      <HeroSection />
+
+      {/* Tools Dashboard Grid */}
+      <section id="convert" className="py-24 bg-black relative z-10">
+        <div className="max-w-[1400px] mx-auto px-6 lg:px-12">
+          <div className="text-center mb-16 space-y-4">
+            <span className="inline-flex items-center gap-3 text-sm font-mono text-purple-400">
+              <span className="w-8 h-px bg-purple-500/30" />
+              SaaS Document suite
+            </span>
+            <h2 className="text-4xl md:text-5xl lg:text-[72px] font-display tracking-tight leading-[0.95] text-white">
+              Organize, convert &amp; <br />
+              <span className="text-white/45">manipulate PDFs.</span>
+            </h2>
+          </div>
+
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+            {tools.map((tool) => (
+              <Link 
+                key={tool.title} 
+                href={tool.href}
+                className="group relative p-8 bg-zinc-950 border border-white/5 hover:border-purple-500/30 hover:bg-zinc-900/20 transition-all duration-300 rounded-2xl flex flex-col justify-between min-h-[220px]"
+              >
+                <div className="space-y-4">
+                  <div className="p-3 w-fit rounded-xl bg-white/5 border border-white/10 group-hover:bg-purple-600 group-hover:border-purple-500 group-hover:text-white transition-all text-purple-400">
+                    <tool.icon className="w-5 h-5" />
+                  </div>
+                  <h3 className="text-xl font-display text-white group-hover:text-purple-400 transition-colors">
+                    {tool.title}
+                  </h3>
+                  <p className="text-xs text-white/50 leading-relaxed">
+                    {tool.desc}
+                  </p>
+                </div>
+                
+                <span className="text-[10px] font-mono text-white/30 group-hover:text-purple-400 uppercase tracking-widest pt-4 transition-colors">
+                  Open Tool &rarr;
+                </span>
+              </Link>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <FeaturesSection />
+      <HowItWorksSection />
+      <InfrastructureSection />
+      <SecuritySection />
+      <CtaSection />
+      <FooterSection />
+    </main>
+  );
+}

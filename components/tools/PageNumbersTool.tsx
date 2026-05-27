@@ -1,0 +1,352 @@
+'use client';
+
+import React, { useState, useRef } from 'react';
+import { Upload, Layers, Loader2, Download, FileText, Hash } from 'lucide-react';
+import { addPageNumbersToPdf, PageNumberingOptions } from '@/lib/pdf';
+import { Button } from '@/components/ui/button';
+
+export function PageNumbersTool() {
+  const [file, setFile] = useState<File | null>(null);
+  const [pagesCount, setPagesCount] = useState(0);
+  const [options, setOptions] = useState<PageNumberingOptions>({
+    format: 'page',
+    position: 'bottom-right',
+  });
+
+  const [isProcessing, setIsProcessing] = useState(false);
+  const [progress, setProgress] = useState(0);
+  const [error, setError] = useState<string | null>(null);
+  const [downloadUrl, setDownloadUrl] = useState<string | null>(null);
+  const [isDraggingOver, setIsDraggingOver] = useState(false);
+  const [isPreviewLoading, setIsPreviewLoading] = useState(false);
+
+  const fileInputRef = useRef<HTMLInputElement>(null);
+  const canvasRef = useRef<HTMLCanvasElement>(null);
+
+  React.useEffect(() => {
+    if (!file) return;
+
+    let isMounted = true;
+    const loadPreview = async () => {
+      setIsPreviewLoading(true);
+      try {
+        const arrayBuffer = await file.arrayBuffer();
+        const pdfjsLib = await import('pdfjs-dist');
+        pdfjsLib.GlobalWorkerOptions.workerSrc = `//cdnjs.cloudflare.com/ajax/libs/pdf.js/${pdfjsLib.version}/pdf.worker.min.mjs`;
+
+        const loadingTask = pdfjsLib.getDocument({ data: new Uint8Array(arrayBuffer) });
+        const pdf = await loadingTask.promise;
+        
+        if (!isMounted) return;
+        setPagesCount(pdf.numPages);
+
+        const page = await pdf.getPage(1);
+        const viewport = page.getViewport({ scale: 1.0 });
+
+        const canvas = canvasRef.current;
+        if (canvas) {
+          const context = canvas.getContext('2d');
+          if (context) {
+            canvas.width = viewport.width;
+            canvas.height = viewport.height;
+            await page.render({ canvasContext: context, viewport }).promise;
+          }
+        }
+      } catch (err) {
+        console.error('Error loading PDF preview:', err);
+      } finally {
+        if (isMounted) setIsPreviewLoading(false);
+      }
+    };
+
+    loadPreview();
+    return () => {
+      isMounted = false;
+    };
+  }, [file]);
+
+  const handleFiles = async (uploadedFiles: FileList | File[]) => {
+    setError(null);
+    setDownloadUrl(null);
+    
+    const uploadedFile = uploadedFiles[0];
+    if (!uploadedFile) return;
+
+    const ext = uploadedFile.name.split('.').pop()?.toLowerCase();
+    if (ext !== 'pdf') {
+      setError('Only PDF files are supported.');
+      return;
+    }
+
+    setFile(uploadedFile);
+  };
+
+  const onDragOver = (e: React.DragEvent) => {
+    e.preventDefault();
+    setIsDraggingOver(true);
+  };
+
+  const onDragLeave = () => {
+    setIsDraggingOver(false);
+  };
+
+  const onDrop = (e: React.DragEvent) => {
+    e.preventDefault();
+    setIsDraggingOver(false);
+    if (e.dataTransfer.files && e.dataTransfer.files.length > 0) {
+      handleFiles(e.dataTransfer.files);
+    }
+  };
+
+  const triggerPageNumbers = async () => {
+    if (!file) return;
+    setIsProcessing(true);
+    setProgress(0);
+    setError(null);
+
+    try {
+      const buffer = await file.arrayBuffer();
+      const numberedBytes = await addPageNumbersToPdf(buffer, options, (p) => setProgress(Math.round(p)));
+      
+      const blob = new Blob([numberedBytes as any], { type: 'application/pdf' });
+      const url = URL.createObjectURL(blob);
+      setDownloadUrl(url);
+      setProgress(100);
+    } catch (err: any) {
+      console.error(err);
+      setError(err?.message || 'Failed to add page numbers.');
+    } finally {
+      setIsProcessing(false);
+    }
+  };
+
+  const handleDownload = () => {
+    if (!downloadUrl) return;
+    const link = document.createElement('a');
+    link.href = downloadUrl;
+    link.download = `numbered-${file?.name}`;
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+  };
+
+  // Helper to determine position classes for overlay
+  const getPositionClasses = () => {
+    switch (options.position) {
+      case 'top-left': return 'top-4 left-4';
+      case 'top-right': return 'top-4 right-4';
+      case 'bottom-left': return 'bottom-4 left-4';
+      case 'bottom-right': return 'bottom-4 right-4';
+      default: return 'bottom-4 right-4';
+    }
+  };
+
+  const getPageNumText = () => {
+    if (options.format === 'page') return 'Page 1';
+    return `Page 1 of ${pagesCount || 'Y'}`;
+  };
+
+  return (
+    <div className="w-full max-w-4xl mx-auto px-6 py-16">
+      <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+        
+        {/* Workspace */}
+        <div className="lg:col-span-8 space-y-6">
+          {!file ? (
+            <div
+              onDragOver={onDragOver}
+              onDragLeave={onDragLeave}
+              onDrop={onDrop}
+              onClick={() => fileInputRef.current?.click()}
+              className={`relative cursor-pointer border border-dashed rounded-2xl p-12 transition-all duration-300 text-center flex flex-col items-center justify-center min-h-[220px] ${
+                isDraggingOver
+                  ? 'border-purple-500 bg-purple-500/5'
+                  : 'border-white/10 bg-zinc-900/30 hover:border-white/20'
+              }`}
+            >
+              <input
+                type="file"
+                ref={fileInputRef}
+                onChange={(e) => e.target.files && handleFiles(e.target.files)}
+                accept=".pdf"
+                className="hidden"
+              />
+              <div className="p-4 rounded-full bg-white/5 mb-4 border border-white/10">
+                <Upload className="w-6 h-6 text-purple-400" />
+              </div>
+              <h3 className="text-xl font-display text-white mb-2">
+                Select or drag a PDF file
+              </h3>
+              <p className="text-xs text-white/40">
+                Page numbering is executed 100% locally on your browser.
+              </p>
+            </div>
+          ) : (
+            <div className="space-y-6">
+              <div className="p-6 bg-zinc-950 border border-white/10 rounded-2xl flex justify-between items-start">
+                <div>
+                  <h4 className="text-lg font-display text-white">{file.name}</h4>
+                  <p className="text-xs text-white/40">
+                    {pagesCount} pages • {(file.size / (1024 * 1024)).toFixed(2)} MB
+                  </p>
+                </div>
+                <Button
+                  variant="ghost"
+                  size="sm"
+                  onClick={() => {
+                    setFile(null);
+                    setDownloadUrl(null);
+                  }}
+                  className="text-xs text-white/40 hover:text-white"
+                >
+                  Change File
+                </Button>
+              </div>
+
+              {/* Live Preview Card */}
+              <div className="p-6 bg-zinc-950 border border-white/10 rounded-2xl space-y-4">
+                <div className="flex items-center justify-between border-b border-white/5 pb-3">
+                  <h3 className="font-mono text-xs uppercase tracking-wider text-white/60">Live Preview (Page 1)</h3>
+                  <span className="text-[10px] bg-purple-500/10 text-purple-400 px-2 py-0.5 rounded border border-purple-500/20 uppercase font-mono">Real-time</span>
+                </div>
+                
+                <div className="relative border border-white/5 rounded-xl overflow-hidden bg-zinc-900/40 flex justify-center items-center p-4 min-h-[300px]">
+                  {isPreviewLoading && (
+                    <div className="absolute inset-0 flex flex-col items-center justify-center bg-black/40 backdrop-blur-sm z-10 space-y-2">
+                      <Loader2 className="w-6 h-6 text-purple-500 animate-spin" />
+                      <span className="text-xs text-white/60 font-mono">Rendering preview...</span>
+                    </div>
+                  )}
+                  
+                  <div className="relative">
+                    <canvas ref={canvasRef} className="max-w-full max-h-[500px] shadow-2xl rounded" />
+                    
+                    {/* Page Number Overlay */}
+                    <div 
+                      className={`absolute pointer-events-none text-zinc-500 font-sans font-medium text-[10px] bg-white/80 dark:bg-black/80 px-2 py-1 rounded shadow-sm border border-black/10 dark:border-white/10 ${getPositionClasses()}`}
+                    >
+                      {getPageNumText()}
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          )}
+
+          {error && (
+            <div className="p-4 rounded-xl bg-red-500/10 border border-red-500/20 text-red-200 text-sm">
+              {error}
+            </div>
+          )}
+        </div>
+
+        {/* Action Panel */}
+        <div className="lg:col-span-4 bg-zinc-950 border border-white/10 rounded-2xl p-6 space-y-6">
+          <div className="flex items-center gap-2 border-b border-white/5 pb-4">
+            <Layers className="w-4 h-4 text-purple-400" />
+            <h3 className="font-mono text-sm uppercase tracking-wider text-white">Numbering options</h3>
+          </div>
+
+          <div className="space-y-4">
+            {/* Format option */}
+            <div className="space-y-2">
+              <label className="text-[10px] font-mono uppercase tracking-wider text-white/40">Format</label>
+              <div className="grid grid-cols-2 gap-2">
+                {[
+                  { value: 'page', label: 'Page X' },
+                  { value: 'page-of', label: 'Page X of Y' },
+                ].map((opt) => (
+                  <Button
+                    key={opt.value}
+                    variant={options.format === opt.value ? 'default' : 'outline'}
+                    size="sm"
+                    onClick={() => setOptions((prev) => ({ ...prev, format: opt.value as any }))}
+                    className={`h-8 text-xs rounded-lg ${
+                      options.format === opt.value ? 'bg-purple-600 hover:bg-purple-700 text-white' : 'border-white/10 text-white/60 hover:text-white'
+                    }`}
+                  >
+                    {opt.label}
+                  </Button>
+                ))}
+              </div>
+            </div>
+
+            {/* Position option */}
+            <div className="space-y-2">
+              <label className="text-[10px] font-mono uppercase tracking-wider text-white/40">Position</label>
+              <div className="grid grid-cols-2 gap-2">
+                {[
+                  { value: 'top-left', label: 'Top Left' },
+                  { value: 'top-right', label: 'Top Right' },
+                  { value: 'bottom-left', label: 'Bottom Left' },
+                  { value: 'bottom-right', label: 'Bottom Right' },
+                ].map((opt) => (
+                  <Button
+                    key={opt.value}
+                    variant={options.position === opt.value ? 'default' : 'outline'}
+                    size="sm"
+                    onClick={() => setOptions((prev) => ({ ...prev, position: opt.value as any }))}
+                    className={`h-8 text-xs rounded-lg ${
+                      options.position === opt.value ? 'bg-purple-600 hover:bg-purple-700 text-white' : 'border-white/10 text-white/60 hover:text-white'
+                    }`}
+                  >
+                    {opt.label}
+                  </Button>
+                ))}
+              </div>
+            </div>
+          </div>
+
+          <div className="pt-4 border-t border-white/5">
+            {isProcessing ? (
+              <div className="space-y-2">
+                <div className="flex justify-between items-center text-xs font-mono text-white/60">
+                  <span className="flex items-center gap-2">
+                    <Loader2 className="w-3.5 h-3.5 text-purple-500 animate-spin" />
+                    Numbering...
+                  </span>
+                  <span>{progress}%</span>
+                </div>
+                <div className="w-full bg-white/5 rounded-full h-1.5 overflow-hidden">
+                  <div className="bg-purple-600 h-full rounded-full" style={{ width: `${progress}%` }} />
+                </div>
+              </div>
+            ) : downloadUrl ? (
+              <div className="space-y-2">
+                <Button
+                  onClick={handleDownload}
+                  className="w-full bg-emerald-600 hover:bg-emerald-700 text-white font-medium py-6 rounded-xl flex items-center justify-center gap-2"
+                >
+                  <Download className="w-5 h-5" />
+                  Download PDF
+                </Button>
+                <Button
+                  variant="ghost"
+                  onClick={() => {
+                    setFile(null);
+                    setDownloadUrl(null);
+                  }}
+                  className="w-full text-white/50 hover:text-white text-xs h-8"
+                >
+                  Number new file
+                </Button>
+              </div>
+            ) : (
+              <Button
+                disabled={!file}
+                onClick={triggerPageNumbers}
+                className={`w-full font-medium py-6 rounded-xl flex items-center justify-center gap-2 ${
+                  file ? 'bg-purple-600 hover:bg-purple-700 text-white' : 'bg-white/5 text-white/30 cursor-not-allowed'
+                }`}
+              >
+                <Hash className="w-4 h-4" />
+                Add Page Numbers
+              </Button>
+            )}
+          </div>
+        </div>
+
+      </div>
+    </div>
+  );
+}
