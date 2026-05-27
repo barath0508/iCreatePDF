@@ -10,7 +10,8 @@ import { FooterSection } from '@/components/landing/footer-section';
 import { 
   Combine, Scissors, Sliders, Type, Hash, FileImage, Image,
   Minimize2, RotateCw, Unlock, Camera, FileText, Shield, FileSignature, Edit, ShieldCheck,
-  Code, Layers, Printer, Columns
+  Code, Layers, Printer, Columns, EyeOff, Crop, BookOpen, Wrench, Info,
+  AlignCenter, Maximize2, Moon, QrCode, BookMarked
 } from 'lucide-react';
 
 const tools = [
@@ -145,6 +146,66 @@ const tools = [
     title: 'Compare PDF',
     desc: 'Audit document differences side-by-side with synchronized scrolling.',
     href: '/compare-pdf',
+  },
+  {
+    icon: EyeOff,
+    title: 'Redact PDF',
+    desc: 'Draw black boxes over sensitive content — permanently burned into the document.',
+    href: '/redact-pdf',
+  },
+  {
+    icon: Crop,
+    title: 'Crop PDF',
+    desc: 'Trim scanner borders and excess whitespace from all PDF page margins.',
+    href: '/crop-pdf',
+  },
+  {
+    icon: BookOpen,
+    title: 'Extract Pages',
+    desc: 'Pull specific pages or ranges (1,3,5-8) into a new standalone PDF.',
+    href: '/extract-pages',
+  },
+  {
+    icon: Wrench,
+    title: 'Repair PDF',
+    desc: 'Recover corrupted PDF files by rebuilding internal cross-reference tables.',
+    href: '/repair-pdf',
+  },
+  {
+    icon: Info,
+    title: 'PDF Metadata',
+    desc: 'View and edit hidden document properties: title, author, subject, keywords.',
+    href: '/pdf-metadata',
+  },
+  {
+    icon: AlignCenter,
+    title: 'Header & Footer',
+    desc: 'Stamp custom text at the top and bottom of every page with page number tokens.',
+    href: '/header-footer',
+  },
+  {
+    icon: Maximize2,
+    title: 'Resize PDF',
+    desc: 'Normalize all pages to A4, Letter, A3, Legal, or A5 in portrait or landscape.',
+    href: '/resize-pdf',
+  },
+  {
+    icon: BookMarked,
+    title: 'Bates Numbering',
+    desc: 'Sequential legal stamping with custom prefix, suffix, and zero-padded numbering.',
+    href: '/bates-numbering',
+  },
+  {
+    icon: Moon,
+    title: 'Invert PDF',
+    desc: 'Pixel-invert every page for dark mode reading and eye strain reduction.',
+    href: '/invert-pdf',
+  },
+  {
+    icon: QrCode,
+    title: 'QR to PDF',
+    desc: 'Generate a clean A4 PDF with an embedded QR code for any URL or text.',
+    href: '/qr-to-pdf',
   },
 ];
 

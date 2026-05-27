@@ -28,6 +28,17 @@ export default function sitemap(): MetadataRoute.Sitemap {
     '/flatten-pdf',
     '/grayscale-pdf',
     '/compare-pdf',
+    '/unlock-pdf',
+    '/redact-pdf',
+    '/crop-pdf',
+    '/extract-pages',
+    '/repair-pdf',
+    '/pdf-metadata',
+    '/header-footer',
+    '/resize-pdf',
+    '/bates-numbering',
+    '/invert-pdf',
+    '/qr-to-pdf',
   ];
 
   const blogRoutes = [
@@ -38,6 +49,11 @@ export default function sitemap(): MetadataRoute.Sitemap {
     '/blog/jpg-to-pdf-complete-guide',
     '/blog/how-to-convert-iphone-photos-to-pdf',
     '/blog/best-free-image-to-pdf-tools-2026',
+    '/blog/how-to-redact-pdf-online-free',
+    '/blog/how-to-extract-pages-from-pdf',
+    '/blog/how-to-edit-pdf-metadata',
+    '/blog/bates-numbering-pdf-guide',
+    '/blog/how-to-invert-pdf-colors-dark-mode',
   ];
 
   const staticRoutes = [
