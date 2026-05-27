@@ -2,7 +2,17 @@ import type { Metadata } from 'next';
 import { Navigation } from '@/components/landing/navigation';
 import { RedactTool } from '@/components/tools/RedactTool';
 import { FooterSection } from '@/components/landing/footer-section';
-export const metadata: Metadata = { title: 'Redact PDF Online Free - Black Out Sensitive Info | iCreatePDF', description: 'Redact sensitive information from PDF files locally. Draw black boxes over text, images, and personal data. 100% client-side, no uploads.', keywords: 'redact pdf, black out pdf text, pdf redaction tool, remove sensitive data pdf, redact pdf online free', alternates: { canonical: '/redact-pdf' } };
+export const metadata: Metadata = {
+  title: 'Redact PDF Online Free - Black Out Sensitive Info | iCreatePDF',
+  description: 'Redact sensitive information from PDF files locally. Draw black boxes over text, images, and personal data. 100% client-side, no uploads.',
+  keywords: 'redact pdf, black out pdf text, pdf redaction tool, remove sensitive data pdf, redact pdf online free',
+  alternates: { canonical: '/redact-pdf' },
+  openGraph: {
+    title: 'Redact PDF Online Free - Black Out Sensitive Info | iCreatePDF',
+    description: 'Redact sensitive information from PDF files locally. Draw black boxes over text, images, and personal data. 100% client-side, no uploads.',
+    type: 'website',
+  }
+};
 export default function RedactPdfPage() {
   return (
     <main className="relative min-h-screen overflow-x-hidden bg-black text-white flex flex-col justify-between selection:bg-purple-500/30">

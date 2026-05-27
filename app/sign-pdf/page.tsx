@@ -7,9 +7,12 @@ export const metadata: Metadata = {
   title: 'Sign PDF Online - Draw or Type Signatures | iCreatePDF',
   description: 'Sign PDF documents visually and securely in your browser. Draw or type your signature and position it on any page locally.',
   keywords: 'sign pdf, e-sign pdf, digital signature, draw signature, write signature on pdf',
-  alternates: {
-    canonical: '/sign-pdf',
-  },
+  alternates: { canonical: '/sign-pdf' },
+  openGraph: {
+    title: 'Sign PDF Online - Draw or Type Signatures | iCreatePDF',
+    description: 'Sign PDF documents visually and securely in your browser. Draw or type your signature and position it on any page locally.',
+    type: 'website',
+  }
 };
 
 export default function SignPdfPage() {

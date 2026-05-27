@@ -7,9 +7,12 @@ export const metadata: Metadata = {
   title: 'Convert Markdown to PDF Online - Free & Private | iCreatePDF',
   description: 'Convert styled Markdown text files into standard PDF page layouts locally. Completely private, browser-based Markdown-to-PDF utility.',
   keywords: 'markdown to pdf, convert md to pdf, markdown editor pdf converter, client side md pdf',
-  alternates: {
-    canonical: '/markdown-to-pdf',
-  },
+  alternates: { canonical: '/markdown-to-pdf' },
+  openGraph: {
+    title: 'Convert Markdown to PDF Online - Free & Private | iCreatePDF',
+    description: 'Convert styled Markdown text files into standard PDF page layouts locally. Completely private, browser-based Markdown-to-PDF utility.',
+    type: 'website',
+  }
 };
 
 export default function MarkdownToPdfPage() {

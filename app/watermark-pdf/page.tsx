@@ -7,6 +7,12 @@ export const metadata: Metadata = {
   title: 'Watermark PDF Online - Free & Private | iCreatePDF',
   description: 'Add custom text watermarks to all pages of a PDF file. 100% client-side with positioning, size, and opacity adjustments.',
   keywords: 'watermark pdf, add watermark to pdf, watermark pdf online, free watermark pdf, private pdf watermark',
+  alternates: { canonical: '/watermark-pdf' },
+  openGraph: {
+    title: 'Watermark PDF Online - Free & Private | iCreatePDF',
+    description: 'Add custom text watermarks to all pages of a PDF file. 100% client-side with positioning, size, and opacity adjustments.',
+    type: 'website',
+  }
 };
 
 export default function WatermarkPdfPage() {

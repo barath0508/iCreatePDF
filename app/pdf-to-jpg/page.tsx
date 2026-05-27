@@ -7,6 +7,12 @@ export const metadata: Metadata = {
   title: 'Convert PDF to JPG Online - Free & Private | iCreatePDF',
   description: 'Convert PDF pages to JPG images in seconds. 100% client-side, drag & drop files, and download image ZIP instantly.',
   keywords: 'convert pdf to jpg, pdf to jpg, pdf to image, extract pdf pages to jpg, private pdf to jpg',
+  alternates: { canonical: '/pdf-to-jpg' },
+  openGraph: {
+    title: 'Convert PDF to JPG Online - Free & Private | iCreatePDF',
+    description: 'Convert PDF pages to JPG images in seconds. 100% client-side, drag & drop files, and download image ZIP instantly.',
+    type: 'website',
+  }
 };
 
 export default function PdfToJpgPage() {

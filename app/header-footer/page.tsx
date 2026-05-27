@@ -2,7 +2,17 @@ import type { Metadata } from 'next';
 import { Navigation } from '@/components/landing/navigation';
 import { HeaderFooterTool } from '@/components/tools/HeaderFooterTool';
 import { FooterSection } from '@/components/landing/footer-section';
-export const metadata: Metadata = { title: 'Add Header and Footer to PDF Online Free | iCreatePDF', description: 'Add custom headers and footers to every page of your PDF. Include page numbers, company name, date, or any text. 100% browser-based.', keywords: 'add header footer pdf, pdf header footer online, stamp header pdf, pdf footer text, add header to pdf free', alternates: { canonical: '/header-footer' } };
+export const metadata: Metadata = {
+  title: 'Add Header and Footer to PDF Online Free | iCreatePDF',
+  description: 'Add custom headers and footers to every page of your PDF. Include page numbers, company name, date, or any text. 100% browser-based.',
+  keywords: 'add header footer pdf, pdf header footer online, stamp header pdf, pdf footer text, add header to pdf free',
+  alternates: { canonical: '/header-footer' },
+  openGraph: {
+    title: 'Add Header and Footer to PDF Online Free | iCreatePDF',
+    description: 'Add custom headers and footers to every page of your PDF. Include page numbers, company name, date, or any text. 100% browser-based.',
+    type: 'website',
+  }
+};
 export default function HeaderFooterPage() {
   return (
     <main className="relative min-h-screen overflow-x-hidden bg-black text-white flex flex-col justify-between selection:bg-purple-500/30">

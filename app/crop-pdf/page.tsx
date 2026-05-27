@@ -2,7 +2,17 @@ import type { Metadata } from 'next';
 import { Navigation } from '@/components/landing/navigation';
 import { CropTool } from '@/components/tools/CropTool';
 import { FooterSection } from '@/components/landing/footer-section';
-export const metadata: Metadata = { title: 'Crop PDF Pages Online Free | iCreatePDF', description: 'Crop PDF pages by trimming margins from any side. Remove scanner borders, white space, and unwanted margins from all pages locally.', keywords: 'crop pdf, trim pdf margins, remove pdf borders, crop pdf pages online free, pdf margin trimmer', alternates: { canonical: '/crop-pdf' } };
+export const metadata: Metadata = {
+  title: 'Crop PDF Pages Online Free | iCreatePDF',
+  description: 'Crop PDF pages by trimming margins from any side. Remove scanner borders, white space, and unwanted margins from all pages locally.',
+  keywords: 'crop pdf, trim pdf margins, remove pdf borders, crop pdf pages online free, pdf margin trimmer',
+  alternates: { canonical: '/crop-pdf' },
+  openGraph: {
+    title: 'Crop PDF Pages Online Free | iCreatePDF',
+    description: 'Crop PDF pages by trimming margins from any side. Remove scanner borders, white space, and unwanted margins from all pages locally.',
+    type: 'website',
+  }
+};
 export default function CropPdfPage() {
   return (
     <main className="relative min-h-screen overflow-x-hidden bg-black text-white flex flex-col justify-between selection:bg-purple-500/30">

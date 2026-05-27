@@ -7,6 +7,12 @@ export const metadata: Metadata = {
   title: 'Add PDF Page Numbers Online - Free & Private | iCreatePDF',
   description: 'Stamp page numbers onto a PDF document. Customize positioning, number label formatting, and fonts locally in-browser.',
   keywords: 'add page numbers to pdf, number pdf pages, pdf page numbers online, private pdf numbering',
+  alternates: { canonical: '/add-page-numbers' },
+  openGraph: {
+    title: 'Add PDF Page Numbers Online - Free & Private | iCreatePDF',
+    description: 'Stamp page numbers onto a PDF document. Customize positioning, number label formatting, and fonts locally in-browser.',
+    type: 'website',
+  }
 };
 
 export default function PageNumbersPage() {

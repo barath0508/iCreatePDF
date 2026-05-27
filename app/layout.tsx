@@ -85,7 +85,15 @@ export default function RootLayout({
           }}
         />
       </head>
-      <body className="font-sans antialiased bg-black text-white">
+      <body className="font-sans antialiased bg-black text-white relative min-h-screen overflow-x-hidden">
+        {/* Ambient premium background glows */}
+        <div className="fixed inset-0 -z-50 overflow-hidden pointer-events-none opacity-40 select-none">
+          <div className="absolute top-[-10%] left-[-10%] w-[50%] h-[50%] rounded-full bg-purple-950/20 blur-[130px]" />
+          <div className="absolute bottom-[-10%] right-[-10%] w-[50%] h-[50%] rounded-full bg-pink-950/15 blur-[130px]" />
+          <div className="absolute top-[40%] right-[10%] w-[35%] h-[35%] rounded-full bg-blue-950/15 blur-[110px]" />
+          {/* Elegant grid overlay */}
+          <div className="absolute inset-0 bg-[linear-gradient(to_right,#80808008_1px,transparent_1px),linear-gradient(to_bottom,#80808008_1px,transparent_1px)] bg-[size:24px_24px]" />
+        </div>
         {children}
         <Analytics />
       </body>

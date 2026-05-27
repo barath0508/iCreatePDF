@@ -7,9 +7,12 @@ export const metadata: Metadata = {
   title: 'Protect PDF Online - Set Password & Encrypt | iCreatePDF',
   description: 'Secure your PDF documents with passwords locally. Encrypt your files client-side without uploading them to any servers.',
   keywords: 'protect pdf, encrypt pdf, password protect pdf, secure pdf online, private pdf encrypt',
-  alternates: {
-    canonical: '/protect-pdf',
-  },
+  alternates: { canonical: '/protect-pdf' },
+  openGraph: {
+    title: 'Protect PDF Online - Set Password & Encrypt | iCreatePDF',
+    description: 'Secure your PDF documents with passwords locally. Encrypt your files client-side without uploading them to any servers.',
+    type: 'website',
+  }
 };
 
 export default function ProtectPdfPage() {

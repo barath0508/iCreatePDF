@@ -7,9 +7,12 @@ export const metadata: Metadata = {
   title: 'Edit PDF Online - Add Text Overlays & Annotations | iCreatePDF',
   description: 'Edit PDF files directly in your web browser. Place text overlay annotations, customize colors, and write them back into the PDF.',
   keywords: 'edit pdf, annotate pdf, add text to pdf, overlay text on pdf, edit pdf free online',
-  alternates: {
-    canonical: '/edit-pdf',
-  },
+  alternates: { canonical: '/edit-pdf' },
+  openGraph: {
+    title: 'Edit PDF Online - Add Text Overlays & Annotations | iCreatePDF',
+    description: 'Edit PDF files directly in your web browser. Place text overlay annotations, customize colors, and write them back into the PDF.',
+    type: 'website',
+  }
 };
 
 export default function EditPdfPage() {

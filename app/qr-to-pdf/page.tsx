@@ -2,7 +2,17 @@ import type { Metadata } from 'next';
 import { Navigation } from '@/components/landing/navigation';
 import { QrToPdfTool } from '@/components/tools/QrToPdfTool';
 import { FooterSection } from '@/components/landing/footer-section';
-export const metadata: Metadata = { title: 'Generate QR Code to PDF Online Free | iCreatePDF', description: 'Create a PDF document with an embedded QR code. Enter any URL or text, customize size and labels, and download as a clean A4 PDF instantly.', keywords: 'qr code to pdf, generate qr code pdf, create pdf with qr code, qr code generator pdf, embed qr code pdf free', alternates: { canonical: '/qr-to-pdf' } };
+export const metadata: Metadata = {
+  title: 'Generate QR Code to PDF Online Free | iCreatePDF',
+  description: 'Create a PDF document with an embedded QR code. Enter any URL or text, customize size and labels, and download as a clean A4 PDF instantly.',
+  keywords: 'qr code to pdf, generate qr code pdf, create pdf with qr code, qr code generator pdf, embed qr code pdf free',
+  alternates: { canonical: '/qr-to-pdf' },
+  openGraph: {
+    title: 'Generate QR Code to PDF Online Free | iCreatePDF',
+    description: 'Create a PDF document with an embedded QR code. Enter any URL or text, customize size and labels, and download as a clean A4 PDF instantly.',
+    type: 'website',
+  }
+};
 export default function QrToPdfPage() {
   return (
     <main className="relative min-h-screen overflow-x-hidden bg-black text-white flex flex-col justify-between selection:bg-purple-500/30">

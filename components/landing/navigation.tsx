@@ -1,11 +1,11 @@
 'use client';
 
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
 import { usePathname } from 'next/navigation';
 import { Button } from '@/components/ui/button';
-import { Menu, X, FileText } from 'lucide-react';
+import { Menu, X, Search, FileText, Sparkles } from 'lucide-react';
 
 const navLinks = [
   { name: 'Home', href: '/' },
@@ -13,10 +13,48 @@ const navLinks = [
   { name: 'Contact', href: '/contact' },
 ];
 
+const searchTools = [
+  { title: 'Merge PDF', href: '/merge-pdf', desc: 'Combine multiple PDF documents into a single document.' },
+  { title: 'Split PDF', href: '/split-pdf', desc: 'Extract page ranges or split a PDF into separate files.' },
+  { title: 'Organize PDF', href: '/organize-pdf', desc: 'Rearrange, rotate, or delete specific pages visually.' },
+  { title: 'JPG to PDF', href: '/jpg-to-pdf', desc: 'Convert JPG, PNG, WEBP, HEIC, and BMP images into a clean PDF.' },
+  { title: 'PDF to JPG', href: '/pdf-to-jpg', desc: 'Extract each page of a PDF document as high-fidelity JPEG images.' },
+  { title: 'Word to PDF', href: '/word-to-pdf', desc: 'Convert standard Microsoft Word (.docx) documents into clean PDFs.' },
+  { title: 'Scan to PDF', href: '/scan-to-pdf', desc: 'Capture document pages using your camera and compile into a PDF.' },
+  { title: 'Compress PDF', href: '/compress-pdf', desc: 'Optimize file streams locally to decrease PDF document sizes.' },
+  { title: 'Rotate PDF', href: '/rotate-pdf', desc: 'Rotate PDF document pages clockwise in bulk or individually.' },
+  { title: 'Protect PDF', href: '/protect-pdf', desc: 'Encrypt your PDF files with a secure password locally.' },
+  { title: 'Unlock PDF', href: '/unlock-pdf', desc: 'Strip password encryption locks from PDF files client-side.' },
+  { title: 'Watermark PDF', href: '/watermark-pdf', desc: 'Stamp configurable text overlays on all pages of a PDF document.' },
+  { title: 'Page Numbers', href: '/add-page-numbers', desc: 'Add page numbers with custom layout positioning and labels.' },
+  { title: 'Sign PDF', href: '/sign-pdf', desc: 'Draw or type your signature and visually stamp it on PDF pages.' },
+  { title: 'PDF to Text', href: '/pdf-to-text', desc: 'Extract structured text layouts from PDF files.' },
+  { title: 'Edit PDF', href: '/edit-pdf', desc: 'Insert custom text annotation overlays on top of PDF layouts.' },
+  { title: 'Verify Signature', href: '/verify-signature', desc: 'Inspect digital certificates and verify signed PDF integrity.' },
+  { title: 'HTML to PDF', href: '/html-to-pdf', desc: 'Render your custom HTML/CSS code templates into PDF pages.' },
+  { title: 'Markdown to PDF', href: '/markdown-to-pdf', desc: 'Write styled Markdown documents and compile them to clean PDFs.' },
+  { title: 'Flatten PDF', href: '/flatten-pdf', desc: 'Merge forms, fields, and annotation layers into static text.' },
+  { title: 'Grayscale PDF', href: '/grayscale-pdf', desc: 'Convert colorful PDF documents to black and white.' },
+  { title: 'Compare PDF', href: '/compare-pdf', desc: 'Audit document differences side-by-side with synchronized scrolling.' },
+  { title: 'Redact PDF', href: '/redact-pdf', desc: 'Draw black boxes over sensitive content — permanently burned.' },
+  { title: 'Crop PDF', href: '/crop-pdf', desc: 'Trim scanner borders and excess whitespace from PDF page margins.' },
+  { title: 'Extract Pages', href: '/extract-pages', desc: 'Pull specific pages or ranges (1,3,5-8) into a new PDF.' },
+  { title: 'Repair PDF', href: '/repair-pdf', desc: 'Recover corrupted PDF files by rebuilding cross-reference tables.' },
+  { title: 'PDF Metadata', href: '/pdf-metadata', desc: 'View and edit hidden document properties: title, author, subject.' },
+  { title: 'Header & Footer', href: '/header-footer', desc: 'Stamp custom text at the top and bottom of every page.' },
+  { title: 'Resize PDF', href: '/resize-pdf', desc: 'Normalize all pages to A4, Letter, A3, Legal, or A5.' },
+  { title: 'Bates Numbering', href: '/bates-numbering', desc: 'Sequential legal stamping with custom prefix, suffix, and padding.' },
+  { title: 'Invert PDF', href: '/invert-pdf', desc: 'Pixel-invert every page for dark mode reading.' },
+  { title: 'QR to PDF', href: '/qr-to-pdf', desc: 'Generate a clean A4 PDF with an embedded QR code.' },
+];
+
 export function Navigation() {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const [isSearchOpen, setIsSearchOpen] = useState(false);
+  const [searchQuery, setSearchQuery] = useState('');
   const pathname = usePathname();
+  const searchInputRef = useRef<HTMLInputElement>(null);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -25,6 +63,36 @@ export function Navigation() {
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
+
+  // Keyboard shortcut Ctrl+K / Cmd+K
+  useEffect(() => {
+    const handleKeyDown = (e: KeyboardEvent) => {
+      if ((e.metaKey || e.ctrlKey) && e.key === 'k') {
+        e.preventDefault();
+        setIsSearchOpen((prev) => !prev);
+      }
+    };
+    window.addEventListener('keydown', handleKeyDown);
+    return () => window.removeEventListener('keydown', handleKeyDown);
+  }, []);
+
+  // Focus input when search opens
+  useEffect(() => {
+    if (isSearchOpen) {
+      setTimeout(() => searchInputRef.current?.focus(), 100);
+      document.body.style.overflow = 'hidden';
+    } else {
+      document.body.style.overflow = '';
+    }
+    return () => {
+      document.body.style.overflow = '';
+    };
+  }, [isSearchOpen]);
+
+  const filteredTools = searchTools.filter((t) =>
+    t.title.toLowerCase().includes(searchQuery.toLowerCase()) ||
+    t.desc.toLowerCase().includes(searchQuery.toLowerCase())
+  );
 
   return (
     <header
@@ -66,7 +134,7 @@ export function Navigation() {
           </Link>
 
           {/* Desktop Navigation */}
-          <div className="hidden md:flex items-center gap-12">
+          <div className="hidden md:flex items-center gap-8">
             {navLinks.map((link) => {
               const isActive = pathname === link.href;
               return (
@@ -86,6 +154,20 @@ export function Navigation() {
                 </Link>
               );
             })}
+
+            {/* Quick Search trigger button */}
+            <button
+              onClick={() => setIsSearchOpen(true)}
+              className={`flex items-center gap-2 text-xs border rounded-full px-3 py-1.5 transition-all ${
+                isScrolled
+                  ? 'border-foreground/10 bg-foreground/5 text-foreground/50 hover:bg-foreground/10 hover:text-foreground'
+                  : 'border-white/10 bg-white/5 text-white/50 hover:bg-white/10 hover:text-white'
+              }`}
+            >
+              <Search className="w-3.5 h-3.5" />
+              <span>Search tools...</span>
+              <kbd className="text-[10px] font-mono opacity-50 px-1 bg-white/10 rounded">⌘K</kbd>
+            </button>
           </div>
 
           {/* Desktop CTA */}
@@ -104,17 +186,26 @@ export function Navigation() {
           </div>
 
           {/* Mobile Menu Button */}
-          <button
-            onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-            className={`md:hidden p-2 transition-colors duration-500 ${isScrolled || isMobileMenuOpen ? 'text-foreground' : 'text-white'}`}
-            aria-label="Toggle menu"
-          >
-            {isMobileMenuOpen ? (
-              <X className="w-6 h-6" />
-            ) : (
-              <Menu className="w-6 h-6" />
-            )}
-          </button>
+          <div className="flex items-center gap-3 md:hidden">
+            <button
+              onClick={() => setIsSearchOpen(true)}
+              className={`p-2 rounded-lg transition-colors ${isScrolled ? 'text-foreground hover:bg-foreground/5' : 'text-white hover:bg-white/5'}`}
+              aria-label="Search tools"
+            >
+              <Search className="w-5 h-5" />
+            </button>
+            <button
+              onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+              className={`p-2 transition-colors duration-500 ${isScrolled || isMobileMenuOpen ? 'text-foreground' : 'text-white'}`}
+              aria-label="Toggle menu"
+            >
+              {isMobileMenuOpen ? (
+                <X className="w-6 h-6" />
+              ) : (
+                <Menu className="w-6 h-6" />
+              )}
+            </button>
+          </div>
         </div>
       </nav>
       
@@ -165,6 +256,64 @@ export function Navigation() {
           </div>
         </div>
       </div>
+
+      {/* Floating command palette search overlay */}
+      {isSearchOpen && (
+        <div className="fixed inset-0 z-[100] bg-black/60 backdrop-blur-md flex items-start justify-center pt-24 px-4">
+          <div className="w-full max-w-xl bg-zinc-950 border border-white/10 rounded-2xl shadow-2xl overflow-hidden scale-in-center">
+            {/* Input Header */}
+            <div className="flex items-center gap-3 px-4 py-3 border-b border-white/5 bg-white/5">
+              <Search className="w-5 h-5 text-purple-400 shrink-0" />
+              <input
+                ref={searchInputRef}
+                type="text"
+                value={searchQuery}
+                onChange={(e) => setSearchQuery(e.target.value)}
+                placeholder="Search by tool name or function..."
+                className="w-full bg-transparent text-white border-0 outline-none placeholder-white/30 text-sm py-1"
+              />
+              <button 
+                onClick={() => { setIsSearchOpen(false); setSearchQuery(''); }}
+                className="p-1 hover:bg-white/10 rounded text-white/50 hover:text-white transition-colors"
+              >
+                <X className="w-4 h-4" />
+              </button>
+            </div>
+
+            {/* Results body */}
+            <div className="max-h-[360px] overflow-y-auto p-2 divide-y divide-white/5">
+              {filteredTools.length > 0 ? (
+                filteredTools.map((tool) => (
+                  <Link
+                    key={tool.title}
+                    href={tool.href}
+                    onClick={() => { setIsSearchOpen(false); setSearchQuery(''); }}
+                    className="flex items-start gap-3 p-3 rounded-xl hover:bg-white/5 transition-colors group text-left"
+                  >
+                    <div className="p-2 rounded-lg bg-white/5 border border-white/10 text-purple-400 group-hover:bg-purple-600 group-hover:text-white transition-colors shrink-0 mt-0.5">
+                      <Sparkles className="w-3.5 h-3.5" />
+                    </div>
+                    <div>
+                      <h4 className="text-sm font-semibold text-white group-hover:text-purple-400 transition-colors">{tool.title}</h4>
+                      <p className="text-xs text-white/40 leading-normal">{tool.desc}</p>
+                    </div>
+                  </Link>
+                ))
+              ) : (
+                <div className="text-center py-8 text-white/30 text-xs">
+                  No matching tools found for "{searchQuery}"
+                </div>
+              )}
+            </div>
+
+            {/* Modal Footer helper */}
+            <div className="px-4 py-2 bg-white/5 border-t border-white/5 text-[10px] text-white/30 flex items-center justify-between">
+              <span>Press <kbd className="bg-white/10 px-1 rounded text-white/50">ESC</kbd> to close</span>
+              <span>32 local tools available</span>
+            </div>
+          </div>
+        </div>
+      )}
     </header>
   );
 }

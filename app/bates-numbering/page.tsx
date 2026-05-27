@@ -2,7 +2,17 @@ import type { Metadata } from 'next';
 import { Navigation } from '@/components/landing/navigation';
 import { BatesTool } from '@/components/tools/BatesTool';
 import { FooterSection } from '@/components/landing/footer-section';
-export const metadata: Metadata = { title: 'Bates Numbering PDF Online Free | iCreatePDF', description: 'Add Bates numbers to PDF documents for legal, medical, and compliance workflows. Configure prefix, suffix, padding, and position. Browser-based.', keywords: 'bates numbering pdf, add bates stamps pdf, legal pdf numbering, bates number generator online free, pdf sequential numbering', alternates: { canonical: '/bates-numbering' } };
+export const metadata: Metadata = {
+  title: 'Bates Numbering PDF Online Free | iCreatePDF',
+  description: 'Add Bates numbers to PDF documents for legal, medical, and compliance workflows. Configure prefix, suffix, padding, and position. Browser-based.',
+  keywords: 'bates numbering pdf, add bates stamps pdf, legal pdf numbering, bates number generator online free, pdf sequential numbering',
+  alternates: { canonical: '/bates-numbering' },
+  openGraph: {
+    title: 'Bates Numbering PDF Online Free | iCreatePDF',
+    description: 'Add Bates numbers to PDF documents for legal, medical, and compliance workflows. Configure prefix, suffix, padding, and position. Browser-based.',
+    type: 'website',
+  }
+};
 export default function BatesPage() {
   return (
     <main className="relative min-h-screen overflow-x-hidden bg-black text-white flex flex-col justify-between selection:bg-purple-500/30">

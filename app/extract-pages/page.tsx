@@ -2,7 +2,17 @@ import type { Metadata } from 'next';
 import { Navigation } from '@/components/landing/navigation';
 import { ExtractPagesTool } from '@/components/tools/ExtractPagesTool';
 import { FooterSection } from '@/components/landing/footer-section';
-export const metadata: Metadata = { title: 'Extract Pages from PDF Free Online | iCreatePDF', description: 'Extract specific pages from a PDF file. Enter page numbers or ranges to pull out exactly the pages you need into a new PDF document.', keywords: 'extract pages from pdf, pdf page extractor, pull pages from pdf, pdf page picker online free', alternates: { canonical: '/extract-pages' } };
+export const metadata: Metadata = {
+  title: 'Extract Pages from PDF Free Online | iCreatePDF',
+  description: 'Extract specific pages from a PDF file. Enter page numbers or ranges to pull out exactly the pages you need into a new PDF document.',
+  keywords: 'extract pages from pdf, pdf page extractor, pull pages from pdf, pdf page picker online free',
+  alternates: { canonical: '/extract-pages' },
+  openGraph: {
+    title: 'Extract Pages from PDF Free Online | iCreatePDF',
+    description: 'Extract specific pages from a PDF file. Enter page numbers or ranges to pull out exactly the pages you need into a new PDF document.',
+    type: 'website',
+  }
+};
 export default function ExtractPagesPage() {
   return (
     <main className="relative min-h-screen overflow-x-hidden bg-black text-white flex flex-col justify-between selection:bg-purple-500/30">

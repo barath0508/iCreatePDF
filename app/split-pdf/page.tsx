@@ -7,6 +7,12 @@ export const metadata: Metadata = {
   title: 'Split PDF Online - Free & Private | iCreatePDF',
   description: 'Extract page ranges or separate all pages in a PDF. 100% client-side, drag & drop files, and download split parts instantly.',
   keywords: 'split pdf, extract pages pdf, split pdf online, split pdf free, private pdf splitter',
+  alternates: { canonical: '/split-pdf' },
+  openGraph: {
+    title: 'Split PDF Online - Free & Private | iCreatePDF',
+    description: 'Extract page ranges or separate all pages in a PDF. 100% client-side, drag & drop files, and download split parts instantly.',
+    type: 'website',
+  }
 };
 
 export default function SplitPdfPage() {

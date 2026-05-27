@@ -7,6 +7,12 @@ export const metadata: Metadata = {
   title: 'Merge PDF Online - Free & Private | iCreatePDF',
   description: 'Combine multiple PDF files into one document in seconds. 100% client-side, drag & drop files, reorder pages, and download instantly.',
   keywords: 'merge pdf, combine pdf, merge pdf online, merge pdf free, private pdf merger',
+  alternates: { canonical: '/merge-pdf' },
+  openGraph: {
+    title: 'Merge PDF Online - Free & Private | iCreatePDF',
+    description: 'Combine multiple PDF files into one document in seconds. 100% client-side, drag & drop files, reorder pages, and download instantly.',
+    type: 'website',
+  }
 };
 
 export default function MergePdfPage() {

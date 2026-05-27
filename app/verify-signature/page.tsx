@@ -7,9 +7,12 @@ export const metadata: Metadata = {
   title: 'Verify PDF Signature - Validate Certificates Online | iCreatePDF',
   description: 'Validate cryptographic signatures on PDF files locally. Inspect signer identity details and document byte-range integrity.',
   keywords: 'verify pdf signature, validate digital signature pdf, check pdf certificate, verify signed pdf online',
-  alternates: {
-    canonical: '/verify-signature',
-  },
+  alternates: { canonical: '/verify-signature' },
+  openGraph: {
+    title: 'Verify PDF Signature - Validate Certificates Online | iCreatePDF',
+    description: 'Validate cryptographic signatures on PDF files locally. Inspect signer identity details and document byte-range integrity.',
+    type: 'website',
+  }
 };
 
 export default function VerifySignaturePage() {

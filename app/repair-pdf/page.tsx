@@ -2,7 +2,17 @@ import type { Metadata } from 'next';
 import { Navigation } from '@/components/landing/navigation';
 import { RepairTool } from '@/components/tools/RepairTool';
 import { FooterSection } from '@/components/landing/footer-section';
-export const metadata: Metadata = { title: 'Repair PDF Online Free - Fix Corrupted PDF Files | iCreatePDF', description: 'Fix corrupted, damaged, or broken PDF files online. Rebuilds cross-reference tables and object streams to recover readable documents locally.', keywords: 'repair pdf, fix corrupted pdf, recover damaged pdf, pdf repair tool online free, fix broken pdf', alternates: { canonical: '/repair-pdf' } };
+export const metadata: Metadata = {
+  title: 'Repair PDF Online Free - Fix Corrupted PDF Files | iCreatePDF',
+  description: 'Fix corrupted, damaged, or broken PDF files online. Rebuilds cross-reference tables and object streams to recover readable documents locally.',
+  keywords: 'repair pdf, fix corrupted pdf, recover damaged pdf, pdf repair tool online free, fix broken pdf',
+  alternates: { canonical: '/repair-pdf' },
+  openGraph: {
+    title: 'Repair PDF Online Free - Fix Corrupted PDF Files | iCreatePDF',
+    description: 'Fix corrupted, damaged, or broken PDF files online. Rebuilds cross-reference tables and object streams to recover readable documents locally.',
+    type: 'website',
+  }
+};
 export default function RepairPdfPage() {
   return (
     <main className="relative min-h-screen overflow-x-hidden bg-black text-white flex flex-col justify-between selection:bg-purple-500/30">

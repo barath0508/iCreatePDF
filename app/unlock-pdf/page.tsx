@@ -7,14 +7,12 @@ export const metadata: Metadata = {
   title: 'Unlock PDF Online - Free & Private | iCreatePDF',
   description: 'Unlock password-protected PDF files instantly in your web browser. Remove PDF locks locally without uploading sensitive files.',
   keywords: 'unlock pdf, remove pdf password, unlock pdf online, free unlock pdf, private pdf decrypter',
-  alternates: {
-    canonical: 'https://icreatepdf.com/unlock-pdf',
-    languages: {
-      'es': 'https://icreatepdf.com/es',
-      'hi': 'https://icreatepdf.com/hi',
-      'ta': 'https://icreatepdf.com/ta',
-    },
-  },
+  alternates: { canonical: '/unlock-pdf' },
+  openGraph: {
+    title: 'Unlock PDF Online - Free & Private | iCreatePDF',
+    description: 'Unlock password-protected PDF files instantly in your web browser. Remove PDF locks locally without uploading sensitive files.',
+    type: 'website',
+  }
 };
 
 export default function UnlockPdfPage() {

@@ -12,6 +12,12 @@ export const metadata: Metadata = {
   title: 'Convert JPG to PDF Online - Free & Private | iCreatePDF',
   description: 'Convert JPG or JPEG images to high-quality PDF files. Completely client-side, drag & drop multiple JPGs, reorder, adjust sizes, and download instantly.',
   keywords: 'convert jpg to pdf, jpeg to pdf, convert image to pdf, free online jpg to pdf, private pdf converter',
+  alternates: { canonical: '/jpg-to-pdf' },
+  openGraph: {
+    title: 'Convert JPG to PDF Online - Free & Private | iCreatePDF',
+    description: 'Convert JPG or JPEG images to high-quality PDF files. Completely client-side, drag & drop multiple JPGs, reorder, adjust sizes, and download instantly.',
+    type: 'website',
+  }
 };
 
 export default function JpgToPdfPage() {

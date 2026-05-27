@@ -7,9 +7,12 @@ export const metadata: Metadata = {
   title: 'Flatten PDF Online - Merge Form Fields & Forms | iCreatePDF',
   description: 'Flatten interactive form fields and digital annotation layers into flat vector graphics locally inside browser memory. Secure PDF flattener.',
   keywords: 'flatten pdf, flat pdf, flatten form fields, make pdf non editable, secure pdf forms online',
-  alternates: {
-    canonical: '/flatten-pdf',
-  },
+  alternates: { canonical: '/flatten-pdf' },
+  openGraph: {
+    title: 'Flatten PDF Online - Merge Form Fields & Forms | iCreatePDF',
+    description: 'Flatten interactive form fields and digital annotation layers into flat vector graphics locally inside browser memory. Secure PDF flattener.',
+    type: 'website',
+  }
 };
 
 export default function FlattenPdfPage() {

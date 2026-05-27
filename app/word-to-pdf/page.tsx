@@ -11,6 +11,12 @@ export const metadata: Metadata = {
   title: 'Convert Word to PDF Online - Free & Private | iCreatePDF',
   description: 'Convert DOCX Word documents into PDF files. Completely client-side inside browser sandbox, preserving text layout with 100% data privacy.',
   keywords: 'convert word to pdf, docx to pdf, word document converter online, free docx to pdf, private pdf converter, icreatepdf',
+  alternates: { canonical: '/word-to-pdf' },
+  openGraph: {
+    title: 'Convert Word to PDF Online - Free & Private | iCreatePDF',
+    description: 'Convert DOCX Word documents into PDF files. Completely client-side inside browser sandbox, preserving text layout with 100% data privacy.',
+    type: 'website',
+  }
 };
 
 export default function WordToPdfPage() {

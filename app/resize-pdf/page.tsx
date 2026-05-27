@@ -2,7 +2,17 @@ import type { Metadata } from 'next';
 import { Navigation } from '@/components/landing/navigation';
 import { ResizeTool } from '@/components/tools/ResizeTool';
 import { FooterSection } from '@/components/landing/footer-section';
-export const metadata: Metadata = { title: 'Resize PDF Pages to A4, Letter or Custom Size Free | iCreatePDF', description: 'Normalize all PDF pages to A4, Letter, A3, Legal, or a custom size. Resize pages without losing content quality, entirely in your browser.', keywords: 'resize pdf pages, pdf page size changer, convert pdf to a4, pdf page resizer online free, normalize pdf size', alternates: { canonical: '/resize-pdf' } };
+export const metadata: Metadata = {
+  title: 'Resize PDF Pages to A4, Letter or Custom Size Free | iCreatePDF',
+  description: 'Normalize all PDF pages to A4, Letter, A3, Legal, or a custom size. Resize pages without losing content quality, entirely in your browser.',
+  keywords: 'resize pdf pages, pdf page size changer, convert pdf to a4, pdf page resizer online free, normalize pdf size',
+  alternates: { canonical: '/resize-pdf' },
+  openGraph: {
+    title: 'Resize PDF Pages to A4, Letter or Custom Size Free | iCreatePDF',
+    description: 'Normalize all PDF pages to A4, Letter, A3, Legal, or a custom size. Resize pages without losing content quality, entirely in your browser.',
+    type: 'website',
+  }
+};
 export default function ResizePdfPage() {
   return (
     <main className="relative min-h-screen overflow-x-hidden bg-black text-white flex flex-col justify-between selection:bg-purple-500/30">

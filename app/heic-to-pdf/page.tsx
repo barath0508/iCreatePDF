@@ -12,6 +12,12 @@ export const metadata: Metadata = {
   title: 'Convert HEIC to PDF Online - Free & Private | iCreatePDF',
   description: 'Convert Apple HEIC photos to PDF online. 100% client-side, drag & drop multiple HEIC images from iPhone, reorder, adjust sizes, and download instantly.',
   keywords: 'convert heic to pdf, iphone heic to pdf, heic to pdf online, free heic to pdf, private pdf converter',
+  alternates: { canonical: '/heic-to-pdf' },
+  openGraph: {
+    title: 'Convert HEIC to PDF Online - Free & Private | iCreatePDF',
+    description: 'Convert Apple HEIC photos to PDF online. 100% client-side, drag & drop multiple HEIC images from iPhone, reorder, adjust sizes, and download instantly.',
+    type: 'website',
+  }
 };
 
 export default function HeicToPdfPage() {

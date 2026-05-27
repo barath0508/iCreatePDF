@@ -7,14 +7,12 @@ export const metadata: Metadata = {
   title: 'Rotate PDF Online - Free & Private | iCreatePDF',
   description: 'Rotate PDF pages in seconds. 100% client-side, drag & drop files, select rotation angles visually, and download instantly.',
   keywords: 'rotate pdf, rotate pdf pages, rotate pdf online, free rotate pdf, private pdf rotation',
-  alternates: {
-    canonical: 'https://icreatepdf.com/rotate-pdf',
-    languages: {
-      'es': 'https://icreatepdf.com/es',
-      'hi': 'https://icreatepdf.com/hi',
-      'ta': 'https://icreatepdf.com/ta',
-    },
-  },
+  alternates: { canonical: '/rotate-pdf' },
+  openGraph: {
+    title: 'Rotate PDF Online - Free & Private | iCreatePDF',
+    description: 'Rotate PDF pages in seconds. 100% client-side, drag & drop files, select rotation angles visually, and download instantly.',
+    type: 'website',
+  }
 };
 
 export default function RotatePdfPage() {

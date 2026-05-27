@@ -12,6 +12,12 @@ export const metadata: Metadata = {
   title: 'Convert PNG to PDF Online - Free & Private | iCreatePDF',
   description: 'Convert PNG images to high-quality PDF files. Completely client-side, drag & drop multiple PNGs, reorder, adjust sizes, and download instantly.',
   keywords: 'convert png to pdf, png to pdf, convert image to pdf, free online png to pdf, private pdf converter',
+  alternates: { canonical: '/png-to-pdf' },
+  openGraph: {
+    title: 'Convert PNG to PDF Online - Free & Private | iCreatePDF',
+    description: 'Convert PNG images to high-quality PDF files. Completely client-side, drag & drop multiple PNGs, reorder, adjust sizes, and download instantly.',
+    type: 'website',
+  }
 };
 
 export default function PngToPdfPage() {

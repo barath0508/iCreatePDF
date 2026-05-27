@@ -7,9 +7,12 @@ export const metadata: Metadata = {
   title: 'Extract Text from PDF Online - Free & Private | iCreatePDF',
   description: 'Extract raw text layouts from PDF documents page-by-page. 100% browser-based text extraction utility.',
   keywords: 'pdf to text, extract text from pdf, pdf text reader, read pdf text online',
-  alternates: {
-    canonical: '/pdf-to-text',
-  },
+  alternates: { canonical: '/pdf-to-text' },
+  openGraph: {
+    title: 'Extract Text from PDF Online - Free & Private | iCreatePDF',
+    description: 'Extract raw text layouts from PDF documents page-by-page. 100% browser-based text extraction utility.',
+    type: 'website',
+  }
 };
 
 export default function PdfToTextPage() {

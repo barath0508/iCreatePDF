@@ -7,14 +7,12 @@ export const metadata: Metadata = {
   title: 'Compress PDF Online - Free & Private | iCreatePDF',
   description: 'Compress PDF file size locally in your browser. Reduce PDF byte streams securely without uploading to cloud servers.',
   keywords: 'compress pdf, reduce pdf size, compress pdf online, free compress pdf, private pdf compression',
-  alternates: {
-    canonical: 'https://icreatepdf.com/compress-pdf',
-    languages: {
-      'es': 'https://icreatepdf.com/es',
-      'hi': 'https://icreatepdf.com/hi',
-      'ta': 'https://icreatepdf.com/ta',
-    },
-  },
+  alternates: { canonical: '/compress-pdf' },
+  openGraph: {
+    title: 'Compress PDF Online - Free & Private | iCreatePDF',
+    description: 'Compress PDF file size locally in your browser. Reduce PDF byte streams securely without uploading to cloud servers.',
+    type: 'website',
+  }
 };
 
 export default function CompressPdfPage() {

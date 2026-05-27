@@ -2,7 +2,17 @@ import type { Metadata } from 'next';
 import { Navigation } from '@/components/landing/navigation';
 import { MetadataTool } from '@/components/tools/MetadataTool';
 import { FooterSection } from '@/components/landing/footer-section';
-export const metadata: Metadata = { title: 'Edit PDF Metadata Online Free | iCreatePDF', description: 'View and edit PDF metadata fields: title, author, subject, keywords, and creator. Update document properties without uploading files.', keywords: 'edit pdf metadata, pdf properties editor, change pdf author, pdf title editor online, pdf document properties', alternates: { canonical: '/pdf-metadata' } };
+export const metadata: Metadata = {
+  title: 'Edit PDF Metadata Online Free | iCreatePDF',
+  description: 'View and edit PDF metadata fields: title, author, subject, keywords, and creator. Update document properties without uploading files.',
+  keywords: 'edit pdf metadata, pdf properties editor, change pdf author, pdf title editor online, pdf document properties',
+  alternates: { canonical: '/pdf-metadata' },
+  openGraph: {
+    title: 'Edit PDF Metadata Online Free | iCreatePDF',
+    description: 'View and edit PDF metadata fields: title, author, subject, keywords, and creator. Update document properties without uploading files.',
+    type: 'website',
+  }
+};
 export default function PdfMetadataPage() {
   return (
     <main className="relative min-h-screen overflow-x-hidden bg-black text-white flex flex-col justify-between selection:bg-purple-500/30">

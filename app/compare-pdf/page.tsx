@@ -7,9 +7,12 @@ export const metadata: Metadata = {
   title: 'Compare PDF Online - Sync Scroll Document Revision Check | iCreatePDF',
   description: 'Compare two PDF document versions side-by-side with synchronized scrolling locally in the browser. Easily audit content differences.',
   keywords: 'compare pdf, compare two pdfs online, side by side pdf compare, sync scroll pdf, visual pdf diff',
-  alternates: {
-    canonical: '/compare-pdf',
-  },
+  alternates: { canonical: '/compare-pdf' },
+  openGraph: {
+    title: 'Compare PDF Online - Sync Scroll Document Revision Check | iCreatePDF',
+    description: 'Compare two PDF document versions side-by-side with synchronized scrolling locally in the browser. Easily audit content differences.',
+    type: 'website',
+  }
 };
 
 export default function ComparePdfPage() {
