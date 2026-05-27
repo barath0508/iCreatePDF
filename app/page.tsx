@@ -9,7 +9,7 @@ import { CtaSection } from '@/components/landing/cta-section';
 import { FooterSection } from '@/components/landing/footer-section';
 import { 
   Combine, Scissors, Sliders, Type, Hash, FileImage, Image,
-  Minimize2, RotateCw, Unlock, Camera, FileText
+  Minimize2, RotateCw, Unlock, Camera, FileText, Shield, FileSignature, Edit, ShieldCheck
 } from 'lucide-react';
 
 const tools = [
@@ -68,6 +68,12 @@ const tools = [
     href: '/rotate-pdf',
   },
   {
+    icon: Shield,
+    title: 'Protect PDF',
+    desc: 'Encrypt your PDF files with a secure password locally.',
+    href: '/protect-pdf',
+  },
+  {
     icon: Unlock,
     title: 'Unlock PDF',
     desc: 'Strip password encryption locks from PDF files client-side.',
@@ -84,6 +90,30 @@ const tools = [
     title: 'Page Numbers',
     desc: 'Add page numbers with custom layout positioning and labels.',
     href: '/add-page-numbers',
+  },
+  {
+    icon: FileSignature,
+    title: 'Sign PDF',
+    desc: 'Draw or type your signature and visually stamp it on PDF pages.',
+    href: '/sign-pdf',
+  },
+  {
+    icon: FileText,
+    title: 'PDF to Text',
+    desc: 'Extract structured text layouts from PDF files to clipboard or TXT.',
+    href: '/pdf-to-text',
+  },
+  {
+    icon: Edit,
+    title: 'Edit PDF',
+    desc: 'Insert custom text annotation overlays on top of PDF layouts.',
+    href: '/edit-pdf',
+  },
+  {
+    icon: ShieldCheck,
+    title: 'Verify Signature',
+    desc: 'Inspect digital certificates and verify signed PDF integrity.',
+    href: '/verify-signature',
   },
 ];
 

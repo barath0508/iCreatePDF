@@ -17,6 +17,11 @@ const footerLinks = {
     { name: 'Rotate PDF', href: '/rotate-pdf' },
     { name: 'Compress PDF', href: '/compress-pdf' },
     { name: 'Unlock PDF', href: '/unlock-pdf' },
+    { name: 'Protect PDF', href: '/protect-pdf' },
+    { name: 'Sign PDF', href: '/sign-pdf' },
+    { name: 'Edit PDF', href: '/edit-pdf' },
+    { name: 'PDF to Text', href: '/pdf-to-text' },
+    { name: 'Verify Signature', href: '/verify-signature' },
   ],
   Resources: [
     { name: 'Blog', href: '/blog' },
