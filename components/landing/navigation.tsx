@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from 'react';
 import Link from 'next/link';
+import Image from 'next/image';
 import { usePathname } from 'next/navigation';
 import { Button } from '@/components/ui/button';
 import { Menu, X, FileText } from 'lucide-react';
@@ -46,7 +47,16 @@ export function Navigation() {
           }`}
         >
           {/* Logo */}
-          <Link href="/" className="inline-flex items-center gap-1 group transition-all duration-500 hover:opacity-90">
+          <Link href="/" className="inline-flex items-center gap-2.5 group transition-all duration-500 hover:opacity-90">
+            <div className="relative w-8 h-8 rounded-lg overflow-hidden border border-purple-500/20 shadow-md transition-transform duration-300 group-hover:scale-105">
+              <Image
+                src="/logo.png"
+                alt="iCreatePDF Logo"
+                fill
+                className="object-cover"
+                priority
+              />
+            </div>
             <span className="font-extrabold tracking-tight select-none text-white text-4xl font-display" style={{ letterSpacing: '-0.03em', lineHeight: 1 }}>
               <span className="bg-gradient-to-r from-purple-400 to-pink-400 bg-clip-text text-transparent">i</span>Create
             </span>

@@ -177,7 +177,7 @@ export function OrganizeTool() {
   };
 
   return (
-    <div className="w-full max-w-5xl mx-auto px-6 py-16">
+    <div className="w-full max-w-6xl mx-auto px-6 lg:px-12 py-16">
       <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
         
         {/* Workspace Gallery */}

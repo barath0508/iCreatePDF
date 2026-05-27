@@ -2,6 +2,7 @@
 
 import { ArrowUpRight } from 'lucide-react';
 import Link from 'next/link';
+import Image from 'next/image';
 
 const footerLinks = {
   Converters: [
@@ -51,7 +52,15 @@ export function FooterSection() {
         <div className="py-16 lg:py-20">
           <div className="grid grid-cols-2 md:grid-cols-5 gap-12 lg:gap-8">
             <div className="col-span-2">
-              <Link href="/" className="inline-flex items-center gap-1 mb-6 group hover:opacity-90 transition-opacity">
+              <Link href="/" className="inline-flex items-center gap-2.5 mb-6 group hover:opacity-90 transition-opacity">
+                <div className="relative w-8 h-8 rounded-lg overflow-hidden border border-purple-500/20 shadow-md transition-transform duration-300 group-hover:scale-105">
+                  <Image
+                    src="/logo.png"
+                    alt="iCreatePDF Logo"
+                    fill
+                    className="object-cover"
+                  />
+                </div>
                 <span className="font-extrabold tracking-tight select-none text-white text-4xl font-display" style={{ letterSpacing: '-0.03em', lineHeight: 1 }}>
                   <span className="bg-gradient-to-r from-purple-400 to-pink-400 bg-clip-text text-transparent">i</span>Create
                 </span>
