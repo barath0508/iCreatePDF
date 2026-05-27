@@ -9,7 +9,8 @@ import { CtaSection } from '@/components/landing/cta-section';
 import { FooterSection } from '@/components/landing/footer-section';
 import { 
   Combine, Scissors, Sliders, Type, Hash, FileImage, Image,
-  Minimize2, RotateCw, Unlock, Camera, FileText, Shield, FileSignature, Edit, ShieldCheck
+  Minimize2, RotateCw, Unlock, Camera, FileText, Shield, FileSignature, Edit, ShieldCheck,
+  Code, Layers, Printer, Columns
 } from 'lucide-react';
 
 const tools = [
@@ -114,6 +115,36 @@ const tools = [
     title: 'Verify Signature',
     desc: 'Inspect digital certificates and verify signed PDF integrity.',
     href: '/verify-signature',
+  },
+  {
+    icon: Code,
+    title: 'HTML to PDF',
+    desc: 'Render your custom HTML/CSS code templates into A4 PDF pages locally.',
+    href: '/html-to-pdf',
+  },
+  {
+    icon: FileText,
+    title: 'Markdown to PDF',
+    desc: 'Write styled Markdown documents and compile them to clean A4 PDFs.',
+    href: '/markdown-to-pdf',
+  },
+  {
+    icon: Layers,
+    title: 'Flatten PDF',
+    desc: 'Merge forms, fields, and annotation layers into static read-only PDF text.',
+    href: '/flatten-pdf',
+  },
+  {
+    icon: Printer,
+    title: 'Grayscale PDF',
+    desc: 'Convert colorful PDF documents to black and white to save printer ink.',
+    href: '/grayscale-pdf',
+  },
+  {
+    icon: Columns,
+    title: 'Compare PDF',
+    desc: 'Audit document differences side-by-side with synchronized scrolling.',
+    href: '/compare-pdf',
   },
 ];
 

@@ -1,7 +1,8 @@
 'use client';
 
 import React, { useState, useRef } from 'react';
-import { Upload, CheckCircle2, AlertTriangle, ShieldCheck, Loader2, Calendar, FileCheck, Info } from 'lucide-react';
+import { Upload, CheckCircle2, AlertTriangle, ShieldCheck, Loader2, Calendar, FileCheck, Info, Download } from 'lucide-react';
+import { PDFDocument, rgb } from 'pdf-lib';
 import { Button } from '@/components/ui/button';
 
 interface SignatureReport {
@@ -20,6 +21,7 @@ export function VerifySignatureTool() {
   const [isProcessing, setIsProcessing] = useState(false);
   const [error, setError] = useState<string | null>(null);
   const [report, setReport] = useState<SignatureReport | null>(null);
+  const [validatedPdfUrl, setValidatedPdfUrl] = useState<string | null>(null);
   const [isDraggingOver, setIsDraggingOver] = useState(false);
 
   const fileInputRef = useRef<HTMLInputElement>(null);
@@ -27,6 +29,7 @@ export function VerifySignatureTool() {
   const handleFiles = (uploadedFiles: FileList | File[]) => {
     setError(null);
     setReport(null);
+    setValidatedPdfUrl(null);
     const uploadedFile = uploadedFiles[0];
     if (!uploadedFile) return;
 
@@ -42,6 +45,7 @@ export function VerifySignatureTool() {
     if (!file) return;
     setIsProcessing(true);
     setError(null);
+    setValidatedPdfUrl(null);
 
     try {
       const buffer = await file.arrayBuffer();
@@ -114,6 +118,50 @@ export function VerifySignatureTool() {
         hashAlgorithm: 'SHA-256',
         byteRange
       });
+
+      // Generate visual certification stamp (ticked copy)
+      if (hasIntegrity) {
+        const pdfDoc = await PDFDocument.load(buffer);
+        const firstPage = pdfDoc.getPage(0);
+        const { width, height } = firstPage.getSize();
+
+        // Draw a neat verified green card/badge at the top right of the first page
+        firstPage.drawRectangle({
+          x: width - 260,
+          y: height - 60,
+          width: 240,
+          height: 45,
+          color: rgb(0.9, 0.98, 0.93),
+          borderColor: rgb(0.18, 0.65, 0.35),
+          borderWidth: 1.5,
+        });
+
+        firstPage.drawText('✔ VERIFIED DIGITAL SIGNATURE', {
+          x: width - 245,
+          y: height - 32,
+          size: 9,
+          color: rgb(0.1, 0.5, 0.2),
+        });
+
+        firstPage.drawText(`Signer: ${signerName}`, {
+          x: width - 245,
+          y: height - 42,
+          size: 7.5,
+          color: rgb(0.2, 0.4, 0.25),
+        });
+
+        firstPage.drawText(`Verified by iCreatePDF Security Shield`, {
+          x: width - 245,
+          y: height - 52,
+          size: 6.5,
+          color: rgb(0.3, 0.5, 0.35),
+        });
+
+        const certifiedBytes = await pdfDoc.save();
+        const blob = new Blob([certifiedBytes], { type: 'application/pdf' });
+        const certifiedUrl = URL.createObjectURL(blob);
+        setValidatedPdfUrl(certifiedUrl);
+      }
 
     } catch (err: any) {
       console.error(err);
@@ -262,15 +310,34 @@ export function VerifySignatureTool() {
                 Analyzing PDF...
               </Button>
             ) : report ? (
-              <Button
-                onClick={() => {
-                  setFile(null);
-                  setReport(null);
-                }}
-                className="w-full bg-purple-600 hover:bg-purple-700 text-white py-6 rounded-xl"
-              >
-                Verify another file
-              </Button>
+              <div className="space-y-3">
+                {validatedPdfUrl && (
+                  <Button
+                    onClick={() => {
+                      const link = document.createElement('a');
+                      link.href = validatedPdfUrl;
+                      link.download = `certified-${file?.name}`;
+                      document.body.appendChild(link);
+                      link.click();
+                      document.body.removeChild(link);
+                    }}
+                    className="w-full bg-emerald-600 hover:bg-emerald-700 text-white font-medium py-6 rounded-xl flex items-center justify-center gap-2"
+                  >
+                    <Download className="w-5 h-5" />
+                    Download Validated Copy
+                  </Button>
+                )}
+                <Button
+                  onClick={() => {
+                    setFile(null);
+                    setReport(null);
+                    setValidatedPdfUrl(null);
+                  }}
+                  className="w-full bg-white/5 hover:bg-white/10 text-white py-4 rounded-xl text-xs"
+                >
+                  Verify another file
+                </Button>
+              </div>
             ) : (
               <Button
                 disabled={!file}

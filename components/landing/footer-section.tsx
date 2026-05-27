@@ -22,6 +22,11 @@ const footerLinks = {
     { name: 'Edit PDF', href: '/edit-pdf' },
     { name: 'PDF to Text', href: '/pdf-to-text' },
     { name: 'Verify Signature', href: '/verify-signature' },
+    { name: 'HTML to PDF', href: '/html-to-pdf' },
+    { name: 'Markdown to PDF', href: '/markdown-to-pdf' },
+    { name: 'Flatten PDF', href: '/flatten-pdf' },
+    { name: 'Grayscale PDF', href: '/grayscale-pdf' },
+    { name: 'Compare PDF', href: '/compare-pdf' },
   ],
   Resources: [
     { name: 'Blog', href: '/blog' },
