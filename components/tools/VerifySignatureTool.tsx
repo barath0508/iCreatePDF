@@ -122,66 +122,127 @@ export function VerifySignatureTool() {
       // Generate visual certification stamp (ticked copy)
       if (hasIntegrity) {
         const pdfDoc = await PDFDocument.load(buffer);
-        // Embed Helvetica so all drawText calls use WinAnsi-safe glyphs
         const font = await pdfDoc.embedFont(StandardFonts.Helvetica);
         const fontBold = await pdfDoc.embedFont(StandardFonts.HelveticaBold);
         const firstPage = pdfDoc.getPage(0);
         const { width, height } = firstPage.getSize();
 
-        // Badge background
-        firstPage.drawRectangle({
-          x: width - 262,
-          y: height - 68,
-          width: 248,
-          height: 58,
-          color: rgb(0.9, 0.98, 0.93),
-          borderColor: rgb(0.18, 0.65, 0.35),
-          borderWidth: 1.5,
-        });
+        // --- Official Circular Seal Stamp (bottom-right) ---
+        const cx = width - 72;   // seal center X
+        const cy = 72;           // seal center Y (from bottom)
+        const R = 62;            // outer radius
 
-        // Green filled circle as visual checkmark indicator
+        // Outer ring (dark green border)
         firstPage.drawEllipse({
-          x: width - 248,
-          y: height - 30,
-          xScale: 6,
-          yScale: 6,
-          color: rgb(0.18, 0.65, 0.35),
+          x: cx, y: cy,
+          xScale: R, yScale: R,
+          color: rgb(0.08, 0.42, 0.22),
         });
 
-        // "v" tick character inside circle (ASCII-safe)
-        firstPage.drawText('v', {
-          x: width - 252,
-          y: height - 33,
-          size: 7,
+        // White inner fill
+        firstPage.drawEllipse({
+          x: cx, y: cy,
+          xScale: R - 4, yScale: R - 4,
+          color: rgb(1, 1, 1),
+        });
+
+        // Second inner ring (thin dark green)
+        firstPage.drawEllipse({
+          x: cx, y: cy,
+          xScale: R - 7, yScale: R - 7,
+          color: rgb(0.08, 0.42, 0.22),
+          borderColor: rgb(0.08, 0.42, 0.22),
+          borderWidth: 0,
+        });
+
+        // White fill inside second ring
+        firstPage.drawEllipse({
+          x: cx, y: cy,
+          xScale: R - 9, yScale: R - 9,
+          color: rgb(1, 1, 1),
+        });
+
+        // Green header band across the top of the seal
+        firstPage.drawRectangle({
+          x: cx - (R - 9),
+          y: cy + 18,
+          width: (R - 9) * 2,
+          height: 22,
+          color: rgb(0.08, 0.42, 0.22),
+        });
+
+        // Clip the green band to not exceed the inner circle edges (visual trick using white ellipses)
+        firstPage.drawEllipse({
+          x: cx, y: cy + 40,
+          xScale: R - 9, yScale: R - 9,
+          color: rgb(1, 1, 1),
+        });
+        firstPage.drawEllipse({
+          x: cx, y: cy - 4,
+          xScale: R - 9, yScale: R - 9,
+          color: rgb(1, 1, 1),
+        });
+
+        // Re-draw green band clipped area
+        firstPage.drawRectangle({
+          x: cx - (R - 16),
+          y: cy + 20,
+          width: (R - 16) * 2,
+          height: 18,
+          color: rgb(0.08, 0.42, 0.22),
+        });
+
+        // "VERIFIED" label in the green band
+        firstPage.drawText('VERIFIED', {
+          x: cx - 22,
+          y: cy + 23,
+          size: 11,
           font: fontBold,
           color: rgb(1, 1, 1),
         });
 
-        // Title: ASCII-safe, no Unicode symbols
-        firstPage.drawText('VERIFIED DIGITAL SIGNATURE', {
-          x: width - 238,
-          y: height - 29,
+        // Large checkmark-like "OK" emblem in center
+        firstPage.drawEllipse({
+          x: cx, y: cy + 6,
+          xScale: 13, yScale: 13,
+          color: rgb(0.08, 0.42, 0.22),
+        });
+        firstPage.drawText('OK', {
+          x: cx - 7,
+          y: cy + 2,
           size: 9,
           font: fontBold,
-          color: rgb(0.1, 0.5, 0.2),
+          color: rgb(1, 1, 1),
         });
 
-        // Signer line — truncate to prevent overflow
-        const signerDisplay = signerName.length > 30 ? signerName.slice(0, 30) + '...' : signerName;
-        firstPage.drawText(`Signer: ${signerDisplay}`, {
-          x: width - 238,
-          y: height - 42,
-          size: 7.5,
+        // Signer name (truncated)
+        const signerDisplay = signerName.length > 18 ? signerName.slice(0, 18) + '..' : signerName;
+        const signerFontSize = 6.5;
+        firstPage.drawText(signerDisplay, {
+          x: cx - (signerDisplay.length * signerFontSize * 0.28),
+          y: cy - 12,
+          size: signerFontSize,
+          font: fontBold,
+          color: rgb(0.05, 0.3, 0.15),
+        });
+
+        // Signing date
+        const dateDisplay = signingTime !== 'Unknown Time' ? signingTime.split(' ')[0] : 'Date Unknown';
+        firstPage.drawText(dateDisplay, {
+          x: cx - (dateDisplay.length * 5.5 * 0.28),
+          y: cy - 22,
+          size: 5.5,
           font,
           color: rgb(0.2, 0.4, 0.25),
         });
 
-        firstPage.drawText('Verified by iCreatePDF Security Shield', {
-          x: width - 238,
-          y: height - 54,
-          size: 6.5,
-          font,
-          color: rgb(0.3, 0.5, 0.35),
+        // Bottom label: iCreatePDF
+        firstPage.drawText('iCreatePDF', {
+          x: cx - 18,
+          y: cy - 36,
+          size: 5.5,
+          font: fontBold,
+          color: rgb(0.08, 0.42, 0.22),
         });
 
         const certifiedBytes = await pdfDoc.save();
