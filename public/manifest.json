@@ -1,0 +1,25 @@
+{
+  "name": "iCreatePDF - Secure local PDF tools",
+  "short_name": "iCreatePDF",
+  "description": "Fast, free, and privacy-focused client-side PDF utilities. All files stay local in browser memory.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#000000",
+  "theme_color": "#8b5cf6",
+  "orientation": "portrait",
+  "scope": "/",
+  "categories": ["utilities", "productivity"],
+  "icons": [
+    {
+      "src": "/logo.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "/logo.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    }
+  ]
+}
