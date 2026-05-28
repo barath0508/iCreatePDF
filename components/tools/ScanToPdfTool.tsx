@@ -18,6 +18,8 @@ export function ScanToPdfTool() {
   const [facingMode, setFacingMode] = useState<'user' | 'environment'>('environment');
   const [devices, setDevices] = useState<MediaDeviceInfo[]>([]);
   const [selectedDeviceId, setSelectedDeviceId] = useState<string>('');
+  const [autoCrop, setAutoCrop] = useState(true);
+  const [forcePortrait, setForcePortrait] = useState(true);
   
   const [isProcessing, setIsProcessing] = useState(false);
   const [progress, setProgress] = useState(0);
@@ -95,6 +97,83 @@ export function ScanToPdfTool() {
     };
   }, [selectedDeviceId, facingMode]);
 
+  const performAutoCrop = (srcCanvas: HTMLCanvasElement): HTMLCanvasElement => {
+    const ctx = srcCanvas.getContext('2d');
+    if (!ctx) return srcCanvas;
+
+    const w = srcCanvas.width;
+    const h = srcCanvas.height;
+    const imgData = ctx.getImageData(0, 0, w, h);
+    const data = imgData.data;
+
+    // Corner samples to find background color
+    const getPixel = (x: number, y: number) => {
+      const idx = (y * w + x) * 4;
+      return { r: data[idx], g: data[idx+1], b: data[idx+2] };
+    };
+
+    const corners = [
+      getPixel(0, 0),
+      getPixel(w - 1, 0),
+      getPixel(0, h - 1),
+      getPixel(w - 1, h - 1)
+    ];
+
+    const avgBg = {
+      r: corners.reduce((sum, p) => sum + p.r, 0) / 4,
+      g: corners.reduce((sum, p) => sum + p.g, 0) / 4,
+      b: corners.reduce((sum, p) => sum + p.b, 0) / 4
+    };
+
+    let minX = w, maxX = 0, minY = h, maxY = 0;
+    const threshold = 35; // sensitivity threshold
+    const step = 6; // pixel skip step for performance
+
+    for (let y = 0; y < h; y += step) {
+      for (let x = 0; x < w; x += step) {
+        const idx = (y * w + x) * 4;
+        const r = data[idx];
+        const g = data[idx+1];
+        const b = data[idx+2];
+
+        const diff = Math.sqrt(
+          Math.pow(r - avgBg.r, 2) +
+          Math.pow(g - avgBg.g, 2) +
+          Math.pow(b - avgBg.b, 2)
+        );
+
+        if (diff > threshold) {
+          if (x < minX) minX = x;
+          if (x > maxX) maxX = x;
+          if (y < minY) minY = y;
+          if (y > maxY) maxY = y;
+        }
+      }
+    }
+
+    // Safety padding
+    const padding = 15;
+    minX = Math.max(0, minX - padding);
+    maxX = Math.min(w - 1, maxX + padding);
+    minY = Math.max(0, minY - padding);
+    maxY = Math.min(h - 1, maxY + padding);
+
+    // Bounding validation (must be at least 15% width and height)
+    if (maxX <= minX || maxY <= minY || (maxX - minX < w * 0.15) || (maxY - minY < h * 0.15)) {
+      return srcCanvas; // return original if crop area is too small or invalid
+    }
+
+    const croppedCanvas = document.createElement('canvas');
+    croppedCanvas.width = maxX - minX;
+    croppedCanvas.height = maxY - minY;
+    const croppedCtx = croppedCanvas.getContext('2d');
+    if (croppedCtx) {
+      croppedCtx.drawImage(srcCanvas, minX, minY, croppedCanvas.width, croppedCanvas.height, 0, 0, croppedCanvas.width, croppedCanvas.height);
+      return croppedCanvas;
+    }
+    return srcCanvas;
+  };
+
   const capturePhoto = () => {
     if (!videoRef.current || !canvasRef.current) return;
     
@@ -110,14 +189,29 @@ export function ScanToPdfTool() {
     const width = settings?.width || video.videoWidth;
     const height = settings?.height || video.videoHeight;
     
-    canvas.width = width;
-    canvas.height = height;
+    const shouldRotate = forcePortrait && width > height;
 
-    // Draw video frame to canvas
-    ctx.drawImage(video, 0, 0, width, height);
+    if (shouldRotate) {
+      canvas.width = height;
+      canvas.height = width;
+      ctx.translate(canvas.width / 2, canvas.height / 2);
+      ctx.rotate(Math.PI / 2); // 90 degrees
+      ctx.drawImage(video, -width / 2, -height / 2, width, height);
+      ctx.setTransform(1, 0, 0, 1, 0, 0); // Reset transform
+    } else {
+      canvas.width = width;
+      canvas.height = height;
+      ctx.drawImage(video, 0, 0, width, height);
+    }
+
+    // Perform Auto Crop if requested
+    let targetCanvas = canvas;
+    if (autoCrop) {
+      targetCanvas = performAutoCrop(canvas);
+    }
 
     // Get Data URL
-    const dataUrl = canvas.toDataURL('image/jpeg', 0.9);
+    const dataUrl = targetCanvas.toDataURL('image/jpeg', 0.9);
 
     // Convert data URL to File object
     fetch(dataUrl)
@@ -194,7 +288,7 @@ export function ScanToPdfTool() {
                   ref={videoRef}
                   autoPlay
                   playsInline
-                  className="w-full h-full object-cover scale-x-[-1]"
+                  className={`w-full h-full object-cover ${facingMode === 'user' ? 'scale-x-[-1]' : ''}`}
                 />
                 
                 {/* Overlay controls inside camera */}
@@ -334,6 +428,36 @@ export function ScanToPdfTool() {
           <p className="text-xs text-white/50 leading-relaxed">
             Snap pages sequentially using your camera. When finished scanning, compile the images into a clean, combined PDF document instantly.
           </p>
+
+          <div className="space-y-3 pt-4 border-t border-white/5 text-xs">
+            <h4 className="font-mono uppercase tracking-wider text-purple-400 text-[10px]">Scanning Options</h4>
+            
+            <div className="flex items-center justify-between p-2.5 rounded-xl bg-white/5 border border-white/5">
+              <label htmlFor="auto-crop-check" className="text-white/70 font-mono cursor-pointer select-none">
+                Auto-Crop Scans
+              </label>
+              <input
+                type="checkbox"
+                id="auto-crop-check"
+                checked={autoCrop}
+                onChange={(e) => setAutoCrop(e.target.checked)}
+                className="w-4 h-4 accent-purple-500 cursor-pointer"
+              />
+            </div>
+
+            <div className="flex items-center justify-between p-2.5 rounded-xl bg-white/5 border border-white/5">
+              <label htmlFor="force-portrait-check" className="text-white/70 font-mono cursor-pointer select-none">
+                Force Portrait Mode
+              </label>
+              <input
+                type="checkbox"
+                id="force-portrait-check"
+                checked={forcePortrait}
+                onChange={(e) => setForcePortrait(e.target.checked)}
+                className="w-4 h-4 accent-purple-500 cursor-pointer"
+              />
+            </div>
+          </div>
 
           <div className="pt-4 border-t border-white/5">
             {isProcessing ? (
