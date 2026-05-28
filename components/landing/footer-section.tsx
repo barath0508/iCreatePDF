@@ -10,6 +10,7 @@ const footerLinks = {
     { name: 'PNG to PDF', href: '/png-to-pdf' },
     { name: 'HEIC to PDF', href: '/heic-to-pdf' },
     { name: 'PDF to JPG', href: '/pdf-to-jpg' },
+    { name: 'TXT to PDF', href: '/txt-to-pdf' },
   ],
   Utilities: [
     { name: 'Merge PDF', href: '/merge-pdf' },
@@ -42,6 +43,8 @@ const footerLinks = {
   Resources: [
     { name: 'Blog', href: '/blog' },
     { name: 'How It Works', href: '/#how-it-works' },
+    { name: 'Why iCreatePDF', href: '/compare' },
+    { name: 'LLM Agents (llms.txt)', href: '/llms.txt' },
   ],
   Legal: [
     { name: 'Privacy Policy', href: '/privacy' },

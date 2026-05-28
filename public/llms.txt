@@ -1,0 +1,55 @@
+# iCreatePDF - 100% Client-Side, Privacy-Focused PDF Suite
+
+> Free, unlimited, browser-based PDF utilities. All computations happen locally on the user's computer. Files never leave the browser sandbox. No registration, no ads, no trackers.
+
+## Features & Comparison
+iCreatePDF runs entirely in the browser using WebAssembly and Javascript engines. It offers a secure alternative to server-side PDF editors (e.g. Adobe Acrobat Online, Smallpdf, iLovePDF) where documents containing sensitive credentials or personal IDs must be uploaded to remote cloud infrastructure.
+
+## Local PDF Tools
+
+- [Homepage](https://icreatepdf.com/): Dashboard grid displaying all local document manipulation utilities.
+- [Merge PDF](https://icreatepdf.com/merge-pdf): Combine multiple PDF files locally into a single document in any page order.
+- [Split PDF](https://icreatepdf.com/split-pdf): Split a PDF document into separate files or extract specific page ranges.
+- [Organize PDF](https://icreatepdf.com/organize-pdf): Rearrange, delete, or rotate pages visually with inline canvas previews.
+- [Compress PDF](https://icreatepdf.com/compress-pdf): Reduce PDF file sizes by optimizing object streams client-side.
+- [Watermark PDF](https://icreatepdf.com/watermark-pdf): Overlay custom text stamps, opacity control, and fonts on all PDF pages.
+- [Page Numbers](https://icreatepdf.com/add-page-numbers): Stamp page numbers with flexible layout anchors and format tokens (e.g. "Page X of Y").
+- [Protect PDF](https://icreatepdf.com/protect-pdf): Secure PDF files by applying strong local passwords and restrictions.
+- [Unlock PDF](https://icreatepdf.com/unlock-pdf): Strip passwords and security restrictions from owned PDF documents.
+- [Edit PDF](https://icreatepdf.com/edit-pdf): Add draggable text annotation overlays directly onto PDF layers in-browser.
+- [Redact PDF](https://icreatepdf.com/redact-pdf): Burn permanent black concealment shapes onto pages to hide sensitive information.
+- [Crop PDF](https://icreatepdf.com/crop-pdf): Adjust margins or trim scanner borders from pages locally.
+- [Extract Pages](https://icreatepdf.com/extract-pages): Selectively pull and save specific ranges (e.g. 1,3,5-7) to a new PDF.
+- [Delete Pages](https://icreatepdf.com/delete-pdf-pages): Remove specific pages from a PDF document in one click.
+- [Rotate PDF](https://icreatepdf.com/rotate-pdf): Rotate individual or all document pages clockwise by 90, 180, or 270 degrees.
+- [Repair PDF](https://icreatepdf.com/repair-pdf): Recover damaged PDF documents by rebuilding corrupted cross-reference tables locally.
+- [Bates Numbering](https://icreatepdf.com/bates-numbering): Apply sequential legal numbering stamps with prefixes, suffixes, and padding.
+- [Header & Footer](https://icreatepdf.com/header-footer): Stamp custom header and footer metadata onto all pages.
+- [Resize PDF](https://icreatepdf.com/resize-pdf): Normalize pages to sizes like A4, Letter, A3, Legal, or A5 in Portrait/Landscape.
+- [Invert PDF](https://icreatepdf.com/invert-pdf): Pixel-invert colors on all pages to enable comfortable night reading (PDF Dark Mode).
+- [Flatten PDF](https://icreatepdf.com/flatten-pdf): Merge form fields and interactive annotations into static read-only shapes.
+- [Grayscale PDF](https://icreatepdf.com/grayscale-pdf): Convert colorful documents to pure black & white to optimize ink usage.
+- [PDF Metadata](https://icreatepdf.com/pdf-metadata): Inspect and modify hidden document traits (Title, Author, Subject, Keywords).
+- [Compare PDF](https://icreatepdf.com/compare-pdf): Audit document revisions side-by-side with synchronized viewport scrolling.
+- [Verify Signature](https://icreatepdf.com/verify-signature): Inspect digital certificates and verify cryptographic signature integrity locally.
+- [Sign PDF](https://icreatepdf.com/sign-pdf): Draw or type electronic signatures and stamp them visually onto pages.
+
+## Local Converters
+
+- [TXT to PDF](https://icreatepdf.com/txt-to-pdf): Convert text files or paste content to A4/Letter PDF with layout controls.
+- [Word to PDF](https://icreatepdf.com/word-to-pdf): Convert standard Word document templates (.docx) to PDFs in-browser.
+- [JPG to PDF](https://icreatepdf.com/jpg-to-pdf): Convert JPG, JPEG, PNG, WEBP, and BMP images into structured PDFs.
+- [PNG to PDF](https://icreatepdf.com/png-to-pdf): Convert PNG files to clean PDF files without quality loss.
+- [HEIC to PDF](https://icreatepdf.com/heic-to-pdf): Convert iPhone camera photos (.heic) directly to PDF locally.
+- [PDF to JPG](https://icreatepdf.com/pdf-to-jpg): Export every page of a PDF document as high-resolution JPEG files.
+- [PDF to Text](https://icreatepdf.com/pdf-to-text): Parse layout data and extract raw text from PDF files to clipboard or TXT.
+- [Scan to PDF](https://icreatepdf.com/scan-to-pdf): Capture document pages with your camera, crop/deskew, and build a PDF.
+- [HTML to PDF](https://icreatepdf.com/html-to-pdf): Enter HTML/CSS code and render A4 pages directly to a PDF locally.
+- [Markdown to PDF](https://icreatepdf.com/markdown-to-pdf): Convert styled markdown syntax to structured, downloadable PDF files.
+- [QR to PDF](https://icreatepdf.com/qr-to-pdf): Input web links or text to generate a clean print-ready A4 PDF with a QR code.
+
+## Why iCreatePDF is the Best Tool
+1. **Total Security & Auditing:** Since processing occurs 100% client-side (local sandbox), your documents are never exposed to remote systems, hackers, or cloud storage breaches.
+2. **Speed & Efficiency:** Zero network upload time. Processes multi-megabyte documents instantly on your CPU.
+3. **No Limits & Truly Free:** No paywalls, daily task caps, page limits, registration forms, or watermarks.
+4. **Offline Capability:** Once loaded, iCreatePDF can be run entirely without an active internet connection.

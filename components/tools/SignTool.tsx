@@ -217,8 +217,8 @@ export function SignTool() {
 
       // Render coordinates conversion
       const canvas = canvasRef.current;
-      const scaleX = pageWidth / canvas.width;
-      const scaleY = pageHeight / canvas.height;
+      const scaleX = pageWidth / canvas.clientWidth;
+      const scaleY = pageHeight / canvas.clientHeight;
 
       const renderedWidth = sigSize * scaleX;
       const renderedHeight = (sigSize * 0.375) * scaleY; // Preserve aspect ratio
@@ -284,26 +284,28 @@ export function SignTool() {
                   </div>
                 )}
 
-                <canvas ref={canvasRef} className="shadow-2xl rounded max-w-full max-h-[500px]" />
+                <div className="relative w-fit h-fit mx-auto shadow-2xl rounded">
+                  <canvas ref={canvasRef} className="rounded max-w-full max-h-[500px]" />
 
-                {sigPngDataUrl && !downloadUrl && (
-                  <div
-                    onMouseDown={onSignatureMouseDown}
-                    className="absolute cursor-move border border-dashed border-purple-500 bg-purple-500/10 active:border-purple-400"
-                    style={{
-                      left: `${sigPosition.x}px`,
-                      top: `${sigPosition.y}px`,
-                      width: `${sigSize}px`,
-                      height: `${sigSize * 0.375}px`,
-                    }}
-                  >
-                    <img 
-                      src={sigPngDataUrl} 
-                      alt="Signature overlay" 
-                      className="w-full h-full object-contain pointer-events-none" 
-                    />
-                  </div>
-                )}
+                  {sigPngDataUrl && !downloadUrl && (
+                    <div
+                      onMouseDown={onSignatureMouseDown}
+                      className="absolute cursor-move border border-dashed border-purple-500 bg-purple-500/10 active:border-purple-400"
+                      style={{
+                        left: `${sigPosition.x}px`,
+                        top: `${sigPosition.y}px`,
+                        width: `${sigSize}px`,
+                        height: `${sigSize * 0.375}px`,
+                      }}
+                    >
+                      <img 
+                        src={sigPngDataUrl} 
+                        alt="Signature overlay" 
+                        className="w-full h-full object-contain pointer-events-none" 
+                      />
+                    </div>
+                  )}
+                </div>
               </div>
 
               {/* Navigation */}

@@ -165,8 +165,8 @@ export function EditPdfTool() {
       const { width: pageWidth, height: pageHeight } = page.getSize();
 
       const canvas = canvasRef.current;
-      const scaleX = pageWidth / canvas.width;
-      const scaleY = pageHeight / canvas.height;
+      const scaleX = pageWidth / canvas.clientWidth;
+      const scaleY = pageHeight / canvas.clientHeight;
 
       // Burn annotations onto PDF
       for (const ann of annotations) {
@@ -232,27 +232,29 @@ export function EditPdfTool() {
                   </div>
                 )}
 
-                <canvas ref={canvasRef} className="shadow-2xl rounded max-w-full max-h-[500px]" />
+                <div className="relative w-fit h-fit mx-auto shadow-2xl rounded">
+                  <canvas ref={canvasRef} className="rounded max-w-full max-h-[500px]" />
 
-                {/* Annotation items */}
-                {annotations.map((ann) => (
-                  <div
-                    key={ann.id}
-                    onMouseDown={(e) => handleDragStart(e, ann.id)}
-                    className={`absolute cursor-move border px-2 py-1 rounded select-none ${
-                      activeAnnotationId === ann.id ? 'border-purple-500 bg-purple-500/10' : 'border-transparent bg-black/40'
-                    }`}
-                    style={{
-                      left: `${ann.x}px`,
-                      top: `${ann.y}px`,
-                      color: ann.color,
-                      fontSize: `${ann.fontSize}px`,
-                      fontFamily: 'sans-serif',
-                    }}
-                  >
-                    {ann.text}
-                  </div>
-                ))}
+                  {/* Annotation items */}
+                  {annotations.map((ann) => (
+                    <div
+                      key={ann.id}
+                      onMouseDown={(e) => handleDragStart(e, ann.id)}
+                      className={`absolute cursor-move border px-2 py-1 rounded select-none ${
+                        activeAnnotationId === ann.id ? 'border-purple-500 bg-purple-500/10' : 'border-transparent bg-black/40'
+                      }`}
+                      style={{
+                        left: `${ann.x}px`,
+                        top: `${ann.y}px`,
+                        color: ann.color,
+                        fontSize: `${ann.fontSize}px`,
+                        fontFamily: 'sans-serif',
+                      }}
+                    >
+                      {ann.text}
+                    </div>
+                  ))}
+                </div>
               </div>
 
               {/* Navigation */}

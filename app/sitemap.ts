@@ -40,6 +40,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     '/invert-pdf',
     '/qr-to-pdf',
     '/delete-pdf-pages',
+    '/txt-to-pdf',
   ];
 
   const blogRoutes = [
@@ -61,6 +62,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     '/contact',
     '/privacy',
     '/terms',
+    '/compare',
   ];
 
   const langRoutes = [

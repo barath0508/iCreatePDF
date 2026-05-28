@@ -64,6 +64,12 @@ const tools = [
     href: '/word-to-pdf',
   },
   {
+    icon: FileText,
+    title: 'TXT to PDF',
+    desc: 'Convert plain text files (.txt) or raw typed text into formatted PDF sheets.',
+    href: '/txt-to-pdf',
+  },
+  {
     icon: Camera,
     title: 'Scan to PDF',
     desc: 'Capture document pages using your camera and compile into a PDF.',
