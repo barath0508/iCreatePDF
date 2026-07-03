@@ -11,6 +11,12 @@ importers:
       '@hookform/resolvers':
         specifier: ^3.10.0
         version: 3.10.0(react-hook-form@7.76.1(react@19.2.6))
+      '@pdfsmaller/pdf-decrypt':
+        specifier: ^1.0.1
+        version: 1.0.1(pdf-lib@1.17.1)
+      '@pdfsmaller/pdf-encrypt-lite':
+        specifier: ^1.0.2
+        version: 1.0.2(pdf-lib@1.17.1)
       '@radix-ui/react-accordion':
         specifier: 1.2.2
         version: 1.2.2(@types/react-dom@19.2.3(@types/react@19.2.15))(@types/react@19.2.15)(react-dom@19.2.6(react@19.2.6))(react@19.2.6)
@@ -551,6 +557,18 @@ packages:
 
   '@pdf-lib/upng@1.0.1':
     resolution: {integrity: sha512-dQK2FUMQtowVP00mtIksrlZhdFXQZPC+taih1q4CvPZ5vqdxR/LKBaFg0oAfzd1GlHZXXSPdQfzQnt+ViGvEIQ==}
+
+  '@pdfsmaller/pdf-decrypt@1.0.1':
+    resolution: {integrity: sha512-UO5KyC+jvcXPTuxfTcEDODHBqO5+YFyuYz/f8tQfiRw5hqZTYTh0ea72OjGw6kuYEUiCyT+A/Ymg2A948Vwx0w==}
+    engines: {node: '>=18.0.0'}
+    peerDependencies:
+      pdf-lib: ^1.17.1
+
+  '@pdfsmaller/pdf-encrypt-lite@1.0.2':
+    resolution: {integrity: sha512-9egzPJ9I6gfmRP7BJjN3M1dt99DagF72BpQneVke1vgXAeIAU38i2YAt+EBvwbaYTmn7CFu/Z6IeIhoe0p/YQg==}
+    engines: {node: '>=14.0.0'}
+    peerDependencies:
+      pdf-lib: ^1.17.1
 
   '@radix-ui/number@1.1.0':
     resolution: {integrity: sha512-V3gRzhVNU1ldS5XhAPTom1fOIo4ccrjjJgmE+LI2h/WaFpHmx0MQApT+KZHnx8abG6Avtfcz4WoEciMnpFT3HQ==}
@@ -2343,6 +2361,14 @@ snapshots:
   '@pdf-lib/upng@1.0.1':
     dependencies:
       pako: 1.0.11
+
+  '@pdfsmaller/pdf-decrypt@1.0.1(pdf-lib@1.17.1)':
+    dependencies:
+      pdf-lib: 1.17.1
+
+  '@pdfsmaller/pdf-encrypt-lite@1.0.2(pdf-lib@1.17.1)':
+    dependencies:
+      pdf-lib: 1.17.1
 
   '@radix-ui/number@1.1.0': {}
 
