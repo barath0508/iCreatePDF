@@ -4,7 +4,7 @@ import React, { useState } from 'react';
 import { Navigation } from '@/components/landing/navigation';
 import { FooterSection } from '@/components/landing/footer-section';
 import { Button } from '@/components/ui/button';
-import { Send, CheckCircle2, Mail, MessageSquare, ShieldCheck } from 'lucide-react';
+import { Send, CheckCircle2, Mail, MessageSquare, ShieldCheck, Loader2 } from 'lucide-react';
 
 export default function ContactPage() {
   const [formData, setFormData] = useState({ name: '', email: '', message: '' });

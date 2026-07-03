@@ -76,7 +76,6 @@ export function CompressTool() {
       // Save with compression options enabled (object stream compression compresses streams)
       const compressedBytes = await pdfDoc.save({
         useObjectStreams: true,
-        addGlossaryMap: false,
       });
       
       setProgress(90);

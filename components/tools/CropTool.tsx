@@ -46,7 +46,7 @@ export function CropTool() {
         page.setMediaBox(l, b, width - l - r, height - t - b);
       });
       const bytes = await doc.save();
-      setDownloadUrl(URL.createObjectURL(new Blob([bytes], { type: 'application/pdf' })));
+      setDownloadUrl(URL.createObjectURL(new Blob([bytes as any], { type: 'application/pdf' })));
     } catch (err: any) {
       setError(err?.message || 'Crop failed.');
     } finally {

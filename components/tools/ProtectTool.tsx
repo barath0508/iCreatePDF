@@ -2,7 +2,6 @@
 
 import React, { useState, useRef } from 'react';
 import { Upload, Shield, Loader2, Download, Key } from 'lucide-react';
-import { PDFDocument } from 'pdf-lib';
 import { Button } from '@/components/ui/button';
 
 export function ProtectTool() {
@@ -42,20 +41,10 @@ export function ProtectTool() {
 
     try {
       const buffer = await file.arrayBuffer();
-      const pdfDoc = await PDFDocument.load(buffer);
-      
-      pdfDoc.encrypt({
-        userPassword: password,
-        ownerPassword: Math.random().toString(36).substring(7),
-        permissions: {
-          printing: 'highResolution',
-          modifying: false,
-          copying: false,
-        },
-      });
+      const { encryptPDF } = await import('@pdfsmaller/pdf-encrypt-lite');
+      const encryptedBytes = await encryptPDF(new Uint8Array(buffer), password);
 
-      const encryptedBytes = await pdfDoc.save();
-      const blob = new Blob([encryptedBytes], { type: 'application/pdf' });
+      const blob = new Blob([encryptedBytes as any], { type: 'application/pdf' });
       const url = URL.createObjectURL(blob);
       setDownloadUrl(url);
     } catch (err: any) {

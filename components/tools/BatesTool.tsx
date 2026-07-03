@@ -67,7 +67,7 @@ export function BatesTool() {
       });
 
       const bytes = await doc.save();
-      setDownloadUrl(URL.createObjectURL(new Blob([bytes], { type: 'application/pdf' })));
+      setDownloadUrl(URL.createObjectURL(new Blob([bytes as any], { type: 'application/pdf' })));
       setProgress(100);
     } catch (err: any) {
       setError(err?.message || 'Bates numbering failed.');
@@ -109,18 +109,22 @@ export function BatesTool() {
               </div>
 
               <div className="grid grid-cols-2 gap-4">
-                {[['Prefix', prefix, setPrefix, 'e.g. DOC-'], ['Suffix', suffix, setSuffix, 'e.g. -EX']].map(([lbl, val, setter, ph]) => (
-                  <div key={lbl as string} className="space-y-1.5">
-                    <label className="text-[10px] font-mono text-white/40 uppercase">{lbl}</label>
-                    <input type="text" value={val as string} onChange={e => (setter as any)(e.target.value)} placeholder={ph as string} className="w-full bg-black/40 border border-white/10 rounded-lg px-3 py-2 text-sm text-white placeholder:text-white/20 focus:outline-none focus:border-purple-500" />
-                  </div>
-                ))}
-                {[['Start Number', startNum, setStartNum], ['Digit Padding', digits, setDigits]].map(([lbl, val, setter]) => (
-                  <div key={lbl as string} className="space-y-1.5">
-                    <label className="text-[10px] font-mono text-white/40 uppercase">{lbl}</label>
-                    <input type="number" min={1} max={9999} value={val as number} onChange={e => (setter as any)(Number(e.target.value))} className="w-full bg-black/40 border border-white/10 rounded-lg px-3 py-2 text-sm text-white focus:outline-none focus:border-purple-500" />
-                  </div>
-                ))}
+                <div className="space-y-1.5">
+                  <label className="text-[10px] font-mono text-white/40 uppercase">Prefix</label>
+                  <input type="text" value={prefix} onChange={e => setPrefix(e.target.value)} placeholder="e.g. DOC-" className="w-full bg-black/40 border border-white/10 rounded-lg px-3 py-2 text-sm text-white placeholder:text-white/20 focus:outline-none focus:border-purple-500" />
+                </div>
+                <div className="space-y-1.5">
+                  <label className="text-[10px] font-mono text-white/40 uppercase">Suffix</label>
+                  <input type="text" value={suffix} onChange={e => setSuffix(e.target.value)} placeholder="e.g. -EX" className="w-full bg-black/40 border border-white/10 rounded-lg px-3 py-2 text-sm text-white placeholder:text-white/20 focus:outline-none focus:border-purple-500" />
+                </div>
+                <div className="space-y-1.5">
+                  <label className="text-[10px] font-mono text-white/40 uppercase">Start Number</label>
+                  <input type="number" min={1} max={9999} value={startNum} onChange={e => setStartNum(Number(e.target.value))} className="w-full bg-black/40 border border-white/10 rounded-lg px-3 py-2 text-sm text-white focus:outline-none focus:border-purple-500" />
+                </div>
+                <div className="space-y-1.5">
+                  <label className="text-[10px] font-mono text-white/40 uppercase">Digit Padding</label>
+                  <input type="number" min={1} max={9999} value={digits} onChange={e => setDigits(Number(e.target.value))} className="w-full bg-black/40 border border-white/10 rounded-lg px-3 py-2 text-sm text-white focus:outline-none focus:border-purple-500" />
+                </div>
               </div>
 
               <div className="space-y-2">

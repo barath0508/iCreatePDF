@@ -48,7 +48,7 @@ export function MetadataTool() {
       doc.setProducer('iCreatePDF');
       doc.setModificationDate(new Date());
       const bytes = await doc.save();
-      setDownloadUrl(URL.createObjectURL(new Blob([bytes], { type: 'application/pdf' })));
+      setDownloadUrl(URL.createObjectURL(new Blob([bytes as any], { type: 'application/pdf' })));
     } catch (err: any) {
       setError(err?.message || 'Failed to update metadata.');
     } finally {

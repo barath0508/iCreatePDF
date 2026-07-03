@@ -42,7 +42,7 @@ export function FlattenTool() {
       form.flatten();
 
       const flattenedBytes = await pdfDoc.save();
-      const blob = new Blob([flattenedBytes], { type: 'application/pdf' });
+      const blob = new Blob([flattenedBytes as any], { type: 'application/pdf' });
       const url = URL.createObjectURL(blob);
       setDownloadUrl(url);
     } catch (err: any) {

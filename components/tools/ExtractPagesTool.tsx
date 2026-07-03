@@ -54,7 +54,7 @@ export function ExtractPagesTool() {
       const copied = await outDoc.copyPages(srcDoc, indices);
       copied.forEach(page => outDoc.addPage(page));
       const bytes = await outDoc.save();
-      setDownloadUrl(URL.createObjectURL(new Blob([bytes], { type: 'application/pdf' })));
+      setDownloadUrl(URL.createObjectURL(new Blob([bytes as any], { type: 'application/pdf' })));
     } catch (err: any) {
       setError(err?.message || 'Extraction failed.');
     } finally {

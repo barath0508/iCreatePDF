@@ -6,26 +6,26 @@ const features = [
   {
     number: '01',
     title: '100% Client-Side Privacy',
-    description: 'We convert your images completely inside your browser using JavaScript. No files are ever uploaded to any cloud servers. 100% private.',
-    stats: { value: '0%', label: 'server file uploads' },
+    description: 'We process all files directly inside your browser sandbox using WebAssembly and local JavaScript. No files are ever uploaded to any remote servers. Absolute security.',
+    stats: { value: '0%', label: 'remote server uploads' },
   },
   {
     number: '02',
-    title: 'Flexible Custom Layouts',
-    description: 'Choose standard document sizes like A4 or Letter, or choose to fit the page to the image aspect ratio. Customize margins to clean up your layout.',
-    stats: { value: '3', label: 'layout size presets' },
+    title: 'Complete PDF Tools Suite',
+    description: 'Merge, split, compress, protect, sign, rotate, crop, watermark, and convert documents. Everything you need for daily document workflows in one place.',
+    stats: { value: '35+', label: 'free local tools' },
   },
   {
     number: '03',
-    title: 'Drag & Drop Page Ordering',
-    description: 'Arrange your images in the exact sequence you want them to appear in the PDF. Simply drag thumbnails to change the order.',
-    stats: { value: '20', label: 'max image capacity' },
+    title: 'Fast Local Processing',
+    description: 'Because there are no upload or download queues, conversions and edits execute at hardware speed on your device instantly.',
+    stats: { value: '<1s', label: 'average processing time' },
   },
   {
     number: '04',
-    title: 'Apple HEIC Support',
-    description: 'Upload HEIC or HEIF images directly from your iPhone. Our converter automatically translates them to JPEG on the fly, locally.',
-    stats: { value: '100%', label: 'local conversion' },
+    title: 'Universal File Compatibility',
+    description: 'Seamlessly convert and process JPG, PNG, WEBP, HEIC, Word, Markdown, HTML, and PDF files locally without installing any desktop software.',
+    stats: { value: '100%', label: 'offline capable' },
   },
 ];
 

@@ -30,7 +30,7 @@ export function RepairTool() {
       const pages = doc.getPageCount();
       const bytes = await doc.save();
       setResult({ pages, before: file.size, after: bytes.length });
-      setDownloadUrl(URL.createObjectURL(new Blob([bytes], { type: 'application/pdf' })));
+      setDownloadUrl(URL.createObjectURL(new Blob([bytes as any], { type: 'application/pdf' })));
     } catch (err: any) {
       setError(`Could not repair this PDF: ${err?.message || 'Unknown error'}. The file may be severely corrupted.`);
     } finally {

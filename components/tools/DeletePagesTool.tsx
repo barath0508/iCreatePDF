@@ -90,7 +90,7 @@ export function DeletePagesTool() {
       copied.forEach(p => outDoc.addPage(p));
 
       const bytes = await outDoc.save();
-      setDownloadUrl(URL.createObjectURL(new Blob([bytes], { type: 'application/pdf' })));
+      setDownloadUrl(URL.createObjectURL(new Blob([bytes as any], { type: 'application/pdf' })));
     } catch (err: any) {
       setError(err?.message || 'Failed to delete pages.');
     } finally {

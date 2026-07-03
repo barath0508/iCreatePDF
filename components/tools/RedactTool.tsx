@@ -36,7 +36,7 @@ export function RedactTool() {
     canvas.width = viewport.width;
     canvas.height = viewport.height;
     const ctx = canvas.getContext('2d')!;
-    await page.render({ canvasContext: ctx, viewport }).promise;
+    await page.render({ canvasContext: ctx, viewport, canvas }).promise;
     setScale(1.4);
     setPageSize({ w: page.getViewport({ scale: 1 }).width, h: page.getViewport({ scale: 1 }).height });
     setTotalPages(pdf.numPages);
@@ -118,7 +118,7 @@ export function RedactTool() {
         const canvas = document.createElement('canvas');
         canvas.width = vp.width; canvas.height = vp.height;
         const ctx = canvas.getContext('2d')!;
-        await page.render({ canvasContext: ctx, viewport: vp }).promise;
+        await page.render({ canvasContext: ctx, viewport: vp, canvas }).promise;
         // Apply black boxes for this page
         ctx.fillStyle = '#000';
         rects.filter(r => r.page === i).forEach(r => {
@@ -131,7 +131,7 @@ export function RedactTool() {
       }
 
       const bytes = await outDoc.save();
-      setDownloadUrl(URL.createObjectURL(new Blob([bytes], { type: 'application/pdf' })));
+      setDownloadUrl(URL.createObjectURL(new Blob([bytes as any], { type: 'application/pdf' })));
     } catch (err: any) {
       setError(err?.message || 'Redaction failed.');
     } finally {

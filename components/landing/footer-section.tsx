@@ -10,6 +10,8 @@ const footerLinks = {
     { name: 'PNG to PDF', href: '/png-to-pdf' },
     { name: 'HEIC to PDF', href: '/heic-to-pdf' },
     { name: 'PDF to JPG', href: '/pdf-to-jpg' },
+    { name: 'Word to PDF', href: '/word-to-pdf' },
+    { name: 'Scan to PDF', href: '/scan-to-pdf' },
     { name: 'TXT to PDF', href: '/txt-to-pdf' },
   ],
   Utilities: [
@@ -34,6 +36,7 @@ const footerLinks = {
     { name: 'Repair PDF', href: '/repair-pdf' },
     { name: 'PDF Metadata', href: '/pdf-metadata' },
     { name: 'Header & Footer', href: '/header-footer' },
+    { name: 'Page Numbers', href: '/add-page-numbers' },
     { name: 'Resize PDF', href: '/resize-pdf' },
     { name: 'Bates Numbering', href: '/bates-numbering' },
     { name: 'Invert PDF', href: '/invert-pdf' },

@@ -32,15 +32,13 @@ export function UnlockTool() {
 
     try {
       const arrayBuffer = await uploadedFile.arrayBuffer();
-      const { PDFDocument } = await import('pdf-lib');
+      const { isEncrypted: checkEncrypted } = await import('@pdfsmaller/pdf-decrypt');
+      const res = await checkEncrypted(new Uint8Array(arrayBuffer));
       
-      // Try to load. If it requires a password, it will throw an error
-      try {
-        await PDFDocument.load(arrayBuffer);
+      if (!res.encrypted) {
         setIsEncrypted(false);
         setError('This PDF is not password protected. No decryption needed.');
-      } catch (err: any) {
-        // If it throws password error
+      } else {
         setIsEncrypted(true);
         setFile(uploadedFile);
       }
@@ -75,19 +73,13 @@ export function UnlockTool() {
 
     try {
       const buffer = await file.arrayBuffer();
-      const { PDFDocument } = await import('pdf-lib');
+      const { decryptPDF } = await import('@pdfsmaller/pdf-decrypt');
       
       setProgress(40);
-      
-      // Load with password
-      const pdfDoc = await PDFDocument.load(buffer, { password });
+      const decryptedBytes = await decryptPDF(new Uint8Array(buffer), password);
       
       setProgress(70);
-      
-      // Save doc (saving loaded document strips encryption)
-      const unlockedBytes = await pdfDoc.save();
-      
-      const blob = new Blob([unlockedBytes as any], { type: 'application/pdf' });
+      const blob = new Blob([decryptedBytes as any], { type: 'application/pdf' });
       const url = URL.createObjectURL(blob);
       setDownloadUrl(url);
       setProgress(100);

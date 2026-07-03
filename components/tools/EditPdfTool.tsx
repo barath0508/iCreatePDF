@@ -62,7 +62,7 @@ export function EditPdfTool() {
           if (context) {
             canvas.width = viewport.width;
             canvas.height = viewport.height;
-            await page.render({ canvasContext: context, viewport }).promise;
+            await page.render({ canvasContext: context, viewport, canvas }).promise;
           }
         }
       } catch (err) {
@@ -183,7 +183,7 @@ export function EditPdfTool() {
       }
 
       const editedBytes = await pdfDoc.save();
-      const blob = new Blob([editedBytes], { type: 'application/pdf' });
+      const blob = new Blob([editedBytes as any], { type: 'application/pdf' });
       const url = URL.createObjectURL(blob);
       setDownloadUrl(url);
     } catch (err: any) {
@@ -192,6 +192,16 @@ export function EditPdfTool() {
     } finally {
       setIsProcessing(false);
     }
+  };
+
+  const handleDownload = () => {
+    if (!downloadUrl) return;
+    const link = document.createElement('a');
+    link.href = downloadUrl;
+    link.download = `edited-${file?.name || 'document.pdf'}`;
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
   };
 
   return (

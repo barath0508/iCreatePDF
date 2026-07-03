@@ -61,7 +61,7 @@ export function RotateTool() {
           canvas.width = viewport.width;
           canvas.height = viewport.height;
           
-          await page.render({ canvasContext: context, viewport }).promise;
+          await page.render({ canvasContext: context, viewport, canvas }).promise;
           loadedPages.push({
             originalIndex: i - 1,
             rotation: 0,

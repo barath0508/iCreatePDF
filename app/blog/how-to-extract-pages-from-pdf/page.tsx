@@ -3,7 +3,7 @@ import type { Metadata } from 'next';
 import Link from 'next/link';
 import { Navigation } from '@/components/landing/navigation';
 import { FooterSection } from '@/components/landing/footer-section';
-import { Calendar, Clock, ChevronLeft, ArrowRight, Pages, HelpCircle, Scissors } from 'lucide-react';
+import { Calendar, Clock, ChevronLeft, ArrowRight, HelpCircle, Scissors } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 
 export const metadata: Metadata = {

@@ -102,8 +102,8 @@ Date: May 2026`);
           break;
         case 'TimesRoman':
           font = await pdfDoc.embedFont(StandardFonts.TimesRoman);
-          fontBold = await pdfDoc.embedFont(StandardFonts.TimesBold);
-          fontItalic = await pdfDoc.embedFont(StandardFonts.TimesItalic);
+          fontBold = await pdfDoc.embedFont(StandardFonts.TimesRomanBold);
+          fontItalic = await pdfDoc.embedFont(StandardFonts.TimesRomanItalic);
           break;
         case 'Helvetica':
         default:
@@ -233,7 +233,7 @@ Date: May 2026`);
       }
 
       const pdfBytes = await pdfDoc.save();
-      const blob = new Blob([pdfBytes], { type: 'application/pdf' });
+      const blob = new Blob([pdfBytes as any], { type: 'application/pdf' });
       const url = URL.createObjectURL(blob);
       setDownloadUrl(url);
     } catch (err: any) {

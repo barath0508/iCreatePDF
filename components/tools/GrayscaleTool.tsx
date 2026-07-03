@@ -60,7 +60,7 @@ export function GrayscaleTool() {
         if (!ctx) continue;
 
         // Render PDF page to canvas
-        await page.render({ canvasContext: ctx, viewport }).promise;
+        await page.render({ canvasContext: ctx, viewport, canvas }).promise;
 
         // Apply grayscale filter to canvas contents
         const imgData = ctx.getImageData(0, 0, canvas.width, canvas.height);
@@ -94,7 +94,7 @@ export function GrayscaleTool() {
       }
 
       const grayscalePdfBytes = await outputPdfDoc.save();
-      const blob = new Blob([grayscalePdfBytes], { type: 'application/pdf' });
+      const blob = new Blob([grayscalePdfBytes as any], { type: 'application/pdf' });
       const url = URL.createObjectURL(blob);
       setDownloadUrl(url);
       setProgress(100);

@@ -7,6 +7,7 @@ import { InfrastructureSection } from '@/components/landing/infrastructure-secti
 import { SecuritySection } from '@/components/landing/security-section';
 import { CtaSection } from '@/components/landing/cta-section';
 import { FooterSection } from '@/components/landing/footer-section';
+import { FaqSection } from '@/components/landing/faq-section';
 import { 
   Combine, Scissors, Sliders, Type, Hash, FileImage, Image,
   Minimize2, RotateCw, Unlock, Camera, FileText, Shield, FileSignature, Edit, ShieldCheck,
@@ -285,6 +286,7 @@ export default function Home() {
       <HowItWorksSection />
       <InfrastructureSection />
       <SecuritySection />
+      <FaqSection />
       <CtaSection />
       <FooterSection />
     </main>

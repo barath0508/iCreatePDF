@@ -5,21 +5,21 @@ import { useEffect, useRef, useState } from 'react';
 const steps = [
   {
     number: '01',
-    title: 'Upload',
-    subtitle: 'select images',
-    description: 'Select, drag, or drop up to 20 images (JPG, PNG, WEBP, HEIC, BMP) into the converter panel. HEIC iPhone photos are automatically parsed locally.',
+    title: 'Select Tool',
+    subtitle: 'choose utility',
+    description: 'Pick from over 35+ document tools on the dashboard, including converters, page organizers, and file size optimizers.',
   },
   {
     number: '02',
-    title: 'Reorder',
-    subtitle: 'drag & arrange',
-    description: 'Rearrange pages easily by dragging individual thumbnails. Click rotation controls to orient horizontal images correctly.',
+    title: 'Import Files',
+    subtitle: 'drag & drop',
+    description: 'Select or drag your PDFs, images, or documents into the tool panel. Your files are loaded into browser memory sandbox locally.',
   },
   {
     number: '03',
-    title: 'Generate',
-    subtitle: 'compile & download',
-    description: 'Click Generate PDF. Watch the compression and compilation complete instantly inside your browser sandbox, and download the finished file.',
+    title: 'Process & Save',
+    subtitle: 'instant download',
+    description: 'Adjust your settings and click the action button. The modification compiles instantly on your hardware. Download immediately.',
   },
 ];
 
@@ -68,9 +68,9 @@ export function HowItWorksSection() {
             <h2 className={`text-6xl md:text-7xl lg:text-[100px] font-display tracking-tight leading-[0.85] transition-all duration-1000 delay-100 ${
               isVisible ? 'translate-y-0 opacity-100' : 'translate-y-16 opacity-0'
             }`}>
-              <span className="block">Upload.</span>
-              <span className="block text-white/30">Arrange.</span>
-              <span className="block text-white/10">Convert.</span>
+              <span className="block">Select.</span>
+              <span className="block text-white/30">Process.</span>
+              <span className="block text-white/10">Download.</span>
             </h2>
           </div>
 

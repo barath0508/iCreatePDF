@@ -59,7 +59,7 @@ export function SignTool() {
           if (context) {
             canvas.width = viewport.width;
             canvas.height = viewport.height;
-            await page.render({ canvasContext: context, viewport }).promise;
+            await page.render({ canvasContext: context, viewport, canvas }).promise;
           }
         }
       } catch (err) {
@@ -235,7 +235,7 @@ export function SignTool() {
       });
 
       const signedBytes = await pdfDoc.save();
-      const blob = new Blob([signedBytes], { type: 'application/pdf' });
+      const blob = new Blob([signedBytes as any], { type: 'application/pdf' });
       const url = URL.createObjectURL(blob);
       setDownloadUrl(url);
     } catch (err: any) {
@@ -244,6 +244,16 @@ export function SignTool() {
     } finally {
       setIsProcessing(false);
     }
+  };
+
+  const handleDownload = () => {
+    if (!downloadUrl) return;
+    const link = document.createElement('a');
+    link.href = downloadUrl;
+    link.download = `signed-${file?.name || 'document.pdf'}`;
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
   };
 
   return (

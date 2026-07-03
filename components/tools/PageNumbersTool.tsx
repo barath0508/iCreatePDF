@@ -49,7 +49,7 @@ export function PageNumbersTool() {
           if (context) {
             canvas.width = viewport.width;
             canvas.height = viewport.height;
-            await page.render({ canvasContext: context, viewport }).promise;
+            await page.render({ canvasContext: context, viewport, canvas }).promise;
           }
         }
       } catch (err) {

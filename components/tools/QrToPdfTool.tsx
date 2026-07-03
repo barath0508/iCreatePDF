@@ -96,7 +96,7 @@ export function QrToPdfTool() {
       });
 
       const bytes = await doc.save();
-      setDownloadUrl(URL.createObjectURL(new Blob([bytes], { type: 'application/pdf' })));
+      setDownloadUrl(URL.createObjectURL(new Blob([bytes as any], { type: 'application/pdf' })));
     } catch (err: any) {
       setError(err?.message || 'QR generation failed.');
     } finally {

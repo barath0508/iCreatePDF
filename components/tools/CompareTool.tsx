@@ -49,7 +49,7 @@ export function CompareTool() {
             if (context) {
               canvas.width = viewport.width;
               canvas.height = viewport.height;
-              await page.render({ canvasContext: context, viewport }).promise;
+              await page.render({ canvasContext: context, viewport, canvas }).promise;
             }
           }
         }
@@ -94,7 +94,7 @@ export function CompareTool() {
             if (context) {
               canvas.width = viewport.width;
               canvas.height = viewport.height;
-              await page.render({ canvasContext: context, viewport }).promise;
+              await page.render({ canvasContext: context, viewport, canvas }).promise;
             }
           }
         }

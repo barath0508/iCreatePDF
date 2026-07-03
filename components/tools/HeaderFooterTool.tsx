@@ -77,7 +77,7 @@ export function HeaderFooterTool() {
       });
 
       const bytes = await doc.save();
-      setDownloadUrl(URL.createObjectURL(new Blob([bytes], { type: 'application/pdf' })));
+      setDownloadUrl(URL.createObjectURL(new Blob([bytes as any], { type: 'application/pdf' })));
     } catch (err: any) {
       setError(err?.message || 'Failed to add header/footer.');
     } finally {

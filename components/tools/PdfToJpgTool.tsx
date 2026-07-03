@@ -89,7 +89,7 @@ export function PdfToJpgTool() {
         canvas.width = viewport.width;
         canvas.height = viewport.height;
         
-        await page.render({ canvasContext: context, viewport }).promise;
+        await page.render({ canvasContext: context, viewport, canvas }).promise;
         
         // Convert page to jpeg blob
         const blob: Blob | null = await new Promise((resolve) => {

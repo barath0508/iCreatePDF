@@ -38,7 +38,7 @@ export function InvertTool() {
         const canvas = document.createElement('canvas');
         canvas.width = vp.width; canvas.height = vp.height;
         const ctx = canvas.getContext('2d')!;
-        await page.render({ canvasContext: ctx, viewport: vp }).promise;
+        await page.render({ canvasContext: ctx, viewport: vp, canvas: canvas as any }).promise;
         const imgData = ctx.getImageData(0, 0, canvas.width, canvas.height);
         const data = imgData.data;
         for (let j = 0; j < data.length; j += 4) {
@@ -54,7 +54,7 @@ export function InvertTool() {
       }
 
       const bytes = await outDoc.save();
-      setDownloadUrl(URL.createObjectURL(new Blob([bytes], { type: 'application/pdf' })));
+      setDownloadUrl(URL.createObjectURL(new Blob([bytes as any], { type: 'application/pdf' })));
       setProgress(100);
     } catch (err: any) {
       setError(err?.message || 'Inversion failed.');
