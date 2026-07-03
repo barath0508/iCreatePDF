@@ -1,4 +1,14 @@
 User-agent: *
 Allow: /
 
+# Sitemap Link
 Sitemap: https://icreatepdf.com/sitemap.xml
+
+# Disallow non-indexable application folders/routes
+Disallow: /checkout
+Disallow: /admin
+Disallow: /test.html
+Disallow: /*-draft.html
+
+# Crawl delay to protect server resources
+Crawl-delay: 1

@@ -130,10 +130,10 @@ export function Navigation() {
                 priority
               />
             </div>
-            <span className="font-extrabold tracking-tight select-none text-white text-4xl font-display" style={{ letterSpacing: '-0.03em', lineHeight: 1 }}>
+            <span className="font-extrabold tracking-tight select-none text-white text-2xl sm:text-4xl font-display" style={{ letterSpacing: '-0.03em', lineHeight: 1 }}>
               <span className="bg-gradient-to-r from-purple-400 to-pink-400 bg-clip-text text-transparent">i</span>Create
             </span>
-            <span className="font-extrabold tracking-tight select-none text-4xl font-display" style={{ letterSpacing: '-0.03em', lineHeight: 1, background: 'linear-gradient(135deg, #a78bfa 0%, #eca8d6 100%)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent', backgroundClip: 'text' }}>
+            <span className="font-extrabold tracking-tight select-none text-2xl sm:text-4xl font-display" style={{ letterSpacing: '-0.03em', lineHeight: 1, background: 'linear-gradient(135deg, #a78bfa 0%, #eca8d6 100%)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent', backgroundClip: 'text' }}>
               PDF
             </span>
           </Link>
@@ -216,14 +216,14 @@ export function Navigation() {
       
       {/* Mobile Menu Overlay */}
       <div
-        className={`md:hidden fixed inset-0 bg-background z-40 transition-all duration-500 ${
+        className={`md:hidden fixed inset-0 bg-background z-40 transition-all duration-500 overflow-y-auto ${
           isMobileMenuOpen 
             ? 'opacity-100 pointer-events-auto' 
             : 'opacity-0 pointer-events-none'
         }`}
         style={{ top: 0 }}
       >
-        <div className="flex flex-col h-full px-8 pt-28 pb-8">
+        <div className="flex flex-col min-h-screen px-8 pt-24 pb-8">
           {/* Navigation Links */}
           <div className="flex-1 flex flex-col justify-center gap-8">
             {navLinks.map((link, i) => (
@@ -264,8 +264,8 @@ export function Navigation() {
 
       {/* Floating command palette search overlay */}
       {isSearchOpen && (
-        <div className="fixed inset-0 z-[100] bg-black/60 backdrop-blur-md flex items-start justify-center pt-24 px-4">
-          <div className="w-full max-w-xl bg-zinc-950 border border-white/10 rounded-2xl shadow-2xl overflow-hidden scale-in-center">
+        <div className="fixed inset-0 z-[100] bg-black/60 backdrop-blur-md flex items-start justify-center sm:pt-24 pt-4 px-4">
+          <div className="w-full max-w-xl bg-zinc-950 border border-white/10 rounded-2xl shadow-2xl overflow-hidden scale-in-center max-h-[90vh] sm:max-h-[80vh] flex flex-col">
             {/* Input Header */}
             <div className="flex items-center gap-3 px-4 py-3 border-b border-white/5 bg-white/5">
               <Search className="w-5 h-5 text-purple-400 shrink-0" />
@@ -286,7 +286,7 @@ export function Navigation() {
             </div>
 
             {/* Results body */}
-            <div className="max-h-[360px] overflow-y-auto p-2 divide-y divide-white/5">
+            <div className="flex-1 overflow-y-auto p-2 divide-y divide-white/5 max-h-[300px] sm:max-h-[360px]">
               {filteredTools.length > 0 ? (
                 filteredTools.map((tool) => (
                   <Link

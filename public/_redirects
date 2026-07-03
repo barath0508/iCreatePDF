@@ -1,0 +1,4 @@
+# Redirect rules to consolidate duplicate pages or handle old URLs
+# Format: /old-path /new-path 301
+/old-page-name.html  /new-canonical-page.html  301
+/another-old-url     /canonical-destination    301

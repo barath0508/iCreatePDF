@@ -74,8 +74,8 @@ export function FooterSection() {
 
       <div className="relative z-10 max-w-[1400px] mx-auto px-6 lg:px-12">
         <div className="py-16 lg:py-20">
-          <div className="grid grid-cols-2 md:grid-cols-5 gap-12 lg:gap-8">
-            <div className="col-span-2">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-7 gap-12 lg:gap-8">
+            <div className="col-span-1 sm:col-span-2">
               <Link href="/" className="inline-flex items-center gap-2.5 mb-6 group hover:opacity-90 transition-opacity">
                 <div className="relative w-8 h-8 rounded-lg overflow-hidden border border-purple-500/20 shadow-md transition-transform duration-300 group-hover:scale-105">
                   <Image
@@ -111,23 +111,26 @@ export function FooterSection() {
               </div>
             </div>
 
-            {Object.entries(footerLinks).map(([title, links]) => (
-              <div key={title}>
-                <h3 className="text-sm font-medium text-white mb-6">{title}</h3>
-                <ul className="space-y-4">
-                  {links.map((link) => (
-                    <li key={link.name}>
-                      <Link
-                        href={link.href}
-                        className="text-sm text-white/40 hover:text-white transition-colors inline-flex items-center gap-2"
-                      >
-                        {link.name}
-                      </Link>
-                    </li>
-                  ))}
-                </ul>
-              </div>
-            ))}
+            {Object.entries(footerLinks).map(([title, links]) => {
+              const isUtilities = title === 'Utilities';
+              return (
+                <div key={title} className={isUtilities ? 'col-span-1 sm:col-span-2' : 'col-span-1'}>
+                  <h3 className="text-sm font-medium text-white mb-6">{title}</h3>
+                  <ul className={isUtilities ? 'grid grid-cols-1 sm:grid-cols-2 gap-x-6 gap-y-4' : 'space-y-4'}>
+                    {links.map((link) => (
+                      <li key={link.name}>
+                        <Link
+                          href={link.href}
+                          className="text-sm text-white/40 hover:text-white transition-colors inline-flex items-center gap-2"
+                        >
+                          {link.name}
+                        </Link>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              );
+            })}
           </div>
         </div>
 

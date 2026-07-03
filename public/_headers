@@ -1,0 +1,7 @@
+# Block indexing of duplicate or draft pages
+/draft-page.html
+  X-Robots-Tag: noindex
+/duplicate-blog.html
+  X-Robots-Tag: noindex
+/admin/
+  X-Robots-Tag: noindex
