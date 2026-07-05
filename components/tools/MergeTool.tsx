@@ -151,8 +151,8 @@ export function MergeTool() {
             onClick={() => fileInputRef.current?.click()}
             className={`relative cursor-pointer border border-dashed rounded-2xl p-12 transition-all duration-300 text-center flex flex-col items-center justify-center min-h-[220px] ${
               isDraggingOver
-                ? 'border-purple-500 bg-purple-500/5'
-                : 'border-white/10 bg-zinc-900/30 hover:border-white/20'
+                ? 'border-brand bg-brand/5'
+                : 'border-foreground/10 bg-card/40 hover:border-foreground/20'
             }`}
           >
             <input
@@ -163,13 +163,13 @@ export function MergeTool() {
               accept=".pdf"
               className="hidden"
             />
-            <div className="p-4 rounded-full bg-white/5 mb-4 border border-white/10">
-              <Upload className="w-6 h-6 text-purple-400" />
+            <div className="p-4 rounded-full bg-foreground/5 mb-4 border border-foreground/10">
+              <Upload className="w-6 h-6 text-brand" />
             </div>
-            <h3 className="text-xl font-display text-white mb-2">
+            <h3 className="text-xl font-display text-foreground mb-2">
               Select or drag PDF files
             </h3>
-            <p className="text-xs text-white/40">
+            <p className="text-xs text-foreground/40">
               Files are merged 100% locally in your browser memory.
             </p>
           </div>
@@ -182,7 +182,7 @@ export function MergeTool() {
 
           {files.length > 0 && (
             <div className="space-y-4">
-              <span className="text-xs font-mono text-white/50 uppercase tracking-widest">
+              <span className="text-xs font-mono text-foreground/50 uppercase tracking-widest">
                 Files Queue ({files.length}) - Drag to reorder
               </span>
 
@@ -195,17 +195,17 @@ export function MergeTool() {
                     onDragEnter={() => handleDragEnter(idx)}
                     onDragEnd={handleDragEnd}
                     onDragOver={(e) => e.preventDefault()}
-                    className="flex items-center justify-between p-4 bg-zinc-950 border border-white/5 rounded-xl cursor-move hover:border-white/15 transition-all"
+                    className="flex items-center justify-between p-4 bg-card border border-foreground/5 rounded-xl cursor-move hover:border-foreground/15 transition-all"
                   >
                     <div className="flex items-center gap-3 min-w-0">
-                      <span className="text-xs font-mono text-purple-400 bg-purple-500/10 px-2 py-0.5 rounded">
+                      <span className="text-xs font-mono text-brand bg-brand/10 px-2 py-0.5 rounded">
                         {idx + 1}
                       </span>
                       <div className="truncate">
-                        <p className="text-sm font-medium text-white truncate max-w-sm sm:max-w-md">
+                        <p className="text-sm font-medium text-foreground truncate max-w-sm sm:max-w-md">
                           {item.file.name}
                         </p>
-                        <p className="text-xs text-white/40">
+                        <p className="text-xs text-foreground/40">
                           {item.pagesCount} pages • {(item.file.size / (1024 * 1024)).toFixed(2)} MB
                         </p>
                       </div>
@@ -214,7 +214,7 @@ export function MergeTool() {
                     <button
                       type="button"
                       onClick={() => removeFile(item.id)}
-                      className="p-2 hover:bg-red-950/20 hover:text-red-400 rounded-lg text-white/40 transition-colors"
+                      className="p-2 hover:bg-red-950/20 hover:text-red-400 rounded-lg text-foreground/40 transition-colors"
                     >
                       <Trash2 className="w-4 h-4" />
                     </button>
@@ -226,35 +226,35 @@ export function MergeTool() {
         </div>
 
         {/* Action Panel */}
-        <div className="lg:col-span-4 bg-zinc-950 border border-white/10 rounded-2xl p-6 space-y-6">
-          <div className="flex items-center gap-2 border-b border-white/5 pb-4">
-            <Layers className="w-4 h-4 text-purple-400" />
-            <h3 className="font-mono text-sm uppercase tracking-wider text-white">Merge PDF</h3>
+        <div className="lg:col-span-4 bg-card border border-foreground/10 rounded-2xl p-6 space-y-6">
+          <div className="flex items-center gap-2 border-b border-foreground/5 pb-4">
+            <Layers className="w-4 h-4 text-brand" />
+            <h3 className="font-mono text-sm uppercase tracking-wider text-foreground">Merge PDF</h3>
           </div>
 
-          <p className="text-xs text-white/50 leading-relaxed">
+          <p className="text-xs text-foreground/50 leading-relaxed">
             Combine multiple PDF files into a single document. Drag items to adjust the sequence of documents.
           </p>
 
-          <div className="pt-4 border-t border-white/5">
+          <div className="pt-4 border-t border-foreground/5">
             {isProcessing ? (
               <div className="space-y-2">
-                <div className="flex justify-between items-center text-xs font-mono text-white/60">
+                <div className="flex justify-between items-center text-xs font-mono text-foreground/60">
                   <span className="flex items-center gap-2">
-                    <Loader2 className="w-3.5 h-3.5 text-purple-500 animate-spin" />
+                    <Loader2 className="w-3.5 h-3.5 text-brand animate-spin" />
                     Merging...
                   </span>
                   <span>{progress}%</span>
                 </div>
-                <div className="w-full bg-white/5 rounded-full h-1.5 overflow-hidden">
-                  <div className="bg-purple-600 h-full rounded-full" style={{ width: `${progress}%` }} />
+                <div className="w-full bg-foreground/5 rounded-full h-1.5 overflow-hidden">
+                  <div className="bg-brand h-full rounded-full" style={{ width: `${progress}%` }} />
                 </div>
               </div>
             ) : downloadUrl ? (
               <div className="space-y-2">
                 <Button
                   onClick={handleDownload}
-                  className="w-full bg-emerald-600 hover:bg-emerald-700 text-white font-medium py-6 rounded-xl flex items-center justify-center gap-2"
+                  className="w-full bg-emerald-600 hover:bg-emerald-700 text-foreground font-medium py-6 rounded-xl flex items-center justify-center gap-2"
                 >
                   <Download className="w-5 h-5" />
                   Download Merged PDF
@@ -265,7 +265,7 @@ export function MergeTool() {
                     setFiles([]);
                     setDownloadUrl(null);
                   }}
-                  className="w-full text-white/50 hover:text-white text-xs h-8"
+                  className="w-full text-foreground/50 hover:text-foreground text-xs h-8"
                 >
                   Merge new files
                 </Button>
@@ -275,7 +275,7 @@ export function MergeTool() {
                 disabled={files.length < 2}
                 onClick={triggerMerge}
                 className={`w-full font-medium py-6 rounded-xl flex items-center justify-center gap-2 ${
-                  files.length >= 2 ? 'bg-purple-600 hover:bg-purple-700 text-white' : 'bg-white/5 text-white/30 cursor-not-allowed'
+                  files.length >= 2 ? 'bg-brand hover:bg-brand/90 text-foreground' : 'bg-foreground/5 text-foreground/30 cursor-not-allowed'
                 }`}
               >
                 <FileText className="w-4 h-4" />

@@ -229,12 +229,12 @@ export function ConverterSection({ initialFormatFilter }: ConverterSectionProps)
   };
 
   return (
-    <section id="convert" className="w-full py-16 bg-black relative z-10">
+    <section id="convert" className="w-full py-16 bg-background relative z-10">
       <div className="max-w-[1400px] mx-auto px-6 lg:px-12">
         
         {initialFormatFilter && (
-          <div className="mb-6 p-4 rounded-xl bg-purple-500/10 border border-purple-500/20 text-purple-200 text-sm flex items-center gap-2">
-            <FileImage className="w-4 h-4 text-purple-400" />
+          <div className="mb-6 p-4 rounded-xl bg-brand/10 border border-brand/20 text-purple-200 text-sm flex items-center gap-2">
+            <FileImage className="w-4 h-4 text-brand" />
             <span>Optimized for converting <strong>{initialFormatFilter.toUpperCase()} to PDF</strong>. All image formats are accepted.</span>
           </div>
         )}
@@ -250,8 +250,8 @@ export function ConverterSection({ initialFormatFilter }: ConverterSectionProps)
               onClick={() => fileInputRef.current?.click()}
               className={`relative cursor-pointer border border-dashed rounded-2xl p-12 transition-all duration-300 text-center flex flex-col items-center justify-center min-h-[260px] ${
                 isDraggingOver
-                  ? 'border-purple-500 bg-purple-500/5 shadow-[0_0_30px_rgba(168,85,247,0.1)]'
-                  : 'border-white/10 bg-zinc-900/30 hover:border-white/20 hover:bg-zinc-900/40'
+                  ? 'border-brand bg-brand/5 shadow-[0_0_30px_rgba(168,85,247,0.1)]'
+                  : 'border-foreground/10 bg-card/40 hover:border-foreground/20 hover:bg-card/50'
               }`}
             >
               <input
@@ -263,14 +263,14 @@ export function ConverterSection({ initialFormatFilter }: ConverterSectionProps)
                 className="hidden"
               />
               
-              <div className="p-4 rounded-full bg-white/5 mb-4 border border-white/10">
-                <Upload className="w-6 h-6 text-purple-400" />
+              <div className="p-4 rounded-full bg-foreground/5 mb-4 border border-foreground/10">
+                <Upload className="w-6 h-6 text-brand" />
               </div>
               
-              <h3 className="text-xl font-display text-white mb-2">
-                Drag &amp; Drop files here or <span className="text-purple-400 hover:underline">browse</span>
+              <h3 className="text-xl font-display text-foreground mb-2">
+                Drag &amp; Drop files here or <span className="text-brand hover:underline">browse</span>
               </h3>
-              <p className="text-xs text-white/40 max-w-sm">
+              <p className="text-xs text-foreground/40 max-w-sm">
                 Supports JPG, PNG, WEBP, HEIC, BMP. Maximum 20 images. Files processed entirely locally.
               </p>
             </div>
@@ -284,11 +284,11 @@ export function ConverterSection({ initialFormatFilter }: ConverterSectionProps)
             {images.length > 0 && (
               <div className="space-y-4">
                 <div className="flex justify-between items-center px-1">
-                  <span className="text-xs font-mono text-white/50 uppercase tracking-widest flex items-center gap-2">
-                    <Layers className="w-3.5 h-3.5 text-purple-400" />
+                  <span className="text-xs font-mono text-foreground/50 uppercase tracking-widest flex items-center gap-2">
+                    <Layers className="w-3.5 h-3.5 text-brand" />
                     Uploaded Files ({images.length} / 20)
                   </span>
-                  <span className="text-[10px] text-white/40 font-mono">Drag to reorder pages</span>
+                  <span className="text-[10px] text-foreground/40 font-mono">Drag to reorder pages</span>
                 </div>
 
                 <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4">
@@ -300,25 +300,25 @@ export function ConverterSection({ initialFormatFilter }: ConverterSectionProps)
                       onDragEnter={() => handleDragEnter(idx)}
                       onDragEnd={handleDragEnd}
                       onDragOver={(e) => e.preventDefault()}
-                      className="relative bg-zinc-950 border border-white/5 rounded-xl overflow-hidden aspect-[3/4] flex flex-col justify-between cursor-move hover:border-purple-500/30 transition-all duration-300"
+                      className="relative bg-card border border-foreground/5 rounded-xl overflow-hidden aspect-[3/4] flex flex-col justify-between cursor-move hover:border-brand/30 transition-all duration-300"
                     >
-                      <div className="relative flex-1 bg-black/40 flex items-center justify-center overflow-hidden">
+                      <div className="relative flex-1 bg-background/40 flex items-center justify-center overflow-hidden">
                         <img
                           src={img.previewUrl}
                           alt=""
                           style={{ transform: `rotate(${img.rotation}deg)` }}
                           className="max-h-full max-w-full object-contain"
                         />
-                        <span className="absolute top-2 left-2 px-2 py-0.5 bg-black/80 text-[10px] text-white/70 rounded-full font-mono border border-white/10">
+                        <span className="absolute top-2 left-2 px-2 py-0.5 bg-background/80 text-[10px] text-foreground/70 rounded-full font-mono border border-foreground/10">
                           {idx + 1}
                         </span>
                       </div>
 
-                      <div className="flex border-t border-white/5 bg-zinc-900/50 p-2 gap-1 justify-between">
+                      <div className="flex border-t border-foreground/5 bg-card/60 p-2 gap-1 justify-between">
                         <button
                           type="button"
                           onClick={() => rotateImage(img.id)}
-                          className="p-1.5 hover:bg-white/5 hover:text-purple-400 rounded-lg text-white/40 transition-colors"
+                          className="p-1.5 hover:bg-foreground/5 hover:text-brand rounded-lg text-foreground/40 transition-colors"
                         >
                           <RotateCw className="w-3.5 h-3.5" />
                         </button>
@@ -326,7 +326,7 @@ export function ConverterSection({ initialFormatFilter }: ConverterSectionProps)
                         <button
                           type="button"
                           onClick={() => removeImage(img.id)}
-                          className="p-1.5 hover:bg-red-950/20 hover:text-red-400 rounded-lg text-white/40 transition-colors"
+                          className="p-1.5 hover:bg-red-950/20 hover:text-red-400 rounded-lg text-foreground/40 transition-colors"
                         >
                           <Trash2 className="w-3.5 h-3.5" />
                         </button>
@@ -339,15 +339,15 @@ export function ConverterSection({ initialFormatFilter }: ConverterSectionProps)
           </div>
 
           {/* Options Panel Card */}
-          <div className="lg:col-span-4 bg-zinc-950 border border-white/10 rounded-2xl p-6 space-y-6">
-            <div className="flex items-center gap-2 border-b border-white/5 pb-4">
-              <Sliders className="w-4 h-4 text-purple-400" />
-              <h3 className="font-mono text-sm uppercase tracking-wider text-white">Convert Options</h3>
+          <div className="lg:col-span-4 bg-card border border-foreground/10 rounded-2xl p-6 space-y-6">
+            <div className="flex items-center gap-2 border-b border-foreground/5 pb-4">
+              <Sliders className="w-4 h-4 text-brand" />
+              <h3 className="font-mono text-sm uppercase tracking-wider text-foreground">Convert Options</h3>
             </div>
 
             {/* Page Size Option */}
             <div className="space-y-2">
-              <label className="text-[10px] font-mono uppercase tracking-wider text-white/40">Page Size</label>
+              <label className="text-[10px] font-mono uppercase tracking-wider text-foreground/40">Page Size</label>
               <div className="grid grid-cols-4 gap-1.5">
                 {[
                   { value: 'a4', label: 'A4' },
@@ -361,7 +361,7 @@ export function ConverterSection({ initialFormatFilter }: ConverterSectionProps)
                     size="sm"
                     onClick={() => setOptions((prev) => ({ ...prev, pageSize: opt.value as any }))}
                     className={`h-8 text-xs rounded-lg px-2 ${
-                      options.pageSize === opt.value ? 'bg-purple-600 hover:bg-purple-700 text-white' : 'border-white/10 text-white/60 hover:text-white'
+                      options.pageSize === opt.value ? 'bg-brand hover:bg-brand/90 text-foreground' : 'border-foreground/10 text-foreground/60 hover:text-foreground'
                     }`}
                   >
                     {opt.label}
@@ -372,25 +372,25 @@ export function ConverterSection({ initialFormatFilter }: ConverterSectionProps)
               {options.pageSize === 'custom' && (
                 <div className="flex gap-2 pt-2 animate-fade-in">
                   <div className="flex-1 space-y-1">
-                    <span className="text-[9px] text-white/40 block font-mono">Width (mm)</span>
+                    <span className="text-[9px] text-foreground/40 block font-mono">Width (mm)</span>
                     <input
                       type="number"
                       min="50"
                       max="1000"
                       value={options.customWidth || 210}
                       onChange={(e) => setOptions((prev) => ({ ...prev, customWidth: parseInt(e.target.value) || 210 }))}
-                      className="w-full h-8 px-2 bg-zinc-900 border border-white/10 text-white rounded text-xs font-mono"
+                      className="w-full h-8 px-2 bg-card/80 border border-foreground/10 text-foreground rounded text-xs font-mono"
                     />
                   </div>
                   <div className="flex-1 space-y-1">
-                    <span className="text-[9px] text-white/40 block font-mono">Height (mm)</span>
+                    <span className="text-[9px] text-foreground/40 block font-mono">Height (mm)</span>
                     <input
                       type="number"
                       min="50"
                       max="1000"
                       value={options.customHeight || 297}
                       onChange={(e) => setOptions((prev) => ({ ...prev, customHeight: parseInt(e.target.value) || 297 }))}
-                      className="w-full h-8 px-2 bg-zinc-900 border border-white/10 text-white rounded text-xs font-mono"
+                      className="w-full h-8 px-2 bg-card/80 border border-foreground/10 text-foreground rounded text-xs font-mono"
                     />
                   </div>
                 </div>
@@ -399,7 +399,7 @@ export function ConverterSection({ initialFormatFilter }: ConverterSectionProps)
 
             {/* Margins */}
             <div className="space-y-2">
-              <label className="text-[10px] font-mono uppercase tracking-wider text-white/40">Margins</label>
+              <label className="text-[10px] font-mono uppercase tracking-wider text-foreground/40">Margins</label>
               <div className="grid grid-cols-3 gap-2">
                 {[
                   { value: 'none', label: 'None' },
@@ -412,7 +412,7 @@ export function ConverterSection({ initialFormatFilter }: ConverterSectionProps)
                     size="sm"
                     onClick={() => setOptions((prev) => ({ ...prev, margin: opt.value as any }))}
                     className={`h-8 text-xs rounded-lg ${
-                      options.margin === opt.value ? 'bg-purple-600 hover:bg-purple-700 text-white' : 'border-white/10 text-white/60 hover:text-white'
+                      options.margin === opt.value ? 'bg-brand hover:bg-brand/90 text-foreground' : 'border-foreground/10 text-foreground/60 hover:text-foreground'
                     }`}
                   >
                     {opt.label}
@@ -423,7 +423,7 @@ export function ConverterSection({ initialFormatFilter }: ConverterSectionProps)
 
             {/* Orientation */}
             <div className="space-y-2">
-              <label className="text-[10px] font-mono uppercase tracking-wider text-white/40">Orientation</label>
+              <label className="text-[10px] font-mono uppercase tracking-wider text-foreground/40">Orientation</label>
               <div className="grid grid-cols-2 gap-2">
                 {[
                   { value: 'portrait', label: 'Portrait' },
@@ -436,7 +436,7 @@ export function ConverterSection({ initialFormatFilter }: ConverterSectionProps)
                     disabled={options.pageSize === 'fit'}
                     onClick={() => setOptions((prev) => ({ ...prev, orientation: opt.value as any }))}
                     className={`h-8 text-xs rounded-lg ${
-                      options.orientation === opt.value ? 'bg-purple-600 hover:bg-purple-700 text-white' : 'border-white/10 text-white/60 hover:text-white'
+                      options.orientation === opt.value ? 'bg-brand hover:bg-brand/90 text-foreground' : 'border-foreground/10 text-foreground/60 hover:text-foreground'
                     }`}
                   >
                     {opt.label}
@@ -448,8 +448,8 @@ export function ConverterSection({ initialFormatFilter }: ConverterSectionProps)
             {/* Compression Slider */}
             <div className="space-y-2">
               <div className="flex justify-between items-center">
-                <label className="text-[10px] font-mono uppercase tracking-wider text-white/40">Image Quality</label>
-                <span className="text-xs font-mono text-purple-400">
+                <label className="text-[10px] font-mono uppercase tracking-wider text-foreground/40">Image Quality</label>
+                <span className="text-xs font-mono text-brand">
                   {Math.round(options.quality * 100)}%
                 </span>
               </div>
@@ -460,24 +460,24 @@ export function ConverterSection({ initialFormatFilter }: ConverterSectionProps)
                 step="0.05"
                 value={options.quality}
                 onChange={(e) => setOptions((prev) => ({ ...prev, quality: parseFloat(e.target.value) }))}
-                className="w-full h-1 bg-zinc-800 rounded-lg appearance-none cursor-pointer accent-purple-500"
+                className="w-full h-1 bg-zinc-800 rounded-lg appearance-none cursor-pointer accent-brand"
               />
             </div>
 
             {/* Actions */}
-            <div className="pt-4 border-t border-white/5">
+            <div className="pt-4 border-t border-foreground/5">
               {isProcessing ? (
                 <div className="space-y-2">
-                  <div className="flex justify-between items-center text-xs font-mono text-white/60">
+                  <div className="flex justify-between items-center text-xs font-mono text-foreground/60">
                     <span className="flex items-center gap-2">
-                      <Loader2 className="w-3.5 h-3.5 text-purple-500 animate-spin" />
+                      <Loader2 className="w-3.5 h-3.5 text-brand animate-spin" />
                       Compiling PDF...
                     </span>
                     <span>{progress}%</span>
                   </div>
-                  <div className="w-full bg-white/5 rounded-full h-1.5 overflow-hidden">
+                  <div className="w-full bg-foreground/5 rounded-full h-1.5 overflow-hidden">
                     <div 
-                      className="bg-purple-600 h-full rounded-full transition-all duration-300"
+                      className="bg-brand h-full rounded-full transition-all duration-300"
                       style={{ width: `${progress}%` }}
                     />
                   </div>
@@ -486,7 +486,7 @@ export function ConverterSection({ initialFormatFilter }: ConverterSectionProps)
                 <div className="space-y-2">
                   <Button
                     onClick={handleDownload}
-                    className="w-full bg-emerald-600 hover:bg-emerald-700 text-white font-medium py-6 rounded-xl flex items-center justify-center gap-2"
+                    className="w-full bg-emerald-600 hover:bg-emerald-700 text-foreground font-medium py-6 rounded-xl flex items-center justify-center gap-2"
                   >
                     <Download className="w-5 h-5" />
                     Download PDF
@@ -494,7 +494,7 @@ export function ConverterSection({ initialFormatFilter }: ConverterSectionProps)
                   <Button
                     variant="ghost"
                     onClick={() => setDownloadUrl(null)}
-                    className="w-full text-white/50 hover:text-white text-xs h-8"
+                    className="w-full text-foreground/50 hover:text-foreground text-xs h-8"
                   >
                     Reset and Add Files
                   </Button>
@@ -505,8 +505,8 @@ export function ConverterSection({ initialFormatFilter }: ConverterSectionProps)
                   onClick={triggerConvert}
                   className={`w-full font-medium py-6 rounded-xl flex items-center justify-center gap-2 ${
                     images.length > 0
-                      ? 'bg-purple-600 hover:bg-purple-700 text-white'
-                      : 'bg-white/5 text-white/30 cursor-not-allowed'
+                      ? 'bg-brand hover:bg-brand/90 text-foreground'
+                      : 'bg-foreground/5 text-foreground/30 cursor-not-allowed'
                   }`}
                 >
                   <FileText className="w-4 h-4" />

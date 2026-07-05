@@ -216,7 +216,7 @@ export function EditPdfTool() {
               onDragLeave={() => setIsDraggingOver(false)}
               onDrop={(e) => { e.preventDefault(); setIsDraggingOver(false); e.dataTransfer.files && handleFiles(e.dataTransfer.files); }}
               onClick={() => fileInputRef.current?.click()}
-              className="relative cursor-pointer border border-dashed rounded-2xl p-12 transition-all duration-300 text-center flex flex-col items-center justify-center min-h-[220px] border-white/10 bg-zinc-900/30 hover:border-white/20"
+              className="relative cursor-pointer border border-dashed rounded-2xl p-12 transition-all duration-300 text-center flex flex-col items-center justify-center min-h-[220px] border-foreground/10 bg-card/40 hover:border-foreground/20"
             >
               <input
                 type="file"
@@ -225,20 +225,20 @@ export function EditPdfTool() {
                 accept=".pdf"
                 className="hidden"
               />
-              <Plus className="w-6 h-6 text-purple-400 mb-4" />
-              <h3 className="text-xl font-display text-white mb-2">Select a PDF file to edit</h3>
-              <p className="text-xs text-white/40">Open locally in browser sandbox.</p>
+              <Plus className="w-6 h-6 text-brand mb-4" />
+              <h3 className="text-xl font-display text-foreground mb-2">Select a PDF file to edit</h3>
+              <p className="text-xs text-foreground/40">Open locally in browser sandbox.</p>
             </div>
           ) : (
             <div className="space-y-4">
               {/* PDF Preview Container with annotations */}
               <div 
                 ref={containerRef}
-                className="relative bg-zinc-950 border border-white/10 rounded-2xl p-4 flex justify-center items-center select-none overflow-hidden"
+                className="relative bg-card border border-foreground/10 rounded-2xl p-4 flex justify-center items-center select-none overflow-hidden"
               >
                 {isPreviewLoading && (
-                  <div className="absolute inset-0 bg-black/50 backdrop-blur-sm z-20 flex items-center justify-center">
-                    <Loader2 className="w-8 h-8 animate-spin text-purple-400" />
+                  <div className="absolute inset-0 bg-background/50 backdrop-blur-sm z-20 flex items-center justify-center">
+                    <Loader2 className="w-8 h-8 animate-spin text-brand" />
                   </div>
                 )}
 
@@ -251,7 +251,7 @@ export function EditPdfTool() {
                       key={ann.id}
                       onMouseDown={(e) => handleDragStart(e, ann.id)}
                       className={`absolute cursor-move border px-2 py-1 rounded select-none ${
-                        activeAnnotationId === ann.id ? 'border-purple-500 bg-purple-500/10' : 'border-transparent bg-black/40'
+                        activeAnnotationId === ann.id ? 'border-brand bg-brand/10' : 'border-transparent bg-background/40'
                       }`}
                       style={{
                         left: `${ann.x}px`,
@@ -269,7 +269,7 @@ export function EditPdfTool() {
 
               {/* Navigation */}
               {pagesCount > 1 && (
-                <div className="flex justify-between items-center bg-zinc-900/50 p-3 rounded-xl border border-white/5">
+                <div className="flex justify-between items-center bg-card/60 p-3 rounded-xl border border-foreground/5">
                   <Button
                     variant="ghost"
                     size="sm"
@@ -278,7 +278,7 @@ export function EditPdfTool() {
                   >
                     Prev
                   </Button>
-                  <span className="text-xs text-white/60">
+                  <span className="text-xs text-foreground/60">
                     Page {currentPage} of {pagesCount}
                   </span>
                   <Button
@@ -302,25 +302,25 @@ export function EditPdfTool() {
         </div>
 
         {/* Action Panel */}
-        <div className="lg:col-span-4 bg-zinc-950 border border-white/10 rounded-2xl p-6 space-y-6">
-          <div className="flex items-center gap-2 border-b border-white/5 pb-4">
-            <Edit className="w-4 h-4 text-purple-400" />
-            <h3 className="font-mono text-sm uppercase tracking-wider text-white">Edit PDF</h3>
+        <div className="lg:col-span-4 bg-card border border-foreground/10 rounded-2xl p-6 space-y-6">
+          <div className="flex items-center gap-2 border-b border-foreground/5 pb-4">
+            <Edit className="w-4 h-4 text-brand" />
+            <h3 className="font-mono text-sm uppercase tracking-wider text-foreground">Edit PDF</h3>
           </div>
 
           {file && !downloadUrl && (
             <div className="space-y-4">
               <div className="space-y-2">
-                <label className="text-xs font-mono text-white/60">Add Text Annotation</label>
+                <label className="text-xs font-mono text-foreground/60">Add Text Annotation</label>
                 <div className="flex gap-2">
                   <input
                     type="text"
                     value={inputText}
                     onChange={(e) => setInputText(e.target.value)}
                     placeholder="Enter text overlay..."
-                    className="flex-1 bg-black border border-white/10 rounded-xl px-3 py-2 text-sm text-white focus:outline-none focus:border-purple-500"
+                    className="flex-1 bg-background border border-foreground/10 rounded-xl px-3 py-2 text-sm text-foreground focus:outline-none focus:border-brand"
                   />
-                  <Button onClick={addTextAnnotation} className="bg-purple-600 hover:bg-purple-700 text-white px-3">
+                  <Button onClick={addTextAnnotation} className="bg-brand hover:bg-brand/90 text-foreground px-3">
                     Add
                   </Button>
                 </div>
@@ -328,16 +328,16 @@ export function EditPdfTool() {
 
               {/* Annotation Customizers */}
               {activeAnnotationId && (
-                <div className="bg-white/5 border border-white/10 rounded-xl p-4 space-y-3">
-                  <div className="flex justify-between items-center pb-2 border-b border-white/5">
-                    <span className="text-xs font-mono text-purple-400">Customizer</span>
+                <div className="bg-foreground/5 border border-foreground/10 rounded-xl p-4 space-y-3">
+                  <div className="flex justify-between items-center pb-2 border-b border-foreground/5">
+                    <span className="text-xs font-mono text-brand">Customizer</span>
                     <button onClick={() => deleteAnnotation(activeAnnotationId)} className="text-red-400 hover:text-red-300">
                       <Trash2 className="w-3.5 h-3.5" />
                     </button>
                   </div>
 
                   <div className="space-y-1.5">
-                    <label className="text-[10px] font-mono text-white/40">Font Size ({fontSize}px)</label>
+                    <label className="text-[10px] font-mono text-foreground/40">Font Size ({fontSize}px)</label>
                     <input
                       type="range"
                       min="10"
@@ -348,12 +348,12 @@ export function EditPdfTool() {
                         setFontSize(val);
                         setAnnotations(annotations.map(a => a.id === activeAnnotationId ? { ...a, fontSize: val } : a));
                       }}
-                      className="w-full accent-purple-500"
+                      className="w-full accent-brand"
                     />
                   </div>
 
                   <div className="space-y-1.5">
-                    <label className="text-[10px] font-mono text-white/40">Text Color</label>
+                    <label className="text-[10px] font-mono text-foreground/40">Text Color</label>
                     <input
                       type="color"
                       value={textColor}
@@ -362,7 +362,7 @@ export function EditPdfTool() {
                         setTextColor(val);
                         setAnnotations(annotations.map(a => a.id === activeAnnotationId ? { ...a, color: val } : a));
                       }}
-                      className="w-full h-8 border border-white/10 rounded bg-transparent cursor-pointer"
+                      className="w-full h-8 border border-foreground/10 rounded bg-transparent cursor-pointer"
                     />
                   </div>
                 </div>
@@ -371,7 +371,7 @@ export function EditPdfTool() {
               <Button
                 disabled={isProcessing || annotations.length === 0}
                 onClick={triggerSave}
-                className="w-full bg-purple-600 hover:bg-purple-700 text-white py-6 rounded-xl flex items-center justify-center gap-2"
+                className="w-full bg-brand hover:bg-brand/90 text-foreground py-6 rounded-xl flex items-center justify-center gap-2"
               >
                 {isProcessing && <Loader2 className="w-4 h-4 animate-spin" />}
                 Burn &amp; Export PDF
@@ -383,7 +383,7 @@ export function EditPdfTool() {
             <div className="space-y-2">
               <Button
                 onClick={handleDownload}
-                className="w-full bg-emerald-600 hover:bg-emerald-700 text-white font-medium py-6 rounded-xl flex items-center justify-center gap-2"
+                className="w-full bg-emerald-600 hover:bg-emerald-700 text-foreground font-medium py-6 rounded-xl flex items-center justify-center gap-2"
               >
                 <Download className="w-5 h-5" />
                 Download Edited PDF
@@ -395,7 +395,7 @@ export function EditPdfTool() {
                   setDownloadUrl(null);
                   setAnnotations([]);
                 }}
-                className="w-full text-white/50 hover:text-white text-xs h-8"
+                className="w-full text-foreground/50 hover:text-foreground text-xs h-8"
               >
                 Edit another file
               </Button>
@@ -403,7 +403,7 @@ export function EditPdfTool() {
           )}
 
           {!file && (
-            <p className="text-xs text-white/50 leading-relaxed">
+            <p className="text-xs text-foreground/50 leading-relaxed">
               Add structural text overlays on top of PDF documents completely inside browser memory. Move, scale, and customize colors, then burn them directly to document layers.
             </p>
           )}

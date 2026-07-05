@@ -1,5 +1,6 @@
 import React from 'react';
 import type { Metadata } from 'next';
+import { buildAlternates } from '@/lib/seo';
 import { Navigation } from '@/components/landing/navigation';
 import { FooterSection } from '@/components/landing/footer-section';
 import { ShieldCheck, Lock, Eye, Globe, Trash2, Mail } from 'lucide-react';
@@ -8,7 +9,7 @@ export const metadata: Metadata = {
   title: 'Privacy Policy | iCreatePDF — 100% Client-Side PDF Tool',
   description: 'iCreatePDF processes all PDF and image files entirely in your browser. No uploads, no servers, no data collection. Read our full privacy policy.',
   keywords: 'icreatepdf privacy policy, pdf tool privacy, no upload pdf converter, client-side pdf privacy, gdpr pdf tool',
-  alternates: { canonical: '/privacy' },
+  alternates: buildAlternates('/privacy'),
 };
 
 const sections = [
@@ -104,7 +105,7 @@ We aim to respond to all legitimate privacy requests within 14 business days.`,
 
 export default function PrivacyPage() {
   return (
-    <div className="bg-black min-h-screen text-white flex flex-col justify-between selection:bg-purple-500/30">
+    <div className="bg-background min-h-screen text-foreground flex flex-col justify-between selection:bg-brand/30">
       <Navigation />
 
       <main className="flex-1 w-full">
@@ -114,14 +115,14 @@ export default function PrivacyPage() {
             <ShieldCheck className="w-3.5 h-3.5" />
             Privacy First
           </div>
-          <h1 className="text-4xl sm:text-5xl font-extrabold text-white font-display leading-tight">
+          <h1 className="text-4xl sm:text-5xl font-extrabold text-foreground font-display leading-tight">
             Privacy Policy
           </h1>
-          <p className="text-white/40 text-sm max-w-xl mx-auto leading-relaxed">
-            iCreatePDF is built on a simple principle: <strong className="text-white/70">your files never leave your device</strong>.
+          <p className="text-foreground/40 text-sm max-w-xl mx-auto leading-relaxed">
+            iCreatePDF is built on a simple principle: <strong className="text-foreground/70">your files never leave your device</strong>.
             Everything runs in your browser. No uploads. No cloud. No exceptions.
           </p>
-          <p className="text-xs text-white/30 font-mono">Effective date: May 27, 2026 · Last updated: May 27, 2026</p>
+          <p className="text-xs text-foreground/30 font-mono">Effective date: May 27, 2026 · Last updated: May 27, 2026</p>
         </div>
 
         {/* Quick trust badges */}
@@ -132,9 +133,9 @@ export default function PrivacyPage() {
               { label: 'No Accounts Required', sub: 'Zero registration needed' },
               { label: 'No Tracking Cookies', sub: 'No ad or user tracking' },
             ].map((b) => (
-              <div key={b.label} className="p-4 rounded-2xl bg-zinc-950 border border-white/5">
+              <div key={b.label} className="p-4 rounded-2xl bg-card border border-foreground/5">
                 <p className="text-xs font-bold text-emerald-400">{b.label}</p>
-                <p className="text-[10px] text-white/40 mt-1">{b.sub}</p>
+                <p className="text-[10px] text-foreground/40 mt-1">{b.sub}</p>
               </div>
             ))}
           </div>
@@ -145,14 +146,14 @@ export default function PrivacyPage() {
           {sections.map((s) => {
             const Icon = s.icon;
             return (
-              <section key={s.title} className="p-6 rounded-2xl bg-zinc-950 border border-white/5 space-y-3">
+              <section key={s.title} className="p-6 rounded-2xl bg-card border border-foreground/5 space-y-3">
                 <div className="flex items-center gap-3">
-                  <div className="p-2 rounded-xl bg-purple-500/10 border border-purple-500/20">
-                    <Icon className="w-4 h-4 text-purple-400" />
+                  <div className="p-2 rounded-xl bg-brand/10 border border-brand/20">
+                    <Icon className="w-4 h-4 text-brand" />
                   </div>
-                  <h2 className="text-base font-bold text-white font-display">{s.title}</h2>
+                  <h2 className="text-base font-bold text-foreground font-display">{s.title}</h2>
                 </div>
-                <div className="text-sm text-white/60 leading-relaxed whitespace-pre-line pl-11">
+                <div className="text-sm text-foreground/60 leading-relaxed whitespace-pre-line pl-11">
                   {s.content}
                 </div>
               </section>
@@ -161,7 +162,7 @@ export default function PrivacyPage() {
 
           <div className="p-6 rounded-2xl bg-gradient-to-r from-emerald-950/30 to-green-950/30 border border-emerald-500/20 text-center space-y-2">
             <ShieldCheck className="w-8 h-8 text-emerald-400 mx-auto" />
-            <p className="text-sm font-semibold text-white">Questions about your privacy?</p>
+            <p className="text-sm font-semibold text-foreground">Questions about your privacy?</p>
             <a
               href="mailto:privacy@icreatepdf.com"
               className="text-xs text-emerald-400 hover:text-emerald-300 transition-colors underline underline-offset-2"

@@ -1,10 +1,12 @@
 import React from 'react';
 import type { Metadata } from 'next';
 import { Analytics } from '@vercel/analytics/next';
+import { GeistSans } from 'geist/font/sans';
+import { GeistMono } from 'geist/font/mono';
 import './globals.css';
 
 export const metadata: Metadata = {
-  metadataBase: new URL('https://icreatepdf.com'),
+  metadataBase: new URL('https://i-create-pdf.vercel.app'),
   title: {
     default: 'iCreatePDF - Fast, Free & Private Image to PDF Converter',
     template: '%s | iCreatePDF'
@@ -36,7 +38,7 @@ export const metadata: Metadata = {
     description: 'Convert your images to PDF instantly in the browser. Completely private, no file uploads to any server.',
     type: 'website',
     locale: 'en_US',
-    url: 'https://icreatepdf.com',
+    url: 'https://i-create-pdf.vercel.app',
     siteName: 'iCreatePDF',
     images: [
       {
@@ -61,12 +63,12 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className="dark">
+    <html lang="en" className={`dark ${GeistSans.variable} ${GeistMono.variable}`}>
       <head>
         <meta name="apple-mobile-web-app-capable" content="yes" />
         <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
         <meta name="apple-mobile-web-app-title" content="iCreatePDF" />
-        <meta name="theme-color" content="#8b5cf6" />
+        <meta name="theme-color" content="#7e5de0" />
         <link rel="manifest" href="/manifest.json" />
         <link rel="apple-touch-icon" href="/logo.png" />
         
@@ -99,8 +101,8 @@ export default function RootLayout({
               "@context": "https://schema.org",
               "@type": "WebApplication",
               "name": "iCreatePDF",
-              "url": "https://icreatepdf.com",
-              "logo": "https://icreatepdf.com/logo.png",
+              "url": "https://i-create-pdf.vercel.app",
+              "logo": "https://i-create-pdf.vercel.app/logo.png",
               "description": "Convert images and docs to PDF 100% locally in the browser. Also merge, split, rotate, and compress PDF files with zero server uploads.",
               "applicationCategory": "UtilityApplication",
               "operatingSystem": "All",
@@ -173,13 +175,10 @@ export default function RootLayout({
           }}
         />
       </head>
-      <body className="font-sans antialiased bg-black text-white relative min-h-screen overflow-x-hidden">
-        {/* Ambient premium background glows */}
-        <div className="fixed inset-0 -z-50 overflow-hidden pointer-events-none opacity-40 select-none">
-          <div className="absolute top-[-10%] left-[-10%] w-[50%] h-[50%] rounded-full bg-purple-950/20 blur-[130px]" />
-          <div className="absolute bottom-[-10%] right-[-10%] w-[50%] h-[50%] rounded-full bg-pink-950/15 blur-[130px]" />
-          <div className="absolute top-[40%] right-[10%] w-[35%] h-[35%] rounded-full bg-blue-950/15 blur-[110px]" />
-          {/* Elegant grid overlay */}
+      <body className="font-sans antialiased bg-background text-foreground relative min-h-screen overflow-x-hidden">
+        {/* Ambient background: single restrained brand glow + grid */}
+        <div className="fixed inset-0 -z-50 overflow-hidden pointer-events-none select-none">
+          <div className="absolute top-[-15%] left-1/2 -translate-x-1/2 w-[70%] h-[45%] rounded-full bg-brand/10 blur-[140px]" />
           <div className="absolute inset-0 bg-[linear-gradient(to_right,#80808008_1px,transparent_1px),linear-gradient(to_bottom,#80808008_1px,transparent_1px)] bg-[size:24px_24px]" />
         </div>
         {children}

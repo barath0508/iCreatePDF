@@ -1,39 +1,24 @@
 import type { Metadata } from 'next';
-import { Navigation } from '@/components/landing/navigation';
+import { ToolPageShell } from '@/components/tools/shared/ToolPageShell';
 import { MergeTool } from '@/components/tools/MergeTool';
-import { FooterSection } from '@/components/landing/footer-section';
+import { buildAlternates } from '@/lib/seo';
 
 export const metadata: Metadata = {
-  title: 'Merge PDF Online - Free & Private | iCreatePDF',
-  description: 'Combine multiple PDF files into one document in seconds. 100% client-side, drag & drop files, reorder pages, and download instantly.',
-  keywords: 'merge pdf, combine pdf, merge pdf online, merge pdf free, private pdf merger',
+  title: 'Secure Client-Side PDF Merger - 100% Private | iCreatePDF',
+  description: 'Merge PDF files securely in your browser sandbox. Your files are combined client-side via WebAssembly — 100% private, zero server uploads.',
+  keywords: 'secure client side pdf merger, merge pdf online free, private pdf merger, combine pdf files locally',
   alternates: { canonical: '/merge-pdf' },
   openGraph: {
-    title: 'Merge PDF Online - Free & Private | iCreatePDF',
-    description: 'Combine multiple PDF files into one document in seconds. 100% client-side, drag & drop files, reorder pages, and download instantly.',
+    title: 'Secure Client-Side PDF Merger - 100% Private | iCreatePDF',
+    description: 'Merge PDF files securely in your browser sandbox. Your files are combined client-side via WebAssembly — 100% private, zero server uploads.',
     type: 'website',
   }
 };
 
 export default function MergePdfPage() {
   return (
-    <main className="relative min-h-screen overflow-x-hidden bg-black text-white flex flex-col justify-between selection:bg-purple-500/30">
-      <Navigation />
-      <div className="pt-24 flex-1 flex flex-col justify-center">
-        <div className="max-w-[1200px] mx-auto px-6 text-center space-y-4">
-          <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-white/5 border border-white/10 text-[11px] font-semibold text-purple-400 tracking-wide uppercase font-mono">
-            PDF Merger
-          </span>
-          <h1 className="text-4xl sm:text-5xl font-extrabold text-white font-display">
-            Merge PDF Files
-          </h1>
-          <p className="text-white/40 text-sm max-w-xl mx-auto">
-            Combine multiple PDF files into a single, organized document. All processing is executed client-side.
-          </p>
-        </div>
-        <MergeTool />
-      </div>
-      <FooterSection />
-    </main>
+    <ToolPageShell badge="PDF Merger" title="Merge PDF Files" description="Combine multiple PDF files into a single, organized document. All processing is executed client-side.">
+      <MergeTool />
+    </ToolPageShell>
   );
 }

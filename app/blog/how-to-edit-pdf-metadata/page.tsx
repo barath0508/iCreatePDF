@@ -1,5 +1,6 @@
 import React from 'react';
 import type { Metadata } from 'next';
+import { buildAlternates, articleSchema } from '@/lib/seo';
 import Link from 'next/link';
 import { Navigation } from '@/components/landing/navigation';
 import { FooterSection } from '@/components/landing/footer-section';
@@ -10,7 +11,7 @@ export const metadata: Metadata = {
   title: 'How to Edit PDF Metadata & Properties Online | iCreatePDF',
   description: 'Learn how to view and edit metadata fields in a PDF. Change title, author, subject, keywords, and add professional headers or footers locally.',
   keywords: 'edit pdf metadata, change pdf author, pdf document properties, add header footer to pdf, pdf properties editor free',
-  alternates: { canonical: '/blog/how-to-edit-pdf-metadata' },
+  alternates: buildAlternates('/blog/how-to-edit-pdf-metadata'),
   openGraph: {
     title: 'How to Edit PDF Metadata & Properties Online',
     description: 'Protect your privacy by stripping author info and editing document properties. Clean up metadata or add headers and footers 100% locally.',
@@ -29,71 +30,80 @@ const metadataFields = [
 
 export default function EditMetadataBlog() {
   return (
-    <div className="bg-black min-h-screen text-white flex flex-col justify-between selection:bg-purple-500/30">
+    <div className="bg-background min-h-screen text-foreground flex flex-col justify-between selection:bg-brand/30">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(articleSchema({
+          title: 'How to Edit PDF Metadata & Properties Online | iCreatePDF',
+          description: 'Learn how to view and edit metadata fields in a PDF. Change title, author, subject, keywords, and add professional headers or footers locally.',
+          url: '/blog/how-to-edit-pdf-metadata',
+          datePublished: '2026-05-26T00:00:00Z'
+        })) }}
+      />
       <Navigation />
 
       <article className="max-w-3xl mx-auto px-6 py-32 space-y-10 flex-1 w-full">
-        <Link href="/blog" className="inline-flex items-center gap-1 text-xs font-semibold text-white/40 hover:text-purple-400 transition-colors">
+        <Link href="/blog" className="inline-flex items-center gap-1 text-xs font-semibold text-foreground/40 hover:text-brand transition-colors">
           <ChevronLeft className="w-4 h-4" />
           Back to Blog
         </Link>
 
-        <div className="space-y-4 border-b border-white/10 pb-8">
+        <div className="space-y-4 border-b border-foreground/10 pb-8">
           <span className="text-xs font-bold text-pink-400 bg-pink-500/10 px-2.5 py-1 rounded-full uppercase">Document Setup</span>
-          <h1 className="text-3xl sm:text-4xl font-extrabold text-white leading-tight font-display">
+          <h1 className="text-3xl sm:text-4xl font-extrabold text-foreground leading-tight font-display">
             How to Edit PDF Metadata and Document Properties
           </h1>
-          <p className="text-white/50 text-sm leading-relaxed max-w-2xl">
+          <p className="text-foreground/50 text-sm leading-relaxed max-w-2xl">
             Clean up document traits, change the author, edit keywords, or add consistent headers and footers to your files securely in the browser.
           </p>
-          <div className="flex items-center gap-4 text-xs text-white/40">
+          <div className="flex items-center gap-4 text-xs text-foreground/40">
             <span className="flex items-center gap-1"><Calendar className="w-3.5 h-3.5" />May 26, 2026</span>
             <span className="flex items-center gap-1"><Clock className="w-3.5 h-3.5" />4 min read</span>
           </div>
         </div>
 
-        <div className="text-white/70 space-y-6 leading-relaxed text-sm sm:text-base">
+        <div className="text-foreground/70 space-y-6 leading-relaxed text-sm sm:text-base">
           <p>
             When you export a document from Microsoft Word or Google Docs, metadata is automatically bundled inside the PDF file. This metadata can reveal your full name, organization, the exact time the file was created, and the software used. For security and privacy, changing or clearing these fields is highly recommended.
           </p>
 
-          <h2 className="text-xl font-bold text-white pt-4 font-display">Core PDF Metadata Fields Explained</h2>
+          <h2 className="text-xl font-bold text-foreground pt-4 font-display">Core PDF Metadata Fields Explained</h2>
           <div className="space-y-4">
             {metadataFields.map((f, i) => (
-              <div key={i} className="p-4 rounded-xl bg-zinc-950 border border-white/5 flex items-start gap-3">
+              <div key={i} className="p-4 rounded-xl bg-card border border-foreground/5 flex items-start gap-3">
                 <span className="text-xs font-bold text-pink-400 bg-pink-500/10 px-2 py-0.5 rounded font-mono shrink-0 mt-0.5">{f.field}</span>
-                <p className="text-xs text-white/70 leading-relaxed">{f.purpose}</p>
+                <p className="text-xs text-foreground/70 leading-relaxed">{f.purpose}</p>
               </div>
             ))}
           </div>
 
-          <h2 className="text-xl font-bold text-white pt-4 font-display">How to Modify PDF Metadata Fields</h2>
+          <h2 className="text-xl font-bold text-foreground pt-4 font-display">How to Modify PDF Metadata Fields</h2>
           <ol className="list-decimal list-inside space-y-2 pl-4 text-sm">
-            <li>Open the <Link href="/pdf-metadata" className="text-purple-400 hover:underline">/pdf-metadata</Link> tool.</li>
+            <li>Open the <Link href="/pdf-metadata" className="text-brand hover:underline">/pdf-metadata</Link> tool.</li>
             <li>Drag your file in. The tool will parse and display existing properties.</li>
             <li>Change the Author, Title, Subject, or Keywords text fields.</li>
             <li>Click <em>Apply Changes</em> and download the updated PDF file.</li>
           </ol>
 
-          <h2 className="text-xl font-bold text-white pt-4 font-display">Adding Headers and Footers</h2>
+          <h2 className="text-xl font-bold text-foreground pt-4 font-display">Adding Headers and Footers</h2>
           <p>
             In addition to internal property tags, you may need to add visual tags to the PDF pages. The <strong>Add Header &amp; Footer</strong> tool lets you place custom page numbers, branding, dates, or classifications directly on top and bottom margins of every page.
           </p>
           <ul className="list-disc list-inside space-y-2 pl-4 text-sm">
             <li>Align text left, center, or right.</li>
-            <li>Inject dynamic variables like <code className="text-purple-400 font-mono">{"{page}"}</code> (current page number) or <code className="text-purple-400 font-mono">{"{total}"}</code> (total pages).</li>
+            <li>Inject dynamic variables like <code className="text-brand font-mono">{"{page}"}</code> (current page number) or <code className="text-brand font-mono">{"{total}"}</code> (total pages).</li>
             <li>Choose font size, placement margins, and colors to match your document style.</li>
           </ul>
         </div>
 
-        <div className="p-6 rounded-2xl bg-gradient-to-r from-purple-950/20 to-pink-950/20 border border-purple-500/20 text-center space-y-4">
-          <h3 className="text-lg font-bold text-white font-display flex items-center justify-center gap-2">
+        <div className="p-6 rounded-2xl bg-gradient-to-r from-purple-950/20 to-pink-950/20 border border-brand/20 text-center space-y-4">
+          <h3 className="text-lg font-bold text-foreground font-display flex items-center justify-center gap-2">
             <Settings className="w-5 h-5 text-pink-400" />
             Edit Document Properties Securely
           </h3>
-          <p className="text-xs text-white/60 max-w-md mx-auto">Update metadata entirely inside your browser. No files are uploaded to any external server.</p>
+          <p className="text-xs text-foreground/60 max-w-md mx-auto">Update metadata entirely inside your browser. No files are uploaded to any external server.</p>
           <Link href="/pdf-metadata">
-            <Button className="bg-purple-600 hover:bg-purple-700 text-white font-medium text-xs px-6 rounded-full group">
+            <Button className="bg-brand hover:bg-brand/90 text-foreground font-medium text-xs px-6 rounded-full group">
               Open Metadata Editor
               <ArrowRight className="w-3.5 h-3.5 ml-1 transition-transform group-hover:translate-x-1" />
             </Button>

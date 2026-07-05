@@ -260,15 +260,15 @@ Date: May 2026`);
         
         {/* Text Editor Workspace */}
         <div className="lg:col-span-8 space-y-6">
-          <div className="bg-zinc-950 border border-white/10 rounded-2xl overflow-hidden shadow-xl">
-            <div className="flex justify-between items-center bg-zinc-900/50 px-4 py-3 border-b border-white/10">
-              <span className="text-xs font-mono text-purple-400 flex items-center gap-1.5">
+          <div className="bg-card border border-foreground/10 rounded-2xl overflow-hidden shadow-xl">
+            <div className="flex justify-between items-center bg-card/60 px-4 py-3 border-b border-foreground/10">
+              <span className="text-xs font-mono text-brand flex items-center gap-1.5">
                 <FileText className="w-3.5 h-3.5" />
                 Text Document Input
               </span>
               <button
                 onClick={() => fileInputRef.current?.click()}
-                className="text-xs text-white/50 hover:text-white flex items-center gap-1 hover:bg-white/5 px-2.5 py-1 rounded-lg transition-colors border border-white/5"
+                className="text-xs text-foreground/50 hover:text-foreground flex items-center gap-1 hover:bg-foreground/5 px-2.5 py-1 rounded-lg transition-colors border border-foreground/5"
               >
                 <Upload className="w-3 h-3" />
                 Upload .txt file
@@ -289,16 +289,16 @@ Date: May 2026`);
               className={`relative ${isDraggingOver ? 'bg-purple-900/5' : ''} transition-colors`}
             >
               {isDraggingOver && (
-                <div className="absolute inset-0 bg-black/70 border-2 border-dashed border-purple-500 rounded-b-2xl flex flex-col items-center justify-center pointer-events-none z-10">
-                  <Upload className="w-8 h-8 text-purple-400 animate-bounce mb-2" />
-                  <span className="text-sm font-semibold text-white">Drop .txt file to load text</span>
+                <div className="absolute inset-0 bg-background/70 border-2 border-dashed border-brand rounded-b-2xl flex flex-col items-center justify-center pointer-events-none z-10">
+                  <Upload className="w-8 h-8 text-brand animate-bounce mb-2" />
+                  <span className="text-sm font-semibold text-foreground">Drop .txt file to load text</span>
                 </div>
               )}
               <textarea
                 value={text}
                 onChange={(e) => setText(e.target.value)}
                 placeholder="Write or paste your text here..."
-                className="w-full h-[400px] bg-transparent p-6 font-mono text-xs text-white/90 focus:outline-none resize-none leading-relaxed"
+                className="w-full h-[400px] bg-transparent p-6 font-mono text-xs text-foreground/90 focus:outline-none resize-none leading-relaxed"
               />
             </div>
           </div>
@@ -311,21 +311,21 @@ Date: May 2026`);
         </div>
 
         {/* Configurations Action Panel */}
-        <div className="lg:col-span-4 bg-zinc-950 border border-white/10 rounded-2xl p-6 space-y-6 shadow-xl">
-          <div className="flex items-center gap-2 border-b border-white/5 pb-4">
-            <Settings className="w-4 h-4 text-purple-400" />
-            <h3 className="font-mono text-sm uppercase tracking-wider text-white">Settings</h3>
+        <div className="lg:col-span-4 bg-card border border-foreground/10 rounded-2xl p-6 space-y-6 shadow-xl">
+          <div className="flex items-center gap-2 border-b border-foreground/5 pb-4">
+            <Settings className="w-4 h-4 text-brand" />
+            <h3 className="font-mono text-sm uppercase tracking-wider text-foreground">Settings</h3>
           </div>
 
           <div className="space-y-4 text-xs">
             {/* Page Size & Orientation */}
             <div className="grid grid-cols-2 gap-4">
               <div className="space-y-1.5">
-                <label className="text-white/40 font-mono">Page Size</label>
+                <label className="text-foreground/40 font-mono">Page Size</label>
                 <select
                   value={pageSize}
                   onChange={(e) => setPageSize(e.target.value as any)}
-                  className="w-full bg-black border border-white/10 rounded-xl px-3 py-2 text-white focus:outline-none focus:border-purple-500"
+                  className="w-full bg-background border border-foreground/10 rounded-xl px-3 py-2 text-foreground focus:outline-none focus:border-brand"
                 >
                   <option value="A4">A4 (Standard)</option>
                   <option value="Letter">Letter (US)</option>
@@ -334,11 +334,11 @@ Date: May 2026`);
               </div>
 
               <div className="space-y-1.5">
-                <label className="text-white/40 font-mono">Orientation</label>
+                <label className="text-foreground/40 font-mono">Orientation</label>
                 <select
                   value={orientation}
                   onChange={(e) => setOrientation(e.target.value as any)}
-                  className="w-full bg-black border border-white/10 rounded-xl px-3 py-2 text-white focus:outline-none focus:border-purple-500"
+                  className="w-full bg-background border border-foreground/10 rounded-xl px-3 py-2 text-foreground focus:outline-none focus:border-brand"
                 >
                   <option value="Portrait">Portrait</option>
                   <option value="Landscape">Landscape</option>
@@ -349,11 +349,11 @@ Date: May 2026`);
             {/* Font Family & Margins */}
             <div className="grid grid-cols-2 gap-4">
               <div className="space-y-1.5">
-                <label className="text-white/40 font-mono">Font Family</label>
+                <label className="text-foreground/40 font-mono">Font Family</label>
                 <select
                   value={fontFamily}
                   onChange={(e) => setFontFamily(e.target.value as any)}
-                  className="w-full bg-black border border-white/10 rounded-xl px-3 py-2 text-white focus:outline-none focus:border-purple-500"
+                  className="w-full bg-background border border-foreground/10 rounded-xl px-3 py-2 text-foreground focus:outline-none focus:border-brand"
                 >
                   <option value="Helvetica">Sans-Serif</option>
                   <option value="Courier">Monospace</option>
@@ -362,11 +362,11 @@ Date: May 2026`);
               </div>
 
               <div className="space-y-1.5">
-                <label className="text-white/40 font-mono">Margin size</label>
+                <label className="text-foreground/40 font-mono">Margin size</label>
                 <select
                   value={marginSize}
                   onChange={(e) => setMarginSize(e.target.value as any)}
-                  className="w-full bg-black border border-white/10 rounded-xl px-3 py-2 text-white focus:outline-none focus:border-purple-500"
+                  className="w-full bg-background border border-foreground/10 rounded-xl px-3 py-2 text-foreground focus:outline-none focus:border-brand"
                 >
                   <option value="0.5">0.5 inch (Narrow)</option>
                   <option value="0.75">0.75 inch (Normal)</option>
@@ -378,11 +378,11 @@ Date: May 2026`);
             {/* Font Size & Line Spacing */}
             <div className="grid grid-cols-2 gap-4">
               <div className="space-y-1.5">
-                <label className="text-white/40 font-mono">Font Size ({fontSize}pt)</label>
+                <label className="text-foreground/40 font-mono">Font Size ({fontSize}pt)</label>
                 <select
                   value={fontSize}
                   onChange={(e) => setFontSize(Number(e.target.value))}
-                  className="w-full bg-black border border-white/10 rounded-xl px-3 py-2 text-white focus:outline-none focus:border-purple-500"
+                  className="w-full bg-background border border-foreground/10 rounded-xl px-3 py-2 text-foreground focus:outline-none focus:border-brand"
                 >
                   <option value="9">9 pt</option>
                   <option value="10">10 pt</option>
@@ -394,11 +394,11 @@ Date: May 2026`);
               </div>
 
               <div className="space-y-1.5">
-                <label className="text-white/40 font-mono">Line Spacing</label>
+                <label className="text-foreground/40 font-mono">Line Spacing</label>
                 <select
                   value={lineSpacing}
                   onChange={(e) => setLineSpacing(Number(e.target.value))}
-                  className="w-full bg-black border border-white/10 rounded-xl px-3 py-2 text-white focus:outline-none focus:border-purple-500"
+                  className="w-full bg-background border border-foreground/10 rounded-xl px-3 py-2 text-foreground focus:outline-none focus:border-brand"
                 >
                   <option value="1.15">1.15 (Compact)</option>
                   <option value="1.3">1.3 (Normal)</option>
@@ -410,19 +410,19 @@ Date: May 2026`);
 
             {/* Header Title */}
             <div className="space-y-1.5">
-              <label className="text-white/40 font-mono">Header Stamp Text</label>
+              <label className="text-foreground/40 font-mono">Header Stamp Text</label>
               <input
                 type="text"
                 value={headerTitle}
                 onChange={(e) => setHeaderTitle(e.target.value)}
                 placeholder="Optional running header title..."
-                className="w-full bg-black border border-white/10 rounded-xl px-3 py-2 text-white focus:outline-none focus:border-purple-500 text-xs"
+                className="w-full bg-background border border-foreground/10 rounded-xl px-3 py-2 text-foreground focus:outline-none focus:border-brand text-xs"
               />
             </div>
 
             {/* Page Numbers Toggle */}
-            <div className="flex items-center justify-between p-3 rounded-xl bg-white/5 border border-white/5">
-              <label className="text-white/70 font-mono cursor-pointer select-none" htmlFor="page-numbers-check">
+            <div className="flex items-center justify-between p-3 rounded-xl bg-foreground/5 border border-foreground/5">
+              <label className="text-foreground/70 font-mono cursor-pointer select-none" htmlFor="page-numbers-check">
                 Add Page Numbers
               </label>
               <input
@@ -430,14 +430,14 @@ Date: May 2026`);
                 id="page-numbers-check"
                 checked={addPageNumbers}
                 onChange={(e) => setAddPageNumbers(e.target.checked)}
-                className="w-4 h-4 accent-purple-500 cursor-pointer"
+                className="w-4 h-4 accent-brand cursor-pointer"
               />
             </div>
           </div>
 
-          <div className="pt-4 border-t border-white/5">
+          <div className="pt-4 border-t border-foreground/5">
             {isProcessing ? (
-              <Button disabled className="w-full bg-purple-600/50 text-white font-medium py-6 rounded-xl flex items-center justify-center gap-2">
+              <Button disabled className="w-full bg-brand/50 text-foreground font-medium py-6 rounded-xl flex items-center justify-center gap-2">
                 <Loader2 className="w-4 h-4 animate-spin" />
                 Compiling...
               </Button>
@@ -445,7 +445,7 @@ Date: May 2026`);
               <div className="space-y-2">
                 <Button
                   onClick={handleDownload}
-                  className="w-full bg-emerald-600 hover:bg-emerald-700 text-white font-medium py-6 rounded-xl flex items-center justify-center gap-2"
+                  className="w-full bg-emerald-600 hover:bg-emerald-700 text-foreground font-medium py-6 rounded-xl flex items-center justify-center gap-2"
                 >
                   <Download className="w-5 h-5" />
                   Download PDF
@@ -453,7 +453,7 @@ Date: May 2026`);
                 <Button
                   variant="ghost"
                   onClick={() => setDownloadUrl(null)}
-                  className="w-full text-white/50 hover:text-white text-xs h-8"
+                  className="w-full text-foreground/50 hover:text-foreground text-xs h-8"
                 >
                   Modify Configuration
                 </Button>
@@ -462,7 +462,7 @@ Date: May 2026`);
               <Button
                 onClick={triggerTxtToPdf}
                 disabled={text.trim() === ''}
-                className="w-full bg-purple-600 hover:bg-purple-700 text-white font-medium py-6 rounded-xl flex items-center justify-center gap-2 transition-all"
+                className="w-full bg-brand hover:bg-brand/90 text-foreground font-medium py-6 rounded-xl flex items-center justify-center gap-2 transition-all"
               >
                 <Play className="w-4 h-4 fill-current" />
                 Convert to PDF

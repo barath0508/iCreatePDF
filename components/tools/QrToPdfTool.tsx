@@ -108,64 +108,64 @@ export function QrToPdfTool() {
     <div className="w-full max-w-6xl mx-auto px-6 lg:px-12 py-16">
       <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
         <div className="lg:col-span-8 space-y-6">
-          <div className="p-6 bg-zinc-950 border border-white/10 rounded-2xl space-y-5">
+          <div className="p-6 bg-card border border-foreground/10 rounded-2xl space-y-5">
             <div className="space-y-1.5">
-              <label className="text-[10px] font-mono text-white/40 uppercase">QR Code Content (URL or Text) *</label>
+              <label className="text-[10px] font-mono text-foreground/40 uppercase">QR Code Content (URL or Text) *</label>
               <textarea
                 value={content}
                 onChange={e => setContent(e.target.value)}
                 placeholder="https://example.com or any text..."
                 rows={3}
-                className="w-full bg-black/40 border border-white/10 rounded-xl px-4 py-3 text-sm text-white placeholder:text-white/20 focus:outline-none focus:border-purple-500 resize-none"
+                className="w-full bg-background/40 border border-foreground/10 rounded-xl px-4 py-3 text-sm text-foreground placeholder:text-foreground/20 focus:outline-none focus:border-brand resize-none"
               />
             </div>
             <div className="space-y-1.5">
-              <label className="text-[10px] font-mono text-white/40 uppercase">Title (optional)</label>
-              <input type="text" value={title} onChange={e => setTitle(e.target.value)} placeholder="e.g. Scan to visit our website" className="w-full bg-black/40 border border-white/10 rounded-xl px-4 py-2.5 text-sm text-white placeholder:text-white/20 focus:outline-none focus:border-purple-500" />
+              <label className="text-[10px] font-mono text-foreground/40 uppercase">Title (optional)</label>
+              <input type="text" value={title} onChange={e => setTitle(e.target.value)} placeholder="e.g. Scan to visit our website" className="w-full bg-background/40 border border-foreground/10 rounded-xl px-4 py-2.5 text-sm text-foreground placeholder:text-foreground/20 focus:outline-none focus:border-brand" />
             </div>
             <div className="space-y-1.5">
-              <label className="text-[10px] font-mono text-white/40 uppercase">Description (optional)</label>
-              <input type="text" value={description} onChange={e => setDescription(e.target.value)} placeholder="A short description below the title" className="w-full bg-black/40 border border-white/10 rounded-xl px-4 py-2.5 text-sm text-white placeholder:text-white/20 focus:outline-none focus:border-purple-500" />
+              <label className="text-[10px] font-mono text-foreground/40 uppercase">Description (optional)</label>
+              <input type="text" value={description} onChange={e => setDescription(e.target.value)} placeholder="A short description below the title" className="w-full bg-background/40 border border-foreground/10 rounded-xl px-4 py-2.5 text-sm text-foreground placeholder:text-foreground/20 focus:outline-none focus:border-brand" />
             </div>
             <div className="space-y-2">
-              <label className="text-[10px] font-mono text-white/40 uppercase">QR Code Size</label>
+              <label className="text-[10px] font-mono text-foreground/40 uppercase">QR Code Size</label>
               <div className="flex gap-2">
                 {(['small', 'medium', 'large'] as const).map(s => (
-                  <button key={s} onClick={() => setQrSize(s)} className={`px-4 py-2 rounded-xl text-xs capitalize transition-all ${qrSize === s ? 'bg-purple-600 text-white' : 'bg-white/5 text-white/50 hover:bg-white/10'}`}>{s}</button>
+                  <button key={s} onClick={() => setQrSize(s)} className={`px-4 py-2 rounded-xl text-xs capitalize transition-all ${qrSize === s ? 'bg-brand text-foreground' : 'bg-foreground/5 text-foreground/50 hover:bg-foreground/10'}`}>{s}</button>
                 ))}
               </div>
             </div>
           </div>
 
           {content && (
-            <div className="p-6 bg-zinc-950 border border-white/10 rounded-2xl flex flex-col items-center gap-4">
-              <p className="text-xs font-mono text-white/40 uppercase">Live QR Preview</p>
+            <div className="p-6 bg-card border border-foreground/10 rounded-2xl flex flex-col items-center gap-4">
+              <p className="text-xs font-mono text-foreground/40 uppercase">Live QR Preview</p>
               <canvas ref={canvasRef} className="rounded-xl" />
             </div>
           )}
           {error && <div className="p-4 rounded-xl bg-red-500/10 border border-red-500/20 text-red-200 text-sm">{error}</div>}
         </div>
 
-        <div className="lg:col-span-4 bg-zinc-950 border border-white/10 rounded-2xl p-6 space-y-6">
-          <div className="flex items-center gap-2 border-b border-white/5 pb-4">
-            <QrCode className="w-4 h-4 text-purple-400" />
-            <h3 className="font-mono text-sm uppercase tracking-wider text-white">QR to PDF</h3>
+        <div className="lg:col-span-4 bg-card border border-foreground/10 rounded-2xl p-6 space-y-6">
+          <div className="flex items-center gap-2 border-b border-foreground/5 pb-4">
+            <QrCode className="w-4 h-4 text-brand" />
+            <h3 className="font-mono text-sm uppercase tracking-wider text-foreground">QR to PDF</h3>
           </div>
-          <p className="text-xs text-white/50 leading-relaxed">Generate a clean A4 PDF page with a QR code for any URL or text. Add a title and description. Perfect for print materials, posters, menus, and business cards.</p>
-          <div className="pt-4 border-t border-white/5">
+          <p className="text-xs text-foreground/50 leading-relaxed">Generate a clean A4 PDF page with a QR code for any URL or text. Add a title and description. Perfect for print materials, posters, menus, and business cards.</p>
+          <div className="pt-4 border-t border-foreground/5">
             {isProcessing ? (
-              <Button disabled className="w-full bg-purple-600/50 text-white font-medium py-6 rounded-xl flex items-center justify-center gap-2">
+              <Button disabled className="w-full bg-brand/50 text-foreground font-medium py-6 rounded-xl flex items-center justify-center gap-2">
                 <Loader2 className="w-4 h-4 animate-spin" />Generating...
               </Button>
             ) : downloadUrl ? (
               <div className="space-y-2">
-                <Button onClick={() => { const a = document.createElement('a'); a.href = downloadUrl; a.download = 'qr-code.pdf'; a.click(); }} className="w-full bg-emerald-600 hover:bg-emerald-700 text-white font-medium py-6 rounded-xl flex items-center justify-center gap-2">
+                <Button onClick={() => { const a = document.createElement('a'); a.href = downloadUrl; a.download = 'qr-code.pdf'; a.click(); }} className="w-full bg-emerald-600 hover:bg-emerald-700 text-foreground font-medium py-6 rounded-xl flex items-center justify-center gap-2">
                   <Download className="w-5 h-5" />Download QR PDF
                 </Button>
-                <Button variant="ghost" onClick={() => { setDownloadUrl(null); }} className="w-full text-white/50 hover:text-white text-xs h-8">Generate another</Button>
+                <Button variant="ghost" onClick={() => { setDownloadUrl(null); }} className="w-full text-foreground/50 hover:text-foreground text-xs h-8">Generate another</Button>
               </div>
             ) : (
-              <Button disabled={!content.trim()} onClick={process} className={`w-full font-medium py-6 rounded-xl flex items-center justify-center gap-2 ${content.trim() ? 'bg-purple-600 hover:bg-purple-700 text-white' : 'bg-white/5 text-white/30 cursor-not-allowed'}`}>
+              <Button disabled={!content.trim()} onClick={process} className={`w-full font-medium py-6 rounded-xl flex items-center justify-center gap-2 ${content.trim() ? 'bg-brand hover:bg-brand/90 text-foreground' : 'bg-foreground/5 text-foreground/30 cursor-not-allowed'}`}>
                 <QrCode className="w-4 h-4" />Generate PDF
               </Button>
             )}

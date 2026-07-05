@@ -1,39 +1,28 @@
 import type { Metadata } from 'next';
-import { Navigation } from '@/components/landing/navigation';
+import { ToolPageShell } from '@/components/tools/shared/ToolPageShell';
 import { UnlockTool } from '@/components/tools/UnlockTool';
-import { FooterSection } from '@/components/landing/footer-section';
+import { buildAlternates } from '@/lib/seo';
 
 export const metadata: Metadata = {
-  title: 'Unlock PDF Online - Free & Private | iCreatePDF',
-  description: 'Unlock password-protected PDF files instantly in your web browser. Remove PDF locks locally without uploading sensitive files.',
-  keywords: 'unlock pdf, remove pdf password, unlock pdf online, free unlock pdf, private pdf decrypter',
-  alternates: { canonical: '/unlock-pdf' },
+  title: 'Local PDF Password Remover - Decrypt PDF Securely | iCreatePDF',
+  description: 'Remove passwords and decryption locks from PDF files client-side. Your files and passwords are never uploaded to any remote server.',
+  keywords: 'local pdf password remover, decrypt pdf client-side, remove pdf security password private, offline pdf unlocker, strip pdf permissions local, unlock pdf owner password, bypass pdf print restriction, remove copy restriction pdf',
+  alternates: buildAlternates('/unlock-pdf'),
   openGraph: {
-    title: 'Unlock PDF Online - Free & Private | iCreatePDF',
-    description: 'Unlock password-protected PDF files instantly in your web browser. Remove PDF locks locally without uploading sensitive files.',
+    title: 'Local PDF Password Remover - Decrypt PDF Securely | iCreatePDF',
+    description: 'Remove passwords and decryption locks from PDF files client-side. Your files and passwords are never uploaded to any remote server.',
     type: 'website',
   }
 };
 
 export default function UnlockPdfPage() {
   return (
-    <main className="relative min-h-screen overflow-x-hidden bg-black text-white flex flex-col justify-between selection:bg-purple-500/30">
-      <Navigation />
-      <div className="pt-24 flex-1 flex flex-col justify-center">
-        <div className="max-w-[1200px] mx-auto px-6 text-center space-y-4">
-          <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-white/5 border border-white/10 text-[11px] font-semibold text-purple-400 tracking-wide uppercase font-mono">
-            PDF Decrypter
-          </span>
-          <h1 className="text-4xl sm:text-5xl font-extrabold text-white font-display">
-            Unlock Protected PDF
-          </h1>
-          <p className="text-white/40 text-sm max-w-xl mx-auto">
-            Strips password security locks from document files. Decryption occurs completely local inside browser memory.
-          </p>
-        </div>
-        <UnlockTool />
-      </div>
-      <FooterSection />
-    </main>
+    <ToolPageShell
+      badge="PDF Decrypter"
+      title="Unlock Protected PDF"
+      description="Strips password security locks from document files. Decryption occurs completely local inside browser memory."
+    >
+      <UnlockTool />
+    </ToolPageShell>
   );
 }

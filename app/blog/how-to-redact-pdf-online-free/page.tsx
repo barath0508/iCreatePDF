@@ -1,5 +1,6 @@
 import React from 'react';
 import type { Metadata } from 'next';
+import { buildAlternates, articleSchema } from '@/lib/seo';
 import Link from 'next/link';
 import { Navigation } from '@/components/landing/navigation';
 import { FooterSection } from '@/components/landing/footer-section';
@@ -10,7 +11,7 @@ export const metadata: Metadata = {
   title: 'How to Redact PDF Files Online Free & Securely | iCreatePDF',
   description: 'Learn how to black out sensitive information, text, and images from your PDFs. 100% private, browser-based redaction with no server uploads.',
   keywords: 'redact pdf, black out text in pdf, how to redact pdf free, secure pdf redaction, remove sensitive info pdf, client side pdf redact',
-  alternates: { canonical: '/blog/how-to-redact-pdf-online-free' },
+  alternates: buildAlternates('/blog/how-to-redact-pdf-online-free'),
   openGraph: {
     title: 'How to Redact PDF Files Online Free & Securely',
     description: 'Protect your sensitive data. Learn how to black out text and images in a PDF 100% locally in your browser.',
@@ -28,49 +29,58 @@ const steps = [
 
 export default function RedactPdfBlog() {
   return (
-    <div className="bg-black min-h-screen text-white flex flex-col justify-between selection:bg-purple-500/30">
+    <div className="bg-background min-h-screen text-foreground flex flex-col justify-between selection:bg-brand/30">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(articleSchema({
+          title: 'How to Redact PDF Files Online Free & Securely | iCreatePDF',
+          description: 'Learn how to black out sensitive information, text, and images from your PDFs. 100% private, browser-based redaction with no server uploads.',
+          url: '/blog/how-to-redact-pdf-online-free',
+          datePublished: '2026-05-26T00:00:00Z'
+        })) }}
+      />
       <Navigation />
 
       <article className="max-w-3xl mx-auto px-6 py-32 space-y-10 flex-1 w-full">
-        <Link href="/blog" className="inline-flex items-center gap-1 text-xs font-semibold text-white/40 hover:text-purple-400 transition-colors">
+        <Link href="/blog" className="inline-flex items-center gap-1 text-xs font-semibold text-foreground/40 hover:text-brand transition-colors">
           <ChevronLeft className="w-4 h-4" />
           Back to Blog
         </Link>
 
-        <div className="space-y-4 border-b border-white/10 pb-8">
+        <div className="space-y-4 border-b border-foreground/10 pb-8">
           <span className="text-xs font-bold text-red-400 bg-red-500/10 px-2.5 py-1 rounded-full uppercase">Security &amp; Privacy</span>
-          <h1 className="text-3xl sm:text-4xl font-extrabold text-white leading-tight font-display">
+          <h1 className="text-3xl sm:text-4xl font-extrabold text-foreground leading-tight font-display">
             How to Redact PDF Files Online Free &amp; Securely (2026 Guide)
           </h1>
-          <p className="text-white/50 text-sm leading-relaxed max-w-2xl">
+          <p className="text-foreground/50 text-sm leading-relaxed max-w-2xl">
             Blacking out text in a PDF isn\'t as simple as drawing a black box in a reader application. Learn how to permanently burn redactions into your documents.
           </p>
-          <div className="flex items-center gap-4 text-xs text-white/40">
+          <div className="flex items-center gap-4 text-xs text-foreground/40">
             <span className="flex items-center gap-1"><Calendar className="w-3.5 h-3.5" />May 26, 2026</span>
             <span className="flex items-center gap-1"><Clock className="w-3.5 h-3.5" />5 min read</span>
           </div>
         </div>
 
-        <div className="text-white/70 space-y-6 leading-relaxed text-sm sm:text-base">
+        <div className="text-foreground/70 space-y-6 leading-relaxed text-sm sm:text-base">
           <p>
             When sharing legal briefs, medical charts, or financial reports, concealing personal information is crucial. However, many users make the mistake of using standard PDF editors to draw black rectangles over text. Underneath those shapes, the text remains selectable and searchable, exposing you to severe data leaks.
           </p>
 
-          <h2 className="text-xl font-bold text-white pt-4 font-display flex items-center gap-2">
-            <EyeOff className="w-5 h-5 text-purple-400" />
+          <h2 className="text-xl font-bold text-foreground pt-4 font-display flex items-center gap-2">
+            <EyeOff className="w-5 h-5 text-brand" />
             The Danger of Fake Redactions
           </h2>
           <p>
             Standard annotators only add a decorative layer above the text. Anyone can copy the text underneath or remove the black box overlay using a standard PDF reader. Real redaction must delete the underlying character streams and render the content as a flat, unselectable image or burn the pixels permanently.
           </p>
 
-          <h2 className="text-xl font-bold text-white pt-4 font-display">Step-by-Step: How to Redact a PDF</h2>
+          <h2 className="text-xl font-bold text-foreground pt-4 font-display">Step-by-Step: How to Redact a PDF</h2>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4 my-4">
             {steps.map((s, i) => (
-              <div key={i} className="p-4 rounded-xl bg-zinc-950 border border-white/5 space-y-2">
-                <span className="text-xs font-bold text-purple-400 font-mono">Step {i + 1}</span>
-                <h3 className="font-bold text-white text-sm">{s.title}</h3>
-                <p className="text-xs text-white/50 leading-normal">{s.desc}</p>
+              <div key={i} className="p-4 rounded-xl bg-card border border-foreground/5 space-y-2">
+                <span className="text-xs font-bold text-brand font-mono">Step {i + 1}</span>
+                <h3 className="font-bold text-foreground text-sm">{s.title}</h3>
+                <p className="text-xs text-foreground/50 leading-normal">{s.desc}</p>
               </div>
             ))}
           </div>
@@ -82,29 +92,29 @@ export default function RedactPdfBlog() {
             </p>
           </div>
 
-          <h2 className="text-xl font-bold text-white pt-4 font-display">Why Choose Client-Side Redaction?</h2>
+          <h2 className="text-xl font-bold text-foreground pt-4 font-display">Why Choose Client-Side Redaction?</h2>
           <p>
             Most online PDF tools force you to upload your sensitive legal or personal documents to their cloud servers to apply redactions. iCreatePDF utilizes modern browser-based web modules, allowing you to edit and redact your files completely offline.
           </p>
 
           <div className="overflow-x-auto">
-            <table className="w-full text-xs text-white/70 border border-white/10 rounded-xl overflow-hidden">
-              <thead className="bg-white/5 text-white font-semibold">
+            <table className="w-full text-xs text-foreground/70 border border-foreground/10 rounded-xl overflow-hidden">
+              <thead className="bg-foreground/5 text-foreground font-semibold">
                 <tr>
                   <th className="text-left px-4 py-3">Redaction Type</th>
                   <th className="text-left px-4 py-3">Security Level</th>
                   <th className="text-left px-4 py-3">Ideal Use Case</th>
                 </tr>
               </thead>
-              <tbody className="divide-y divide-white/5">
+              <tbody className="divide-y divide-foreground/5">
                 {[
                   ['Pixel Burn / Rasterization', 'Highest', 'Passports, SSNs, credit cards, bank statements'],
                   ['Metadata Cleansing', 'High', 'Removing author history, editing timelines, location tags'],
                   ['Standard Drawing Box', 'None', 'Draft styling, temporary comments, markup reviews'],
                 ].map(([type, sec, use]) => (
                   <tr key={type}>
-                    <td className="px-4 py-3 font-semibold text-white">{type}</td>
-                    <td className="px-4 py-3 text-purple-400">{sec}</td>
+                    <td className="px-4 py-3 font-semibold text-foreground">{type}</td>
+                    <td className="px-4 py-3 text-brand">{sec}</td>
                     <td className="px-4 py-3">{use}</td>
                   </tr>
                 ))}
@@ -113,14 +123,14 @@ export default function RedactPdfBlog() {
           </div>
         </div>
 
-        <div className="p-6 rounded-2xl bg-gradient-to-r from-purple-950/20 to-pink-950/20 border border-purple-500/20 text-center space-y-4">
-          <h3 className="text-lg font-bold text-white font-display flex items-center justify-center gap-2">
+        <div className="p-6 rounded-2xl bg-gradient-to-r from-purple-950/20 to-pink-950/20 border border-brand/20 text-center space-y-4">
+          <h3 className="text-lg font-bold text-foreground font-display flex items-center justify-center gap-2">
             <ShieldCheck className="w-5 h-5 text-emerald-400" />
             100% Offline &amp; Safe PDF Redaction
           </h3>
-          <p className="text-xs text-white/60 max-w-md mx-auto">Black out private information without sending documents across the internet.</p>
+          <p className="text-xs text-foreground/60 max-w-md mx-auto">Black out private information without sending documents across the internet.</p>
           <Link href="/redact-pdf">
-            <Button className="bg-purple-600 hover:bg-purple-700 text-white font-medium text-xs px-6 rounded-full group">
+            <Button className="bg-brand hover:bg-brand/90 text-foreground font-medium text-xs px-6 rounded-full group">
               Redact PDF Free
               <ArrowRight className="w-3.5 h-3.5 ml-1 transition-transform group-hover:translate-x-1" />
             </Button>

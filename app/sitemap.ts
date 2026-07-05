@@ -1,7 +1,7 @@
 import { MetadataRoute } from 'next';
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const baseUrl = 'https://icreatepdf.com';
+  const baseUrl = 'https://i-create-pdf.vercel.app';
   const today = new Date().toISOString().split('T')[0];
 
   const toolRoutes = [

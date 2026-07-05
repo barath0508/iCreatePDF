@@ -8,7 +8,10 @@ import { SecuritySection } from '@/components/landing/security-section';
 import { CtaSection } from '@/components/landing/cta-section';
 import { FooterSection } from '@/components/landing/footer-section';
 import { FaqSection } from '@/components/landing/faq-section';
-import { 
+import { SectionEyebrow } from '@/components/landing/shared/section-eyebrow';
+import { SectionHeading } from '@/components/landing/shared/section-heading';
+import { Reveal } from '@/components/landing/shared/reveal';
+import {
   Combine, Scissors, Sliders, Type, Hash, FileImage, Image,
   Minimize2, RotateCw, Unlock, Camera, FileText, Shield, FileSignature, Edit, ShieldCheck,
   Code, Layers, Printer, Columns, EyeOff, Crop, BookOpen, Wrench, Info,
@@ -236,47 +239,47 @@ const tools = [
 
 export default function Home() {
   return (
-    <main className="relative min-h-screen overflow-x-hidden bg-black text-white selection:bg-purple-500/30">
+    <main className="relative min-h-screen overflow-x-hidden bg-background text-foreground selection:bg-brand/30">
       <Navigation />
       <HeroSection />
 
       {/* Tools Dashboard Grid */}
-      <section id="convert" className="py-24 bg-black relative z-10">
+      <section id="convert" className="py-24 bg-background relative z-10">
         <div className="max-w-[1400px] mx-auto px-6 lg:px-12">
           <div className="text-center mb-16 space-y-4">
-            <span className="inline-flex items-center gap-3 text-sm font-mono text-purple-400">
-              <span className="w-8 h-px bg-purple-500/30" />
-              SaaS Document suite
-            </span>
-            <h2 className="text-4xl md:text-5xl lg:text-[72px] font-display tracking-tight leading-[0.95] text-white">
-              Organize, convert &amp; <br />
-              <span className="text-white/45">manipulate PDFs.</span>
-            </h2>
+            <SectionEyebrow className="justify-center">Document suite</SectionEyebrow>
+            <Reveal>
+              <SectionHeading className="text-center">
+                Organize, convert &amp; <br />
+                <span className="text-muted-foreground">manipulate PDFs.</span>
+              </SectionHeading>
+            </Reveal>
           </div>
 
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
-            {tools.map((tool) => (
-              <Link 
-                key={tool.title} 
-                href={tool.href}
-                className="group relative p-8 bg-zinc-950 border border-white/5 hover:border-purple-500/30 hover:bg-zinc-900/20 transition-all duration-300 rounded-2xl flex flex-col justify-between min-h-[220px]"
-              >
-                <div className="space-y-4">
-                  <div className="p-3 w-fit rounded-xl bg-white/5 border border-white/10 group-hover:bg-purple-600 group-hover:border-purple-500 group-hover:text-white transition-all text-purple-400">
-                    <tool.icon className="w-5 h-5" />
+            {tools.map((tool, idx) => (
+              <Reveal key={tool.title} delay={Math.min(idx * 30, 300)}>
+                <Link
+                  href={tool.href}
+                  className="group relative p-8 bg-card/50 border border-border hover:border-brand/40 hover:bg-card transition-all duration-300 rounded-2xl flex flex-col justify-between min-h-[220px]"
+                >
+                  <div className="space-y-4">
+                    <div className="p-3 w-fit rounded-xl bg-foreground/[0.03] border border-border group-hover:bg-brand group-hover:border-brand transition-all text-brand group-hover:text-brand-foreground">
+                      <tool.icon className="w-5 h-5" />
+                    </div>
+                    <h3 className="text-xl font-display font-medium text-foreground group-hover:text-brand transition-colors">
+                      {tool.title}
+                    </h3>
+                    <p className="text-xs text-muted-foreground leading-relaxed">
+                      {tool.desc}
+                    </p>
                   </div>
-                  <h3 className="text-xl font-display text-white group-hover:text-purple-400 transition-colors">
-                    {tool.title}
-                  </h3>
-                  <p className="text-xs text-white/50 leading-relaxed">
-                    {tool.desc}
-                  </p>
-                </div>
-                
-                <span className="text-[10px] font-mono text-white/30 group-hover:text-purple-400 uppercase tracking-widest pt-4 transition-colors">
-                  Open Tool &rarr;
-                </span>
-              </Link>
+
+                  <span className="text-[10px] font-mono text-muted-foreground group-hover:text-brand uppercase tracking-widest pt-4 transition-colors">
+                    Open Tool &rarr;
+                  </span>
+                </Link>
+              </Reveal>
             ))}
           </div>
         </div>

@@ -281,9 +281,9 @@ export function ScanToPdfTool() {
           <canvas ref={canvasRef} className="hidden" />
 
           {/* Camera Viewer / Status */}
-          <div className="relative border border-white/10 rounded-2xl overflow-hidden bg-zinc-950/40 min-h-[350px] flex items-center justify-center">
+          <div className="relative border border-foreground/10 rounded-2xl overflow-hidden bg-card/40 min-h-[350px] flex items-center justify-center">
             {isCameraActive ? (
-              <div className="relative w-full aspect-video md:aspect-[4/3] bg-black">
+              <div className="relative w-full aspect-video md:aspect-[4/3] bg-background">
                 <video
                   ref={videoRef}
                   autoPlay
@@ -298,7 +298,7 @@ export function ScanToPdfTool() {
                       variant="outline"
                       size="icon"
                       onClick={toggleFacingMode}
-                      className="rounded-full border-white/20 bg-black/60 backdrop-blur text-white hover:bg-black/80"
+                      className="rounded-full border-foreground/20 bg-background/60 backdrop-blur text-foreground hover:bg-background/80"
                     >
                       <RefreshCw className="w-4 h-4" />
                     </Button>
@@ -306,17 +306,17 @@ export function ScanToPdfTool() {
 
                   <button
                     onClick={capturePhoto}
-                    className="w-16 h-16 rounded-full border-4 border-white bg-red-600 active:bg-red-800 transition-colors shadow-2xl flex items-center justify-center focus:outline-none"
+                    className="w-16 h-16 rounded-full border-4 border-foreground bg-red-600 active:bg-red-800 transition-colors shadow-2xl flex items-center justify-center focus:outline-none"
                     aria-label="Capture Photo"
                   >
-                    <div className="w-8 h-8 rounded-full bg-white opacity-40 hover:opacity-100 transition-opacity" />
+                    <div className="w-8 h-8 rounded-full bg-foreground opacity-40 hover:opacity-100 transition-opacity" />
                   </button>
 
                   <Button
                     variant="outline"
                     size="icon"
                     onClick={stopCamera}
-                    className="rounded-full border-white/20 bg-black/60 backdrop-blur text-white hover:bg-black/80"
+                    className="rounded-full border-foreground/20 bg-background/60 backdrop-blur text-foreground hover:bg-background/80"
                   >
                     <Square className="w-4 h-4" />
                   </Button>
@@ -324,18 +324,18 @@ export function ScanToPdfTool() {
               </div>
             ) : (
               <div className="p-12 text-center flex flex-col items-center justify-center gap-4">
-                <div className="p-4 rounded-full bg-white/5 border border-white/10 text-purple-400">
+                <div className="p-4 rounded-full bg-foreground/5 border border-foreground/10 text-brand">
                   <Camera className="w-8 h-8" />
                 </div>
-                <h3 className="text-xl font-display text-white">Scan documents with camera</h3>
-                <p className="text-xs text-white/40 max-w-sm">
+                <h3 className="text-xl font-display text-foreground">Scan documents with camera</h3>
+                <p className="text-xs text-foreground/40 max-w-sm">
                   Turn your device camera into a portable document scanner. Capture multiple pages and compile them into a PDF locally.
                 </p>
                 
                 <div className="flex flex-col sm:flex-row gap-4 mt-2">
                   <Button
                     onClick={startCamera}
-                    className="bg-purple-600 hover:bg-purple-700 text-white rounded-xl px-6 py-5 flex items-center gap-2"
+                    className="bg-brand hover:bg-brand/90 text-foreground rounded-xl px-6 py-5 flex items-center gap-2"
                   >
                     <Play className="w-4 h-4" />
                     Start Scan Session
@@ -345,7 +345,7 @@ export function ScanToPdfTool() {
                     <select
                       value={selectedDeviceId}
                       onChange={(e) => setSelectedDeviceId(e.target.value)}
-                      className="h-10 px-3 bg-zinc-900 border border-white/10 text-white text-xs rounded-xl focus:outline-none"
+                      className="h-10 px-3 bg-card/80 border border-foreground/10 text-foreground text-xs rounded-xl focus:outline-none"
                     >
                       {devices.map((device, i) => (
                         <option key={device.deviceId} value={device.deviceId}>
@@ -363,7 +363,7 @@ export function ScanToPdfTool() {
           {capturedPhotos.length > 0 && (
             <div className="space-y-4">
               <div className="flex justify-between items-center px-1">
-                <span className="text-xs font-mono text-white/50 uppercase tracking-widest">
+                <span className="text-xs font-mono text-foreground/50 uppercase tracking-widest">
                   Scanned Pages Queue ({capturedPhotos.length})
                 </span>
                 <Button
@@ -383,24 +383,24 @@ export function ScanToPdfTool() {
                 {capturedPhotos.map((photo, index) => (
                   <div
                     key={photo.id}
-                    className="relative bg-zinc-950 border border-white/5 rounded-xl overflow-hidden aspect-[3/4] flex flex-col justify-between group"
+                    className="relative bg-card border border-foreground/5 rounded-xl overflow-hidden aspect-[3/4] flex flex-col justify-between group"
                   >
-                    <div className="relative flex-1 bg-black/40 flex items-center justify-center overflow-hidden">
+                    <div className="relative flex-1 bg-background/40 flex items-center justify-center overflow-hidden">
                       <img
                         src={photo.dataUrl}
                         alt={`Page ${index + 1}`}
                         className="max-h-full max-w-full object-contain"
                       />
-                      <span className="absolute top-2 left-2 px-2 py-0.5 bg-black/85 text-[10px] text-white/70 rounded-full font-mono border border-white/10">
+                      <span className="absolute top-2 left-2 px-2 py-0.5 bg-background/85 text-[10px] text-foreground/70 rounded-full font-mono border border-foreground/10">
                         Page {index + 1}
                       </span>
                     </div>
 
-                    <div className="flex border-t border-white/5 bg-zinc-900/50 p-2 justify-end">
+                    <div className="flex border-t border-foreground/5 bg-card/60 p-2 justify-end">
                       <button
                         type="button"
                         onClick={() => deletePhoto(photo.id)}
-                        className="p-1 hover:bg-red-950/20 text-white/40 hover:text-red-400 rounded transition-colors"
+                        className="p-1 hover:bg-red-950/20 text-foreground/40 hover:text-red-400 rounded transition-colors"
                       >
                         <Trash2 className="w-3.5 h-3.5" />
                       </button>
@@ -419,21 +419,21 @@ export function ScanToPdfTool() {
         </div>
 
         {/* Action Panel */}
-        <div className="lg:col-span-4 bg-zinc-950 border border-white/10 rounded-2xl p-6 space-y-6">
-          <div className="flex items-center gap-2 border-b border-white/5 pb-4">
-            <Camera className="w-4 h-4 text-purple-400" />
-            <h3 className="font-mono text-sm uppercase tracking-wider text-white">Scan to PDF</h3>
+        <div className="lg:col-span-4 bg-card border border-foreground/10 rounded-2xl p-6 space-y-6">
+          <div className="flex items-center gap-2 border-b border-foreground/5 pb-4">
+            <Camera className="w-4 h-4 text-brand" />
+            <h3 className="font-mono text-sm uppercase tracking-wider text-foreground">Scan to PDF</h3>
           </div>
 
-          <p className="text-xs text-white/50 leading-relaxed">
+          <p className="text-xs text-foreground/50 leading-relaxed">
             Snap pages sequentially using your camera. When finished scanning, compile the images into a clean, combined PDF document instantly.
           </p>
 
-          <div className="space-y-3 pt-4 border-t border-white/5 text-xs">
-            <h4 className="font-mono uppercase tracking-wider text-purple-400 text-[10px]">Scanning Options</h4>
+          <div className="space-y-3 pt-4 border-t border-foreground/5 text-xs">
+            <h4 className="font-mono uppercase tracking-wider text-brand text-[10px]">Scanning Options</h4>
             
-            <div className="flex items-center justify-between p-2.5 rounded-xl bg-white/5 border border-white/5">
-              <label htmlFor="auto-crop-check" className="text-white/70 font-mono cursor-pointer select-none">
+            <div className="flex items-center justify-between p-2.5 rounded-xl bg-foreground/5 border border-foreground/5">
+              <label htmlFor="auto-crop-check" className="text-foreground/70 font-mono cursor-pointer select-none">
                 Auto-Crop Scans
               </label>
               <input
@@ -441,12 +441,12 @@ export function ScanToPdfTool() {
                 id="auto-crop-check"
                 checked={autoCrop}
                 onChange={(e) => setAutoCrop(e.target.checked)}
-                className="w-4 h-4 accent-purple-500 cursor-pointer"
+                className="w-4 h-4 accent-brand cursor-pointer"
               />
             </div>
 
-            <div className="flex items-center justify-between p-2.5 rounded-xl bg-white/5 border border-white/5">
-              <label htmlFor="force-portrait-check" className="text-white/70 font-mono cursor-pointer select-none">
+            <div className="flex items-center justify-between p-2.5 rounded-xl bg-foreground/5 border border-foreground/5">
+              <label htmlFor="force-portrait-check" className="text-foreground/70 font-mono cursor-pointer select-none">
                 Force Portrait Mode
               </label>
               <input
@@ -454,30 +454,30 @@ export function ScanToPdfTool() {
                 id="force-portrait-check"
                 checked={forcePortrait}
                 onChange={(e) => setForcePortrait(e.target.checked)}
-                className="w-4 h-4 accent-purple-500 cursor-pointer"
+                className="w-4 h-4 accent-brand cursor-pointer"
               />
             </div>
           </div>
 
-          <div className="pt-4 border-t border-white/5">
+          <div className="pt-4 border-t border-foreground/5">
             {isProcessing ? (
               <div className="space-y-2">
-                <div className="flex justify-between items-center text-xs font-mono text-white/60">
+                <div className="flex justify-between items-center text-xs font-mono text-foreground/60">
                   <span className="flex items-center gap-2">
-                    <Loader2 className="w-3.5 h-3.5 text-purple-500 animate-spin" />
+                    <Loader2 className="w-3.5 h-3.5 text-brand animate-spin" />
                     Generating PDF...
                   </span>
                   <span>{progress}%</span>
                 </div>
-                <div className="w-full bg-white/5 rounded-full h-1.5 overflow-hidden">
-                  <div className="bg-purple-600 h-full rounded-full" style={{ width: `${progress}%` }} />
+                <div className="w-full bg-foreground/5 rounded-full h-1.5 overflow-hidden">
+                  <div className="bg-brand h-full rounded-full" style={{ width: `${progress}%` }} />
                 </div>
               </div>
             ) : downloadUrl ? (
               <div className="space-y-2">
                 <Button
                   onClick={handleDownload}
-                  className="w-full bg-emerald-600 hover:bg-emerald-700 text-white font-medium py-6 rounded-xl flex items-center justify-center gap-2"
+                  className="w-full bg-emerald-600 hover:bg-emerald-700 text-foreground font-medium py-6 rounded-xl flex items-center justify-center gap-2"
                 >
                   <Download className="w-5 h-5" />
                   Download Scanned PDF
@@ -488,7 +488,7 @@ export function ScanToPdfTool() {
                     setCapturedPhotos([]);
                     setDownloadUrl(null);
                   }}
-                  className="w-full text-white/50 hover:text-white text-xs h-8"
+                  className="w-full text-foreground/50 hover:text-foreground text-xs h-8"
                 >
                   Start New Session
                 </Button>
@@ -498,7 +498,7 @@ export function ScanToPdfTool() {
                 disabled={capturedPhotos.length === 0}
                 onClick={triggerGeneratePdf}
                 className={`w-full font-medium py-6 rounded-xl flex items-center justify-center gap-2 ${
-                  capturedPhotos.length > 0 ? 'bg-purple-600 hover:bg-purple-700 text-white' : 'bg-white/5 text-white/30 cursor-not-allowed'
+                  capturedPhotos.length > 0 ? 'bg-brand hover:bg-brand/90 text-foreground' : 'bg-foreground/5 text-foreground/30 cursor-not-allowed'
                 }`}
               >
                 <FileText className="w-4 h-4" />

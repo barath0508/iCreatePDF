@@ -64,39 +64,21 @@ export function FooterSection() {
   const currentYear = new Date().getFullYear();
 
   return (
-    <footer className="relative bg-black text-white">
-      <div className="relative w-full h-[240px] overflow-hidden">
-        <img
-          src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Upscaled%20Image%20%2810%29-UnDKstODkIENp5xqTYUEpt0Sm8tNOw.png"
-          alt="Bioluminescent landscape"
-          className="w-full h-full object-cover object-center"
-        />
-        <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-black" />
-        <div className="absolute inset-0 bg-gradient-to-r from-black/40 via-transparent to-black/40" />
-      </div>
-
-      <div className="relative z-10 max-w-[1400px] mx-auto px-6 lg:px-12">
+    <footer className="relative bg-background text-foreground border-t border-border">
+      <div className="relative max-w-[1400px] mx-auto px-6 lg:px-12">
         <div className="py-16 lg:py-20">
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-7 gap-12 lg:gap-8">
             <div className="col-span-1 sm:col-span-2">
               <Link href="/" className="inline-flex items-center gap-2.5 mb-6 group hover:opacity-90 transition-opacity">
-                <div className="relative w-8 h-8 rounded-lg overflow-hidden border border-purple-500/20 shadow-md transition-transform duration-300 group-hover:scale-105">
-                  <Image
-                    src="/logo.png"
-                    alt="iCreatePDF Logo"
-                    fill
-                    className="object-cover"
-                  />
+                <div className="relative w-8 h-8 rounded-lg overflow-hidden border border-brand/25 shadow-md transition-transform duration-300 group-hover:scale-105">
+                  <Image src="/logo.png" alt="iCreatePDF Logo" fill className="object-cover" />
                 </div>
-                <span className="font-extrabold tracking-tight select-none text-white text-4xl font-display" style={{ letterSpacing: '-0.03em', lineHeight: 1 }}>
-                  <span className="bg-gradient-to-r from-purple-400 to-pink-400 bg-clip-text text-transparent">i</span>Create
-                </span>
-                <span className="font-extrabold tracking-tight select-none text-4xl font-display" style={{ letterSpacing: '-0.03em', lineHeight: 1, background: 'linear-gradient(135deg, #a78bfa 0%, #eca8d6 100%)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent', backgroundClip: 'text' }}>
-                  PDF
+                <span className="font-semibold tracking-tight select-none text-foreground text-2xl font-display" style={{ letterSpacing: '-0.02em' }}>
+                  iCreate<span className="text-brand">PDF</span>
                 </span>
               </Link>
 
-              <p className="text-white/50 leading-relaxed mb-8 max-w-xs text-sm">
+              <p className="text-muted-foreground leading-relaxed mb-8 max-w-xs text-sm">
                 Fast, secure, and browser-based converter. Drag &amp; drop images, reorder, adjust sizes, and download your consolidated PDF instantly.
               </p>
 
@@ -105,7 +87,7 @@ export function FooterSection() {
                   <Link
                     key={link.name}
                     href={link.href}
-                    className="text-sm text-white/40 hover:text-white transition-colors flex items-center gap-1 group"
+                    className="text-sm text-muted-foreground hover:text-foreground transition-colors flex items-center gap-1 group"
                   >
                     {link.name}
                     <ArrowUpRight className="w-3 h-3 opacity-0 -translate-x-1 group-hover:opacity-100 group-hover:translate-x-0 transition-all" />
@@ -118,13 +100,13 @@ export function FooterSection() {
               const isUtilities = title === 'Utilities';
               return (
                 <div key={title} className={isUtilities ? 'col-span-1 sm:col-span-2' : 'col-span-1'}>
-                  <h3 className="text-sm font-medium text-white mb-6">{title}</h3>
+                  <h3 className="text-sm font-medium text-foreground mb-6">{title}</h3>
                   <ul className={isUtilities ? 'grid grid-cols-1 sm:grid-cols-2 gap-x-6 gap-y-4' : 'space-y-4'}>
                     {links.map((link) => (
                       <li key={link.name}>
                         <Link
                           href={link.href}
-                          className="text-sm text-white/40 hover:text-white transition-colors inline-flex items-center gap-2"
+                          className="text-sm text-muted-foreground hover:text-foreground transition-colors inline-flex items-center gap-2"
                         >
                           {link.name}
                         </Link>
@@ -137,14 +119,14 @@ export function FooterSection() {
           </div>
         </div>
 
-        <div className="py-8 border-t border-white/10 flex flex-col md:flex-row items-center justify-between gap-4">
-          <p className="text-sm text-white/30">
+        <div className="py-8 border-t border-border flex flex-col md:flex-row items-center justify-between gap-4">
+          <p className="text-sm text-muted-foreground/70">
             &copy; {currentYear} iCreatePDF. All rights reserved.
           </p>
 
-          <div className="flex items-center gap-4 text-sm text-white/30">
+          <div className="flex items-center gap-4 text-sm text-muted-foreground/70">
             <span className="flex items-center gap-2">
-              <span className="w-2 h-2 rounded-full bg-[#eca8d6]" />
+              <span className="w-2 h-2 rounded-full bg-brand" />
               Privacy-First Sandbox Mode Active
             </span>
           </div>

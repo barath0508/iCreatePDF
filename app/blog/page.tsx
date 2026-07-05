@@ -1,5 +1,6 @@
 import React from 'react';
 import type { Metadata } from 'next';
+import { buildAlternates } from '@/lib/seo';
 import Link from 'next/link';
 import { Navigation } from '@/components/landing/navigation';
 import { FooterSection } from '@/components/landing/footer-section';
@@ -9,7 +10,7 @@ export const metadata: Metadata = {
   title: 'PDF Guides, Tips & Tutorials Blog | iCreatePDF',
   description: 'Free guides on converting, compressing, merging, signing, and editing PDF files. Expert tips for JPG to PDF, digital signatures, and document management.',
   keywords: 'pdf guides, pdf blog, convert pdf tutorial, compress pdf guide, merge pdf tutorial, sign pdf online guide, pdf tips 2026',
-  alternates: { canonical: '/blog' },
+  alternates: buildAlternates('/blog'),
   openGraph: {
     title: 'PDF Guides, Tips & Tutorials | iCreatePDF Blog',
     description: 'Expert guides on PDF conversion, compression, signatures, and document management.',
@@ -124,48 +125,48 @@ const colorMap: Record<string, string> = {
   emerald: 'text-emerald-400 bg-emerald-500/10',
   pink: 'text-pink-400 bg-pink-500/10',
   orange: 'text-orange-400 bg-orange-500/10',
-  purple: 'text-purple-400 bg-purple-500/10',
+  purple: 'text-brand bg-brand/10',
   violet: 'text-violet-400 bg-violet-500/10',
 };
 
 export default function BlogIndexPage() {
   return (
-    <div className="bg-black min-h-screen text-white flex flex-col justify-between selection:bg-purple-500/30">
+    <div className="bg-background min-h-screen text-foreground flex flex-col justify-between selection:bg-brand/30">
       <Navigation />
 
       <div className="max-w-5xl mx-auto px-6 py-32 space-y-12 flex-1 w-full">
         <div className="text-center space-y-4">
-          <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-white/5 border border-white/10 text-[11px] font-semibold text-purple-400 tracking-wide uppercase">
+          <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-foreground/5 border border-foreground/10 text-[11px] font-semibold text-brand tracking-wide uppercase">
             <BookOpen className="w-3.5 h-3.5" />
             Guides &amp; Articles
           </div>
-          <h1 className="text-4xl font-extrabold tracking-tight text-white sm:text-5xl font-display">
+          <h1 className="text-4xl font-extrabold tracking-tight text-foreground sm:text-5xl font-display">
             iCreatePDF Blog
           </h1>
-          <p className="text-white/40 text-sm max-w-xl mx-auto">
+          <p className="text-foreground/40 text-sm max-w-xl mx-auto">
             Expert guides on PDF conversion, compression, signatures, editing, and document management — all with your privacy in mind.
           </p>
         </div>
 
         {/* Featured post */}
         <Link href={`/blog/${blogPosts[0].slug}`} className="group block">
-          <div className="p-8 rounded-2xl bg-zinc-950 border border-white/5 hover:border-purple-500/30 transition-all duration-300 shadow-xl">
+          <div className="p-8 rounded-2xl bg-card border border-foreground/5 hover:border-brand/30 transition-all duration-300 shadow-xl">
             <div className="flex flex-col sm:flex-row sm:items-start sm:justify-between gap-4">
               <div className="space-y-3 flex-1">
                 <span className={`text-[10px] font-bold px-2.5 py-1 rounded-full uppercase tracking-wider ${colorMap[blogPosts[0].color]}`}>
                   {blogPosts[0].category}
                 </span>
-                <h2 className="text-2xl font-bold text-white group-hover:text-purple-400 transition-colors font-display leading-snug">
+                <h2 className="text-2xl font-bold text-foreground group-hover:text-brand transition-colors font-display leading-snug">
                   {blogPosts[0].title}
                 </h2>
-                <p className="text-sm text-white/50 leading-relaxed max-w-2xl">{blogPosts[0].excerpt}</p>
-                <div className="flex items-center gap-4 text-xs text-white/40 pt-2">
+                <p className="text-sm text-foreground/50 leading-relaxed max-w-2xl">{blogPosts[0].excerpt}</p>
+                <div className="flex items-center gap-4 text-xs text-foreground/40 pt-2">
                   <span className="flex items-center gap-1"><Calendar className="w-3.5 h-3.5" />{blogPosts[0].date}</span>
                   <span className="flex items-center gap-1"><Clock className="w-3.5 h-3.5" />{blogPosts[0].readTime}</span>
                 </div>
               </div>
               <div className="sm:pt-1 shrink-0">
-                <span className="inline-flex items-center gap-1 text-xs font-semibold text-purple-400 group-hover:translate-x-1 transition-transform">
+                <span className="inline-flex items-center gap-1 text-xs font-semibold text-brand group-hover:translate-x-1 transition-transform">
                   Read Post <ArrowRight className="w-3.5 h-3.5" />
                 </span>
               </div>
@@ -178,26 +179,26 @@ export default function BlogIndexPage() {
           {blogPosts.slice(1).map((post) => (
             <article
               key={post.slug}
-              className="group flex flex-col justify-between p-6 rounded-2xl bg-zinc-950 border border-white/5 hover:border-purple-500/30 transition-all duration-300 shadow-xl"
+              className="group flex flex-col justify-between p-6 rounded-2xl bg-card border border-foreground/5 hover:border-brand/30 transition-all duration-300 shadow-xl"
             >
               <div className="space-y-3">
                 <span className={`text-[10px] font-bold px-2.5 py-1 rounded-full uppercase tracking-wider ${colorMap[post.color]}`}>
                   {post.category}
                 </span>
-                <h2 className="text-base font-bold text-white group-hover:text-purple-400 transition-colors font-display leading-snug">
+                <h2 className="text-base font-bold text-foreground group-hover:text-brand transition-colors font-display leading-snug">
                   <Link href={`/blog/${post.slug}`}>{post.title}</Link>
                 </h2>
-                <p className="text-xs text-white/50 leading-relaxed">{post.excerpt}</p>
+                <p className="text-xs text-foreground/50 leading-relaxed">{post.excerpt}</p>
               </div>
 
-              <div className="flex items-center justify-between pt-5 border-t border-white/5 mt-5">
-                <div className="flex items-center gap-3 text-xs text-white/40">
+              <div className="flex items-center justify-between pt-5 border-t border-foreground/5 mt-5">
+                <div className="flex items-center gap-3 text-xs text-foreground/40">
                   <span className="flex items-center gap-1"><Calendar className="w-3.5 h-3.5" />{post.date}</span>
                   <span className="flex items-center gap-1"><Clock className="w-3.5 h-3.5" />{post.readTime}</span>
                 </div>
                 <Link
                   href={`/blog/${post.slug}`}
-                  className="inline-flex items-center gap-1 text-xs font-semibold text-purple-400 group-hover:translate-x-1 transition-transform"
+                  className="inline-flex items-center gap-1 text-xs font-semibold text-brand group-hover:translate-x-1 transition-transform"
                 >
                   Read <ArrowRight className="w-3.5 h-3.5" />
                 </Link>

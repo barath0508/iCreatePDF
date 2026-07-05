@@ -56,11 +56,11 @@ export function CropTool() {
 
   const MarginInput = ({ label, key2 }: { label: string; key2: keyof typeof margins }) => (
     <div className="space-y-1">
-      <label className="text-[10px] font-mono text-white/40 uppercase">{label} (mm)</label>
+      <label className="text-[10px] font-mono text-foreground/40 uppercase">{label} (mm)</label>
       <input
         type="number" min={0} max={100} value={margins[key2]}
         onChange={e => setMargins(prev => ({ ...prev, [key2]: Number(e.target.value) }))}
-        className="w-full bg-black/40 border border-white/10 rounded-lg px-3 py-2 text-sm text-white focus:outline-none focus:border-purple-500"
+        className="w-full bg-background/40 border border-foreground/10 rounded-lg px-3 py-2 text-sm text-foreground focus:outline-none focus:border-brand"
       />
     </div>
   );
@@ -75,24 +75,24 @@ export function CropTool() {
               onDragLeave={() => setIsDraggingOver(false)}
               onDrop={(e) => { e.preventDefault(); setIsDraggingOver(false); e.dataTransfer.files && handleFiles(e.dataTransfer.files); }}
               onClick={() => fileInputRef.current?.click()}
-              className={`cursor-pointer border border-dashed rounded-2xl p-12 transition-all duration-300 text-center flex flex-col items-center justify-center min-h-[220px] ${isDraggingOver ? 'border-purple-500 bg-purple-500/5' : 'border-white/10 bg-zinc-900/30 hover:border-white/20'}`}
+              className={`cursor-pointer border border-dashed rounded-2xl p-12 transition-all duration-300 text-center flex flex-col items-center justify-center min-h-[220px] ${isDraggingOver ? 'border-brand bg-brand/5' : 'border-foreground/10 bg-card/40 hover:border-foreground/20'}`}
             >
               <input type="file" ref={fileInputRef} onChange={(e) => e.target.files && handleFiles(e.target.files)} accept=".pdf" className="hidden" />
-              <div className="p-4 rounded-full bg-white/5 mb-4 border border-white/10"><Crop className="w-6 h-6 text-purple-400" /></div>
-              <h3 className="text-xl font-display text-white mb-2">Upload PDF to crop</h3>
-              <p className="text-xs text-white/40">Remove scanner borders and whitespace by trimming margins.</p>
+              <div className="p-4 rounded-full bg-foreground/5 mb-4 border border-foreground/10"><Crop className="w-6 h-6 text-brand" /></div>
+              <h3 className="text-xl font-display text-foreground mb-2">Upload PDF to crop</h3>
+              <p className="text-xs text-foreground/40">Remove scanner borders and whitespace by trimming margins.</p>
             </div>
           ) : (
-            <div className="p-6 bg-zinc-950 border border-white/10 rounded-2xl space-y-6">
+            <div className="p-6 bg-card border border-foreground/10 rounded-2xl space-y-6">
               <div className="flex justify-between items-center">
                 <div className="flex items-center gap-3">
-                  <div className="p-3 bg-purple-500/10 border border-purple-500/20 rounded-xl"><Crop className="w-5 h-5 text-purple-400" /></div>
+                  <div className="p-3 bg-brand/10 border border-brand/20 rounded-xl"><Crop className="w-5 h-5 text-brand" /></div>
                   <div>
-                    <h4 className="text-base font-display text-white">{file.name}</h4>
-                    {pageInfo && <p className="text-xs text-white/40">{pageInfo.count} pages · {pageInfo.w} × {pageInfo.h} mm</p>}
+                    <h4 className="text-base font-display text-foreground">{file.name}</h4>
+                    {pageInfo && <p className="text-xs text-foreground/40">{pageInfo.count} pages · {pageInfo.w} × {pageInfo.h} mm</p>}
                   </div>
                 </div>
-                <Button variant="ghost" size="sm" onClick={() => { setFile(null); setDownloadUrl(null); setPageInfo(null); }} className="text-xs text-white/40 hover:text-white">Change</Button>
+                <Button variant="ghost" size="sm" onClick={() => { setFile(null); setDownloadUrl(null); setPageInfo(null); }} className="text-xs text-foreground/40 hover:text-foreground">Change</Button>
               </div>
               <div className="grid grid-cols-2 gap-4">
                 <MarginInput label="Top" key2="top" />
@@ -101,8 +101,8 @@ export function CropTool() {
                 <MarginInput label="Right" key2="right" />
               </div>
               {pageInfo && (
-                <div className="p-3 bg-black/40 rounded-xl text-xs text-white/50">
-                  New size: <span className="text-purple-400 font-mono">{pageInfo.w - margins.left - margins.right} × {pageInfo.h - margins.top - margins.bottom} mm</span> (cropped from {pageInfo.w} × {pageInfo.h} mm)
+                <div className="p-3 bg-background/40 rounded-xl text-xs text-foreground/50">
+                  New size: <span className="text-brand font-mono">{pageInfo.w - margins.left - margins.right} × {pageInfo.h - margins.top - margins.bottom} mm</span> (cropped from {pageInfo.w} × {pageInfo.h} mm)
                 </div>
               )}
             </div>
@@ -110,26 +110,26 @@ export function CropTool() {
           {error && <div className="p-4 rounded-xl bg-red-500/10 border border-red-500/20 text-red-200 text-sm">{error}</div>}
         </div>
 
-        <div className="lg:col-span-4 bg-zinc-950 border border-white/10 rounded-2xl p-6 space-y-6">
-          <div className="flex items-center gap-2 border-b border-white/5 pb-4">
-            <Crop className="w-4 h-4 text-purple-400" />
-            <h3 className="font-mono text-sm uppercase tracking-wider text-white">Crop PDF</h3>
+        <div className="lg:col-span-4 bg-card border border-foreground/10 rounded-2xl p-6 space-y-6">
+          <div className="flex items-center gap-2 border-b border-foreground/5 pb-4">
+            <Crop className="w-4 h-4 text-brand" />
+            <h3 className="font-mono text-sm uppercase tracking-wider text-foreground">Crop PDF</h3>
           </div>
-          <p className="text-xs text-white/50 leading-relaxed">Remove unwanted scanner borders and excess whitespace by trimming margins from any side of all PDF pages.</p>
-          <div className="pt-4 border-t border-white/5">
+          <p className="text-xs text-foreground/50 leading-relaxed">Remove unwanted scanner borders and excess whitespace by trimming margins from any side of all PDF pages.</p>
+          <div className="pt-4 border-t border-foreground/5">
             {isProcessing ? (
-              <Button disabled className="w-full bg-purple-600/50 text-white font-medium py-6 rounded-xl flex items-center justify-center gap-2">
+              <Button disabled className="w-full bg-brand/50 text-foreground font-medium py-6 rounded-xl flex items-center justify-center gap-2">
                 <Loader2 className="w-4 h-4 animate-spin" />Cropping...
               </Button>
             ) : downloadUrl ? (
               <div className="space-y-2">
-                <Button onClick={() => { const a = document.createElement('a'); a.href = downloadUrl; a.download = `cropped-${file?.name}`; a.click(); }} className="w-full bg-emerald-600 hover:bg-emerald-700 text-white font-medium py-6 rounded-xl flex items-center justify-center gap-2">
+                <Button onClick={() => { const a = document.createElement('a'); a.href = downloadUrl; a.download = `cropped-${file?.name}`; a.click(); }} className="w-full bg-emerald-600 hover:bg-emerald-700 text-foreground font-medium py-6 rounded-xl flex items-center justify-center gap-2">
                   <Download className="w-5 h-5" />Download Cropped PDF
                 </Button>
-                <Button variant="ghost" onClick={() => { setFile(null); setDownloadUrl(null); setPageInfo(null); }} className="w-full text-white/50 hover:text-white text-xs h-8">Crop another file</Button>
+                <Button variant="ghost" onClick={() => { setFile(null); setDownloadUrl(null); setPageInfo(null); }} className="w-full text-foreground/50 hover:text-foreground text-xs h-8">Crop another file</Button>
               </div>
             ) : (
-              <Button disabled={!file} onClick={process} className={`w-full font-medium py-6 rounded-xl flex items-center justify-center gap-2 ${file ? 'bg-purple-600 hover:bg-purple-700 text-white' : 'bg-white/5 text-white/30 cursor-not-allowed'}`}>
+              <Button disabled={!file} onClick={process} className={`w-full font-medium py-6 rounded-xl flex items-center justify-center gap-2 ${file ? 'bg-brand hover:bg-brand/90 text-foreground' : 'bg-foreground/5 text-foreground/30 cursor-not-allowed'}`}>
                 <Crop className="w-4 h-4" />Crop PDF
               </Button>
             )}

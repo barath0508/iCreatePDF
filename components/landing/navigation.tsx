@@ -5,7 +5,7 @@ import Link from 'next/link';
 import Image from 'next/image';
 import { usePathname } from 'next/navigation';
 import { Button } from '@/components/ui/button';
-import { Menu, X, Search, FileText, Sparkles } from 'lucide-react';
+import { Menu, X, Search, Sparkles } from 'lucide-react';
 
 const navLinks = [
   { name: 'Home', href: '/' },
@@ -69,7 +69,6 @@ export function Navigation() {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
-  // Keyboard shortcut Ctrl+K / Cmd+K
   useEffect(() => {
     const handleKeyDown = (e: KeyboardEvent) => {
       if ((e.metaKey || e.ctrlKey) && e.key === 'k') {
@@ -81,7 +80,6 @@ export function Navigation() {
     return () => window.removeEventListener('keydown', handleKeyDown);
   }, []);
 
-  // Focus input when search opens
   useEffect(() => {
     if (isSearchOpen) {
       setTimeout(() => searchInputRef.current?.focus(), 100);
@@ -102,39 +100,31 @@ export function Navigation() {
   return (
     <header
       className={`fixed z-50 transition-all duration-500 ${
-        isScrolled 
-          ? 'top-4 left-4 right-4' 
-          : 'top-0 left-0 right-0'
+        isScrolled ? 'top-4 left-4 right-4' : 'top-0 left-0 right-0'
       }`}
     >
-      <nav 
+      <nav
         className={`mx-auto transition-all duration-500 ${
           isScrolled || isMobileMenuOpen
-            ? 'bg-background/85 backdrop-blur-xl border border-foreground/10 rounded-2xl shadow-lg max-w-[1200px]'
+            ? 'bg-card/85 backdrop-blur-xl border border-border rounded-2xl shadow-lg max-w-[1200px]'
             : 'bg-transparent max-w-[1400px]'
         }`}
       >
-        <div 
+        <div
           className={`flex items-center justify-between transition-all duration-500 px-6 lg:px-8 ${
             isScrolled ? 'h-14' : 'h-20'
           }`}
         >
           {/* Logo */}
-          <Link href="/" className="inline-flex items-center gap-2.5 group transition-all duration-500 hover:opacity-90">
-            <div className="relative w-8 h-8 rounded-lg overflow-hidden border border-purple-500/20 shadow-md transition-transform duration-300 group-hover:scale-105">
-              <Image
-                src="/logo.png"
-                alt="iCreatePDF Logo"
-                fill
-                className="object-cover"
-                priority
-              />
+          <Link href="/" className="inline-flex items-center gap-2.5 group transition-opacity duration-300 hover:opacity-90">
+            <div className="relative w-8 h-8 rounded-lg overflow-hidden border border-brand/25 shadow-md transition-transform duration-300 group-hover:scale-105">
+              <Image src="/logo.png" alt="iCreatePDF Logo" fill className="object-cover" priority />
             </div>
-            <span className="font-extrabold tracking-tight select-none text-white text-2xl sm:text-4xl font-display" style={{ letterSpacing: '-0.03em', lineHeight: 1 }}>
-              <span className="bg-gradient-to-r from-purple-400 to-pink-400 bg-clip-text text-transparent">i</span>Create
-            </span>
-            <span className="font-extrabold tracking-tight select-none text-2xl sm:text-4xl font-display" style={{ letterSpacing: '-0.03em', lineHeight: 1, background: 'linear-gradient(135deg, #a78bfa 0%, #eca8d6 100%)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent', backgroundClip: 'text' }}>
-              PDF
+            <span
+              className="font-semibold tracking-tight select-none text-foreground text-xl sm:text-2xl font-display"
+              style={{ letterSpacing: '-0.02em' }}
+            >
+              iCreate<span className="text-brand">PDF</span>
             </span>
           </Link>
 
@@ -147,44 +137,30 @@ export function Navigation() {
                   key={link.name}
                   href={link.href}
                   className={`text-sm transition-colors duration-300 relative group ${
-                    isActive 
-                      ? 'text-purple-400 font-semibold' 
-                      : isScrolled 
-                      ? 'text-foreground/70 hover:text-foreground' 
-                      : 'text-white/70 hover:text-white'
+                    isActive ? 'text-brand font-semibold' : 'text-foreground/60 hover:text-foreground'
                   }`}
                 >
                   {link.name}
-                  <span className={`absolute -bottom-1 left-0 w-0 h-px transition-all duration-300 group-hover:w-full ${isScrolled ? 'bg-foreground' : 'bg-white'}`} />
+                  <span className="absolute -bottom-1 left-0 w-0 h-px bg-foreground transition-all duration-300 group-hover:w-full" />
                 </Link>
               );
             })}
 
-            {/* Quick Search trigger button */}
             <button
               onClick={() => setIsSearchOpen(true)}
-              className={`flex items-center gap-2 text-xs border rounded-full px-3 py-1.5 transition-all ${
-                isScrolled
-                  ? 'border-foreground/10 bg-foreground/5 text-foreground/50 hover:bg-foreground/10 hover:text-foreground'
-                  : 'border-white/10 bg-white/5 text-white/50 hover:bg-white/10 hover:text-white'
-              }`}
+              className="flex items-center gap-2 text-xs border border-border bg-foreground/[0.03] rounded-full px-3 py-1.5 text-foreground/50 transition-all hover:bg-foreground/[0.06] hover:text-foreground"
             >
               <Search className="w-3.5 h-3.5" />
               <span>Search tools...</span>
-              <kbd className="text-[10px] font-mono opacity-50 px-1 bg-white/10 rounded">⌘K</kbd>
+              <kbd className="text-[10px] font-mono opacity-60 px-1 bg-foreground/10 rounded">⌘K</kbd>
             </button>
           </div>
 
           {/* Desktop CTA */}
           <div className="hidden md:flex items-center gap-4">
-            <span className={`transition-all duration-500 text-xs ${isScrolled ? 'text-foreground/70' : 'text-white/70'}`}>
-              100% Client-Side
-            </span>
+            <span className="text-xs text-foreground/50">100% Client-Side</span>
             <Link href="/#convert">
-              <Button
-                size="sm"
-                className={`rounded-full transition-all duration-500 ${isScrolled ? 'bg-purple-600 hover:bg-purple-700 text-white px-4 h-8 text-xs' : 'bg-white hover:bg-zinc-100 text-black px-6'}`}
-              >
+              <Button size="sm" className={`rounded-full transition-all duration-500 ${isScrolled ? 'h-8 px-4 text-xs' : 'h-9 px-6'}`}>
                 Convert Now
               </Button>
             </Link>
@@ -194,47 +170,38 @@ export function Navigation() {
           <div className="flex items-center gap-3 md:hidden">
             <button
               onClick={() => setIsSearchOpen(true)}
-              className={`p-2 rounded-lg transition-colors ${isScrolled ? 'text-foreground hover:bg-foreground/5' : 'text-white hover:bg-white/5'}`}
+              className="p-2 rounded-lg text-foreground/70 hover:bg-foreground/5 transition-colors"
               aria-label="Search tools"
             >
               <Search className="w-5 h-5" />
             </button>
             <button
               onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-              className={`p-2 transition-colors duration-500 ${isScrolled || isMobileMenuOpen ? 'text-foreground' : 'text-white'}`}
+              className="p-2 text-foreground transition-colors duration-500"
               aria-label="Toggle menu"
             >
-              {isMobileMenuOpen ? (
-                <X className="w-6 h-6" />
-              ) : (
-                <Menu className="w-6 h-6" />
-              )}
+              {isMobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
             </button>
           </div>
         </div>
       </nav>
-      
+
       {/* Mobile Menu Overlay */}
       <div
         className={`md:hidden fixed inset-0 bg-background z-40 transition-all duration-500 overflow-y-auto ${
-          isMobileMenuOpen 
-            ? 'opacity-100 pointer-events-auto' 
-            : 'opacity-0 pointer-events-none'
+          isMobileMenuOpen ? 'opacity-100 pointer-events-auto' : 'opacity-0 pointer-events-none'
         }`}
         style={{ top: 0 }}
       >
         <div className="flex flex-col min-h-screen px-8 pt-24 pb-8">
-          {/* Navigation Links */}
           <div className="flex-1 flex flex-col justify-center gap-8">
             {navLinks.map((link, i) => (
               <Link
                 key={link.name}
                 href={link.href}
                 onClick={() => setIsMobileMenuOpen(false)}
-                className={`text-5xl font-display text-foreground hover:text-purple-400 transition-all duration-500 ${
-                  isMobileMenuOpen 
-                    ? 'opacity-100 translate-y-0' 
-                    : 'opacity-0 translate-y-4'
+                className={`text-5xl font-display text-foreground hover:text-brand transition-all duration-500 ${
+                  isMobileMenuOpen ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'
                 }`}
                 style={{ transitionDelay: isMobileMenuOpen ? `${i * 75}ms` : '0ms' }}
               >
@@ -242,79 +209,70 @@ export function Navigation() {
               </Link>
             ))}
           </div>
-          
-          {/* Bottom CTAs */}
-          <div className={`flex gap-4 pt-8 border-t border-foreground/10 transition-all duration-500 ${
-            isMobileMenuOpen 
-              ? 'opacity-100 translate-y-0' 
-              : 'opacity-0 translate-y-4'
-          }`}
-          style={{ transitionDelay: isMobileMenuOpen ? '300ms' : '0ms' }}
+
+          <div
+            className={`flex gap-4 pt-8 border-t border-border transition-all duration-500 ${
+              isMobileMenuOpen ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'
+            }`}
+            style={{ transitionDelay: isMobileMenuOpen ? '300ms' : '0ms' }}
           >
             <Link href="/#convert" className="flex-1" onClick={() => setIsMobileMenuOpen(false)}>
-              <Button 
-                className="w-full bg-purple-600 hover:bg-purple-700 text-white rounded-full h-14 text-base"
-              >
-                Convert Now
-              </Button>
+              <Button className="w-full rounded-full h-14 text-base">Convert Now</Button>
             </Link>
           </div>
         </div>
       </div>
 
-      {/* Floating command palette search overlay */}
+      {/* Command palette search overlay */}
       {isSearchOpen && (
-        <div className="fixed inset-0 z-[100] bg-black/60 backdrop-blur-md flex items-start justify-center sm:pt-24 pt-4 px-4">
-          <div className="w-full max-w-xl bg-zinc-950 border border-white/10 rounded-2xl shadow-2xl overflow-hidden scale-in-center max-h-[90vh] sm:max-h-[80vh] flex flex-col">
-            {/* Input Header */}
-            <div className="flex items-center gap-3 px-4 py-3 border-b border-white/5 bg-white/5">
-              <Search className="w-5 h-5 text-purple-400 shrink-0" />
+        <div className="fixed inset-0 z-[100] bg-background/70 backdrop-blur-md flex items-start justify-center sm:pt-24 pt-4 px-4">
+          <div className="w-full max-w-xl bg-card border border-border rounded-2xl shadow-2xl overflow-hidden max-h-[90vh] sm:max-h-[80vh] flex flex-col">
+            <div className="flex items-center gap-3 px-4 py-3 border-b border-border bg-foreground/[0.02]">
+              <Search className="w-5 h-5 text-brand shrink-0" />
               <input
                 ref={searchInputRef}
                 type="text"
                 value={searchQuery}
                 onChange={(e) => setSearchQuery(e.target.value)}
                 placeholder="Search by tool name or function..."
-                className="w-full bg-transparent text-white border-0 outline-none placeholder-white/30 text-sm py-1"
+                className="w-full bg-transparent text-foreground border-0 outline-none placeholder-foreground/30 text-sm py-1"
               />
-              <button 
+              <button
                 onClick={() => { setIsSearchOpen(false); setSearchQuery(''); }}
-                className="p-1 hover:bg-white/10 rounded text-white/50 hover:text-white transition-colors"
+                className="p-1 hover:bg-foreground/10 rounded text-foreground/50 hover:text-foreground transition-colors"
               >
                 <X className="w-4 h-4" />
               </button>
             </div>
 
-            {/* Results body */}
-            <div className="flex-1 overflow-y-auto p-2 divide-y divide-white/5 max-h-[300px] sm:max-h-[360px]">
+            <div className="flex-1 overflow-y-auto p-2 divide-y divide-border max-h-[300px] sm:max-h-[360px]">
               {filteredTools.length > 0 ? (
                 filteredTools.map((tool) => (
                   <Link
                     key={tool.title}
                     href={tool.href}
                     onClick={() => { setIsSearchOpen(false); setSearchQuery(''); }}
-                    className="flex items-start gap-3 p-3 rounded-xl hover:bg-white/5 transition-colors group text-left"
+                    className="flex items-start gap-3 p-3 rounded-xl hover:bg-foreground/[0.04] transition-colors group text-left"
                   >
-                    <div className="p-2 rounded-lg bg-white/5 border border-white/10 text-purple-400 group-hover:bg-purple-600 group-hover:text-white transition-colors shrink-0 mt-0.5">
+                    <div className="p-2 rounded-lg bg-foreground/[0.03] border border-border text-brand group-hover:bg-brand group-hover:text-brand-foreground transition-colors shrink-0 mt-0.5">
                       <Sparkles className="w-3.5 h-3.5" />
                     </div>
                     <div>
-                      <h4 className="text-sm font-semibold text-white group-hover:text-purple-400 transition-colors">{tool.title}</h4>
-                      <p className="text-xs text-white/40 leading-normal">{tool.desc}</p>
+                      <h4 className="text-sm font-semibold text-foreground group-hover:text-brand transition-colors">{tool.title}</h4>
+                      <p className="text-xs text-muted-foreground leading-normal">{tool.desc}</p>
                     </div>
                   </Link>
                 ))
               ) : (
-                <div className="text-center py-8 text-white/30 text-xs">
+                <div className="text-center py-8 text-muted-foreground text-xs">
                   No matching tools found for "{searchQuery}"
                 </div>
               )}
             </div>
 
-            {/* Modal Footer helper */}
-            <div className="px-4 py-2 bg-white/5 border-t border-white/5 text-[10px] text-white/30 flex items-center justify-between">
-              <span>Press <kbd className="bg-white/10 px-1 rounded text-white/50">ESC</kbd> to close</span>
-              <span>32 local tools available</span>
+            <div className="px-4 py-2 bg-foreground/[0.02] border-t border-border text-[10px] text-muted-foreground flex items-center justify-between">
+              <span>Press <kbd className="bg-foreground/10 px-1 rounded text-foreground/60">ESC</kbd> to close</span>
+              <span>{searchTools.length} local tools available</span>
             </div>
           </div>
         </div>

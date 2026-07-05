@@ -146,8 +146,8 @@ export function WatermarkTool() {
               onClick={() => fileInputRef.current?.click()}
               className={`relative cursor-pointer border border-dashed rounded-2xl p-12 transition-all duration-300 text-center flex flex-col items-center justify-center min-h-[220px] ${
                 isDraggingOver
-                  ? 'border-purple-500 bg-purple-500/5'
-                  : 'border-white/10 bg-zinc-900/30 hover:border-white/20'
+                  ? 'border-brand bg-brand/5'
+                  : 'border-foreground/10 bg-card/40 hover:border-foreground/20'
               }`}
             >
               <input
@@ -157,22 +157,22 @@ export function WatermarkTool() {
                 accept=".pdf"
                 className="hidden"
               />
-              <div className="p-4 rounded-full bg-white/5 mb-4 border border-white/10">
-                <Upload className="w-6 h-6 text-purple-400" />
+              <div className="p-4 rounded-full bg-foreground/5 mb-4 border border-foreground/10">
+                <Upload className="w-6 h-6 text-brand" />
               </div>
-              <h3 className="text-xl font-display text-white mb-2">
+              <h3 className="text-xl font-display text-foreground mb-2">
                 Select or drag a PDF file
               </h3>
-              <p className="text-xs text-white/40">
+              <p className="text-xs text-foreground/40">
                 Watermarks are applied 100% locally on your browser.
               </p>
             </div>
           ) : (
             <div className="space-y-6">
-              <div className="p-6 bg-zinc-950 border border-white/10 rounded-2xl flex justify-between items-start">
+              <div className="p-6 bg-card border border-foreground/10 rounded-2xl flex justify-between items-start">
                 <div>
-                  <h4 className="text-lg font-display text-white">{file.name}</h4>
-                  <p className="text-xs text-white/40">
+                  <h4 className="text-lg font-display text-foreground">{file.name}</h4>
+                  <p className="text-xs text-foreground/40">
                     {pagesCount} pages • {(file.size / (1024 * 1024)).toFixed(2)} MB
                   </p>
                 </div>
@@ -183,24 +183,24 @@ export function WatermarkTool() {
                     setFile(null);
                     setDownloadUrl(null);
                   }}
-                  className="text-xs text-white/40 hover:text-white"
+                  className="text-xs text-foreground/40 hover:text-foreground"
                 >
                   Change File
                 </Button>
               </div>
 
               {/* Live Preview Card */}
-              <div className="p-6 bg-zinc-950 border border-white/10 rounded-2xl space-y-4">
-                <div className="flex items-center justify-between border-b border-white/5 pb-3">
-                  <h3 className="font-mono text-xs uppercase tracking-wider text-white/60">Live Preview (Page 1)</h3>
-                  <span className="text-[10px] bg-purple-500/10 text-purple-400 px-2 py-0.5 rounded border border-purple-500/20 uppercase font-mono">Real-time</span>
+              <div className="p-6 bg-card border border-foreground/10 rounded-2xl space-y-4">
+                <div className="flex items-center justify-between border-b border-foreground/5 pb-3">
+                  <h3 className="font-mono text-xs uppercase tracking-wider text-foreground/60">Live Preview (Page 1)</h3>
+                  <span className="text-[10px] bg-brand/10 text-brand px-2 py-0.5 rounded border border-brand/20 uppercase font-mono">Real-time</span>
                 </div>
                 
-                <div className="relative border border-white/5 rounded-xl overflow-hidden bg-zinc-900/40 flex justify-center items-center p-4 min-h-[300px]">
+                <div className="relative border border-foreground/5 rounded-xl overflow-hidden bg-card/50 flex justify-center items-center p-4 min-h-[300px]">
                   {isPreviewLoading && (
-                    <div className="absolute inset-0 flex flex-col items-center justify-center bg-black/40 backdrop-blur-sm z-10 space-y-2">
-                      <Loader2 className="w-6 h-6 text-purple-500 animate-spin" />
-                      <span className="text-xs text-white/60 font-mono">Rendering preview...</span>
+                    <div className="absolute inset-0 flex flex-col items-center justify-center bg-background/40 backdrop-blur-sm z-10 space-y-2">
+                      <Loader2 className="w-6 h-6 text-brand animate-spin" />
+                      <span className="text-xs text-foreground/60 font-mono">Rendering preview...</span>
                     </div>
                   )}
                   
@@ -237,27 +237,27 @@ export function WatermarkTool() {
         </div>
 
         {/* Action Options Panel */}
-        <div className="lg:col-span-4 bg-zinc-950 border border-white/10 rounded-2xl p-6 space-y-6">
-          <div className="flex items-center gap-2 border-b border-white/5 pb-4">
-            <Layers className="w-4 h-4 text-purple-400" />
-            <h3 className="font-mono text-sm uppercase tracking-wider text-white">Watermark options</h3>
+        <div className="lg:col-span-4 bg-card border border-foreground/10 rounded-2xl p-6 space-y-6">
+          <div className="flex items-center gap-2 border-b border-foreground/5 pb-4">
+            <Layers className="w-4 h-4 text-brand" />
+            <h3 className="font-mono text-sm uppercase tracking-wider text-foreground">Watermark options</h3>
           </div>
 
           <div className="space-y-4">
             {/* Watermark text */}
             <div className="space-y-2">
-              <label className="text-[10px] font-mono uppercase tracking-wider text-white/40">Text</label>
+              <label className="text-[10px] font-mono uppercase tracking-wider text-foreground/40">Text</label>
               <input
                 type="text"
                 value={options.text}
                 onChange={(e) => setOptions((prev) => ({ ...prev, text: e.target.value }))}
-                className="w-full h-10 px-3 bg-zinc-900 border border-white/10 text-white rounded-lg text-sm"
+                className="w-full h-10 px-3 bg-card/80 border border-foreground/10 text-foreground rounded-lg text-sm"
               />
             </div>
 
             {/* Font size */}
             <div className="space-y-2">
-              <label className="text-[10px] font-mono uppercase tracking-wider text-white/40">Size ({options.size}pt)</label>
+              <label className="text-[10px] font-mono uppercase tracking-wider text-foreground/40">Size ({options.size}pt)</label>
               <input
                 type="range"
                 min="10"
@@ -265,13 +265,13 @@ export function WatermarkTool() {
                 step="5"
                 value={options.size}
                 onChange={(e) => setOptions((prev) => ({ ...prev, size: parseInt(e.target.value) }))}
-                className="w-full h-1 bg-zinc-800 rounded-lg appearance-none cursor-pointer accent-purple-500"
+                className="w-full h-1 bg-zinc-800 rounded-lg appearance-none cursor-pointer accent-brand"
               />
             </div>
 
             {/* Opacity */}
             <div className="space-y-2">
-              <label className="text-[10px] font-mono uppercase tracking-wider text-white/40">Opacity ({Math.round(options.opacity * 100)}%)</label>
+              <label className="text-[10px] font-mono uppercase tracking-wider text-foreground/40">Opacity ({Math.round(options.opacity * 100)}%)</label>
               <input
                 type="range"
                 min="0.05"
@@ -279,13 +279,13 @@ export function WatermarkTool() {
                 step="0.05"
                 value={options.opacity}
                 onChange={(e) => setOptions((prev) => ({ ...prev, opacity: parseFloat(e.target.value) }))}
-                className="w-full h-1 bg-zinc-800 rounded-lg appearance-none cursor-pointer accent-purple-500"
+                className="w-full h-1 bg-zinc-800 rounded-lg appearance-none cursor-pointer accent-brand"
               />
             </div>
 
             {/* Color */}
             <div className="space-y-2">
-              <label className="text-[10px] font-mono uppercase tracking-wider text-white/40">Color</label>
+              <label className="text-[10px] font-mono uppercase tracking-wider text-foreground/40">Color</label>
               <div className="flex gap-2">
                 <input
                   type="color"
@@ -297,31 +297,31 @@ export function WatermarkTool() {
                   type="text"
                   value={options.colorHex}
                   onChange={(e) => setOptions((prev) => ({ ...prev, colorHex: e.target.value }))}
-                  className="flex-1 h-10 px-3 bg-zinc-900 border border-white/10 text-white rounded-lg text-sm uppercase font-mono"
+                  className="flex-1 h-10 px-3 bg-card/80 border border-foreground/10 text-foreground rounded-lg text-sm uppercase font-mono"
                 />
               </div>
             </div>
           </div>
 
-          <div className="pt-4 border-t border-white/5">
+          <div className="pt-4 border-t border-foreground/5">
             {isProcessing ? (
               <div className="space-y-2">
-                <div className="flex justify-between items-center text-xs font-mono text-white/60">
+                <div className="flex justify-between items-center text-xs font-mono text-foreground/60">
                   <span className="flex items-center gap-2">
-                    <Loader2 className="w-3.5 h-3.5 text-purple-500 animate-spin" />
+                    <Loader2 className="w-3.5 h-3.5 text-brand animate-spin" />
                     Watermarking...
                   </span>
                   <span>{progress}%</span>
                 </div>
-                <div className="w-full bg-white/5 rounded-full h-1.5 overflow-hidden">
-                  <div className="bg-purple-600 h-full rounded-full" style={{ width: `${progress}%` }} />
+                <div className="w-full bg-foreground/5 rounded-full h-1.5 overflow-hidden">
+                  <div className="bg-brand h-full rounded-full" style={{ width: `${progress}%` }} />
                 </div>
               </div>
             ) : downloadUrl ? (
               <div className="space-y-2">
                 <Button
                   onClick={handleDownload}
-                  className="w-full bg-emerald-600 hover:bg-emerald-700 text-white font-medium py-6 rounded-xl flex items-center justify-center gap-2"
+                  className="w-full bg-emerald-600 hover:bg-emerald-700 text-foreground font-medium py-6 rounded-xl flex items-center justify-center gap-2"
                 >
                   <Download className="w-5 h-5" />
                   Download PDF
@@ -332,7 +332,7 @@ export function WatermarkTool() {
                     setFile(null);
                     setDownloadUrl(null);
                   }}
-                  className="w-full text-white/50 hover:text-white text-xs h-8"
+                  className="w-full text-foreground/50 hover:text-foreground text-xs h-8"
                 >
                   Watermark new file
                 </Button>
@@ -342,7 +342,7 @@ export function WatermarkTool() {
                 disabled={!file}
                 onClick={triggerWatermark}
                 className={`w-full font-medium py-6 rounded-xl flex items-center justify-center gap-2 ${
-                  file ? 'bg-purple-600 hover:bg-purple-700 text-white' : 'bg-white/5 text-white/30 cursor-not-allowed'
+                  file ? 'bg-brand hover:bg-brand/90 text-foreground' : 'bg-foreground/5 text-foreground/30 cursor-not-allowed'
                 }`}
               >
                 <Type className="w-4 h-4" />

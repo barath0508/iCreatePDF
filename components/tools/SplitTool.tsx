@@ -130,8 +130,8 @@ export function SplitTool() {
               onClick={() => fileInputRef.current?.click()}
               className={`relative cursor-pointer border border-dashed rounded-2xl p-12 transition-all duration-300 text-center flex flex-col items-center justify-center min-h-[220px] ${
                 isDraggingOver
-                  ? 'border-purple-500 bg-purple-500/5'
-                  : 'border-white/10 bg-zinc-900/30 hover:border-white/20'
+                  ? 'border-brand bg-brand/5'
+                  : 'border-foreground/10 bg-card/40 hover:border-foreground/20'
               }`}
             >
               <input
@@ -141,22 +141,22 @@ export function SplitTool() {
                 accept=".pdf"
                 className="hidden"
               />
-              <div className="p-4 rounded-full bg-white/5 mb-4 border border-white/10">
-                <Upload className="w-6 h-6 text-purple-400" />
+              <div className="p-4 rounded-full bg-foreground/5 mb-4 border border-foreground/10">
+                <Upload className="w-6 h-6 text-brand" />
               </div>
-              <h3 className="text-xl font-display text-white mb-2">
+              <h3 className="text-xl font-display text-foreground mb-2">
                 Select or drag a PDF file
               </h3>
-              <p className="text-xs text-white/40">
+              <p className="text-xs text-foreground/40">
                 Split PDF operations are processed 100% locally on your browser.
               </p>
             </div>
           ) : (
-            <div className="p-6 bg-zinc-950 border border-white/10 rounded-2xl space-y-4">
+            <div className="p-6 bg-card border border-foreground/10 rounded-2xl space-y-4">
               <div className="flex justify-between items-start">
                 <div>
-                  <h4 className="text-lg font-display text-white">{file.name}</h4>
-                  <p className="text-xs text-white/40">
+                  <h4 className="text-lg font-display text-foreground">{file.name}</h4>
+                  <p className="text-xs text-foreground/40">
                     {pagesCount} pages • {(file.size / (1024 * 1024)).toFixed(2)} MB
                   </p>
                 </div>
@@ -167,23 +167,23 @@ export function SplitTool() {
                     setFile(null);
                     setDownloadUrls([]);
                   }}
-                  className="text-xs text-white/40 hover:text-white"
+                  className="text-xs text-foreground/40 hover:text-foreground"
                 >
                   Change File
                 </Button>
               </div>
 
               {/* Range Editor */}
-              <div className="space-y-3 pt-4 border-t border-white/5">
+              <div className="space-y-3 pt-4 border-t border-foreground/5">
                 <div className="flex justify-between items-center mb-2">
-                  <span className="text-xs font-mono text-white/50 uppercase tracking-widest">
+                  <span className="text-xs font-mono text-foreground/50 uppercase tracking-widest">
                     Split Ranges
                   </span>
                   <Button
                     variant="outline"
                     size="sm"
                     onClick={addRange}
-                    className="h-7 text-xs border-white/10 hover:bg-white/5"
+                    className="h-7 text-xs border-foreground/10 hover:bg-foreground/5"
                   >
                     <Plus className="w-3.5 h-3.5 mr-1" />
                     Add Range
@@ -194,33 +194,33 @@ export function SplitTool() {
                   {ranges.map((range, idx) => (
                     <div
                       key={idx}
-                      className="flex items-center gap-4 p-3 bg-black/40 border border-white/5 rounded-xl"
+                      className="flex items-center gap-4 p-3 bg-background/40 border border-foreground/5 rounded-xl"
                     >
-                      <span className="text-xs font-mono text-white/40 w-16">
+                      <span className="text-xs font-mono text-foreground/40 w-16">
                         Range {idx + 1}
                       </span>
                       
                       <div className="flex items-center gap-2 flex-1">
                         <div className="flex items-center gap-1.5">
-                          <span className="text-xs text-white/40 font-mono">From:</span>
+                          <span className="text-xs text-foreground/40 font-mono">From:</span>
                           <input
                             type="number"
                             min="1"
                             max={pagesCount}
                             value={range.start}
                             onChange={(e) => updateRange(idx, 'start', parseInt(e.target.value))}
-                            className="w-16 h-8 text-center bg-zinc-900 border border-white/10 text-white rounded text-sm font-mono"
+                            className="w-16 h-8 text-center bg-card/80 border border-foreground/10 text-foreground rounded text-sm font-mono"
                           />
                         </div>
                         <div className="flex items-center gap-1.5">
-                          <span className="text-xs text-white/40 font-mono">To:</span>
+                          <span className="text-xs text-foreground/40 font-mono">To:</span>
                           <input
                             type="number"
                             min="1"
                             max={pagesCount}
                             value={range.end}
                             onChange={(e) => updateRange(idx, 'end', parseInt(e.target.value))}
-                            className="w-16 h-8 text-center bg-zinc-900 border border-white/10 text-white rounded text-sm font-mono"
+                            className="w-16 h-8 text-center bg-card/80 border border-foreground/10 text-foreground rounded text-sm font-mono"
                           />
                         </div>
                       </div>
@@ -229,7 +229,7 @@ export function SplitTool() {
                         <button
                           type="button"
                           onClick={() => removeRange(idx)}
-                          className="p-1 text-white/40 hover:text-red-400 rounded transition-colors"
+                          className="p-1 text-foreground/40 hover:text-red-400 rounded transition-colors"
                         >
                           <Trash2 className="w-4 h-4" />
                         </button>
@@ -249,28 +249,28 @@ export function SplitTool() {
         </div>
 
         {/* Action Panel */}
-        <div className="lg:col-span-4 bg-zinc-950 border border-white/10 rounded-2xl p-6 space-y-6">
-          <div className="flex items-center gap-2 border-b border-white/5 pb-4">
-            <Layers className="w-4 h-4 text-purple-400" />
-            <h3 className="font-mono text-sm uppercase tracking-wider text-white">Split Options</h3>
+        <div className="lg:col-span-4 bg-card border border-foreground/10 rounded-2xl p-6 space-y-6">
+          <div className="flex items-center gap-2 border-b border-foreground/5 pb-4">
+            <Layers className="w-4 h-4 text-brand" />
+            <h3 className="font-mono text-sm uppercase tracking-wider text-foreground">Split Options</h3>
           </div>
 
-          <p className="text-xs text-white/50 leading-relaxed">
+          <p className="text-xs text-foreground/50 leading-relaxed">
             Extract selected page ranges as separate documents. All page divisions are processed fully inside your browser memory.
           </p>
 
-          <div className="pt-4 border-t border-white/5">
+          <div className="pt-4 border-t border-foreground/5">
             {isProcessing ? (
               <div className="space-y-2">
-                <div className="flex justify-between items-center text-xs font-mono text-white/60">
+                <div className="flex justify-between items-center text-xs font-mono text-foreground/60">
                   <span className="flex items-center gap-2">
-                    <Loader2 className="w-3.5 h-3.5 text-purple-500 animate-spin" />
+                    <Loader2 className="w-3.5 h-3.5 text-brand animate-spin" />
                     Splitting...
                   </span>
                   <span>{progress}%</span>
                 </div>
-                <div className="w-full bg-white/5 rounded-full h-1.5 overflow-hidden">
-                  <div className="bg-purple-600 h-full rounded-full" style={{ width: `${progress}%` }} />
+                <div className="w-full bg-foreground/5 rounded-full h-1.5 overflow-hidden">
+                  <div className="bg-brand h-full rounded-full" style={{ width: `${progress}%` }} />
                 </div>
               </div>
             ) : downloadUrls.length > 0 ? (
@@ -279,7 +279,7 @@ export function SplitTool() {
                   <Button
                     key={idx}
                     onClick={() => handleDownload(url, idx)}
-                    className="w-full bg-emerald-600 hover:bg-emerald-700 text-white font-medium py-3 rounded-lg flex items-center justify-center gap-2 text-xs"
+                    className="w-full bg-emerald-600 hover:bg-emerald-700 text-foreground font-medium py-3 rounded-lg flex items-center justify-center gap-2 text-xs"
                   >
                     <Download className="w-4 h-4" />
                     Download Split Part {idx + 1}
@@ -291,7 +291,7 @@ export function SplitTool() {
                     setFile(null);
                     setDownloadUrls([]);
                   }}
-                  className="w-full text-white/50 hover:text-white text-xs h-8"
+                  className="w-full text-foreground/50 hover:text-foreground text-xs h-8"
                 >
                   Split new file
                 </Button>
@@ -301,7 +301,7 @@ export function SplitTool() {
                 disabled={!file}
                 onClick={triggerSplit}
                 className={`w-full font-medium py-6 rounded-xl flex items-center justify-center gap-2 ${
-                  file ? 'bg-purple-600 hover:bg-purple-700 text-white' : 'bg-white/5 text-white/30 cursor-not-allowed'
+                  file ? 'bg-brand hover:bg-brand/90 text-foreground' : 'bg-foreground/5 text-foreground/30 cursor-not-allowed'
                 }`}
               >
                 <FileText className="w-4 h-4" />

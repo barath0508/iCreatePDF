@@ -146,7 +146,7 @@ export function VerifySignatureTool() {
               onDragLeave={() => setIsDraggingOver(false)}
               onDrop={(e) => { e.preventDefault(); setIsDraggingOver(false); e.dataTransfer.files && handleFiles(e.dataTransfer.files); }}
               onClick={() => fileInputRef.current?.click()}
-              className="relative cursor-pointer border border-dashed rounded-2xl p-12 transition-all duration-300 text-center flex flex-col items-center justify-center min-h-[220px] border-white/10 bg-zinc-900/30 hover:border-white/20"
+              className="relative cursor-pointer border border-dashed rounded-2xl p-12 transition-all duration-300 text-center flex flex-col items-center justify-center min-h-[220px] border-foreground/10 bg-card/40 hover:border-foreground/20"
             >
               <input
                 type="file"
@@ -155,20 +155,20 @@ export function VerifySignatureTool() {
                 accept=".pdf"
                 className="hidden"
               />
-              <FileCheck className="w-6 h-6 text-purple-400 mb-4" />
-              <h3 className="text-xl font-display text-white mb-2">Upload a signed PDF</h3>
-              <p className="text-xs text-white/40">Verify digital cryptographic certificates locally.</p>
+              <FileCheck className="w-6 h-6 text-brand mb-4" />
+              <h3 className="text-xl font-display text-foreground mb-2">Upload a signed PDF</h3>
+              <p className="text-xs text-foreground/40">Verify digital cryptographic certificates locally.</p>
             </div>
           ) : (
-            <div className="p-6 bg-zinc-950 border border-white/10 rounded-2xl space-y-6">
+            <div className="p-6 bg-card border border-foreground/10 rounded-2xl space-y-6">
               <div className="flex justify-between items-start">
                 <div className="flex items-center gap-3">
-                  <div className="p-3 bg-purple-500/10 border border-purple-500/20 rounded-xl text-purple-400">
+                  <div className="p-3 bg-brand/10 border border-brand/20 rounded-xl text-brand">
                     <FileCheck className="w-6 h-6" />
                   </div>
                   <div>
-                    <h4 className="text-lg font-display text-white">{file.name}</h4>
-                    <p className="text-xs text-white/40">
+                    <h4 className="text-lg font-display text-foreground">{file.name}</h4>
+                    <p className="text-xs text-foreground/40">
                       PDF Document • {(file.size / (1024 * 1024)).toFixed(2)} MB
                     </p>
                   </div>
@@ -180,14 +180,14 @@ export function VerifySignatureTool() {
                     setFile(null);
                     setReport(null);
                   }}
-                  className="text-xs text-white/40 hover:text-white"
+                  className="text-xs text-foreground/40 hover:text-foreground"
                 >
                   Change File
                 </Button>
               </div>
 
               {report && (
-                <div className="pt-6 border-t border-white/5 space-y-6">
+                <div className="pt-6 border-t border-foreground/5 space-y-6">
                   {report.isSigned ? (
                     <div className="space-y-6">
                       <div className="flex items-start gap-4 p-4 rounded-xl bg-emerald-500/10 border border-emerald-500/20">
@@ -201,33 +201,33 @@ export function VerifySignatureTool() {
                       </div>
 
                       <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                        <div className="p-4 bg-black/40 border border-white/5 rounded-xl space-y-1">
-                          <span className="text-[10px] font-mono text-white/40 uppercase">Signer identity</span>
-                          <p className="text-sm font-medium text-white">{report.signerName}</p>
+                        <div className="p-4 bg-background/40 border border-foreground/5 rounded-xl space-y-1">
+                          <span className="text-[10px] font-mono text-foreground/40 uppercase">Signer identity</span>
+                          <p className="text-sm font-medium text-foreground">{report.signerName}</p>
                         </div>
-                        <div className="p-4 bg-black/40 border border-white/5 rounded-xl space-y-1">
-                          <span className="text-[10px] font-mono text-white/40 uppercase">Signing date</span>
-                          <p className="text-sm font-medium text-white flex items-center gap-1.5">
-                            <Calendar className="w-3.5 h-3.5 text-purple-400" />
+                        <div className="p-4 bg-background/40 border border-foreground/5 rounded-xl space-y-1">
+                          <span className="text-[10px] font-mono text-foreground/40 uppercase">Signing date</span>
+                          <p className="text-sm font-medium text-foreground flex items-center gap-1.5">
+                            <Calendar className="w-3.5 h-3.5 text-brand" />
                             {report.signingTime}
                           </p>
                         </div>
-                        <div className="p-4 bg-black/40 border border-white/5 rounded-xl space-y-1">
-                          <span className="text-[10px] font-mono text-white/40 uppercase">Reason</span>
-                          <p className="text-sm font-medium text-white">{report.reason}</p>
+                        <div className="p-4 bg-background/40 border border-foreground/5 rounded-xl space-y-1">
+                          <span className="text-[10px] font-mono text-foreground/40 uppercase">Reason</span>
+                          <p className="text-sm font-medium text-foreground">{report.reason}</p>
                         </div>
-                        <div className="p-4 bg-black/40 border border-white/5 rounded-xl space-y-1">
-                          <span className="text-[10px] font-mono text-white/40 uppercase">Location</span>
-                          <p className="text-sm font-medium text-white">{report.location}</p>
+                        <div className="p-4 bg-background/40 border border-foreground/5 rounded-xl space-y-1">
+                          <span className="text-[10px] font-mono text-foreground/40 uppercase">Location</span>
+                          <p className="text-sm font-medium text-foreground">{report.location}</p>
                         </div>
                       </div>
 
-                      <div className="p-4 bg-white/5 border border-white/5 rounded-xl space-y-2">
-                        <div className="flex items-center gap-2 text-xs font-mono text-white/60">
-                          <Info className="w-3.5 h-3.5 text-purple-400" />
+                      <div className="p-4 bg-foreground/5 border border-foreground/5 rounded-xl space-y-2">
+                        <div className="flex items-center gap-2 text-xs font-mono text-foreground/60">
+                          <Info className="w-3.5 h-3.5 text-brand" />
                           <span>ByteRange Signature Mapping</span>
                         </div>
-                        <p className="text-[11px] font-mono text-white/40">
+                        <p className="text-[11px] font-mono text-foreground/40">
                           [{report.byteRange?.join(', ')}]
                         </p>
                       </div>
@@ -256,19 +256,19 @@ export function VerifySignatureTool() {
         </div>
 
         {/* Action Panel */}
-        <div className="lg:col-span-4 bg-zinc-950 border border-white/10 rounded-2xl p-6 space-y-6">
-          <div className="flex items-center gap-2 border-b border-white/5 pb-4">
-            <ShieldCheck className="w-4 h-4 text-purple-400" />
-            <h3 className="font-mono text-sm uppercase tracking-wider text-white">Verification</h3>
+        <div className="lg:col-span-4 bg-card border border-foreground/10 rounded-2xl p-6 space-y-6">
+          <div className="flex items-center gap-2 border-b border-foreground/5 pb-4">
+            <ShieldCheck className="w-4 h-4 text-brand" />
+            <h3 className="font-mono text-sm uppercase tracking-wider text-foreground">Verification</h3>
           </div>
 
-          <p className="text-xs text-white/50 leading-relaxed">
+          <p className="text-xs text-foreground/50 leading-relaxed">
             Verify the cryptographic identity and document integrity of signed PDFs client-side. Ensures the document hasn't been altered post-signature.
           </p>
 
-          <div className="pt-4 border-t border-white/5">
+          <div className="pt-4 border-t border-foreground/5">
             {isProcessing ? (
-              <Button disabled className="w-full bg-purple-600/50 text-white font-medium py-6 rounded-xl flex items-center justify-center gap-2">
+              <Button disabled className="w-full bg-brand/50 text-foreground font-medium py-6 rounded-xl flex items-center justify-center gap-2">
                 <Loader2 className="w-4 h-4 animate-spin" />
                 Analyzing PDF...
               </Button>
@@ -284,7 +284,7 @@ export function VerifySignatureTool() {
                       link.click();
                       document.body.removeChild(link);
                     }}
-                    className="w-full bg-emerald-600 hover:bg-emerald-700 text-white font-medium py-6 rounded-xl flex items-center justify-center gap-2"
+                    className="w-full bg-emerald-600 hover:bg-emerald-700 text-foreground font-medium py-6 rounded-xl flex items-center justify-center gap-2"
                   >
                     <Download className="w-5 h-5" />
                     Download Validated Copy
@@ -296,7 +296,7 @@ export function VerifySignatureTool() {
                     setReport(null);
                     setValidatedPdfUrl(null);
                   }}
-                  className="w-full bg-white/5 hover:bg-white/10 text-white py-4 rounded-xl text-xs"
+                  className="w-full bg-foreground/5 hover:bg-foreground/10 text-foreground py-4 rounded-xl text-xs"
                 >
                   Verify another file
                 </Button>
@@ -306,7 +306,7 @@ export function VerifySignatureTool() {
                 disabled={!file}
                 onClick={triggerVerification}
                 className={`w-full font-medium py-6 rounded-xl flex items-center justify-center gap-2 ${
-                  file ? 'bg-purple-600 hover:bg-purple-700 text-white' : 'bg-white/5 text-white/30 cursor-not-allowed'
+                  file ? 'bg-brand hover:bg-brand/90 text-foreground' : 'bg-foreground/5 text-foreground/30 cursor-not-allowed'
                 }`}
               >
                 <ShieldCheck className="w-4 h-4" />

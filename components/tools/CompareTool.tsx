@@ -121,11 +121,11 @@ export function CompareTool() {
         
         {/* Document A */}
         <div>
-          <label className="text-xs font-mono text-white/60 mb-2 block">Document A (Original)</label>
+          <label className="text-xs font-mono text-foreground/60 mb-2 block">Document A (Original)</label>
           {!fileA ? (
             <div
               onClick={() => fileInputRefA.current?.click()}
-              className="relative cursor-pointer border border-dashed rounded-2xl p-8 text-center flex flex-col items-center justify-center min-h-[140px] border-white/10 bg-zinc-900/30 hover:border-white/20 transition-all duration-300"
+              className="relative cursor-pointer border border-dashed rounded-2xl p-8 text-center flex flex-col items-center justify-center min-h-[140px] border-foreground/10 bg-card/40 hover:border-foreground/20 transition-all duration-300"
             >
               <input
                 type="file"
@@ -134,12 +134,12 @@ export function CompareTool() {
                 accept=".pdf"
                 className="hidden"
               />
-              <Upload className="w-5 h-5 text-purple-400 mb-2" />
-              <p className="text-xs text-white/80">Select Document A</p>
+              <Upload className="w-5 h-5 text-brand mb-2" />
+              <p className="text-xs text-foreground/80">Select Document A</p>
             </div>
           ) : (
-            <div className="p-4 bg-zinc-950 border border-white/10 rounded-xl flex justify-between items-center">
-              <span className="text-xs text-white truncate max-w-[200px]">{fileA.name}</span>
+            <div className="p-4 bg-card border border-foreground/10 rounded-xl flex justify-between items-center">
+              <span className="text-xs text-foreground truncate max-w-[200px]">{fileA.name}</span>
               <Button variant="ghost" size="sm" onClick={() => setFileA(null)} className="text-xs text-red-400">Remove</Button>
             </div>
           )}
@@ -147,11 +147,11 @@ export function CompareTool() {
 
         {/* Document B */}
         <div>
-          <label className="text-xs font-mono text-white/60 mb-2 block">Document B (Revision)</label>
+          <label className="text-xs font-mono text-foreground/60 mb-2 block">Document B (Revision)</label>
           {!fileB ? (
             <div
               onClick={() => fileInputRefB.current?.click()}
-              className="relative cursor-pointer border border-dashed rounded-2xl p-8 text-center flex flex-col items-center justify-center min-h-[140px] border-white/10 bg-zinc-900/30 hover:border-white/20 transition-all duration-300"
+              className="relative cursor-pointer border border-dashed rounded-2xl p-8 text-center flex flex-col items-center justify-center min-h-[140px] border-foreground/10 bg-card/40 hover:border-foreground/20 transition-all duration-300"
             >
               <input
                 type="file"
@@ -160,12 +160,12 @@ export function CompareTool() {
                 accept=".pdf"
                 className="hidden"
               />
-              <Upload className="w-5 h-5 text-purple-400 mb-2" />
-              <p className="text-xs text-white/80">Select Document B</p>
+              <Upload className="w-5 h-5 text-brand mb-2" />
+              <p className="text-xs text-foreground/80">Select Document B</p>
             </div>
           ) : (
-            <div className="p-4 bg-zinc-950 border border-white/10 rounded-xl flex justify-between items-center">
-              <span className="text-xs text-white truncate max-w-[200px]">{fileB.name}</span>
+            <div className="p-4 bg-card border border-foreground/10 rounded-xl flex justify-between items-center">
+              <span className="text-xs text-foreground truncate max-w-[200px]">{fileB.name}</span>
               <Button variant="ghost" size="sm" onClick={() => setFileB(null)} className="text-xs text-red-400">Remove</Button>
             </div>
           )}
@@ -179,30 +179,30 @@ export function CompareTool() {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             
             {/* View A */}
-            <div className="bg-zinc-950 border border-white/10 rounded-2xl p-4 flex justify-center items-center relative min-h-[300px] overflow-hidden">
+            <div className="bg-card border border-foreground/10 rounded-2xl p-4 flex justify-center items-center relative min-h-[300px] overflow-hidden">
               {isLoadingA && (
-                <div className="absolute inset-0 bg-black/50 backdrop-blur-sm z-10 flex items-center justify-center">
-                  <Loader2 className="w-6 h-6 animate-spin text-purple-400" />
+                <div className="absolute inset-0 bg-background/50 backdrop-blur-sm z-10 flex items-center justify-center">
+                  <Loader2 className="w-6 h-6 animate-spin text-brand" />
                 </div>
               )}
               {fileA ? (
                 <canvas ref={canvasRefA} className="shadow-2xl rounded max-w-full" />
               ) : (
-                <span className="text-xs text-white/30">Document A not loaded</span>
+                <span className="text-xs text-foreground/30">Document A not loaded</span>
               )}
             </div>
 
             {/* View B */}
-            <div className="bg-zinc-950 border border-white/10 rounded-2xl p-4 flex justify-center items-center relative min-h-[300px] overflow-hidden">
+            <div className="bg-card border border-foreground/10 rounded-2xl p-4 flex justify-center items-center relative min-h-[300px] overflow-hidden">
               {isLoadingB && (
-                <div className="absolute inset-0 bg-black/50 backdrop-blur-sm z-10 flex items-center justify-center">
-                  <Loader2 className="w-6 h-6 animate-spin text-purple-400" />
+                <div className="absolute inset-0 bg-background/50 backdrop-blur-sm z-10 flex items-center justify-center">
+                  <Loader2 className="w-6 h-6 animate-spin text-brand" />
                 </div>
               )}
               {fileB ? (
                 <canvas ref={canvasRefB} className="shadow-2xl rounded max-w-full" />
               ) : (
-                <span className="text-xs text-white/30">Document B not loaded</span>
+                <span className="text-xs text-foreground/30">Document B not loaded</span>
               )}
             </div>
 
@@ -210,7 +210,7 @@ export function CompareTool() {
 
           {/* Sync Navigation Bar */}
           {maxPages > 1 && (
-            <div className="flex justify-between items-center bg-zinc-900/50 p-4 rounded-xl border border-white/5 max-w-md mx-auto">
+            <div className="flex justify-between items-center bg-card/60 p-4 rounded-xl border border-foreground/5 max-w-md mx-auto">
               <Button
                 variant="ghost"
                 size="sm"
@@ -219,7 +219,7 @@ export function CompareTool() {
               >
                 Previous Page
               </Button>
-              <span className="text-xs text-white/60">
+              <span className="text-xs text-foreground/60">
                 Page {currentPage} of {maxPages}
               </span>
               <Button
@@ -236,10 +236,10 @@ export function CompareTool() {
       )}
 
       {!fileA && !fileB && (
-        <div className="text-center p-12 bg-zinc-950/45 border border-white/5 rounded-2xl space-y-3">
-          <Columns className="w-8 h-8 text-purple-400 mx-auto" />
-          <h4 className="text-base font-semibold text-white">Upload two files to start side-by-side comparison</h4>
-          <p className="text-xs text-white/40 max-w-sm mx-auto leading-relaxed">
+        <div className="text-center p-12 bg-card/45 border border-foreground/5 rounded-2xl space-y-3">
+          <Columns className="w-8 h-8 text-brand mx-auto" />
+          <h4 className="text-base font-semibold text-foreground">Upload two files to start side-by-side comparison</h4>
+          <p className="text-xs text-foreground/40 max-w-sm mx-auto leading-relaxed">
             Verify content differences, layout updates, and text variations side-by-side 100% locally.
           </p>
         </div>

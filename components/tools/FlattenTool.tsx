@@ -77,8 +77,8 @@ export function FlattenTool() {
               onClick={() => fileInputRef.current?.click()}
               className={`relative cursor-pointer border border-dashed rounded-2xl p-12 transition-all duration-300 text-center flex flex-col items-center justify-center min-h-[220px] ${
                 isDraggingOver
-                  ? 'border-purple-500 bg-purple-500/5'
-                  : 'border-white/10 bg-zinc-900/30 hover:border-white/20'
+                  ? 'border-brand bg-brand/5'
+                  : 'border-foreground/10 bg-card/40 hover:border-foreground/20'
               }`}
             >
               <input
@@ -88,26 +88,26 @@ export function FlattenTool() {
                 accept=".pdf"
                 className="hidden"
               />
-              <div className="p-4 rounded-full bg-white/5 mb-4 border border-white/10">
-                <Layers className="w-6 h-6 text-purple-400" />
+              <div className="p-4 rounded-full bg-foreground/5 mb-4 border border-foreground/10">
+                <Layers className="w-6 h-6 text-brand" />
               </div>
-              <h3 className="text-xl font-display text-white mb-2">
+              <h3 className="text-xl font-display text-foreground mb-2">
                 Select or drag a PDF file
               </h3>
-              <p className="text-xs text-white/40">
+              <p className="text-xs text-foreground/40">
                 PDF layers are flattened 100% locally in your browser memory.
               </p>
             </div>
           ) : (
-            <div className="p-6 bg-zinc-950 border border-white/10 rounded-2xl space-y-4">
+            <div className="p-6 bg-card border border-foreground/10 rounded-2xl space-y-4">
               <div className="flex justify-between items-start">
                 <div className="flex items-center gap-3">
-                  <div className="p-3 bg-purple-500/10 border border-purple-500/20 rounded-xl text-purple-400">
+                  <div className="p-3 bg-brand/10 border border-brand/20 rounded-xl text-brand">
                     <Layers className="w-6 h-6" />
                   </div>
                   <div>
-                    <h4 className="text-lg font-display text-white">{file.name}</h4>
-                    <p className="text-xs text-white/40">
+                    <h4 className="text-lg font-display text-foreground">{file.name}</h4>
+                    <p className="text-xs text-foreground/40">
                       PDF Document • {(file.size / (1024 * 1024)).toFixed(2)} MB
                     </p>
                   </div>
@@ -119,7 +119,7 @@ export function FlattenTool() {
                     setFile(null);
                     setDownloadUrl(null);
                   }}
-                  className="text-xs text-white/40 hover:text-white"
+                  className="text-xs text-foreground/40 hover:text-foreground"
                 >
                   Change File
                 </Button>
@@ -135,19 +135,19 @@ export function FlattenTool() {
         </div>
 
         {/* Action Panel */}
-        <div className="lg:col-span-4 bg-zinc-950 border border-white/10 rounded-2xl p-6 space-y-6">
-          <div className="flex items-center gap-2 border-b border-white/5 pb-4">
-            <Minimize2 className="w-4 h-4 text-purple-400" />
-            <h3 className="font-mono text-sm uppercase tracking-wider text-white">Flatten PDF</h3>
+        <div className="lg:col-span-4 bg-card border border-foreground/10 rounded-2xl p-6 space-y-6">
+          <div className="flex items-center gap-2 border-b border-foreground/5 pb-4">
+            <Minimize2 className="w-4 h-4 text-brand" />
+            <h3 className="font-mono text-sm uppercase tracking-wider text-foreground">Flatten PDF</h3>
           </div>
 
-          <p className="text-xs text-white/50 leading-relaxed">
+          <p className="text-xs text-foreground/50 leading-relaxed">
             Merge all interactive forms, drop-downs, and digital signature boxes into static graphic layouts, preventing future edits and tampering.
           </p>
 
-          <div className="pt-4 border-t border-white/5">
+          <div className="pt-4 border-t border-foreground/5">
             {isProcessing ? (
-              <Button disabled className="w-full bg-purple-600/50 text-white font-medium py-6 rounded-xl flex items-center justify-center gap-2">
+              <Button disabled className="w-full bg-brand/50 text-foreground font-medium py-6 rounded-xl flex items-center justify-center gap-2">
                 <Loader2 className="w-4 h-4 animate-spin" />
                 Flattening...
               </Button>
@@ -155,7 +155,7 @@ export function FlattenTool() {
               <div className="space-y-2">
                 <Button
                   onClick={handleDownload}
-                  className="w-full bg-emerald-600 hover:bg-emerald-700 text-white font-medium py-6 rounded-xl flex items-center justify-center gap-2"
+                  className="w-full bg-emerald-600 hover:bg-emerald-700 text-foreground font-medium py-6 rounded-xl flex items-center justify-center gap-2"
                 >
                   <Download className="w-5 h-5" />
                   Download Flattened PDF
@@ -166,7 +166,7 @@ export function FlattenTool() {
                     setFile(null);
                     setDownloadUrl(null);
                   }}
-                  className="w-full text-white/50 hover:text-white text-xs h-8"
+                  className="w-full text-foreground/50 hover:text-foreground text-xs h-8"
                 >
                   Flatten new file
                 </Button>
@@ -176,7 +176,7 @@ export function FlattenTool() {
                 disabled={!file}
                 onClick={triggerFlatten}
                 className={`w-full font-medium py-6 rounded-xl flex items-center justify-center gap-2 ${
-                  file ? 'bg-purple-600 hover:bg-purple-700 text-white' : 'bg-white/5 text-white/30 cursor-not-allowed'
+                  file ? 'bg-brand hover:bg-brand/90 text-foreground' : 'bg-foreground/5 text-foreground/30 cursor-not-allowed'
                 }`}
               >
                 <Layers className="w-4 h-4" />

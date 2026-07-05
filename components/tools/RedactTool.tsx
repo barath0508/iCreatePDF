@@ -156,34 +156,34 @@ export function RedactTool() {
               onDragLeave={() => setIsDraggingOver(false)}
               onDrop={(e) => { e.preventDefault(); setIsDraggingOver(false); e.dataTransfer.files && handleFiles(e.dataTransfer.files); }}
               onClick={() => fileInputRef.current?.click()}
-              className={`cursor-pointer border border-dashed rounded-2xl p-12 transition-all duration-300 text-center flex flex-col items-center justify-center min-h-[220px] ${isDraggingOver ? 'border-purple-500 bg-purple-500/5' : 'border-white/10 bg-zinc-900/30 hover:border-white/20'}`}
+              className={`cursor-pointer border border-dashed rounded-2xl p-12 transition-all duration-300 text-center flex flex-col items-center justify-center min-h-[220px] ${isDraggingOver ? 'border-brand bg-brand/5' : 'border-foreground/10 bg-card/40 hover:border-foreground/20'}`}
             >
               <input type="file" ref={fileInputRef} onChange={(e) => e.target.files && handleFiles(e.target.files)} accept=".pdf" className="hidden" />
-              <div className="p-4 rounded-full bg-white/5 mb-4 border border-white/10"><EyeOff className="w-6 h-6 text-purple-400" /></div>
-              <h3 className="text-xl font-display text-white mb-2">Upload a PDF to redact</h3>
-              <p className="text-xs text-white/40">Draw black boxes over sensitive areas. Processed 100% locally.</p>
+              <div className="p-4 rounded-full bg-foreground/5 mb-4 border border-foreground/10"><EyeOff className="w-6 h-6 text-brand" /></div>
+              <h3 className="text-xl font-display text-foreground mb-2">Upload a PDF to redact</h3>
+              <p className="text-xs text-foreground/40">Draw black boxes over sensitive areas. Processed 100% locally.</p>
             </div>
           ) : (
             <div className="space-y-3">
               <div className="flex items-center justify-between">
                 <div className="flex items-center gap-2">
-                  <FileText className="w-4 h-4 text-purple-400" />
-                  <span className="text-sm text-white font-medium">{file.name}</span>
-                  <span className="text-xs text-white/40">({totalPages} pages)</span>
+                  <FileText className="w-4 h-4 text-brand" />
+                  <span className="text-sm text-foreground font-medium">{file.name}</span>
+                  <span className="text-xs text-foreground/40">({totalPages} pages)</span>
                 </div>
-                <Button variant="ghost" size="sm" onClick={() => { setFile(null); setRects([]); }} className="text-xs text-white/40 hover:text-white">Change File</Button>
+                <Button variant="ghost" size="sm" onClick={() => { setFile(null); setRects([]); }} className="text-xs text-foreground/40 hover:text-foreground">Change File</Button>
               </div>
               {totalPages > 1 && (
                 <div className="flex gap-2 flex-wrap">
                   {Array.from({ length: totalPages }, (_, i) => i + 1).map(p => (
-                    <button key={p} onClick={() => changePage(p)} className={`px-3 py-1 rounded-lg text-xs font-mono transition-all ${currentPage === p ? 'bg-purple-600 text-white' : 'bg-white/5 text-white/50 hover:bg-white/10'}`}>
+                    <button key={p} onClick={() => changePage(p)} className={`px-3 py-1 rounded-lg text-xs font-mono transition-all ${currentPage === p ? 'bg-brand text-foreground' : 'bg-foreground/5 text-foreground/50 hover:bg-foreground/10'}`}>
                       {p} {rects.filter(r => r.page === p).length > 0 && <span className="text-red-400">•</span>}
                     </button>
                   ))}
                 </div>
               )}
-              <div className="text-xs text-white/40 bg-black/30 rounded-lg px-3 py-2">Click and drag on the document to draw redaction boxes</div>
-              <div ref={containerRef} className="rounded-xl overflow-hidden border border-white/10 cursor-crosshair">
+              <div className="text-xs text-foreground/40 bg-background/30 rounded-lg px-3 py-2">Click and drag on the document to draw redaction boxes</div>
+              <div ref={containerRef} className="rounded-xl overflow-hidden border border-foreground/10 cursor-crosshair">
                 <canvas ref={canvasRef} onMouseDown={onMouseDown} onMouseMove={onMouseMove} onMouseUp={onMouseUp} className="w-full" />
               </div>
               {rects.length > 0 && (
@@ -197,32 +197,32 @@ export function RedactTool() {
           {error && <div className="p-4 rounded-xl bg-red-500/10 border border-red-500/20 text-red-200 text-sm">{error}</div>}
         </div>
 
-        <div className="lg:col-span-4 bg-zinc-950 border border-white/10 rounded-2xl p-6 space-y-6">
-          <div className="flex items-center gap-2 border-b border-white/5 pb-4">
-            <EyeOff className="w-4 h-4 text-purple-400" />
-            <h3 className="font-mono text-sm uppercase tracking-wider text-white">Redact PDF</h3>
+        <div className="lg:col-span-4 bg-card border border-foreground/10 rounded-2xl p-6 space-y-6">
+          <div className="flex items-center gap-2 border-b border-foreground/5 pb-4">
+            <EyeOff className="w-4 h-4 text-brand" />
+            <h3 className="font-mono text-sm uppercase tracking-wider text-foreground">Redact PDF</h3>
           </div>
-          <p className="text-xs text-white/50 leading-relaxed">Draw black boxes over confidential data — Aadhaar numbers, PAN, signatures, addresses. Redactions are burned permanently into the document.</p>
-          <div className="space-y-2 text-xs text-white/40">
+          <p className="text-xs text-foreground/50 leading-relaxed">Draw black boxes over confidential data — Aadhaar numbers, PAN, signatures, addresses. Redactions are burned permanently into the document.</p>
+          <div className="space-y-2 text-xs text-foreground/40">
             <p>• Select a page using the tabs</p>
             <p>• Click &amp; drag to draw redaction boxes</p>
             <p>• Repeat on any page</p>
             <p>• Click Apply to burn them in</p>
           </div>
-          <div className="pt-4 border-t border-white/5">
+          <div className="pt-4 border-t border-foreground/5">
             {isProcessing ? (
-              <Button disabled className="w-full bg-purple-600/50 text-white font-medium py-6 rounded-xl flex items-center justify-center gap-2">
+              <Button disabled className="w-full bg-brand/50 text-foreground font-medium py-6 rounded-xl flex items-center justify-center gap-2">
                 <Loader2 className="w-4 h-4 animate-spin" />Applying Redactions...
               </Button>
             ) : downloadUrl ? (
               <div className="space-y-2">
-                <Button onClick={() => { const a = document.createElement('a'); a.href = downloadUrl; a.download = `redacted-${file?.name}`; a.click(); }} className="w-full bg-emerald-600 hover:bg-emerald-700 text-white font-medium py-6 rounded-xl flex items-center justify-center gap-2">
+                <Button onClick={() => { const a = document.createElement('a'); a.href = downloadUrl; a.download = `redacted-${file?.name}`; a.click(); }} className="w-full bg-emerald-600 hover:bg-emerald-700 text-foreground font-medium py-6 rounded-xl flex items-center justify-center gap-2">
                   <Download className="w-5 h-5" />Download Redacted PDF
                 </Button>
-                <Button variant="ghost" onClick={() => { setFile(null); setRects([]); setDownloadUrl(null); }} className="w-full text-white/50 hover:text-white text-xs h-8">Redact another file</Button>
+                <Button variant="ghost" onClick={() => { setFile(null); setRects([]); setDownloadUrl(null); }} className="w-full text-foreground/50 hover:text-foreground text-xs h-8">Redact another file</Button>
               </div>
             ) : (
-              <Button disabled={!file || rects.length === 0} onClick={applyRedactions} className={`w-full font-medium py-6 rounded-xl flex items-center justify-center gap-2 ${file && rects.length > 0 ? 'bg-purple-600 hover:bg-purple-700 text-white' : 'bg-white/5 text-white/30 cursor-not-allowed'}`}>
+              <Button disabled={!file || rects.length === 0} onClick={applyRedactions} className={`w-full font-medium py-6 rounded-xl flex items-center justify-center gap-2 ${file && rects.length > 0 ? 'bg-brand hover:bg-brand/90 text-foreground' : 'bg-foreground/5 text-foreground/30 cursor-not-allowed'}`}>
                 <EyeOff className="w-4 h-4" />Apply Redactions
               </Button>
             )}

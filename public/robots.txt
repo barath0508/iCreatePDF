@@ -2,7 +2,7 @@ User-agent: *
 Allow: /
 
 # Sitemap Link
-Sitemap: https://icreatepdf.com/sitemap.xml
+Sitemap: https://i-create-pdf.vercel.app/sitemap.xml
 
 # Disallow non-indexable application folders/routes
 Disallow: /checkout

@@ -1,5 +1,6 @@
 import React from 'react';
 import type { Metadata } from 'next';
+import { buildAlternates, articleSchema } from '@/lib/seo';
 import Link from 'next/link';
 import { Navigation } from '@/components/landing/navigation';
 import { FooterSection } from '@/components/landing/footer-section';
@@ -10,6 +11,13 @@ export const metadata: Metadata = {
   title: 'Best Free Image to PDF Online Tools (2026 Review) | iCreatePDF Blog',
   description: 'Looking for the best way to convert images to PDF? We compare top free online image-to-PDF tools in 2026 for speed, pricing, and privacy.',
   keywords: 'best image to pdf converter 2026, free online pdf tool, safe pdf converter, client side pdf generator',
+  alternates: buildAlternates('/blog/best-free-image-to-pdf-tools-2026'),
+  openGraph: {
+    title: 'Best Free Image to PDF Online Tools (2026 Review) | iCreatePDF Blog',
+    description: 'Looking for the best way to convert images to PDF? We compare top free online image-to-PDF tools in 2026 for speed, pricing, and privacy.',
+    type: 'article',
+    publishedTime: '2026-05-15T00:00:00Z',
+  },
 };
 
 export default function BlogPostTwo() {
@@ -38,23 +46,32 @@ export default function BlogPostTwo() {
   ];
 
   return (
-    <div className="bg-black min-h-screen text-white flex flex-col justify-between selection:bg-purple-500/30">
+    <div className="bg-background min-h-screen text-foreground flex flex-col justify-between selection:bg-brand/30">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(articleSchema({
+          title: 'Best Free Image to PDF Online Tools (2026 Review) | iCreatePDF Blog',
+          description: 'Looking for the best way to convert images to PDF? We compare top free online image-to-PDF tools in 2026 for speed, pricing, and privacy.',
+          url: '/blog/best-free-image-to-pdf-tools-2026',
+          datePublished: '2026-05-15T00:00:00Z'
+        })) }}
+      />
       <Navigation />
       
       <article className="max-w-3xl mx-auto px-6 py-32 space-y-8 flex-1 w-full">
-        <Link href="/blog" className="inline-flex items-center gap-1 text-xs font-semibold text-white/40 hover:text-purple-400 transition-colors">
+        <Link href="/blog" className="inline-flex items-center gap-1 text-xs font-semibold text-foreground/40 hover:text-brand transition-colors">
           <ChevronLeft className="w-4 h-4" />
           Back to Blog
         </Link>
 
-        <div className="space-y-4 border-b border-white/10 pb-8">
-          <span className="text-xs font-bold text-purple-400 bg-purple-500/10 px-2.5 py-1 rounded-full uppercase">
+        <div className="space-y-4 border-b border-foreground/10 pb-8">
+          <span className="text-xs font-bold text-brand bg-brand/10 px-2.5 py-1 rounded-full uppercase">
             Tools Review
           </span>
-          <h1 className="text-3xl sm:text-4xl font-extrabold text-white leading-tight font-display">
+          <h1 className="text-3xl sm:text-4xl font-extrabold text-foreground leading-tight font-display">
             Best Free Image to PDF Online Tools (2026 Review)
           </h1>
-          <div className="flex items-center gap-4 text-xs text-white/40">
+          <div className="flex items-center gap-4 text-xs text-foreground/40">
             <span className="flex items-center gap-1">
               <Calendar className="w-3.5 h-3.5" />
               May 15, 2026
@@ -66,7 +83,7 @@ export default function BlogPostTwo() {
           </div>
         </div>
 
-        <div className="text-white/70 space-y-6 leading-relaxed text-sm sm:text-base">
+        <div className="text-foreground/70 space-y-6 leading-relaxed text-sm sm:text-base">
           <p>
             Converting images (like JPG scans, screenshots, recipes, or portfolios) into a single PDF is a simple task that has been commercialized by heavy subscription-based SaaS applications. 
           </p>
@@ -75,21 +92,21 @@ export default function BlogPostTwo() {
             In 2026, web standards are advanced enough to handle high-fidelity image resizing, layout formatting, and PDF compression directly inside your web browser. In this article, we evaluate and compare the top tools available for this job to help you choose the best balance of speed, cost, and privacy.
           </p>
 
-          <h2 className="text-xl font-bold text-white pt-4 font-display">Comparison of Top Tools</h2>
+          <h2 className="text-xl font-bold text-foreground pt-4 font-display">Comparison of Top Tools</h2>
           
           <div className="space-y-6">
             {tools.map((t, idx) => (
-              <div key={idx} className="p-6 rounded-xl bg-zinc-950 border border-white/5 space-y-3">
+              <div key={idx} className="p-6 rounded-xl bg-card border border-foreground/5 space-y-3">
                 <div className="flex flex-wrap justify-between items-center gap-2">
-                  <h3 className="text-base font-extrabold text-white font-display">{t.name}</h3>
-                  <span className="text-xs font-semibold px-2 py-0.5 rounded bg-purple-500/10 text-purple-400 font-mono">
+                  <h3 className="text-base font-extrabold text-foreground font-display">{t.name}</h3>
+                  <span className="text-xs font-semibold px-2 py-0.5 rounded bg-brand/10 text-brand font-mono">
                     {t.pricing}
                   </span>
                 </div>
-                <p className="text-xs text-white/40">
+                <p className="text-xs text-foreground/40">
                   <strong>Privacy:</strong> {t.privacy}
                 </p>
-                <div className="text-xs text-white/60 space-y-1">
+                <div className="text-xs text-foreground/60 space-y-1">
                   <p><span className="text-emerald-400 font-semibold">Pros:</span> {t.pros}</p>
                   <p><span className="text-red-400 font-semibold">Cons:</span> {t.cons}</p>
                 </div>
@@ -97,7 +114,7 @@ export default function BlogPostTwo() {
             ))}
           </div>
 
-          <h2 className="text-xl font-bold text-white pt-4 font-display">The Core Issue: Server-Side vs. Client-Side Processing</h2>
+          <h2 className="text-xl font-bold text-foreground pt-4 font-display">The Core Issue: Server-Side vs. Client-Side Processing</h2>
           <p>
             Most traditional online converters upload your images to a remote server, process them using backend services, and host the output PDF for download. While this works, it raises major security concerns:
           </p>
@@ -112,14 +129,14 @@ export default function BlogPostTwo() {
           </p>
         </div>
 
-        <div className="p-6 rounded-2xl bg-gradient-to-r from-purple-950/20 to-pink-950/20 border border-purple-500/20 text-center space-y-4">
-          <h3 className="text-lg font-bold text-white font-display">Experience Fast Client-Side PDF Generation</h3>
-          <p className="text-xs text-white/60 max-w-md mx-auto">
+        <div className="p-6 rounded-2xl bg-gradient-to-r from-purple-950/20 to-pink-950/20 border border-brand/20 text-center space-y-4">
+          <h3 className="text-lg font-bold text-foreground font-display">Experience Fast Client-Side PDF Generation</h3>
+          <p className="text-xs text-foreground/60 max-w-md mx-auto">
             Convert your images locally on your computer with iCreatePDF. Fully private, no limits, no sign-ups.
           </p>
           <Link href="/#convert">
             <Button
-              className="bg-purple-600 hover:bg-purple-700 text-white font-medium text-xs px-4 rounded-full group"
+              className="bg-brand hover:bg-brand/90 text-foreground font-medium text-xs px-4 rounded-full group"
             >
               Go to Converter
               <ArrowRight className="w-3.5 h-3.5 ml-1 transition-transform group-hover:translate-x-1" />

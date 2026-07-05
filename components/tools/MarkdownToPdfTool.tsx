@@ -151,9 +151,9 @@ Simply modify this editor and click compile to get a clean PDF.`);
         
         {/* Workspace Markdown Editor */}
         <div className="lg:col-span-8 space-y-6">
-          <div className="bg-zinc-950 border border-white/10 rounded-2xl overflow-hidden">
-            <div className="flex justify-between items-center bg-zinc-900/50 px-4 py-3 border-b border-white/10">
-              <span className="text-xs font-mono text-purple-400 flex items-center gap-1.5">
+          <div className="bg-card border border-foreground/10 rounded-2xl overflow-hidden">
+            <div className="flex justify-between items-center bg-card/60 px-4 py-3 border-b border-foreground/10">
+              <span className="text-xs font-mono text-brand flex items-center gap-1.5">
                 <FileText className="w-3.5 h-3.5" />
                 Markdown Editor
               </span>
@@ -161,7 +161,7 @@ Simply modify this editor and click compile to get a clean PDF.`);
             <textarea
               value={markdown}
               onChange={(e) => setMarkdown(e.target.value)}
-              className="w-full h-96 bg-transparent p-6 font-mono text-xs text-white/90 focus:outline-none resize-none"
+              className="w-full h-96 bg-transparent p-6 font-mono text-xs text-foreground/90 focus:outline-none resize-none"
             />
           </div>
 
@@ -175,19 +175,19 @@ Simply modify this editor and click compile to get a clean PDF.`);
         </div>
 
         {/* Action Panel */}
-        <div className="lg:col-span-4 bg-zinc-950 border border-white/10 rounded-2xl p-6 space-y-6">
-          <div className="flex items-center gap-2 border-b border-white/5 pb-4">
-            <FileText className="w-4 h-4 text-purple-400" />
-            <h3 className="font-mono text-sm uppercase tracking-wider text-white">Markdown to PDF</h3>
+        <div className="lg:col-span-4 bg-card border border-foreground/10 rounded-2xl p-6 space-y-6">
+          <div className="flex items-center gap-2 border-b border-foreground/5 pb-4">
+            <FileText className="w-4 h-4 text-brand" />
+            <h3 className="font-mono text-sm uppercase tracking-wider text-foreground">Markdown to PDF</h3>
           </div>
 
-          <p className="text-xs text-white/50 leading-relaxed">
+          <p className="text-xs text-foreground/50 leading-relaxed">
             Write or paste clean Markdown syntax. It converts instantly to standard document headers, bullet lists, and paragraphs styled beautifully inside an A4 PDF output.
           </p>
 
-          <div className="pt-4 border-t border-white/5">
+          <div className="pt-4 border-t border-foreground/5">
             {isProcessing ? (
-              <Button disabled className="w-full bg-purple-600/50 text-white font-medium py-6 rounded-xl flex items-center justify-center gap-2">
+              <Button disabled className="w-full bg-brand/50 text-foreground font-medium py-6 rounded-xl flex items-center justify-center gap-2">
                 <Loader2 className="w-4 h-4 animate-spin" />
                 Compiling...
               </Button>
@@ -195,7 +195,7 @@ Simply modify this editor and click compile to get a clean PDF.`);
               <div className="space-y-2">
                 <Button
                   onClick={handleDownload}
-                  className="w-full bg-emerald-600 hover:bg-emerald-700 text-white font-medium py-6 rounded-xl flex items-center justify-center gap-2"
+                  className="w-full bg-emerald-600 hover:bg-emerald-700 text-foreground font-medium py-6 rounded-xl flex items-center justify-center gap-2"
                 >
                   <Download className="w-5 h-5" />
                   Download PDF
@@ -203,7 +203,7 @@ Simply modify this editor and click compile to get a clean PDF.`);
                 <Button
                   variant="ghost"
                   onClick={() => setDownloadUrl(null)}
-                  className="w-full text-white/50 hover:text-white text-xs h-8"
+                  className="w-full text-foreground/50 hover:text-foreground text-xs h-8"
                 >
                   Edit Markdown
                 </Button>
@@ -211,7 +211,7 @@ Simply modify this editor and click compile to get a clean PDF.`);
             ) : (
               <Button
                 onClick={triggerMarkdownToPdf}
-                className="w-full bg-purple-600 hover:bg-purple-700 text-white font-medium py-6 rounded-xl flex items-center justify-center gap-2"
+                className="w-full bg-brand hover:bg-brand/90 text-foreground font-medium py-6 rounded-xl flex items-center justify-center gap-2"
               >
                 <Eye className="w-4 h-4" />
                 Compile to PDF
