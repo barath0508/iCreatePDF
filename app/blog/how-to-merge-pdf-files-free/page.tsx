@@ -6,6 +6,7 @@ import { Navigation } from '@/components/landing/navigation';
 import { FooterSection } from '@/components/landing/footer-section';
 import { Calendar, Clock, ChevronLeft, ArrowRight, ShieldCheck } from 'lucide-react';
 import { Button } from '@/components/ui/button';
+import { RelatedPosts } from '@/components/blog/RelatedPosts';
 
 export const metadata: Metadata = {
   title: 'How to Merge Multiple PDFs Into One File — Free Guide | iCreatePDF',
@@ -153,6 +154,8 @@ export default function MergePdfBlogPost() {
             </Button>
           </Link>
         </div>
+
+        <RelatedPosts currentSlug="how-to-merge-pdf-files-free" />
       </article>
 
       <FooterSection />

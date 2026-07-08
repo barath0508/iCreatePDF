@@ -6,6 +6,7 @@ import { Navigation } from '@/components/landing/navigation';
 import { FooterSection } from '@/components/landing/footer-section';
 import { Calendar, Clock, ChevronLeft, ArrowRight, Settings, FileText, CheckCircle } from 'lucide-react';
 import { Button } from '@/components/ui/button';
+import { RelatedPosts } from '@/components/blog/RelatedPosts';
 
 export const metadata: Metadata = {
   title: 'How to Edit PDF Metadata & Properties Online | iCreatePDF',
@@ -109,6 +110,8 @@ export default function EditMetadataBlog() {
             </Button>
           </Link>
         </div>
+
+        <RelatedPosts currentSlug="how-to-edit-pdf-metadata" />
       </article>
 
       <FooterSection />

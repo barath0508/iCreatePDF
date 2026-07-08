@@ -6,6 +6,7 @@ import { Navigation } from '@/components/landing/navigation';
 import { FooterSection } from '@/components/landing/footer-section';
 import { Calendar, Clock, ChevronLeft, ArrowRight } from 'lucide-react';
 import { Button } from '@/components/ui/button';
+import { RelatedPosts } from '@/components/blog/RelatedPosts';
 
 export const metadata: Metadata = {
   title: 'Best Free Image to PDF Online Tools (2026 Review) | iCreatePDF Blog',
@@ -143,6 +144,8 @@ export default function BlogPostTwo() {
             </Button>
           </Link>
         </div>
+
+        <RelatedPosts currentSlug="best-free-image-to-pdf-tools-2026" />
       </article>
 
       <FooterSection />

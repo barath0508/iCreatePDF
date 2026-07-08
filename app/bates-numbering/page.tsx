@@ -4,12 +4,12 @@ import { BatesTool } from '@/components/tools/BatesTool';
 import { buildAlternates } from '@/lib/seo';
 
 export const metadata: Metadata = {
-  title: 'Secure Bates Numbering PDF Tool - Local Browser | iCreatePDF',
+  title: 'Bates Numbering PDF: Secure Page Stamps Online | iCreatePDF',
   description: 'Apply sequential Bates numbering to legal PDF documents securely. Works 100% client-side with no uploads, keeping legal files private.',
-  keywords: 'secure bates numbering pdf tool, add bates stamps pdf, legal page numbering private, local bates stamp generator, legal discovery document numbering, client-side bates numbering, medical records sequential numbering, compliance page stamps',
+  keywords: 'bates numbering pdf, bates numbering, add bates stamps pdf, bates numbering tool, legal document numbering, secure bates numbering pdf tool, legal page numbering private, local bates stamp generator, legal discovery document numbering, client-side bates numbering, medical records sequential numbering, compliance page stamps',
   alternates: buildAlternates('/bates-numbering'),
   openGraph: {
-    title: 'Secure Bates Numbering PDF Tool - Local Browser | iCreatePDF',
+    title: 'Bates Numbering PDF: Secure Page Stamps Online | iCreatePDF',
     description: 'Apply sequential Bates numbering to legal PDF documents securely. Works 100% client-side with no uploads, keeping legal files private.',
     type: 'website',
   }

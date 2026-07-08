@@ -6,6 +6,7 @@ import { Navigation } from '@/components/landing/navigation';
 import { FooterSection } from '@/components/landing/footer-section';
 import { Calendar, Clock, ChevronLeft, ArrowRight, HelpCircle, Scissors } from 'lucide-react';
 import { Button } from '@/components/ui/button';
+import { RelatedPosts } from '@/components/blog/RelatedPosts';
 
 export const metadata: Metadata = {
   title: 'How to Extract Pages from PDF Files Free Online | iCreatePDF',
@@ -121,6 +122,8 @@ export default function ExtractPagesBlog() {
             </Button>
           </Link>
         </div>
+
+        <RelatedPosts currentSlug="how-to-extract-pages-from-pdf" />
       </article>
 
       <FooterSection />

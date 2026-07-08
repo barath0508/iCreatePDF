@@ -6,6 +6,7 @@ import { Navigation } from '@/components/landing/navigation';
 import { FooterSection } from '@/components/landing/footer-section';
 import { Calendar, Clock, ChevronLeft, ArrowRight, ShieldCheck } from 'lucide-react';
 import { Button } from '@/components/ui/button';
+import { RelatedPosts } from '@/components/blog/RelatedPosts';
 
 export const metadata: Metadata = {
   title: 'How to Convert iPhone Photos (HEIC) to PDF | iCreatePDF Blog',
@@ -124,6 +125,8 @@ export default function BlogPostOne() {
             </Button>
           </Link>
         </div>
+
+        <RelatedPosts currentSlug="how-to-convert-iphone-photos-to-pdf" />
       </article>
 
       <FooterSection />

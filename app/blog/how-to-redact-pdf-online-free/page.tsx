@@ -6,6 +6,7 @@ import { Navigation } from '@/components/landing/navigation';
 import { FooterSection } from '@/components/landing/footer-section';
 import { Calendar, Clock, ChevronLeft, ArrowRight, ShieldCheck, EyeOff, AlertCircle } from 'lucide-react';
 import { Button } from '@/components/ui/button';
+import { RelatedPosts } from '@/components/blog/RelatedPosts';
 
 export const metadata: Metadata = {
   title: 'How to Redact PDF Files Online Free & Securely | iCreatePDF',
@@ -136,6 +137,8 @@ export default function RedactPdfBlog() {
             </Button>
           </Link>
         </div>
+
+        <RelatedPosts currentSlug="how-to-redact-pdf-online-free" />
       </article>
 
       <FooterSection />

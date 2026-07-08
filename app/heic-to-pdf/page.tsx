@@ -8,12 +8,12 @@ import { CtaSection } from '@/components/landing/cta-section';
 import { buildAlternates } from '@/lib/seo';
 
 export const metadata: Metadata = {
-  title: 'Offline HEIC to PDF Converter - Free & Private | iCreatePDF',
+  title: 'HEIC to PDF: Convert iPhone Photos Free & Privately | iCreatePDF',
   description: 'Convert iPhone HEIC photos to PDF directly in your browser. 100% local client-side conversion, zero server uploads, safe for sensitive photos.',
-  keywords: 'offline heic to pdf converter, convert heic to pdf locally, iphone heic to pdf private, local image converter',
+  keywords: 'heic to pdf, convert heic to pdf, convert iphone heic to pdf, heic to pdf converter, convert heic to pdf offline, offline heic to pdf converter, convert heic to pdf locally, iphone heic to pdf private, local image converter',
   alternates: buildAlternates('/heic-to-pdf'),
   openGraph: {
-    title: 'Offline HEIC to PDF Converter - Free & Private | iCreatePDF',
+    title: 'HEIC to PDF: Convert iPhone Photos Free & Privately | iCreatePDF',
     description: 'Convert iPhone HEIC photos to PDF directly in your browser. 100% local client-side conversion, zero server uploads, safe for sensitive photos.',
     type: 'website',
   }

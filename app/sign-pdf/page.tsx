@@ -4,12 +4,12 @@ import { SignTool } from '@/components/tools/SignTool';
 import { buildAlternates } from '@/lib/seo';
 
 export const metadata: Metadata = {
-  title: 'Private Digital Signature PDF Tool - Sign PDF Free | iCreatePDF',
+  title: 'Sign PDF Locally: Draw & Place Digital Signatures | iCreatePDF',
   description: 'Draw, type, or upload your signature and stamp it on PDF pages. 100% client-side, keeping your signature and documents safe and private.',
-  keywords: 'private digital signature pdf tool, sign pdf document locally, secure e-signature free, sign contract browser sandbox, write signature on pdf, draw signature free, sign lease agreement pdf, client-side digital e-sign',
+  keywords: 'sign pdf locally, how to sign contract pdf without printing, sign pdf online free, add signature to pdf, digital signature pdf browser, private digital signature pdf tool, sign pdf document locally, secure e-signature free, sign contract browser sandbox, write signature on pdf, draw signature free, sign lease agreement pdf, client-side digital e-sign',
   alternates: buildAlternates('/sign-pdf'),
   openGraph: {
-    title: 'Private Digital Signature PDF Tool - Sign PDF Free | iCreatePDF',
+    title: 'Sign PDF Locally: Draw & Place Digital Signatures | iCreatePDF',
     description: 'Draw, type, or upload your signature and stamp it on PDF pages. 100% client-side, keeping your signature and documents safe and private.',
     type: 'website',
   }

@@ -6,6 +6,7 @@ import { Navigation } from '@/components/landing/navigation';
 import { FooterSection } from '@/components/landing/footer-section';
 import { Calendar, Clock, ChevronLeft, ArrowRight, Scale, Check, HelpCircle } from 'lucide-react';
 import { Button } from '@/components/ui/button';
+import { RelatedPosts } from '@/components/blog/RelatedPosts';
 
 export const metadata: Metadata = {
   title: 'What is Bates Numbering & How to Add Stamps to PDF | iCreatePDF',
@@ -110,6 +111,8 @@ export default function BatesNumberingBlog() {
             </Button>
           </Link>
         </div>
+
+        <RelatedPosts currentSlug="bates-numbering-pdf-guide" />
       </article>
 
       <FooterSection />

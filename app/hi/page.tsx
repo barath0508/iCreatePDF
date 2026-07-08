@@ -107,7 +107,7 @@ export default function HindiHomePage() {
       <div className="relative pt-32 pb-4 text-center space-y-4 bg-background">
         <SectionEyebrow className="justify-center">हिंदी सेवाएं</SectionEyebrow>
         <Reveal>
-          <SectionHeading className="text-center">
+          <SectionHeading as="h1" className="text-center">
             सुरक्षित पीडीएफ टूल्स <br />
             <span className="text-muted-foreground">100% स्थानीय ब्राउज़र प्रोसेसिंग</span>
           </SectionHeading>

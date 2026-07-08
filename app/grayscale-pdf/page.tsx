@@ -4,12 +4,12 @@ import { GrayscaleTool } from '@/components/tools/GrayscaleTool';
 import { buildAlternates } from '@/lib/seo';
 
 export const metadata: Metadata = {
-  title: 'Grayscale PDF Online - Convert to Black & White | iCreatePDF',
+  title: 'Grayscale PDF Online: Convert PDF to Black & White | iCreatePDF',
   description: 'Convert color PDF documents to black and white (grayscale) locally. Optimize your layouts for ink-saving printing client-side.',
-  keywords: 'grayscale pdf, convert pdf to black and white, grayscale pdf online free, ink saving pdf converter',
+  keywords: 'grayscale pdf online, grayscale pdf, convert pdf to black and white, ink saving pdf converter',
   alternates: buildAlternates('/grayscale-pdf'),
   openGraph: {
-    title: 'Grayscale PDF Online - Convert to Black & White | iCreatePDF',
+    title: 'Grayscale PDF Online: Convert PDF to Black & White | iCreatePDF',
     description: 'Convert color PDF documents to black and white (grayscale) locally. Optimize your layouts for ink-saving printing client-side.',
     type: 'website',
   }

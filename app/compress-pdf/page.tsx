@@ -4,12 +4,12 @@ import { CompressTool } from '@/components/tools/CompressTool';
 import { buildAlternates } from '@/lib/seo';
 
 export const metadata: Metadata = {
-  title: 'Local Browser PDF Compressor - Reduce Size Privately | iCreatePDF',
+  title: 'Compress PDF Offline: Reduce File Size Privately | iCreatePDF',
   description: 'Compress and shrink PDF files locally on your device. 100% private client-side optimization with no file uploads or data logging.',
-  keywords: 'local browser pdf compressor, private pdf compression, shrink pdf file size secure, offline pdf size reducer',
+  keywords: 'compress pdf offline, compress pdf without losing quality, reduce pdf file size, shrink pdf free, compress pdf online free, local browser pdf compressor, private pdf compression, shrink pdf file size secure, offline pdf size reducer',
   alternates: buildAlternates('/compress-pdf'),
   openGraph: {
-    title: 'Local Browser PDF Compressor - Reduce Size Privately | iCreatePDF',
+    title: 'Compress PDF Offline: Reduce File Size Privately | iCreatePDF',
     description: 'Compress and shrink PDF files locally on your device. 100% private client-side optimization with no file uploads or data logging.',
     type: 'website',
   }

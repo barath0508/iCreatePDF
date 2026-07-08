@@ -62,7 +62,7 @@ export function HeroSection() {
           aria-hidden="true"
           className="w-full h-full object-cover object-center opacity-60"
         >
-          <source src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/bg-hero-0BnFGdr81Ifnj3WbBZoNt1KE4D5DMT.mp4" type="video/mp4" />
+          <source src="/images/bg-hero.mp4" type="video/mp4" />
         </video>
         <div className="absolute inset-0 bg-gradient-to-r from-background/90 via-background/60 to-background/20" />
         <div className="absolute inset-0 bg-gradient-to-b from-background/40 via-transparent to-background/85" />

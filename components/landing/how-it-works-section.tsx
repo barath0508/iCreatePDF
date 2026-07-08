@@ -45,7 +45,7 @@ export function HowItWorksSection() {
 
           <Reveal delay={150} className="relative h-[200px] lg:h-[320px] overflow-hidden hidden lg:block">
             <img
-              src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/tree-uAia6REvB137CQyHFCf0za3O6h2zKO.png"
+              src="/images/tree.png"
               alt=""
               aria-hidden="true"
               className="absolute bottom-0 left-0 w-full h-full object-contain object-bottom opacity-70"

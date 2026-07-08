@@ -36,6 +36,17 @@ export default function ContactPage() {
             <p className="text-foreground/50 text-sm leading-relaxed max-w-md">
               Have questions, feedback, or custom feature requests for our local PDF suite? Send us a message and our support team will get back to you shortly.
             </p>
+            <div className="space-y-4 text-xs text-foreground/40 leading-relaxed max-w-md pt-2">
+              <p>
+                <strong>Feature Requests:</strong> Our tools run 100% in the browser sandbox. If there is a specific document manipulation utility or conversion format you would like to see added, let us know! We are constantly expanding our client-side WebAssembly processing suite.
+              </p>
+              <p>
+                <strong>Bug Reports:</strong> Encountered an issue with a specific PDF format, encryption type, or custom layout? Please describe the behavior and browser environment so we can rebuild and patch our local parsing libraries.
+              </p>
+              <p>
+                <strong>Security & Privacy:</strong> If you are a security officer seeking details about our client-side sandbox compilation, local memory allocation, or WebAssembly execution layers, feel free to reach out. We are committed to transparency and open security.
+              </p>
+            </div>
 
             <div className="space-y-4 pt-4 border-t border-foreground/5">
               <div className="flex items-center gap-3 text-foreground/70">

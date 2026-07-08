@@ -4,12 +4,12 @@ import { FlattenTool } from '@/components/tools/FlattenTool';
 import { buildAlternates } from '@/lib/seo';
 
 export const metadata: Metadata = {
-  title: 'Flatten PDF Online - Merge Form Fields & Forms | iCreatePDF',
+  title: 'Flatten PDF Form: Merge Form Fields & Annotations | iCreatePDF',
   description: 'Flatten interactive form fields and digital annotation layers into flat vector graphics locally inside browser memory. Secure PDF flattener.',
-  keywords: 'flatten pdf, flat pdf, flatten form fields, make pdf non editable, secure pdf forms online',
+  keywords: 'flatten pdf form, flatten pdf, flat pdf, flatten form fields, make pdf non editable, secure pdf forms online',
   alternates: buildAlternates('/flatten-pdf'),
   openGraph: {
-    title: 'Flatten PDF Online - Merge Form Fields & Forms | iCreatePDF',
+    title: 'Flatten PDF Form: Merge Form Fields & Annotations | iCreatePDF',
     description: 'Flatten interactive form fields and digital annotation layers into flat vector graphics locally inside browser memory. Secure PDF flattener.',
     type: 'website',
   }

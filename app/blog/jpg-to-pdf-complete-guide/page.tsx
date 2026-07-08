@@ -6,6 +6,7 @@ import { Navigation } from '@/components/landing/navigation';
 import { FooterSection } from '@/components/landing/footer-section';
 import { Calendar, Clock, ChevronLeft, ArrowRight } from 'lucide-react';
 import { Button } from '@/components/ui/button';
+import { RelatedPosts } from '@/components/blog/RelatedPosts';
 
 export const metadata: Metadata = {
   title: 'JPG to PDF: How to Convert Images to PDF Online Free | iCreatePDF',
@@ -177,6 +178,8 @@ export default function JpgToPdfBlogPost() {
             </Link>
           </div>
         </div>
+
+        <RelatedPosts currentSlug="jpg-to-pdf-complete-guide" />
       </article>
 
       <FooterSection />

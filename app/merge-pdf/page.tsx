@@ -4,12 +4,12 @@ import { MergeTool } from '@/components/tools/MergeTool';
 import { buildAlternates } from '@/lib/seo';
 
 export const metadata: Metadata = {
-  title: 'Secure Client-Side PDF Merger - 100% Private | iCreatePDF',
+  title: 'Merge PDF Free: Combine PDF Files Online | iCreatePDF',
   description: 'Merge PDF files securely in your browser sandbox. Your files are combined client-side via WebAssembly — 100% private, zero server uploads.',
-  keywords: 'secure client side pdf merger, merge pdf online free, private pdf merger, combine pdf files locally',
-  alternates: { canonical: '/merge-pdf' },
+  keywords: 'merge pdf free, combine pdf files, join pdf online free, merge multiple pdf free, how to merge pdf, secure client side pdf merger, private pdf merger, combine pdf files locally',
+  alternates: buildAlternates('/merge-pdf'),
   openGraph: {
-    title: 'Secure Client-Side PDF Merger - 100% Private | iCreatePDF',
+    title: 'Merge PDF Free: Combine PDF Files Online | iCreatePDF',
     description: 'Merge PDF files securely in your browser sandbox. Your files are combined client-side via WebAssembly — 100% private, zero server uploads.',
     type: 'website',
   }

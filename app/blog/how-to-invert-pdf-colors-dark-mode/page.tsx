@@ -6,6 +6,7 @@ import { Navigation } from '@/components/landing/navigation';
 import { FooterSection } from '@/components/landing/footer-section';
 import { Calendar, Clock, ChevronLeft, ArrowRight, Eye, Moon, Compass } from 'lucide-react';
 import { Button } from '@/components/ui/button';
+import { RelatedPosts } from '@/components/blog/RelatedPosts';
 
 export const metadata: Metadata = {
   title: 'How to Invert PDF Colors for Dark Mode Reading | iCreatePDF',
@@ -116,6 +117,8 @@ export default function InvertPdfBlog() {
             </Button>
           </Link>
         </div>
+
+        <RelatedPosts currentSlug="how-to-invert-pdf-colors-dark-mode" />
       </article>
 
       <FooterSection />

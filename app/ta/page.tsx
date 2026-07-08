@@ -107,7 +107,7 @@ export default function TamilHomePage() {
       <div className="relative pt-32 pb-4 text-center space-y-4 bg-background">
         <SectionEyebrow className="justify-center">தமிழ் சேவைகள்</SectionEyebrow>
         <Reveal>
-          <SectionHeading className="text-center">
+          <SectionHeading as="h1" className="text-center">
             பாதுகாப்பான PDF கருவிகள் <br />
             <span className="text-muted-foreground">100% உள்ளூர் உலாவி செயலாக்கம்</span>
           </SectionHeading>

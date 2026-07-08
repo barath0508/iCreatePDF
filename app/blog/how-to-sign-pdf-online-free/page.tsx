@@ -6,6 +6,7 @@ import { Navigation } from '@/components/landing/navigation';
 import { FooterSection } from '@/components/landing/footer-section';
 import { Calendar, Clock, ChevronLeft, ArrowRight, ShieldCheck, AlertTriangle } from 'lucide-react';
 import { Button } from '@/components/ui/button';
+import { RelatedPosts } from '@/components/blog/RelatedPosts';
 
 export const metadata: Metadata = {
   title: 'How to Add a Digital Signature to a PDF Online (Free) | iCreatePDF',
@@ -159,6 +160,8 @@ export default function SignPdfBlogPost() {
             </Button>
           </Link>
         </div>
+
+        <RelatedPosts currentSlug="how-to-sign-pdf-online-free" />
       </article>
 
       <FooterSection />

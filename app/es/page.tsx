@@ -107,7 +107,7 @@ export default function SpanishHomePage() {
       <div className="relative pt-32 pb-4 text-center space-y-4 bg-background">
         <SectionEyebrow className="justify-center">Servicios en Español</SectionEyebrow>
         <Reveal>
-          <SectionHeading className="text-center">
+          <SectionHeading as="h1" className="text-center">
             Herramientas PDF <br />
             <span className="text-muted-foreground">100% Locales y Privadas</span>
           </SectionHeading>

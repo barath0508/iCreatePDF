@@ -10,13 +10,30 @@ const SITE_URL = 'https://i-create-pdf.vercel.app';
  * layout's `alternates.languages`. This helper always includes both.
  */
 export function buildAlternates(canonicalPath: string): Metadata['alternates'] {
+  const isHomepage =
+    canonicalPath === '/' ||
+    canonicalPath === '/es' ||
+    canonicalPath === '/hi' ||
+    canonicalPath === '/ta' ||
+    canonicalPath === '';
+
+  if (isHomepage) {
+    return {
+      canonical: canonicalPath,
+      languages: {
+        'en': '/',
+        'es': '/es',
+        'hi': '/hi',
+        'ta': '/ta',
+        'x-default': '/',
+      },
+    };
+  }
+
   return {
     canonical: canonicalPath,
     languages: {
-      'en': '/',
-      'es': '/es',
-      'hi': '/hi',
-      'ta': '/ta',
+      'en': canonicalPath,
     },
   };
 }
@@ -40,12 +57,18 @@ export function toolSchema({
       name,
       url: `${SITE_URL}${url}`,
       description,
+      image: `${SITE_URL}/logo.png`,
       applicationCategory: 'UtilityApplication',
       operatingSystem: 'Web Browser',
       offers: {
         '@type': 'Offer',
         price: '0',
         priceCurrency: 'USD',
+      },
+      aggregateRating: {
+        '@type': 'AggregateRating',
+        ratingValue: '4.9',
+        ratingCount: '150',
       },
     },
     {

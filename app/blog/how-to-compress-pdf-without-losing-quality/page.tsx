@@ -6,6 +6,7 @@ import { Navigation } from '@/components/landing/navigation';
 import { FooterSection } from '@/components/landing/footer-section';
 import { Calendar, Clock, ChevronLeft, ArrowRight, AlertTriangle, CheckCircle2 } from 'lucide-react';
 import { Button } from '@/components/ui/button';
+import { RelatedPosts } from '@/components/blog/RelatedPosts';
 
 export const metadata: Metadata = {
   title: 'How to Compress a PDF Without Losing Quality (2026 Guide) | iCreatePDF',
@@ -160,6 +161,8 @@ export default function CompressPdfBlogPost() {
             </Button>
           </Link>
         </div>
+
+        <RelatedPosts currentSlug="how-to-compress-pdf-without-losing-quality" />
       </article>
 
       <FooterSection />

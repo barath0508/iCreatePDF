@@ -146,6 +146,9 @@ export default function BlogIndexPage() {
           <p className="text-foreground/40 text-sm max-w-xl mx-auto">
             Expert guides on PDF conversion, compression, signatures, editing, and document management — all with your privacy in mind.
           </p>
+          <p className="text-foreground/30 text-xs max-w-2xl mx-auto leading-relaxed pt-2">
+            Welcome to the iCreatePDF learning resource library. Here you will find detailed guides, step-by-step tutorials, and industry compliance reviews focusing on client-side document processing. Learn how WebAssembly and modern browser capabilities let you compress, sign, redact, and convert PDFs 100% locally on your computer without ever uploading files to external cloud servers.
+          </p>
         </div>
 
         {/* Featured post */}

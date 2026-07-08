@@ -24,7 +24,7 @@ export function InfrastructureSection() {
           <div className="grid lg:grid-cols-[auto_1fr] gap-8 lg:gap-16 items-stretch">
             <Reveal className="w-40 lg:w-64 xl:w-72 shrink-0">
               <img
-                src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/world-3i68QNWJwmO7W19ztZWbevAwJQHzYL.png"
+                src="/images/world.png"
                 alt="Global network sphere"
                 className="w-full h-full object-contain object-center opacity-80"
               />
