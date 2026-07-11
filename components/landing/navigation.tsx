@@ -118,7 +118,7 @@ export function Navigation() {
           {/* Logo */}
           <Link href="/" className="inline-flex items-center gap-2.5 group transition-opacity duration-300 hover:opacity-90">
             <div className="relative w-8 h-8 rounded-lg overflow-hidden border border-brand/25 shadow-md transition-transform duration-300 group-hover:scale-105">
-              <Image src="/logo.png" alt="iCreatePDF Logo" fill className="object-cover" priority />
+              <Image src="/logo.svg" alt="iCreatePDF Logo" fill className="object-cover" priority />
             </div>
             <span
               className="font-semibold tracking-tight select-none text-foreground text-xl sm:text-2xl font-display"
