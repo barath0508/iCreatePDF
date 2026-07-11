@@ -70,8 +70,8 @@ export function FooterSection() {
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-7 gap-12 lg:gap-8">
             <div className="col-span-1 sm:col-span-2">
               <Link href="/" className="inline-flex items-center gap-2.5 mb-6 group hover:opacity-90 transition-opacity">
-                <div className="relative w-8 h-8 rounded-lg overflow-hidden border border-brand/25 shadow-md transition-transform duration-300 group-hover:scale-105">
-                  <Image src="/logo.svg" alt="iCreatePDF Logo" fill className="object-cover" />
+                <div className="relative w-12 h-12 transition-transform duration-300 group-hover:scale-105">
+                  <Image src="/logo.svg" alt="iCreatePDF Logo" fill className="object-contain scale-[1.4]" />
                 </div>
                 <span className="font-semibold tracking-tight select-none text-foreground text-2xl font-display" style={{ letterSpacing: '-0.02em' }}>
                   iCreate<span className="text-brand">PDF</span>
