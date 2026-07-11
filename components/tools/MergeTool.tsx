@@ -1,7 +1,7 @@
 'use client';
 
 import React, { useState, useRef } from 'react';
-import { Upload, Layers, Trash2, Loader2, Download, FileText } from 'lucide-react';
+import { Upload, Layers, Trash2, Loader2, Download, FileText, ChevronUp, ChevronDown } from 'lucide-react';
 import { mergePdfs } from '@/lib/pdf';
 import { Button } from '@/components/ui/button';
 
@@ -77,6 +77,17 @@ export function MergeTool() {
 
   const removeFile = (id: string) => {
     setFiles((prev) => prev.filter((f) => f.id !== id));
+    setDownloadUrl(null);
+  };
+
+  const moveFile = (idx: number, direction: -1 | 1) => {
+    setFiles((prev) => {
+      const target = idx + direction;
+      if (target < 0 || target >= prev.length) return prev;
+      const updated = [...prev];
+      [updated[idx], updated[target]] = [updated[target], updated[idx]];
+      return updated;
+    });
     setDownloadUrl(null);
   };
 
@@ -183,7 +194,7 @@ export function MergeTool() {
           {files.length > 0 && (
             <div className="space-y-4">
               <span className="text-xs font-mono text-foreground/50 uppercase tracking-widest">
-                Files Queue ({files.length}) - Drag to reorder
+                Files Queue ({files.length}) - Drag or use arrows to reorder
               </span>
 
               <div className="space-y-2">
@@ -211,13 +222,33 @@ export function MergeTool() {
                       </div>
                     </div>
 
-                    <button
-                      type="button"
-                      onClick={() => removeFile(item.id)}
-                      className="p-2 hover:bg-red-950/20 hover:text-red-400 rounded-lg text-foreground/40 transition-colors"
-                    >
-                      <Trash2 className="w-4 h-4" />
-                    </button>
+                    <div className="flex items-center gap-1 shrink-0">
+                      <button
+                        type="button"
+                        onClick={() => moveFile(idx, -1)}
+                        disabled={idx === 0}
+                        className="p-2 hover:bg-foreground/5 hover:text-brand rounded-lg text-foreground/40 transition-colors disabled:opacity-20 disabled:pointer-events-none"
+                        aria-label="Move file up"
+                      >
+                        <ChevronUp className="w-4 h-4" />
+                      </button>
+                      <button
+                        type="button"
+                        onClick={() => moveFile(idx, 1)}
+                        disabled={idx === files.length - 1}
+                        className="p-2 hover:bg-foreground/5 hover:text-brand rounded-lg text-foreground/40 transition-colors disabled:opacity-20 disabled:pointer-events-none"
+                        aria-label="Move file down"
+                      >
+                        <ChevronDown className="w-4 h-4" />
+                      </button>
+                      <button
+                        type="button"
+                        onClick={() => removeFile(item.id)}
+                        className="p-2 hover:bg-red-950/20 hover:text-red-400 rounded-lg text-foreground/40 transition-colors"
+                      >
+                        <Trash2 className="w-4 h-4" />
+                      </button>
+                    </div>
                   </div>
                 ))}
               </div>

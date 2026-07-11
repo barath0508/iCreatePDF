@@ -618,28 +618,54 @@ export const toolContent: Record<string, ToolContent> = {
     ],
   },
 
+  'barcode-to-pdf': {
+    name: 'Barcode to PDF',
+    url: '/barcode-to-pdf',
+    overview:
+      'Retail, logistics, and inventory workflows rely on barcode formats that a plain QR generator can\'t produce — Code 128 shipping labels, EAN-13 and UPC-A retail codes, Code 39 asset tags, and 2D formats like Data Matrix and PDF417. iCreatePDF renders any of these symbologies and compiles them into a clean, print-ready A4 PDF entirely in your browser.',
+    steps: [
+      { title: 'Choose a barcode type', description: 'Pick Code 128, EAN-13, UPC-A, Code 39, Data Matrix, or PDF417 depending on your use case.' },
+      { title: 'Enter the content', description: 'Type the product code, SKU, or text to encode — each symbology shows a hint for its expected format.' },
+      { title: 'Customize size and labels', description: 'Adjust the barcode size and add an optional title or description.' },
+      { title: 'Download the PDF', description: 'Save a print-ready A4 PDF containing your barcode.' },
+    ],
+    useCases: [
+      'Generate EAN-13 or UPC-A codes for retail product packaging',
+      'Print Code 128 shipping and inventory labels',
+      'Create Code 39 asset tags for equipment tracking',
+      'Produce PDF417 or Data Matrix codes for ID cards and logistics documents',
+    ],
+    faqs: [
+      { question: 'Which barcode format should I use?', answer: 'Use EAN-13 or UPC-A for retail products, Code 128 or Code 39 for shipping and inventory labels, and Data Matrix or PDF417 when you need to encode more data in a compact 2D code.' },
+      { question: 'Why does EAN-13 or UPC-A reject my input?', answer: 'These formats require a specific digit count (12–13 digits for EAN-13, 11–12 for UPC-A) including a valid check digit. Double check the code matches the official format.' },
+      { question: 'Is the barcode generated locally?', answer: 'Yes, the barcode image and PDF are both generated entirely in your browser — nothing is uploaded to a server.' },
+      { question: 'What page size is the output PDF?', answer: 'The barcode is compiled onto a clean A4 page, ready for printing onto labels or documents.' },
+    ],
+  },
+
   'redact-pdf': {
     name: 'Redact PDF',
     url: '/redact-pdf',
     overview:
-      'Simply drawing a black rectangle in an image editor doesn’t remove the underlying text — it just hides it, leaving sensitive data recoverable by copy-paste. iCreatePDF permanently burns redaction boxes into the page content, so social security numbers, account details, or names are genuinely destroyed, not just covered, and the process never leaves your browser.',
+      'Simply drawing a black rectangle in an image editor doesn’t remove the underlying text — it just hides it, leaving sensitive data recoverable by copy-paste. iCreatePDF permanently burns redaction boxes into the page content, so social security numbers, account details, or names are genuinely destroyed, not just covered. Click Auto-Detect and it scans every page for emails, phone numbers, SSNs, IBANs, and credit card numbers, suggesting boxes you can accept or dismiss before anything is burned in — all without the file ever leaving your browser.',
     steps: [
       { title: 'Upload the PDF to redact', description: 'Add the document containing sensitive information.' },
-      { title: 'Draw redaction boxes', description: 'Cover text or images you want permanently removed.' },
-      { title: 'Burn in the redactions', description: 'The tool destroys the underlying content, not just the visual layer.' },
-      { title: 'Download the redacted PDF', description: 'Export a document with no recoverable hidden data.' },
+      { title: 'Auto-detect or draw manually', description: 'Click Auto-Detect to scan for emails, phone numbers, SSNs, IBANs, and card numbers, or draw boxes by hand.' },
+      { title: 'Review each suggestion', description: 'Click a suggested box to accept it, or the × to dismiss a false positive.' },
+      { title: 'Burn in the redactions', description: 'The tool destroys the underlying content, not just the visual layer, and exports the finished PDF.' },
     ],
     useCases: [
-      'Black out a social security number before sharing a tax document',
-      'Redact account numbers from a bank statement sent to a third party',
-      'Remove names or case details from a legal filing before public release',
+      'Automatically find and black out a social security number before sharing a tax document',
+      'Redact account numbers or card numbers from a bank statement sent to a third party',
+      'Remove names, emails, or case details from a legal filing before public release',
       'Censor confidential figures from an internal report before external sharing',
     ],
     faqs: [
+      { question: 'How does automatic detection work?', answer: 'iCreatePDF scans the text of every page in your browser for common PII patterns — emails, phone numbers, SSNs, IBANs, and credit card numbers (validated with a checksum to reduce false positives) — and shows each one as a suggested box you can accept or dismiss before anything is redacted.' },
       { question: 'Is the redacted text recoverable by copy-paste?', answer: 'No, redactions are burned permanently into the page content, so the underlying text and images are destroyed, not just visually covered.' },
       { question: 'Can I redact images as well as text?', answer: 'Yes, you can draw redaction boxes over any content, including embedded images and diagrams.' },
       { question: 'Is this different from a simple black box overlay?', answer: 'Yes — a plain black box overlay can be removed or the text copied from underneath; this tool destroys the underlying content permanently.' },
-      { question: 'Is redaction processed without uploading the file?', answer: 'Yes, everything runs locally in your browser, which matters for sensitive personal or legal documents.' },
+      { question: 'Is redaction processed without uploading the file?', answer: 'Yes, everything — including automatic PII detection — runs locally in your browser, which matters for sensitive personal or legal documents.' },
     ],
   },
 

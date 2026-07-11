@@ -107,21 +107,29 @@ export function EditPdfTool() {
     if (activeAnnotationId === id) setActiveAnnotationId(null);
   };
 
-  // Drag logic for annotations
-  const handleDragStart = (e: React.MouseEvent, id: string) => {
+  // Drag logic for annotations (mouse + touch)
+  const getPoint = (e: MouseEvent | TouchEvent | React.MouseEvent | React.TouchEvent) => {
+    if ('touches' in e) {
+      const touch = e.touches[0] ?? (e as TouchEvent).changedTouches?.[0];
+      return { x: touch.clientX, y: touch.clientY };
+    }
+    return { x: (e as MouseEvent).clientX, y: (e as MouseEvent).clientY };
+  };
+
+  const handleDragStart = (e: React.MouseEvent | React.TouchEvent, id: string) => {
     e.preventDefault();
     setActiveAnnotationId(id);
     const ann = annotations.find(a => a.id === id);
     if (!ann) return;
 
-    const startX = e.clientX;
-    const startY = e.clientY;
+    const { x: startX, y: startY } = getPoint(e);
     const initialAnnX = ann.x;
     const initialAnnY = ann.y;
 
-    const handleMouseMove = (moveEvent: MouseEvent) => {
-      const dx = moveEvent.clientX - startX;
-      const dy = moveEvent.clientY - startY;
+    const handleMove = (moveEvent: MouseEvent | TouchEvent) => {
+      const { x: clientX, y: clientY } = getPoint(moveEvent);
+      const dx = clientX - startX;
+      const dy = clientY - startY;
 
       setAnnotations(prev => prev.map(a => {
         if (a.id === id) {
@@ -135,13 +143,17 @@ export function EditPdfTool() {
       }));
     };
 
-    const handleMouseUp = () => {
-      window.removeEventListener('mousemove', handleMouseMove);
-      window.removeEventListener('mouseup', handleMouseUp);
+    const handleEnd = () => {
+      window.removeEventListener('mousemove', handleMove);
+      window.removeEventListener('mouseup', handleEnd);
+      window.removeEventListener('touchmove', handleMove);
+      window.removeEventListener('touchend', handleEnd);
     };
 
-    window.addEventListener('mousemove', handleMouseMove);
-    window.addEventListener('mouseup', handleMouseUp);
+    window.addEventListener('mousemove', handleMove);
+    window.addEventListener('mouseup', handleEnd);
+    window.addEventListener('touchmove', handleMove, { passive: false });
+    window.addEventListener('touchend', handleEnd);
   };
 
   // Hex to RGB parser for pdf-lib
@@ -250,7 +262,8 @@ export function EditPdfTool() {
                     <div
                       key={ann.id}
                       onMouseDown={(e) => handleDragStart(e, ann.id)}
-                      className={`absolute cursor-move border px-2 py-1 rounded select-none ${
+                      onTouchStart={(e) => handleDragStart(e, ann.id)}
+                      className={`absolute cursor-move touch-none border px-2 py-1 rounded select-none ${
                         activeAnnotationId === ann.id ? 'border-brand bg-brand/10' : 'border-transparent bg-background/40'
                       }`}
                       style={{

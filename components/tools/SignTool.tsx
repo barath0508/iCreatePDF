@@ -159,23 +159,33 @@ export function SignTool() {
     setError(null);
   };
 
-  // Drag handlers for overlay signature
-  const onSignatureMouseDown = (e: React.MouseEvent) => {
+  // Drag handlers for overlay signature (mouse + touch)
+  const getPoint = (e: MouseEvent | TouchEvent | React.MouseEvent | React.TouchEvent) => {
+    if ('touches' in e) {
+      const touch = e.touches[0] ?? (e as TouchEvent).changedTouches?.[0];
+      return { x: touch.clientX, y: touch.clientY };
+    }
+    return { x: (e as MouseEvent).clientX, y: (e as MouseEvent).clientY };
+  };
+
+  const onSignatureDragStart = (e: React.MouseEvent | React.TouchEvent) => {
     e.preventDefault();
     setIsDraggingSig(true);
+    const { x, y } = getPoint(e);
     dragStart.current = {
-      x: e.clientX - sigPosition.x,
-      y: e.clientY - sigPosition.y
+      x: x - sigPosition.x,
+      y: y - sigPosition.y
     };
   };
 
-  const onSignatureMouseMove = (e: MouseEvent) => {
+  const onSignatureDragMove = (e: MouseEvent | TouchEvent) => {
     if (!isDraggingSig || !containerRef.current) return;
     const container = containerRef.current;
     const rect = container.getBoundingClientRect();
-    
-    let x = e.clientX - dragStart.current.x;
-    let y = e.clientY - dragStart.current.y;
+    const { x: clientX, y: clientY } = getPoint(e);
+
+    let x = clientX - dragStart.current.x;
+    let y = clientY - dragStart.current.y;
 
     // Constrain inside container bounds
     x = Math.max(0, Math.min(x, rect.width - sigSize));
@@ -184,18 +194,22 @@ export function SignTool() {
     setSigPosition({ x, y });
   };
 
-  const onSignatureMouseUp = () => {
+  const onSignatureDragEnd = () => {
     setIsDraggingSig(false);
   };
 
   useEffect(() => {
     if (isDraggingSig) {
-      window.addEventListener('mousemove', onSignatureMouseMove);
-      window.addEventListener('mouseup', onSignatureMouseUp);
+      window.addEventListener('mousemove', onSignatureDragMove);
+      window.addEventListener('mouseup', onSignatureDragEnd);
+      window.addEventListener('touchmove', onSignatureDragMove, { passive: false });
+      window.addEventListener('touchend', onSignatureDragEnd);
     }
     return () => {
-      window.removeEventListener('mousemove', onSignatureMouseMove);
-      window.removeEventListener('mouseup', onSignatureMouseUp);
+      window.removeEventListener('mousemove', onSignatureDragMove);
+      window.removeEventListener('mouseup', onSignatureDragEnd);
+      window.removeEventListener('touchmove', onSignatureDragMove);
+      window.removeEventListener('touchend', onSignatureDragEnd);
     };
   }, [isDraggingSig]);
 
@@ -299,8 +313,9 @@ export function SignTool() {
 
                   {sigPngDataUrl && !downloadUrl && (
                     <div
-                      onMouseDown={onSignatureMouseDown}
-                      className="absolute cursor-move border border-dashed border-brand bg-brand/10 active:border-purple-400"
+                      onMouseDown={onSignatureDragStart}
+                      onTouchStart={onSignatureDragStart}
+                      className="absolute cursor-move touch-none border border-dashed border-brand bg-brand/10 active:border-purple-400"
                       style={{
                         left: `${sigPosition.x}px`,
                         top: `${sigPosition.y}px`,

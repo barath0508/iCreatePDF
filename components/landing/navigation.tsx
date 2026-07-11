@@ -50,6 +50,7 @@ const searchTools = [
   { title: 'Bates Numbering', href: '/bates-numbering', desc: 'Sequential legal stamping with custom prefix, suffix, and padding.' },
   { title: 'Invert PDF', href: '/invert-pdf', desc: 'Pixel-invert every page for dark mode reading.' },
   { title: 'QR to PDF', href: '/qr-to-pdf', desc: 'Generate a clean A4 PDF with an embedded QR code.' },
+  { title: 'Barcode to PDF', href: '/barcode-to-pdf', desc: 'Generate Code 128, EAN-13, UPC-A, Code 39, Data Matrix, or PDF417 barcodes.' },
   { title: 'Delete PDF Pages', href: '/delete-pdf-pages', desc: 'Remove individual pages or complete ranges of pages from your PDF file.' },
 ];
 

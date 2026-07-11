@@ -1,7 +1,7 @@
 'use client';
 
 import React, { useState, useRef, useEffect } from 'react';
-import { Upload, Layers, Trash2, RotateCw, Loader2, Download, FileText } from 'lucide-react';
+import { Upload, Layers, Trash2, RotateCw, Loader2, Download, FileText, ChevronLeft, ChevronRight } from 'lucide-react';
 import { organizePdf, PageEditInstruction } from '@/lib/pdf';
 import { Button } from '@/components/ui/button';
 
@@ -116,6 +116,17 @@ export function OrganizeTool() {
     setDownloadUrl(null);
   };
 
+  const movePage = (idx: number, direction: -1 | 1) => {
+    setPages((prev) => {
+      const target = idx + direction;
+      if (target < 0 || target >= prev.length) return prev;
+      const updated = [...prev];
+      [updated[idx], updated[target]] = [updated[target], updated[idx]];
+      return updated;
+    });
+    setDownloadUrl(null);
+  };
+
   const handleDragStart = (index: number) => {
     dragItemIndex.current = index;
   };
@@ -220,7 +231,7 @@ export function OrganizeTool() {
             <div className="space-y-4">
               <div className="flex justify-between items-center px-1">
                 <span className="text-xs font-mono text-foreground/50 uppercase tracking-widest">
-                  Pages Queue ({pages.length}) - Drag thumbnails to reorder
+                  Pages Queue ({pages.length}) - Drag or use arrows to reorder
                 </span>
                 <Button
                   variant="ghost"
@@ -264,12 +275,22 @@ export function OrganizeTool() {
                     <div className="flex border-t border-foreground/5 bg-card/60 p-2 gap-1 justify-between">
                       <button
                         type="button"
+                        onClick={() => movePage(idx, -1)}
+                        disabled={idx === 0}
+                        className="p-1.5 hover:bg-foreground/5 hover:text-brand rounded-lg text-foreground/40 transition-colors disabled:opacity-20 disabled:pointer-events-none"
+                        aria-label="Move page earlier"
+                      >
+                        <ChevronLeft className="w-3.5 h-3.5" />
+                      </button>
+
+                      <button
+                        type="button"
                         onClick={() => rotatePage(idx)}
                         className="p-1.5 hover:bg-foreground/5 hover:text-brand rounded-lg text-foreground/40 transition-colors"
                       >
                         <RotateCw className="w-3.5 h-3.5" />
                       </button>
-                      
+
                       <button
                         type="button"
                         onClick={() => toggleDeletePage(idx)}
@@ -278,6 +299,16 @@ export function OrganizeTool() {
                         }`}
                       >
                         <Trash2 className="w-3.5 h-3.5" />
+                      </button>
+
+                      <button
+                        type="button"
+                        onClick={() => movePage(idx, 1)}
+                        disabled={idx === pages.length - 1}
+                        className="p-1.5 hover:bg-foreground/5 hover:text-brand rounded-lg text-foreground/40 transition-colors disabled:opacity-20 disabled:pointer-events-none"
+                        aria-label="Move page later"
+                      >
+                        <ChevronRight className="w-3.5 h-3.5" />
                       </button>
                     </div>
                   </div>

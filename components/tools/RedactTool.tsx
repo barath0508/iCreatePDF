@@ -1,21 +1,34 @@
 'use client';
 
 import React, { useState, useRef, useCallback } from 'react';
-import { EyeOff, Loader2, Download, Trash2, FileText } from 'lucide-react';
+import { EyeOff, Loader2, Download, Trash2, FileText, ScanSearch, X } from 'lucide-react';
 import { PDFDocument } from 'pdf-lib';
 import { Button } from '@/components/ui/button';
+import { detectPii, type PiiType } from '@/lib/pii-detect';
 
 interface Rect { x: number; y: number; w: number; h: number; page: number; }
+interface Suggestion extends Rect { id: string; type: PiiType; value: string; }
+
+const PII_LABELS: Record<PiiType, string> = {
+  email: 'Email',
+  phone: 'Phone',
+  ssn: 'SSN',
+  creditCard: 'Card',
+  iban: 'IBAN',
+};
 
 export function RedactTool() {
   const [file, setFile] = useState<File | null>(null);
   const [isProcessing, setIsProcessing] = useState(false);
+  const [isDetecting, setIsDetecting] = useState(false);
+  const [detectProgress, setDetectProgress] = useState({ page: 0, total: 0 });
   const [error, setError] = useState<string | null>(null);
   const [downloadUrl, setDownloadUrl] = useState<string | null>(null);
   const [isDraggingOver, setIsDraggingOver] = useState(false);
   const [currentPage, setCurrentPage] = useState(1);
   const [totalPages, setTotalPages] = useState(0);
   const [rects, setRects] = useState<Rect[]>([]);
+  const [suggestions, setSuggestions] = useState<Suggestion[]>([]);
   const [drawing, setDrawing] = useState<{ x: number; y: number } | null>(null);
   const [currentRect, setCurrentRect] = useState<{ x: number; y: number; w: number; h: number } | null>(null);
   const [scale, setScale] = useState(1);
@@ -47,7 +60,7 @@ export function RedactTool() {
   }, [rects]);
 
   const handleFiles = async (uploadedFiles: FileList | File[]) => {
-    setError(null); setDownloadUrl(null); setRects([]);
+    setError(null); setDownloadUrl(null); setRects([]); setSuggestions([]);
     const f = uploadedFiles[0];
     if (!f || f.type !== 'application/pdf') { setError('Only PDF files are supported.'); return; }
     setFile(f);
@@ -56,21 +69,99 @@ export function RedactTool() {
     await renderPage(buf, 1);
   };
 
-  const getCanvasCoords = (e: React.MouseEvent<HTMLCanvasElement>) => {
+  const detectSensitiveData = async () => {
+    if (!file) return;
+    setIsDetecting(true); setError(null);
+    try {
+      const buf = await file.arrayBuffer();
+      const pdfjsLib = await import('pdfjs-dist');
+      pdfjsLib.GlobalWorkerOptions.workerSrc = `https://cdn.jsdelivr.net/npm/pdfjs-dist@${pdfjsLib.version}/build/pdf.worker.min.mjs`;
+      const pdf = await pdfjsLib.getDocument({ data: new Uint8Array(buf) }).promise;
+
+      const found: Suggestion[] = [];
+      for (let pageNum = 1; pageNum <= pdf.numPages; pageNum++) {
+        setDetectProgress({ page: pageNum, total: pdf.numPages });
+        const page = await pdf.getPage(pageNum);
+        const viewport = page.getViewport({ scale: 1 });
+        const textContent = await page.getTextContent();
+
+        let fullText = '';
+        const itemSpans: { start: number; end: number; transform: number[]; width: number; height: number }[] = [];
+        for (const item of textContent.items as any[]) {
+          if (typeof item.str !== 'string') continue;
+          const start = fullText.length;
+          fullText += item.str + ' ';
+          itemSpans.push({ start, end: start + item.str.length, transform: item.transform, width: item.width, height: item.height || 10 });
+        }
+
+        const matches = detectPii(fullText);
+        for (const match of matches) {
+          const overlapping = itemSpans.filter(s => s.start < match.end && s.end > match.start);
+          if (overlapping.length === 0) continue;
+
+          let x0 = Infinity, y0 = Infinity, x1 = -Infinity, y1 = -Infinity;
+          for (const span of overlapping) {
+            const [ex, ey] = [span.transform[4], span.transform[5]];
+            const corners = viewport.convertToViewportRectangle([ex, ey, ex + span.width, ey + span.height]);
+            const rx0 = Math.min(corners[0], corners[2]);
+            const ry0 = Math.min(corners[1], corners[3]);
+            const rx1 = Math.max(corners[0], corners[2]);
+            const ry1 = Math.max(corners[1], corners[3]);
+            x0 = Math.min(x0, rx0); y0 = Math.min(y0, ry0);
+            x1 = Math.max(x1, rx1); y1 = Math.max(y1, ry1);
+          }
+          const pad = 1.5;
+          found.push({
+            id: `${pageNum}-${match.start}-${match.type}`,
+            page: pageNum,
+            x: x0 - pad, y: y0 - pad, w: (x1 - x0) + pad * 2, h: (y1 - y0) + pad * 2,
+            type: match.type, value: match.value,
+          });
+        }
+      }
+      setSuggestions(found);
+    } catch (err: any) {
+      setError(err?.message || 'Auto-detection failed.');
+    } finally {
+      setIsDetecting(false);
+      setDetectProgress({ page: 0, total: 0 });
+    }
+  };
+
+  const acceptSuggestion = (s: Suggestion) => {
+    setSuggestions(prev => prev.filter(x => x.id !== s.id));
+    setRects(prev => [...prev, { x: s.x, y: s.y, w: s.w, h: s.h, page: s.page }]);
+    if (s.page === currentPage) {
+      const canvas = canvasRef.current;
+      if (canvas) {
+        const ctx = canvas.getContext('2d')!;
+        ctx.fillStyle = '#000';
+        ctx.fillRect(s.x * scale, s.y * scale, s.w * scale, s.h * scale);
+      }
+    }
+  };
+
+  const dismissSuggestion = (id: string) => {
+    setSuggestions(prev => prev.filter(x => x.id !== id));
+  };
+
+  const getCanvasCoords = (e: React.MouseEvent<HTMLCanvasElement> | React.TouchEvent<HTMLCanvasElement>) => {
     const canvas = canvasRef.current!;
     const rect = canvas.getBoundingClientRect();
     const scaleX = canvas.width / rect.width;
     const scaleY = canvas.height / rect.height;
-    return { x: (e.clientX - rect.left) * scaleX, y: (e.clientY - rect.top) * scaleY };
+    const point = 'touches' in e ? (e.touches[0] ?? e.changedTouches[0]) : e;
+    return { x: (point.clientX - rect.left) * scaleX, y: (point.clientY - rect.top) * scaleY };
   };
 
-  const onMouseDown = (e: React.MouseEvent<HTMLCanvasElement>) => {
+  const onPointerDown = (e: React.MouseEvent<HTMLCanvasElement> | React.TouchEvent<HTMLCanvasElement>) => {
     const { x, y } = getCanvasCoords(e);
     setDrawing({ x, y });
   };
 
-  const onMouseMove = (e: React.MouseEvent<HTMLCanvasElement>) => {
+  const onPointerMove = (e: React.MouseEvent<HTMLCanvasElement> | React.TouchEvent<HTMLCanvasElement>) => {
     if (!drawing) return;
+    if ('touches' in e) e.preventDefault();
     const { x, y } = getCanvasCoords(e);
     setCurrentRect({ x: drawing.x, y: drawing.y, w: x - drawing.x, h: y - drawing.y });
     const canvas = canvasRef.current!;
@@ -82,7 +173,7 @@ export function RedactTool() {
     ctx.fillRect(drawing.x, drawing.y, x - drawing.x, y - drawing.y);
   };
 
-  const onMouseUp = (e: React.MouseEvent<HTMLCanvasElement>) => {
+  const onPointerUp = (e: React.MouseEvent<HTMLCanvasElement> | React.TouchEvent<HTMLCanvasElement>) => {
     if (!drawing || !currentRect) { setDrawing(null); return; }
     const { x: cx, y: cy } = getCanvasCoords(e);
     const newRect: Rect = {
@@ -171,21 +262,76 @@ export function RedactTool() {
                   <span className="text-sm text-foreground font-medium">{file.name}</span>
                   <span className="text-xs text-foreground/40">({totalPages} pages)</span>
                 </div>
-                <Button variant="ghost" size="sm" onClick={() => { setFile(null); setRects([]); }} className="text-xs text-foreground/40 hover:text-foreground">Change File</Button>
+                <Button variant="ghost" size="sm" onClick={() => { setFile(null); setRects([]); setSuggestions([]); }} className="text-xs text-foreground/40 hover:text-foreground">Change File</Button>
               </div>
               {totalPages > 1 && (
                 <div className="flex gap-2 flex-wrap">
                   {Array.from({ length: totalPages }, (_, i) => i + 1).map(p => (
                     <button key={p} onClick={() => changePage(p)} className={`px-3 py-1 rounded-lg text-xs font-mono transition-all ${currentPage === p ? 'bg-brand text-foreground' : 'bg-foreground/5 text-foreground/50 hover:bg-foreground/10'}`}>
-                      {p} {rects.filter(r => r.page === p).length > 0 && <span className="text-red-400">•</span>}
+                      {p}{' '}
+                      {rects.filter(r => r.page === p).length > 0 && <span className="text-red-400">•</span>}
+                      {suggestions.filter(s => s.page === p).length > 0 && <span className="text-amber-400">•</span>}
                     </button>
                   ))}
                 </div>
               )}
-              <div className="text-xs text-foreground/40 bg-background/30 rounded-lg px-3 py-2">Click and drag on the document to draw redaction boxes</div>
-              <div ref={containerRef} className="rounded-xl overflow-hidden border border-foreground/10 cursor-crosshair">
-                <canvas ref={canvasRef} onMouseDown={onMouseDown} onMouseMove={onMouseMove} onMouseUp={onMouseUp} className="w-full" />
+              <div className="flex items-center justify-between gap-2 flex-wrap">
+                <div className="text-xs text-foreground/40 bg-background/30 rounded-lg px-3 py-2">Click/tap and drag on the document to draw redaction boxes</div>
+                <Button
+                  variant="ghost"
+                  size="sm"
+                  disabled={isDetecting}
+                  onClick={detectSensitiveData}
+                  className="text-xs bg-amber-500/10 hover:bg-amber-500/20 text-amber-300 border border-amber-500/20 rounded-lg h-8"
+                >
+                  {isDetecting ? (
+                    <><Loader2 className="w-3.5 h-3.5 mr-1.5 animate-spin" />Scanning page {detectProgress.page}/{detectProgress.total}...</>
+                  ) : (
+                    <><ScanSearch className="w-3.5 h-3.5 mr-1.5" />Auto-Detect Sensitive Data</>
+                  )}
+                </Button>
               </div>
+              <div ref={containerRef} className="relative rounded-xl overflow-hidden border border-foreground/10 cursor-crosshair">
+                <canvas
+                  ref={canvasRef}
+                  onMouseDown={onPointerDown}
+                  onMouseMove={onPointerMove}
+                  onMouseUp={onPointerUp}
+                  onTouchStart={onPointerDown}
+                  onTouchMove={onPointerMove}
+                  onTouchEnd={onPointerUp}
+                  className="w-full touch-none"
+                />
+                {pageSize.w > 0 && suggestions.filter(s => s.page === currentPage).map(s => (
+                  <div
+                    key={s.id}
+                    onClick={() => acceptSuggestion(s)}
+                    title={`Click to redact this ${PII_LABELS[s.type]} — "${s.value}"`}
+                    className="absolute border-2 border-amber-400 bg-amber-400/25 hover:bg-amber-400/40 cursor-pointer group transition-colors"
+                    style={{
+                      left: `${(s.x / pageSize.w) * 100}%`,
+                      top: `${(s.y / pageSize.h) * 100}%`,
+                      width: `${(s.w / pageSize.w) * 100}%`,
+                      height: `${(s.h / pageSize.h) * 100}%`,
+                    }}
+                  >
+                    <span className="absolute -top-5 left-0 text-[10px] font-mono bg-amber-500 text-black px-1.5 py-0.5 rounded whitespace-nowrap">
+                      {PII_LABELS[s.type]}
+                    </span>
+                    <button
+                      onClick={(e) => { e.stopPropagation(); dismissSuggestion(s.id); }}
+                      className="absolute -top-5 right-0 bg-foreground/80 hover:bg-foreground text-background rounded-full p-0.5 opacity-0 group-hover:opacity-100 transition-opacity"
+                    >
+                      <X className="w-3 h-3" />
+                    </button>
+                  </div>
+                ))}
+              </div>
+              {suggestions.filter(s => s.page === currentPage).length > 0 && (
+                <div className="flex items-center justify-between p-3 rounded-xl bg-amber-500/10 border border-amber-500/20">
+                  <span className="text-xs text-amber-300">{suggestions.filter(s => s.page === currentPage).length} suggested redaction{suggestions.filter(s => s.page === currentPage).length > 1 ? 's' : ''} on this page — click a box to redact, or the × to dismiss</span>
+                </div>
+              )}
               {rects.length > 0 && (
                 <div className="flex items-center justify-between p-3 rounded-xl bg-red-500/10 border border-red-500/20">
                   <span className="text-xs text-red-300">{rects.length} redaction box{rects.length > 1 ? 'es' : ''} drawn</span>
@@ -202,11 +348,11 @@ export function RedactTool() {
             <EyeOff className="w-4 h-4 text-brand" />
             <h3 className="font-mono text-sm uppercase tracking-wider text-foreground">Redact PDF</h3>
           </div>
-          <p className="text-xs text-foreground/50 leading-relaxed">Draw black boxes over confidential data — Aadhaar numbers, PAN, signatures, addresses. Redactions are burned permanently into the document.</p>
+          <p className="text-xs text-foreground/50 leading-relaxed">Draw black boxes over confidential data, or click Auto-Detect to automatically find emails, phone numbers, SSNs, IBANs, and card numbers. Redactions are burned permanently into the document.</p>
           <div className="space-y-2 text-xs text-foreground/40">
-            <p>• Select a page using the tabs</p>
-            <p>• Click &amp; drag to draw redaction boxes</p>
-            <p>• Repeat on any page</p>
+            <p>• Click Auto-Detect to scan every page for PII</p>
+            <p>• Click a suggested box to redact it, or × to dismiss</p>
+            <p>• Click &amp; drag to draw manual redaction boxes</p>
             <p>• Click Apply to burn them in</p>
           </div>
           <div className="pt-4 border-t border-foreground/5">
@@ -219,7 +365,7 @@ export function RedactTool() {
                 <Button onClick={() => { const a = document.createElement('a'); a.href = downloadUrl; a.download = `redacted-${file?.name}`; a.click(); }} className="w-full bg-emerald-600 hover:bg-emerald-700 text-foreground font-medium py-6 rounded-xl flex items-center justify-center gap-2">
                   <Download className="w-5 h-5" />Download Redacted PDF
                 </Button>
-                <Button variant="ghost" onClick={() => { setFile(null); setRects([]); setDownloadUrl(null); }} className="w-full text-foreground/50 hover:text-foreground text-xs h-8">Redact another file</Button>
+                <Button variant="ghost" onClick={() => { setFile(null); setRects([]); setSuggestions([]); setDownloadUrl(null); }} className="w-full text-foreground/50 hover:text-foreground text-xs h-8">Redact another file</Button>
               </div>
             ) : (
               <Button disabled={!file || rects.length === 0} onClick={applyRedactions} className={`w-full font-medium py-6 rounded-xl flex items-center justify-center gap-2 ${file && rects.length > 0 ? 'bg-brand hover:bg-brand/90 text-foreground' : 'bg-foreground/5 text-foreground/30 cursor-not-allowed'}`}>

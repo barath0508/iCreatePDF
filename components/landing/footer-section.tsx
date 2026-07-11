@@ -41,6 +41,7 @@ const footerLinks = {
     { name: 'Bates Numbering', href: '/bates-numbering' },
     { name: 'Invert PDF', href: '/invert-pdf' },
     { name: 'QR to PDF', href: '/qr-to-pdf' },
+    { name: 'Barcode to PDF', href: '/barcode-to-pdf' },
     { name: 'Delete PDF Pages', href: '/delete-pdf-pages' },
   ],
   Resources: [

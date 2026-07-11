@@ -186,31 +186,41 @@ export function BulkCertificatesTool() {
     setActivePlaceholderId(header);
   };
 
-  // Drag placeholder handlers
-  const handleDragStart = (e: React.MouseEvent, id: string) => {
+  // Drag placeholder handlers (mouse + touch)
+  const getPoint = (e: MouseEvent | TouchEvent | React.MouseEvent | React.TouchEvent) => {
+    if ('touches' in e) {
+      const touch = e.touches[0] ?? (e as TouchEvent).changedTouches?.[0];
+      return { x: touch.clientX, y: touch.clientY };
+    }
+    return { x: (e as MouseEvent).clientX, y: (e as MouseEvent).clientY };
+  };
+
+  const handleDragStart = (e: React.MouseEvent | React.TouchEvent, id: string) => {
     e.preventDefault();
     const placeholder = placeholders.find(p => p.id === id);
     if (!placeholder || !containerRef.current) return;
 
+    const { x, y } = getPoint(e);
     setActivePlaceholderId(id);
     activeDragRef.current = {
       id,
-      startX: e.clientX,
-      startY: e.clientY,
+      startX: x,
+      startY: y,
       startLeft: placeholder.x,
       startTop: placeholder.y,
     };
   };
 
-  // Global mousemove and mouseup listeners for drag and drop to avoid stale closures
+  // Global mousemove/touchmove and mouseup/touchend listeners for drag and drop to avoid stale closures
   useEffect(() => {
-    const handleGlobalMouseMove = (e: MouseEvent) => {
+    const handleGlobalMove = (e: MouseEvent | TouchEvent) => {
       const dragInfo = activeDragRef.current;
       const container = containerRef.current;
       if (!dragInfo || !container) return;
 
-      const deltaX = e.clientX - dragInfo.startX;
-      const deltaY = e.clientY - dragInfo.startY;
+      const { x: clientX, y: clientY } = getPoint(e);
+      const deltaX = clientX - dragInfo.startX;
+      const deltaY = clientY - dragInfo.startY;
 
       const containerRect = container.getBoundingClientRect();
       const deltaPercentX = (deltaX / containerRect.width) * 100;
@@ -224,18 +234,22 @@ export function BulkCertificatesTool() {
       );
     };
 
-    const handleGlobalMouseUp = () => {
+    const handleGlobalEnd = () => {
       if (activeDragRef.current) {
         activeDragRef.current = null;
       }
     };
 
-    window.addEventListener('mousemove', handleGlobalMouseMove);
-    window.addEventListener('mouseup', handleGlobalMouseUp);
+    window.addEventListener('mousemove', handleGlobalMove);
+    window.addEventListener('mouseup', handleGlobalEnd);
+    window.addEventListener('touchmove', handleGlobalMove, { passive: false });
+    window.addEventListener('touchend', handleGlobalEnd);
 
     return () => {
-      window.removeEventListener('mousemove', handleGlobalMouseMove);
-      window.removeEventListener('mouseup', handleGlobalMouseUp);
+      window.removeEventListener('mousemove', handleGlobalMove);
+      window.removeEventListener('mouseup', handleGlobalEnd);
+      window.removeEventListener('touchmove', handleGlobalMove);
+      window.removeEventListener('touchend', handleGlobalEnd);
     };
   }, []);
 
@@ -513,7 +527,8 @@ export function BulkCertificatesTool() {
                         <div
                           key={ph.id}
                           onMouseDown={(e) => handleDragStart(e, ph.id)}
-                          className={`absolute cursor-move select-none px-3 py-1.5 rounded-lg border shadow-sm transition-shadow group flex items-center gap-1.5 ${
+                          onTouchStart={(e) => handleDragStart(e, ph.id)}
+                          className={`absolute cursor-move touch-none select-none px-3 py-1.5 rounded-lg border shadow-sm transition-shadow group flex items-center gap-1.5 ${
                             isActive
                               ? 'border-brand bg-brand/10 ring-2 ring-brand/20 shadow-brand/10'
                               : 'border-foreground/20 bg-background/90 hover:border-foreground/40 hover:bg-background'
