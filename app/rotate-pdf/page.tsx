@@ -3,7 +3,7 @@ import { ToolPageShell } from '@/components/tools/shared/ToolPageShell';
 import { RotateTool } from '@/components/tools/RotateTool';
 import { ToolSeoContent } from '@/components/tools/shared/ToolSeoContent';
 import { toolContent } from '@/lib/tool-content';
-import { buildAlternates } from '@/lib/seo';
+import { buildAlternates, toolSchema } from '@/lib/seo';
 
 export const metadata: Metadata = {
   title: 'Rotate PDF Online - Free & Private | iCreatePDF',
@@ -20,6 +20,11 @@ export const metadata: Metadata = {
 export default function RotatePdfPage() {
   return (
     <ToolPageShell
+      jsonLd={toolSchema({
+        name: 'Rotate PDF Pages',
+        description: 'Rotate PDF pages in seconds. 100% client-side, drag & drop files, select rotation angles visually, and download instantly.',
+        url: '/rotate-pdf',
+      })}
       badge="PDF Page Rotator"
       title="Rotate PDF Pages"
       description="Rotate specific pages of your PDF document or apply a bulk clockwise rotation to all pages locally."

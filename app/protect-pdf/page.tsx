@@ -3,7 +3,7 @@ import { ToolPageShell } from '@/components/tools/shared/ToolPageShell';
 import { ProtectTool } from '@/components/tools/ProtectTool';
 import { ToolSeoContent } from '@/components/tools/shared/ToolSeoContent';
 import { toolContent } from '@/lib/tool-content';
-import { buildAlternates } from '@/lib/seo';
+import { buildAlternates, toolSchema } from '@/lib/seo';
 
 export const metadata: Metadata = {
   title: 'Local PDF Password Encrypter - Protect PDF Securely | iCreatePDF',
@@ -20,6 +20,11 @@ export const metadata: Metadata = {
 export default function ProtectPdfPage() {
   return (
     <ToolPageShell
+      jsonLd={toolSchema({
+        name: 'Protect PDF Files',
+        description: 'Encrypt and password protect your PDF files client-side. Set secure owner and user passwords locally in your browser memory space.',
+        url: '/protect-pdf',
+      })}
       badge="PDF Shield"
       title="Protect PDF Files"
       description="Encrypt your PDF files with secure passwords locally in browser memory."

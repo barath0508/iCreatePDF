@@ -3,7 +3,7 @@ import { ToolPageShell } from '@/components/tools/shared/ToolPageShell';
 import { EditPdfTool } from '@/components/tools/EditPdfTool';
 import { ToolSeoContent } from '@/components/tools/shared/ToolSeoContent';
 import { toolContent } from '@/lib/tool-content';
-import { buildAlternates } from '@/lib/seo';
+import { buildAlternates, toolSchema } from '@/lib/seo';
 
 export const metadata: Metadata = {
   title: 'Edit PDF Online - Add Text Overlays & Annotations | iCreatePDF',
@@ -20,6 +20,11 @@ export const metadata: Metadata = {
 export default function EditPdfPage() {
   return (
     <ToolPageShell
+      jsonLd={toolSchema({
+        name: 'Edit PDF Annotations',
+        description: 'Edit PDF files directly in your web browser. Place text overlay annotations, customize colors, and write them back into the PDF.',
+        url: '/edit-pdf',
+      })}
       badge="PDF Annotations"
       title="Edit PDF Annotations"
       description="Insert custom text overlay boxes and position them on PDF layouts client-side."

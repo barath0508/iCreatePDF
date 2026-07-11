@@ -353,7 +353,7 @@ export function BulkCertificatesTool() {
         setDownloadUrl(URL.createObjectURL(blob));
       } else if (mode === 'zip' && zip) {
         setStatusMessage('Compressing certificates into ZIP folder...');
-        const zipBlob = await zip.generateAsync({ type: 'blob' }, (metadata) => {
+        const zipBlob = await zip.generateAsync({ type: 'blob' }, (metadata: { percent: number }) => {
           setProgress(50 + Math.round(metadata.percent / 2)); // Final 50% for compressing
         });
         setDownloadZipUrl(URL.createObjectURL(zipBlob));

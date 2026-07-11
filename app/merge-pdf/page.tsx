@@ -3,7 +3,7 @@ import { ToolPageShell } from '@/components/tools/shared/ToolPageShell';
 import { MergeTool } from '@/components/tools/MergeTool';
 import { ToolSeoContent } from '@/components/tools/shared/ToolSeoContent';
 import { toolContent } from '@/lib/tool-content';
-import { buildAlternates } from '@/lib/seo';
+import { buildAlternates, toolSchema } from '@/lib/seo';
 
 export const metadata: Metadata = {
   title: 'Merge PDF Free: Combine PDF Files Online | iCreatePDF',
@@ -20,6 +20,11 @@ export const metadata: Metadata = {
 export default function MergePdfPage() {
   return (
     <ToolPageShell
+      jsonLd={toolSchema({
+        name: 'Merge PDF Files',
+        description: 'Merge PDF files securely in your browser sandbox. Your files are combined client-side via WebAssembly — 100% private, zero server uploads.',
+        url: '/merge-pdf',
+      })}
       badge="PDF Merger"
       title="Merge PDF Files"
       description="Combine multiple PDF files into a single, organized document. All processing is executed client-side."

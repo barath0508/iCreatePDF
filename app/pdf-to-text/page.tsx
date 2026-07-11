@@ -3,7 +3,7 @@ import { ToolPageShell } from '@/components/tools/shared/ToolPageShell';
 import { PdfToTextTool } from '@/components/tools/PdfToTextTool';
 import { ToolSeoContent } from '@/components/tools/shared/ToolSeoContent';
 import { toolContent } from '@/lib/tool-content';
-import { buildAlternates } from '@/lib/seo';
+import { buildAlternates, toolSchema } from '@/lib/seo';
 
 export const metadata: Metadata = {
   title: 'Extract Text from PDF Online - Free & Private | iCreatePDF',
@@ -20,6 +20,11 @@ export const metadata: Metadata = {
 export default function PdfToTextPage() {
   return (
     <ToolPageShell
+      jsonLd={toolSchema({
+        name: 'PDF to Text Extractor',
+        description: 'Extract raw text layouts from PDF documents page-by-page. 100% browser-based text extraction utility.',
+        url: '/pdf-to-text',
+      })}
       badge="Text Extractor"
       title="PDF to Text Extractor"
       description="Extract structural text contents page-by-page locally in your browser."

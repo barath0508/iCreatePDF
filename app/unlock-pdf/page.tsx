@@ -3,7 +3,7 @@ import { ToolPageShell } from '@/components/tools/shared/ToolPageShell';
 import { UnlockTool } from '@/components/tools/UnlockTool';
 import { ToolSeoContent } from '@/components/tools/shared/ToolSeoContent';
 import { toolContent } from '@/lib/tool-content';
-import { buildAlternates } from '@/lib/seo';
+import { buildAlternates, toolSchema } from '@/lib/seo';
 
 export const metadata: Metadata = {
   title: 'Local PDF Password Remover - Decrypt PDF Securely | iCreatePDF',
@@ -20,6 +20,11 @@ export const metadata: Metadata = {
 export default function UnlockPdfPage() {
   return (
     <ToolPageShell
+      jsonLd={toolSchema({
+        name: 'Unlock Protected PDF',
+        description: 'Remove passwords and decryption locks from PDF files client-side. Your files and passwords are never uploaded to any remote server.',
+        url: '/unlock-pdf',
+      })}
       badge="PDF Decrypter"
       title="Unlock Protected PDF"
       description="Strips password security locks from document files. Decryption occurs completely local inside browser memory."

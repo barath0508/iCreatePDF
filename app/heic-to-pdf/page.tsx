@@ -5,7 +5,7 @@ import { FeaturesSection } from '@/components/landing/features-section';
 import { HowItWorksSection } from '@/components/landing/how-it-works-section';
 import { SecuritySection } from '@/components/landing/security-section';
 import { CtaSection } from '@/components/landing/cta-section';
-import { buildAlternates } from '@/lib/seo';
+import { buildAlternates, toolSchema } from '@/lib/seo';
 
 export const metadata: Metadata = {
   title: 'HEIC to PDF: Convert iPhone Photos Free & Privately | iCreatePDF',
@@ -22,6 +22,11 @@ export const metadata: Metadata = {
 export default function HeicToPdfPage() {
   return (
     <ToolPageShell
+      jsonLd={toolSchema({
+        name: 'HEIC to PDF',
+        description: 'Convert iPhone HEIC photos to PDF directly in your browser. 100% local client-side conversion, zero server uploads, safe for sensitive photos.',
+        url: '/heic-to-pdf',
+      })}
       badge="Image Converter"
       title="HEIC to PDF"
       description="Drag & drop multiple HEIC images from iPhone, reorder, adjust sizes, and download as a high-quality PDF instantly."

@@ -3,7 +3,7 @@ import { ToolPageShell } from '@/components/tools/shared/ToolPageShell';
 import { MarkdownToPdfTool } from '@/components/tools/MarkdownToPdfTool';
 import { ToolSeoContent } from '@/components/tools/shared/ToolSeoContent';
 import { toolContent } from '@/lib/tool-content';
-import { buildAlternates } from '@/lib/seo';
+import { buildAlternates, toolSchema } from '@/lib/seo';
 
 export const metadata: Metadata = {
   title: 'Convert Markdown to PDF Online - Free & Private | iCreatePDF',
@@ -20,6 +20,11 @@ export const metadata: Metadata = {
 export default function MarkdownToPdfPage() {
   return (
     <ToolPageShell
+      jsonLd={toolSchema({
+        name: 'Markdown to PDF Converter',
+        description: 'Convert styled Markdown text files into standard PDF page layouts locally. Completely private, browser-based Markdown-to-PDF utility.',
+        url: '/markdown-to-pdf',
+      })}
       badge="Markdown Engine"
       title="Markdown to PDF Converter"
       description="Write syntax-styled Markdown documents and compile them to clean A4 PDFs locally."

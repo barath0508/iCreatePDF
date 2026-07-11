@@ -3,7 +3,7 @@ import { ToolPageShell } from '@/components/tools/shared/ToolPageShell';
 import { GrayscaleTool } from '@/components/tools/GrayscaleTool';
 import { ToolSeoContent } from '@/components/tools/shared/ToolSeoContent';
 import { toolContent } from '@/lib/tool-content';
-import { buildAlternates } from '@/lib/seo';
+import { buildAlternates, toolSchema } from '@/lib/seo';
 
 export const metadata: Metadata = {
   title: 'Grayscale PDF Online: Convert PDF to Black & White | iCreatePDF',
@@ -20,6 +20,11 @@ export const metadata: Metadata = {
 export default function GrayscalePdfPage() {
   return (
     <ToolPageShell
+      jsonLd={toolSchema({
+        name: 'Grayscale PDF Converter',
+        description: 'Convert color PDF documents to black and white (grayscale) locally. Optimize your layouts for ink-saving printing client-side.',
+        url: '/grayscale-pdf',
+      })}
       badge="Print Optimizer"
       title="Grayscale PDF Converter"
       description="Convert color document pages, figures, and charts to ink-saving black and white."

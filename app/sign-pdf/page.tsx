@@ -3,7 +3,7 @@ import { ToolPageShell } from '@/components/tools/shared/ToolPageShell';
 import { SignTool } from '@/components/tools/SignTool';
 import { ToolSeoContent } from '@/components/tools/shared/ToolSeoContent';
 import { toolContent } from '@/lib/tool-content';
-import { buildAlternates } from '@/lib/seo';
+import { buildAlternates, toolSchema } from '@/lib/seo';
 
 export const metadata: Metadata = {
   title: 'Sign PDF Locally: Draw & Place Digital Signatures | iCreatePDF',
@@ -20,6 +20,11 @@ export const metadata: Metadata = {
 export default function SignPdfPage() {
   return (
     <ToolPageShell
+      jsonLd={toolSchema({
+        name: 'Sign PDF Documents',
+        description: 'Draw, type, or upload your signature and stamp it on PDF pages. 100% client-side, keeping your signature and documents safe and private.',
+        url: '/sign-pdf',
+      })}
       badge="E-Signature"
       title="Sign PDF Documents"
       description="Place, resize, and overlay signatures on document pages 100% client-side."

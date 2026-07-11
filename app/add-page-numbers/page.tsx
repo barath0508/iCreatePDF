@@ -3,7 +3,7 @@ import { ToolPageShell } from '@/components/tools/shared/ToolPageShell';
 import { PageNumbersTool } from '@/components/tools/PageNumbersTool';
 import { ToolSeoContent } from '@/components/tools/shared/ToolSeoContent';
 import { toolContent } from '@/lib/tool-content';
-import { buildAlternates } from '@/lib/seo';
+import { buildAlternates, toolSchema } from '@/lib/seo';
 
 export const metadata: Metadata = {
   title: 'Add PDF Page Numbers Online - Free & Private | iCreatePDF',
@@ -20,6 +20,11 @@ export const metadata: Metadata = {
 export default function PageNumbersPage() {
   return (
     <ToolPageShell
+      jsonLd={toolSchema({
+        name: 'Add Page Numbers',
+        description: 'Stamp page numbers onto a PDF document. Customize positioning, number label formatting, and fonts locally in-browser.',
+        url: '/add-page-numbers',
+      })}
       badge="PDF Numbering"
       title="Add Page Numbers"
       description="Number PDF pages automatically. Select positions (top, bottom, left, right) and label styling formats (e.g. Page X of Y)."

@@ -3,7 +3,7 @@ import { ToolPageShell } from '@/components/tools/shared/ToolPageShell';
 import { RedactTool } from '@/components/tools/RedactTool';
 import { ToolSeoContent } from '@/components/tools/shared/ToolSeoContent';
 import { toolContent } from '@/lib/tool-content';
-import { buildAlternates } from '@/lib/seo';
+import { buildAlternates, toolSchema } from '@/lib/seo';
 
 export const metadata: Metadata = {
   title: 'Redact PDF Online Free: Permanent Document Blackout | iCreatePDF',
@@ -20,6 +20,11 @@ export const metadata: Metadata = {
 export default function RedactPdfPage() {
   return (
     <ToolPageShell
+      jsonLd={toolSchema({
+        name: 'Redact PDF',
+        description: 'Redact and black out sensitive text or images in your PDF files securely. All redactions are burned into the document locally inside your browser.',
+        url: '/redact-pdf',
+      })}
       badge="Privacy Shield"
       title="Redact PDF"
       description="Draw black boxes over sensitive data. Redactions are burned permanently — no hidden layer remains."

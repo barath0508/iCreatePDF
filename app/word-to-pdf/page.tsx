@@ -5,7 +5,7 @@ import { FeaturesSection } from '@/components/landing/features-section';
 import { HowItWorksSection } from '@/components/landing/how-it-works-section';
 import { SecuritySection } from '@/components/landing/security-section';
 import { CtaSection } from '@/components/landing/cta-section';
-import { buildAlternates } from '@/lib/seo';
+import { buildAlternates, toolSchema } from '@/lib/seo';
 
 export const metadata: Metadata = {
   title: 'Convert Word to PDF Online - Free & Private | iCreatePDF',
@@ -22,6 +22,11 @@ export const metadata: Metadata = {
 export default function WordToPdfPage() {
   return (
     <ToolPageShell
+      jsonLd={toolSchema({
+        name: 'Word to PDF',
+        description: 'Convert DOCX Word documents into PDF files. Completely client-side inside browser sandbox, preserving text layout with 100% data privacy.',
+        url: '/word-to-pdf',
+      })}
       badge="DOCX converter"
       title="Word to PDF"
       description="Drop your Word document (.docx) to compile it into a PDF layout. Processed entirely inside your browser memory."

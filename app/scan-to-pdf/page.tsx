@@ -5,7 +5,7 @@ import { FeaturesSection } from '@/components/landing/features-section';
 import { HowItWorksSection } from '@/components/landing/how-it-works-section';
 import { SecuritySection } from '@/components/landing/security-section';
 import { CtaSection } from '@/components/landing/cta-section';
-import { buildAlternates } from '@/lib/seo';
+import { buildAlternates, toolSchema } from '@/lib/seo';
 
 export const metadata: Metadata = {
   title: 'Scan to PDF Online - Free Document Scanner | iCreatePDF',
@@ -22,6 +22,11 @@ export const metadata: Metadata = {
 export default function ScanToPdfPage() {
   return (
     <ToolPageShell
+      jsonLd={toolSchema({
+        name: 'Scan to PDF',
+        description: 'Scan document pages with your mobile or webcam camera. Crop, compile, and convert captured photos into a single PDF locally. 100% private.',
+        url: '/scan-to-pdf',
+      })}
       badge="Device Scanner"
       title="Scan to PDF"
       description="Scan multiple pages and compile them into a high-quality PDF in seconds. Processed entirely inside your browser sandbox."

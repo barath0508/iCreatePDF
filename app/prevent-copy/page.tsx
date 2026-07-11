@@ -3,7 +3,7 @@ import { ToolPageShell } from '@/components/tools/shared/ToolPageShell';
 import { PreventCopyTool } from '@/components/tools/PreventCopyTool';
 import { ToolSeoContent } from '@/components/tools/shared/ToolSeoContent';
 import { toolContent } from '@/lib/tool-content';
-import { buildAlternates } from '@/lib/seo';
+import { buildAlternates, toolSchema } from '@/lib/seo';
 
 export const metadata: Metadata = {
   title: 'Prevent PDF Copy Online Free - Make PDF Non-Copyable | iCreatePDF',
@@ -20,6 +20,11 @@ export const metadata: Metadata = {
 export default function PreventCopyPage() {
   return (
     <ToolPageShell
+      jsonLd={toolSchema({
+        name: 'Prevent PDF Copy',
+        description: 'Prevent text copying, text selection, and extraction from your PDF files. Rasterize your PDF pages client-side to make the PDF non-copyable for free.',
+        url: '/prevent-copy',
+      })}
       badge="Security"
       title="Prevent PDF Copy"
       description="Disable text selection and copying. Converts text pages to flat images to make files copy-proof."

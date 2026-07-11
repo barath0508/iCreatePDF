@@ -3,7 +3,7 @@ import { ToolPageShell } from '@/components/tools/shared/ToolPageShell';
 import { WatermarkTool } from '@/components/tools/WatermarkTool';
 import { ToolSeoContent } from '@/components/tools/shared/ToolSeoContent';
 import { toolContent } from '@/lib/tool-content';
-import { buildAlternates } from '@/lib/seo';
+import { buildAlternates, toolSchema } from '@/lib/seo';
 
 export const metadata: Metadata = {
   title: 'Watermark PDF Online - Free & Private | iCreatePDF',
@@ -20,6 +20,11 @@ export const metadata: Metadata = {
 export default function WatermarkPdfPage() {
   return (
     <ToolPageShell
+      jsonLd={toolSchema({
+        name: 'Watermark PDF File',
+        description: 'Add custom text watermarks to all pages of a PDF file. 100% client-side with positioning, size, and opacity adjustments.',
+        url: '/watermark-pdf',
+      })}
       badge="PDF Designer"
       title="Watermark PDF File"
       description="Apply configured text watermarks to document pages. Set position, size, opacity, and color values locally."

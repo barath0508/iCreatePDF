@@ -108,11 +108,6 @@ export default function RootLayout({
                 "@type": "Offer",
                 "price": "0.00",
                 "priceCurrency": "USD"
-              },
-              "aggregateRating": {
-                "@type": "AggregateRating",
-                "ratingValue": "4.9",
-                "ratingCount": "1250"
               }
             })
           }}

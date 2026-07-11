@@ -3,7 +3,7 @@ import { ToolPageShell } from '@/components/tools/shared/ToolPageShell';
 import { ResizeTool } from '@/components/tools/ResizeTool';
 import { ToolSeoContent } from '@/components/tools/shared/ToolSeoContent';
 import { toolContent } from '@/lib/tool-content';
-import { buildAlternates } from '@/lib/seo';
+import { buildAlternates, toolSchema } from '@/lib/seo';
 
 export const metadata: Metadata = {
   title: 'Resize PDF Pages to A4, Letter or Custom Size Free | iCreatePDF',
@@ -20,6 +20,11 @@ export const metadata: Metadata = {
 export default function ResizePdfPage() {
   return (
     <ToolPageShell
+      jsonLd={toolSchema({
+        name: 'PDF Page Resizer',
+        description: 'Normalize all PDF pages to A4, Letter, A3, Legal, or a custom size. Resize pages without losing content quality, entirely in your browser.',
+        url: '/resize-pdf',
+      })}
       badge="Page Formatter"
       title="PDF Page Resizer"
       description="Normalize all PDF pages to A4, Letter, A3, Legal, or A5 in portrait or landscape orientation."

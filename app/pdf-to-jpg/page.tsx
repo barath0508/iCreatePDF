@@ -3,7 +3,7 @@ import { ToolPageShell } from '@/components/tools/shared/ToolPageShell';
 import { PdfToJpgTool } from '@/components/tools/PdfToJpgTool';
 import { ToolSeoContent } from '@/components/tools/shared/ToolSeoContent';
 import { toolContent } from '@/lib/tool-content';
-import { buildAlternates } from '@/lib/seo';
+import { buildAlternates, toolSchema } from '@/lib/seo';
 
 export const metadata: Metadata = {
   title: 'Convert PDF to JPG Online - Free & Private | iCreatePDF',
@@ -20,6 +20,11 @@ export const metadata: Metadata = {
 export default function PdfToJpgPage() {
   return (
     <ToolPageShell
+      jsonLd={toolSchema({
+        name: 'Convert PDF to JPG',
+        description: 'Convert PDF pages to JPG images in seconds. 100% client-side, drag & drop files, and download image ZIP instantly.',
+        url: '/pdf-to-jpg',
+      })}
       badge="PDF Extractor"
       title="Convert PDF to JPG"
       description="Extract each page of your PDF file as a high-quality JPEG image. All processes run locally and package downloads into a ZIP."

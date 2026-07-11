@@ -59,10 +59,10 @@ export function PdfOcrTool() {
       const numPages = pdf.numPages;
 
       // 2. Initialize Tesseract Worker
-      setStatusMessage('Initializing OCR engine...');
+      setStatusMessage(`Loading ${LANGUAGES.find(l => l.code === selectedLang)?.name} dictionary...`);
       const { createWorker } = await import('tesseract.js');
-      
-      worker = await createWorker({
+
+      worker = await createWorker(selectedLang, undefined, {
         logger: (m) => {
           if (m.status === 'recognizing text') {
             const pageProgress = Math.round(m.progress * 100);
@@ -70,11 +70,6 @@ export function PdfOcrTool() {
           }
         }
       });
-
-      // Load language
-      setStatusMessage(`Loading ${LANGUAGES.find(l => l.code === selectedLang)?.name} dictionary...`);
-      await worker.loadLanguage(selectedLang);
-      await worker.initialize(selectedLang);
 
       let fullText = '';
 

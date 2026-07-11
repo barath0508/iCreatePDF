@@ -65,11 +65,6 @@ export function toolSchema({
         price: '0',
         priceCurrency: 'USD',
       },
-      aggregateRating: {
-        '@type': 'AggregateRating',
-        ratingValue: '4.9',
-        ratingCount: '150',
-      },
     },
     {
       '@context': 'https://schema.org',
