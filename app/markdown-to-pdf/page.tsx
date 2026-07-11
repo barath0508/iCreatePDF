@@ -1,6 +1,8 @@
 import type { Metadata } from 'next';
 import { ToolPageShell } from '@/components/tools/shared/ToolPageShell';
 import { MarkdownToPdfTool } from '@/components/tools/MarkdownToPdfTool';
+import { ToolSeoContent } from '@/components/tools/shared/ToolSeoContent';
+import { toolContent } from '@/lib/tool-content';
 import { buildAlternates } from '@/lib/seo';
 
 export const metadata: Metadata = {
@@ -17,7 +19,12 @@ export const metadata: Metadata = {
 
 export default function MarkdownToPdfPage() {
   return (
-    <ToolPageShell badge="Markdown Engine" title="Markdown to PDF Converter" description="Write syntax-styled Markdown documents and compile them to clean A4 PDFs locally.">
+    <ToolPageShell
+      badge="Markdown Engine"
+      title="Markdown to PDF Converter"
+      description="Write syntax-styled Markdown documents and compile them to clean A4 PDFs locally."
+      extraSections={<ToolSeoContent content={toolContent['markdown-to-pdf']} />}
+    >
       <MarkdownToPdfTool />
     </ToolPageShell>
   );

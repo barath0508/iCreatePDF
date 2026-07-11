@@ -1,6 +1,8 @@
 import type { Metadata } from 'next';
 import { ToolPageShell } from '@/components/tools/shared/ToolPageShell';
 import { GrayscaleTool } from '@/components/tools/GrayscaleTool';
+import { ToolSeoContent } from '@/components/tools/shared/ToolSeoContent';
+import { toolContent } from '@/lib/tool-content';
 import { buildAlternates } from '@/lib/seo';
 
 export const metadata: Metadata = {
@@ -21,6 +23,7 @@ export default function GrayscalePdfPage() {
       badge="Print Optimizer"
       title="Grayscale PDF Converter"
       description="Convert color document pages, figures, and charts to ink-saving black and white."
+      extraSections={<ToolSeoContent content={toolContent['grayscale-pdf']} />}
     >
       <GrayscaleTool />
     </ToolPageShell>

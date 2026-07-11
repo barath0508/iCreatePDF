@@ -1,6 +1,8 @@
 import type { Metadata } from 'next';
 import { ToolPageShell } from '@/components/tools/shared/ToolPageShell';
 import { ResizeTool } from '@/components/tools/ResizeTool';
+import { ToolSeoContent } from '@/components/tools/shared/ToolSeoContent';
+import { toolContent } from '@/lib/tool-content';
 import { buildAlternates } from '@/lib/seo';
 
 export const metadata: Metadata = {
@@ -17,7 +19,12 @@ export const metadata: Metadata = {
 
 export default function ResizePdfPage() {
   return (
-    <ToolPageShell badge="Page Formatter" title="PDF Page Resizer" description="Normalize all PDF pages to A4, Letter, A3, Legal, or A5 in portrait or landscape orientation.">
+    <ToolPageShell
+      badge="Page Formatter"
+      title="PDF Page Resizer"
+      description="Normalize all PDF pages to A4, Letter, A3, Legal, or A5 in portrait or landscape orientation."
+      extraSections={<ToolSeoContent content={toolContent['resize-pdf']} />}
+    >
       <ResizeTool />
     </ToolPageShell>
   );

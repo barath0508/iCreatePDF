@@ -135,11 +135,11 @@ export default function BlogPostTwo() {
           <p className="text-xs text-foreground/60 max-w-md mx-auto">
             Convert your images locally on your computer with iCreatePDF. Fully private, no limits, no sign-ups.
           </p>
-          <Link href="/#convert">
+          <Link href="/jpg-to-pdf">
             <Button
               className="bg-brand hover:bg-brand/90 text-foreground font-medium text-xs px-4 rounded-full group"
             >
-              Go to Converter
+              JPG to PDF Converter
               <ArrowRight className="w-3.5 h-3.5 ml-1 transition-transform group-hover:translate-x-1" />
             </Button>
           </Link>

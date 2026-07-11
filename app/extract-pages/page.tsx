@@ -1,6 +1,8 @@
 import type { Metadata } from 'next';
 import { ToolPageShell } from '@/components/tools/shared/ToolPageShell';
 import { ExtractPagesTool } from '@/components/tools/ExtractPagesTool';
+import { ToolSeoContent } from '@/components/tools/shared/ToolSeoContent';
+import { toolContent } from '@/lib/tool-content';
 import { buildAlternates } from '@/lib/seo';
 
 export const metadata: Metadata = {
@@ -17,7 +19,12 @@ export const metadata: Metadata = {
 
 export default function ExtractPagesPage() {
   return (
-    <ToolPageShell badge="Page Extractor" title="Extract PDF Pages" description="Pick specific pages or ranges — e.g. 1,3,5-8 — and save them as a new PDF.">
+    <ToolPageShell
+      badge="Page Extractor"
+      title="Extract PDF Pages"
+      description="Pick specific pages or ranges — e.g. 1,3,5-8 — and save them as a new PDF."
+      extraSections={<ToolSeoContent content={toolContent['extract-pages']} />}
+    >
       <ExtractPagesTool />
     </ToolPageShell>
   );

@@ -41,6 +41,13 @@ export default function sitemap(): MetadataRoute.Sitemap {
     '/qr-to-pdf',
     '/delete-pdf-pages',
     '/txt-to-pdf',
+    '/read-aloud-pdf',
+    '/certify-pdf',
+    '/pdf-to-excel',
+    '/pdf-accessibility-checker',
+    '/prevent-copy',
+    '/pdf-ocr',
+    '/bulk-certificates',
   ];
 
   const blogRoutes = [
@@ -56,6 +63,14 @@ export default function sitemap(): MetadataRoute.Sitemap {
     '/blog/how-to-edit-pdf-metadata',
     '/blog/bates-numbering-pdf-guide',
     '/blog/how-to-invert-pdf-colors-dark-mode',
+    '/blog/how-to-prevent-copying-text-from-pdf',
+    '/blog/how-to-convert-scanned-pdf-to-text-ocr',
+    '/blog/how-to-generate-certificates-in-bulk',
+    '/blog/how-to-password-protect-and-unlock-pdf',
+    '/blog/how-to-convert-word-docx-to-pdf-free',
+    '/blog/how-to-split-pdf-pages-free',
+    '/blog/how-to-grayscale-and-flatten-pdf',
+    '/blog/how-to-add-watermark-and-page-numbers-to-pdf',
   ];
 
   const staticRoutes = [

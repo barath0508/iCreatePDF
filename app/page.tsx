@@ -15,7 +15,8 @@ import {
   Combine, Scissors, Sliders, Type, Hash, FileImage, Image,
   Minimize2, RotateCw, Unlock, Camera, FileText, Shield, FileSignature, Edit, ShieldCheck,
   Code, Layers, Printer, Columns, EyeOff, Crop, BookOpen, Wrench, Info,
-  AlignCenter, Maximize2, Moon, QrCode, BookMarked, Trash2
+  AlignCenter, Maximize2, Moon, QrCode, BookMarked, Trash2,
+  Volume2, Stamp, FileSpreadsheet, Accessibility, Copy, FileSearch, Award
 } from 'lucide-react';
 
 const tools = [
@@ -102,6 +103,24 @@ const tools = [
     title: 'Unlock PDF',
     desc: 'Strip password encryption locks from PDF files client-side.',
     href: '/unlock-pdf',
+  },
+  {
+    icon: Copy,
+    title: 'Prevent Copy',
+    desc: 'Rasterize pages locally to disable text selection and copying.',
+    href: '/prevent-copy',
+  },
+  {
+    icon: FileSearch,
+    title: 'PDF OCR',
+    desc: 'Extract text from scanned, non-copyable PDFs using client-side OCR.',
+    href: '/pdf-ocr',
+  },
+  {
+    icon: Award,
+    title: 'Bulk Certificates',
+    desc: 'Generate customized PDF certificates from Excel spreadsheets locally.',
+    href: '/bulk-certificates',
   },
   {
     icon: Type,
@@ -234,6 +253,30 @@ const tools = [
     title: 'Delete Pages',
     desc: 'Remove individual pages or complete ranges of pages from your PDF file.',
     href: '/delete-pdf-pages',
+  },
+  {
+    icon: Volume2,
+    title: 'Read Aloud',
+    desc: 'Listen to any PDF read aloud with adjustable voice and speed, right in your browser.',
+    href: '/read-aloud-pdf',
+  },
+  {
+    icon: Stamp,
+    title: 'Certify PDF',
+    desc: 'Stamp a SHA-256 fingerprint and QR code onto a PDF as a tamper-evident certificate.',
+    href: '/certify-pdf',
+  },
+  {
+    icon: FileSpreadsheet,
+    title: 'PDF to Excel',
+    desc: 'Detect tables inside a PDF and export them as Excel-ready CSV files.',
+    href: '/pdf-to-excel',
+  },
+  {
+    icon: Accessibility,
+    title: 'Accessibility Checker',
+    desc: 'Audit a PDF for screen-reader issues: tagging, language, text layers, and form labels.',
+    href: '/pdf-accessibility-checker',
   },
 ];
 

@@ -76,6 +76,9 @@ export default function RedactPdfBlog() {
           </p>
 
           <h2 className="text-xl font-bold text-foreground pt-4 font-display">Step-by-Step: How to Redact a PDF</h2>
+          <p className="text-sm">
+            To start, navigate to the <Link href="/redact-pdf" className="text-brand hover:underline">Redact PDF</Link> tool page. Then, follow these simple steps:
+          </p>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4 my-4">
             {steps.map((s, i) => (
               <div key={i} className="p-4 rounded-xl bg-card border border-foreground/5 space-y-2">

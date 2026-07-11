@@ -1,6 +1,8 @@
 import type { Metadata } from 'next';
 import { ToolPageShell } from '@/components/tools/shared/ToolPageShell';
 import { SplitTool } from '@/components/tools/SplitTool';
+import { ToolSeoContent } from '@/components/tools/shared/ToolSeoContent';
+import { toolContent } from '@/lib/tool-content';
 import { buildAlternates } from '@/lib/seo';
 
 export const metadata: Metadata = {
@@ -17,7 +19,12 @@ export const metadata: Metadata = {
 
 export default function SplitPdfPage() {
   return (
-    <ToolPageShell badge="PDF Splitter" title="Split PDF Files" description="Extract individual pages or select custom ranges from your PDF document locally inside your browser.">
+    <ToolPageShell
+      badge="PDF Splitter"
+      title="Split PDF Files"
+      description="Extract individual pages or select custom ranges from your PDF document locally inside your browser."
+      extraSections={<ToolSeoContent content={toolContent['split-pdf']} />}
+    >
       <SplitTool />
     </ToolPageShell>
   );

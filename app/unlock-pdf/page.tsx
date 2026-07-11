@@ -1,6 +1,8 @@
 import type { Metadata } from 'next';
 import { ToolPageShell } from '@/components/tools/shared/ToolPageShell';
 import { UnlockTool } from '@/components/tools/UnlockTool';
+import { ToolSeoContent } from '@/components/tools/shared/ToolSeoContent';
+import { toolContent } from '@/lib/tool-content';
 import { buildAlternates } from '@/lib/seo';
 
 export const metadata: Metadata = {
@@ -21,6 +23,7 @@ export default function UnlockPdfPage() {
       badge="PDF Decrypter"
       title="Unlock Protected PDF"
       description="Strips password security locks from document files. Decryption occurs completely local inside browser memory."
+      extraSections={<ToolSeoContent content={toolContent['unlock-pdf']} />}
     >
       <UnlockTool />
     </ToolPageShell>

@@ -76,6 +76,54 @@ const allPosts: Post[] = [
     category: 'Tools Review',
     color: 'violet',
   },
+  {
+    slug: 'how-to-prevent-copying-text-from-pdf',
+    title: 'How to Prevent Copying Text from PDF Online Free',
+    category: 'Security & Privacy',
+    color: 'blue',
+  },
+  {
+    slug: 'how-to-convert-scanned-pdf-to-text-ocr',
+    title: 'How to Convert Scanned PDF to Text (Free Online OCR)',
+    category: 'Text Extraction',
+    color: 'emerald',
+  },
+  {
+    slug: 'how-to-generate-certificates-in-bulk',
+    title: 'How to Generate Certificates in Bulk from Excel',
+    category: 'Document Setup',
+    color: 'pink',
+  },
+  {
+    slug: 'how-to-password-protect-and-unlock-pdf',
+    title: 'How to Password Protect and Unlock PDF Files',
+    category: 'Security & Privacy',
+    color: 'blue',
+  },
+  {
+    slug: 'how-to-convert-word-docx-to-pdf-free',
+    title: 'How to Convert Word DOCX to PDF Free Online',
+    category: 'Image Conversion',
+    color: 'orange',
+  },
+  {
+    slug: 'how-to-split-pdf-pages-free',
+    title: 'How to Split and Delete PDF Pages Free',
+    category: 'PDF Editing',
+    color: 'emerald',
+  },
+  {
+    slug: 'how-to-grayscale-and-flatten-pdf',
+    title: 'How to Grayscale and Flatten PDF Documents',
+    category: 'PDF Management',
+    color: 'purple',
+  },
+  {
+    slug: 'how-to-add-watermark-and-page-numbers-to-pdf',
+    title: 'How to Add Watermark and Page Numbers to PDF',
+    category: 'Document Setup',
+    color: 'pink',
+  },
 ];
 
 const colorMap: Record<string, string> = {

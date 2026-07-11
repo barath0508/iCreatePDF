@@ -16,7 +16,7 @@ const sections = [
   {
     icon: Lock,
     title: '1. No File Uploads — Ever',
-    content: `All PDF generation, conversion, compression, merging, splitting, editing, signing, and verification operations performed by iCreatePDF occur entirely inside your web browser using client-side JavaScript. Your files, images, and documents are processed locally on your device and are never transmitted to, stored on, or processed by any remote server or cloud infrastructure operated by iCreatePDF or any third party.
+    content: `All PDF generation, conversion, compression, merging, splitting, editing, signing, verification, OCR, text extraction, page deletion, watermarking, accessibility checking, and document manipulation operations performed by iCreatePDF occur entirely inside your web browser using client-side JavaScript and local WebAssembly modules. Your files, images, and documents are processed locally on your device and are never transmitted to, stored on, or processed by any remote server or cloud infrastructure operated by iCreatePDF or any third party.
 
 This is a fundamental architectural choice, not just a policy — our servers have no capability to receive or store your files.`,
   },
@@ -27,9 +27,9 @@ This is a fundamental architectural choice, not just a policy — our servers ha
 
 • Aggregated analytics (page views, session duration, tool usage counts) — collected via privacy-respecting analytics that do not identify you personally.
 • Browser type and approximate geographic region (country level) for performance monitoring.
-• Error logs (anonymised) to help us fix technical issues.
+• Anonymized error logs to help us debug and fix technical issues.
 
-We do NOT collect: names, email addresses, IP addresses (stored beyond the current session), file names, file contents, or any information from the files you process.`,
+We do NOT collect: names, email addresses (except when you voluntarily contact us via our contact form), IP addresses (stored beyond the current session), file names, file contents, or any information from the files you process.`,
   },
   {
     icon: ShieldCheck,
@@ -97,7 +97,7 @@ Since we do not store your files or personal data on our servers, the attack sur
 
 If you have any questions, concerns, or requests regarding this Privacy Policy, please contact us at:
 
-privacy@icreatepdf.com
+crop0339@gmail.com
 
 We aim to respond to all legitimate privacy requests within 14 business days.`,
   },
@@ -122,7 +122,7 @@ export default function PrivacyPage() {
             iCreatePDF is built on a simple principle: <strong className="text-foreground/70">your files never leave your device</strong>.
             Everything runs in your browser. No uploads. No cloud. No exceptions.
           </p>
-          <p className="text-xs text-foreground/30 font-mono">Effective date: May 27, 2026 · Last updated: May 27, 2026</p>
+          <p className="text-xs text-foreground/30 font-mono">Effective date: May 27, 2026 · Last updated: July 11, 2026</p>
         </div>
 
         {/* Quick trust badges */}
@@ -164,10 +164,10 @@ export default function PrivacyPage() {
             <ShieldCheck className="w-8 h-8 text-emerald-400 mx-auto" />
             <p className="text-sm font-semibold text-foreground">Questions about your privacy?</p>
             <a
-              href="mailto:privacy@icreatepdf.com"
+              href="mailto:crop0339@gmail.com"
               className="text-xs text-emerald-400 hover:text-emerald-300 transition-colors underline underline-offset-2"
             >
-              privacy@icreatepdf.com
+              crop0339@gmail.com
             </a>
           </div>
         </div>

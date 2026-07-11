@@ -51,7 +51,7 @@ export default function ContactPage() {
             <div className="space-y-4 pt-4 border-t border-foreground/5">
               <div className="flex items-center gap-3 text-foreground/70">
                 <Mail className="w-5 h-5 text-brand" />
-                <span className="text-sm">support@icreatepdf.com</span>
+                <a href="mailto:crop0339@gmail.com" className="text-sm hover:underline hover:text-brand transition-colors">crop0339@gmail.com</a>
               </div>
               <div className="flex items-center gap-3 text-foreground/70">
                 <MessageSquare className="w-5 h-5 text-brand" />

@@ -78,7 +78,7 @@ export default function BlogPostOne() {
 
           <h2 className="text-xl font-bold text-foreground pt-4 font-display">Method 1: Using iCreatePDF (Fastest &amp; Safest)</h2>
           <p>
-            iCreatePDF allows you to convert multiple HEIC files into a single PDF directly inside your web browser. Since it operates entirely client-side, your high-resolution private photos never touch our servers.
+            iCreatePDF allows you to convert multiple HEIC files into a single PDF directly inside your web browser using the <Link href="/heic-to-pdf" className="text-brand hover:underline">HEIC to PDF</Link> tool page. Since it operates entirely client-side, your high-resolution private photos never touch our servers.
           </p>
 
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 my-6">
@@ -116,11 +116,11 @@ export default function BlogPostOne() {
           <p className="text-xs text-foreground/60 max-w-md mx-auto">
             Start converting your JPG, PNG, WEBP, and HEIC files instantly. Zero sign-up, fully secure.
           </p>
-          <Link href="/#convert">
+          <Link href="/heic-to-pdf">
             <Button
               className="bg-brand hover:bg-brand/90 text-foreground font-medium text-xs px-4 rounded-full group"
             >
-              Go to Converter
+              HEIC to PDF Converter
               <ArrowRight className="w-3.5 h-3.5 ml-1 transition-transform group-hover:translate-x-1" />
             </Button>
           </Link>

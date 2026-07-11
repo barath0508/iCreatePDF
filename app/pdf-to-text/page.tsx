@@ -1,6 +1,8 @@
 import type { Metadata } from 'next';
 import { ToolPageShell } from '@/components/tools/shared/ToolPageShell';
 import { PdfToTextTool } from '@/components/tools/PdfToTextTool';
+import { ToolSeoContent } from '@/components/tools/shared/ToolSeoContent';
+import { toolContent } from '@/lib/tool-content';
 import { buildAlternates } from '@/lib/seo';
 
 export const metadata: Metadata = {
@@ -17,7 +19,12 @@ export const metadata: Metadata = {
 
 export default function PdfToTextPage() {
   return (
-    <ToolPageShell badge="Text Extractor" title="PDF to Text Extractor" description="Extract structural text contents page-by-page locally in your browser.">
+    <ToolPageShell
+      badge="Text Extractor"
+      title="PDF to Text Extractor"
+      description="Extract structural text contents page-by-page locally in your browser."
+      extraSections={<ToolSeoContent content={toolContent['pdf-to-text']} />}
+    >
       <PdfToTextTool />
     </ToolPageShell>
   );

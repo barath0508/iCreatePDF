@@ -8,18 +8,41 @@ export function ContactForm() {
   const [formData, setFormData] = useState({ name: '', email: '', message: '' });
   const [isSending, setIsSending] = useState(false);
   const [isSuccess, setIsSuccess] = useState(false);
+  const [errorMessage, setErrorMessage] = useState<string | null>(null);
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     if (!formData.name || !formData.email || !formData.message) return;
     
     setIsSending(true);
-    // Simulate message transmission locally
-    setTimeout(() => {
+    setErrorMessage(null);
+
+    try {
+      const response = await fetch('https://formspree.io/f/xnjkeebq', {
+        method: 'POST',
+        headers: {
+          'Accept': 'application/json',
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(formData),
+      });
+
+      if (response.ok) {
+        setIsSuccess(true);
+        setFormData({ name: '', email: '', message: '' });
+      } else {
+        const data = await response.json();
+        if (data.errors && data.errors.length > 0) {
+          setErrorMessage(data.errors.map((err: any) => err.message).join(', '));
+        } else {
+          setErrorMessage('Failed to send message. Please try again later.');
+        }
+      }
+    } catch (error) {
+      setErrorMessage('A network error occurred. Please check your connection and try again.');
+    } finally {
       setIsSending(false);
-      setIsSuccess(true);
-      setFormData({ name: '', email: '', message: '' });
-    }, 1200);
+    }
   };
 
   return (
@@ -79,6 +102,12 @@ export function ContactForm() {
               className="w-full px-4 py-3 bg-card/70 border border-foreground/10 text-foreground rounded-xl text-sm focus:border-brand/30 focus:outline-none transition-colors resize-none"
             />
           </div>
+
+          {errorMessage && (
+            <p className="text-xs text-red-400 bg-red-500/10 border border-red-500/20 p-3 rounded-xl">
+              {errorMessage}
+            </p>
+          )}
 
           <Button
             type="submit"

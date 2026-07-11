@@ -1,6 +1,8 @@
 import type { Metadata } from 'next';
 import { ToolPageShell } from '@/components/tools/shared/ToolPageShell';
 import { CropTool } from '@/components/tools/CropTool';
+import { ToolSeoContent } from '@/components/tools/shared/ToolSeoContent';
+import { toolContent } from '@/lib/tool-content';
 import { buildAlternates } from '@/lib/seo';
 
 export const metadata: Metadata = {
@@ -17,7 +19,12 @@ export const metadata: Metadata = {
 
 export default function CropPdfPage() {
   return (
-    <ToolPageShell badge="Page Editor" title="Crop PDF Pages" description="Remove scanner borders and excess whitespace by trimming page margins.">
+    <ToolPageShell
+      badge="Page Editor"
+      title="Crop PDF Pages"
+      description="Remove scanner borders and excess whitespace by trimming page margins."
+      extraSections={<ToolSeoContent content={toolContent['crop-pdf']} />}
+    >
       <CropTool />
     </ToolPageShell>
   );

@@ -1,6 +1,8 @@
 import type { Metadata } from 'next';
 import { ToolPageShell } from '@/components/tools/shared/ToolPageShell';
 import { SignTool } from '@/components/tools/SignTool';
+import { ToolSeoContent } from '@/components/tools/shared/ToolSeoContent';
+import { toolContent } from '@/lib/tool-content';
 import { buildAlternates } from '@/lib/seo';
 
 export const metadata: Metadata = {
@@ -21,6 +23,7 @@ export default function SignPdfPage() {
       badge="E-Signature"
       title="Sign PDF Documents"
       description="Place, resize, and overlay signatures on document pages 100% client-side."
+      extraSections={<ToolSeoContent content={toolContent['sign-pdf']} />}
     >
       <SignTool />
     </ToolPageShell>

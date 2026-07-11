@@ -1,6 +1,8 @@
 import type { Metadata } from 'next';
 import { ToolPageShell } from '@/components/tools/shared/ToolPageShell';
 import { EditPdfTool } from '@/components/tools/EditPdfTool';
+import { ToolSeoContent } from '@/components/tools/shared/ToolSeoContent';
+import { toolContent } from '@/lib/tool-content';
 import { buildAlternates } from '@/lib/seo';
 
 export const metadata: Metadata = {
@@ -21,6 +23,7 @@ export default function EditPdfPage() {
       badge="PDF Annotations"
       title="Edit PDF Annotations"
       description="Insert custom text overlay boxes and position them on PDF layouts client-side."
+      extraSections={<ToolSeoContent content={toolContent['edit-pdf']} />}
     >
       <EditPdfTool />
     </ToolPageShell>

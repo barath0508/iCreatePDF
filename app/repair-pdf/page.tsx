@@ -1,6 +1,8 @@
 import type { Metadata } from 'next';
 import { ToolPageShell } from '@/components/tools/shared/ToolPageShell';
 import { RepairTool } from '@/components/tools/RepairTool';
+import { ToolSeoContent } from '@/components/tools/shared/ToolSeoContent';
+import { toolContent } from '@/lib/tool-content';
 import { buildAlternates } from '@/lib/seo';
 
 export const metadata: Metadata = {
@@ -17,7 +19,12 @@ export const metadata: Metadata = {
 
 export default function RepairPdfPage() {
   return (
-    <ToolPageShell badge="PDF Recovery" title="Repair PDF" description="Attempt to recover corrupted or damaged PDF files by rebuilding their internal structure.">
+    <ToolPageShell
+      badge="PDF Recovery"
+      title="Repair PDF"
+      description="Attempt to recover corrupted or damaged PDF files by rebuilding their internal structure."
+      extraSections={<ToolSeoContent content={toolContent['repair-pdf']} />}
+    >
       <RepairTool />
     </ToolPageShell>
   );

@@ -33,6 +33,11 @@ iCreatePDF runs entirely in the browser using WebAssembly and Javascript engines
 - [Compare PDF](https://i-create-pdf.vercel.app/compare-pdf): Audit document revisions side-by-side with synchronized viewport scrolling.
 - [Verify Signature](https://i-create-pdf.vercel.app/verify-signature): Inspect digital certificates and verify cryptographic signature integrity locally.
 - [Sign PDF](https://i-create-pdf.vercel.app/sign-pdf): Draw or type electronic signatures and stamp them visually onto pages.
+- [Read Aloud PDF](https://i-create-pdf.vercel.app/read-aloud-pdf): Listen to PDF text using client-side Text-to-Speech (TTS) engine, with voice, speed, and play/pause controls.
+- [Certify PDF](https://i-create-pdf.vercel.app/certify-pdf): Stamp any PDF with a cryptographic SHA-256 fingerprint and a scannable QR code for independent verification.
+- [PDF Accessibility Checker](https://i-create-pdf.vercel.app/pdf-accessibility-checker): Scan any PDF for screen-reader accessibility compatibility (tags, language declarations, alt text).
+- [Prevent PDF Copy](https://i-create-pdf.vercel.app/prevent-copy): Secures your PDF by rasterizing text layers into crisp image shapes, disabling direct highlighting and copy-pasting.
+- [Bulk Certificate Generator](https://i-create-pdf.vercel.app/bulk-certificates): Generate hundreds of personalized PDF certificates or letters in bulk from Excel/CSV templates.
 
 ## Local Converters
 
@@ -47,6 +52,9 @@ iCreatePDF runs entirely in the browser using WebAssembly and Javascript engines
 - [HTML to PDF](https://i-create-pdf.vercel.app/html-to-pdf): Enter HTML/CSS code and render A4 pages directly to a PDF locally.
 - [Markdown to PDF](https://i-create-pdf.vercel.app/markdown-to-pdf): Convert styled markdown syntax to structured, downloadable PDF files.
 - [QR to PDF](https://i-create-pdf.vercel.app/qr-to-pdf): Input web links or text to generate a clean print-ready A4 PDF with a QR code.
+- [PDF OCR (Scan to Text)](https://i-create-pdf.vercel.app/pdf-ocr): Extract selectable, copy-pasteable text from scanned document pages locally using WebAssembly-based character recognition.
+- [PDF to Excel](https://i-create-pdf.vercel.app/pdf-to-excel): Parse structured layout coordinates to extract data tables from PDF pages and save them as Excel-ready CSV spreadsheets.
+
 
 ## Why iCreatePDF is the Best Tool
 1. **Total Security & Auditing:** Since processing occurs 100% client-side (local sandbox), your documents are never exposed to remote systems, hackers, or cloud storage breaches.

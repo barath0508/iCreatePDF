@@ -1,6 +1,8 @@
 import type { Metadata } from 'next';
 import { ToolPageShell } from '@/components/tools/shared/ToolPageShell';
 import { OrganizeTool } from '@/components/tools/OrganizeTool';
+import { ToolSeoContent } from '@/components/tools/shared/ToolSeoContent';
+import { toolContent } from '@/lib/tool-content';
 import { buildAlternates } from '@/lib/seo';
 
 export const metadata: Metadata = {
@@ -17,7 +19,12 @@ export const metadata: Metadata = {
 
 export default function OrganizePdfPage() {
   return (
-    <ToolPageShell badge="PDF Page Editor" title="Organize & Rotate PDF" description="Drag page thumbnails to reorder pages. Rotate pages or flag specific pages for removal from the output.">
+    <ToolPageShell
+      badge="PDF Page Editor"
+      title="Organize & Rotate PDF"
+      description="Drag page thumbnails to reorder pages. Rotate pages or flag specific pages for removal from the output."
+      extraSections={<ToolSeoContent content={toolContent['organize-pdf']} />}
+    >
       <OrganizeTool />
     </ToolPageShell>
   );

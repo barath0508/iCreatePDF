@@ -1,6 +1,8 @@
 import type { Metadata } from 'next';
 import { ToolPageShell } from '@/components/tools/shared/ToolPageShell';
 import { MergeTool } from '@/components/tools/MergeTool';
+import { ToolSeoContent } from '@/components/tools/shared/ToolSeoContent';
+import { toolContent } from '@/lib/tool-content';
 import { buildAlternates } from '@/lib/seo';
 
 export const metadata: Metadata = {
@@ -17,7 +19,12 @@ export const metadata: Metadata = {
 
 export default function MergePdfPage() {
   return (
-    <ToolPageShell badge="PDF Merger" title="Merge PDF Files" description="Combine multiple PDF files into a single, organized document. All processing is executed client-side.">
+    <ToolPageShell
+      badge="PDF Merger"
+      title="Merge PDF Files"
+      description="Combine multiple PDF files into a single, organized document. All processing is executed client-side."
+      extraSections={<ToolSeoContent content={toolContent['merge-pdf']} />}
+    >
       <MergeTool />
     </ToolPageShell>
   );

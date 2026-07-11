@@ -1,6 +1,8 @@
 import type { Metadata } from 'next';
 import { ToolPageShell } from '@/components/tools/shared/ToolPageShell';
 import { QrToPdfTool } from '@/components/tools/QrToPdfTool';
+import { ToolSeoContent } from '@/components/tools/shared/ToolSeoContent';
+import { toolContent } from '@/lib/tool-content';
 import { buildAlternates } from '@/lib/seo';
 
 export const metadata: Metadata = {
@@ -17,7 +19,12 @@ export const metadata: Metadata = {
 
 export default function QrToPdfPage() {
   return (
-    <ToolPageShell badge="QR Generator" title="QR Code to PDF" description="Generate a clean A4 PDF with your QR code for any URL, text, or contact info. Instant live preview.">
+    <ToolPageShell
+      badge="QR Generator"
+      title="QR Code to PDF"
+      description="Generate a clean A4 PDF with your QR code for any URL, text, or contact info. Instant live preview."
+      extraSections={<ToolSeoContent content={toolContent['qr-to-pdf']} />}
+    >
       <QrToPdfTool />
     </ToolPageShell>
   );

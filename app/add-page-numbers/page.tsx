@@ -1,6 +1,8 @@
 import type { Metadata } from 'next';
 import { ToolPageShell } from '@/components/tools/shared/ToolPageShell';
 import { PageNumbersTool } from '@/components/tools/PageNumbersTool';
+import { ToolSeoContent } from '@/components/tools/shared/ToolSeoContent';
+import { toolContent } from '@/lib/tool-content';
 import { buildAlternates } from '@/lib/seo';
 
 export const metadata: Metadata = {
@@ -21,6 +23,7 @@ export default function PageNumbersPage() {
       badge="PDF Numbering"
       title="Add Page Numbers"
       description="Number PDF pages automatically. Select positions (top, bottom, left, right) and label styling formats (e.g. Page X of Y)."
+      extraSections={<ToolSeoContent content={toolContent['add-page-numbers']} />}
     >
       <PageNumbersTool />
     </ToolPageShell>

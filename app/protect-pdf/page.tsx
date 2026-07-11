@@ -1,6 +1,8 @@
 import type { Metadata } from 'next';
 import { ToolPageShell } from '@/components/tools/shared/ToolPageShell';
 import { ProtectTool } from '@/components/tools/ProtectTool';
+import { ToolSeoContent } from '@/components/tools/shared/ToolSeoContent';
+import { toolContent } from '@/lib/tool-content';
 import { buildAlternates } from '@/lib/seo';
 
 export const metadata: Metadata = {
@@ -21,6 +23,7 @@ export default function ProtectPdfPage() {
       badge="PDF Shield"
       title="Protect PDF Files"
       description="Encrypt your PDF files with secure passwords locally in browser memory."
+      extraSections={<ToolSeoContent content={toolContent['protect-pdf']} />}
     >
       <ProtectTool />
     </ToolPageShell>

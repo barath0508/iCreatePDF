@@ -1,6 +1,8 @@
 import type { Metadata } from 'next';
 import { ToolPageShell } from '@/components/tools/shared/ToolPageShell';
 import { BatesTool } from '@/components/tools/BatesTool';
+import { ToolSeoContent } from '@/components/tools/shared/ToolSeoContent';
+import { toolContent } from '@/lib/tool-content';
 import { buildAlternates } from '@/lib/seo';
 
 export const metadata: Metadata = {
@@ -21,6 +23,7 @@ export default function BatesPage() {
       badge="Legal Stamping"
       title="Bates Numbering"
       description="Sequential document stamping for legal discovery, medical records, and compliance workflows."
+      extraSections={<ToolSeoContent content={toolContent['bates-numbering']} />}
     >
       <BatesTool />
     </ToolPageShell>

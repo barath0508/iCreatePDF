@@ -1,6 +1,8 @@
 import type { Metadata } from 'next';
 import { ToolPageShell } from '@/components/tools/shared/ToolPageShell';
 import { FlattenTool } from '@/components/tools/FlattenTool';
+import { ToolSeoContent } from '@/components/tools/shared/ToolSeoContent';
+import { toolContent } from '@/lib/tool-content';
 import { buildAlternates } from '@/lib/seo';
 
 export const metadata: Metadata = {
@@ -21,6 +23,7 @@ export default function FlattenPdfPage() {
       badge="Layer Flatener"
       title="Flatten PDF Documents"
       description="Merge interactive drop-downs, signatures, and form fields into read-only static layers."
+      extraSections={<ToolSeoContent content={toolContent['flatten-pdf']} />}
     >
       <FlattenTool />
     </ToolPageShell>

@@ -107,6 +107,41 @@ Unlike traditional online PDF converters (e.g. Smallpdf, Adobe Acrobat Online) t
 - **Engine:** `pdf-lib`
 - **Details:** Parses standard `.txt` text documents, wraps lines based on page size and margins, handles multi-page division, and compiles the text lines into A4 or Letter PDF sheets client-side.
 
+### Read Aloud PDF
+- **URL:** `https://i-create-pdf.vercel.app/read-aloud-pdf`
+- **Engine:** Web Speech API (TTS) + `pdfjs-dist` (text parsing)
+- **Details:** Extracts text from PDF pages locally, feeds text chunks into the browser's native speech synthesis engine, and highlights spoken words in real time.
+
+### Certify PDF
+- **URL:** `https://i-create-pdf.vercel.app/certify-pdf`
+- **Engine:** Crypto Web API (SHA-256) + `pdf-lib`
+- **Details:** Computes a secure SHA-256 cryptographic hash of the PDF file locally, stamps a validation QR code onto the document, and allows users to re-upload files to verify their tamper-proof integrity.
+
+### PDF Accessibility Checker
+- **URL:** `https://i-create-pdf.vercel.app/pdf-accessibility-checker`
+- **Engine:** `pdfjs-dist`
+- **Details:** Audits PDF structure client-side, scanning for critical accessibility markers including document tagging layers, language definitions, alt text tags, and logical heading hierarchies.
+
+### Prevent PDF Copy
+- **URL:** `https://i-create-pdf.vercel.app/prevent-copy`
+- **Engine:** `pdfjs-dist` (rendering) + canvas + `pdf-lib` (saving)
+- **Details:** Flat-rasterizes all PDF pages into crisp high-resolution images in canvas memory and reconstructs a new PDF without a selectable text layer, preventing copying.
+
+### Bulk Certificate Generator
+- **URL:** `https://i-create-pdf.vercel.app/bulk-certificates`
+- **Engine:** `xlsx` (sheet parsing) + `pdf-lib` (drawing/saving)
+- **Details:** Parses recipient list data from Excel/CSV client-side, overlays custom text placeholders onto a PDF template at visually positioned coordinates, and exports individual zipped PDFs or a combined PDF.
+
+### PDF OCR
+- **URL:** `https://i-create-pdf.vercel.app/pdf-ocr`
+- **Engine:** `tesseract.js` (WebAssembly OCR) + `pdfjs-dist`
+- **Details:** Renders scanned or copy-protected PDF pages to canvas and runs a local neural-network character recognition parser to extract editable, copyable text.
+
+### PDF to Excel
+- **URL:** `https://i-create-pdf.vercel.app/pdf-to-excel`
+- **Engine:** `pdfjs-dist`
+- **Details:** Extracts text glyph coordinates and runs spacing heuristics locally in the browser to identify rows and columns, exporting tabular layout data directly to Excel-ready CSV format.
+
 ---
 
 ## Technical Integration Guide for LLMs

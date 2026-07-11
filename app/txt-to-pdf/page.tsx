@@ -1,6 +1,8 @@
 import type { Metadata } from 'next';
 import { ToolPageShell } from '@/components/tools/shared/ToolPageShell';
 import { TxtToPdfTool } from '@/components/tools/TxtToPdfTool';
+import { ToolSeoContent } from '@/components/tools/shared/ToolSeoContent';
+import { toolContent } from '@/lib/tool-content';
 import { buildAlternates } from '@/lib/seo';
 
 export const metadata: Metadata = {
@@ -17,7 +19,12 @@ export const metadata: Metadata = {
 
 export default function TxtToPdfPage() {
   return (
-    <ToolPageShell badge="Local Converter" title="Convert Text to PDF" description="Convert raw text or plain text (.txt) files into structured, formatted PDF documents. Set margins, orientations, font families, and custom headers in your browser.">
+    <ToolPageShell
+      badge="Local Converter"
+      title="Convert Text to PDF"
+      description="Convert raw text or plain text (.txt) files into structured, formatted PDF documents. Set margins, orientations, font families, and custom headers in your browser."
+      extraSections={<ToolSeoContent content={toolContent['txt-to-pdf']} />}
+    >
       <TxtToPdfTool />
     </ToolPageShell>
   );
