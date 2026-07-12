@@ -53,6 +53,13 @@ const searchTools = [
   { title: 'QR to PDF', href: '/qr-to-pdf', desc: 'Generate a clean A4 PDF with an embedded QR code.' },
   { title: 'Barcode to PDF', href: '/barcode-to-pdf', desc: 'Generate Code 128, EAN-13, UPC-A, Code 39, Data Matrix, or PDF417 barcodes.' },
   { title: 'Delete PDF Pages', href: '/delete-pdf-pages', desc: 'Remove individual pages or complete ranges of pages from your PDF file.' },
+  { title: 'Bulk Certificates', href: '/bulk-certificates', desc: 'Generate personalized certificates, templates, and tickets in bulk from spreadsheets.' },
+  { title: 'Certify PDF', href: '/certify-pdf', desc: 'Stamp PDFs with a cryptographic SHA-256 fingerprint and verification QR.' },
+  { title: 'Accessibility Checker', href: '/pdf-accessibility-checker', desc: 'Check PDF compliance for screen-readers and accessibility standards.' },
+  { title: 'PDF OCR', href: '/pdf-ocr', desc: 'Extract copy-pasteable text from scanned document scans in-browser.' },
+  { title: 'PDF to Excel', href: '/pdf-to-excel', desc: 'Detect tabular boundaries and export PDF data tables as CSV files.' },
+  { title: 'Prevent Copy', href: '/prevent-copy', desc: 'Rasterize page layers to disable text selection and highlight copying.' },
+  { title: 'Read Aloud PDF', href: '/read-aloud-pdf', desc: 'Listen to document text using browser speech synthesis.' },
 ];
 
 export function Navigation() {
