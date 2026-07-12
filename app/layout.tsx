@@ -52,6 +52,9 @@ export const metadata: Metadata = {
     description: 'Convert images to PDF 100% locally. Zero server uploads, absolute file privacy.',
     images: ['/logo.png'],
   },
+  verification: {
+    google: '5IL2ygi_5ddVkO4JU80nuaffteIKPWKkjHmHLkfN9Hk',
+  },
 };
 
 export default function RootLayout({
