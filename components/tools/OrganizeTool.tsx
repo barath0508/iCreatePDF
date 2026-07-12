@@ -26,6 +26,13 @@ export function OrganizeTool() {
   const dragItemIndex = useRef<number | null>(null);
   const dragOverItemIndex = useRef<number | null>(null);
 
+  React.useEffect(() => {
+    const { getPreloadedFiles, hasPreloadedFiles } = require('@/lib/preloader');
+    if (hasPreloadedFiles()) {
+      handleFiles(getPreloadedFiles());
+    }
+  }, []);
+
   const handleFiles = async (uploadedFiles: FileList | File[]) => {
     setError(null);
     setDownloadUrl(null);

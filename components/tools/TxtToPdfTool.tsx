@@ -42,6 +42,13 @@ Date: May 2026`);
 
   const fileInputRef = useRef<HTMLInputElement>(null);
 
+  React.useEffect(() => {
+    const { getPreloadedFiles, hasPreloadedFiles } = require('@/lib/preloader');
+    if (hasPreloadedFiles()) {
+      handleFiles(getPreloadedFiles());
+    }
+  }, []);
+
   const handleFiles = (uploadedFiles: FileList | File[]) => {
     setError(null);
     setDownloadUrl(null);

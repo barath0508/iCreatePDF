@@ -16,6 +16,13 @@ export function CompressTool() {
 
   const fileInputRef = useRef<HTMLInputElement>(null);
 
+  React.useEffect(() => {
+    const { getPreloadedFiles, hasPreloadedFiles } = require('@/lib/preloader');
+    if (hasPreloadedFiles()) {
+      handleFiles(getPreloadedFiles());
+    }
+  }, []);
+
   const handleFiles = async (uploadedFiles: FileList | File[]) => {
     setError(null);
     setDownloadUrl(null);
@@ -85,6 +92,16 @@ export function CompressTool() {
       const url = URL.createObjectURL(blob);
       setDownloadUrl(url);
       setProgress(100);
+
+      // Cache reference in IndexedDB
+      const { addRecentFile } = require('@/lib/db');
+      addRecentFile({
+        name: `compressed-${file?.name || 'document.pdf'}`,
+        size: blob.size,
+        toolName: 'Compress PDF',
+        href: '/compress-pdf',
+        downloadUrl: url,
+      });
     } catch (err: any) {
       console.error(err);
       setError(err?.message || 'Failed to compress PDF.');

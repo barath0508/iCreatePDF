@@ -23,6 +23,13 @@ export function MergeTool() {
   const dragItemIndex = useRef<number | null>(null);
   const dragOverItemIndex = useRef<number | null>(null);
 
+  React.useEffect(() => {
+    const { getPreloadedFiles, hasPreloadedFiles } = require('@/lib/preloader');
+    if (hasPreloadedFiles()) {
+      handleFiles(getPreloadedFiles());
+    }
+  }, []);
+
   const handleFiles = async (uploadedFiles: FileList | File[]) => {
     setError(null);
     setDownloadUrl(null);
@@ -131,6 +138,16 @@ export function MergeTool() {
       const url = URL.createObjectURL(blob);
       setDownloadUrl(url);
       setProgress(100);
+
+      // Cache reference in IndexedDB
+      const { addRecentFile } = require('@/lib/db');
+      addRecentFile({
+        name: `merged-icreatepdf-${Date.now()}.pdf`,
+        size: blob.size,
+        toolName: 'Merge PDF',
+        href: '/merge-pdf',
+        downloadUrl: url,
+      });
     } catch (err: any) {
       console.error(err);
       setError(err?.message || 'Failed to merge PDF files.');

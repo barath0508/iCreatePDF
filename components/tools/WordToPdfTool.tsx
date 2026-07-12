@@ -15,6 +15,13 @@ export function WordToPdfTool() {
 
   const fileInputRef = useRef<HTMLInputElement>(null);
 
+  React.useEffect(() => {
+    const { getPreloadedFiles, hasPreloadedFiles } = require('@/lib/preloader');
+    if (hasPreloadedFiles()) {
+      handleFiles(getPreloadedFiles());
+    }
+  }, []);
+
   const handleFiles = async (uploadedFiles: FileList | File[]) => {
     setError(null);
     setDownloadUrl(null);

@@ -44,6 +44,14 @@ export function ConverterSection({ initialFormatFilter }: ConverterSectionProps)
     };
   }, [images]);
 
+  useEffect(() => {
+    const { getPreloadedFiles, hasPreloadedFiles } = require('@/lib/preloader');
+    if (hasPreloadedFiles()) {
+      handleFiles(getPreloadedFiles());
+    }
+  }, []);
+
+
   const handleFiles = (files: FileList | File[]) => {
     setError(null);
     setDownloadUrl(null);
@@ -172,6 +180,16 @@ export function ConverterSection({ initialFormatFilter }: ConverterSectionProps)
       const url = URL.createObjectURL(blob);
       setDownloadUrl(url);
       setProgress(100);
+
+      // Cache reference in IndexedDB
+      const { addRecentFile } = require('@/lib/db');
+      addRecentFile({
+        name: `converted-icreatepdf-${Date.now()}.pdf`,
+        size: blob.size,
+        toolName: initialFormatFilter ? `${initialFormatFilter.toUpperCase()} to PDF` : 'Image to PDF',
+        href: initialFormatFilter ? `/${initialFormatFilter}-to-pdf` : '/jpg-to-pdf',
+        downloadUrl: url,
+      });
     } catch (err: any) {
       console.error(err);
       setError(err?.message || 'Failed to generate PDF. Please try again.');

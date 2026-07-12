@@ -12,6 +12,16 @@ export function SignTool() {
   const [downloadUrl, setDownloadUrl] = useState<string | null>(null);
   const [isDraggingOver, setIsDraggingOver] = useState(false);
   const [currentPage, setCurrentPage] = useState(1);
+
+  useEffect(() => {
+    const { getPreloadedFiles, hasPreloadedFiles } = require('@/lib/preloader');
+    if (hasPreloadedFiles()) {
+      const files = getPreloadedFiles();
+      if (files.length > 0) {
+        setFile(files[0]);
+      }
+    }
+  }, []);
   const [pagesCount, setPagesCount] = useState(0);
   const [isPreviewLoading, setIsPreviewLoading] = useState(false);
 

@@ -88,7 +88,9 @@ export default function RootLayout({
         />
 
 
-        <script
+        <Script
+          id="register-sw"
+          strategy="afterInteractive"
           dangerouslySetInnerHTML={{
             __html: `
               if ('serviceWorker' in navigator) {

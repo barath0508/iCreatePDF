@@ -24,6 +24,13 @@ export function PdfOcrTool() {
 
   const fileInputRef = useRef<HTMLInputElement>(null);
 
+  React.useEffect(() => {
+    const { getPreloadedFiles, hasPreloadedFiles } = require('@/lib/preloader');
+    if (hasPreloadedFiles()) {
+      handleFiles(getPreloadedFiles());
+    }
+  }, []);
+
   const handleFiles = (uploadedFiles: FileList | File[]) => {
     setError(null);
     setExtractedText(null);
