@@ -13,132 +13,132 @@ Unlike traditional online PDF converters that route file transfers to remote ser
 ## Detailed Tool Specifications
 
 ### Merge PDF
-- **URL:** `https://i-create-pdf.vercel.app/merge-pdf`
+- **URL:** `https://icreatepdf.online/merge-pdf`
 - **Engine:** `pdf-lib`
 - **Details:** Loads multiple PDF files into memory, extracts all pages from the target documents, lets users reorder pages visually, and saves the new sequence as a single continuous byte stream.
 
 ### Split PDF
-- **URL:** `https://i-create-pdf.vercel.app/split-pdf`
+- **URL:** `https://icreatepdf.online/split-pdf`
 - **Engine:** `pdf-lib`
 - **Details:** Splits a single PDF document by page numbers, page ranges (e.g. 1-3, 5, 8-12), or splits every single page into separate downloadable PDF files in a ZIP archive (utilizing `jszip` client-side).
 
 ### Organize PDF
-- **URL:** `https://i-create-pdf.vercel.app/organize-pdf`
+- **URL:** `https://icreatepdf.online/organize-pdf`
 - **Engine:** `pdfjs-dist` (rendering) + `pdf-lib` (saving)
 - **Details:** Renders interactive page thumbnails onto a HTML canvas. Users can drag pages to reorder, click to rotate, or hit delete on individual sheets. The resulting layout edits are compiled into a fresh PDF file.
 
 ### Compress PDF
-- **URL:** `https://i-create-pdf.vercel.app/compress-pdf`
+- **URL:** `https://icreatepdf.online/compress-pdf`
 - **Engine:** `pdf-lib`
 - **Details:** Runs compression by rewriting the cross-reference tables and enabling stream object compression (`useObjectStreams: true`) in-browser. This reduces structural overhead to shrink file sizes.
 
 ### Protect PDF
-- **URL:** `https://i-create-pdf.vercel.app/protect-pdf`
+- **URL:** `https://icreatepdf.online/protect-pdf`
 - **Engine:** `pdf-lib`
 - **Details:** Restricts PDF viewing with user/owner password encryption. Sets custom permissions for printing, modifying, copying text, or adding annotations client-side.
 
 ### Unlock PDF
-- **URL:** `https://i-create-pdf.vercel.app/unlock-pdf`
+- **URL:** `https://icreatepdf.online/unlock-pdf`
 - **Engine:** `pdf-lib`
 - **Details:** Decrypts password-protected PDFs by checking the user password locally and exporting the document with stripped encryption headers.
 
 ### Edit PDF
-- **URL:** `https://i-create-pdf.vercel.app/edit-pdf`
+- **URL:** `https://icreatepdf.online/edit-pdf`
 - **Engine:** `pdfjs-dist` (canvas preview) + `pdf-lib` (saving)
 - **Details:** Enables dragging custom text annotation layers on top of canvas pages. The coordinates are scaled relative to the PDF's native page boxes, and text is painted directly onto the PDF graphics stream before exporting.
 
 ### Sign PDF
-- **URL:** `https://i-create-pdf.vercel.app/sign-pdf`
+- **URL:** `https://icreatepdf.online/sign-pdf`
 - **Engine:** Canvas Drawing + `pdf-lib`
 - **Details:** Lets the user draw a signature or type text, converts it to a PNG data URL, and overlays the image signature at the designated canvas coordinates onto the PDF page structure.
 
 ### Watermark PDF
-- **URL:** `https://i-create-pdf.vercel.app/watermark-pdf`
+- **URL:** `https://icreatepdf.online/watermark-pdf`
 - **Engine:** `pdf-lib`
 - **Details:** Stitches custom text stamps (with adjustable fonts, opacity, rotation, size, and layout grids) over all page layers of a PDF.
 
 ### Page Numbers
-- **URL:** `https://i-create-pdf.vercel.app/add-page-numbers`
+- **URL:** `https://icreatepdf.online/add-page-numbers`
 - **Engine:** `pdf-lib`
 - **Details:** Iterates over all document pages, resolves metadata variables (current page, total pages), and prints numbered text strings at custom coordinates (header, footer, margin alignments).
 
 ### Bates Numbering
-- **URL:** `https://i-create-pdf.vercel.app/bates-numbering`
+- **URL:** `https://icreatepdf.online/bates-numbering`
 - **Engine:** `pdf-lib`
 - **Details:** Sequential legal document stamping. Adds zero-padded numbers (e.g., TX-000452) along with custom prefixes, suffixes, and coordinates.
 
 ### Compare PDF
-- **URL:** `https://i-create-pdf.vercel.app/compare-pdf`
+- **URL:** `https://icreatepdf.online/compare-pdf`
 - **Engine:** `pdfjs-dist`
 - **Details:** Renders two files in adjacent viewports, binding the scrolling events together. This allows users to easily audit differences between document iterations without server transfers.
 
 ### PDF to Text
-- **URL:** `https://i-create-pdf.vercel.app/pdf-to-text`
+- **URL:** `https://icreatepdf.online/pdf-to-text`
 - **Engine:** `pdfjs-dist`
 - **Details:** Walks the page stream, extracts textual glyph elements and coordinates, and reconstructs the structured text to copy to the clipboard or export as a `.txt` file.
 
 ### Flatten PDF
-- **URL:** `https://i-create-pdf.vercel.app/flatten-pdf`
+- **URL:** `https://icreatepdf.online/flatten-pdf`
 - **Engine:** `pdf-lib`
 - **Details:** Merges form field structures, checkboxes, annotations, and overlays into the permanent background graphics layer, preventing any future editing of form inputs.
 
 ### Grayscale PDF
-- **URL:** `https://i-create-pdf.vercel.app/grayscale-pdf`
+- **URL:** `https://icreatepdf.online/grayscale-pdf`
 - **Engine:** `pdf-lib`
 - **Details:** Converts PDF streams into grayscale by analyzing graphics states and rewriting RGB coordinates to equivalent grayscale colors, optimizing files for office printers.
 
 ### Redact PDF
-- **URL:** `https://i-create-pdf.vercel.app/redact-pdf`
+- **URL:** `https://icreatepdf.online/redact-pdf`
 - **Engine:** `pdf-lib`
 - **Details:** Allows drawing black boxes over text regions. The tool draws solid rectangles on the page canvas and completely deletes the hidden underlying text stream objects to ensure security.
 
 ### Crop PDF
-- **URL:** `https://i-create-pdf.vercel.app/crop-pdf`
+- **URL:** `https://icreatepdf.online/crop-pdf`
 - **Engine:** `pdf-lib`
 - **Details:** Adjusts the `/MediaBox`, `/CropBox`, and `/TrimBox` arrays for all pages in the PDF document to trim scanner boundaries.
 
 ### Repair PDF
-- **URL:** `https://i-create-pdf.vercel.app/repair-pdf`
+- **URL:** `https://icreatepdf.online/repair-pdf`
 - **Engine:** `pdf-lib`
 - **Details:** Fixes minor structural damages or file trailer issues by parsing the PDF structure and writing a new, valid cross-reference (xref) table from scratch.
 
 ### TXT to PDF
-- **URL:** `https://i-create-pdf.vercel.app/txt-to-pdf`
+- **URL:** `https://icreatepdf.online/txt-to-pdf`
 - **Engine:** `pdf-lib`
 - **Details:** Parses standard `.txt` text documents, wraps lines based on page size and margins, handles multi-page division, and compiles the text lines into A4 or Letter PDF sheets client-side.
 
 ### Read Aloud PDF
-- **URL:** `https://i-create-pdf.vercel.app/read-aloud-pdf`
+- **URL:** `https://icreatepdf.online/read-aloud-pdf`
 - **Engine:** Web Speech API (TTS) + `pdfjs-dist` (text parsing)
 - **Details:** Extracts text from PDF pages locally, feeds text chunks into the browser's native speech synthesis engine, and highlights spoken words in real time.
 
 ### Certify PDF
-- **URL:** `https://i-create-pdf.vercel.app/certify-pdf`
+- **URL:** `https://icreatepdf.online/certify-pdf`
 - **Engine:** Crypto Web API (SHA-256) + `pdf-lib`
 - **Details:** Computes a secure SHA-256 cryptographic hash of the PDF file locally, stamps a validation QR code onto the document, and allows users to re-upload files to verify their tamper-proof integrity.
 
 ### PDF Accessibility Checker
-- **URL:** `https://i-create-pdf.vercel.app/pdf-accessibility-checker`
+- **URL:** `https://icreatepdf.online/pdf-accessibility-checker`
 - **Engine:** `pdfjs-dist`
 - **Details:** Audits PDF structure client-side, scanning for critical accessibility markers including document tagging layers, language definitions, alt text tags, and logical heading hierarchies.
 
 ### Prevent PDF Copy
-- **URL:** `https://i-create-pdf.vercel.app/prevent-copy`
+- **URL:** `https://icreatepdf.online/prevent-copy`
 - **Engine:** `pdfjs-dist` (rendering) + canvas + `pdf-lib` (saving)
 - **Details:** Flat-rasterizes all PDF pages into crisp high-resolution images in canvas memory and reconstructs a new PDF without a selectable text layer, preventing copying.
 
 ### Bulk Certificate Generator
-- **URL:** `https://i-create-pdf.vercel.app/bulk-certificates`
+- **URL:** `https://icreatepdf.online/bulk-certificates`
 - **Engine:** `xlsx` (sheet parsing) + `pdf-lib` (drawing/saving)
 - **Details:** Parses recipient list data from Excel/CSV client-side, overlays custom text placeholders onto a PDF template at visually positioned coordinates, and exports individual zipped PDFs or a combined PDF.
 
 ### PDF OCR
-- **URL:** `https://i-create-pdf.vercel.app/pdf-ocr`
+- **URL:** `https://icreatepdf.online/pdf-ocr`
 - **Engine:** `tesseract.js` (WebAssembly OCR) + `pdfjs-dist`
 - **Details:** Renders scanned or copy-protected PDF pages to canvas and runs a local neural-network character recognition parser to extract editable, copyable text.
 
 ### PDF to Excel
-- **URL:** `https://i-create-pdf.vercel.app/pdf-to-excel`
+- **URL:** `https://icreatepdf.online/pdf-to-excel`
 - **Engine:** `pdfjs-dist`
 - **Details:** Extracts text glyph coordinates and runs spacing heuristics locally in the browser to identify rows and columns, exporting tabular layout data directly to Excel-ready CSV format.
 

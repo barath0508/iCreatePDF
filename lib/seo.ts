@@ -1,6 +1,6 @@
 import type { Metadata } from 'next';
 
-const SITE_URL = 'https://i-create-pdf.vercel.app';
+const SITE_URL = 'https://icreatepdf.online';
 
 /**
  * Build alternates metadata that preserves hreflang across all pages.

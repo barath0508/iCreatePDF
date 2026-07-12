@@ -6,7 +6,7 @@ import { GeistMono } from 'geist/font/mono';
 import './globals.css';
 
 export const metadata: Metadata = {
-  metadataBase: new URL('https://i-create-pdf.vercel.app'),
+  metadataBase: new URL('https://icreatepdf.online'),
   title: 'iCreatePDF - Fast, Free & Private Image to PDF Converter',
   description: 'Convert JPG, PNG, WEBP, HEIC, and BMP to PDF 100% locally in your browser. Zero sign-up, zero server uploads, privacy first.',
   keywords: 'pdf editor, edit pdf, merge pdf online, split pdf free, compress pdf tool, crop pdf page, redact pdf text, bates numbering legal, convert to pdf, image to pdf, pdf metadata editor, sign pdf digitally, client-side pdf converter, secure pdf processor, local pdf tools, document converter, pdf utility, word to pdf converter, scan to pdf online, unlock password pdf, protect pdf file, delete pdf pages, crop pdf margins, pdf converter free, offline pdf editor, heic to pdf, png to pdf, jpeg to pdf, extract pages from pdf, combine pdf files, split pdf pages, compress pdf size, secure client-side pdf, pdf watermark creator, add page numbers to pdf, draw signature on pdf, flat pdf converter, black out pdf text, fix corrupted pdf, change author pdf, bates stamp generator, dark mode pdf, invert pdf background, scan documents to pdf, generate qr code pdf, compare two pdfs, pdf comparison tool, extract text from pdf, html to pdf free, compile markdown to pdf, secure online pdf tools, private online pdf tools, free online pdf merger, best pdf splitter, sign pdf free online, how to edit pdf document, online pdf manager, secure pdf sandbox',
@@ -35,7 +35,7 @@ export const metadata: Metadata = {
     description: 'Convert your images to PDF instantly in the browser. Completely private, no file uploads to any server.',
     type: 'website',
     locale: 'en_US',
-    url: 'https://i-create-pdf.vercel.app',
+    url: 'https://icreatepdf.online',
     siteName: 'iCreatePDF',
     images: [
       {
@@ -69,12 +69,12 @@ export default function RootLayout({
         <meta name="theme-color" content="#7e5de0" />
         <link rel="manifest" href="/manifest.json" />
         <link rel="apple-touch-icon" href="/logo.png" />
-        
+
         {/* Performance Optimization Resource Hints */}
         <link rel="dns-prefetch" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
 
-        
+
         <script
           dangerouslySetInnerHTML={{
             __html: `
@@ -98,8 +98,8 @@ export default function RootLayout({
               "@context": "https://schema.org",
               "@type": "WebApplication",
               "name": "iCreatePDF",
-              "url": "https://i-create-pdf.vercel.app",
-              "image": "https://i-create-pdf.vercel.app/logo.png",
+              "url": "https://icreatepdf.online",
+              "image": "https://icreatepdf.online/logo.png",
               "description": "Convert images and docs to PDF 100% locally in the browser. Also merge, split, rotate, and compress PDF files with zero server uploads.",
               "applicationCategory": "UtilityApplication",
               "operatingSystem": "All",

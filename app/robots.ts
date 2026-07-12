@@ -7,6 +7,6 @@ export default function robots(): MetadataRoute.Robots {
       allow: '/',
       disallow: ['/checkout', '/admin', '/test.html', '/*-draft.html'],
     },
-    sitemap: 'https://i-create-pdf.vercel.app/sitemap.xml',
+    sitemap: 'https://icreatepdf.online/sitemap.xml',
   };
 }
