@@ -34,22 +34,25 @@ We do NOT collect: names, email addresses (except when you voluntarily contact u
   {
     icon: ShieldCheck,
     title: '3. Cookies and Local Storage',
-    content: `iCreatePDF does not use tracking cookies or advertising cookies of any kind.
+    content: `We use cookies to improve your browsing experience and serve relevant advertisements. Specifically:
 
-We may use browser localStorage or sessionStorage solely to remember your UI preferences (such as default page size, output quality settings, or dark mode preference). This data never leaves your device and is not transmitted anywhere.
+• Google, as a third-party vendor, uses cookies to serve ads on iCreatePDF based on your visits to this site and other websites on the internet.
+• Google's use of advertising cookies enables it and its partners to serve ads to you based on your visits to our site and/or other sites.
+• You may opt out of personalized advertising by visiting Google's Ads Settings (https://www.google.com/settings/ads) or by visiting www.aboutads.info.
 
-You can clear this data at any time through your browser's developer tools or settings panel.`,
+Additionally, we use browser localStorage or sessionStorage solely to remember your UI preferences (such as tool settings, dark mode preference). This preference data remains strictly local on your device and is never transmitted.`,
   },
   {
     icon: Globe,
     title: '4. Third-Party Services',
-    content: `Our website may load resources from the following trusted third-party providers:
+    content: `Our website may load resources from, or share anonymous data with, the following third-party providers:
 
-• Google Fonts — to serve typography assets (font files). Google may log the request. No personal data related to your file usage is shared.
-• Vercel — our hosting platform. Vercel may collect server access logs (HTTP request metadata) for operational security purposes, governed by Vercel's own privacy policy.
-• Search Console / Analytics — we use Google Search Console for indexing verification only, and may use a self-hosted or privacy-first analytics tool (e.g., Plausible or Umami) for traffic statistics.
+• Google AdSense — to serve contextual and personalized advertisements. Google sets cookies to track ad performance and customize user experience.
+• Google Fonts — to serve typography assets (font files).
+• Vercel — our hosting platform. Vercel collects anonymous network server logs for security, DDOS protection, and performance optimization.
+• Google Search Console — utilized strictly for search index validation and web console verification.
 
-None of these third parties have access to any files you process on iCreatePDF.`,
+None of these third parties ever have access to the document files you process, which remain 100% sandboxed in your browser.`,
   },
   {
     icon: ShieldCheck,
