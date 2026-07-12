@@ -96,6 +96,12 @@ const toolsTa = [
     desc: 'எளிதாக பக்க எண்களை விரும்பிய இடங்களில் அச்சிடலாம்.',
     href: '/add-page-numbers',
   },
+  {
+    icon: Sliders,
+    title: 'படிவ உருவாக்குபவர்',
+    desc: 'உரை உள்ளீடுகள் மற்றும் செக்பாக்ஸ்களுடன் படிவங்களை வடிவமைக்கவும்.',
+    href: '/fillable-pdf-builder',
+  },
 ];
 
 export default function TamilHomePage() {

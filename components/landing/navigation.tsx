@@ -33,6 +33,7 @@ const searchTools = [
   { title: 'Sign PDF', href: '/sign-pdf', desc: 'Draw or type your signature and visually stamp it on PDF pages.' },
   { title: 'PDF to Text', href: '/pdf-to-text', desc: 'Extract structured text layouts from PDF files.' },
   { title: 'Edit PDF', href: '/edit-pdf', desc: 'Insert custom text annotation overlays on top of PDF layouts.' },
+  { title: 'Fillable PDF Builder', href: '/fillable-pdf-builder', desc: 'Design interactive forms with fillable inputs and checkboxes.' },
   { title: 'Verify Signature', href: '/verify-signature', desc: 'Inspect digital certificates and verify signed PDF integrity.' },
   { title: 'HTML to PDF', href: '/html-to-pdf', desc: 'Render your custom HTML/CSS code templates into PDF pages.' },
   { title: 'Markdown to PDF', href: '/markdown-to-pdf', desc: 'Write styled Markdown documents and compile them to clean PDFs.' },

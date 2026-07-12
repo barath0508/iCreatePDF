@@ -96,6 +96,12 @@ const toolsEs = [
     desc: 'Añada números de página con formatos y posiciones personalizadas.',
     href: '/add-page-numbers',
   },
+  {
+    icon: Sliders,
+    title: 'Creador de formularios',
+    desc: 'Diseñe formularios interactivos con campos de texto y casillas de verificación.',
+    href: '/fillable-pdf-builder',
+  },
 ];
 
 export default function SpanishHomePage() {

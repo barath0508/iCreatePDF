@@ -1021,6 +1021,31 @@ export const toolContent: Record<string, ToolContent> = {
       { question: 'How will the downloaded files look?', answer: 'You can choose to export as a single combined PDF (with one certificate page per spreadsheet row) or as a ZIP file containing separate, individually named PDFs for each recipient.' },
     ],
   },
+
+  'fillable-pdf-builder': {
+    name: 'Fillable PDF Form Builder',
+    url: '/fillable-pdf-builder',
+    overview:
+      'Design interactive fillable PDF forms client-side without purchasing expensive software. iCreatePDF lets you upload any flat PDF page and overlay interactive text fields, checkboxes, dropdown lists, and radio options. The tool generates standards-compliant fillable PDF form widgets locally in your browser memory, keeping your documents 100% private.',
+    steps: [
+      { title: 'Upload your document', description: 'Add the PDF document you want to make fillable.' },
+      { title: 'Insert interactive elements', description: 'Select field types (Text Input, Checkbox, Choice Dropdown, Radio Button).' },
+      { title: 'Position and configure', description: 'Drag widgets to placement areas, adjust dimensions, and set dropdown option lists.' },
+      { title: 'Export fillable PDF', description: 'Compile the PDF form fields and download the resulting file locally.' },
+    ],
+    useCases: [
+      'Create fillable application forms, tax sheets, or questionnaires from static templates',
+      'Design interactive contracts or agreements with checkboxes and text fields',
+      'Build survey forms with dropdown options and single-choice radio selectors',
+      'Convert scanned paper documents into interactive web-ready PDF forms',
+    ],
+    faqs: [
+      { question: 'Will the generated PDF forms work in standard readers?', answer: 'Yes. iCreatePDF uses standard PDF specification widgets. The fillable fields will work in Adobe Reader, Chrome, Safari, Edge, Preview, and mobile PDF readers.' },
+      { question: 'Are my files sent to any server?', answer: 'No. The entire editing visual workspace and the pdf-lib compiler operate client-side in your local browser. Your documents never leave your device.' },
+      { question: 'Can I define multiple choices for dropdown menus?', answer: 'Yes! When you select a dropdown widget, you can type a comma-separated list of options in the sidebar properties panel to populate the choices.' },
+      { question: 'Can I set default values or pre-checked states?', answer: 'Yes. You can configure default text or set the initial checkbox state (checked/unchecked) in the property panel for each field.' },
+    ],
+  },
 };
 
 

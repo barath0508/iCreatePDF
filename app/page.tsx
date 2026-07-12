@@ -153,6 +153,12 @@ const tools = [
     href: '/edit-pdf',
   },
   {
+    icon: Sliders,
+    title: 'Fillable PDF Builder',
+    desc: 'Design interactive forms with fillable inputs and checkboxes.',
+    href: '/fillable-pdf-builder',
+  },
+  {
     icon: ShieldCheck,
     title: 'Verify Signature',
     desc: 'Inspect digital certificates and verify signed PDF integrity.',

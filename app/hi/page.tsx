@@ -96,6 +96,12 @@ const toolsHi = [
     desc: 'अनुकूलित लेआउट और स्थिति के साथ आसानी से पेज नंबर लगाएं।',
     href: '/add-page-numbers',
   },
+  {
+    icon: Sliders,
+    title: 'फॉर्म निर्माता',
+    desc: 'फ़िलेबल इनपुट और चेकबॉक्स के साथ इंटरैक्टिव फ़ॉर्म डिज़ाइन करें।',
+    href: '/fillable-pdf-builder',
+  },
 ];
 
 export default function HindiHomePage() {

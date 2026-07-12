@@ -49,6 +49,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     '/prevent-copy',
     '/pdf-ocr',
     '/bulk-certificates',
+    '/fillable-pdf-builder',
   ];
 
   const blogRoutes = [
