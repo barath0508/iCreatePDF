@@ -57,7 +57,7 @@ const toolsHi = [
   {
     icon: FileText,
     title: 'वर्ड टू पीडीएफ',
-    desc: 'मानक Microsoft Word (.docx) दस्तावेज़ों को साफ़ पीडीएफ में बदलें।',
+    desc: 'मानक वर्ड प्रोसेसर (.docx) दस्तावेज़ों को साफ़ पीडीएफ में बदलें।',
     href: '/word-to-pdf',
   },
   {

@@ -159,7 +159,7 @@ export function WordToPdfTool() {
           </div>
 
           <p className="text-xs text-foreground/50 leading-relaxed">
-            Convert standard Microsoft Word (.docx) text formatting into clean, portable PDF layouts client-side. Zero cloud uploads.
+            Convert standard .docx word processor documents into clean, portable PDF layouts client-side. Zero cloud uploads.
           </p>
 
           <div className="pt-4 border-t border-foreground/5">

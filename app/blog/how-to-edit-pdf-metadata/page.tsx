@@ -65,7 +65,7 @@ export default function EditMetadataBlog() {
 
         <div className="text-foreground/70 space-y-6 leading-relaxed text-sm sm:text-base">
           <p>
-            When you export a document from Microsoft Word or Google Docs, metadata is automatically bundled inside the PDF file. This metadata can reveal your full name, organization, the exact time the file was created, and the software used. For security and privacy, changing or clearing these fields is highly recommended.
+            When you export a document from word processors or document creation tools, metadata is automatically bundled inside the PDF file. This metadata can reveal your full name, organization, the exact time the file was created, and the software used. For security and privacy, changing or clearing these fields is highly recommended.
           </p>
 
           <h2 className="text-xl font-bold text-foreground pt-4 font-display">Core PDF Metadata Fields Explained</h2>

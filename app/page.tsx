@@ -53,7 +53,7 @@ const tools = [
   {
     icon: FileImage,
     title: 'HEIC to PDF',
-    desc: 'Convert Apple iPhone HEIC photos to PDF without uploading.',
+    desc: 'Convert high-efficiency HEIC photos to PDF without uploading.',
     href: '/heic-to-pdf',
   },
   {
@@ -65,7 +65,7 @@ const tools = [
   {
     icon: FileText,
     title: 'Word to PDF',
-    desc: 'Convert standard Microsoft Word (.docx) documents into clean PDFs.',
+    desc: 'Convert standard word processor (.docx) documents into clean PDFs.',
     href: '/word-to-pdf',
   },
   {

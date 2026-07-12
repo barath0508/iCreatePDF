@@ -9,13 +9,13 @@ import { Button } from '@/components/ui/button';
 import { RelatedPosts } from '@/components/blog/RelatedPosts';
 
 export const metadata: Metadata = {
-  title: 'How to Convert iPhone Photos (HEIC) to PDF | iCreatePDF Blog',
-  description: 'Learn the easiest ways to convert HEIC photos from your iPhone into a single PDF document. Browser methods, offline methods, and step-by-step guides.',
-  keywords: 'how to convert iphone photo to pdf, heic to pdf iphone, convert multiple heic to pdf, browser heic converter',
+  title: 'How to Convert HEIC Photos to PDF | iCreatePDF Blog',
+  description: 'Learn the easiest ways to convert HEIC photos from your mobile device into a single PDF document. Browser methods, offline methods, and step-by-step guides.',
+  keywords: 'how to convert heic photo to pdf, heic to pdf online, convert multiple heic to pdf, browser heic converter',
   alternates: buildAlternates('/blog/how-to-convert-iphone-photos-to-pdf'),
   openGraph: {
-    title: 'How to Convert iPhone Photos (HEIC) to PDF | iCreatePDF Blog',
-    description: 'Learn the easiest ways to convert HEIC photos from your iPhone into a single PDF document. Browser methods, offline methods, and step-by-step guides.',
+    title: 'How to Convert HEIC Photos to PDF | iCreatePDF Blog',
+    description: 'Learn the easiest ways to convert HEIC photos from your mobile device into a single PDF document. Browser methods, offline methods, and step-by-step guides.',
     type: 'article',
     publishedTime: '2026-05-20T00:00:00Z',
   },
@@ -23,7 +23,7 @@ export const metadata: Metadata = {
 
 export default function BlogPostOne() {
   const steps = [
-    { title: 'Select Your HEIC Photos', desc: 'Open iCreatePDF and click inside the upload box. Choose the HEIC files directly from your iPhone library or files app.' },
+    { title: 'Select Your HEIC Photos', desc: 'Open iCreatePDF and click inside the upload box. Choose the HEIC files directly from your device library or files folder.' },
     { title: 'Let the Tool Auto-Convert', desc: 'iCreatePDF instantly translates the HEIC raw bytes into standard JPEG inside your browser.' },
     { title: 'Reorder and Customize', desc: 'Arrange the sequence of pages by dragging. Customize margins and page size options.' },
     { title: 'Download your PDF', desc: 'Click "Convert to PDF" and download. Your pictures never leave your local device.' }
@@ -34,8 +34,8 @@ export default function BlogPostOne() {
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(articleSchema({
-          title: 'How to Convert iPhone Photos (HEIC) to PDF | iCreatePDF Blog',
-          description: 'Learn the easiest ways to convert HEIC photos from your iPhone into a single PDF document. Browser methods, offline methods, and step-by-step guides.',
+          title: 'How to Convert HEIC Photos to PDF | iCreatePDF Blog',
+          description: 'Learn the easiest ways to convert HEIC photos from your mobile device into a single PDF document. Browser methods, offline methods, and step-by-step guides.',
           url: '/blog/how-to-convert-iphone-photos-to-pdf',
           datePublished: '2026-05-20T00:00:00Z'
         })) }}
@@ -50,10 +50,10 @@ export default function BlogPostOne() {
 
         <div className="space-y-4 border-b border-foreground/10 pb-8">
           <span className="text-xs font-bold text-brand bg-brand/10 px-2.5 py-1 rounded-full uppercase">
-            iPhone Guides
+            Mobile Guides
           </span>
           <h1 className="text-3xl sm:text-4xl font-extrabold text-foreground leading-tight font-display">
-            How to Convert iPhone Photos (HEIC) to PDF
+            How to Convert HEIC Photos to PDF
           </h1>
           <div className="flex items-center gap-4 text-xs text-foreground/40">
             <span className="flex items-center gap-1">
@@ -69,7 +69,7 @@ export default function BlogPostOne() {
 
         <div className="text-foreground/70 space-y-6 leading-relaxed text-sm sm:text-base">
           <p>
-            If you own an iPhone, you might have noticed that when you transfer your photos to a PC or upload them to specific application portals, they are saved as <strong>.HEIC</strong> (High Efficiency Image Container) files. While HEIC is excellent for saving storage space, it suffers from poor compatibility outside the Apple ecosystem.
+            If you own a modern mobile device, you might have noticed that when you transfer your photos to a computer or upload them to specific application portals, they are saved as <strong>.HEIC</strong> (High Efficiency Image Container) files. While HEIC is excellent for saving storage space, it suffers from poor compatibility outside its native ecosystem.
           </p>
 
           <p>
@@ -98,16 +98,16 @@ export default function BlogPostOne() {
             </p>
           </div>
 
-          <h2 className="text-xl font-bold text-foreground pt-4 font-display">Method 2: Using the Shortcuts App on iOS</h2>
+          <h2 className="text-xl font-bold text-foreground pt-4 font-display">Method 2: Using Built-in Shortcuts/Automation Workflows</h2>
           <p>
-            If you want to do this completely offline on your iPhone without any website, you can use the built-in <strong>Shortcuts</strong> app:
+            If you want to do this completely offline on your device without any website, you can use the built-in system shortcuts or files application workflow:
           </p>
           <ol className="list-decimal list-inside space-y-2 pl-4 text-xs sm:text-sm">
-            <li>Open the Shortcuts app on your iPhone.</li>
-            <li>Create a new shortcut and search for "Select Photos". Toggle "Select Multiple" on.</li>
+            <li>Open the native shortcuts or automation app on your mobile device.</li>
+            <li>Create a new automation rule and search for "Select Photos". Toggle "Select Multiple" on.</li>
             <li>Add a second action called "Make PDF".</li>
             <li>Add a third action called "Share" or "Save File".</li>
-            <li>Run the shortcut, choose your photos, and save the generated PDF.</li>
+            <li>Run the workflow, choose your photos, and save the generated PDF.</li>
           </ol>
         </div>
 

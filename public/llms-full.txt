@@ -3,7 +3,7 @@
 This document provides a detailed overview of the tools, converters, and underlying client-side architecture of iCreatePDF.
 
 ## Security & Architecture Paradigm
-Unlike traditional online PDF converters (e.g. Smallpdf, Adobe Acrobat Online) that route file transfers to remote servers, iCreatePDF operates under a strict **Zero-Server Paradigm**:
+Unlike traditional online PDF converters that route file transfers to remote servers, iCreatePDF operates under a strict **Zero-Server Paradigm**:
 - **Client-Side Libraries:** All PDF loading, rendering, and parsing are conducted in the browser sandbox using WASM-based or pure Javascript engines (like `pdf-lib` for document editing and generation, and `pdfjs-dist` for page rendering and text parsing).
 - **No Remote Storage:** Upload paths use browser memory buffers (`ArrayBuffer`, `Blob`, `URL.createObjectURL`). File streams never cross the network boundary.
 - **Zero Latency Uploads:** Since no uploads occur, processing speeds depend solely on local client hardware. This makes it safe for confidential documents, tax forms, private agreements, and identity documents.

@@ -3,7 +3,7 @@
 > Free, unlimited, browser-based PDF utilities. All computations happen locally on the user's computer. Files never leave the browser sandbox. No registration, no ads, no trackers.
 
 ## Features & Comparison
-iCreatePDF runs entirely in the browser using WebAssembly and Javascript engines. It offers a secure alternative to server-side PDF editors (e.g. Adobe Acrobat Online, Smallpdf, iLovePDF) where documents containing sensitive credentials or personal IDs must be uploaded to remote cloud infrastructure.
+iCreatePDF runs entirely in the browser using WebAssembly and Javascript engines. It offers a secure alternative to server-side PDF editors where documents containing sensitive credentials or personal IDs must be uploaded to remote cloud infrastructure.
 
 ## Local PDF Tools
 

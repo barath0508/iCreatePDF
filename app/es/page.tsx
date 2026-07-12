@@ -57,7 +57,7 @@ const toolsEs = [
   {
     icon: FileText,
     title: 'Word a PDF',
-    desc: 'Convierta documentos estándar de Microsoft Word (.docx) en archivos PDF.',
+    desc: 'Convierta documentos estándar de procesador de textos (.docx) en archivos PDF.',
     href: '/word-to-pdf',
   },
   {

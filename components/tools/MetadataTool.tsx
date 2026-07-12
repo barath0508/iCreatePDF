@@ -97,7 +97,7 @@ export function MetadataTool() {
               <Field label="Author" field="author" placeholder="Author name" />
               <Field label="Subject" field="subject" placeholder="Document subject or description" />
               <Field label="Keywords (comma-separated)" field="keywords" placeholder="pdf, report, 2026" />
-              <Field label="Creator Application" field="creator" placeholder="e.g. Microsoft Word" />
+              <Field label="Creator Application" field="creator" placeholder="e.g. Word Processor" />
             </div>
           )}
           {error && <div className="p-4 rounded-xl bg-red-500/10 border border-red-500/20 text-red-200 text-sm">{error}</div>}

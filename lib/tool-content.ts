@@ -297,21 +297,21 @@ export const toolContent: Record<string, ToolContent> = {
     name: 'HEIC to PDF',
     url: '/heic-to-pdf',
     overview:
-      'iPhone photos saved in Apple’s HEIC format often can’t be opened or shared on non-Apple devices. iCreatePDF converts HEIC and HEIF photos directly into a PDF inside your browser, so iPhone pictures become a universally viewable document without installing a converter app or uploading personal photos anywhere.',
+      'Photos saved in HEIC format often can’t be opened or shared on older devices. iCreatePDF converts HEIC and HEIF photos directly into a PDF inside your browser, so high-efficiency pictures become a universally viewable document without installing a converter app or uploading personal photos anywhere.',
     steps: [
-      { title: 'Upload your HEIC photos', description: 'Drag in one or more .heic files exported from an iPhone.' },
+      { title: 'Upload your HEIC photos', description: 'Drag in one or more .heic files exported from your camera roll.' },
       { title: 'Reorder if needed', description: 'Arrange multiple photos into the order you want them to appear.' },
       { title: 'Adjust page settings', description: 'Choose page size and orientation for the output PDF.' },
       { title: 'Download the PDF', description: 'Save a single PDF containing all converted photos.' },
     ],
     useCases: [
-      'Convert iPhone camera roll photos to PDF for a Windows PC',
+      'Convert mobile camera roll photos to PDF for computer viewing',
       'Combine multiple HEIC screenshots into a single shareable document',
-      'Prepare iPhone photo evidence or receipts as a PDF for email',
+      'Prepare mobile photo evidence or receipts as a PDF for email',
       'Archive HEIC photos in a widely compatible file format',
     ],
     faqs: [
-      { question: 'Why won’t my iPhone photo open on my computer?', answer: 'iPhones save photos in the HEIC format by default, which many Windows programs and older software don’t support — converting to PDF makes them viewable everywhere.' },
+      { question: 'Why won’t my high-efficiency photo open on my computer?', answer: 'Many modern phones save photos in the HEIC format by default, which many computers and older software don’t support — converting to PDF makes them viewable everywhere.' },
       { question: 'Can I convert multiple HEIC photos into one PDF?', answer: 'Yes, upload several HEIC files and they will be combined into a single multi-page PDF in the order you set.' },
       { question: 'Does converting HEIC to PDF reduce photo quality?', answer: 'No, the original image data is preserved at full resolution during conversion.' },
       { question: 'Are my personal photos uploaded to a server?', answer: 'No, HEIC decoding and PDF generation both happen locally in your browser.' },

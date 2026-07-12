@@ -24,10 +24,10 @@ export const metadata: Metadata = {
 const formats = [
   { ext: 'JPG / JPEG', desc: 'The most common photo format from cameras and smartphones. Best for photos.', compatible: true },
   { ext: 'PNG', desc: 'Lossless format with transparency support. Perfect for screenshots and graphics.', compatible: true },
-  { ext: 'WEBP', desc: 'Google\'s modern format offering better compression than JPG at similar quality.', compatible: true },
-  { ext: 'HEIC / HEIF', desc: 'Apple\'s default iPhone photo format. Excellent quality at half the file size of JPG.', compatible: true },
+  { ext: 'WEBP', desc: 'Modern web format offering better compression than JPG at similar quality.', compatible: true },
+  { ext: 'HEIC / HEIF', desc: 'Default modern mobile device photo format. Excellent quality at half the file size of JPG.', compatible: true },
   { ext: 'GIF', desc: 'Animated format. Only the first frame is typically embedded in PDFs.', compatible: true },
-  { ext: 'BMP', desc: 'Uncompressed Windows bitmap. Very large files but no quality loss.', compatible: true },
+  { ext: 'BMP', desc: 'Uncompressed standard bitmap. Very large files but no quality loss.', compatible: true },
 ];
 
 const settings = [

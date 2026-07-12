@@ -57,7 +57,7 @@ export default function BulkCertificatesBlog() {
 
         <div className="text-foreground/70 space-y-6 leading-relaxed text-sm sm:text-base">
           <p>
-            Whether you run a training course, coordinate a seminar, or manage award distributions, you regularly need to issue customized certificates. Standard mail merge in Microsoft Word or Google Slides is slow, shifts formatting fonts, and uploads documents to third-party clouds. Performing a local PDF mail merge solves these issues.
+            Whether you run a training course, coordinate a seminar, or manage award distributions, you regularly need to issue customized certificates. Standard mail merge in traditional desktop office tools is slow, shifts formatting fonts, and uploads documents to third-party clouds. Performing a local PDF mail merge solves these issues.
           </p>
 
           <h2 className="text-xl font-bold text-foreground pt-4 font-display flex items-center gap-2">

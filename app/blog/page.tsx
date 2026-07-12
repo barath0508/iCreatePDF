@@ -102,11 +102,11 @@ const blogPosts = [
   },
   {
     slug: 'how-to-convert-iphone-photos-to-pdf',
-    title: 'How to Convert iPhone Photos (HEIC) to PDF',
-    excerpt: 'Step-by-step guide on how to convert HEIC/HEIF pictures from your iPhone to standard PDF documents easily without uploading them to unsecured servers.',
+    title: 'How to Convert HEIC Photos to PDF',
+    excerpt: 'Step-by-step guide on how to convert HEIC/HEIF pictures from your mobile device to standard PDF documents easily without uploading them to unsecured servers.',
     date: 'May 20, 2026',
     readTime: '4 min read',
-    category: 'iPhone Guides',
+    category: 'Mobile Guides',
     color: 'purple',
   },
   {
@@ -156,8 +156,8 @@ const blogPosts = [
   },
   {
     slug: 'how-to-convert-word-docx-to-pdf-free',
-    title: 'How to Convert Word DOCX to PDF Free Without Layout Shifts',
-    excerpt: 'Convert standard Microsoft Word files (.docx) into clean PDFs entirely client-side, preserving text layout, tables, and images without server uploads.',
+    title: 'How to Convert DOCX to PDF Free Without Layout Shifts',
+    excerpt: 'Convert standard word processor files (.docx) into clean PDFs entirely client-side, preserving text layout, tables, and images without server uploads.',
     date: 'May 29, 2026',
     readTime: '4 min read',
     category: 'Image Conversion',

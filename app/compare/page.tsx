@@ -6,12 +6,12 @@ import { ShieldCheck, ShieldAlert, Zap, Coins, Globe, Heart, Check, X, Sparkles 
 import Link from 'next/link';
 
 export const metadata: Metadata = {
-  title: 'iCreatePDF vs. Adobe Acrobat & Server PDF Editors | iCreatePDF',
+  title: 'iCreatePDF vs. Server-Based PDF Editors | iCreatePDF',
   description: 'Understand the security, speed, and capability differences between client-side (local-only) PDF tools and server-based cloud converters.',
-  keywords: 'client side pdf converter, secure pdf tools, local pdf editor, adobe acrobat alternative, free private pdf tools',
+  keywords: 'client side pdf converter, secure pdf tools, local pdf editor, free private pdf tools',
   alternates: buildAlternates('/compare'),
   openGraph: {
-    title: 'iCreatePDF vs. Adobe Acrobat & Server PDF Editors | iCreatePDF',
+    title: 'iCreatePDF vs. Server-Based PDF Editors | iCreatePDF',
     description: 'Understand the security, speed, and capability differences between client-side (local-only) PDF tools and server-based cloud converters.',
     type: 'website',
   }
@@ -107,7 +107,7 @@ export default function ComparePage() {
               </div>
               <h3 className="text-xl font-bold font-display">Other Tools (Server Processing)</h3>
               <p className="text-xs text-foreground/50 leading-relaxed">
-                Converters like Smallpdf, Adobe Online, or PDFgear upload your source files to remote server infrastructure. Processing takes place in cloud virtual machines, and output files remain on cloud storage instances, creating a persistent target for interception and leaks.
+                Most traditional online PDF converters upload your source files to remote server infrastructure. Processing takes place in cloud virtual machines, and output files remain on cloud storage instances, creating a potential target for interception and leaks.
               </p>
             </div>
           </div>
@@ -147,7 +147,7 @@ export default function ComparePage() {
               <div className="grid grid-cols-12 bg-foreground/5 p-4 text-xs font-mono text-foreground/40 border-b border-foreground/10 uppercase tracking-wider">
                 <div className="col-span-6 font-semibold">PDF Tool Function</div>
                 <div className="col-span-3 text-center text-brand font-semibold">iCreatePDF</div>
-                <div className="col-span-3 text-center font-semibold">Adobe Acrobat</div>
+                <div className="col-span-3 text-center font-semibold">Server Editors</div>
               </div>
               <div className="divide-y divide-foreground/5">
                 {detailedFeatures.map((item, idx) => (
