@@ -73,6 +73,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     '/blog/how-to-split-pdf-pages-free',
     '/blog/how-to-grayscale-and-flatten-pdf',
     '/blog/how-to-add-watermark-and-page-numbers-to-pdf',
+    '/blog/how-to-create-fillable-pdf-forms-free',
   ];
 
   const staticRoutes = [

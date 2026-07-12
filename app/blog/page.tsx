@@ -20,6 +20,15 @@ export const metadata: Metadata = {
 
 const blogPosts = [
   {
+    slug: 'how-to-create-fillable-pdf-forms-free',
+    title: 'How to Create Fillable PDF Forms Free Online',
+    excerpt: 'Learn how to easily create interactive fillable PDF forms client-side for free. Add text inputs, checkboxes, dropdown lists, and radio selectors in the browser sandbox.',
+    date: 'July 12, 2026',
+    readTime: '4 min read',
+    category: 'Productivity Guides',
+    color: 'purple',
+  },
+  {
     slug: 'how-to-compress-pdf-without-losing-quality',
     title: 'How to Compress a PDF Without Losing Quality (2026 Guide)',
     excerpt: 'Learn the best methods to reduce PDF file size while keeping images and text sharp. Compression levels explained, expert tips, and a file size target guide.',
