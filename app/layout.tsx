@@ -73,6 +73,7 @@ export default function RootLayout({
         <meta name="theme-color" content="#7e5de0" />
         <link rel="manifest" href="/manifest.json" />
         <link rel="apple-touch-icon" href="/logo.png" />
+        <meta name="google-adsense-account" content="ca-pub-8825674134696584" />
 
         {/* Performance Optimization Resource Hints */}
         <link rel="dns-prefetch" href="https://fonts.googleapis.com" />
