@@ -72,8 +72,6 @@ Simply modify this editor and click compile to get a clean PDF.`);
     setDownloadUrl(null);
 
     try {
-      const htmlContent = parseMarkdownToHtml(markdown);
-
       const iframe = iframeRef.current;
       if (!iframe) throw new Error('Render engine not initialized.');
 
@@ -81,8 +79,12 @@ Simply modify this editor and click compile to get a clean PDF.`);
       if (!doc) throw new Error('Render context unavailable.');
 
       doc.open();
-      doc.write(htmlContent);
+      doc.write('<!DOCTYPE html><html><head><style>body{font-family:sans-serif;padding:40px;color:#111;line-height:1.6;}pre{white-space:pre-wrap;font-size:14px;color:#333;}</style></head><body></body></html>');
       doc.close();
+
+      const pre = doc.createElement('pre');
+      pre.textContent = markdown;
+      doc.body.appendChild(pre);
 
       const pdfDoc = await PDFDocument.create();
       const page = pdfDoc.addPage([595.276, 841.890]); // A4 Size
