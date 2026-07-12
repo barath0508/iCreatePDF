@@ -2,3 +2,9 @@ allowBuilds:
   sharp: true
   tesseract.js: true
   unrs-resolver: true
+
+minimumReleaseAge: 0
+
+overrides:
+  postcss: ^8.5.15
+
