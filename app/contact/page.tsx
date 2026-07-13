@@ -3,7 +3,7 @@ import { Navigation } from '@/components/landing/navigation';
 import { FooterSection } from '@/components/landing/footer-section';
 import { ContactForm } from '@/components/ContactForm';
 import { Mail, MessageSquare, ShieldCheck } from 'lucide-react';
-import { buildAlternates } from '@/lib/seo';
+import { buildAlternates, breadcrumbSchema } from '@/lib/seo';
 
 export const metadata: Metadata = {
   title: 'Contact Us - iCreatePDF',
@@ -19,6 +19,17 @@ export const metadata: Metadata = {
 export default function ContactPage() {
   return (
     <main className="relative min-h-screen overflow-x-hidden bg-background text-foreground selection:bg-brand/30">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(
+            breadcrumbSchema([
+              { name: 'iCreatePDF', url: '/' },
+              { name: 'Contact Us' },
+            ])
+          ),
+        }}
+      />
       <Navigation />
       
       <div className="pt-32 pb-24 max-w-[1400px] mx-auto px-6 lg:px-12 relative z-10">

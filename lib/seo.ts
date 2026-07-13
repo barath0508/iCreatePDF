@@ -39,6 +39,30 @@ export function buildAlternates(canonicalPath: string): Metadata['alternates'] {
 }
 
 /**
+ * Generate BreadcrumbList JSON-LD.
+ * Omit `item` on the last item so Google resolves it to the current page.
+ */
+export function breadcrumbSchema(crumbs: { name: string; url?: string }[]) {
+  return {
+    '@context': 'https://schema.org',
+    '@type': 'BreadcrumbList',
+    itemListElement: crumbs.map((crumb, index) => {
+      const item: Record<string, any> = {
+        '@type': 'ListItem',
+        position: index + 1,
+        name: crumb.name,
+      };
+      // Only include item URL if provided AND it's not the last item in the list.
+      // If it is the last item, omitting it forces Google Search to use the containing page's URL.
+      if (crumb.url && index < crumbs.length - 1) {
+        item.item = crumb.url.startsWith('http') ? crumb.url : `${SITE_URL}${crumb.url}`;
+      }
+      return item;
+    }),
+  };
+}
+
+/**
  * Generate SoftwareApplication + BreadcrumbList JSON-LD for a tool page.
  */
 export function toolSchema({
@@ -66,29 +90,15 @@ export function toolSchema({
         priceCurrency: 'USD',
       },
     },
-    {
-      '@context': 'https://schema.org',
-      '@type': 'BreadcrumbList',
-      itemListElement: [
-        {
-          '@type': 'ListItem',
-          position: 1,
-          name: 'iCreatePDF',
-          item: SITE_URL,
-        },
-        {
-          '@type': 'ListItem',
-          position: 2,
-          name,
-          item: `${SITE_URL}${url}`,
-        },
-      ],
-    },
+    breadcrumbSchema([
+      { name: 'iCreatePDF', url: '/' },
+      { name },
+    ]),
   ];
 }
 
 /**
- * Generate BlogPosting JSON-LD for a blog post.
+ * Generate BlogPosting + BreadcrumbList JSON-LD for a blog post.
  */
 export function articleSchema({
   title,
@@ -101,30 +111,37 @@ export function articleSchema({
   url: string;
   datePublished: string;
 }) {
-  return {
-    '@context': 'https://schema.org',
-    '@type': 'BlogPosting',
-    headline: title,
-    description,
-    url: `${SITE_URL}${url}`,
-    datePublished,
-    author: {
-      '@type': 'Organization',
-      name: 'iCreatePDF',
-      url: SITE_URL,
-    },
-    publisher: {
-      '@type': 'Organization',
-      name: 'iCreatePDF',
-      url: SITE_URL,
-      logo: {
-        '@type': 'ImageObject',
-        url: `${SITE_URL}/logo.png`,
+  return [
+    {
+      '@context': 'https://schema.org',
+      '@type': 'BlogPosting',
+      headline: title,
+      description,
+      url: `${SITE_URL}${url}`,
+      datePublished,
+      author: {
+        '@type': 'Organization',
+        name: 'iCreatePDF',
+        url: SITE_URL,
+      },
+      publisher: {
+        '@type': 'Organization',
+        name: 'iCreatePDF',
+        url: SITE_URL,
+        logo: {
+          '@type': 'ImageObject',
+          url: `${SITE_URL}/logo.png`,
+        },
+      },
+      mainEntityOfPage: {
+        '@type': 'WebPage',
+        '@id': `${SITE_URL}${url}`,
       },
     },
-    mainEntityOfPage: {
-      '@type': 'WebPage',
-      '@id': `${SITE_URL}${url}`,
-    },
-  };
+    breadcrumbSchema([
+      { name: 'iCreatePDF', url: '/' },
+      { name: 'Blog', url: '/blog' },
+      { name: title },
+    ]),
+  ];
 }

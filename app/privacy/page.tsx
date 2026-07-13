@@ -1,6 +1,6 @@
 import React from 'react';
 import type { Metadata } from 'next';
-import { buildAlternates } from '@/lib/seo';
+import { buildAlternates, breadcrumbSchema } from '@/lib/seo';
 import { Navigation } from '@/components/landing/navigation';
 import { FooterSection } from '@/components/landing/footer-section';
 import { ShieldCheck, Lock, Eye, Globe, Trash2, Mail } from 'lucide-react';
@@ -109,6 +109,17 @@ We aim to respond to all legitimate privacy requests within 14 business days.`,
 export default function PrivacyPage() {
   return (
     <div className="bg-background min-h-screen text-foreground flex flex-col justify-between selection:bg-brand/30">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(
+            breadcrumbSchema([
+              { name: 'iCreatePDF', url: '/' },
+              { name: 'Privacy Policy' },
+            ])
+          ),
+        }}
+      />
       <Navigation />
 
       <main className="flex-1 w-full">

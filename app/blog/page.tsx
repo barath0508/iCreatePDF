@@ -1,6 +1,6 @@
 import React from 'react';
 import type { Metadata } from 'next';
-import { buildAlternates } from '@/lib/seo';
+import { buildAlternates, breadcrumbSchema } from '@/lib/seo';
 import Link from 'next/link';
 import { Navigation } from '@/components/landing/navigation';
 import { FooterSection } from '@/components/landing/footer-section';
@@ -213,6 +213,17 @@ const colorMap: Record<string, string> = {
 export default function BlogIndexPage() {
   return (
     <div className="bg-background min-h-screen text-foreground flex flex-col justify-between selection:bg-brand/30">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(
+            breadcrumbSchema([
+              { name: 'iCreatePDF', url: '/' },
+              { name: 'Blog' },
+            ])
+          ),
+        }}
+      />
       <Navigation />
 
       <div className="max-w-5xl mx-auto px-6 py-32 space-y-12 flex-1 w-full">

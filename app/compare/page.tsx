@@ -1,5 +1,5 @@
 import type { Metadata } from 'next';
-import { buildAlternates } from '@/lib/seo';
+import { buildAlternates, breadcrumbSchema } from '@/lib/seo';
 import { Navigation } from '@/components/landing/navigation';
 import { FooterSection } from '@/components/landing/footer-section';
 import { ShieldCheck, ShieldAlert, Zap, Coins, Globe, Heart, Check, X, Sparkles } from 'lucide-react';
@@ -70,6 +70,17 @@ const detailedFeatures = [
 export default function ComparePage() {
   return (
     <main className="relative min-h-screen overflow-x-hidden bg-background text-foreground flex flex-col justify-between selection:bg-brand/30">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(
+            breadcrumbSchema([
+              { name: 'iCreatePDF', url: '/' },
+              { name: 'Compare PDFs' },
+            ])
+          ),
+        }}
+      />
       <Navigation />
       
       <div className="pt-32 pb-24 flex-1">
