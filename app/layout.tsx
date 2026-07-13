@@ -124,7 +124,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
         {/* End Google Tag Manager */}
 
         {/* Google tag (gtag.js) */}
-        <script async src="https://www.googletagmanager.com/gtag/js?id=G-JKTBWMX1GJ" />
+        <script async src="https://www.googletagmanager.com/gtag/js?id=G-JKTBWMX1GJ"></script>
         <script
           dangerouslySetInnerHTML={{
             __html: `
