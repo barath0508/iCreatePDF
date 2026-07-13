@@ -4,6 +4,7 @@ import React, { useState, useRef, useEffect } from 'react';
 import { QrCode, Loader2, Download } from 'lucide-react';
 import { PDFDocument, StandardFonts, rgb } from 'pdf-lib';
 import { Button } from '@/components/ui/button';
+import { sanitizeTextForPdf } from '@/lib/pdf';
 
 export function QrToPdfTool() {
   const [content, setContent] = useState('');
@@ -51,17 +52,21 @@ export function QrToPdfTool() {
 
       let y = height - 80;
 
-      if (title) {
+      const sanitizedTitle = sanitizeTextForPdf(title);
+      const sanitizedDescription = sanitizeTextForPdf(description);
+      const sanitizedContent = sanitizeTextForPdf(content);
+
+      if (sanitizedTitle) {
         const titleSize = 20;
-        const tw = fontBold.widthOfTextAtSize(title.slice(0, 50), titleSize);
-        page.drawText(title.slice(0, 50), { x: (width - tw) / 2, y, size: titleSize, font: fontBold, color: rgb(0.1, 0.1, 0.1) });
+        const tw = fontBold.widthOfTextAtSize(sanitizedTitle.slice(0, 50), titleSize);
+        page.drawText(sanitizedTitle.slice(0, 50), { x: (width - tw) / 2, y, size: titleSize, font: fontBold, color: rgb(0.1, 0.1, 0.1) });
         y -= 30;
       }
 
-      if (description) {
+      if (sanitizedDescription) {
         const descSize = 11;
         // Word wrap at ~60 chars per line
-        const words = description.slice(0, 200).split(' ');
+        const words = sanitizedDescription.slice(0, 200).split(' ');
         let line = '';
         const lines: string[] = [];
         words.forEach(word => {
@@ -84,7 +89,7 @@ export function QrToPdfTool() {
       page.drawImage(img, { x: qrX, y: qrY, width: qrDrawSize, height: qrDrawSize });
 
       // Content URL below QR
-      const urlLabel = content.slice(0, 60) + (content.length > 60 ? '...' : '');
+      const urlLabel = sanitizedContent.slice(0, 60) + (sanitizedContent.length > 60 ? '...' : '');
       const urlSize = 8;
       const uw = font.widthOfTextAtSize(urlLabel, urlSize);
       page.drawText(urlLabel, { x: (width - uw) / 2, y: qrY - 20, size: urlSize, font, color: rgb(0.5, 0.3, 0.8) });

@@ -4,6 +4,7 @@ import React, { useState, useRef } from 'react';
 import { Stamp, Loader2, Download, Fingerprint, Copy, Check, ShieldCheck, ShieldAlert, ShieldQuestion } from 'lucide-react';
 import { PDFDocument, StandardFonts, rgb } from 'pdf-lib';
 import { Button } from '@/components/ui/button';
+import { sanitizeTextForPdf } from '@/lib/pdf';
 
 type Mode = 'certify' | 'verify';
 
@@ -80,7 +81,7 @@ export function CertifyTool() {
       const infoX = 60 + qrSize + 30;
       let infoY = y + 20;
       const rows: [string, string][] = [
-        ['Original file', file.name],
+        ['Original file', sanitizeTextForPdf(file.name)],
         ['File size', `${(file.size / 1024).toFixed(1)} KB`],
         ['Algorithm', 'SHA-256'],
         ['Certified at', timestamp],

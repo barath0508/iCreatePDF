@@ -4,6 +4,7 @@ import React, { useState, useRef } from 'react';
 import { Hash, Loader2, Download } from 'lucide-react';
 import { PDFDocument, StandardFonts, rgb } from 'pdf-lib';
 import { Button } from '@/components/ui/button';
+import { sanitizeTextForPdf } from '@/lib/pdf';
 
 type BatesPos = 'bottom-left' | 'bottom-center' | 'bottom-right' | 'top-left' | 'top-center' | 'top-right';
 
@@ -55,7 +56,7 @@ export function BatesTool() {
       doc.getPages().forEach((page, idx) => {
         setProgress(Math.round(((idx) / totalPages) * 100));
         const { width, height } = page.getSize();
-        const label = batesLabel(idx + 1);
+        const label = sanitizeTextForPdf(batesLabel(idx + 1));
         const tw = font.widthOfTextAtSize(label, fontSize);
         const margin = 14;
         const isTop = position.startsWith('top');

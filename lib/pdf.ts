@@ -303,16 +303,18 @@ export async function addWatermarkToPdf(
   const g = parseInt(hex.substring(2, 4), 16) / 255;
   const b = parseInt(hex.substring(4, 6), 16) / 255;
 
+  const sanitizedText = sanitizeTextForPdf(options.text);
+
   for (let i = 0; i < total; i++) {
     const page = pages[i];
     const { width, height } = page.getSize();
     
     // Measure text width to center it
-    const textWidth = font.widthOfTextAtSize(options.text, options.size);
+    const textWidth = font.widthOfTextAtSize(sanitizedText, options.size);
     const textHeight = options.size;
 
     // Center of page rotation watermark
-    page.drawText(options.text, {
+    page.drawText(sanitizedText, {
       x: (width - textWidth) / 2,
       y: (height - textHeight) / 2,
       size: options.size,
@@ -349,9 +351,9 @@ export async function addPageNumbersToPdf(
     const { width, height } = page.getSize();
 
     const pageNum = i + 1;
-    const label = options.format === 'page' 
+    const label = sanitizeTextForPdf(options.format === 'page' 
       ? `Page ${pageNum}`
-      : `Page ${pageNum} of ${total}`;
+      : `Page ${pageNum} of ${total}`);
     
     const size = 10;
     const textWidth = font.widthOfTextAtSize(label, size);
@@ -425,6 +427,8 @@ export async function convertDocxToPdf(
       paragraphText += textRuns[j].textContent || '';
     }
 
+    paragraphText = sanitizeTextForPdf(paragraphText);
+
     if (paragraphText.trim() === '') {
       y -= lineHeight; // line break spacing
       continue;
@@ -481,3 +485,62 @@ export async function convertDocxToPdf(
 
   return await pdfDoc.save();
 }
+
+// 7. Sanitize text for standard PDF fonts (WinAnsiEncoding compatibility)
+export function sanitizeTextForPdf(text: string): string {
+  if (!text) return '';
+  
+  // 1. Remove zero-width characters and formatting marks
+  const sanitized = text.replace(/[\u200b-\u200d\uFEFF\u200e\u200f]/g, '');
+  
+  // 2. Filter out characters that cannot be encoded in WinAnsi
+  const allowedCodePoints = new Set([9, 10, 13]); // tab, LF, CR
+  
+  const isAllowed = (codePoint: number): boolean => {
+    if (codePoint >= 32 && codePoint <= 126) return true;
+    if (codePoint >= 160 && codePoint <= 255) return true;
+    if (allowedCodePoints.has(codePoint)) return true;
+    
+    // Windows-1252 special characters outside Latin-1
+    const specialCodePoints = [
+      0x0152, 0x0153, // Œ, œ
+      0x0160, 0x0161, // Š, š
+      0x0178,         // Ÿ
+      0x017D, 0x017E, // Ž, ž
+      0x0192,         // ƒ
+      0x02C6,         // ˆ
+      0x02DC,         // ˜
+      0x2013, 0x2014, // –, —
+      0x2018, 0x2019, // ‘, ’
+      0x201A,         // ‚
+      0x201C, 0x201D, // “, ”
+      0x201E,         // „
+      0x2020, 0x2021, // †, ‡
+      0x2022,         // •
+      0x2026,         // …
+      0x2030,         // ‰
+      0x2039, 0x203A, // ‹, ›
+      0x20AC,         // €
+      0x2122          // ™
+    ];
+    return specialCodePoints.includes(codePoint);
+  };
+
+  let result = '';
+  for (let i = 0; i < sanitized.length; i++) {
+    const char = sanitized[i];
+    const code = char.charCodeAt(0);
+    if (isAllowed(code)) {
+      result += char;
+    } else {
+      // Map other common unsupported characters to their closest WinAnsi equivalents
+      if (code === 0x2010 || code === 0x2011 || code === 0x2012 || code === 0x2015) {
+        result += '-';
+      } else {
+        result += '?';
+      }
+    }
+  }
+  return result;
+}
+

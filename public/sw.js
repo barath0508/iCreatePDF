@@ -1,9 +1,7 @@
 const CACHE_NAME = 'icreatepdf-offline-v1';
 const STATIC_ASSETS = [
   '/',
-  '/globals.css',
   '/logo.png',
-  '/favicon.ico',
   '/manifest.json'
 ];
 

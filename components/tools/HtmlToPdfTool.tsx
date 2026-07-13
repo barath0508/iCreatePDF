@@ -4,6 +4,7 @@ import React, { useState, useRef } from 'react';
 import { Code, Loader2, Download, Eye, FileCode } from 'lucide-react';
 import { PDFDocument, rgb } from 'pdf-lib';
 import { Button } from '@/components/ui/button';
+import { sanitizeTextForPdf } from '@/lib/pdf';
 
 export function HtmlToPdfTool() {
   const [htmlCode, setHtmlCode] = useState(`<!DOCTYPE html>
@@ -58,8 +59,9 @@ export function HtmlToPdfTool() {
       let currentY = height - 60; // Top margin
 
       elements.forEach((el) => {
-        const text = el.textContent?.trim() || '';
+        let text = el.textContent?.trim() || '';
         if (!text) return;
+        text = sanitizeTextForPdf(text);
 
         const style = window.getComputedStyle(el);
         const fontSize = parseFloat(style.fontSize) || 12;

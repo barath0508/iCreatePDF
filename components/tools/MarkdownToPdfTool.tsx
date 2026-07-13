@@ -4,6 +4,7 @@ import React, { useState, useRef } from 'react';
 import { Eye, Loader2, Download, FileText } from 'lucide-react';
 import { PDFDocument, rgb } from 'pdf-lib';
 import { Button } from '@/components/ui/button';
+import { sanitizeTextForPdf } from '@/lib/pdf';
 
 export function MarkdownToPdfTool() {
   const [markdown, setMarkdown] = useState(`# Document Title
@@ -94,8 +95,9 @@ Simply modify this editor and click compile to get a clean PDF.`);
       let currentY = height - 60;
 
       elements.forEach((el) => {
-        const text = el.textContent?.trim() || '';
+        let text = el.textContent?.trim() || '';
         if (!text) return;
+        text = sanitizeTextForPdf(text);
 
         const style = window.getComputedStyle(el);
         const fontSize = parseFloat(style.fontSize) || 12;

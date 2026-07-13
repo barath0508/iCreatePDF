@@ -4,6 +4,7 @@ import React, { useState, useRef, useEffect } from 'react';
 import { Upload, Type, Loader2, Download, Plus, Trash2, Edit } from 'lucide-react';
 import { PDFDocument, rgb } from 'pdf-lib';
 import { Button } from '@/components/ui/button';
+import { sanitizeTextForPdf } from '@/lib/pdf';
 
 interface Annotation {
   id: string;
@@ -186,7 +187,7 @@ export function EditPdfTool() {
         // pdf-lib's y-coordinate starts from bottom, adjust for canvas coordinates
         const targetY = pageHeight - (ann.y * scaleY) - (ann.fontSize * scaleY);
 
-        page.drawText(ann.text, {
+        page.drawText(sanitizeTextForPdf(ann.text), {
           x: targetX,
           y: targetY,
           size: ann.fontSize * scaleX,

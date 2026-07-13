@@ -4,6 +4,7 @@ import React, { useState, useRef } from 'react';
 import { Upload, Loader2, Download, FileText, Settings, Play } from 'lucide-react';
 import { PDFDocument, StandardFonts, rgb } from 'pdf-lib';
 import { Button } from '@/components/ui/button';
+import { sanitizeTextForPdf } from '@/lib/pdf';
 
 export function TxtToPdfTool() {
   const [text, setText] = useState<string>(`PROPOSAL FOR GREEN INITIATIVE
@@ -141,8 +142,11 @@ Date: May 2026`);
       // Margin
       const margin = parseFloat(marginSize) * 72; // Convert inches to points
 
+      const sanitizedText = sanitizeTextForPdf(text);
+      const sanitizedHeaderTitle = sanitizeTextForPdf(headerTitle);
+
       const maxLineWidth = widthPt - (margin * 2);
-      const paragraphs = text.split('\n');
+      const paragraphs = sanitizedText.split('\n');
       const lines: string[] = [];
 
       // Simple wrapper based on characters and font widths
@@ -208,8 +212,8 @@ Date: May 2026`);
         const p = pdfDoc.getPage(i);
 
         // Header Title
-        if (headerTitle.trim() !== '') {
-          p.drawText(headerTitle, {
+        if (sanitizedHeaderTitle.trim() !== '') {
+          p.drawText(sanitizedHeaderTitle, {
             x: margin,
             y: heightPt - margin + 15,
             size: 9,

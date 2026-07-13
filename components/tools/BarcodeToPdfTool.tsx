@@ -4,6 +4,7 @@ import React, { useState, useRef, useEffect } from 'react';
 import { Barcode as BarcodeIcon, Loader2, Download } from 'lucide-react';
 import { PDFDocument, StandardFonts, rgb } from 'pdf-lib';
 import { Button } from '@/components/ui/button';
+import { sanitizeTextForPdf } from '@/lib/pdf';
 
 type Symbology = 'code128' | 'ean13' | 'upca' | 'code39' | 'datamatrix' | 'pdf417';
 
@@ -86,16 +87,19 @@ export function BarcodeToPdfTool() {
 
       let y = height - 80;
 
-      if (title) {
+      const sanitizedTitle = sanitizeTextForPdf(title);
+      const sanitizedDescription = sanitizeTextForPdf(description);
+
+      if (sanitizedTitle) {
         const titleSize = 20;
-        const tw = fontBold.widthOfTextAtSize(title.slice(0, 50), titleSize);
-        page.drawText(title.slice(0, 50), { x: (width - tw) / 2, y, size: titleSize, font: fontBold, color: rgb(0.1, 0.1, 0.1) });
+        const tw = fontBold.widthOfTextAtSize(sanitizedTitle.slice(0, 50), titleSize);
+        page.drawText(sanitizedTitle.slice(0, 50), { x: (width - tw) / 2, y, size: titleSize, font: fontBold, color: rgb(0.1, 0.1, 0.1) });
         y -= 30;
       }
 
-      if (description) {
+      if (sanitizedDescription) {
         const descSize = 11;
-        const words = description.slice(0, 200).split(' ');
+        const words = sanitizedDescription.slice(0, 200).split(' ');
         let line = '';
         const lines: string[] = [];
         words.forEach(word => {

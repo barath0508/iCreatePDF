@@ -4,6 +4,7 @@ import React, { useState, useRef } from 'react';
 import { AlignCenter, Loader2, Download } from 'lucide-react';
 import { PDFDocument, StandardFonts, rgb } from 'pdf-lib';
 import { Button } from '@/components/ui/button';
+import { sanitizeTextForPdf } from '@/lib/pdf';
 
 type Position = 'left' | 'center' | 'right';
 interface HFConfig {
@@ -58,8 +59,9 @@ export function HeaderFooterTool() {
         const { width, height } = page.getSize();
         const pgNum = idx + 1;
         const draw = (text: string, x: number, y: number, align: Position) => {
-          const t = resolve(text, pgNum, total);
+          let t = resolve(text, pgNum, total);
           if (!t) return;
+          t = sanitizeTextForPdf(t);
           const tw = font.widthOfTextAtSize(t, cfg.fontSize);
           let dx = x;
           if (align === 'center') dx = width / 2 - tw / 2;

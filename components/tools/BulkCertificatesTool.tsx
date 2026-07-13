@@ -4,6 +4,7 @@ import React, { useState, useRef, useEffect } from 'react';
 import { Upload, FileText, Loader2, Download, Table, Plus, Settings, Trash2, ArrowRight, CheckCircle, ShieldAlert } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { StandardFonts, rgb } from 'pdf-lib';
+import { sanitizeTextForPdf } from '@/lib/pdf';
 
 interface Placeholder {
   id: string; // Column header name
@@ -307,7 +308,7 @@ export function BulkCertificatesTool() {
 
         // Stamping placeholders
         for (const ph of placeholders) {
-          const textVal = row[ph.id] || '';
+          const textVal = sanitizeTextForPdf(row[ph.id] || '');
           if (!textVal) continue;
 
           // Resolve Font
