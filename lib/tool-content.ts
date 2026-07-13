@@ -397,7 +397,7 @@ export const toolContent: Record<string, ToolContent> = {
     name: 'Markdown to PDF',
     url: '/markdown-to-pdf',
     overview:
-      'Markdown is fast to write but awkward to share outside developer tools. iCreatePDF compiles styled Markdown — headings, lists, code blocks, and emphasis — into a clean, formatted A4 PDF directly in your browser, so notes and docs written in Markdown become shareable documents in one step.',
+      'Need to convert markdown to pdf free and securely? iCreatePDF is a fast online markdown to pdf tool that compiles your styled Markdown (headings, lists, code blocks, and emphasis) into a clean, formatted A4 PDF directly in your browser. This means you can convert md to pdf online free with absolute privacy — no files ever leave your device.',
     steps: [
       { title: 'Write or paste your Markdown', description: 'Enter Markdown text with headings, lists, and formatting.' },
       { title: 'Preview the rendered layout', description: 'See exactly how the styled document will look before export.' },
@@ -405,15 +405,15 @@ export const toolContent: Record<string, ToolContent> = {
       { title: 'Download the PDF', description: 'Export your Markdown as a clean, formatted document.' },
     ],
     useCases: [
-      'Turn README or documentation files into a shareable PDF',
-      'Compile meeting notes written in Markdown into a formatted report',
-      'Export a Markdown-based resume or portfolio as a PDF',
-      'Convert technical specs or changelogs into distributable documents',
+      'Turn README or documentation files into a shareable PDF online',
+      'Compile meeting notes or a markdown online pdf resume',
+      'Export formatted reports from developer notes instantly',
+      'Convert technical specs, changelogs, or general markdow to pdf layouts',
     ],
     faqs: [
-      { question: 'What Markdown syntax is supported?', answer: 'Standard elements render correctly, including headings, bold/italic text, lists, links, and code blocks.' },
+      { question: 'What markdown syntax does this online markdown to pdf tool support?', answer: 'Standard elements render correctly, including headings, bold/italic text, lists, links, and code blocks.' },
       { question: 'Can I style the output PDF?', answer: 'Yes, page size and margins can be configured, and standard Markdown formatting maps to clean PDF typography.' },
-      { question: 'Is my Markdown content uploaded anywhere?', answer: 'No, the entire compile-to-PDF process happens locally in your browser.' },
+      { question: 'Is this md to pdf online free tool secure?', answer: 'Yes, absolutely. The entire compile-to-PDF process happens locally in your browser, meaning your files never touch any external server.' },
       { question: 'Can I convert long documents with many sections?', answer: 'Yes, there is no length limit — the tool paginates automatically across as many A4 pages as needed.' },
     ],
   },
