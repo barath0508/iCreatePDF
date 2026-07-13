@@ -2,7 +2,6 @@
 
 import React, { useState, useRef } from 'react';
 import { Upload, FileText, Loader2, Download, FileCode } from 'lucide-react';
-import { convertDocxToPdf } from '@/lib/pdf';
 import { Button } from '@/components/ui/button';
 
 export function WordToPdfTool() {
@@ -58,15 +57,66 @@ export function WordToPdfTool() {
   const triggerWordToPdf = async () => {
     if (!file) return;
     setIsProcessing(true);
-    setProgress(0);
+    setProgress(10);
     setError(null);
 
     try {
       const buffer = await file.arrayBuffer();
-      const pdfBytes = await convertDocxToPdf(buffer, (p) => setProgress(Math.round(p)));
+      setProgress(30);
+
+      // Create a temporary hidden container
+      const container = document.createElement('div');
+      container.style.position = 'absolute';
+      container.style.left = '-9999px';
+      container.style.top = '-9999px';
+      container.style.width = '800px'; // standard width for docx rendering
+      container.style.background = 'white';
+      container.style.color = 'black';
+      container.style.padding = '40px';
+      container.style.fontFamily = 'Calibri, Arial, sans-serif';
+      document.body.appendChild(container);
+
+      // Render the DOCX
+      // @ts-ignore
+      const docx = await import('docx-preview');
+      setProgress(50);
+      await docx.renderAsync(buffer, container, undefined, {
+        inWrapper: false,
+        ignoreWidth: false,
+        ignoreHeight: false,
+        ignoreFonts: false,
+        breakPages: true,
+        debug: false
+      });
+
+      // Wait a short moment for images/fonts to load
+      setProgress(70);
+      await new Promise(resolve => setTimeout(resolve, 1000));
+
+      // Convert the container to PDF
+      // @ts-ignore
+      const html2pdf = (await import('html2pdf.js')).default || (await import('html2pdf.js'));
+      setProgress(85);
+      const opt = {
+        margin:       [10, 10, 10, 10], // top, left, bottom, right in mm
+        filename:     `${file.name.replace('.docx', '')}.pdf`,
+        image:        { type: 'jpeg', quality: 0.98 },
+        html2canvas:  { 
+          scale: 2.0, // High quality scale
+          useCORS: true, 
+          logging: false 
+        },
+        jsPDF:        { unit: 'mm', format: 'a4', orientation: 'portrait' },
+        pagebreak:    { mode: ['css', 'legacy'] }
+      };
+
+      // Generate the PDF blob
+      const pdfBlob = await html2pdf().from(container).set(opt).output('blob');
       
-      const blob = new Blob([pdfBytes as any], { type: 'application/pdf' });
-      const url = URL.createObjectURL(blob);
+      // Clean up the container
+      document.body.removeChild(container);
+
+      const url = URL.createObjectURL(pdfBlob);
       setDownloadUrl(url);
       setProgress(100);
     } catch (err: any) {
