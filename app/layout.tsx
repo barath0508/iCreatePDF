@@ -5,6 +5,7 @@ import Script from 'next/script';
 import { GeistSans } from 'geist/font/sans';
 import { GeistMono } from 'geist/font/mono';
 import './globals.css';
+import { CookieConsentBanner } from '@/components/landing/cookie-consent-banner';
 
 export const metadata: Metadata = {
   metadataBase: new URL('https://icreatepdf.online'),
@@ -67,6 +68,49 @@ export default function RootLayout({
   return (
     <html lang="en" className={`dark ${GeistSans.variable} ${GeistMono.variable}`}>
       <head>
+        {/* Google Consent Mode v2 Default Initialization */}
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `
+              window.dataLayer = window.dataLayer || [];
+              function gtag(){dataLayer.push(arguments);}
+              
+              let consent = null;
+              try {
+                consent = localStorage.getItem('cookie_consent');
+              } catch (e) {}
+              
+              if (consent) {
+                try {
+                  const parsed = JSON.parse(consent);
+                  gtag('consent', 'default', {
+                    'ad_storage': parsed.ad_storage || 'denied',
+                    'ad_user_data': parsed.ad_user_data || 'denied',
+                    'ad_personalization': parsed.ad_personalization || 'denied',
+                    'analytics_storage': parsed.analytics_storage || 'denied'
+                  });
+                } catch (e) {
+                  gtag('consent', 'default', {
+                    'ad_storage': 'denied',
+                    'ad_user_data': 'denied',
+                    'ad_personalization': 'denied',
+                    'analytics_storage': 'denied'
+                  });
+                }
+              } else {
+                gtag('consent', 'default', {
+                  'ad_storage': 'denied',
+                  'ad_user_data': 'denied',
+                  'ad_personalization': 'denied',
+                  'analytics_storage': 'denied',
+                  'wait_for_update': 500
+                });
+              }
+            `
+          }}
+        />
+        {/* End Google Consent Mode */}
+
         {/* Google Tag Manager */}
         <script
           dangerouslySetInnerHTML={{
@@ -172,6 +216,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
         </div>
         {children}
         <Analytics />
+        <CookieConsentBanner />
       </body>
     </html>
   );
