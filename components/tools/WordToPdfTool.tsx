@@ -77,7 +77,7 @@ export function WordToPdfTool() {
       document.body.appendChild(container);
 
       // Render the DOCX
-      // @ts-ignore
+      // @ts-expect-error
       const docx = await import('docx-preview');
       setProgress(50);
       await docx.renderAsync(buffer, container, undefined, {
@@ -94,7 +94,7 @@ export function WordToPdfTool() {
       await new Promise(resolve => setTimeout(resolve, 1000));
 
       // Convert the container to PDF
-      // @ts-ignore
+      // @ts-expect-error
       const html2pdf = (await import('html2pdf.js')).default || (await import('html2pdf.js'));
       setProgress(85);
       const opt = {
@@ -119,9 +119,9 @@ export function WordToPdfTool() {
       const url = URL.createObjectURL(pdfBlob);
       setDownloadUrl(url);
       setProgress(100);
-    } catch (err: any) {
+    } catch (err) {
       console.error(err);
-      setError(err?.message || 'Failed to convert Word file. Make sure the file is not password-protected.');
+      setError((err as any)?.message || 'Failed to convert Word file. Make sure the file is not password-protected.');
     } finally {
       setIsProcessing(false);
     }

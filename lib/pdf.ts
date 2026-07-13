@@ -409,7 +409,7 @@ export async function convertDocxToPdf(
   const pdfDoc = await PDFDocument.create();
   const font = await pdfDoc.embedFont(StandardFonts.Helvetica);
   let page = pdfDoc.addPage();
-  let { width, height } = page.getSize();
+  const { width, height } = page.getSize();
   let y = height - 50;
   const margin = 50;
   const fontSize = 11;
