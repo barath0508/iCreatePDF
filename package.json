@@ -73,7 +73,7 @@
     "tesseract.js": "^7.0.0",
     "three": "0.183.2",
     "vaul": "^1.1.2",
-    "xlsx": "^0.18.5",
+    "xlsx": "https://cdn.sheetjs.com/xlsx-0.20.2/xlsx-0.20.2.tgz",
     "zod": "3.25.76"
   },
   "devDependencies": {

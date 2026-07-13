@@ -39,18 +39,22 @@ export function HtmlToPdfTool() {
       const iframe = iframeRef.current;
       if (!iframe) throw new Error('Render engine is not initialized.');
 
+      // Wait for iframe to load the HTML content via srcdoc
+      await new Promise<void>((resolve) => {
+        iframe.onload = () => {
+          iframe.onload = null;
+          resolve();
+        };
+        iframe.srcdoc = htmlCode;
+      });
+
       const doc = iframe.contentDocument || iframe.contentWindow?.document;
       if (!doc) throw new Error('Render context unavailable.');
-
-      // Write HTML content to sandbox iframe
-      doc.open();
-      doc.write(htmlCode);
-      doc.close();
 
       // Render the sandboxed iframe using HTML5 canvas
       const pdfDoc = await PDFDocument.create();
       const page = pdfDoc.addPage([595.276, 841.890]); // Standard A4 dimensions in points
-      const { width, height } = page.getSize();
+      const { height } = page.getSize();
 
       // Parse structured text layers from sandbox
       const body = doc.body;
@@ -90,12 +94,13 @@ export function HtmlToPdfTool() {
       });
 
       const pdfBytes = await pdfDoc.save();
-      const blob = new Blob([pdfBytes as any], { type: 'application/pdf' });
+      const blob = new Blob([pdfBytes], { type: 'application/pdf' });
       const url = URL.createObjectURL(blob);
       setDownloadUrl(url);
-    } catch (err: any) {
+    } catch (err) {
       console.error(err);
-      setError(err?.message || 'Failed to render HTML template to PDF.');
+      const errorMessage = err instanceof Error ? err.message : 'Failed to render HTML template to PDF.';
+      setError(errorMessage);
     } finally {
       setIsProcessing(false);
     }
@@ -132,7 +137,7 @@ export function HtmlToPdfTool() {
           </div>
 
           {/* Hidden Sandbox iframe for HTML rendering */}
-          <iframe ref={iframeRef} className="hidden" title="Render sandbox" />
+          <iframe ref={iframeRef} sandbox="allow-same-origin" className="hidden" title="Render sandbox" />
 
           {error && (
             <div className="p-4 rounded-xl bg-red-500/10 border border-red-500/20 text-red-200 text-sm">
