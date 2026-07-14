@@ -1,4 +1,4 @@
-const CACHE_NAME = 'icreatepdf-offline-v1';
+const CACHE_NAME = 'icreatepdf-offline-v2';
 const STATIC_ASSETS = [
   '/',
   '/logo.png',
@@ -29,40 +29,72 @@ self.addEventListener('activate', (event) => {
 });
 
 self.addEventListener('fetch', (event) => {
-  // Only handle GET requests and ignore development hot module reload endpoints
+  // Only handle GET requests
+  if (event.request.method !== 'GET') {
+    return;
+  }
+
+  const url = new URL(event.request.url);
+
+  // ONLY handle same-origin requests (avoid intercepting Google Ads, Tag Manager, Analytics, etc.)
+  if (url.origin !== self.location.origin) {
+    return;
+  }
+
+  // Ignore Next.js webpack HMR and chrome extension urls
   if (
-    event.request.method !== 'GET' || 
-    event.request.url.includes('_next/webpack-hmr') ||
-    event.request.url.includes('chrome-extension') ||
-    event.request.url.includes('localhost')
+    url.pathname.includes('_next/webpack-hmr') ||
+    url.pathname.startsWith('/chrome-extension')
   ) {
     return;
   }
 
-  event.respondWith(
-    caches.match(event.request).then((cachedResponse) => {
-      // If cached response exists, return it, but fetch updated version in the background
-      if (cachedResponse) {
-        fetch(event.request).then((networkResponse) => {
+  // Network-First strategy for HTML document navigation requests (routes)
+  // This avoids ChunkLoadErrors when the HTML page is updated to point to new JS chunks.
+  if (event.request.mode === 'navigate') {
+    event.respondWith(
+      fetch(event.request)
+        .then((networkResponse) => {
           if (networkResponse.status === 200) {
+            const responseToCache = networkResponse.clone();
             caches.open(CACHE_NAME).then((cache) => {
-              cache.put(event.request, networkResponse);
+              cache.put(event.request, responseToCache);
             });
           }
-        }).catch(() => {}); // ignore failures (e.g. offline)
-        return cachedResponse;
-      }
-
-      // If not cached, fetch from network and cache for next time
-      return fetch(event.request).then((networkResponse) => {
-        if (networkResponse.status === 200) {
-          const responseToCache = networkResponse.clone();
-          caches.open(CACHE_NAME).then((cache) => {
-            cache.put(event.request, responseToCache);
+          return networkResponse;
+        })
+        .catch(() => {
+          // If offline, try to return cached homepage or route
+          return caches.match(event.request).then((cachedResponse) => {
+            if (cachedResponse) {
+              return cachedResponse;
+            }
+            // Fallback to cached homepage root '/'
+            return caches.match('/');
           });
-        }
-        return networkResponse;
-      });
+        })
+    );
+    return;
+  }
+
+  // Stale-While-Revalidate strategy for static assets (images, scripts, styles)
+  event.respondWith(
+    caches.match(event.request).then((cachedResponse) => {
+      const fetchPromise = fetch(event.request)
+        .then((networkResponse) => {
+          if (networkResponse.status === 200) {
+            const responseToCache = networkResponse.clone();
+            caches.open(CACHE_NAME).then((cache) => {
+              cache.put(event.request, responseToCache);
+            });
+          }
+          return networkResponse;
+        })
+        .catch(() => {
+          // Ignore network failures, fallback to cached version
+        });
+
+      return cachedResponse || fetchPromise;
     })
   );
 });
