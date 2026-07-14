@@ -52,7 +52,7 @@ export function InfrastructureSection() {
         <div className="grid lg:grid-cols-3 gap-6">
           <Reveal className="lg:col-span-2 relative p-8 lg:p-12 border border-border bg-card/40 overflow-hidden rounded-2xl">
             <div className="absolute inset-0 opacity-60">
-              <svg className="absolute inset-0 w-full h-full" style={{ pointerEvents: 'none' }}>
+              <svg className="absolute inset-0 w-full h-full" style={{ pointerEvents: 'none' }} aria-hidden="true">
                 <defs>
                   <style>{`
                     @keyframes drawLine {

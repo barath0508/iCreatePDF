@@ -46,8 +46,7 @@ export function HowItWorksSection() {
           <Reveal delay={150} className="relative h-[200px] lg:h-[320px] overflow-hidden hidden lg:block">
             <img
               src="/images/tree.png"
-              alt=""
-              aria-hidden="true"
+              alt="Processing workflow diagram"
               className="absolute bottom-0 left-0 w-full h-full object-contain object-bottom opacity-70"
             />
             <div className="absolute inset-0 bg-gradient-to-r from-card/40 via-transparent to-transparent pointer-events-none" />
