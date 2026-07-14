@@ -6,7 +6,8 @@
     "dev": "next dev",
     "build": "next build && node post-build.js",
     "start": "next start",
-    "lint": "eslint ."
+    "lint": "eslint .",
+    "submit-urls": "node scripts/submit-indexnow.js"
   },
   "dependencies": {
     "@hookform/resolvers": "^3.10.0",
