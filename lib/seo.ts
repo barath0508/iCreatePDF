@@ -34,9 +34,6 @@ export function buildAlternates(canonicalPath: string): Metadata['alternates'] {
     canonical: canonicalPath,
     languages: {
       'en': canonicalPath,
-      'es': canonicalPath,
-      'hi': canonicalPath,
-      'ta': canonicalPath,
       'x-default': canonicalPath,
     },
   };

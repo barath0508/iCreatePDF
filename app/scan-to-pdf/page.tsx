@@ -1,10 +1,8 @@
 import type { Metadata } from 'next';
 import { ToolPageShell } from '@/components/tools/shared/ToolPageShell';
 import { ScanToPdfTool } from '@/components/tools/ScanToPdfTool';
-import { FeaturesSection } from '@/components/landing/features-section';
-import { HowItWorksSection } from '@/components/landing/how-it-works-section';
-import { SecuritySection } from '@/components/landing/security-section';
-import { CtaSection } from '@/components/landing/cta-section';
+import { ToolSeoContent } from '@/components/tools/shared/ToolSeoContent';
+import { toolContent } from '@/lib/tool-content';
 import { buildAlternates, toolSchema } from '@/lib/seo';
 
 export const metadata: Metadata = {
@@ -30,14 +28,7 @@ export default function ScanToPdfPage() {
       badge="Device Scanner"
       title="Scan to PDF"
       description="Scan multiple pages and compile them into a high-quality PDF in seconds. Processed entirely inside your browser sandbox."
-      extraSections={
-        <>
-          <FeaturesSection />
-          <HowItWorksSection />
-          <SecuritySection />
-          <CtaSection />
-        </>
-      }
+      extraSections={<ToolSeoContent content={toolContent['scan-to-pdf']} />}
     >
       <div className="relative z-10">
         <ScanToPdfTool />

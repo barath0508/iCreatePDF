@@ -1,10 +1,8 @@
 import type { Metadata } from 'next';
 import { ToolPageShell } from '@/components/tools/shared/ToolPageShell';
 import { ConverterSection } from '@/components/landing/converter-section';
-import { FeaturesSection } from '@/components/landing/features-section';
-import { HowItWorksSection } from '@/components/landing/how-it-works-section';
-import { SecuritySection } from '@/components/landing/security-section';
-import { CtaSection } from '@/components/landing/cta-section';
+import { ToolSeoContent } from '@/components/tools/shared/ToolSeoContent';
+import { toolContent } from '@/lib/tool-content';
 import { buildAlternates, toolSchema } from '@/lib/seo';
 
 export const metadata: Metadata = {
@@ -30,14 +28,7 @@ export default function PngToPdfPage() {
       badge="Image Converter"
       title="PNG to PDF"
       description="Drag & drop multiple PNG images, reorder, adjust sizes, and download as a high-quality PDF instantly."
-      extraSections={
-        <>
-          <FeaturesSection />
-          <HowItWorksSection />
-          <SecuritySection />
-          <CtaSection />
-        </>
-      }
+      extraSections={<ToolSeoContent content={toolContent['png-to-pdf']} />}
     >
       <ConverterSection initialFormatFilter="png" />
     </ToolPageShell>

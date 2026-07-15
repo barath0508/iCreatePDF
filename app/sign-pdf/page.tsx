@@ -6,13 +6,13 @@ import { toolContent } from '@/lib/tool-content';
 import { buildAlternates, toolSchema } from '@/lib/seo';
 
 export const metadata: Metadata = {
-  title: 'Sign PDF Locally: Draw & Place Digital Signatures | iCreatePDF',
-  description: 'Draw, type, or upload your signature and stamp it on PDF pages. 100% client-side, keeping your signature and documents safe and private.',
-  keywords: 'sign pdf locally, how to sign contract pdf without printing, sign pdf online free, add signature to pdf, digital signature pdf browser, private digital signature pdf tool, sign pdf document locally, secure e-signature free, sign contract browser sandbox, write signature on pdf, draw signature free, sign lease agreement pdf, client-side digital e-sign',
+  title: 'Esign PDF Online Free: Draw & Sign PDF Locally | iCreatePDF',
+  description: 'Esign PDF files online free. Draw, type, or upload your signature to sign contracts and documents locally in your browser — 100% private, zero uploads.',
+  keywords: 'esign pdf online, online pdf signature, online signature pdf, insert signature in pdf online, sign pdf locally, how to sign contract pdf without printing, sign pdf online free, add signature to pdf, digital signature pdf browser, private digital signature pdf tool, sign pdf document locally, secure e-signature free, sign contract browser sandbox, write signature on pdf, draw signature free, sign lease agreement pdf, client-side digital e-sign',
   alternates: buildAlternates('/sign-pdf'),
   openGraph: {
-    title: 'Sign PDF Locally: Draw & Place Digital Signatures | iCreatePDF',
-    description: 'Draw, type, or upload your signature and stamp it on PDF pages. 100% client-side, keeping your signature and documents safe and private.',
+    title: 'Esign PDF Online Free: Draw & Sign PDF Locally | iCreatePDF',
+    description: 'Esign PDF files online free. Draw, type, or upload your signature to sign contracts and documents locally in your browser — 100% private, zero uploads.',
     type: 'website',
   }
 };

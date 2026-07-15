@@ -1,10 +1,8 @@
 import type { Metadata } from 'next';
 import { ToolPageShell } from '@/components/tools/shared/ToolPageShell';
 import { WordToPdfTool } from '@/components/tools/WordToPdfTool';
-import { FeaturesSection } from '@/components/landing/features-section';
-import { HowItWorksSection } from '@/components/landing/how-it-works-section';
-import { SecuritySection } from '@/components/landing/security-section';
-import { CtaSection } from '@/components/landing/cta-section';
+import { ToolSeoContent } from '@/components/tools/shared/ToolSeoContent';
+import { toolContent } from '@/lib/tool-content';
 import { buildAlternates, toolSchema } from '@/lib/seo';
 
 export const metadata: Metadata = {
@@ -30,14 +28,7 @@ export default function WordToPdfPage() {
       badge="DOCX converter"
       title="Word to PDF"
       description="Drop your Word document (.docx) to compile it into a PDF layout. Processed entirely inside your browser memory."
-      extraSections={
-        <>
-          <FeaturesSection />
-          <HowItWorksSection />
-          <SecuritySection />
-          <CtaSection />
-        </>
-      }
+      extraSections={<ToolSeoContent content={toolContent['word-to-pdf']} />}
     >
       <div className="relative z-10">
         <WordToPdfTool />
