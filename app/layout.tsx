@@ -1,6 +1,7 @@
 import React from 'react';
 import type { Metadata } from 'next';
 import { Analytics } from '@vercel/analytics/next';
+import { SpeedInsights } from '@vercel/speed-insights/next';
 import Script from 'next/script';
 import { GeistSans } from 'geist/font/sans';
 import { GeistMono } from 'geist/font/mono';
@@ -223,6 +224,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
         </div>
         {children}
         <Analytics />
+        <SpeedInsights />
         <CookieConsentBanner />
       </body>
     </html>
