@@ -6,13 +6,13 @@ import { toolContent } from '@/lib/tool-content';
 import { buildAlternates, toolSchema } from '@/lib/seo';
 
 export const metadata: Metadata = {
-  title: 'Free Bulk Certificate Generator Online - CSV, Excel & PDF | iCreatePDF',
-  description: 'Generate certificates, award letters, or tickets in bulk online. Upload a PDF template and Excel/CSV spreadsheet list to generate personalized certificates locally for free.',
-  keywords: 'generate certificates from csv, bulk certificate generator, generate certificates in bulk, pdf excel certificate maker, mail merge certificates, bulk award letter generator online free, client-side bulk certificate generator',
+  title: 'Generate Certificates from CSV Online Free in Bulk | iCreatePDF',
+  description: 'Generate certificates from CSV or Excel online in bulk. Upload a PDF template and a spreadsheet to create customized, high-quality certificates instantly.',
+  keywords: 'bulk certificate generator, generate certificates from csv, bulk certificate generator from csv, create certificates from csv, generate certificates in bulk, pdf excel certificate maker, mail merge certificates, bulk award letter generator online free, client-side bulk certificate generator',
   alternates: buildAlternates('/bulk-certificates'),
   openGraph: {
-    title: 'Free Bulk Certificate Generator Online - CSV, Excel & PDF | iCreatePDF',
-    description: 'Generate certificates, award letters, or tickets in bulk online. Upload a PDF template and Excel/CSV spreadsheet list to generate personalized certificates locally for free.',
+    title: 'Generate Certificates from CSV Online Free in Bulk | iCreatePDF',
+    description: 'Generate certificates from CSV or Excel online in bulk. Upload a PDF template and a spreadsheet to create customized, high-quality certificates instantly.',
     type: 'website',
   }
 };

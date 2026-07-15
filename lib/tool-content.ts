@@ -47,7 +47,7 @@ export const toolContent: Record<string, ToolContent> = {
     name: 'Bates Numbering',
     url: '/bates-numbering',
     overview:
-      'Bates numbering is the standard method litigation teams, paralegals, and compliance departments use to uniquely identify every page of a document production. iCreatePDF applies sequential Bates stamps — with a custom prefix, zero-padded number, and suffix — to legal PDFs entirely client-side, so discovery files never touch a third-party server.',
+      'Bates numbering is the standard method litigation teams, paralegals, and compliance departments use to uniquely identify every page of a document. If you are looking for an EasyBates online alternative that is free and secure, iCreatePDF is the perfect choice. It applies sequential Bates stamps—with custom prefixes, padding, and suffixes—locally in your browser sandbox, so discovery files never touch a third-party server.',
     steps: [
       { title: 'Upload the document set', description: 'Add the PDF that needs sequential legal numbering.' },
       { title: 'Configure prefix and suffix', description: 'Enter identifiers like "SMITH-" or "-CONFIDENTIAL" to match your case naming convention.' },
@@ -65,6 +65,7 @@ export const toolContent: Record<string, ToolContent> = {
       { question: 'Can I customize the prefix and suffix?', answer: 'Yes, you can set any prefix (e.g. case name) and suffix (e.g. confidentiality marking) alongside the padded number.' },
       { question: 'Is Bates numbering done locally?', answer: 'Yes, stamping runs entirely in your browser sandbox, which matters for privileged or confidential legal files.' },
       { question: 'How many digits can the padded number use?', answer: 'You can choose the padding length, so numbers display consistently as 000001, 0000001, or any width your case requires.' },
+      { question: 'Is this tool a good EasyBates alternative?', answer: 'Yes! iCreatePDF is an excellent free EasyBates online alternative. There is no software to download or purchase, and the entire bates numbering process is completed 100% locally on your device, ensuring total privacy for legal documents.' },
     ],
   },
 
@@ -147,7 +148,7 @@ export const toolContent: Record<string, ToolContent> = {
     name: 'Delete PDF Pages',
     url: '/delete-pdf-pages',
     overview:
-      'Blank scans, duplicate cover sheets, and outdated addenda bloat PDFs unnecessarily. iCreatePDF removes individual pages or entire ranges from a document in your browser, letting you clean up a file without re-exporting it from the original source application.',
+      'Wondering how to cut a page from pdf easily? iCreatePDF lets you cut pdf pages and remove pages from a pdf document online for free. Whether you need to delete blank scans, duplicate cover sheets, or cut pages out of pdf files, our tool removes pages from a document in your browser sandbox without any uploads.',
     steps: [
       { title: 'Upload the PDF', description: 'Add the document containing pages you want to remove.' },
       { title: 'Enter the pages to delete', description: 'Specify single pages or ranges, e.g. 2, 5-8, 12.' },
@@ -165,6 +166,7 @@ export const toolContent: Record<string, ToolContent> = {
       { question: 'Does deleting pages renumber the rest of the document?', answer: 'The remaining pages keep their content and order; any printed page-number stamps are unaffected unless you re-run the numbering tool.' },
       { question: 'Is there a limit to how many pages I can remove?', answer: 'No, there is no page-count restriction or file-size cap on this tool.' },
       { question: 'Are my files uploaded anywhere?', answer: 'No, page deletion happens entirely client-side in your browser.' },
+      { question: 'Can I cut pdf pages from a document for free?', answer: 'Yes! Our tool is completely free with no usage limits. You can cut pages out of pdf files, remove unwanted ranges (like 2, 5-8), and download your updated PDF instantly.' },
     ],
   },
 
@@ -297,7 +299,7 @@ export const toolContent: Record<string, ToolContent> = {
     name: 'HEIC to PDF',
     url: '/heic-to-pdf',
     overview:
-      'Photos saved in HEIC format often can’t be opened or shared on older devices. iCreatePDF converts HEIC and HEIF photos directly into a PDF inside your browser, so high-efficiency pictures become a universally viewable document without installing a converter app or uploading personal photos anywhere.',
+      "Photos saved in HEIC format on iOS devices often can't be opened on older devices or Windows. iCreatePDF is the ultimate heic to pdf iphone converter, turning HEIC and HEIF photos directly into a PDF inside your browser. Convert iPhone photos to PDF without installing an app or uploading your private files.",
     steps: [
       { title: 'Upload your HEIC photos', description: 'Drag in one or more .heic files exported from your camera roll.' },
       { title: 'Reorder if needed', description: 'Arrange multiple photos into the order you want them to appear.' },
@@ -315,6 +317,7 @@ export const toolContent: Record<string, ToolContent> = {
       { question: 'Can I convert multiple HEIC photos into one PDF?', answer: 'Yes, upload several HEIC files and they will be combined into a single multi-page PDF in the order you set.' },
       { question: 'Does converting HEIC to PDF reduce photo quality?', answer: 'No, the original image data is preserved at full resolution during conversion.' },
       { question: 'Are my personal photos uploaded to a server?', answer: 'No, HEIC decoding and PDF generation both happen locally in your browser.' },
+      { question: 'How do I convert heic to pdf from my iPhone?', answer: 'Simply open iCreatePDF on your iPhone, select this HEIC to PDF tool, and upload your photos from your camera roll. The photos are converted to PDF locally on your device without leaving your browser.' },
     ],
   },
 
@@ -347,7 +350,7 @@ export const toolContent: Record<string, ToolContent> = {
     name: 'Invert PDF Colors',
     url: '/invert-pdf',
     overview:
-      'Reading a bright white PDF in a dark room strains the eyes and drains battery on OLED screens. iCreatePDF inverts the red, green, and blue values of every page to produce a dark-mode version of a document, processed locally so nothing about the original file is uploaded.',
+      'Need to invert pdf online or convert your document? iCreatePDF is a fast pdf dark mode converter and pdf reverse color tool. Reading a bright white PDF in a dark room strains the eyes and drains battery. We invert the red, green, and blue values of every page to produce a dark-mode version of your document, processed 100% locally in your browser so nothing is uploaded.',
     steps: [
       { title: 'Upload the PDF', description: 'Add the document you want to convert for night reading.' },
       { title: 'Invert the colors', description: 'Every page is processed to flip light backgrounds to dark and vice versa.' },
@@ -365,6 +368,7 @@ export const toolContent: Record<string, ToolContent> = {
       { question: 'Can I invert colored images inside the PDF too?', answer: 'Yes, the inversion applies to the full rendered page, including embedded images and diagrams.' },
       { question: 'Is this the same as a PDF reader’s built-in dark mode?', answer: 'It achieves a similar visual effect, but the inversion is baked into the file itself so it looks dark in any viewer, not just ones with a dark mode toggle.' },
       { question: 'Is the file processed without uploading?', answer: 'Yes, color inversion runs entirely client-side in your browser.' },
+      { question: 'Why should I invert pdf colors online?', answer: 'Inverting PDF colors online creates a permanent dark mode version of your document. This is ideal for night reading, reducing eye strain in low-light environments, and saving screen battery or printing ink.' },
     ],
   },
 
@@ -597,7 +601,7 @@ export const toolContent: Record<string, ToolContent> = {
     name: 'QR Code to PDF',
     url: '/qr-to-pdf',
     overview:
-      'Printed materials, packaging, and flyers often need a scannable QR code embedded in a clean, print-ready layout. iCreatePDF generates a QR code from any URL, text, or contact info and compiles it into a clean A4 PDF with a live preview, all rendered locally in the browser.',
+      'Need a reliable qr to pdf converter? iCreatePDF generates a scannable QR code from any URL, text, or contact info and compiles it into a clean, print-ready A4 PDF layout. It works completely in your browser, providing a live preview and downloading your QR code as a PDF instantly without any signup.',
     steps: [
       { title: 'Enter your URL or text', description: 'Type the link, message, or contact info to encode.' },
       { title: 'Customize size and labels', description: 'Adjust the QR code size and add an optional caption.' },
@@ -615,6 +619,7 @@ export const toolContent: Record<string, ToolContent> = {
       { question: 'Can I add a label or caption under the QR code?', answer: 'Yes, you can add descriptive text alongside the code before generating the PDF.' },
       { question: 'Is the QR code generated locally?', answer: 'Yes, the QR image and PDF are both generated entirely in your browser.' },
       { question: 'What page size is the output PDF?', answer: 'The QR code is compiled onto a clean A4 page, ready for printing.' },
+      { question: 'How does this qr to pdf converter work?', answer: 'Our online qr to pdf converter generates a high-quality vector QR code based on your inputs (like links, text, or phone numbers) and compiles it directly into a clean A4 PDF file. Everything is processed locally in your browser, ensuring complete privacy.' },
     ],
   },
 
@@ -773,7 +778,7 @@ export const toolContent: Record<string, ToolContent> = {
     name: 'Sign PDF',
     url: '/sign-pdf',
     overview:
-      'Printing a contract just to sign and rescan it is slow, and uploading it to a third-party e-signature platform means a sensitive document passes through someone else’s server. iCreatePDF lets you draw, type, or upload your signature and stamp it directly onto PDF pages, keeping the signing process entirely on your device.',
+      'Printing a contract to sign it is slow, and third-party platforms pose privacy risks. iCreatePDF lets you add digital signature to pdf online for free. Whether you need to digitally sign pdf online, apply an electronic signature pdf free online, or e sign document online, our browser-based tool makes it simple. Draw, type, or upload your signature and stamp it directly onto PDF pages client-side, keeping your document and signature 100% private.',
     steps: [
       { title: 'Upload the document to sign', description: 'Add the contract, lease, or form that needs a signature.' },
       { title: 'Create your signature', description: 'Draw it with your mouse or finger, type it, or upload an image.' },
@@ -791,6 +796,9 @@ export const toolContent: Record<string, ToolContent> = {
       { question: 'Is a signature added this way legally binding?', answer: 'Electronic signatures are broadly recognized for most everyday contracts; check specific jurisdiction and document requirements for high-stakes legal use.' },
       { question: 'Can I reposition my signature after placing it?', answer: 'Yes, you can move and resize the signature on the page before finalizing the document.' },
       { question: 'Is my signature or document uploaded to a server?', answer: 'No, the entire signing process runs locally in your browser sandbox.' },
+      { question: 'How can I add digital signature to pdf online free?', answer: 'Simply upload your PDF, create your signature by drawing, typing, or uploading an image, and place it anywhere on your document. Download the signed file immediately — no server uploads, no registration required.' },
+      { question: 'How to make a document signable online for free?', answer: 'You can upload any PDF to our Sign PDF tool to add interactive signature overlays. Once placed, the e-signature is merged directly into the document so it is ready to be shared as a signed copy.' },
+      { question: 'How do I create a secure electronic signature for free?', answer: 'Create a free, secure signature by drawing it on screen or uploading an image. Because iCreatePDF does not upload your files or signature to a remote server, your signature data remains entirely private and secure on your own device.' },
     ],
   },
 
@@ -798,7 +806,7 @@ export const toolContent: Record<string, ToolContent> = {
     name: 'Split PDF',
     url: '/split-pdf',
     overview:
-      'A large combined PDF sometimes needs to become several smaller files — one per chapter, one per invoice, or one per applicant. iCreatePDF extracts page ranges or separates every page of a document into individual files, processed locally with instant download of the split parts.',
+      'A large combined PDF sometimes needs to become several smaller files. If you want to learn how to split pdf pages free, iCreatePDF extracts page ranges or separates every page of a document into individual files, processed locally with instant download of the split parts.',
     steps: [
       { title: 'Upload the PDF to split', description: 'Add the document you want divided into separate files.' },
       { title: 'Choose a split method', description: 'Split into custom ranges or separate every single page.' },
@@ -816,6 +824,7 @@ export const toolContent: Record<string, ToolContent> = {
       { question: 'How many output files will I get?', answer: 'That depends on the split method you choose — custom ranges produce one file per range, while full separation produces one file per page.' },
       { question: 'Is there a limit on the size of PDF I can split?', answer: 'No, there is no artificial file size or page count limit.' },
       { question: 'Is splitting done without uploading the file?', answer: 'Yes, all splitting happens locally inside your browser.' },
+      { question: 'How to split pdf pages for free?', answer: 'Simply upload your PDF to our Split PDF tool, choose your split method (custom page ranges or separating every single page), preview the parts, and click split. Your new PDF documents are downloaded instantly for free.' },
     ],
   },
 
@@ -923,7 +932,7 @@ export const toolContent: Record<string, ToolContent> = {
     name: 'Word to PDF',
     url: '/word-to-pdf',
     overview:
-      'Sending a .docx file risks formatting shifting on the recipient’s device, especially if they don’t have the same fonts or version of Word. iCreatePDF converts DOCX Word documents into PDF files entirely inside your browser sandbox, preserving text layout while keeping the document 100% private.',
+      "Wondering how to convert docx to pdf without formatting shifting on the recipient's device? iCreatePDF is an online docx to pdf converter free. Learn how to transform docx to pdf or how to change a docx to pdf in seconds. We help you convert a docx file to pdf, supporting standard .docx to pdf operations. The entire conversion runs in your browser sandbox, keeping your documents 100% private and secure.",
     steps: [
       { title: 'Upload your Word document', description: 'Add the .docx file you want to convert.' },
       { title: 'Preview the conversion', description: 'Check how the document will render as a PDF.' },
@@ -941,6 +950,9 @@ export const toolContent: Record<string, ToolContent> = {
       { question: 'Does this work with .doc files as well as .docx?', answer: 'The tool is built around the modern .docx format; older .doc files may need to be re-saved as .docx first.' },
       { question: 'Is my Word document uploaded to a server?', answer: 'No, conversion happens entirely inside your browser sandbox — the file never leaves your device.' },
       { question: 'Can I convert documents with images and tables?', answer: 'Yes, embedded images and tables are carried over into the converted PDF layout.' },
+      { question: 'How do I save docx as pdf on my device?', answer: 'Simply drag and drop your file into our Word to PDF tool. It converts your Word docx to pdf in real-time, preserving fonts, images, and tables without uploading the file to any server.' },
+      { question: 'How to convert docx to pdf or change a docx to pdf for free?', answer: 'Our Word to PDF tool is completely free with no registration. To transform docx to pdf, just drop the .docx file above, review the preview, and download your formatted PDF.' },
+      { question: 'Can I convert ooxml or dox files to PDF?', answer: 'Yes! OOXML format (which is the standard XML structure of .docx files) is fully supported. If you have files named dox, doc, or docx, ensure they are in the modern .docx structure and our tool will easily convert them to PDF.' },
     ],
   },
 
@@ -974,7 +986,7 @@ export const toolContent: Record<string, ToolContent> = {
     name: 'PDF OCR (Scan to Text)',
     url: '/pdf-ocr',
     overview:
-      'Extract text from scanned, image-only, or copy-protected PDF files using Optical Character Recognition (OCR). iCreatePDF processes each page locally inside your browser sandbox using WebAssembly, analyzing visual characters and rebuilding them into copyable, search-friendly text. No server uploads are required, guaranteeing absolute privacy for confidential documents.',
+      'Extract text from scanned, image-only, or copy-protected PDF files using our free ocr pdf to text tool. iCreatePDF converts pdf ocr to text locally inside your browser sandbox using WebAssembly, analyzing visual characters and rebuilding them into copyable, search-friendly plain text. It helps you turn scanned document into text, convert scanned pdf to editable text, and run pdf scan to text functions instantly. No server uploads are required, guaranteeing absolute privacy for confidential documents.',
     steps: [
       { title: 'Upload the scanned PDF', description: 'Drag in the image-only or copy-protected PDF file.' },
       { title: 'Select the document language', description: 'Choose from English, Spanish, Hindi, or Tamil for high OCR accuracy.' },
@@ -993,6 +1005,8 @@ export const toolContent: Record<string, ToolContent> = {
       { question: 'Does it support multi-language documents?', answer: 'Yes, you can choose the primary language (English, Spanish, Hindi, or Tamil) to ensure the OCR parser matches the correct dictionary and character set.' },
       { question: 'Can it convert the PDF back into a searchable PDF?', answer: 'This tool extracts the text layer into an editable plain text format (.txt). To build a fully search-indexed PDF, you can copy the text and compile it back using our Markdown to PDF or HTML to PDF tools.' },
       { question: 'Are there page or file size limits?', answer: 'No, there are no limits. However, since OCR is CPU-intensive and runs in the browser, processing very large documents (50+ pages) may take several minutes depending on your device.' },
+      { question: 'Is there a limit on using this free ocr pdf to text tool?', answer: 'No. iCreatePDF provides a completely free ocr pdf to text solution with no page limits, no daily caps, and no email registration. You can convert pdf ocr to text directly on your device.' },
+      { question: 'How do I convert a scanned PDF back to a normal PDF with editable text?', answer: 'To convert a scanned PDF to a normal PDF with selectable text, first run our OCR tool above to extract the text. Then, paste the text into our Markdown to PDF or HTML to PDF tool to compile it into a fresh, clean, search-indexed PDF document.' },
     ],
   },
 
@@ -1000,7 +1014,7 @@ export const toolContent: Record<string, ToolContent> = {
     name: 'Bulk Certificate Generator',
     url: '/bulk-certificates',
     overview:
-      'Generate hundreds of personalized PDF certificates, letters, or tickets in bulk entirely inside your browser. Simply upload your PDF certificate template, import a spreadsheet (Excel or CSV), visually position placeholders for names, courses, or dates on the page, and instantly download them as a combined PDF file or a zipped folder of individual PDFs. Zero sign-up, zero server uploads, 100% private.',
+      'Need to generate certificates from csv or excel files in bulk? iCreatePDF lets you generate hundreds of personalized PDF certificates, letters, or tickets instantly inside your browser. Upload your PDF certificate template, import your CSV/Excel spreadsheet, drag-and-drop placeholders (like student names or dates) onto the preview, and download them. 100% private, free, and secure.',
     steps: [
       { title: 'Upload your template & data', description: 'Add your single-page PDF template and Excel/CSV list.' },
       { title: 'Create placeholders', description: 'Select headers from your spreadsheet to place as text labels on the preview.' },
@@ -1019,6 +1033,7 @@ export const toolContent: Record<string, ToolContent> = {
       { question: 'Can I choose different fonts and colors?', answer: 'Yes! You can configure the font family (Helvetica, Times Roman, Courier), adjust the font size, set text alignment, make text bold, and pick custom colors using a hex color picker.' },
       { question: 'Is my spreadsheet or template uploaded to a server?', answer: 'Never. Like all tools on iCreatePDF, the parsing of Excel rows, drawing of text, and PDF compilation happen entirely inside your local browser memory space.' },
       { question: 'How will the downloaded files look?', answer: 'You can choose to export as a single combined PDF (with one certificate page per spreadsheet row) or as a ZIP file containing separate, individually named PDFs for each recipient.' },
+      { question: 'How do I generate certificates from csv or excel?', answer: 'Upload a single-page PDF template and your CSV/Excel list. Click on any spreadsheet column name to create a placeholder, drag it to the correct spot on the preview, and configure formatting, then click Export in Bulk to download the generated files.' },
     ],
   },
 
@@ -1026,7 +1041,7 @@ export const toolContent: Record<string, ToolContent> = {
     name: 'Fillable PDF Form Builder',
     url: '/fillable-pdf-builder',
     overview:
-      'Design interactive fillable PDF forms client-side without purchasing expensive software. iCreatePDF lets you upload any flat PDF page and overlay interactive text fields, checkboxes, dropdown lists, and radio options. The tool generates standards-compliant fillable PDF form widgets locally in your browser memory, keeping your documents 100% private.',
+      'Design interactive forms client-side without purchasing expensive software. If you need to create pdf form options or want the best free fillable pdf form creator, iCreatePDF lets you upload any flat PDF page and overlay interactive text fields, checkboxes, dropdown lists, and radio options. The tool generates standards-compliant fillable PDF form widgets locally in your browser memory, keeping your documents 100% private.',
     steps: [
       { title: 'Upload your document', description: 'Add the PDF document you want to make fillable.' },
       { title: 'Insert interactive elements', description: 'Select field types (Text Input, Checkbox, Choice Dropdown, Radio Button).' },
@@ -1044,6 +1059,7 @@ export const toolContent: Record<string, ToolContent> = {
       { question: 'Are my files sent to any server?', answer: 'No. The entire editing visual workspace and the pdf-lib compiler operate client-side in your local browser. Your documents never leave your device.' },
       { question: 'Can I define multiple choices for dropdown menus?', answer: 'Yes! When you select a dropdown widget, you can type a comma-separated list of options in the sidebar properties panel to populate the choices.' },
       { question: 'Can I set default values or pre-checked states?', answer: 'Yes. You can configure default text or set the initial checkbox state (checked/unchecked) in the property panel for each field.' },
+      { question: 'How do I create a fillable PDF form for free?', answer: 'To create a fillable PDF form for free, upload your static PDF document to our builder. Select the interactive elements you need (like text fields, checkboxes, or dropdown lists), drag them into position, customize their options, and download your interactive PDF form instantly.' },
     ],
   },
 };

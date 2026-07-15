@@ -6,13 +6,13 @@ import { toolContent } from '@/lib/tool-content';
 import { buildAlternates, toolSchema } from '@/lib/seo';
 
 export const metadata: Metadata = {
-  title: 'Free PDF OCR Online - Convert Scanned PDF to Text | iCreatePDF',
-  description: 'Extract text from scanned, image-only, or copy-protected PDF files using client-side OCR (Optical Character Recognition). Process documents 100% locally in your browser for free.',
-  keywords: 'pdf ocr online, scanned pdf to text, extract text from pdf, copy-proof pdf to text ocr, convert scanned pdf to text, local pdf ocr',
+  title: 'Free PDF OCR to Text Online: Convert Scanned PDF to Text | iCreatePDF',
+  description: 'Free online PDF OCR to text converter. Extract editable text from scanned, image-only, or protected PDF documents 100% locally in your browser. No registration.',
+  keywords: 'pdf ocr to text, free ocr pdf to text, online ocr pdf, turn scanned document into text, convert a scanned document to editable text, scanned document to text, scanned pdf to text converter, ocr pdf to text, ocr convert scanned pdf to text, online ocr pdf to text converters, convert ocr pdf, ocr convert pdf to text, convert pdf image to text, convert pdf to machine readable format, scan and ocr pdf, convert scanned pdf to editable text, convert scanned pdf to text online free, ocr for scanned documents, ocr pdf converter, pdf scan ocr, scanned pdf to text, pdf scan to text, scanned pdf to normal pdf, scanned pdf ocr to text, pdf ocr online, scanned pdf to text, extract text from pdf, copy-proof pdf to text ocr, convert scanned pdf to text, local pdf ocr',
   alternates: buildAlternates('/pdf-ocr'),
   openGraph: {
-    title: 'Free PDF OCR Online - Convert Scanned PDF to Text | iCreatePDF',
-    description: 'Extract text from scanned, image-only, or copy-protected PDF files using client-side OCR (Optical Character Recognition). Process documents 100% locally in your browser for free.',
+    title: 'Free PDF OCR to Text Online: Convert Scanned PDF to Text | iCreatePDF',
+    description: 'Free online PDF OCR to text converter. Extract editable text from scanned, image-only, or protected PDF documents 100% locally in your browser. No registration.',
     type: 'website',
   }
 };

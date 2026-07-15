@@ -6,13 +6,13 @@ import { toolContent } from '@/lib/tool-content';
 import { buildAlternates, toolSchema } from '@/lib/seo';
 
 export const metadata: Metadata = {
-  title: 'Free Interactive Fillable PDF Form Builder Online | iCreatePDF',
-  description: 'Create interactive, fillable PDF forms client-side for free. Overlay text inputs, checkboxes, dropdown selectors, and radio options locally in your browser.',
-  keywords: 'fillable pdf builder, interactive form builder, create fillable pdf online free, pdf form creator offline, client side pdf fields',
+  title: 'Create PDF Form: Best Free Fillable PDF Form Creator | iCreatePDF',
+  description: 'Create interactive, fillable PDF forms online. The best free fillable PDF form creator. Add text inputs, checkboxes, and dropdowns 100% locally and privately.',
+  keywords: 'create pdf form, best free fillable pdf form creator, pdf fillable form free, free pdf fillable forms, free fillable pdf form creator, fillable pdf free, free fill forms, create fillable pdf form, pdf form generator, create fillable pdf free, fillable pdf builder, interactive form builder, create fillable pdf online free, pdf form creator offline, client side pdf fields',
   alternates: buildAlternates('/fillable-pdf-builder'),
   openGraph: {
-    title: 'Free Interactive Fillable PDF Form Builder Online | iCreatePDF',
-    description: 'Create interactive, fillable PDF forms client-side for free. Overlay text inputs, checkboxes, dropdown selectors, and radio options locally in your browser.',
+    title: 'Create PDF Form: Best Free Fillable PDF Form Creator | iCreatePDF',
+    description: 'Create interactive, fillable PDF forms online. The best free fillable PDF form creator. Add text inputs, checkboxes, and dropdowns 100% locally and privately.',
     type: 'website',
   }
 };

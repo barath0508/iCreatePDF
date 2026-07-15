@@ -6,13 +6,13 @@ import { toolContent } from '@/lib/tool-content';
 import { buildAlternates, toolSchema } from '@/lib/seo';
 
 export const metadata: Metadata = {
-  title: 'Delete PDF Pages Online Free - Remove Pages from PDF | iCreatePDF',
-  description: 'Delete pages from a PDF document easily. Enter ranges to discard unwanted pages. 100% private client-side processing, no uploads.',
-  keywords: 'delete pdf pages, remove pages from pdf, discard pdf pages online, free pdf page deleter, client side page deletion',
+  title: 'Cut PDF Pages: How to Cut a Page from PDF Free | iCreatePDF',
+  description: 'Wondering how to cut a page from PDF? Easily cut, delete, or remove pages from a PDF document online. 100% private client-side processing, no uploads.',
+  keywords: 'how to cut a page from pdf, cut pdf pages, pdf cut pages, cut pages out of pdf, delete pdf pages, remove pages from pdf, discard pdf pages online, free pdf page deleter, client side page deletion',
   alternates: buildAlternates('/delete-pdf-pages'),
   openGraph: {
-    title: 'Delete PDF Pages Online Free - Remove Pages from PDF',
-    description: 'Delete pages from a PDF document easily. Enter ranges to discard unwanted pages. 100% private client-side processing, no uploads.',
+    title: 'Cut PDF Pages: How to Cut a Page from PDF Free | iCreatePDF',
+    description: 'Wondering how to cut a page from PDF? Easily cut, delete, or remove pages from a PDF document online. 100% private client-side processing, no uploads.',
     type: 'website',
   }
 };
