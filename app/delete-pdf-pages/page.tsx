@@ -8,7 +8,7 @@ import { buildAlternates, toolSchema } from '@/lib/seo';
 export const metadata: Metadata = {
   title: 'Cut PDF Pages: How to Cut a Page from PDF Free | iCreatePDF',
   description: 'Wondering how to cut a page from PDF? Easily cut, delete, or remove pages from a PDF document online. 100% private client-side processing, no uploads.',
-  keywords: 'how to cut a page from pdf, cut pdf pages, pdf cut pages, cut pages out of pdf, delete pdf pages, remove pages from pdf, discard pdf pages online, free pdf page deleter, client side page deletion',
+  keywords: 'how to separate a page from a pdf, separate a page from pdf, how to cut a pdf page, how to cut a page from pdf, cut pdf pages, pdf cut pages, cut pages out of pdf, delete pdf pages, remove pages from pdf, discard pdf pages online, free pdf page deleter, client side page deletion',
   alternates: buildAlternates('/delete-pdf-pages'),
   openGraph: {
     title: 'Cut PDF Pages: How to Cut a Page from PDF Free | iCreatePDF',

@@ -88,6 +88,13 @@ const tools = [
     category: 'convert',
   },
   {
+    icon: BookMarked,
+    title: 'RIS to PDF',
+    desc: 'Convert bibliographic RIS citation files into beautifully formatted reference PDFs.',
+    href: '/ris-to-pdf',
+    category: 'convert',
+  },
+  {
     icon: Camera,
     title: 'Scan to PDF',
     desc: 'Capture document pages using your camera and compile into a PDF.',

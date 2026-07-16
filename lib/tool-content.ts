@@ -148,7 +148,7 @@ export const toolContent: Record<string, ToolContent> = {
     name: 'Delete PDF Pages',
     url: '/delete-pdf-pages',
     overview:
-      'Wondering how to cut a page from pdf easily? iCreatePDF lets you cut pdf pages and remove pages from a pdf document online for free. Whether you need to delete blank scans, duplicate cover sheets, or cut pages out of pdf files, our tool removes pages from a document in your browser sandbox without any uploads.',
+      'Wondering how to cut a page from pdf easily or how to separate a page from a pdf? iCreatePDF lets you cut pdf pages, separate a page from pdf, and remove pages from a pdf document online for free. Whether you need to delete blank scans, duplicate cover sheets, or cut pages out of pdf files, our tool removes pages from a document in your browser sandbox without any uploads.',
     steps: [
       { title: 'Upload the PDF', description: 'Add the document containing pages you want to remove.' },
       { title: 'Enter the pages to delete', description: 'Specify single pages or ranges, e.g. 2, 5-8, 12.' },
@@ -167,6 +167,8 @@ export const toolContent: Record<string, ToolContent> = {
       { question: 'Is there a limit to how many pages I can remove?', answer: 'No, there is no page-count restriction or file-size cap on this tool.' },
       { question: 'Are my files uploaded anywhere?', answer: 'No, page deletion happens entirely client-side in your browser.' },
       { question: 'Can I cut pdf pages from a document for free?', answer: 'Yes! Our tool is completely free with no usage limits. You can cut pages out of pdf files, remove unwanted ranges (like 2, 5-8), and download your updated PDF instantly.' },
+      { question: 'How to separate a page from a PDF?', answer: 'To separate a page from a PDF, you can use our Delete PDF Pages tool (to remove unwanted pages and save the remaining ones) or use our [Split PDF](file:///split-pdf) / [Extract Pages](file:///extract-pages) tools to pull out specific pages into a new standalone PDF.' },
+      { question: 'How to cut a page from a PDF or delete pages?', answer: 'Simply drag and drop your document into our Delete PDF Pages tool. Type in the page numbers or page ranges you want to cut (such as 2, 5-8), preview the result, and download the trimmed PDF. All processing happens 100% privately in your browser.' },
     ],
   },
 
@@ -199,7 +201,7 @@ export const toolContent: Record<string, ToolContent> = {
     name: 'Extract Pages from PDF',
     url: '/extract-pages',
     overview:
-      'Sometimes you only need a handful of pages out of a much larger PDF — a single invoice from a batch export, or a chapter from a full manual. iCreatePDF pulls specific pages or ranges out of a document and saves them as a new standalone PDF, processed entirely in your browser.',
+      'Sometimes you only need to separate a page from pdf or pull a handful of pages out of a much larger PDF — a single invoice from a batch export, or a chapter from a full manual. iCreatePDF pulls specific pages or ranges out of a document and saves them as a new standalone PDF, processed entirely in your browser.',
     steps: [
       { title: 'Upload the source PDF', description: 'Add the larger document you want to pull pages from.' },
       { title: 'Enter the pages you need', description: 'Use single numbers or ranges, e.g. 1,3,5-8.' },
@@ -217,6 +219,7 @@ export const toolContent: Record<string, ToolContent> = {
       { question: 'Does the original file get modified?', answer: 'No, the source PDF is untouched — extraction creates a brand new file with just the selected pages.' },
       { question: 'Is there a limit on how many pages I can extract?', answer: 'No, you can extract as many pages or ranges as your document contains.' },
       { question: 'Is the extraction done locally?', answer: 'Yes, everything runs client-side in your browser without any file upload.' },
+      { question: 'How to separate a page from a PDF and keep it?', answer: 'To separate and save a specific page from a PDF, upload your file to our Extract Pages tool. Enter the page number you want to separate (e.g. 3) or a range (e.g. 5-8) and download the new standalone document. If you want to delete pages instead, use our [Delete PDF Pages](file:///delete-pdf-pages) tool.' },
     ],
   },
 
@@ -318,6 +321,7 @@ export const toolContent: Record<string, ToolContent> = {
       { question: 'Does converting HEIC to PDF reduce photo quality?', answer: 'No, the original image data is preserved at full resolution during conversion.' },
       { question: 'Are my personal photos uploaded to a server?', answer: 'No, HEIC decoding and PDF generation both happen locally in your browser.' },
       { question: 'How do I convert heic to pdf from my iPhone?', answer: 'Simply open iCreatePDF on your iPhone, select this HEIC to PDF tool, and upload your photos from your camera roll. The photos are converted to PDF locally on your device without leaving your browser.' },
+      { question: 'How to convert heic to pdf on iphone for free?', answer: 'To convert HEIC to PDF on iPhone, open Safari or Chrome on your iPhone, navigate to iCreatePDF HEIC to PDF tool, tap inside the upload box, and select your photos directly from the Photo Library or Files app. Click convert and download the formatted PDF instantly. The files never leave your device!' },
     ],
   },
 
@@ -343,6 +347,7 @@ export const toolContent: Record<string, ToolContent> = {
       { question: 'Is my HTML sent to an external rendering server?', answer: 'No, rendering happens entirely inside your browser — your markup never leaves your device.' },
       { question: 'Can I control page size and margins?', answer: 'Yes, page dimensions and margins can be adjusted before exporting.' },
       { question: 'Does it support images and web fonts?', answer: 'Standard embedded images and CSS-declared fonts render as part of the compiled page.' },
+      { question: 'How does this compare to PDFCrowd html to pdf converter?', answer: 'Unlike PDFCrowd html to pdf, which runs on a remote cloud server and enforces paid limits, iCreatePDF renders your HTML to PDF 100% locally in your web browser. This means it is completely free with no usage limits, operates offline, and ensures your markup and data never leave your local device.' },
     ],
   },
 
@@ -350,7 +355,7 @@ export const toolContent: Record<string, ToolContent> = {
     name: 'Invert PDF Colors',
     url: '/invert-pdf',
     overview:
-      'Need to invert pdf online or convert your document? iCreatePDF is a fast pdf dark mode converter and pdf reverse color tool. Reading a bright white PDF in a dark room strains the eyes and drains battery. We invert the red, green, and blue values of every page to produce a dark-mode version of your document, processed 100% locally in your browser so nothing is uploaded.',
+      'Need to invert pdf online or convert your document? iCreatePDF is a fast, free pdf color inverter, pdf dark mode converter, and pdf reverse color tool. Reading a bright white PDF in a dark room strains the eyes and drains battery. We invert the red, green, and blue values of every page to produce a dark-mode version of your document, processed 100% locally in your browser so nothing is uploaded.',
     steps: [
       { title: 'Upload the PDF', description: 'Add the document you want to convert for night reading.' },
       { title: 'Invert the colors', description: 'Every page is processed to flip light backgrounds to dark and vice versa.' },
@@ -369,6 +374,7 @@ export const toolContent: Record<string, ToolContent> = {
       { question: 'Is this the same as a PDF reader’s built-in dark mode?', answer: 'It achieves a similar visual effect, but the inversion is baked into the file itself so it looks dark in any viewer, not just ones with a dark mode toggle.' },
       { question: 'Is the file processed without uploading?', answer: 'Yes, color inversion runs entirely client-side in your browser.' },
       { question: 'Why should I invert pdf colors online?', answer: 'Inverting PDF colors online creates a permanent dark mode version of your document. This is ideal for night reading, reducing eye strain in low-light environments, and saving screen battery or printing ink.' },
+      { question: 'How do I use this PDF color inverter?', answer: 'To use our PDF color inverter, upload your PDF document to the tool above. Click the invert button, and our local engine will flip every pixel\'s color, turning white backgrounds black and dark text white. Download the dark-mode PDF, processed completely locally for maximum privacy.' },
     ],
   },
 
@@ -526,7 +532,7 @@ export const toolContent: Record<string, ToolContent> = {
     name: 'PDF to Text',
     url: '/pdf-to-text',
     overview:
-      'Copy-pasting from a PDF often mangles line breaks and spacing. iCreatePDF extracts the structured text layout of a PDF page-by-page directly in the browser, giving you clean plain text you can paste into a note, search index, or another document without formatting artifacts.',
+      'Copy-pasting from a PDF often mangles line breaks and spacing. If you want to convert pdf image to text, extract text from pdf, or convert pdf to machine readable format, iCreatePDF extracts the structured text layout of a PDF page-by-page directly in your browser. This gives you clean plain text you can paste into a note, search index, or another document without formatting artifacts. For scanned PDFs or images, please use our [PDF OCR (Scan to Text)](file:///pdf-ocr) tool.',
     steps: [
       { title: 'Upload your PDF', description: 'Add the document you want to extract text from.' },
       { title: 'Text extracts per page', description: 'The tool reads the structural text content of every page.' },
@@ -540,10 +546,11 @@ export const toolContent: Record<string, ToolContent> = {
       'Convert a PDF into editable plain text for reuse in another document',
     ],
     faqs: [
-      { question: 'Does this work on scanned image-based PDFs?', answer: 'It extracts text that is embedded as selectable text in the PDF; purely scanned image pages without a text layer will not have extractable text.' },
+      { question: 'Does this work on scanned image-based PDFs?', answer: 'It extracts text that is embedded as selectable text in the PDF; purely scanned image pages without a text layer will not have extractable text. For scanned files, use our local [PDF OCR](file:///pdf-ocr) tool.' },
       { question: 'Is formatting like bold or italics preserved?', answer: 'No, the output is plain text — structural line and paragraph breaks are preserved but styling is not.' },
       { question: 'Can I extract text from just one page?', answer: 'Text is extracted page-by-page, so you can review and use the content from any individual page.' },
       { question: 'Is the extraction processed locally?', answer: 'Yes, everything runs client-side in your browser with no file upload.' },
+      { question: 'How do I convert a scanned PDF or PDF image to text?', answer: 'For purely scanned image-based PDFs, a standard text extractor won\'t work. Instead, you need to use our [PDF OCR (Scan to Text)](file:///pdf-ocr) tool, which uses an in-browser neural network to read and recognize text from scanned document images and convert them into machine readable format.' },
     ],
   },
 
@@ -601,7 +608,7 @@ export const toolContent: Record<string, ToolContent> = {
     name: 'QR Code to PDF',
     url: '/qr-to-pdf',
     overview:
-      'Need a reliable qr to pdf converter? iCreatePDF generates a scannable QR code from any URL, text, or contact info and compiles it into a clean, print-ready A4 PDF layout. It works completely in your browser, providing a live preview and downloading your QR code as a PDF instantly without any signup.',
+      'Need a reliable qr code to pdf converter or looking for a way to embed a qr code to pdf free? iCreatePDF generates a scannable QR code from any URL, text, or contact info and compiles it into a clean, print-ready A4 PDF layout. It works completely in your browser, providing a live preview and downloading your QR code as a PDF instantly without any signup.',
     steps: [
       { title: 'Enter your URL or text', description: 'Type the link, message, or contact info to encode.' },
       { title: 'Customize size and labels', description: 'Adjust the QR code size and add an optional caption.' },
@@ -620,6 +627,7 @@ export const toolContent: Record<string, ToolContent> = {
       { question: 'Is the QR code generated locally?', answer: 'Yes, the QR image and PDF are both generated entirely in your browser.' },
       { question: 'What page size is the output PDF?', answer: 'The QR code is compiled onto a clean A4 page, ready for printing.' },
       { question: 'How does this qr to pdf converter work?', answer: 'Our online qr to pdf converter generates a high-quality vector QR code based on your inputs (like links, text, or phone numbers) and compiles it directly into a clean A4 PDF file. Everything is processed locally in your browser, ensuring complete privacy.' },
+      { question: 'Is it free to generate a QR code PDF?', answer: 'Yes! iCreatePDF is a 100% free online QR to PDF compiler. There are no watermarks, no registration prompts, and no premium restrictions. You can generate and print as many QR code PDFs as you need.' },
     ],
   },
 
@@ -806,7 +814,7 @@ export const toolContent: Record<string, ToolContent> = {
     name: 'Split PDF',
     url: '/split-pdf',
     overview:
-      'A large combined PDF sometimes needs to become several smaller files. If you want to learn how to split pdf pages free, iCreatePDF extracts page ranges or separates every page of a document into individual files, processed locally with instant download of the split parts.',
+      'A large combined PDF sometimes needs to become several smaller files. If you want to learn how to separate a page from a pdf or how to split pdf pages free, iCreatePDF extracts page ranges or separates every page of a document into individual files, processed locally with instant download of the split parts.',
     steps: [
       { title: 'Upload the PDF to split', description: 'Add the document you want divided into separate files.' },
       { title: 'Choose a split method', description: 'Split into custom ranges or separate every single page.' },
@@ -825,6 +833,7 @@ export const toolContent: Record<string, ToolContent> = {
       { question: 'Is there a limit on the size of PDF I can split?', answer: 'No, there is no artificial file size or page count limit.' },
       { question: 'Is splitting done without uploading the file?', answer: 'Yes, all splitting happens locally inside your browser.' },
       { question: 'How to split pdf pages for free?', answer: 'Simply upload your PDF to our Split PDF tool, choose your split method (custom page ranges or separating every single page), preview the parts, and click split. Your new PDF documents are downloaded instantly for free.' },
+      { question: 'How do I separate a page from a PDF using the splitter?', answer: 'Upload your PDF, choose "Extract custom ranges" and enter the specific page number you wish to separate. The tool will isolate that page into a new PDF. For deleting pages, you can also use our [Delete PDF Pages](file:///delete-pdf-pages) tool.' },
     ],
   },
 
@@ -946,12 +955,13 @@ export const toolContent: Record<string, ToolContent> = {
       'Archive Word documents in a more universally compatible format',
     ],
     faqs: [
-      { question: 'Will my document formatting stay the same after conversion?', answer: 'Yes, text layout, headings, and structure are preserved during the conversion to PDF.' },
+      { question: 'Will my document formatting stay the same after conversion?', answer: 'Yes, our engine is designed to export your word to pdf without changing format, keeping margins, text alignment, headings, and lists intact.' },
       { question: 'Does this work with .doc files as well as .docx?', answer: 'The tool is built around the modern .docx format; older .doc files may need to be re-saved as .docx first.' },
-      { question: 'Is my Word document uploaded to a server?', answer: 'No, conversion happens entirely inside your browser sandbox — the file never leaves your device.' },
+      { question: 'Is my Word document uploaded to a server?', answer: 'No, conversion happens entirely inside your browser sandbox — this is a secure way to convert word to pdf free offline, and the file never leaves your device.' },
       { question: 'Can I convert documents with images and tables?', answer: 'Yes, embedded images and tables are carried over into the converted PDF layout.' },
       { question: 'How do I save docx as pdf on my device?', answer: 'Simply drag and drop your file into our Word to PDF tool. It converts your Word docx to pdf in real-time, preserving fonts, images, and tables without uploading the file to any server.' },
       { question: 'How to convert docx to pdf or change a docx to pdf for free?', answer: 'Our Word to PDF tool is completely free with no registration. To transform docx to pdf, just drop the .docx file above, review the preview, and download your formatted PDF.' },
+      { question: 'How do I convert docx to pdf in Microsoft Word?', answer: 'In Word, you can click File > Save As and select PDF (*.pdf) as the format. However, if you do not have Word installed, you can use our tool to convert docx to pdf without word, right in your web browser.' },
       { question: 'Can I convert ooxml or dox files to PDF?', answer: 'Yes! OOXML format (which is the standard XML structure of .docx files) is fully supported. If you have files named dox, doc, or docx, ensure they are in the modern .docx structure and our tool will easily convert them to PDF.' },
     ],
   },
@@ -1060,6 +1070,32 @@ export const toolContent: Record<string, ToolContent> = {
       { question: 'Can I define multiple choices for dropdown menus?', answer: 'Yes! When you select a dropdown widget, you can type a comma-separated list of options in the sidebar properties panel to populate the choices.' },
       { question: 'Can I set default values or pre-checked states?', answer: 'Yes. You can configure default text or set the initial checkbox state (checked/unchecked) in the property panel for each field.' },
       { question: 'How do I create a fillable PDF form for free?', answer: 'To create a fillable PDF form for free, upload your static PDF document to our builder. Select the interactive elements you need (like text fields, checkboxes, or dropdown lists), drag them into position, customize their options, and download your interactive PDF form instantly.' },
+    ],
+  },
+
+  'ris-to-pdf': {
+    name: 'RIS to PDF Citation Converter',
+    url: '/ris-to-pdf',
+    overview:
+      "Wondering how to convert RIS to PDF? iCreatePDF provides an online RIS to PDF converter free. Learn how to transform RIS citation data into beautifully formatted bibliographies. We help you parse and compile RIS files into styled PDFs, supporting standard citation formats like APA, MLA, Harvard, and Chicago. The entire compilation runs in your browser sandbox, keeping your references and documents 100% private.",
+    steps: [
+      { title: 'Upload your RIS file or paste tags', description: 'Add your .ris bibliographic citation file or paste raw tag lines.' },
+      { title: 'Select citation format style', description: 'Choose your desired reference style (APA 7th, MLA 9th, Harvard, or Chicago).' },
+      { title: 'Configure PDF page and fonts', description: 'Adjust page size, margins, font family, size, and line spacing settings.' },
+      { title: 'Download your compiled PDF', description: 'Export the formatted bibliography as a clean, print-ready PDF.' },
+    ],
+    useCases: [
+      'Convert RIS citations from EndNote, Zotero, Mendeley, or Google Scholar to PDF bibliographies',
+      'Format raw bibliography lists for academic paper submissions and thesis papers',
+      'Export a clean, styled works cited page for print layouts or student portfolios',
+      'Maintain an offline, private repository of formatted document citations',
+    ],
+    faqs: [
+      { question: 'What is a RIS file?', answer: 'A RIS (Research Information Systems) file is a standardized tag format used to enable citation programs (like EndNote, Zotero, Mendeley, and RefWorks) to exchange bibliographic data. It lists records with tags such as AU (Author), TI (Title), PY (Publication Year), and JO (Journal).' },
+      { question: 'Which citation styles are supported?', answer: 'iCreatePDF supports formatting RIS reference records into APA 7th Edition, MLA 9th Edition, Harvard reference format, and Chicago Manual of Style citation layouts.' },
+      { question: 'Does this tool support multiple references in one file?', answer: 'Yes! If your RIS file contains multiple citation records separated by ER (End of Reference) tags, our tool parses all of them and compiles them into a single, multi-page sorted bibliography list.' },
+      { question: 'Is my citation data private?', answer: 'Yes. The RIS parser and pdf-lib document compiler run entirely client-side inside your browser sandbox. No file uploads or data transmissions occur across the network.' },
+      { question: 'How do I convert RIS to PDF online for free?', answer: 'To convert RIS to PDF, simply drag and drop your .ris file or paste the raw RIS data into the input box above. Select your preferred citation style (such as APA or MLA) and layout settings, then click "Compile RIS to PDF" to generate and download your formatted PDF instantly.' },
     ],
   },
 };

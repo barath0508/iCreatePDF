@@ -8,7 +8,7 @@ import { buildAlternates, toolSchema } from '@/lib/seo';
 export const metadata: Metadata = {
   title: 'Convert HTML to PDF Online - Free & Private | iCreatePDF',
   description: 'Compile custom HTML and CSS templates into formatted PDF documents locally. Completely private, client-side HTML-to-PDF utility.',
-  keywords: 'html to pdf, convert html to pdf, online html pdf compiler, css to pdf client side',
+  keywords: 'pdfcrowd html to pdf, html to pdf, convert html to pdf, online html pdf compiler, css to pdf client side',
   alternates: buildAlternates('/html-to-pdf'),
   openGraph: {
     title: 'Convert HTML to PDF Online - Free & Private | iCreatePDF',

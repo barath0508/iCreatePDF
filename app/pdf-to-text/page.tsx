@@ -8,7 +8,7 @@ import { buildAlternates, toolSchema } from '@/lib/seo';
 export const metadata: Metadata = {
   title: 'Extract Text from PDF Online - Free & Private | iCreatePDF',
   description: 'Extract raw text layouts from PDF documents page-by-page. 100% browser-based text extraction utility.',
-  keywords: 'pdf to text, extract text from pdf, pdf text reader, read pdf text online',
+  keywords: 'convert pdf image to text, convert pdf to machine readable format, pdf scan to text converter, pdf scan to text, image pdf to text, pdf text scanner, pdf to text, extract text from pdf, pdf text reader, read pdf text online',
   alternates: buildAlternates('/pdf-to-text'),
   openGraph: {
     title: 'Extract Text from PDF Online - Free & Private | iCreatePDF',

@@ -42,6 +42,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     '/barcode-to-pdf',
     '/delete-pdf-pages',
     '/txt-to-pdf',
+    '/ris-to-pdf',
     '/read-aloud-pdf',
     '/certify-pdf',
     '/pdf-to-excel',
@@ -54,6 +55,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
 
   const blogRoutes = [
     '/blog',
+    '/blog/proof-zero-server-uploads-how-to-verify-offline-pdf-converter',
     '/blog/how-to-compress-pdf-without-losing-quality',
     '/blog/how-to-merge-pdf-files-free',
     '/blog/how-to-sign-pdf-online-free',

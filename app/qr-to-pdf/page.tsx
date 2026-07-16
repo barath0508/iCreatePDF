@@ -8,7 +8,7 @@ import { buildAlternates, toolSchema } from '@/lib/seo';
 export const metadata: Metadata = {
   title: 'QR to PDF Converter: Generate QR Codes in PDF Free | iCreatePDF',
   description: 'Free online QR to PDF converter. Generate a custom QR code for any URL or text, customize labels and sizes, and download as a clean A4 PDF instantly.',
-  keywords: 'qr to pdf converter, qr code to pdf converter, qr code to pdf, generate qr code pdf, create pdf with qr code, qr code generator pdf, embed qr code pdf free',
+  keywords: 'qr code to pdf free, qr to pdf converter, qr code to pdf converter, qr code to pdf, generate qr code pdf, create pdf with qr code, qr code generator pdf, embed qr code pdf free',
   alternates: buildAlternates('/qr-to-pdf'),
   openGraph: {
     title: 'QR to PDF Converter: Generate QR Codes in PDF Free | iCreatePDF',

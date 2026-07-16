@@ -20,6 +20,15 @@ export const metadata: Metadata = {
 
 const blogPosts = [
   {
+    slug: 'proof-zero-server-uploads-how-to-verify-offline-pdf-converter',
+    title: 'Proof: How to Verify iCreatePDF is 100% Server-Free (Convert Offline)',
+    excerpt: 'Wondering if your private documents are safe on online PDF tools? Here is a step-by-step guide to verify iCreatePDF is 100% server-free by running it completely offline.',
+    date: 'July 16, 2026',
+    readTime: '4 min read',
+    category: 'Security & Privacy',
+    color: 'blue',
+  },
+  {
     slug: 'how-to-create-fillable-pdf-forms-free',
     title: 'How to Create Fillable PDF Forms Free Online',
     excerpt: 'Learn how to easily create interactive fillable PDF forms client-side for free. Add text inputs, checkboxes, dropdown lists, and radio selectors in the browser sandbox.',
