@@ -8,7 +8,7 @@ import { buildAlternates, toolSchema } from '@/lib/seo';
 export const metadata: Metadata = {
   title: 'Scan to PDF Online - Free Document Scanner | iCreatePDF',
   description: 'Scan document pages with your mobile or webcam camera. Crop, compile, and convert captured photos into a single PDF locally. 100% private.',
-  keywords: 'scan to pdf, document scanner online, webcam to pdf, mobile camera scan to pdf, free online scanner, icreatepdf',
+  keywords: 'how to scan a document, scan to pdf, document scanner online, webcam to pdf, mobile camera scan to pdf, free online scanner, icreatepdf',
   alternates: buildAlternates('/scan-to-pdf'),
   openGraph: {
     title: 'Scan to PDF Online - Free Document Scanner | iCreatePDF',
