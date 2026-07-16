@@ -28,7 +28,21 @@ export default function BulkCertificatesPage() {
       badge="Generation"
       title="Bulk Certificate Generator"
       description="Create hundreds of customized PDF certificates or award letters dynamically from an Excel list."
-      extraSections={<ToolSeoContent content={toolContent['bulk-certificates']} />}
+      extraSections={
+        <>
+          <ToolSeoContent content={toolContent['bulk-certificates']} />
+          <section className="border-t border-foreground/5 py-12 bg-foreground/[0.005]">
+            <div className="max-w-[900px] mx-auto px-6 text-center">
+              <p className="text-sm text-muted-foreground">
+                Need a detailed step-by-step walkthrough? Read our guide on{' '}
+                <a href="/blog/how-to-generate-certificates-in-bulk" className="text-brand hover:underline font-semibold">
+                  How to Generate Certificates in Bulk from an Excel List
+                </a>.
+              </p>
+            </div>
+          </section>
+        </>
+      }
     >
       <BulkCertificatesTool />
     </ToolPageShell>

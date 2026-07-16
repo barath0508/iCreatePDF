@@ -28,7 +28,21 @@ export default function FillablePdfBuilderPage() {
       badge="Form Engine"
       title="Fillable PDF Form Builder"
       description="Design interactive, fillable PDF forms. Position text fields, dropdown lists, checkboxes, and radio choices locally."
-      extraSections={<ToolSeoContent content={toolContent['fillable-pdf-builder']} />}
+      extraSections={
+        <>
+          <ToolSeoContent content={toolContent['fillable-pdf-builder']} />
+          <section className="border-t border-foreground/5 py-12 bg-foreground/[0.005]">
+            <div className="max-w-[900px] mx-auto px-6 text-center">
+              <p className="text-sm text-muted-foreground">
+                Need a detailed step-by-step walkthrough? Read our guide on{' '}
+                <a href="/blog/how-to-create-fillable-pdf-forms-free" className="text-brand hover:underline font-semibold">
+                  How to Create Fillable PDF Forms Free Online
+                </a>.
+              </p>
+            </div>
+          </section>
+        </>
+      }
     >
       <FillableFormBuilderTool />
     </ToolPageShell>
