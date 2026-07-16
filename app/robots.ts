@@ -7,6 +7,6 @@ export default function robots(): MetadataRoute.Robots {
       allow: '/',
       disallow: ['/checkout', '/admin', '/test.html', '/*-draft.html'],
     },
-    sitemap: 'https://icreatepdf.online/sitemap.xml',
+    sitemap: 'https://www.icreatepdf.online/sitemap.xml',
   };
 }

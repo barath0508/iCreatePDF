@@ -6,7 +6,7 @@ import { setPreloadedFiles } from '@/lib/preloader';
 import { Upload, ArrowRight, File } from 'lucide-react';
 import { CTAButtonGroup } from './shared/cta-button-group';
 
-const words = ['convert', 'compress', 'reorder', 'compile'];
+const words = ['Convert', 'Combine', 'Compress', 'Organize'];
 
 function BlurWord({ word, trigger }: { word: string; trigger: number }) {
   const letters = word.split('');
@@ -202,12 +202,14 @@ export function HeroSection() {
                 isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
               }`}
             >
-              <span className="block sm:whitespace-nowrap whitespace-normal">Combine &amp; convert</span>
               <span className="block sm:whitespace-nowrap whitespace-normal">
-                images to{' '}
-                <span className="relative inline-block">
+                <span className="relative inline-block text-brand">
                   <BlurWord word={words[wordIndex]} trigger={wordIndex} />
-                </span>
+                </span>{' '}
+                images &amp; files
+              </span>
+              <span className="block sm:whitespace-nowrap whitespace-normal">
+                to high-quality PDF
               </span>
             </h1>
           </div>

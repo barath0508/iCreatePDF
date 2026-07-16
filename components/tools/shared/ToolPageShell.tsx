@@ -1,6 +1,7 @@
 import React from 'react';
 import { Navigation } from '@/components/landing/navigation';
 import { FooterSection } from '@/components/landing/footer-section';
+import { Star } from 'lucide-react';
 
 interface ToolPageShellProps {
   /** Short badge label shown above the title (e.g. "PDF Merger") */
@@ -31,6 +32,15 @@ export function ToolPageShell({
       : [jsonLd]
     : [];
 
+  // Find SoftwareApplication schema to extract rating details for visual rendering
+  const softwareAppSchema = schemas.find(
+    (s: any) => s && s['@type'] === 'SoftwareApplication'
+  ) as Record<string, any> | undefined;
+
+  const rating = softwareAppSchema?.aggregateRating;
+  const ratingValue = rating ? parseFloat(rating.ratingValue) : 0;
+  const ratingCount = rating?.ratingCount;
+
   return (
     <main className="relative min-h-screen overflow-x-hidden bg-background text-foreground flex flex-col justify-between selection:bg-brand/30">
       {schemas.map((schema, i) => (
@@ -49,6 +59,31 @@ export function ToolPageShell({
           <h1 className="text-4xl sm:text-5xl font-extrabold text-foreground font-display">
             {title}
           </h1>
+          {ratingValue > 0 && (
+            <div className="flex items-center justify-center gap-1.5 text-xs">
+              <div className="flex items-center text-amber-500">
+                {[1, 2, 3, 4, 5].map((star) => {
+                  const isFull = star <= Math.floor(ratingValue);
+                  const isHalf = !isFull && star === Math.ceil(ratingValue);
+                  return (
+                    <Star
+                      key={star}
+                      className={`w-3.5 h-3.5 ${
+                        isFull
+                          ? 'fill-amber-500 stroke-amber-500'
+                          : isHalf
+                          ? 'fill-amber-500/50 stroke-amber-500'
+                          : 'stroke-foreground/20 fill-none'
+                      }`}
+                    />
+                  );
+                })}
+              </div>
+              <span className="font-semibold text-foreground/80">{ratingValue} / 5</span>
+              <span className="text-foreground/25">•</span>
+              <span className="text-foreground/50">{ratingCount} ratings</span>
+            </div>
+          )}
           <p className="text-foreground/40 text-sm max-w-xl mx-auto">
             {description}
           </p>

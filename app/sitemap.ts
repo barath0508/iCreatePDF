@@ -1,7 +1,7 @@
 import { MetadataRoute } from 'next';
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const baseUrl = 'https://icreatepdf.online';
+  const baseUrl = 'https://www.icreatepdf.online';
   const today = new Date().toISOString().split('T')[0];
 
   const toolRoutes = [
