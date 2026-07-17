@@ -2,16 +2,22 @@ import { NextResponse } from 'next/server';
 import type { NextRequest } from 'next/server';
 
 export function proxy(request: NextRequest) {
-  const hostname = request.headers.get('host') || '';
-  
-  // If the request comes to the vercel.app domain, redirect to the custom domain
-  if (hostname.includes('vercel.app')) {
-    const url = new URL(request.nextUrl.pathname + request.nextUrl.search, 'https://icreatepdf.online');
-    return NextResponse.redirect(url, 301);
+  try {
+    const hostname = request.headers.get('host') || '';
+    
+    // If the request comes to the vercel.app domain, redirect to the custom domain
+    if (hostname.includes('vercel.app')) {
+      const url = new URL(request.nextUrl.pathname + request.nextUrl.search, 'https://icreatepdf.online');
+      return NextResponse.redirect(url, 301);
+    }
+  } catch (error) {
+    console.error('Middleware proxy execution error:', error);
   }
   
   return NextResponse.next();
 }
+
+export default proxy;
 
 export const config = {
   matcher: [
