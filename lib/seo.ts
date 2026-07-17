@@ -70,24 +70,11 @@ export function toolSchema({
   name,
   description,
   url,
-  ratingValue,
-  ratingCount,
 }: {
   name: string;
   description: string;
   url: string;
-  ratingValue?: string;
-  ratingCount?: string;
 }) {
-  // Deterministic rating based on name to make it look realistic
-  let hash = 0;
-  for (let i = 0; i < name.length; i++) {
-    hash = (hash << 5) - hash + name.charCodeAt(i);
-    hash |= 0;
-  }
-  const derivedRatingValue = ratingValue || (4.7 + Math.abs(hash % 3) * 0.1).toFixed(1); // 4.7, 4.8, or 4.9
-  const derivedRatingCount = ratingCount || (120 + Math.abs(hash % 280)).toString();     // between 120 and 400
-
   return [
     {
       '@context': 'https://schema.org',
@@ -102,13 +89,6 @@ export function toolSchema({
         '@type': 'Offer',
         price: '0',
         priceCurrency: 'USD',
-      },
-      aggregateRating: {
-        '@type': 'AggregateRating',
-        ratingValue: derivedRatingValue,
-        ratingCount: derivedRatingCount,
-        bestRating: '5',
-        worstRating: '1',
       },
     },
     breadcrumbSchema([

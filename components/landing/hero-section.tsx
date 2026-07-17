@@ -40,17 +40,12 @@ function BlurWord({ word, trigger }: { word: string; trigger: number }) {
 
 export function HeroSection() {
   const router = useRouter();
-  const [isVisible, setIsVisible] = useState(false);
   const [wordIndex, setWordIndex] = useState(0);
   const [processedCount, setProcessedCount] = useState(1842910);
   const [isDraggingOver, setIsDraggingOver] = useState(false);
   const [droppedFiles, setDroppedFiles] = useState<File[]>([]);
   const [isPdfModalOpen, setIsPdfModalOpen] = useState(false);
   const fileInputRef = useRef<HTMLInputElement>(null);
-
-  useEffect(() => {
-    setIsVisible(true);
-  }, []);
 
   useEffect(() => {
     const interval = setInterval(() => {
@@ -189,7 +184,7 @@ export function HeroSection() {
       <div className="relative z-10 w-full max-w-[1400px] mx-auto px-6 lg:px-12 py-32 lg:py-40 grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
         {/* Left column */}
         <div className="lg:col-span-7 space-y-6">
-          <div className={`mb-4 transition-all duration-700 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'}`}>
+          <div className="mb-4">
             <span className="inline-flex items-center gap-3 text-sm font-mono text-foreground/60">
               <span className="w-8 h-px bg-foreground/30" />
               100% client-side privacy-first conversion tools
@@ -197,11 +192,7 @@ export function HeroSection() {
           </div>
 
           <div className="mb-8">
-            <h1
-              className={`text-left text-[clamp(2.0rem,5.5vw,5.5rem)] font-display font-medium leading-[0.95] tracking-tight text-foreground transition-all duration-1000 ${
-                isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
-              }`}
-            >
+            <h1 className="text-left text-[clamp(2.0rem,5.5vw,5.5rem)] font-display font-medium leading-[0.95] tracking-tight text-foreground">
               <span className="block sm:whitespace-nowrap whitespace-normal">
                 <span className="relative inline-block text-brand">
                   <BlurWord word={words[wordIndex]} trigger={wordIndex} />
@@ -214,7 +205,7 @@ export function HeroSection() {
             </h1>
           </div>
 
-          <div className={`transition-all duration-700 delay-300 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'}`}>
+          <div>
             <CTAButtonGroup
               primary={{ label: 'Convert Now', href: '#convert' }}
               secondary={{ label: 'Learn Process', href: '#how-it-works' }}
@@ -223,9 +214,7 @@ export function HeroSection() {
         </div>
 
         {/* Right column: Smart Dropzone */}
-        <div className={`lg:col-span-5 w-full flex justify-center lg:justify-end transition-all duration-1000 delay-200 ${
-          isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
-        }`}>
+        <div className="lg:col-span-5 w-full flex justify-center lg:justify-end">
           <div className="relative w-full max-w-[420px] group">
             {/* Background Glow */}
             <div className="absolute inset-0 bg-brand/5 group-hover:bg-brand/10 blur-2xl rounded-3xl transition-all duration-500" />
@@ -318,14 +307,10 @@ export function HeroSection() {
       </div>
 
       {/* Stats */}
-      <div
-        className={`absolute bottom-12 left-0 right-0 px-6 lg:px-12 transition-all duration-700 delay-500 hidden sm:block ${
-          isVisible ? 'opacity-100' : 'opacity-0'
-        }`}
-      >
+      <div className="absolute bottom-12 left-0 right-0 px-6 lg:px-12 hidden sm:block">
         <div className="max-w-[1400px] mx-auto flex items-start gap-10 lg:gap-16">
           {[
-            { value: processedCount.toLocaleString(), label: 'PDFs processed locally' },
+            { value: processedCount.toLocaleString('en-US'), label: 'PDFs processed locally' },
             { value: '0% Uploaded', label: 'All files remain on your device' },
             { value: '100% Free', label: 'No limitations or paywalls' },
             { value: '< 1 Second', label: 'Local browser compilation speed' },
