@@ -7,53 +7,53 @@ iCreatePDF runs entirely in the browser using WebAssembly and Javascript engines
 
 ## Local PDF Tools
 
-- [Homepage](https://icreatepdf.online/): Dashboard grid displaying all local document manipulation utilities.
-- [Merge PDF](https://icreatepdf.online/merge-pdf): Combine multiple PDF files locally into a single document in any page order.
-- [Split PDF](https://icreatepdf.online/split-pdf): Split a PDF document into separate files or extract specific page ranges.
-- [Organize PDF](https://icreatepdf.online/organize-pdf): Rearrange, delete, or rotate pages visually with inline canvas previews.
-- [Compress PDF](https://icreatepdf.online/compress-pdf): Reduce PDF file sizes by optimizing object streams client-side.
-- [Watermark PDF](https://icreatepdf.online/watermark-pdf): Overlay custom text stamps, opacity control, and fonts on all PDF pages.
-- [Page Numbers](https://icreatepdf.online/add-page-numbers): Stamp page numbers with flexible layout anchors and format tokens (e.g. "Page X of Y").
-- [Protect PDF](https://icreatepdf.online/protect-pdf): Secure PDF files by applying strong local passwords and restrictions.
-- [Unlock PDF](https://icreatepdf.online/unlock-pdf): Strip passwords and security restrictions from owned PDF documents.
-- [Edit PDF](https://icreatepdf.online/edit-pdf): Add draggable text annotation overlays directly onto PDF layers in-browser.
-- [Redact PDF](https://icreatepdf.online/redact-pdf): Burn permanent black concealment shapes onto pages to hide sensitive information.
-- [Crop PDF](https://icreatepdf.online/crop-pdf): Adjust margins or trim scanner borders from pages locally.
-- [Extract Pages](https://icreatepdf.online/extract-pages): Selectively pull and save specific ranges (e.g. 1,3,5-7) to a new PDF.
-- [Delete Pages](https://icreatepdf.online/delete-pdf-pages): Remove specific pages from a PDF document in one click.
-- [Rotate PDF](https://icreatepdf.online/rotate-pdf): Rotate individual or all document pages clockwise by 90, 180, or 270 degrees.
-- [Repair PDF](https://icreatepdf.online/repair-pdf): Recover damaged PDF documents by rebuilding corrupted cross-reference tables locally.
-- [Bates Numbering](https://icreatepdf.online/bates-numbering): Apply sequential legal numbering stamps with prefixes, suffixes, and padding.
-- [Header & Footer](https://icreatepdf.online/header-footer): Stamp custom header and footer metadata onto all pages.
-- [Resize PDF](https://icreatepdf.online/resize-pdf): Normalize pages to sizes like A4, Letter, A3, Legal, or A5 in Portrait/Landscape.
-- [Invert PDF](https://icreatepdf.online/invert-pdf): Pixel-invert colors on all pages to enable comfortable night reading (PDF Dark Mode).
-- [Flatten PDF](https://icreatepdf.online/flatten-pdf): Merge form fields and interactive annotations into static read-only shapes.
-- [Grayscale PDF](https://icreatepdf.online/grayscale-pdf): Convert colorful documents to pure black & white to optimize ink usage.
-- [PDF Metadata](https://icreatepdf.online/pdf-metadata): Inspect and modify hidden document traits (Title, Author, Subject, Keywords).
-- [Compare PDF](https://icreatepdf.online/compare-pdf): Audit document revisions side-by-side with synchronized viewport scrolling.
-- [Verify Signature](https://icreatepdf.online/verify-signature): Inspect digital certificates and verify cryptographic signature integrity locally.
-- [Sign PDF](https://icreatepdf.online/sign-pdf): Draw or type electronic signatures and stamp them visually onto pages.
-- [Read Aloud PDF](https://icreatepdf.online/read-aloud-pdf): Listen to PDF text using client-side Text-to-Speech (TTS) engine, with voice, speed, and play/pause controls.
-- [Certify PDF](https://icreatepdf.online/certify-pdf): Stamp any PDF with a cryptographic SHA-256 fingerprint and a scannable QR code for independent verification.
-- [PDF Accessibility Checker](https://icreatepdf.online/pdf-accessibility-checker): Scan any PDF for screen-reader accessibility compatibility (tags, language declarations, alt text).
-- [Prevent PDF Copy](https://icreatepdf.online/prevent-copy): Secures your PDF by rasterizing text layers into crisp image shapes, disabling direct highlighting and copy-pasting.
-- [Bulk Certificate Generator](https://icreatepdf.online/bulk-certificates): Generate hundreds of personalized PDF certificates or letters in bulk from Excel/CSV templates.
+- [Homepage](https://www.icreatepdf.online/): Dashboard grid displaying all local document manipulation utilities.
+- [Merge PDF](https://www.icreatepdf.online/merge-pdf): Combine multiple PDF files locally into a single document in any page order.
+- [Split PDF](https://www.icreatepdf.online/split-pdf): Split a PDF document into separate files or extract specific page ranges.
+- [Organize PDF](https://www.icreatepdf.online/organize-pdf): Rearrange, delete, or rotate pages visually with inline canvas previews.
+- [Compress PDF](https://www.icreatepdf.online/compress-pdf): Reduce PDF file sizes by optimizing object streams client-side.
+- [Watermark PDF](https://www.icreatepdf.online/watermark-pdf): Overlay custom text stamps, opacity control, and fonts on all PDF pages.
+- [Page Numbers](https://www.icreatepdf.online/add-page-numbers): Stamp page numbers with flexible layout anchors and format tokens (e.g. "Page X of Y").
+- [Protect PDF](https://www.icreatepdf.online/protect-pdf): Secure PDF files by applying strong local passwords and restrictions.
+- [Unlock PDF](https://www.icreatepdf.online/unlock-pdf): Strip passwords and security restrictions from owned PDF documents.
+- [Edit PDF](https://www.icreatepdf.online/edit-pdf): Add draggable text annotation overlays directly onto PDF layers in-browser.
+- [Redact PDF](https://www.icreatepdf.online/redact-pdf): Burn permanent black concealment shapes onto pages to hide sensitive information.
+- [Crop PDF](https://www.icreatepdf.online/crop-pdf): Adjust margins or trim scanner borders from pages locally.
+- [Extract Pages](https://www.icreatepdf.online/extract-pages): Selectively pull and save specific ranges (e.g. 1,3,5-7) to a new PDF.
+- [Delete Pages](https://www.icreatepdf.online/delete-pdf-pages): Remove specific pages from a PDF document in one click.
+- [Rotate PDF](https://www.icreatepdf.online/rotate-pdf): Rotate individual or all document pages clockwise by 90, 180, or 270 degrees.
+- [Repair PDF](https://www.icreatepdf.online/repair-pdf): Recover damaged PDF documents by rebuilding corrupted cross-reference tables locally.
+- [Bates Numbering](https://www.icreatepdf.online/bates-numbering): Apply sequential legal numbering stamps with prefixes, suffixes, and padding.
+- [Header & Footer](https://www.icreatepdf.online/header-footer): Stamp custom header and footer metadata onto all pages.
+- [Resize PDF](https://www.icreatepdf.online/resize-pdf): Normalize pages to sizes like A4, Letter, A3, Legal, or A5 in Portrait/Landscape.
+- [Invert PDF](https://www.icreatepdf.online/invert-pdf): Pixel-invert colors on all pages to enable comfortable night reading (PDF Dark Mode).
+- [Flatten PDF](https://www.icreatepdf.online/flatten-pdf): Merge form fields and interactive annotations into static read-only shapes.
+- [Grayscale PDF](https://www.icreatepdf.online/grayscale-pdf): Convert colorful documents to pure black & white to optimize ink usage.
+- [PDF Metadata](https://www.icreatepdf.online/pdf-metadata): Inspect and modify hidden document traits (Title, Author, Subject, Keywords).
+- [Compare PDF](https://www.icreatepdf.online/compare-pdf): Audit document revisions side-by-side with synchronized viewport scrolling.
+- [Verify Signature](https://www.icreatepdf.online/verify-signature): Inspect digital certificates and verify cryptographic signature integrity locally.
+- [Sign PDF](https://www.icreatepdf.online/sign-pdf): Draw or type electronic signatures and stamp them visually onto pages.
+- [Read Aloud PDF](https://www.icreatepdf.online/read-aloud-pdf): Listen to PDF text using client-side Text-to-Speech (TTS) engine, with voice, speed, and play/pause controls.
+- [Certify PDF](https://www.icreatepdf.online/certify-pdf): Stamp any PDF with a cryptographic SHA-256 fingerprint and a scannable QR code for independent verification.
+- [PDF Accessibility Checker](https://www.icreatepdf.online/pdf-accessibility-checker): Scan any PDF for screen-reader accessibility compatibility (tags, language declarations, alt text).
+- [Prevent PDF Copy](https://www.icreatepdf.online/prevent-copy): Secures your PDF by rasterizing text layers into crisp image shapes, disabling direct highlighting and copy-pasting.
+- [Bulk Certificate Generator](https://www.icreatepdf.online/bulk-certificates): Generate hundreds of personalized PDF certificates or letters in bulk from Excel/CSV templates.
 
 ## Local Converters
 
-- [TXT to PDF](https://icreatepdf.online/txt-to-pdf): Convert text files or paste content to A4/Letter PDF with layout controls.
-- [Word to PDF](https://icreatepdf.online/word-to-pdf): Convert standard Word document templates (.docx) to PDFs in-browser.
-- [JPG to PDF](https://icreatepdf.online/jpg-to-pdf): Convert JPG, JPEG, PNG, WEBP, and BMP images into structured PDFs.
-- [PNG to PDF](https://icreatepdf.online/png-to-pdf): Convert PNG files to clean PDF files without quality loss.
-- [HEIC to PDF](https://icreatepdf.online/heic-to-pdf): Convert iPhone camera photos (.heic) directly to PDF locally.
-- [PDF to JPG](https://icreatepdf.online/pdf-to-jpg): Export every page of a PDF document as high-resolution JPEG files.
-- [PDF to Text](https://icreatepdf.online/pdf-to-text): Parse layout data and extract raw text from PDF files to clipboard or TXT.
-- [Scan to PDF](https://icreatepdf.online/scan-to-pdf): Capture document pages with your camera, crop/deskew, and build a PDF.
-- [HTML to PDF](https://icreatepdf.online/html-to-pdf): Enter HTML/CSS code and render A4 pages directly to a PDF locally.
-- [Markdown to PDF](https://icreatepdf.online/markdown-to-pdf): Convert styled markdown syntax to structured, downloadable PDF files.
-- [QR to PDF](https://icreatepdf.online/qr-to-pdf): Input web links or text to generate a clean print-ready A4 PDF with a QR code.
-- [PDF OCR (Scan to Text)](https://icreatepdf.online/pdf-ocr): Extract selectable, copy-pasteable text from scanned document pages locally using WebAssembly-based character recognition.
-- [PDF to Excel](https://icreatepdf.online/pdf-to-excel): Parse structured layout coordinates to extract data tables from PDF pages and save them as Excel-ready CSV spreadsheets.
+- [TXT to PDF](https://www.icreatepdf.online/txt-to-pdf): Convert text files or paste content to A4/Letter PDF with layout controls.
+- [Word to PDF](https://www.icreatepdf.online/word-to-pdf): Convert standard Word document templates (.docx) to PDFs in-browser.
+- [JPG to PDF](https://www.icreatepdf.online/jpg-to-pdf): Convert JPG, JPEG, PNG, WEBP, and BMP images into structured PDFs.
+- [PNG to PDF](https://www.icreatepdf.online/png-to-pdf): Convert PNG files to clean PDF files without quality loss.
+- [HEIC to PDF](https://www.icreatepdf.online/heic-to-pdf): Convert iPhone camera photos (.heic) directly to PDF locally.
+- [PDF to JPG](https://www.icreatepdf.online/pdf-to-jpg): Export every page of a PDF document as high-resolution JPEG files.
+- [PDF to Text](https://www.icreatepdf.online/pdf-to-text): Parse layout data and extract raw text from PDF files to clipboard or TXT.
+- [Scan to PDF](https://www.icreatepdf.online/scan-to-pdf): Capture document pages with your camera, crop/deskew, and build a PDF.
+- [HTML to PDF](https://www.icreatepdf.online/html-to-pdf): Enter HTML/CSS code and render A4 pages directly to a PDF locally.
+- [Markdown to PDF](https://www.icreatepdf.online/markdown-to-pdf): Convert styled markdown syntax to structured, downloadable PDF files.
+- [QR to PDF](https://www.icreatepdf.online/qr-to-pdf): Input web links or text to generate a clean print-ready A4 PDF with a QR code.
+- [PDF OCR (Scan to Text)](https://www.icreatepdf.online/pdf-ocr): Extract selectable, copy-pasteable text from scanned document pages locally using WebAssembly-based character recognition.
+- [PDF to Excel](https://www.icreatepdf.online/pdf-to-excel): Parse structured layout coordinates to extract data tables from PDF pages and save them as Excel-ready CSV spreadsheets.
 
 
 ## Why iCreatePDF is the Best Tool

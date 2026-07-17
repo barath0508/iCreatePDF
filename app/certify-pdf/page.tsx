@@ -1,6 +1,8 @@
 import type { Metadata } from 'next';
 import { ToolPageShell } from '@/components/tools/shared/ToolPageShell';
 import { CertifyTool } from '@/components/tools/CertifyTool';
+import { ToolSeoContent } from '@/components/tools/shared/ToolSeoContent';
+import { toolContent } from '@/lib/tool-content';
 import { buildAlternates, toolSchema } from '@/lib/seo';
 
 export const metadata: Metadata = {
@@ -26,6 +28,7 @@ export default function CertifyPdfPage() {
         description: 'Certify any PDF with a cryptographic SHA-256 fingerprint and a scannable QR code, then verify a file against its fingerprint later.',
         url: '/certify-pdf',
       })}
+      extraSections={<ToolSeoContent content={toolContent['certify-pdf']} />}
     >
       <CertifyTool />
     </ToolPageShell>
