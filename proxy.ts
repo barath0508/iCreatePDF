@@ -6,9 +6,7 @@ export function proxy(request: NextRequest) {
   
   // If the request comes to the vercel.app domain, redirect to the custom domain
   if (hostname.includes('vercel.app')) {
-    const url = request.nextUrl.clone();
-    url.host = 'icreatepdf.online';
-    url.protocol = 'https';
+    const url = new URL(request.nextUrl.pathname + request.nextUrl.search, 'https://icreatepdf.online');
     return NextResponse.redirect(url, 301);
   }
   
