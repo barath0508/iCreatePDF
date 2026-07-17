@@ -8,7 +8,7 @@ import { buildAlternates, toolSchema } from '@/lib/seo';
 export const metadata: Metadata = {
   title: 'How to Split PDF Pages Free: Split PDF Online | iCreatePDF',
   description: 'Extract page ranges or separate all pages in a PDF document. Split PDF pages online for free 100% client-side inside your browser sandbox.',
-  keywords: 'how to separate a page from a pdf, separate a page from pdf, how to split pdf pages free, split pdf pages free, split pdf, extract pages pdf, split pdf online, split pdf free, private pdf splitter',
+  keywords: 'pdf cut pages, how to separate a page from a pdf, separate a page from pdf, how to split pdf pages free, split pdf pages free, split pdf, extract pages pdf, split pdf online, split pdf free, private pdf splitter, cut pages from pdf, cut pages out of pdf',
   alternates: buildAlternates('/split-pdf'),
   openGraph: {
     title: 'How to Split PDF Pages Free: Split PDF Online | iCreatePDF',

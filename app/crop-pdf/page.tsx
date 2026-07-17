@@ -8,7 +8,7 @@ import { buildAlternates, toolSchema } from '@/lib/seo';
 export const metadata: Metadata = {
   title: 'Crop PDF Pages Online Free | iCreatePDF',
   description: 'Crop PDF pages by trimming margins from any side. Remove scanner borders, white space, and unwanted margins from all pages locally.',
-  keywords: 'crop pdf, trim pdf margins, remove pdf borders, crop pdf pages online free, pdf margin trimmer',
+  keywords: 'i2pdf crop, pdf cut pages, crop pdf, trim pdf margins, remove pdf borders, crop pdf pages online free, pdf margin trimmer, cut pages in pdf, crop pdf online i2pdf',
   alternates: buildAlternates('/crop-pdf'),
   openGraph: {
     title: 'Crop PDF Pages Online Free | iCreatePDF',

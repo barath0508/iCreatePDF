@@ -123,7 +123,7 @@ export const toolContent: Record<string, ToolContent> = {
     name: 'Crop PDF',
     url: '/crop-pdf',
     overview:
-      'Scanned pages often come with uneven borders, dark scanner edges, or excess whitespace that waste printed paper and look unprofessional. iCreatePDF lets you trim margins from any side of every page in a PDF, cleaning up scans and layouts entirely inside your browser.',
+      'Scanned pages often come with uneven borders, dark scanner edges, or excess whitespace that look unprofessional. iCreatePDF is a fast, offline alternative to online converters like i2pdf crop. It lets you crop page layouts, perform pdf cut pages operations, and trim margins from any side of every page in a PDF, cleaning up document scans and layouts entirely inside your browser.',
     steps: [
       { title: 'Upload your PDF', description: 'Add the document with scanner borders or unwanted margins.' },
       { title: 'Adjust the crop margins', description: 'Trim from the top, bottom, left, or right using a live preview.' },
@@ -141,6 +141,8 @@ export const toolContent: Record<string, ToolContent> = {
       { question: 'Does cropping affect the underlying text?', answer: 'No, cropping only changes the visible page boundary — the content itself is not altered or re-rendered.' },
       { question: 'Can I preview the crop before applying it?', answer: 'Yes, a live preview shows exactly what will be trimmed before you export the file.' },
       { question: 'Is the file processed locally?', answer: 'Yes, cropping runs entirely in your browser with no server upload.' },
+      { question: 'How is this different from tools like i2pdf crop?', answer: 'Unlike i2pdf crop, which runs on remote servers where you must upload your files, iCreatePDF crops and trims your PDF documents 100% locally in your web browser. Your confidential document pages never leave your machine, making it a completely private and secure alternative.' },
+      { question: 'Can I use this tool to cut pages from my PDF?', answer: 'Yes! If you need to cut pages to remove unwanted borders or margins, our Crop PDF tool is perfect. If you want to cut pages out of a document in terms of separating them into multiple files, you should use our [Split PDF](file:///split-pdf) tool.' },
     ],
   },
 
@@ -355,7 +357,7 @@ export const toolContent: Record<string, ToolContent> = {
     name: 'Invert PDF Colors',
     url: '/invert-pdf',
     overview:
-      'Need to invert pdf online or convert your document? iCreatePDF is a fast, free pdf color inverter, pdf dark mode converter, and pdf reverse color tool. Reading a bright white PDF in a dark room strains the eyes and drains battery. We invert the red, green, and blue values of every page to produce a dark-mode version of your document, processed 100% locally in your browser so nothing is uploaded.',
+      'Wondering how to invert pdf colors on your document? iCreatePDF is a fast, free pdf color inverter, pdf dark mode converter, and pdf reverse color tool. Reading a bright white PDF in a dark room strains the eyes and drains battery. We invert the red, green, and blue values of every page to produce a dark-mode version of your document, processed 100% locally in your browser so nothing is uploaded.',
     steps: [
       { title: 'Upload the PDF', description: 'Add the document you want to convert for night reading.' },
       { title: 'Invert the colors', description: 'Every page is processed to flip light backgrounds to dark and vice versa.' },
@@ -628,6 +630,7 @@ export const toolContent: Record<string, ToolContent> = {
       { question: 'What page size is the output PDF?', answer: 'The QR code is compiled onto a clean A4 page, ready for printing.' },
       { question: 'How does this qr to pdf converter work?', answer: 'Our online qr to pdf converter generates a high-quality vector QR code based on your inputs (like links, text, or phone numbers) and compiles it directly into a clean A4 PDF file. Everything is processed locally in your browser, ensuring complete privacy.' },
       { question: 'Is it free to generate a QR code PDF?', answer: 'Yes! iCreatePDF is a 100% free online QR to PDF compiler. There are no watermarks, no registration prompts, and no premium restrictions. You can generate and print as many QR code PDFs as you need.' },
+      { question: 'How to convert qr code to pdf format?', answer: 'To convert or generate a QR code into a PDF, type your link or text into our qr code to pdf generator. Customize the size, margin, and label as needed. The tool generates the QR code and places it directly on a downloadable A4 PDF page immediately.' },
     ],
   },
 
@@ -814,7 +817,7 @@ export const toolContent: Record<string, ToolContent> = {
     name: 'Split PDF',
     url: '/split-pdf',
     overview:
-      'A large combined PDF sometimes needs to become several smaller files. If you want to learn how to separate a page from a pdf or how to split pdf pages free, iCreatePDF extracts page ranges or separates every page of a document into individual files, processed locally with instant download of the split parts.',
+      'A large combined PDF sometimes needs to become several smaller files. If you want to learn how to separate a page from a pdf, how to split pdf pages free, or perform a pdf cut pages task, iCreatePDF extracts page ranges or separates every page of a document into individual files, processed locally with instant download of the split parts.',
     steps: [
       { title: 'Upload the PDF to split', description: 'Add the document you want divided into separate files.' },
       { title: 'Choose a split method', description: 'Split into custom ranges or separate every single page.' },
@@ -834,6 +837,7 @@ export const toolContent: Record<string, ToolContent> = {
       { question: 'Is splitting done without uploading the file?', answer: 'Yes, all splitting happens locally inside your browser.' },
       { question: 'How to split pdf pages for free?', answer: 'Simply upload your PDF to our Split PDF tool, choose your split method (custom page ranges or separating every single page), preview the parts, and click split. Your new PDF documents are downloaded instantly for free.' },
       { question: 'How do I separate a page from a PDF using the splitter?', answer: 'Upload your PDF, choose "Extract custom ranges" and enter the specific page number you wish to separate. The tool will isolate that page into a new PDF. For deleting pages, you can also use our [Delete PDF Pages](file:///delete-pdf-pages) tool.' },
+      { question: 'Can I use this tool to cut pages from a PDF?', answer: 'Yes! Our Split PDF tool is the easiest way to cut pages out of a PDF. You can cut specific page ranges or extract individual pages into separate files. If you want to permanently discard or delete pages instead of splitting them, try our [Delete PDF Pages](file:///delete-pdf-pages) tool.' },
     ],
   },
 
@@ -941,7 +945,7 @@ export const toolContent: Record<string, ToolContent> = {
     name: 'Word to PDF',
     url: '/word-to-pdf',
     overview:
-      "Wondering how to convert docx to pdf without formatting shifting on the recipient's device? iCreatePDF is an online docx to pdf converter free. Learn how to transform docx to pdf or how to change a docx to pdf in seconds. We help you convert a docx file to pdf, supporting standard .docx to pdf operations. The entire conversion runs in your browser sandbox, keeping your documents 100% private and secure.",
+      "Wondering how to convert docx to pdf without formatting shifting on the recipient's device? iCreatePDF is an online docx to pdf converter free and web-based docx to pdf freeware. Learn how to convert docx to pdf, or how to save docx as pdf in seconds. We help you convert a docx file to pdf, supporting standard .docx to pdf operations. The entire tool functions to convert word to pdf local to your machine, meaning files are processed in your browser sandbox, keeping your documents 100% private and secure.",
     steps: [
       { title: 'Upload your Word document', description: 'Add the .docx file you want to convert.' },
       { title: 'Preview the conversion', description: 'Check how the document will render as a PDF.' },
@@ -963,6 +967,8 @@ export const toolContent: Record<string, ToolContent> = {
       { question: 'How to convert docx to pdf or change a docx to pdf for free?', answer: 'Our Word to PDF tool is completely free with no registration. To transform docx to pdf, just drop the .docx file above, review the preview, and download your formatted PDF.' },
       { question: 'How do I convert docx to pdf in Microsoft Word?', answer: 'In Word, you can click File > Save As and select PDF (*.pdf) as the format. However, if you do not have Word installed, you can use our tool to convert docx to pdf without word, right in your web browser.' },
       { question: 'Can I convert ooxml or dox files to PDF?', answer: 'Yes! OOXML format (which is the standard XML structure of .docx files) is fully supported. If you have files named dox, doc, or docx, ensure they are in the modern .docx structure and our tool will easily convert them to PDF.' },
+      { question: 'How do I convert word to pdf local to my machine?', answer: 'iCreatePDF works entirely client-side inside your browser. Because of this local architecture, you can convert word to pdf local to your own device without uploading files to any external servers, which even functions offline once loaded.' },
+      { question: 'Is this docx to pdf freeware safe to use?', answer: 'Yes! Unlike downloadable freeware that might bundle third-party ads or malware, our in-browser docx to pdf freeware is completely web-based, runs in a secure sandbox on your machine, and never transmits your document data across the internet.' },
     ],
   },
 
@@ -996,7 +1002,7 @@ export const toolContent: Record<string, ToolContent> = {
     name: 'PDF OCR (Scan to Text)',
     url: '/pdf-ocr',
     overview:
-      'Extract text from scanned, image-only, or copy-protected PDF files using our free ocr pdf to text tool. iCreatePDF converts pdf ocr to text locally inside your browser sandbox using WebAssembly, analyzing visual characters and rebuilding them into copyable, search-friendly plain text. It helps you turn scanned document into text, convert scanned pdf to editable text, and run pdf scan to text functions instantly. No server uploads are required, guaranteeing absolute privacy for confidential documents.',
+      'Extract text from scanned, image-only, or copy-protected PDF files using our free ocr online pdf tool. iCreatePDF functions as a local pdf text scanner and online ocr pdf converter, running character recognition locally inside your browser sandbox using WebAssembly. This lets you convert a pdf image to text, extract scanned text from pages, and run ocr conversion pdf functions to get copyable plain text instantly without any server uploads.',
     steps: [
       { title: 'Upload the scanned PDF', description: 'Drag in the image-only or copy-protected PDF file.' },
       { title: 'Select the document language', description: 'Choose from English, Spanish, Hindi, or Tamil for high OCR accuracy.' },
@@ -1017,6 +1023,8 @@ export const toolContent: Record<string, ToolContent> = {
       { question: 'Are there page or file size limits?', answer: 'No, there are no limits. However, since OCR is CPU-intensive and runs in the browser, processing very large documents (50+ pages) may take several minutes depending on your device.' },
       { question: 'Is there a limit on using this free ocr pdf to text tool?', answer: 'No. iCreatePDF provides a completely free ocr pdf to text solution with no page limits, no daily caps, and no email registration. You can convert pdf ocr to text directly on your device.' },
       { question: 'How do I convert a scanned PDF back to a normal PDF with editable text?', answer: 'To convert a scanned PDF to a normal PDF with selectable text, first run our OCR tool above to extract the text. Then, paste the text into our Markdown to PDF or HTML to PDF tool to compile it into a fresh, clean, search-indexed PDF document.' },
+      { question: 'How do I use this tool as a pdf to text scanner?', answer: 'Just drop your file into our browser-based pdf to text scanner. Select your language, and click the OCR button. The tool will scan to pdf text locally, extracting all characters and outputting them as editable text you can copy immediately.' },
+      { question: 'Can this convert scanned pdf to text accurately?', answer: 'Yes! Our local OCR engine performs high-precision ocr conversion pdf operations on scanned text, books, invoices, or forms, turning image-based files into selectable, copy-pasteable text.' },
     ],
   },
 
