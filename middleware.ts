@@ -1,7 +1,7 @@
 import { NextResponse } from 'next/server';
 import type { NextRequest } from 'next/server';
 
-export function proxy(request: NextRequest) {
+export function middleware(request: NextRequest) {
   try {
     const hostname = request.headers.get('host') || '';
     
@@ -11,13 +11,13 @@ export function proxy(request: NextRequest) {
       return NextResponse.redirect(url, 301);
     }
   } catch (error) {
-    console.error('Middleware proxy execution error:', error);
+    console.error('Middleware execution error:', error);
   }
   
   return NextResponse.next();
 }
 
-export default proxy;
+export default middleware;
 
 export const config = {
   matcher: [
