@@ -10,9 +10,9 @@ import { CookieConsentBanner } from '@/components/landing/cookie-consent-banner'
 
 export const metadata: Metadata = {
   metadataBase: new URL('https://www.icreatepdf.online'),
-  title: 'iCreatePDF - Fast, Free & Private Image to PDF Converter',
-  description: 'Convert JPG, PNG, WEBP, HEIC, and BMP to PDF 100% locally in your browser. Zero sign-up, zero server uploads, privacy first.',
-  keywords: 'pdf editor, edit pdf, merge pdf online, split pdf free, compress pdf tool, crop pdf page, redact pdf text, bates numbering legal, convert to pdf, image to pdf, pdf metadata editor, sign pdf digitally, client-side pdf converter, secure pdf processor, local pdf tools, document converter, pdf utility, word to pdf converter, scan to pdf online, unlock password pdf, protect pdf file, delete pdf pages, crop pdf margins, pdf converter free, offline pdf editor, heic to pdf, png to pdf, jpeg to pdf, extract pages from pdf, combine pdf files, split pdf pages, compress pdf size, secure client-side pdf, pdf watermark creator, add page numbers to pdf, draw signature on pdf, flat pdf converter, black out pdf text, fix corrupted pdf, change author pdf, bates stamp generator, dark mode pdf, invert pdf background, scan documents to pdf, generate qr code pdf, compare two pdfs, pdf comparison tool, extract text from pdf, html to pdf free, compile markdown to pdf, secure online pdf tools, private online pdf tools, free online pdf merger, best pdf splitter, sign pdf free online, how to edit pdf document, online pdf manager, secure pdf sandbox',
+  title: 'Free Online PDF Tools: Merge, Compress, Convert & Edit Privately | iCreatePDF',
+  description: 'Use free browser-based PDF tools to merge, split, compress, convert, edit, sign, and protect documents. Files stay on your device—no uploads or sign-up.',
+  keywords: 'free online pdf tools, private pdf editor, merge pdf, compress pdf, convert jpg to pdf, edit pdf online, browser based pdf tools',
   alternates: {
     canonical: '/',
     languages: {
@@ -35,8 +35,8 @@ export const metadata: Metadata = {
     },
   },
   openGraph: {
-    title: 'iCreatePDF - Privacy-First Image to PDF Converter',
-    description: 'Convert your images to PDF instantly in the browser. Completely private, no file uploads to any server.',
+    title: 'Free Online PDF Tools That Keep Files Private | iCreatePDF',
+    description: 'Merge, compress, convert, edit, sign, and protect PDFs directly in your browser. No uploads and no sign-up.',
     type: 'website',
     locale: 'en_US',
     url: 'https://www.icreatepdf.online',
@@ -52,8 +52,8 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'iCreatePDF - Privacy-First Image to PDF Converter',
-    description: 'Convert images to PDF 100% locally. Zero server uploads, absolute file privacy.',
+    title: 'Free Online PDF Tools That Keep Files Private | iCreatePDF',
+    description: 'Merge, compress, convert, edit, sign, and protect PDFs directly in your browser. No uploads and no sign-up.',
     images: ['/logo.png'],
   },
   verification: {
@@ -189,11 +189,23 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
           dangerouslySetInnerHTML={{
             __html: JSON.stringify({
               "@context": "https://schema.org",
-              "@type": "WebSite",
-              "name": "iCreatePDF",
-              "url": "https://www.icreatepdf.online",
-              "image": "https://www.icreatepdf.online/logo.png",
-              "description": "Convert images and docs to PDF 100% locally in the browser. Also merge, split, rotate, and compress PDF files with zero server uploads."
+              "@graph": [
+                {
+                  "@type": "Organization",
+                  "@id": "https://www.icreatepdf.online/#organization",
+                  "name": "iCreatePDF",
+                  "url": "https://www.icreatepdf.online",
+                  "logo": { "@type": "ImageObject", "url": "https://www.icreatepdf.online/logo.png" }
+                },
+                {
+                  "@type": "WebSite",
+                  "@id": "https://www.icreatepdf.online/#website",
+                  "name": "iCreatePDF",
+                  "url": "https://www.icreatepdf.online",
+                  "publisher": { "@id": "https://www.icreatepdf.online/#organization" },
+                  "description": "Free browser-based PDF tools for converting, merging, editing, compressing, signing, and protecting files without server uploads."
+                }
+              ]
             })
           }}
         />

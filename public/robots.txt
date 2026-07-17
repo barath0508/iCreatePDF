@@ -2,7 +2,7 @@ User-agent: *
 Allow: /
 
 # Sitemap Link
-Sitemap: https://icreatepdf.online/sitemap.xml
+Sitemap: https://www.icreatepdf.online/sitemap.xml
 
 # Disallow non-indexable application folders/routes
 Disallow: /checkout

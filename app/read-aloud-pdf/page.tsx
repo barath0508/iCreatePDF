@@ -1,6 +1,8 @@
 import type { Metadata } from 'next';
 import { ToolPageShell } from '@/components/tools/shared/ToolPageShell';
 import { ReadAloudTool } from '@/components/tools/ReadAloudTool';
+import { ToolSeoContent } from '@/components/tools/shared/ToolSeoContent';
+import { toolContent } from '@/lib/tool-content';
 import { buildAlternates, toolSchema } from '@/lib/seo';
 
 export const metadata: Metadata = {
@@ -26,6 +28,7 @@ export default function ReadAloudPdfPage() {
         description: 'Listen to any PDF read aloud in your browser with adjustable voice and speed.',
         url: '/read-aloud-pdf',
       })}
+      extraSections={<ToolSeoContent content={toolContent['read-aloud-pdf']} />}
     >
       <ReadAloudTool />
     </ToolPageShell>

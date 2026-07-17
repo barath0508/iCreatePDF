@@ -1028,6 +1028,78 @@ export const toolContent: Record<string, ToolContent> = {
     ],
   },
 
+  'certify-pdf': {
+    name: 'Certify PDF',
+    url: '/certify-pdf',
+    overview: 'Create a tamper-evident record for an important PDF without uploading it to a third party. iCreatePDF calculates a SHA-256 fingerprint and adds a QR-enabled certificate, making it easy to identify whether a later copy is the same file you certified.',
+    steps: [
+      { title: 'Add the PDF', description: 'Choose the document you want to fingerprint. It stays in your browser.' },
+      { title: 'Create the certificate', description: 'Generate a SHA-256 fingerprint and the accompanying QR-enabled proof.' },
+      { title: 'Save the certified copy', description: 'Download the marked PDF and retain the fingerprint for future checks.' },
+      { title: 'Verify a later copy', description: 'Compare a file against its fingerprint to check whether its contents have changed.' },
+    ],
+    useCases: ['Document a final contract before sharing it', 'Create an integrity record for a report or certificate', 'Check whether a received PDF matches an approved copy', 'Keep a verifiable record without sending a file to a server'],
+    faqs: [
+      { question: 'What does a SHA-256 PDF fingerprint do?', answer: 'It creates a unique cryptographic digest for the exact file contents. If the file changes, its fingerprint changes too.' },
+      { question: 'Does certification make a legal notarization?', answer: 'No. It provides a tamper-evident integrity record; it does not replace a legal notary or qualified digital signature.' },
+      { question: 'Is the PDF uploaded?', answer: 'No. Fingerprinting and certificate creation run locally in your browser.' },
+    ],
+  },
+
+  'pdf-accessibility-checker': {
+    name: 'PDF Accessibility Checker',
+    url: '/pdf-accessibility-checker',
+    overview: 'Check a PDF for common barriers that affect screen-reader users before publishing it. This browser-based PDF accessibility checker reviews useful signals such as document tags, language settings, text layers, and form-field labels while keeping the file on your device.',
+    steps: [
+      { title: 'Open the PDF', description: 'Select the document you want to review locally.' },
+      { title: 'Run the accessibility audit', description: 'Inspect tags, declared language, searchable text, and form labels.' },
+      { title: 'Review flagged issues', description: 'Use the results to identify where the source document needs remediation.' },
+      { title: 'Update the source file', description: 'Correct the document in its authoring tool, then rerun the check.' },
+    ],
+    useCases: ['Preflight a public PDF for accessibility issues', 'Check whether a scanned PDF contains real selectable text', 'Review form labels before distributing an application', 'Support a PDF accessibility remediation workflow'],
+    faqs: [
+      { question: 'Can this checker make my PDF WCAG compliant?', answer: 'It identifies common signals and issues, but accessibility conformance still requires reviewing the document content and repairing the source where needed.' },
+      { question: 'Does it detect scanned-image PDFs?', answer: 'Yes. It checks whether a useful text layer is present, which helps identify documents that may need OCR.' },
+      { question: 'Are files uploaded for the audit?', answer: 'No. The audit runs in your browser and the PDF remains on your device.' },
+    ],
+  },
+
+  'pdf-to-excel': {
+    name: 'PDF to Excel Table Extractor',
+    url: '/pdf-to-excel',
+    overview: 'Extract tables from a PDF into Excel-ready CSV without sending statements, reports, or invoices to a conversion server. The tool uses the positions of selectable text to reconstruct rows and columns in your browser, giving you data that is easier to sort and analyze.',
+    steps: [
+      { title: 'Choose a text-based PDF', description: 'Open the report, invoice, or statement that contains the table.' },
+      { title: 'Detect table layout', description: 'Let the tool analyze text positions to identify rows and columns.' },
+      { title: 'Review the extracted data', description: 'Check that headings, rows, and columns are arranged as expected.' },
+      { title: 'Export CSV for Excel', description: 'Download the table in a spreadsheet-ready format.' },
+    ],
+    useCases: ['Move invoice line items into a spreadsheet', 'Analyze a report table in Excel', 'Extract a statement for reconciliation', 'Convert tabular PDF data without an upload'],
+    faqs: [
+      { question: 'Can I open the exported file in Excel?', answer: 'Yes. The tool exports CSV, which Excel and other spreadsheet apps can open.' },
+      { question: 'Will it work with scanned PDF tables?', answer: 'It works best with PDFs that have selectable text. For scanned tables, run OCR first and review the output carefully.' },
+      { question: 'Is my financial data uploaded?', answer: 'No. Extraction runs locally in the browser.' },
+    ],
+  },
+
+  'read-aloud-pdf': {
+    name: 'PDF Read Aloud',
+    url: '/read-aloud-pdf',
+    overview: 'Listen to a PDF with browser-based text-to-speech while keeping sensitive documents local. Choose an available voice, adjust the reading speed, and follow the text as it is read aloud—useful for proofreading, studying, and more accessible document review.',
+    steps: [
+      { title: 'Open a text-based PDF', description: 'Choose the document you want to hear read aloud.' },
+      { title: 'Select a voice and speed', description: 'Pick a browser voice and a comfortable reading pace.' },
+      { title: 'Start playback', description: 'Listen as the reader moves through the extracted PDF text.' },
+      { title: 'Pause or adjust settings', description: 'Control playback as you review the document.' },
+    ],
+    useCases: ['Proofread a report by listening to it', 'Study a text-based PDF hands-free', 'Review a document while multitasking', 'Use text-to-speech as part of an accessible reading workflow'],
+    faqs: [
+      { question: 'Does PDF Read Aloud work with scanned PDFs?', answer: 'It needs extractable text. Run OCR on scanned documents first to create a usable text layer.' },
+      { question: 'Can I change the reading speed?', answer: 'Yes. You can adjust speed and select from voices available in your browser or operating system.' },
+      { question: 'Is the PDF sent to a text-to-speech server?', answer: 'No. The reader uses browser capabilities and processes the document locally.' },
+    ],
+  },
+
   'bulk-certificates': {
     name: 'Bulk Certificate Generator',
     url: '/bulk-certificates',
@@ -1107,6 +1179,5 @@ export const toolContent: Record<string, ToolContent> = {
     ],
   },
 };
-
 
 

@@ -2,8 +2,6 @@ import { MetadataRoute } from 'next';
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const baseUrl = 'https://www.icreatepdf.online';
-  const today = new Date().toISOString().split('T')[0];
-
   const toolRoutes = [
     '/jpg-to-pdf',
     '/png-to-pdf',
@@ -95,35 +93,30 @@ export default function sitemap(): MetadataRoute.Sitemap {
     // Homepage — highest priority
     {
       url: baseUrl,
-      lastModified: today,
       changeFrequency: 'daily',
       priority: 1.0,
     },
     // Tool pages — core content
     ...toolRoutes.map((route) => ({
       url: `${baseUrl}${route}`,
-      lastModified: today,
       changeFrequency: 'weekly' as const,
       priority: 0.9,
     })),
     // Blog pages
     ...blogRoutes.map((route) => ({
       url: `${baseUrl}${route}`,
-      lastModified: today,
       changeFrequency: 'weekly' as const,
       priority: 0.8,
     })),
     // Static pages (Contact, Privacy, Terms)
     ...staticRoutes.map((route) => ({
       url: `${baseUrl}${route}`,
-      lastModified: today,
       changeFrequency: 'monthly' as const,
       priority: 0.5,
     })),
     // Localised landing pages
     ...langRoutes.map((route) => ({
       url: `${baseUrl}${route}`,
-      lastModified: today,
       changeFrequency: 'weekly' as const,
       priority: 0.7,
     })),
