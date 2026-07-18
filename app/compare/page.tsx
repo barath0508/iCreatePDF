@@ -6,16 +6,54 @@ import { ShieldCheck, ShieldAlert, Zap, Coins, Globe, Heart, Check, X, Sparkles 
 import Link from 'next/link';
 
 export const metadata: Metadata = {
-  title: 'iCreatePDF vs. Server-Based PDF Editors | iCreatePDF',
-  description: 'Understand the security, speed, and capability differences between client-side (local-only) PDF tools and server-based cloud converters.',
-  keywords: 'client side pdf converter, secure pdf tools, local pdf editor, free private pdf tools',
+  title: 'iCreatePDF vs. iLovePDF, Smallpdf & PDF24 | Compare PDF Tools',
+  description: 'Compare iCreatePDF to iLovePDF, Smallpdf, and PDF24 on privacy, file limits, task caps, and pricing — plus why client-side processing beats server-based cloud converters.',
+  keywords: 'icreatepdf vs ilovepdf, icreatepdf vs smallpdf, client side pdf converter, secure pdf tools, local pdf editor, free private pdf tools',
   alternates: buildAlternates('/compare'),
   openGraph: {
-    title: 'iCreatePDF vs. Server-Based PDF Editors | iCreatePDF',
-    description: 'Understand the security, speed, and capability differences between client-side (local-only) PDF tools and server-based cloud converters.',
+    title: 'iCreatePDF vs. iLovePDF, Smallpdf & PDF24 | Compare PDF Tools',
+    description: 'Compare iCreatePDF to iLovePDF, Smallpdf, and PDF24 on privacy, file limits, task caps, and pricing.',
     type: 'website',
   }
 };
+
+const namedComparison = [
+  {
+    attribute: 'Price',
+    icreate: 'Free, unlimited',
+    ilovepdf: 'Free tier + $6.61/mo Pro',
+    smallpdf: 'Free tier + $12/mo Pro',
+    pdf24: 'Free (ad-supported)',
+  },
+  {
+    attribute: 'File size limit (free tier)',
+    icreate: 'No limit (runs on your CPU/RAM)',
+    ilovepdf: '~25 MB',
+    smallpdf: '100 MB',
+    pdf24: 'No limit',
+  },
+  {
+    attribute: 'Daily task limit (free tier)',
+    icreate: 'Unlimited',
+    ilovepdf: 'Rate-limited',
+    smallpdf: '2 tasks/day',
+    pdf24: 'Unlimited',
+  },
+  {
+    attribute: 'Where files are processed',
+    icreate: 'Your browser (never uploaded)',
+    ilovepdf: 'Their servers',
+    smallpdf: 'Their servers',
+    pdf24: 'Their servers (web) / your PC (desktop app)',
+  },
+  {
+    attribute: 'Account required',
+    icreate: 'No',
+    ilovepdf: 'No (for basic use)',
+    smallpdf: 'No (for basic use)',
+    pdf24: 'No',
+  },
+];
 
 const comparisonMatrix = [
   {
@@ -64,7 +102,7 @@ const detailedFeatures = [
   { category: 'Advanced Processing', feature: 'Repair Broken PDF Cross-References', icreate: true, others: true },
   { category: 'Advanced Processing', feature: 'Compress PDF Object Streams', icreate: true, others: true },
   { category: 'Advanced Processing', feature: 'Reflowable Text Editing (Paragraph edit)', icreate: false, others: true },
-  { category: 'Advanced Processing', feature: 'OCR (Searchable Scans)', icreate: false, others: true },
+  { category: 'Advanced Processing', feature: 'OCR (Searchable Scans)', icreate: true, others: true },
 ];
 
 export default function ComparePage() {
@@ -121,6 +159,48 @@ export default function ComparePage() {
                 Most traditional online PDF converters upload your source files to remote server infrastructure. Processing takes place in cloud virtual machines, and output files remain on cloud storage instances, creating a potential target for interception and leaks.
               </p>
             </div>
+          </div>
+
+          {/* Named Competitor Comparison */}
+          <div className="space-y-6">
+            <div className="text-center space-y-2">
+              <h2 className="text-2xl font-bold font-display">iCreatePDF vs. iLovePDF vs. Smallpdf vs. PDF24</h2>
+              <p className="text-xs text-foreground/40">How the free tiers actually compare, attribute by attribute</p>
+            </div>
+            <div className="border border-foreground/10 rounded-2xl overflow-x-auto bg-card">
+              <table className="w-full text-xs min-w-[640px]">
+                <thead>
+                  <tr className="bg-foreground/5 text-foreground/40 border-b border-foreground/10 uppercase tracking-wider font-mono">
+                    <th className="text-left font-semibold p-4">Attribute</th>
+                    <th className="text-left font-semibold p-4 text-brand">iCreatePDF</th>
+                    <th className="text-left font-semibold p-4">iLovePDF</th>
+                    <th className="text-left font-semibold p-4">Smallpdf</th>
+                    <th className="text-left font-semibold p-4">PDF24</th>
+                  </tr>
+                </thead>
+                <tbody className="divide-y divide-foreground/5">
+                  {namedComparison.map((row) => (
+                    <tr key={row.attribute}>
+                      <td className="p-4 font-semibold text-foreground">{row.attribute}</td>
+                      <td className="p-4 text-brand font-medium">{row.icreate}</td>
+                      <td className="p-4 text-foreground/60">{row.ilovepdf}</td>
+                      <td className="p-4 text-foreground/60">{row.smallpdf}</td>
+                      <td className="p-4 text-foreground/60">{row.pdf24}</td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+            </div>
+            <p className="text-[10px] text-foreground/30 text-center max-w-2xl mx-auto leading-relaxed">
+              Figures reflect published free-tier terms at time of writing and may change. See our detailed breakdowns:{' '}
+              <Link href="/ilovepdf-alternative" className="text-brand hover:underline underline-offset-2">iLovePDF alternative</Link>
+              {' · '}
+              <Link href="/smallpdf-alternative" className="text-brand hover:underline underline-offset-2">Smallpdf alternative</Link>
+              {' · '}
+              <Link href="/pdf24-alternative" className="text-brand hover:underline underline-offset-2">PDF24 alternative</Link>
+              {' · '}
+              <Link href="/no-upload-pdf-tools" className="text-brand hover:underline underline-offset-2">Full no-upload tool list</Link>
+            </p>
           </div>
 
           {/* Architectural Comparison Matrix */}
@@ -202,7 +282,7 @@ export default function ComparePage() {
           <div className="p-8 rounded-2xl bg-gradient-to-r from-purple-950/20 to-pink-950/20 border border-brand/20 text-center space-y-4 max-w-4xl mx-auto">
             <h3 className="text-xl sm:text-2xl font-bold font-display text-foreground">Experience Private Client-Side Tools</h3>
             <p className="text-xs sm:text-sm text-foreground/60 max-w-md mx-auto">
-              Ready to work with your documents securely? Access all 32+ of our in-browser PDF utilities instantly.
+              Ready to work with your documents securely? Access all 46+ of our in-browser PDF utilities instantly.
             </p>
             <div className="pt-2">
               <Link href="/#convert">

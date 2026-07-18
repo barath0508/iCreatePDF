@@ -1,21 +1,6 @@
 import { CheckCircle2, HelpCircle, ListOrdered } from 'lucide-react';
 import type { ToolContent } from '@/lib/tool-content';
 
-function howToSchema(content: ToolContent) {
-  return {
-    '@context': 'https://schema.org',
-    '@type': 'HowTo',
-    name: `How to ${content.name}`,
-    description: content.overview,
-    step: content.steps.map((step, i) => ({
-      '@type': 'HowToStep',
-      position: i + 1,
-      name: step.title,
-      text: step.description,
-    })),
-  };
-}
-
 function faqSchema(content: ToolContent) {
   return {
     '@context': 'https://schema.org',
@@ -34,10 +19,6 @@ function faqSchema(content: ToolContent) {
 export function ToolSeoContent({ content }: { content: ToolContent }) {
   return (
     <section className="border-t border-foreground/5 py-16 relative z-10">
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(howToSchema(content)) }}
-      />
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema(content)) }}

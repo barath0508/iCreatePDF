@@ -145,7 +145,7 @@ export default function PrivacyPage() {
             {[
               { label: 'No File Uploads', sub: 'Files stay on your device' },
               { label: 'No Accounts Required', sub: 'Zero registration needed' },
-              { label: 'No Tracking Cookies', sub: 'No ad or user tracking' },
+              { label: 'No File Tracking', sub: 'Your documents are never logged' },
             ].map((b) => (
               <div key={b.label} className="p-4 rounded-2xl bg-card border border-foreground/5">
                 <p className="text-xs font-bold text-emerald-400">{b.label}</p>
