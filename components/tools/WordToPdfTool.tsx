@@ -69,12 +69,23 @@ export function WordToPdfTool() {
       container.style.position = 'absolute';
       container.style.left = '-9999px';
       container.style.top = '-9999px';
-      container.style.width = '800px'; // standard width for docx rendering
+      container.style.width = '850px'; // standard width for docx rendering to fit A4
       container.style.background = 'white';
       container.style.color = 'black';
-      container.style.padding = '40px';
+      container.style.padding = '0px';
       container.style.fontFamily = 'Calibri, Arial, sans-serif';
       document.body.appendChild(container);
+
+      // Add custom styles to remove shadows, borders, and margins for a clean PDF render
+      const style = document.createElement('style');
+      style.innerHTML = `
+        section.docx {
+          box-shadow: none !important;
+          margin: 0 !important;
+          border: none !important;
+        }
+      `;
+      container.appendChild(style);
 
       // Render the DOCX
       // @ts-expect-error
@@ -86,6 +97,7 @@ export function WordToPdfTool() {
         ignoreHeight: false,
         ignoreFonts: false,
         breakPages: true,
+        useBase64URL: true, // Use base64 URLs for images/fonts to prevent CORS/blob security issues in canvas rendering
         debug: false
       });
 
@@ -98,11 +110,11 @@ export function WordToPdfTool() {
       const html2pdf = (await import('html2pdf.js')).default || (await import('html2pdf.js'));
       setProgress(85);
       const opt = {
-        margin:       [10, 10, 10, 10], // top, left, bottom, right in mm
+        margin:       0, // No extra margin (preserve native docx margins)
         filename:     `${file.name.replace('.docx', '')}.pdf`,
-        image:        { type: 'jpeg', quality: 0.98 },
+        image:        { type: 'jpeg', quality: 1.0 }, // Maximum image quality
         html2canvas:  { 
-          scale: 2.0, // High quality scale
+          scale: 4.0, // High quality crisp scale (4x resolution)
           useCORS: true, 
           logging: false 
         },
