@@ -12,7 +12,22 @@ export const metadata: Metadata = {
   metadataBase: new URL('https://www.icreatepdf.online'),
   title: 'Free Online PDF Tools: Merge, Compress, Convert & Edit Privately | iCreatePDF',
   description: 'Use free browser-based PDF tools to merge, split, compress, convert, edit, sign, and protect documents. Files stay on your device—no uploads or sign-up.',
-  keywords: 'free online pdf tools, private pdf editor, merge pdf, compress pdf, convert jpg to pdf, edit pdf online, browser based pdf tools',
+  keywords: [
+    'free online PDF tools',
+    'private PDF tools',
+    'merge PDF online',
+    'compress PDF online',
+    'convert JPG to PDF',
+    'edit PDF online',
+    'sign PDF online',
+    'browser-based PDF editor',
+    'no upload PDF tools',
+  ],
+  applicationName: 'iCreatePDF',
+  creator: 'iCreatePDF',
+  publisher: 'iCreatePDF',
+  category: 'Productivity',
+  referrer: 'strict-origin-when-cross-origin',
   alternates: {
     canonical: '/',
     languages: {
@@ -204,6 +219,28 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
                   "url": "https://www.icreatepdf.online",
                   "publisher": { "@id": "https://www.icreatepdf.online/#organization" },
                   "description": "Free browser-based PDF tools for converting, merging, editing, compressing, signing, and protecting files without server uploads."
+                },
+                {
+                  "@type": "WebApplication",
+                  "@id": "https://www.icreatepdf.online/#webapp",
+                  "name": "iCreatePDF",
+                  "url": "https://www.icreatepdf.online",
+                  "applicationCategory": "BusinessApplication",
+                  "operatingSystem": "Web Browser",
+                  "isAccessibleForFree": true,
+                  "description": "Free, browser-based PDF tools for merging, converting, compressing, editing, signing, and protecting documents without server uploads.",
+                  "featureList": [
+                    "Merge and split PDF files",
+                    "Convert images and documents to PDF",
+                    "Compress, edit, sign, and protect PDFs",
+                    "Private browser-based processing without server uploads"
+                  ],
+                  "offers": {
+                    "@type": "Offer",
+                    "price": "0",
+                    "priceCurrency": "USD"
+                  },
+                  "publisher": { "@id": "https://www.icreatepdf.online/#organization" }
                 }
               ]
             })

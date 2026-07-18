@@ -85,6 +85,12 @@ export function toolSchema({
       image: `${SITE_URL}/logo.png`,
       applicationCategory: 'UtilityApplication',
       operatingSystem: 'Web Browser',
+      isAccessibleForFree: true,
+      featureList: [
+        'Free browser-based PDF processing',
+        'Private local file processing',
+        'No server uploads required',
+      ],
       offers: {
         '@type': 'Offer',
         price: '0',

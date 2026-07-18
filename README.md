@@ -35,6 +35,14 @@ iCreatePDF is loaded with **37+ local PDF utilities** grouped by category:
 
 ---
 
+## 🔍 SEO & Discoverability
+
+- **Structured Data:** JSON-LD (`Organization`, `WebSite`, `WebApplication`, per-tool `SoftwareApplication`) describing free pricing and feature lists for rich results.
+- **Dynamic Open Graph Image:** Auto-generated social preview (`app/opengraph-image.tsx`) via `next/og`, no static asset to maintain.
+- **Per-Tool Metadata:** Each tool page ships its own keywords, canonical URL, and crawl-friendly content via `lib/seo.ts`.
+
+---
+
 ## 🛠️ Tech Stack & Libraries
 
 To achieve zero-server rendering and processing, the project integrates:

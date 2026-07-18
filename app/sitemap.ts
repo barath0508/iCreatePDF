@@ -53,6 +53,29 @@ export default function sitemap(): MetadataRoute.Sitemap {
 
   const blogRoutes = [
     '/blog',
+    '/blog/how-to-verify-pdf-signature',
+    '/blog/how-to-certify-pdf-with-fingerprint',
+    '/blog/how-to-convert-markdown-to-pdf',
+    '/blog/how-to-convert-txt-to-pdf',
+    '/blog/how-to-convert-ris-to-pdf-bibliography',
+    '/blog/how-to-listen-to-pdf-text-to-speech',
+    '/blog/pdf-accessibility-checker-guide',
+    '/blog/how-to-add-header-footer-to-pdf',
+    '/blog/how-to-compare-two-pdf-files',
+    '/blog/how-to-generate-qr-code-pdf',
+    '/blog/how-to-generate-barcode-pdf',
+    '/blog/how-to-delete-pages-from-pdf',
+    '/blog/how-to-scan-documents-to-pdf',
+    '/blog/how-to-organize-pdf-pages',
+    '/blog/how-to-convert-html-to-pdf',
+    '/blog/how-to-convert-pdf-to-excel',
+    '/blog/how-to-crop-pdf-pages',
+    '/blog/how-to-resize-pdf-pages',
+    '/blog/how-to-repair-corrupted-pdf',
+    '/blog/how-to-convert-pdf-to-jpg',
+    '/blog/how-to-rotate-pdf-pages',
+    '/blog/how-to-extract-text-from-pdf',
+    '/blog/how-to-edit-pdf-online-free',
     '/blog/proof-zero-server-uploads-how-to-verify-offline-pdf-converter',
     '/blog/how-to-compress-pdf-without-losing-quality',
     '/blog/how-to-merge-pdf-files-free',
@@ -80,7 +103,15 @@ export default function sitemap(): MetadataRoute.Sitemap {
     '/contact',
     '/privacy',
     '/terms',
+    '/about',
+  ];
+
+  const comparisonRoutes = [
     '/compare',
+    '/ilovepdf-alternative',
+    '/smallpdf-alternative',
+    '/pdf24-alternative',
+    '/no-upload-pdf-tools',
   ];
 
   const langRoutes = [
@@ -108,11 +139,17 @@ export default function sitemap(): MetadataRoute.Sitemap {
       changeFrequency: 'weekly' as const,
       priority: 0.8,
     })),
-    // Static pages (Contact, Privacy, Terms)
+    // Static pages (Contact, Privacy, Terms, About)
     ...staticRoutes.map((route) => ({
       url: `${baseUrl}${route}`,
       changeFrequency: 'monthly' as const,
       priority: 0.5,
+    })),
+    // Comparison / alternative pages — commercial intent
+    ...comparisonRoutes.map((route) => ({
+      url: `${baseUrl}${route}`,
+      changeFrequency: 'monthly' as const,
+      priority: 0.7,
     })),
     // Localised landing pages
     ...langRoutes.map((route) => ({
