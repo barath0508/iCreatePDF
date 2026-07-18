@@ -668,7 +668,7 @@ ER  - `);
                 <label className="font-medium text-foreground/70">Margins</label>
                 <select
                   value={marginSize}
-                  onChange={(e) => setMarginSize(e.target.value)}
+                  onChange={(e) => setMarginSize(e.target.value as any)}
                   className="w-full bg-background border border-foreground/10 rounded-lg px-2.5 py-2 text-foreground focus:outline-none focus:border-brand"
                 >
                   <option value="0.5">0.5 inch (Narrow)</option>
