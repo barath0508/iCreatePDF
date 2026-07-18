@@ -58,6 +58,7 @@ const searchTools = [
   { title: 'Accessibility Checker', href: '/pdf-accessibility-checker', desc: 'Check PDF compliance for screen-readers and accessibility standards.' },
   { title: 'PDF OCR', href: '/pdf-ocr', desc: 'Extract copy-pasteable text from scanned document scans in-browser.' },
   { title: 'PDF to Excel', href: '/pdf-to-excel', desc: 'Detect tabular boundaries and export PDF data tables as CSV files.' },
+  { title: 'Excel to PDF', href: '/excel-to-pdf', desc: 'Convert Excel spreadsheets (.xlsx, .xls) and CSV files into printable PDF tables.' },
   { title: 'Prevent Copy', href: '/prevent-copy', desc: 'Rasterize page layers to disable text selection and highlight copying.' },
   { title: 'Read Aloud PDF', href: '/read-aloud-pdf', desc: 'Listen to document text using browser speech synthesis.' },
 ];

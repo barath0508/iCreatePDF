@@ -1178,6 +1178,32 @@ export const toolContent: Record<string, ToolContent> = {
       { question: 'How do I convert RIS to PDF online for free?', answer: 'To convert RIS to PDF, simply drag and drop your .ris file or paste the raw RIS data into the input box above. Select your preferred citation style (such as APA or MLA) and layout settings, then click "Compile RIS to PDF" to generate and download your formatted PDF instantly.' },
     ],
   },
+
+  'excel-to-pdf': {
+    name: 'Excel to PDF Converter',
+    url: '/excel-to-pdf',
+    overview:
+      'Wondering how to convert Excel to PDF? iCreatePDF offers a free online Excel to PDF converter that processes files entirely in your browser sandbox. Convert spreadsheets (.xlsx, .xls) and CSV (.csv) tables into professional, print-ready PDF reports. Customize columns, orientations (portrait/landscape), paper sizes, margins, fonts, and gridlines. All spreadsheet compilation happens on your local device, keeping your financial, commercial, and personal data 100% secure.',
+    steps: [
+      { title: 'Upload your spreadsheet', description: 'Drag and drop your Excel workbook (.xlsx, .xls) or CSV table.' },
+      { title: 'Select sheet and columns', description: 'Navigate sheets and check/uncheck columns to include only relevant data.' },
+      { title: 'Customize page layout', description: 'Select orientation (landscape is recommended for wide tables), paper size, margin size, fonts, and visual theme.' },
+      { title: 'Download your PDF report', description: 'Click Generate PDF and export the formatted document directly in browser memory.' },
+    ],
+    useCases: [
+      'Convert financial spreadsheets or tables into formatted executive PDF reports',
+      'Format customer contact lists or employee schedules into clean, readable PDF handbooks',
+      'Print CSV raw logs and invoice data rows as structured PDF documents',
+      'Translate workbook calculations to PDFs locally without exposing sensitive accounting data to remote servers',
+    ],
+    faqs: [
+      { question: 'What spreadsheet formats are supported?', answer: 'We support modern Excel files (.xlsx), legacy Excel workbooks (.xls), and comma-separated values (.csv) text sheets.' },
+      { question: 'How do I convert wide tables without cutting off columns?', answer: 'We highly recommend selecting the Landscape orientation under Layout Settings. You can also uncheck less important columns in the column selector checklist or choose a smaller font size.' },
+      { question: 'Does this tool support workbook files with multiple sheets?', answer: 'Yes! When you upload a workbook with multiple sheets, we render a sheet selection bar so you can preview and convert sheets individually.' },
+      { question: 'Is my financial spreadsheet data secure?', answer: 'Yes, absolutely. Like all tools on iCreatePDF, the parsing of spreadsheet bytes and table-to-PDF layout generation run entirely client-side on your local device CPU. Your file data is never sent to any remote server.' },
+      { question: 'How do I convert Excel to PDF online for free?', answer: 'To convert Excel to PDF online for free, drag and drop your Excel (.xlsx, .xls) or CSV file into our converter, select the sheet and columns you wish to include, adjust page orientation and themes in the settings sidebar, and click "Generate PDF" to download it instantly.' },
+    ],
+  },
 };
 
 

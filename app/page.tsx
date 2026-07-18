@@ -81,6 +81,13 @@ const tools = [
     category: 'convert',
   },
   {
+    icon: FileSpreadsheet,
+    title: 'Excel to PDF',
+    desc: 'Convert Excel spreadsheets (.xlsx, .xls) and CSV files into printable PDF tables.',
+    href: '/excel-to-pdf',
+    category: 'convert',
+  },
+  {
     icon: FileText,
     title: 'TXT to PDF',
     desc: 'Convert plain text files (.txt) or raw typed text into formatted PDF sheets.',

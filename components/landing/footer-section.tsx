@@ -18,6 +18,7 @@ const footerLinks = {
     { name: 'QR to PDF', href: '/qr-to-pdf' },
     { name: 'Barcode to PDF', href: '/barcode-to-pdf' },
     { name: 'PDF to Excel', href: '/pdf-to-excel' },
+    { name: 'Excel to PDF', href: '/excel-to-pdf' },
   ],
   Utilities: [
     { name: 'Merge PDF', href: '/merge-pdf' },
