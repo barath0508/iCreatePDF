@@ -58,8 +58,15 @@ export default function ReadAloudBlogPost() {
           <p className="text-foreground/50 text-sm leading-relaxed max-w-2xl">
             Have any PDF read aloud with a natural voice, adjustable speed, and live word highlighting — directly in your browser.
           </p>
-          <div className="flex items-center gap-4 text-xs text-foreground/40">
-            <span className="flex items-center gap-1"><Calendar className="w-3.5 h-3.5" />July 18, 2026</span>
+          <div className="flex flex-wrap items-center gap-x-6 gap-y-2 text-xs text-foreground/40 pt-2">
+            <span className="flex items-center gap-1.5">
+              <span className="w-5 h-5 rounded-full bg-brand/20 flex items-center justify-center text-[10px] font-bold text-brand border border-brand/10">BR</span>
+              Written by <span className="font-semibold text-foreground/60">Barath R</span> (Lead Developer &amp; PDF Expert)
+            </span>
+            <span className="flex items-center gap-1">
+              <Calendar className="w-3.5 h-3.5" />
+              <time dateTime="2026-07-18">July 18, 2026</time>
+            </span>
             <span className="flex items-center gap-1"><Clock className="w-3.5 h-3.5" />3 min read</span>
           </div>
         </div>
