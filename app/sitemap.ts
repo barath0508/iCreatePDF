@@ -50,10 +50,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
     '/tools/pdf-ocr',
     '/tools/bulk-certificates',
     '/tools/fillable-pdf-builder',
+    '/tools/base64-to-pdf',
   ];
 
   const blogRoutes = [
     '/blogs',
+    '/blogs/how-to-convert-base64-to-pdf',
     '/blogs/how-to-verify-pdf-signature',
     '/blogs/how-to-certify-pdf-with-fingerprint',
     '/blogs/how-to-convert-markdown-to-pdf',

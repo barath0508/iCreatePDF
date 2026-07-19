@@ -11,6 +11,12 @@ interface Post {
 
 const allPosts: Post[] = [
   {
+    slug: 'how-to-convert-base64-to-pdf',
+    title: 'How to Convert Base64 to PDF Online — Free Developer Guide',
+    category: 'Developer Tools',
+    color: 'purple',
+  },
+  {
     slug: 'how-to-verify-pdf-signature',
     title: 'How to Verify a PDF Digital Signature Online — Free Guide',
     category: 'Digital Signatures',

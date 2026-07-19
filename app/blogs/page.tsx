@@ -20,6 +20,15 @@ export const metadata: Metadata = {
 
 const blogPosts = [
   {
+    slug: 'how-to-convert-base64-to-pdf',
+    title: 'How to Convert Base64 to PDF Online — Free Developer Guide',
+    excerpt: 'Learn how to safely decode a Base64 string back into a PDF document, write custom scripts in JavaScript/Python, and decode payloads client-side.',
+    date: 'July 19, 2026',
+    readTime: '4 min read',
+    category: 'Developer Tools',
+    color: 'purple',
+  },
+  {
     slug: 'how-to-verify-pdf-signature',
     title: 'How to Verify a PDF Digital Signature Online — Free Guide',
     excerpt: 'Validate cryptographic signatures on a PDF and inspect signer identity, entirely in your browser.',

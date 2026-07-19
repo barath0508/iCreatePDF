@@ -1204,6 +1204,30 @@ export const toolContent: Record<string, ToolContent> = {
       { question: 'How do I convert Excel to PDF online for free?', answer: 'To convert Excel to PDF online for free, drag and drop your Excel (.xlsx, .xls) or CSV file into our converter, select the sheet and columns you wish to include, adjust page orientation and themes in the settings sidebar, and click "Generate PDF" to download it instantly.' },
     ],
   },
+
+  'base64-to-pdf': {
+    name: 'Decode Base64 to PDF',
+    url: '/tools/base64-to-pdf',
+    overview:
+      'API integrations, email backends, and storage engines often represent files as Base64 strings. iCreatePDF Base64 to PDF decoder allows developers to paste any Base64 encoded payload, instantly decode it, preview the PDF contents inside a secure sandbox, and download the resulting file. The decoding process runs 100% locally in your browser memory, ensuring corporate data remains safe.',
+    steps: [
+      { title: 'Paste your Base64 string', description: 'Paste the base64 string. We automatically strip headers like data:application/pdf;base64,.' },
+      { title: 'Run local decoder', description: 'Our browser-based engine parses the string and verifies the PDF signature headers.' },
+      { title: 'Preview the document', description: 'Inspect the resulting document inside a secure local sandbox preview pane.' },
+      { title: 'Download your PDF file', description: 'Export the decoded document directly to your device.' },
+    ],
+    useCases: [
+      'Inspect Base64 encoded PDF attachments from email API payloads',
+      'Verify base64-encoded PDF responses from document generation endpoints',
+      'Decode files stored as base64 database strings without writing scripts',
+      'Securely handle sensitive or private files without uploading to third-party tools',
+    ],
+    faqs: [
+      { question: 'Is my Base64 string sent to a server?', answer: 'No. The conversion is processed entirely in your browser using the JavaScript API atob(). Your base64 strings and decoded PDFs are never transmitted over the network.' },
+      { question: 'Does this tool automatically strip base64 data headers?', answer: 'Yes. If your string begins with "data:application/pdf;base64," or similar MIME headers, we automatically strip the header and clean any whitespace before decoding.' },
+      { question: 'How can I verify if the Base64 string is a valid PDF?', answer: 'Our tool automatically checks the magic bytes of the decoded binary array for the standard "%PDF-" header. If the signature is missing, it alerts you immediately.' },
+    ],
+  },
 };
 
 
