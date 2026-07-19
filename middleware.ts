@@ -47,6 +47,20 @@ export function middleware(request: NextRequest) {
       return NextResponse.redirect(url, 301);
     }
 
+    // 5. Redirect old flat comparison and hub paths to new structured directories
+    if (pathname === '/ilovepdf-alternative') {
+      return NextResponse.redirect(new URL('/compare/ilovepdf-alternative', request.url), 301);
+    }
+    if (pathname === '/smallpdf-alternative') {
+      return NextResponse.redirect(new URL('/compare/smallpdf-alternative', request.url), 301);
+    }
+    if (pathname === '/pdf24-alternative') {
+      return NextResponse.redirect(new URL('/compare/pdf24-alternative', request.url), 301);
+    }
+    if (pathname === '/no-upload-pdf-tools') {
+      return NextResponse.redirect(new URL('/tools/no-upload-pdf-tools', request.url), 301);
+    }
+
   } catch (error) {
     console.error('Middleware execution error:', error);
   }

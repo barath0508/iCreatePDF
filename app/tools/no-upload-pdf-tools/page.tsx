@@ -9,7 +9,7 @@ export const metadata: Metadata = {
   title: 'No-Upload PDF Tools: 46+ Free Tools That Never Leave Your Browser | iCreatePDF',
   description: 'Every iCreatePDF tool processes files 100% locally in your browser — no upload, no server, no account. Browse the full list of 46+ private PDF tools.',
   keywords: 'no upload pdf tools, private pdf tools, offline pdf converter, client side pdf tools, pdf tools no upload 2026',
-  alternates: buildAlternates('/no-upload-pdf-tools'),
+  alternates: buildAlternates('/tools/no-upload-pdf-tools'),
   openGraph: {
     title: 'No-Upload PDF Tools: 46+ Free Tools That Never Leave Your Browser',
     description: 'Every iCreatePDF tool processes files 100% locally in your browser — no upload, no server, no account.',

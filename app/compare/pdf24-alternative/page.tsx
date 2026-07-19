@@ -2,50 +2,50 @@ import type { Metadata } from 'next';
 import { buildAlternates, breadcrumbSchema } from '@/lib/seo';
 import { Navigation } from '@/components/landing/navigation';
 import { FooterSection } from '@/components/landing/footer-section';
-import { ShieldCheck, Lock, Zap, Coins, Check, X } from 'lucide-react';
+import { Lock, Zap, Globe } from 'lucide-react';
 import Link from 'next/link';
 
 export const metadata: Metadata = {
-  title: 'iLovePDF Alternative: Free, No Upload Limit, No File Cap | iCreatePDF',
-  description: 'Looking for an iLovePDF alternative? iCreatePDF is free, has no 25MB file cap, and never uploads your files — everything runs locally in your browser.',
-  keywords: 'ilovepdf alternative, ilovepdf vs icreatepdf, free pdf tool no file limit, ilovepdf free alternative',
-  alternates: buildAlternates('/ilovepdf-alternative'),
+  title: 'PDF24 Alternative: No Install, Browser-Based Privacy | iCreatePDF',
+  description: 'Looking for a PDF24 alternative? iCreatePDF is free, requires no desktop install, and processes files entirely in your browser tab — every tool, not just some.',
+  keywords: 'pdf24 alternative, pdf24 vs icreatepdf, pdf24 tools alternative, browser-based pdf tool no install',
+  alternates: buildAlternates('/compare/pdf24-alternative'),
   openGraph: {
-    title: 'iLovePDF Alternative: Free, No Upload Limit, No File Cap | iCreatePDF',
-    description: 'iCreatePDF is a free iLovePDF alternative with no file size cap and 100% local, in-browser processing.',
+    title: 'PDF24 Alternative: No Install, Browser-Based Privacy | iCreatePDF',
+    description: 'iCreatePDF is a free PDF24 alternative that never requires a desktop install and never uploads your files.',
     type: 'website',
   },
 };
 
 const rows = [
-  { attribute: 'Price', icreate: 'Free, unlimited', them: 'Free tier, then $6.61/mo Pro' },
-  { attribute: 'Free-tier file size limit', icreate: 'No limit', them: '~25 MB per file' },
-  { attribute: 'Where files are processed', icreate: 'Your browser — never uploaded', them: "iLovePDF's servers" },
-  { attribute: 'Account required for full use', icreate: 'No', them: 'Often required for larger files/batches' },
-  { attribute: 'Works offline once loaded', icreate: 'Yes', them: 'No' },
-  { attribute: 'Watermarks on free output', icreate: 'None', them: 'None' },
+  { attribute: 'Price', icreate: 'Free, unlimited', them: 'Free, ad-supported' },
+  { attribute: 'Where web tools process files', icreate: 'Your browser — never uploaded', them: "PDF24's servers (web tools)" },
+  { attribute: 'Offline private processing', icreate: 'Yes — in any browser, no install', them: 'Only via separate Windows desktop app' },
+  { attribute: 'Works on Mac / Linux / mobile', icreate: 'Yes — same browser experience everywhere', them: 'Desktop app is Windows-only' },
+  { attribute: 'Account required', icreate: 'No', them: 'No' },
+  { attribute: 'Task or file-size limits', icreate: 'None', them: 'None' },
 ];
 
 const faqs = [
   {
-    q: 'Is iCreatePDF really free, unlike iLovePDF Pro?',
-    a: 'Yes. Every tool on iCreatePDF is free with no file-size cap, no daily task limit, and no account requirement, because processing runs on your device instead of on our servers — there\'s no server cost per file that would require a paywall.',
+    q: "Isn't PDF24 already free and unlimited like iCreatePDF?",
+    a: "Yes — PDF24's pricing and limits are close to iCreatePDF's. The real difference is architecture: PDF24's web tools still upload your file to their servers to process it, and true local processing only exists in their separate Windows desktop app. iCreatePDF processes every tool locally in your browser, on any operating system, with nothing to install.",
   },
   {
-    q: 'Does iCreatePDF have the same file-size limit as iLovePDF\'s free tier?',
-    a: "No. iLovePDF's free tier caps files at roughly 25 MB. iCreatePDF has no fixed cap — the practical limit is your device's own memory, since files are processed in your browser rather than uploaded.",
+    q: 'Do I need to install anything to use iCreatePDF privately?',
+    a: 'No. Every tool runs in your browser tab using JavaScript and WebAssembly — there is no separate desktop app, and no download required to get the privacy benefit that PDF24 reserves for its Windows-only installer.',
   },
   {
-    q: 'Can I use iCreatePDF instead of iLovePDF for sensitive documents?',
-    a: 'Yes. Because files are never uploaded to a server, iCreatePDF avoids the privacy exposure that comes with sending contracts, IDs, or financial documents to third-party cloud infrastructure.',
+    q: 'Can I use iCreatePDF on a Mac, Linux machine, Chromebook, or phone?',
+    a: "Yes — since processing happens in your browser rather than a native app, iCreatePDF works identically across operating systems and devices, unlike PDF24's desktop app which is Windows-only.",
   },
   {
-    q: 'What can iLovePDF do that iCreatePDF cannot?',
-    a: 'iLovePDF supports some server-side operations like reflowable paragraph text editing that require heavier processing than a browser can efficiently handle. For page-level editing, merging, splitting, converting, protecting, and signing, iCreatePDF covers the same core workflows.',
+    q: 'Which tool has more features?',
+    a: "PDF24 has a broad catalog built over many years. iCreatePDF currently covers 46+ tools across conversion, editing, security, and document management — check the specific tool you need on either site if you're comparing feature-for-feature.",
   },
 ];
 
-export default function IlovepdfAlternativePage() {
+export default function Pdf24AlternativePage() {
   return (
     <main className="relative min-h-screen overflow-x-hidden bg-background text-foreground flex flex-col justify-between selection:bg-brand/30">
       <script
@@ -54,7 +54,7 @@ export default function IlovepdfAlternativePage() {
           __html: JSON.stringify(
             breadcrumbSchema([
               { name: 'iCreatePDF', url: '/' },
-              { name: 'iLovePDF Alternative' },
+              { name: 'PDF24 Alternative' },
             ])
           ),
         }}
@@ -80,20 +80,20 @@ export default function IlovepdfAlternativePage() {
 
           <div className="text-center space-y-4 max-w-2xl mx-auto">
             <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-foreground/5 border border-foreground/10 text-[11px] font-semibold text-brand tracking-wide uppercase font-mono">
-              iLovePDF Alternative
+              PDF24 Alternative
             </span>
             <h1 className="text-4xl sm:text-5xl font-extrabold tracking-tight text-foreground font-display">
-              A Free iLovePDF Alternative <br className="sm:hidden" /> With No File Cap
+              A PDF24 Alternative <br className="sm:hidden" /> With Nothing to Install
             </h1>
             <p className="text-foreground/40 text-sm sm:text-base leading-relaxed">
-              iLovePDF's free tier caps files around 25MB and pushes larger files behind Pro. iCreatePDF has no file-size cap, because your files never leave your browser.
+              PDF24's web tools still upload your file to their servers — true local processing requires installing their separate Windows desktop app. iCreatePDF processes every tool locally, in any browser, with no install at all.
             </p>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             {[
-              { icon: Coins, title: 'No file-size cap', body: 'Process files of any size — your device handles it, not a rate-limited server.' },
-              { icon: Lock, title: 'Nothing uploaded', body: 'Files stay in your browser sandbox. Nothing is sent to iCreatePDF or anyone else.' },
+              { icon: Lock, title: 'Private by default', body: 'Every tool — not just a desktop app — processes files locally in your browser tab.' },
+              { icon: Globe, title: 'No install, any OS', body: 'Works the same on Windows, Mac, Linux, Chromebook, or mobile — nothing to download.' },
               { icon: Zap, title: 'Instant, no queue', body: 'No upload/download round trip — processing starts the moment you drop a file.' },
             ].map((f) => (
               <div key={f.title} className="p-6 rounded-2xl bg-card/40 border border-foreground/5 space-y-3">
@@ -107,14 +107,14 @@ export default function IlovepdfAlternativePage() {
           </div>
 
           <div className="space-y-6">
-            <h2 className="text-2xl font-bold font-display text-center">iCreatePDF vs. iLovePDF</h2>
+            <h2 className="text-2xl font-bold font-display text-center">iCreatePDF vs. PDF24</h2>
             <div className="border border-foreground/10 rounded-2xl overflow-x-auto bg-card">
               <table className="w-full text-xs min-w-[520px]">
                 <thead>
                   <tr className="bg-foreground/5 text-foreground/40 border-b border-foreground/10 uppercase tracking-wider font-mono">
                     <th className="text-left font-semibold p-4">Attribute</th>
                     <th className="text-left font-semibold p-4 text-brand">iCreatePDF</th>
-                    <th className="text-left font-semibold p-4">iLovePDF</th>
+                    <th className="text-left font-semibold p-4">PDF24</th>
                   </tr>
                 </thead>
                 <tbody className="divide-y divide-foreground/5">
@@ -129,7 +129,7 @@ export default function IlovepdfAlternativePage() {
               </table>
             </div>
             <p className="text-[10px] text-foreground/30 text-center max-w-xl mx-auto">
-              Figures reflect iLovePDF's publicly stated free-tier terms at time of writing and may change; verify current terms on ilovepdf.com. iCreatePDF is not affiliated with or endorsed by iLovePDF.
+              Figures reflect PDF24's publicly stated terms at time of writing and may change; verify current terms on pdf24.org. iCreatePDF is not affiliated with or endorsed by PDF24.
             </p>
           </div>
 
@@ -148,7 +148,7 @@ export default function IlovepdfAlternativePage() {
           <div className="p-8 rounded-2xl bg-gradient-to-r from-purple-950/20 to-pink-950/20 border border-brand/20 text-center space-y-4 max-w-2xl mx-auto">
             <h3 className="text-xl sm:text-2xl font-bold font-display text-foreground">Try iCreatePDF Instead</h3>
             <p className="text-xs sm:text-sm text-foreground/60 max-w-md mx-auto">
-              46+ free PDF tools, no file cap, no uploads, no account required.
+              46+ free PDF tools, nothing to install, no uploads, no account required.
             </p>
             <div className="pt-2">
               <Link href="/#convert">

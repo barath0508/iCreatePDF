@@ -110,10 +110,10 @@ export default function sitemap(): MetadataRoute.Sitemap {
 
   const comparisonRoutes = [
     '/compare',
-    '/ilovepdf-alternative',
-    '/smallpdf-alternative',
-    '/pdf24-alternative',
-    '/no-upload-pdf-tools',
+    '/compare/ilovepdf-alternative',
+    '/compare/smallpdf-alternative',
+    '/compare/pdf24-alternative',
+    '/tools/no-upload-pdf-tools',
   ];
 
   const langRoutes = [

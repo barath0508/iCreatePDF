@@ -9,7 +9,7 @@ export const metadata: Metadata = {
   title: 'Smallpdf Alternative: No 2-Task Daily Limit | iCreatePDF',
   description: "Smallpdf's free plan caps you at 2 tasks a day. iCreatePDF is unlimited, free, and never uploads your files — everything runs locally in your browser.",
   keywords: 'smallpdf alternative, smallpdf vs icreatepdf, smallpdf task limit, smallpdf free alternative, smallpdf 2 tasks per day',
-  alternates: buildAlternates('/smallpdf-alternative'),
+  alternates: buildAlternates('/compare/smallpdf-alternative'),
   openGraph: {
     title: 'Smallpdf Alternative: No 2-Task Daily Limit | iCreatePDF',
     description: "iCreatePDF is an unlimited, free Smallpdf alternative with 100% local, in-browser processing.",

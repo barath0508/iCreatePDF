@@ -193,13 +193,13 @@ export default function ComparePage() {
             </div>
             <p className="text-[10px] text-foreground/30 text-center max-w-2xl mx-auto leading-relaxed">
               Figures reflect published free-tier terms at time of writing and may change. See our detailed breakdowns:{' '}
-              <Link href="/ilovepdf-alternative" className="text-brand hover:underline underline-offset-2">iLovePDF alternative</Link>
+              <Link href="/compare/ilovepdf-alternative" className="text-brand hover:underline underline-offset-2">iLovePDF alternative</Link>
               {' · '}
-              <Link href="/smallpdf-alternative" className="text-brand hover:underline underline-offset-2">Smallpdf alternative</Link>
+              <Link href="/compare/smallpdf-alternative" className="text-brand hover:underline underline-offset-2">Smallpdf alternative</Link>
               {' · '}
-              <Link href="/pdf24-alternative" className="text-brand hover:underline underline-offset-2">PDF24 alternative</Link>
+              <Link href="/compare/pdf24-alternative" className="text-brand hover:underline underline-offset-2">PDF24 alternative</Link>
               {' · '}
-              <Link href="/no-upload-pdf-tools" className="text-brand hover:underline underline-offset-2">Full no-upload tool list</Link>
+              <Link href="/tools/no-upload-pdf-tools" className="text-brand hover:underline underline-offset-2">Full no-upload tool list</Link>
             </p>
           </div>
 
