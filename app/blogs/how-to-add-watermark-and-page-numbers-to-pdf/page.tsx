@@ -79,8 +79,28 @@ export default function WatermarkPageNumbersPdfBlog() {
               <li><strong>Local Security:</strong> Keeping documents on your device is essential for confidential drafts.</li>
             </ul>
           </div>
+          {/* Table of Contents */}
+          <div className="p-6 rounded-2xl bg-card border border-foreground/10 space-y-3 my-6">
+            <h3 className="text-sm font-bold text-foreground flex items-center gap-2">
+              <span className="w-2.5 h-2.5 rounded-full bg-brand"></span>
+              Table of Contents
+            </h3>
+            <ul className="space-y-2 text-xs sm:text-sm text-foreground/75 pl-1">
+              <li>
+                <Link href="#how-can-you-add-custom-text-and-image-watermarks-to-a-pdf" className="hover:text-brand transition-colors">
+                  How Can You Add Custom Text and Image Watermarks to a PDF?
+                </Link>
+              </li>
+              <li>
+                <Link href="#how-do-you-insert-sequential-page-numbers-into-a-pdf" className="hover:text-brand transition-colors">
+                  How Do You Insert Sequential Page Numbers into a PDF?
+                </Link>
+              </li>
+            </ul>
+          </div>
 
-          <h2 className="text-xl font-bold text-foreground pt-4 font-display flex items-center gap-2">
+
+          <h2 id="how-can-you-add-custom-text-and-image-watermarks-to-a-pdf" className="text-xl font-bold text-foreground pt-4 font-display flex items-center gap-2">
             <Stamp className="w-5 h-5 text-brand" />
             How Can You Add Custom Text and Image Watermarks to a PDF?
           </h2>
@@ -94,7 +114,7 @@ export default function WatermarkPageNumbersPdfBlog() {
             <li>Click <strong>Add Watermark</strong> and download the output.</li>
           </ol>
 
-          <h2 className="text-xl font-bold text-foreground pt-4 font-display flex items-center gap-2">
+          <h2 id="how-do-you-insert-sequential-page-numbers-into-a-pdf" className="text-xl font-bold text-foreground pt-4 font-display flex items-center gap-2">
             <Hash className="w-5 h-5 text-brand" />
             How Do You Insert Sequential Page Numbers into a PDF?
           </h2>

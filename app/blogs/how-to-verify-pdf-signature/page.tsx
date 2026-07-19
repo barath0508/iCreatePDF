@@ -69,7 +69,43 @@ export default function VerifySignatureBlogPost() {
             A digital signature on a PDF cryptographically ties the document's exact byte content to a signer's certificate. If even one character changes after signing, the signature becomes invalid — which is exactly what makes verification useful for confirming a document is genuine and unmodified.
           </p>
 
-          <h2 className="text-xl font-bold text-foreground pt-4 font-display">Step-by-Step: Verify a Signature Using iCreatePDF</h2>
+          
+          {/* Table of Contents */}
+          <div className="p-6 rounded-2xl bg-card border border-foreground/10 space-y-3 my-6">
+            <h3 className="text-sm font-bold text-foreground flex items-center gap-2">
+              <span className="w-2.5 h-2.5 rounded-full bg-brand"></span>
+              Table of Contents
+            </h3>
+            <ul className="space-y-2 text-xs sm:text-sm text-foreground/75 pl-1">
+              <li>
+                <Link href="#step-by-step-verify-a-signature-using-icreatepdf" className="hover:text-brand transition-colors">
+                  Step-by-Step: Verify a Signature Using iCreatePDF
+                </Link>
+              </li>
+              <li>
+                <Link href="#6-reasons-to-verify-a-signed-pdf" className="hover:text-brand transition-colors">
+                  6 Reasons to Verify a Signed PDF
+                </Link>
+              </li>
+              <li>
+                <Link href="#digital-signatures-vs-sha-256-fingerprints" className="hover:text-brand transition-colors">
+                  Digital Signatures vs. SHA-256 Fingerprints
+                </Link>
+              </li>
+              <li>
+                <Link href="#icreatepdf-vs-other-signature-verification-tools" className="hover:text-brand transition-colors">
+                  iCreatePDF vs Other Signature Verification Tools
+                </Link>
+              </li>
+              <li>
+                <Link href="#frequently-asked-questions" className="hover:text-brand transition-colors">
+                  Frequently Asked Questions
+                </Link>
+              </li>
+            </ul>
+          </div>
+
+<h2 id="step-by-step-verify-a-signature-using-icreatepdf" className="text-xl font-bold text-foreground pt-4 font-display">Step-by-Step: Verify a Signature Using iCreatePDF</h2>
           <ol className="list-decimal list-inside space-y-3 pl-4 text-sm">
             <li>Open <Link href="/tools/verify-signature" className="text-brand hover:underline">iCreatePDF Verify Signature</Link>.</li>
             <li>Upload the signed PDF you want to check.</li>
@@ -84,7 +120,7 @@ export default function VerifySignatureBlogPost() {
             </p>
           </div>
 
-          <h2 className="text-xl font-bold text-foreground pt-4 font-display">6 Reasons to Verify a Signed PDF</h2>
+          <h2 id="6-reasons-to-verify-a-signed-pdf" className="text-xl font-bold text-foreground pt-4 font-display">6 Reasons to Verify a Signed PDF</h2>
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 my-4">
             {useCases.map((u, i) => (
               <div key={i} className="p-4 rounded-xl bg-card border border-foreground/5 space-y-1.5">
@@ -94,12 +130,12 @@ export default function VerifySignatureBlogPost() {
             ))}
           </div>
 
-          <h2 className="text-xl font-bold text-foreground pt-4 font-display">Digital Signatures vs. SHA-256 Fingerprints</h2>
+          <h2 id="digital-signatures-vs-sha-256-fingerprints" className="text-xl font-bold text-foreground pt-4 font-display">Digital Signatures vs. SHA-256 Fingerprints</h2>
           <p>
             A digital signature (checked here) uses a signer's certificate and is the standard for formally signed documents like contracts. A simpler alternative — a SHA-256 fingerprint — lets you certify and later verify that a document hasn't changed, without requiring a formal certificate. If you want to add tamper-evidence to a PDF you're creating rather than verify one you received, see <Link href="/tools/certify-pdf" className="text-brand hover:underline">Certify PDF</Link>.
           </p>
 
-          <h2 className="text-xl font-bold text-foreground pt-4 font-display">iCreatePDF vs Other Signature Verification Tools</h2>
+          <h2 id="icreatepdf-vs-other-signature-verification-tools" className="text-xl font-bold text-foreground pt-4 font-display">iCreatePDF vs Other Signature Verification Tools</h2>
           <div className="overflow-x-auto">
             <table className="w-full text-xs text-foreground/70 border border-foreground/10 rounded-xl overflow-hidden">
               <thead className="bg-foreground/5 text-foreground font-semibold">
@@ -126,7 +162,7 @@ export default function VerifySignatureBlogPost() {
             </table>
           </div>
 
-          <h2 className="text-xl font-bold text-foreground pt-4 font-display">Frequently Asked Questions</h2>
+          <h2 id="frequently-asked-questions" className="text-xl font-bold text-foreground pt-4 font-display">Frequently Asked Questions</h2>
           <div className="space-y-4">
             {[
               { q: 'What does it mean if a signature shows as invalid?', a: 'It usually means the document was modified after signing, or the signature data itself is corrupted. Either way, treat the document as unverified until confirmed with the original signer.' },

@@ -88,8 +88,43 @@ export default function TxtToPdfBlogPost() {
               <li><strong>Styling Customization:</strong> Control fonts, line spacing, and page sizing for printing.</li>
             </ul>
           </div>
+          {/* Table of Contents */}
+          <div className="p-6 rounded-2xl bg-card border border-foreground/10 space-y-3 my-6">
+            <h3 className="text-sm font-bold text-foreground flex items-center gap-2">
+              <span className="w-2.5 h-2.5 rounded-full bg-brand"></span>
+              Table of Contents
+            </h3>
+            <ul className="space-y-2 text-xs sm:text-sm text-foreground/75 pl-1">
+              <li>
+                <Link href="#step-by-step-how-do-you-convert-plain-text-to-pdf-locally" className="hover:text-brand transition-colors">
+                  Step-by-Step: How Do You Convert Plain Text to PDF Locally?
+                </Link>
+              </li>
+              <li>
+                <Link href="#why-convert-simple-plain-text-files-to-styled-pdfs" className="hover:text-brand transition-colors">
+                  Why Convert Simple Plain Text Files to Styled PDFs?
+                </Link>
+              </li>
+              <li>
+                <Link href="#what-is-the-difference-between-plain-text-and-markdown-pdf-rendering" className="hover:text-brand transition-colors">
+                  What is the Difference Between Plain Text and Markdown PDF Rendering?
+                </Link>
+              </li>
+              <li>
+                <Link href="#how-does-icreatepdf-compare-to-other-text-to-pdf-web-converters" className="hover:text-brand transition-colors">
+                  How Does iCreatePDF Compare to Other Text to PDF Web Converters?
+                </Link>
+              </li>
+              <li>
+                <Link href="#frequently-asked-questions-about-this-tool" className="hover:text-brand transition-colors">
+                  Frequently Asked Questions About This Tool
+                </Link>
+              </li>
+            </ul>
+          </div>
 
-          <h2 className="text-xl font-bold text-foreground pt-4 font-display">Step-by-Step: How Do You Convert Plain Text to PDF Locally?</h2>
+
+          <h2 id="step-by-step-how-do-you-convert-plain-text-to-pdf-locally" className="text-xl font-bold text-foreground pt-4 font-display">Step-by-Step: How Do You Convert Plain Text to PDF Locally?</h2>
           <ol className="list-decimal list-inside space-y-3 pl-4 text-sm">
             <li>Open <Link href="/tools/txt-to-pdf" className="text-brand hover:underline">iCreatePDF Text to PDF</Link>.</li>
             <li>Upload a .txt file, or paste text directly.</li>
@@ -104,7 +139,7 @@ export default function TxtToPdfBlogPost() {
             </p>
           </div>
 
-          <h2 className="text-xl font-bold text-foreground pt-4 font-display">Why Convert Simple Plain Text Files to Styled PDFs?</h2>
+          <h2 id="why-convert-simple-plain-text-files-to-styled-pdfs" className="text-xl font-bold text-foreground pt-4 font-display">Why Convert Simple Plain Text Files to Styled PDFs?</h2>
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 my-4">
             {useCases.map((u, i) => (
               <div key={i} className="p-4 rounded-xl bg-card border border-foreground/5 space-y-1.5">
@@ -114,12 +149,12 @@ export default function TxtToPdfBlogPost() {
             ))}
           </div>
 
-          <h2 className="text-xl font-bold text-foreground pt-4 font-display">What is the Difference Between Plain Text and Markdown PDF Rendering?</h2>
+          <h2 id="what-is-the-difference-between-plain-text-and-markdown-pdf-rendering" className="text-xl font-bold text-foreground pt-4 font-display">What is the Difference Between Plain Text and Markdown PDF Rendering?</h2>
           <p>
             If your text uses Markdown syntax (#, **, -, etc.) and you want that syntax actually rendered as formatted headings and lists rather than shown literally, use <Link href="/tools/markdown-to-pdf" className="text-brand hover:underline">Markdown to PDF</Link> instead. Text to PDF preserves your content exactly as typed, line by line, with no syntax interpretation.
           </p>
 
-          <h2 className="text-xl font-bold text-foreground pt-4 font-display">How Does iCreatePDF Compare to Other Text to PDF Web Converters?</h2>
+          <h2 id="how-does-icreatepdf-compare-to-other-text-to-pdf-web-converters" className="text-xl font-bold text-foreground pt-4 font-display">How Does iCreatePDF Compare to Other Text to PDF Web Converters?</h2>
           <div className="overflow-x-auto">
             <table className="w-full text-xs text-foreground/70 border border-foreground/10 rounded-xl overflow-hidden">
               <thead className="bg-foreground/5 text-foreground font-semibold">
@@ -146,7 +181,7 @@ export default function TxtToPdfBlogPost() {
             </table>
           </div>
 
-          <h2 className="text-xl font-bold text-foreground pt-4 font-display">Frequently Asked Questions About This Tool</h2>
+          <h2 id="frequently-asked-questions-about-this-tool" className="text-xl font-bold text-foreground pt-4 font-display">Frequently Asked Questions About This Tool</h2>
           <div className="space-y-4">
             {[
               { q: 'Can I customize the font used in the PDF?', a: 'Yes, choose from available font options before generating the PDF to match your preferred look.' },

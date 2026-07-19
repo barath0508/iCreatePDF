@@ -67,7 +67,33 @@ export default function RedactPdfBlog() {
             When sharing legal briefs, medical charts, or financial reports, concealing personal information is crucial. However, many users make the mistake of using standard PDF editors to draw black rectangles over text. Underneath those shapes, the text remains selectable and searchable, exposing you to severe data leaks.
           </p>
 
-          <h2 className="text-xl font-bold text-foreground pt-4 font-display flex items-center gap-2">
+          
+          {/* Table of Contents */}
+          <div className="p-6 rounded-2xl bg-card border border-foreground/10 space-y-3 my-6">
+            <h3 className="text-sm font-bold text-foreground flex items-center gap-2">
+              <span className="w-2.5 h-2.5 rounded-full bg-brand"></span>
+              Table of Contents
+            </h3>
+            <ul className="space-y-2 text-xs sm:text-sm text-foreground/75 pl-1">
+              <li>
+                <Link href="#the-danger-of-fake-redactions" className="hover:text-brand transition-colors">
+                  The Danger of Fake Redactions
+                </Link>
+              </li>
+              <li>
+                <Link href="#step-by-step-how-to-redact-a-pdf" className="hover:text-brand transition-colors">
+                  Step-by-Step: How to Redact a PDF
+                </Link>
+              </li>
+              <li>
+                <Link href="#why-choose-client-side-redaction" className="hover:text-brand transition-colors">
+                  Why Choose Client-Side Redaction?
+                </Link>
+              </li>
+            </ul>
+          </div>
+
+<h2 id="the-danger-of-fake-redactions" className="text-xl font-bold text-foreground pt-4 font-display flex items-center gap-2">
             <EyeOff className="w-5 h-5 text-brand" />
             The Danger of Fake Redactions
           </h2>
@@ -75,7 +101,7 @@ export default function RedactPdfBlog() {
             Standard annotators only add a decorative layer above the text. Anyone can copy the text underneath or remove the black box overlay using a standard PDF reader. Real redaction must delete the underlying character streams and render the content as a flat, unselectable image or burn the pixels permanently.
           </p>
 
-          <h2 className="text-xl font-bold text-foreground pt-4 font-display">Step-by-Step: How to Redact a PDF</h2>
+          <h2 id="step-by-step-how-to-redact-a-pdf" className="text-xl font-bold text-foreground pt-4 font-display">Step-by-Step: How to Redact a PDF</h2>
           <p className="text-sm">
             To start, navigate to the <Link href="/tools/redact-pdf" className="text-brand hover:underline">Redact PDF</Link> tool page. Then, follow these simple steps:
           </p>
@@ -96,7 +122,7 @@ export default function RedactPdfBlog() {
             </p>
           </div>
 
-          <h2 className="text-xl font-bold text-foreground pt-4 font-display">Why Choose Client-Side Redaction?</h2>
+          <h2 id="why-choose-client-side-redaction" className="text-xl font-bold text-foreground pt-4 font-display">Why Choose Client-Side Redaction?</h2>
           <p>
             Most online PDF tools force you to upload your sensitive legal or personal documents to their cloud servers to apply redactions. iCreatePDF utilizes modern browser-based web modules, allowing you to edit and redact your files completely offline.
           </p>

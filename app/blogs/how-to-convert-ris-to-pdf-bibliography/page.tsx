@@ -88,8 +88,43 @@ export default function RisToPdfBlogPost() {
               <li><strong>Local reference:</strong> Compile research lists offline without sharing research drafts.</li>
             </ul>
           </div>
+          {/* Table of Contents */}
+          <div className="p-6 rounded-2xl bg-card border border-foreground/10 space-y-3 my-6">
+            <h3 className="text-sm font-bold text-foreground flex items-center gap-2">
+              <span className="w-2.5 h-2.5 rounded-full bg-brand"></span>
+              Table of Contents
+            </h3>
+            <ul className="space-y-2 text-xs sm:text-sm text-foreground/75 pl-1">
+              <li>
+                <Link href="#step-by-step-how-do-you-compile-ris-bibliographies-to-pdf" className="hover:text-brand transition-colors">
+                  Step-by-Step: How Do You Compile RIS Bibliographies to PDF?
+                </Link>
+              </li>
+              <li>
+                <Link href="#why-convert-academic-ris-files-into-pdf-bibliography-sheets" className="hover:text-brand transition-colors">
+                  Why Convert Academic RIS Files into PDF Bibliography Sheets?
+                </Link>
+              </li>
+              <li>
+                <Link href="#how-do-you-choose-the-right-citation-style-apa-mla-harvard" className="hover:text-brand transition-colors">
+                  How Do You Choose the Right Citation Style (APA, MLA, Harvard)?
+                </Link>
+              </li>
+              <li>
+                <Link href="#how-does-icreatepdf-compare-to-traditional-ris-reference-tools" className="hover:text-brand transition-colors">
+                  How Does iCreatePDF Compare to Traditional RIS Reference Tools?
+                </Link>
+              </li>
+              <li>
+                <Link href="#frequently-asked-questions-about-this-tool" className="hover:text-brand transition-colors">
+                  Frequently Asked Questions About This Tool
+                </Link>
+              </li>
+            </ul>
+          </div>
 
-          <h2 className="text-xl font-bold text-foreground pt-4 font-display">Step-by-Step: How Do You Compile RIS Bibliographies to PDF?</h2>
+
+          <h2 id="step-by-step-how-do-you-compile-ris-bibliographies-to-pdf" className="text-xl font-bold text-foreground pt-4 font-display">Step-by-Step: How Do You Compile RIS Bibliographies to PDF?</h2>
           <ol className="list-decimal list-inside space-y-3 pl-4 text-sm">
             <li>Open <Link href="/tools/ris-to-pdf" className="text-brand hover:underline">iCreatePDF RIS to PDF</Link>.</li>
             <li>Upload your exported .ris citation file.</li>
@@ -104,7 +139,7 @@ export default function RisToPdfBlogPost() {
             </p>
           </div>
 
-          <h2 className="text-xl font-bold text-foreground pt-4 font-display">Why Convert Academic RIS Files into PDF Bibliography Sheets?</h2>
+          <h2 id="why-convert-academic-ris-files-into-pdf-bibliography-sheets" className="text-xl font-bold text-foreground pt-4 font-display">Why Convert Academic RIS Files into PDF Bibliography Sheets?</h2>
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 my-4">
             {useCases.map((u, i) => (
               <div key={i} className="p-4 rounded-xl bg-card border border-foreground/5 space-y-1.5">
@@ -114,12 +149,12 @@ export default function RisToPdfBlogPost() {
             ))}
           </div>
 
-          <h2 className="text-xl font-bold text-foreground pt-4 font-display">How Do You Choose the Right Citation Style (APA, MLA, Harvard)?</h2>
+          <h2 id="how-do-you-choose-the-right-citation-style-apa-mla-harvard" className="text-xl font-bold text-foreground pt-4 font-display">How Do You Choose the Right Citation Style (APA, MLA, Harvard)?</h2>
           <p>
             <strong className="text-foreground">APA</strong> is standard in social sciences and education, <strong className="text-foreground">MLA</strong> in humanities and literature, <strong className="text-foreground">Chicago</strong> in history and some publishing contexts, and <strong className="text-foreground">Harvard</strong> is widely used across UK and Australian institutions. Check your target journal or institution's requirements before finalizing your export style.
           </p>
 
-          <h2 className="text-xl font-bold text-foreground pt-4 font-display">How Does iCreatePDF Compare to Traditional RIS Reference Tools?</h2>
+          <h2 id="how-does-icreatepdf-compare-to-traditional-ris-reference-tools" className="text-xl font-bold text-foreground pt-4 font-display">How Does iCreatePDF Compare to Traditional RIS Reference Tools?</h2>
           <div className="overflow-x-auto">
             <table className="w-full text-xs text-foreground/70 border border-foreground/10 rounded-xl overflow-hidden">
               <thead className="bg-foreground/5 text-foreground font-semibold">
@@ -146,7 +181,7 @@ export default function RisToPdfBlogPost() {
             </table>
           </div>
 
-          <h2 className="text-xl font-bold text-foreground pt-4 font-display">Frequently Asked Questions About This Tool</h2>
+          <h2 id="frequently-asked-questions-about-this-tool" className="text-xl font-bold text-foreground pt-4 font-display">Frequently Asked Questions About This Tool</h2>
           <div className="space-y-4">
             {[
               { q: 'Where do I get an RIS file?', a: 'Most reference managers (Zotero, EndNote, Mendeley) and academic databases have an "Export as RIS" option in their citation or library export menu.' },

@@ -69,7 +69,43 @@ export default function ReadAloudBlogPost() {
             Not every document needs to be read with your eyes. Text-to-speech lets you absorb a long report while commuting, catch mistakes in your own writing by hearing it aloud, or make content accessible if reading text on screen is difficult — all without installing a separate screen-reader app.
           </p>
 
-          <h2 className="text-xl font-bold text-foreground pt-4 font-display">Step-by-Step: Listen to a PDF Using iCreatePDF</h2>
+          
+          {/* Table of Contents */}
+          <div className="p-6 rounded-2xl bg-card border border-foreground/10 space-y-3 my-6">
+            <h3 className="text-sm font-bold text-foreground flex items-center gap-2">
+              <span className="w-2.5 h-2.5 rounded-full bg-brand"></span>
+              Table of Contents
+            </h3>
+            <ul className="space-y-2 text-xs sm:text-sm text-foreground/75 pl-1">
+              <li>
+                <Link href="#step-by-step-listen-to-a-pdf-using-icreatepdf" className="hover:text-brand transition-colors">
+                  Step-by-Step: Listen to a PDF Using iCreatePDF
+                </Link>
+              </li>
+              <li>
+                <Link href="#6-reasons-to-listen-to-a-pdf" className="hover:text-brand transition-colors">
+                  6 Reasons to Listen to a PDF
+                </Link>
+              </li>
+              <li>
+                <Link href="#what-if-the-pdf-is-a-scanned-document" className="hover:text-brand transition-colors">
+                  What If the PDF Is a Scanned Document?
+                </Link>
+              </li>
+              <li>
+                <Link href="#icreatepdf-vs-other-read-aloud-tools" className="hover:text-brand transition-colors">
+                  iCreatePDF vs Other Read-Aloud Tools
+                </Link>
+              </li>
+              <li>
+                <Link href="#frequently-asked-questions" className="hover:text-brand transition-colors">
+                  Frequently Asked Questions
+                </Link>
+              </li>
+            </ul>
+          </div>
+
+<h2 id="step-by-step-listen-to-a-pdf-using-icreatepdf" className="text-xl font-bold text-foreground pt-4 font-display">Step-by-Step: Listen to a PDF Using iCreatePDF</h2>
           <ol className="list-decimal list-inside space-y-3 pl-4 text-sm">
             <li>Open <Link href="/tools/read-aloud-pdf" className="text-brand hover:underline">iCreatePDF Read Aloud</Link>.</li>
             <li>Upload the PDF you want to listen to.</li>
@@ -84,7 +120,7 @@ export default function ReadAloudBlogPost() {
             </p>
           </div>
 
-          <h2 className="text-xl font-bold text-foreground pt-4 font-display">6 Reasons to Listen to a PDF</h2>
+          <h2 id="6-reasons-to-listen-to-a-pdf" className="text-xl font-bold text-foreground pt-4 font-display">6 Reasons to Listen to a PDF</h2>
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 my-4">
             {useCases.map((u, i) => (
               <div key={i} className="p-4 rounded-xl bg-card border border-foreground/5 space-y-1.5">
@@ -94,12 +130,12 @@ export default function ReadAloudBlogPost() {
             ))}
           </div>
 
-          <h2 className="text-xl font-bold text-foreground pt-4 font-display">What If the PDF Is a Scanned Document?</h2>
+          <h2 id="what-if-the-pdf-is-a-scanned-document" className="text-xl font-bold text-foreground pt-4 font-display">What If the PDF Is a Scanned Document?</h2>
           <p>
             Text-to-speech reads the underlying text layer of a PDF, so it works immediately on digitally created documents. If your PDF is a scan or photo with no text layer, run it through <Link href="/tools/pdf-ocr" className="text-brand hover:underline">PDF OCR</Link> first to generate readable text, then use Read Aloud on the result.
           </p>
 
-          <h2 className="text-xl font-bold text-foreground pt-4 font-display">iCreatePDF vs Other Read-Aloud Tools</h2>
+          <h2 id="icreatepdf-vs-other-read-aloud-tools" className="text-xl font-bold text-foreground pt-4 font-display">iCreatePDF vs Other Read-Aloud Tools</h2>
           <div className="overflow-x-auto">
             <table className="w-full text-xs text-foreground/70 border border-foreground/10 rounded-xl overflow-hidden">
               <thead className="bg-foreground/5 text-foreground font-semibold">
@@ -126,7 +162,7 @@ export default function ReadAloudBlogPost() {
             </table>
           </div>
 
-          <h2 className="text-xl font-bold text-foreground pt-4 font-display">Frequently Asked Questions</h2>
+          <h2 id="frequently-asked-questions" className="text-xl font-bold text-foreground pt-4 font-display">Frequently Asked Questions</h2>
           <div className="space-y-4">
             {[
               { q: 'Can I choose a different voice or accent?', a: 'Yes — available voices depend on your browser and operating system\'s installed speech synthesis voices, and you can pick from whichever are available.' },

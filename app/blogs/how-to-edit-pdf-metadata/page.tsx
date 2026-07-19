@@ -87,8 +87,33 @@ export default function EditMetadataBlog() {
               <li><strong>Local Cleanup:</strong> Ensure private registry values are scrubbed before publishing.</li>
             </ul>
           </div>
+          {/* Table of Contents */}
+          <div className="p-6 rounded-2xl bg-card border border-foreground/10 space-y-3 my-6">
+            <h3 className="text-sm font-bold text-foreground flex items-center gap-2">
+              <span className="w-2.5 h-2.5 rounded-full bg-brand"></span>
+              Table of Contents
+            </h3>
+            <ul className="space-y-2 text-xs sm:text-sm text-foreground/75 pl-1">
+              <li>
+                <Link href="#what-are-the-core-pdf-metadata-fields-and-why-do-they-matter" className="hover:text-brand transition-colors">
+                  What Are the Core PDF Metadata Fields and Why Do They Matter?
+                </Link>
+              </li>
+              <li>
+                <Link href="#how-do-you-modify-pdf-metadata-fields-in-your-browser" className="hover:text-brand transition-colors">
+                  How Do You Modify PDF Metadata Fields in Your Browser?
+                </Link>
+              </li>
+              <li>
+                <Link href="#why-should-you-add-running-headers-and-footers-with-metadata" className="hover:text-brand transition-colors">
+                  Why Should You Add Running Headers and Footers with Metadata?
+                </Link>
+              </li>
+            </ul>
+          </div>
 
-          <h2 className="text-xl font-bold text-foreground pt-4 font-display">What Are the Core PDF Metadata Fields and Why Do They Matter?</h2>
+
+          <h2 id="what-are-the-core-pdf-metadata-fields-and-why-do-they-matter" className="text-xl font-bold text-foreground pt-4 font-display">What Are the Core PDF Metadata Fields and Why Do They Matter?</h2>
           <div className="space-y-4">
             {metadataFields.map((f, i) => (
               <div key={i} className="p-4 rounded-xl bg-card border border-foreground/5 flex items-start gap-3">
@@ -98,7 +123,7 @@ export default function EditMetadataBlog() {
             ))}
           </div>
 
-          <h2 className="text-xl font-bold text-foreground pt-4 font-display">How Do You Modify PDF Metadata Fields in Your Browser?</h2>
+          <h2 id="how-do-you-modify-pdf-metadata-fields-in-your-browser" className="text-xl font-bold text-foreground pt-4 font-display">How Do You Modify PDF Metadata Fields in Your Browser?</h2>
           <ol className="list-decimal list-inside space-y-2 pl-4 text-sm">
             <li>Open the <Link href="/tools/pdf-metadata" className="text-brand hover:underline">/pdf-metadata</Link> tool.</li>
             <li>Drag your file in. The tool will parse and display existing properties.</li>
@@ -106,7 +131,7 @@ export default function EditMetadataBlog() {
             <li>Click <em>Apply Changes</em> and download the updated PDF file.</li>
           </ol>
 
-          <h2 className="text-xl font-bold text-foreground pt-4 font-display">Why Should You Add Running Headers and Footers with Metadata?</h2>
+          <h2 id="why-should-you-add-running-headers-and-footers-with-metadata" className="text-xl font-bold text-foreground pt-4 font-display">Why Should You Add Running Headers and Footers with Metadata?</h2>
           <p>
             In addition to internal property tags, you may need to add visual tags to the PDF pages. The <strong>Add Header &amp; Footer</strong> tool lets you place custom page numbers, branding, dates, or classifications directly on top and bottom margins of every page.
           </p>

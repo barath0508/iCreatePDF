@@ -69,7 +69,43 @@ export default function ResizePdfBlogPost() {
             Documents pulled from different sources — scans, exports, and downloads — often end up with inconsistent page dimensions. Resizing every page to a single standard (A4, Letter, A3, Legal, or a custom size) keeps the document consistent for printing, filing, or merging, without needing to open a design tool.
           </p>
 
-          <h2 className="text-xl font-bold text-foreground pt-4 font-display">Step-by-Step: Resize a PDF Using iCreatePDF</h2>
+          
+          {/* Table of Contents */}
+          <div className="p-6 rounded-2xl bg-card border border-foreground/10 space-y-3 my-6">
+            <h3 className="text-sm font-bold text-foreground flex items-center gap-2">
+              <span className="w-2.5 h-2.5 rounded-full bg-brand"></span>
+              Table of Contents
+            </h3>
+            <ul className="space-y-2 text-xs sm:text-sm text-foreground/75 pl-1">
+              <li>
+                <Link href="#step-by-step-resize-a-pdf-using-icreatepdf" className="hover:text-brand transition-colors">
+                  Step-by-Step: Resize a PDF Using iCreatePDF
+                </Link>
+              </li>
+              <li>
+                <Link href="#6-reasons-to-resize-pdf-pages" className="hover:text-brand transition-colors">
+                  6 Reasons to Resize PDF Pages
+                </Link>
+              </li>
+              <li>
+                <Link href="#will-resizing-distort-my-content" className="hover:text-brand transition-colors">
+                  Will Resizing Distort My Content?
+                </Link>
+              </li>
+              <li>
+                <Link href="#icreatepdf-vs-other-resize-tools" className="hover:text-brand transition-colors">
+                  iCreatePDF vs Other Resize Tools
+                </Link>
+              </li>
+              <li>
+                <Link href="#frequently-asked-questions" className="hover:text-brand transition-colors">
+                  Frequently Asked Questions
+                </Link>
+              </li>
+            </ul>
+          </div>
+
+<h2 id="step-by-step-resize-a-pdf-using-icreatepdf" className="text-xl font-bold text-foreground pt-4 font-display">Step-by-Step: Resize a PDF Using iCreatePDF</h2>
           <ol className="list-decimal list-inside space-y-3 pl-4 text-sm">
             <li>Open <Link href="/tools/resize-pdf" className="text-brand hover:underline">iCreatePDF Resize PDF</Link>.</li>
             <li>Upload the PDF you want to standardize.</li>
@@ -84,7 +120,7 @@ export default function ResizePdfBlogPost() {
             </p>
           </div>
 
-          <h2 className="text-xl font-bold text-foreground pt-4 font-display">6 Reasons to Resize PDF Pages</h2>
+          <h2 id="6-reasons-to-resize-pdf-pages" className="text-xl font-bold text-foreground pt-4 font-display">6 Reasons to Resize PDF Pages</h2>
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 my-4">
             {useCases.map((u, i) => (
               <div key={i} className="p-4 rounded-xl bg-card border border-foreground/5 space-y-1.5">
@@ -94,12 +130,12 @@ export default function ResizePdfBlogPost() {
             ))}
           </div>
 
-          <h2 className="text-xl font-bold text-foreground pt-4 font-display">Will Resizing Distort My Content?</h2>
+          <h2 id="will-resizing-distort-my-content" className="text-xl font-bold text-foreground pt-4 font-display">Will Resizing Distort My Content?</h2>
           <p>
             iCreatePDF scales content proportionally to fit the new page size, preserving aspect ratio so text and images don't stretch or squash. If the new page has a different aspect ratio than the original (for example, going from Letter to A4), some white space margin adjustment is normal and expected — the alternative would be distorting your content, which iCreatePDF avoids.
           </p>
 
-          <h2 className="text-xl font-bold text-foreground pt-4 font-display">iCreatePDF vs Other Resize Tools</h2>
+          <h2 id="icreatepdf-vs-other-resize-tools" className="text-xl font-bold text-foreground pt-4 font-display">iCreatePDF vs Other Resize Tools</h2>
           <div className="overflow-x-auto">
             <table className="w-full text-xs text-foreground/70 border border-foreground/10 rounded-xl overflow-hidden">
               <thead className="bg-foreground/5 text-foreground font-semibold">
@@ -126,7 +162,7 @@ export default function ResizePdfBlogPost() {
             </table>
           </div>
 
-          <h2 className="text-xl font-bold text-foreground pt-4 font-display">Frequently Asked Questions</h2>
+          <h2 id="frequently-asked-questions" className="text-xl font-bold text-foreground pt-4 font-display">Frequently Asked Questions</h2>
           <div className="space-y-4">
             {[
               { q: 'What is the difference between resizing and cropping?', a: 'Resizing changes the overall page dimensions and scales content to fit; cropping trims the visible margin without rescaling the remaining content. Use Crop PDF if you just need to remove borders.' },

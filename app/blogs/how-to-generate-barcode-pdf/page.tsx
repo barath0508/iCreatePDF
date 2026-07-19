@@ -69,7 +69,43 @@ export default function BarcodeToPdfBlogPost() {
             Small businesses and independent sellers often need barcodes without paying for dedicated label software or a barcode-generation subscription. iCreatePDF generates standard barcode formats directly in your browser and exports them as a clean, print-ready PDF — no account, no per-code fee.
           </p>
 
-          <h2 className="text-xl font-bold text-foreground pt-4 font-display">Step-by-Step: Generate a Barcode PDF Using iCreatePDF</h2>
+          
+          {/* Table of Contents */}
+          <div className="p-6 rounded-2xl bg-card border border-foreground/10 space-y-3 my-6">
+            <h3 className="text-sm font-bold text-foreground flex items-center gap-2">
+              <span className="w-2.5 h-2.5 rounded-full bg-brand"></span>
+              Table of Contents
+            </h3>
+            <ul className="space-y-2 text-xs sm:text-sm text-foreground/75 pl-1">
+              <li>
+                <Link href="#step-by-step-generate-a-barcode-pdf-using-icreatepdf" className="hover:text-brand transition-colors">
+                  Step-by-Step: Generate a Barcode PDF Using iCreatePDF
+                </Link>
+              </li>
+              <li>
+                <Link href="#6-uses-for-a-generated-barcode" className="hover:text-brand transition-colors">
+                  6 Uses for a Generated Barcode
+                </Link>
+              </li>
+              <li>
+                <Link href="#which-barcode-format-should-i-use" className="hover:text-brand transition-colors">
+                  Which Barcode Format Should I Use?
+                </Link>
+              </li>
+              <li>
+                <Link href="#icreatepdf-vs-other-barcode-generators" className="hover:text-brand transition-colors">
+                  iCreatePDF vs Other Barcode Generators
+                </Link>
+              </li>
+              <li>
+                <Link href="#frequently-asked-questions" className="hover:text-brand transition-colors">
+                  Frequently Asked Questions
+                </Link>
+              </li>
+            </ul>
+          </div>
+
+<h2 id="step-by-step-generate-a-barcode-pdf-using-icreatepdf" className="text-xl font-bold text-foreground pt-4 font-display">Step-by-Step: Generate a Barcode PDF Using iCreatePDF</h2>
           <ol className="list-decimal list-inside space-y-3 pl-4 text-sm">
             <li>Open <Link href="/tools/barcode-to-pdf" className="text-brand hover:underline">iCreatePDF Barcode to PDF</Link>.</li>
             <li>Choose a barcode format: Code 128, EAN-13, UPC-A, Code 39, Data Matrix, or PDF417.</li>
@@ -84,7 +120,7 @@ export default function BarcodeToPdfBlogPost() {
             </p>
           </div>
 
-          <h2 className="text-xl font-bold text-foreground pt-4 font-display">6 Uses for a Generated Barcode</h2>
+          <h2 id="6-uses-for-a-generated-barcode" className="text-xl font-bold text-foreground pt-4 font-display">6 Uses for a Generated Barcode</h2>
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 my-4">
             {useCases.map((u, i) => (
               <div key={i} className="p-4 rounded-xl bg-card border border-foreground/5 space-y-1.5">
@@ -94,12 +130,12 @@ export default function BarcodeToPdfBlogPost() {
             ))}
           </div>
 
-          <h2 className="text-xl font-bold text-foreground pt-4 font-display">Which Barcode Format Should I Use?</h2>
+          <h2 id="which-barcode-format-should-i-use" className="text-xl font-bold text-foreground pt-4 font-display">Which Barcode Format Should I Use?</h2>
           <p>
             <strong className="text-foreground">EAN-13</strong> and <strong className="text-foreground">UPC-A</strong> are the standard formats for retail products sold in stores (EAN-13 outside North America, UPC-A within it) and require a registered product code to be scannable at checkout systems. <strong className="text-foreground">Code 128</strong> and <strong className="text-foreground">Code 39</strong> are flexible, unregistered formats ideal for internal tracking, assets, and shipping labels. <strong className="text-foreground">Data Matrix</strong> and <strong className="text-foreground">PDF417</strong> are 2D formats that pack more data into a smaller space, often used for tickets and ID documents.
           </p>
 
-          <h2 className="text-xl font-bold text-foreground pt-4 font-display">iCreatePDF vs Other Barcode Generators</h2>
+          <h2 id="icreatepdf-vs-other-barcode-generators" className="text-xl font-bold text-foreground pt-4 font-display">iCreatePDF vs Other Barcode Generators</h2>
           <div className="overflow-x-auto">
             <table className="w-full text-xs text-foreground/70 border border-foreground/10 rounded-xl overflow-hidden">
               <thead className="bg-foreground/5 text-foreground font-semibold">
@@ -126,7 +162,7 @@ export default function BarcodeToPdfBlogPost() {
             </table>
           </div>
 
-          <h2 className="text-xl font-bold text-foreground pt-4 font-display">Frequently Asked Questions</h2>
+          <h2 id="frequently-asked-questions" className="text-xl font-bold text-foreground pt-4 font-display">Frequently Asked Questions</h2>
           <div className="space-y-4">
             {[
               { q: 'Can I use these barcodes for real retail products?', a: 'For EAN-13/UPC-A codes to work at retail checkout systems, the code number itself must be officially registered with GS1. iCreatePDF generates the correct visual barcode for any number you enter, but registration is a separate step handled outside this tool.' },

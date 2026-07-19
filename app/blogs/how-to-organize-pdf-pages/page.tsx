@@ -69,7 +69,43 @@ export default function OrganizePdfBlogPost() {
             A document assembled from multiple scans or sources rarely comes out in the right order the first time. Rather than switching between a separate reorder tool, a rotate tool, and a delete tool, iCreatePDF's Organize PDF lets you fix all three in one visual pass over a thumbnail grid of your document.
           </p>
 
-          <h2 className="text-xl font-bold text-foreground pt-4 font-display">Step-by-Step: Organize a PDF Using iCreatePDF</h2>
+          
+          {/* Table of Contents */}
+          <div className="p-6 rounded-2xl bg-card border border-foreground/10 space-y-3 my-6">
+            <h3 className="text-sm font-bold text-foreground flex items-center gap-2">
+              <span className="w-2.5 h-2.5 rounded-full bg-brand"></span>
+              Table of Contents
+            </h3>
+            <ul className="space-y-2 text-xs sm:text-sm text-foreground/75 pl-1">
+              <li>
+                <Link href="#step-by-step-organize-a-pdf-using-icreatepdf" className="hover:text-brand transition-colors">
+                  Step-by-Step: Organize a PDF Using iCreatePDF
+                </Link>
+              </li>
+              <li>
+                <Link href="#6-reasons-to-organize-a-pdf" className="hover:text-brand transition-colors">
+                  6 Reasons to Organize a PDF
+                </Link>
+              </li>
+              <li>
+                <Link href="#organize-vs-single-purpose-tools" className="hover:text-brand transition-colors">
+                  Organize vs. Single-Purpose Tools
+                </Link>
+              </li>
+              <li>
+                <Link href="#icreatepdf-vs-other-page-organizers" className="hover:text-brand transition-colors">
+                  iCreatePDF vs Other Page Organizers
+                </Link>
+              </li>
+              <li>
+                <Link href="#frequently-asked-questions" className="hover:text-brand transition-colors">
+                  Frequently Asked Questions
+                </Link>
+              </li>
+            </ul>
+          </div>
+
+<h2 id="step-by-step-organize-a-pdf-using-icreatepdf" className="text-xl font-bold text-foreground pt-4 font-display">Step-by-Step: Organize a PDF Using iCreatePDF</h2>
           <ol className="list-decimal list-inside space-y-3 pl-4 text-sm">
             <li>Open <Link href="/tools/organize-pdf" className="text-brand hover:underline">iCreatePDF Organize PDF</Link>.</li>
             <li>Upload your PDF — every page appears as a draggable thumbnail.</li>
@@ -84,7 +120,7 @@ export default function OrganizePdfBlogPost() {
             </p>
           </div>
 
-          <h2 className="text-xl font-bold text-foreground pt-4 font-display">6 Reasons to Organize a PDF</h2>
+          <h2 id="6-reasons-to-organize-a-pdf" className="text-xl font-bold text-foreground pt-4 font-display">6 Reasons to Organize a PDF</h2>
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 my-4">
             {useCases.map((u, i) => (
               <div key={i} className="p-4 rounded-xl bg-card border border-foreground/5 space-y-1.5">
@@ -94,12 +130,12 @@ export default function OrganizePdfBlogPost() {
             ))}
           </div>
 
-          <h2 className="text-xl font-bold text-foreground pt-4 font-display">Organize vs. Single-Purpose Tools</h2>
+          <h2 id="organize-vs-single-purpose-tools" className="text-xl font-bold text-foreground pt-4 font-display">Organize vs. Single-Purpose Tools</h2>
           <p>
             If you only need one type of change, iCreatePDF's dedicated tools work fine on their own: <Link href="/tools/rotate-pdf" className="text-brand hover:underline">Rotate PDF</Link> for orientation fixes, <Link href="/tools/delete-pdf-pages" className="text-brand hover:underline">Delete PDF Pages</Link> for removals, or <Link href="/tools/merge-pdf" className="text-brand hover:underline">Merge PDF</Link> to combine multiple files first. Organize PDF is for when you need several of these changes at once and want to review the whole document visually before saving.
           </p>
 
-          <h2 className="text-xl font-bold text-foreground pt-4 font-display">iCreatePDF vs Other Page Organizers</h2>
+          <h2 id="icreatepdf-vs-other-page-organizers" className="text-xl font-bold text-foreground pt-4 font-display">iCreatePDF vs Other Page Organizers</h2>
           <div className="overflow-x-auto">
             <table className="w-full text-xs text-foreground/70 border border-foreground/10 rounded-xl overflow-hidden">
               <thead className="bg-foreground/5 text-foreground font-semibold">
@@ -126,7 +162,7 @@ export default function OrganizePdfBlogPost() {
             </table>
           </div>
 
-          <h2 className="text-xl font-bold text-foreground pt-4 font-display">Frequently Asked Questions</h2>
+          <h2 id="frequently-asked-questions" className="text-xl font-bold text-foreground pt-4 font-display">Frequently Asked Questions</h2>
           <div className="space-y-4">
             {[
               { q: 'Can I undo a page reorder before saving?', a: 'Yes — drag pages again to fix the order any time before you click Save; nothing is finalized until you download the result.' },

@@ -88,8 +88,43 @@ export default function EditPdfBlogPost() {
               <li><strong>Layout Intact:</strong> Add comments or notes without editing underlying vector text.</li>
             </ul>
           </div>
+          {/* Table of Contents */}
+          <div className="p-6 rounded-2xl bg-card border border-foreground/10 space-y-3 my-6">
+            <h3 className="text-sm font-bold text-foreground flex items-center gap-2">
+              <span className="w-2.5 h-2.5 rounded-full bg-brand"></span>
+              Table of Contents
+            </h3>
+            <ul className="space-y-2 text-xs sm:text-sm text-foreground/75 pl-1">
+              <li>
+                <Link href="#step-by-step-how-do-you-add-text-overlays-to-a-pdf-online" className="hover:text-brand transition-colors">
+                  Step-by-Step: How Do You Add Text Overlays to a PDF Online?
+                </Link>
+              </li>
+              <li>
+                <Link href="#what-are-the-6-common-ways-people-edit-pdf-files" className="hover:text-brand transition-colors">
+                  What Are the 6 Common Ways People Edit PDF Files?
+                </Link>
+              </li>
+              <li>
+                <Link href="#what-is-the-difference-between-text-overlays-and-reflowable-text-editing" className="hover:text-brand transition-colors">
+                  What is the Difference Between Text Overlays and Reflowable Text Editing?
+                </Link>
+              </li>
+              <li>
+                <Link href="#how-does-icreatepdf-compare-to-traditional-pdf-editors" className="hover:text-brand transition-colors">
+                  How Does iCreatePDF Compare to Traditional PDF Editors?
+                </Link>
+              </li>
+              <li>
+                <Link href="#frequently-asked-questions-about-this-tool" className="hover:text-brand transition-colors">
+                  Frequently Asked Questions About This Tool
+                </Link>
+              </li>
+            </ul>
+          </div>
 
-          <h2 className="text-xl font-bold text-foreground pt-4 font-display">Step-by-Step: How Do You Add Text Overlays to a PDF Online?</h2>
+
+          <h2 id="step-by-step-how-do-you-add-text-overlays-to-a-pdf-online" className="text-xl font-bold text-foreground pt-4 font-display">Step-by-Step: How Do You Add Text Overlays to a PDF Online?</h2>
           <ol className="list-decimal list-inside space-y-3 pl-4 text-sm">
             <li>Open <Link href="/tools/edit-pdf" className="text-brand hover:underline">iCreatePDF Edit PDF</Link>.</li>
             <li>Upload your PDF — it renders page-by-page in the editor.</li>
@@ -104,7 +139,7 @@ export default function EditPdfBlogPost() {
             </p>
           </div>
 
-          <h2 className="text-xl font-bold text-foreground pt-4 font-display">What Are the 6 Common Ways People Edit PDF Files?</h2>
+          <h2 id="what-are-the-6-common-ways-people-edit-pdf-files" className="text-xl font-bold text-foreground pt-4 font-display">What Are the 6 Common Ways People Edit PDF Files?</h2>
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 my-4">
             {useCases.map((u, i) => (
               <div key={i} className="p-4 rounded-xl bg-card border border-foreground/5 space-y-1.5">
@@ -114,12 +149,12 @@ export default function EditPdfBlogPost() {
             ))}
           </div>
 
-          <h2 className="text-xl font-bold text-foreground pt-4 font-display">What is the Difference Between Text Overlays and Reflowable Text Editing?</h2>
+          <h2 id="what-is-the-difference-between-text-overlays-and-reflowable-text-editing" className="text-xl font-bold text-foreground pt-4 font-display">What is the Difference Between Text Overlays and Reflowable Text Editing?</h2>
           <p>
             There's an important distinction: iCreatePDF adds new text <em>on top of</em> a page (an overlay), which is exactly what you want for annotations, approvals, and fill-ins. It does not rewrite or reflow existing paragraph text that's already baked into the PDF's original layout — that requires a much heavier server-side conversion process most privacy-conscious users want to avoid anyway. If you need to change existing body text in a Word-style way, you'll need a desktop editor; for adding to a document, overlay editing is faster and keeps your file private. If you just need to fill out form fields rather than freehand text, try <Link href="/tools/fillable-pdf-builder" className="text-brand hover:underline">Fillable PDF Builder</Link> instead.
           </p>
 
-          <h2 className="text-xl font-bold text-foreground pt-4 font-display">How Does iCreatePDF Compare to Traditional PDF Editors?</h2>
+          <h2 id="how-does-icreatepdf-compare-to-traditional-pdf-editors" className="text-xl font-bold text-foreground pt-4 font-display">How Does iCreatePDF Compare to Traditional PDF Editors?</h2>
           <div className="overflow-x-auto">
             <table className="w-full text-xs text-foreground/70 border border-foreground/10 rounded-xl overflow-hidden">
               <thead className="bg-foreground/5 text-foreground font-semibold">
@@ -147,7 +182,7 @@ export default function EditPdfBlogPost() {
             </table>
           </div>
 
-          <h2 className="text-xl font-bold text-foreground pt-4 font-display">Frequently Asked Questions About This Tool</h2>
+          <h2 id="frequently-asked-questions-about-this-tool" className="text-xl font-bold text-foreground pt-4 font-display">Frequently Asked Questions About This Tool</h2>
           <div className="space-y-4">
             {[
               { q: 'Can I edit existing text in the PDF, not just add new text?', a: 'iCreatePDF adds text overlays on top of the page rather than rewriting existing embedded text. To hide old text before overlaying a correction, use a colored box matching the background.' },

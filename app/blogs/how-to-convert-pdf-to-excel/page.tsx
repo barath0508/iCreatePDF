@@ -88,8 +88,43 @@ export default function PdfToExcelBlogPost() {
               <li><strong>Secure parsing:</strong> Protect proprietary company metrics by extracting tables client-side.</li>
             </ul>
           </div>
+          {/* Table of Contents */}
+          <div className="p-6 rounded-2xl bg-card border border-foreground/10 space-y-3 my-6">
+            <h3 className="text-sm font-bold text-foreground flex items-center gap-2">
+              <span className="w-2.5 h-2.5 rounded-full bg-brand"></span>
+              Table of Contents
+            </h3>
+            <ul className="space-y-2 text-xs sm:text-sm text-foreground/75 pl-1">
+              <li>
+                <Link href="#step-by-step-how-do-you-convert-pdf-to-excel-without-uploading" className="hover:text-brand transition-colors">
+                  Step-by-Step: How Do You Convert PDF to Excel Without Uploading?
+                </Link>
+              </li>
+              <li>
+                <Link href="#why-extract-pdf-tables-into-excel-spreadsheets" className="hover:text-brand transition-colors">
+                  Why Extract PDF Tables into Excel Spreadsheets?
+                </Link>
+              </li>
+              <li>
+                <Link href="#why-does-table-extraction-work-better-on-native-than-scanned-pdfs" className="hover:text-brand transition-colors">
+                  Why Does Table Extraction Work Better on Native Than Scanned PDFs?
+                </Link>
+              </li>
+              <li>
+                <Link href="#how-does-icreatepdf-compare-to-other-pdf-to-excel-converters" className="hover:text-brand transition-colors">
+                  How Does iCreatePDF Compare to Other PDF to Excel Converters?
+                </Link>
+              </li>
+              <li>
+                <Link href="#frequently-asked-questions-about-this-tool" className="hover:text-brand transition-colors">
+                  Frequently Asked Questions About This Tool
+                </Link>
+              </li>
+            </ul>
+          </div>
 
-          <h2 className="text-xl font-bold text-foreground pt-4 font-display">Step-by-Step: How Do You Convert PDF to Excel Without Uploading?</h2>
+
+          <h2 id="step-by-step-how-do-you-convert-pdf-to-excel-without-uploading" className="text-xl font-bold text-foreground pt-4 font-display">Step-by-Step: How Do You Convert PDF to Excel Without Uploading?</h2>
           <ol className="list-decimal list-inside space-y-3 pl-4 text-sm">
             <li>Open <Link href="/tools/pdf-to-excel" className="text-brand hover:underline">iCreatePDF PDF to Excel</Link>.</li>
             <li>Upload the PDF containing the table you want to extract.</li>
@@ -104,7 +139,7 @@ export default function PdfToExcelBlogPost() {
             </p>
           </div>
 
-          <h2 className="text-xl font-bold text-foreground pt-4 font-display">Why Extract PDF Tables into Excel Spreadsheets?</h2>
+          <h2 id="why-extract-pdf-tables-into-excel-spreadsheets" className="text-xl font-bold text-foreground pt-4 font-display">Why Extract PDF Tables into Excel Spreadsheets?</h2>
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 my-4">
             {useCases.map((u, i) => (
               <div key={i} className="p-4 rounded-xl bg-card border border-foreground/5 space-y-1.5">
@@ -114,12 +149,12 @@ export default function PdfToExcelBlogPost() {
             ))}
           </div>
 
-          <h2 className="text-xl font-bold text-foreground pt-4 font-display">Why Does Table Extraction Work Better on Native Than Scanned PDFs?</h2>
+          <h2 id="why-does-table-extraction-work-better-on-native-than-scanned-pdfs" className="text-xl font-bold text-foreground pt-4 font-display">Why Does Table Extraction Work Better on Native Than Scanned PDFs?</h2>
           <p>
             Table detection relies on analyzing the spacing and alignment of the underlying text layer, so it works best on digitally generated PDFs (exported from accounting software, spreadsheets, or word processors) where columns are consistently spaced. Scanned tables — photos or image-based PDFs — need to go through <Link href="/tools/pdf-ocr" className="text-brand hover:underline">PDF OCR</Link> first to create a text layer before table detection can find rows and columns.
           </p>
 
-          <h2 className="text-xl font-bold text-foreground pt-4 font-display">How Does iCreatePDF Compare to Other PDF to Excel Converters?</h2>
+          <h2 id="how-does-icreatepdf-compare-to-other-pdf-to-excel-converters" className="text-xl font-bold text-foreground pt-4 font-display">How Does iCreatePDF Compare to Other PDF to Excel Converters?</h2>
           <div className="overflow-x-auto">
             <table className="w-full text-xs text-foreground/70 border border-foreground/10 rounded-xl overflow-hidden">
               <thead className="bg-foreground/5 text-foreground font-semibold">
@@ -146,7 +181,7 @@ export default function PdfToExcelBlogPost() {
             </table>
           </div>
 
-          <h2 className="text-xl font-bold text-foreground pt-4 font-display">Frequently Asked Questions About This Tool</h2>
+          <h2 id="frequently-asked-questions-about-this-tool" className="text-xl font-bold text-foreground pt-4 font-display">Frequently Asked Questions About This Tool</h2>
           <div className="space-y-4">
             {[
               { q: 'Does this export a .xlsx file or a CSV?', a: 'iCreatePDF exports a CSV file, which opens natively in Excel, Google Sheets, and Numbers, and preserves all row and column data without proprietary formatting locks.' },

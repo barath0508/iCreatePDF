@@ -88,8 +88,43 @@ export default function CropPdfBlogPost() {
               <li><strong>Confidential Trimming:</strong> Keep financial statements offline while cropping layouts.</li>
             </ul>
           </div>
+          {/* Table of Contents */}
+          <div className="p-6 rounded-2xl bg-card border border-foreground/10 space-y-3 my-6">
+            <h3 className="text-sm font-bold text-foreground flex items-center gap-2">
+              <span className="w-2.5 h-2.5 rounded-full bg-brand"></span>
+              Table of Contents
+            </h3>
+            <ul className="space-y-2 text-xs sm:text-sm text-foreground/75 pl-1">
+              <li>
+                <Link href="#step-by-step-how-do-you-crop-pdf-page-margins-locally" className="hover:text-brand transition-colors">
+                  Step-by-Step: How Do You Crop PDF Page Margins Locally?
+                </Link>
+              </li>
+              <li>
+                <Link href="#why-trim-or-crop-margins-in-pdf-documents" className="hover:text-brand transition-colors">
+                  Why Trim or Crop Margins in PDF Documents?
+                </Link>
+              </li>
+              <li>
+                <Link href="#what-is-the-difference-between-cropping-and-resizing-pdf-pages" className="hover:text-brand transition-colors">
+                  What is the Difference Between Cropping and Resizing PDF Pages?
+                </Link>
+              </li>
+              <li>
+                <Link href="#how-does-icreatepdf-compare-to-other-pdf-cropping-software" className="hover:text-brand transition-colors">
+                  How Does iCreatePDF Compare to Other PDF Cropping Software?
+                </Link>
+              </li>
+              <li>
+                <Link href="#frequently-asked-questions-about-this-tool" className="hover:text-brand transition-colors">
+                  Frequently Asked Questions About This Tool
+                </Link>
+              </li>
+            </ul>
+          </div>
 
-          <h2 className="text-xl font-bold text-foreground pt-4 font-display">Step-by-Step: How Do You Crop PDF Page Margins Locally?</h2>
+
+          <h2 id="step-by-step-how-do-you-crop-pdf-page-margins-locally" className="text-xl font-bold text-foreground pt-4 font-display">Step-by-Step: How Do You Crop PDF Page Margins Locally?</h2>
           <ol className="list-decimal list-inside space-y-3 pl-4 text-sm">
             <li>Open <Link href="/tools/crop-pdf" className="text-brand hover:underline">iCreatePDF Crop PDF</Link>.</li>
             <li>Upload your PDF — a visual preview appears with adjustable crop handles.</li>
@@ -104,7 +139,7 @@ export default function CropPdfBlogPost() {
             </p>
           </div>
 
-          <h2 className="text-xl font-bold text-foreground pt-4 font-display">Why Trim or Crop Margins in PDF Documents?</h2>
+          <h2 id="why-trim-or-crop-margins-in-pdf-documents" className="text-xl font-bold text-foreground pt-4 font-display">Why Trim or Crop Margins in PDF Documents?</h2>
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 my-4">
             {useCases.map((u, i) => (
               <div key={i} className="p-4 rounded-xl bg-card border border-foreground/5 space-y-1.5">
@@ -114,12 +149,12 @@ export default function CropPdfBlogPost() {
             ))}
           </div>
 
-          <h2 className="text-xl font-bold text-foreground pt-4 font-display">What is the Difference Between Cropping and Resizing PDF Pages?</h2>
+          <h2 id="what-is-the-difference-between-cropping-and-resizing-pdf-pages" className="text-xl font-bold text-foreground pt-4 font-display">What is the Difference Between Cropping and Resizing PDF Pages?</h2>
           <p>
             Cropping trims the visible page boundary, cutting away margins without touching the underlying content's scale. Resizing, by contrast, changes the overall page dimensions (like fitting content to A4 or Letter). If your goal is a standardized page size rather than removing borders, use <Link href="/tools/resize-pdf" className="text-brand hover:underline">Resize PDF</Link> instead.
           </p>
 
-          <h2 className="text-xl font-bold text-foreground pt-4 font-display">How Does iCreatePDF Compare to Other PDF Cropping Software?</h2>
+          <h2 id="how-does-icreatepdf-compare-to-other-pdf-cropping-software" className="text-xl font-bold text-foreground pt-4 font-display">How Does iCreatePDF Compare to Other PDF Cropping Software?</h2>
           <div className="overflow-x-auto">
             <table className="w-full text-xs text-foreground/70 border border-foreground/10 rounded-xl overflow-hidden">
               <thead className="bg-foreground/5 text-foreground font-semibold">
@@ -146,7 +181,7 @@ export default function CropPdfBlogPost() {
             </table>
           </div>
 
-          <h2 className="text-xl font-bold text-foreground pt-4 font-display">Frequently Asked Questions About This Tool</h2>
+          <h2 id="frequently-asked-questions-about-this-tool" className="text-xl font-bold text-foreground pt-4 font-display">Frequently Asked Questions About This Tool</h2>
           <div className="space-y-4">
             {[
               { q: 'Does cropping delete content permanently?', a: 'Cropping changes the visible page boundary. Content outside the crop area is no longer displayed or included in the exported file, so keep your original if you may need the full page later.' },

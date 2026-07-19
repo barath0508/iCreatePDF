@@ -60,7 +60,33 @@ export default function SplitPdfBlog() {
             Many digital packages are delivered as massive single files containing reports, receipts, and invoices combined. To archive them cleanly, you often need to separate pages into individual documents or delete junk filler pages.
           </p>
 
-          <h2 className="text-xl font-bold text-foreground pt-4 font-display flex items-center gap-2">
+          
+          {/* Table of Contents */}
+          <div className="p-6 rounded-2xl bg-card border border-foreground/10 space-y-3 my-6">
+            <h3 className="text-sm font-bold text-foreground flex items-center gap-2">
+              <span className="w-2.5 h-2.5 rounded-full bg-brand"></span>
+              Table of Contents
+            </h3>
+            <ul className="space-y-2 text-xs sm:text-sm text-foreground/75 pl-1">
+              <li>
+                <Link href="#visual-splitting-vs-batch-splitting" className="hover:text-brand transition-colors">
+                  Visual Splitting vs. Batch Splitting
+                </Link>
+              </li>
+              <li>
+                <Link href="#how-to-split-a-pdf" className="hover:text-brand transition-colors">
+                  How to Split a PDF
+                </Link>
+              </li>
+              <li>
+                <Link href="#how-to-delete-specific-pages" className="hover:text-brand transition-colors">
+                  How to Delete Specific Pages
+                </Link>
+              </li>
+            </ul>
+          </div>
+
+<h2 id="visual-splitting-vs-batch-splitting" className="text-xl font-bold text-foreground pt-4 font-display flex items-center gap-2">
             <Columns className="w-5 h-5 text-brand" />
             Visual Splitting vs. Batch Splitting
           </h2>
@@ -68,7 +94,7 @@ export default function SplitPdfBlog() {
             Standard cut utilities require you to type page ranges like "1-3, 5-7" blindly. Visual interfaces let you see preview thumbnails of every page. You can click on exactly the pages you want to split or delete, eliminating the risk of cutting the wrong page.
           </p>
 
-          <h2 className="text-xl font-bold text-foreground pt-4 font-display flex items-center gap-2">
+          <h2 id="how-to-split-a-pdf" className="text-xl font-bold text-foreground pt-4 font-display flex items-center gap-2">
             <Columns className="w-5 h-5 text-brand" />
             How to Split a PDF
           </h2>
@@ -84,7 +110,7 @@ export default function SplitPdfBlog() {
             <li>Click <strong>Split PDF</strong>.</li>
           </ol>
 
-          <h2 className="text-xl font-bold text-foreground pt-4 font-display flex items-center gap-2">
+          <h2 id="how-to-delete-specific-pages" className="text-xl font-bold text-foreground pt-4 font-display flex items-center gap-2">
             <Trash2 className="w-5 h-5 text-brand" />
             How to Delete Specific Pages
           </h2>

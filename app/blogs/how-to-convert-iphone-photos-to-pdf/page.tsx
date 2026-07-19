@@ -85,12 +85,32 @@ export default function BlogPostOne() {
               <li><strong>Local Performance:</strong> Heavy image files stay inside browser memory, reducing bandwidth costs.</li>
             </ul>
           </div>
+          {/* Table of Contents */}
+          <div className="p-6 rounded-2xl bg-card border border-foreground/10 space-y-3 my-6">
+            <h3 className="text-sm font-bold text-foreground flex items-center gap-2">
+              <span className="w-2.5 h-2.5 rounded-full bg-brand"></span>
+              Table of Contents
+            </h3>
+            <ul className="space-y-2 text-xs sm:text-sm text-foreground/75 pl-1">
+              <li>
+                <Link href="#method-1-using-icreatepdf-fastest-amp-safest" className="hover:text-brand transition-colors">
+                  Method 1: Using iCreatePDF (Fastest &amp; Safest)
+                </Link>
+              </li>
+              <li>
+                <Link href="#how-can-you-compile-iphone-photos-using-apple-shortcuts" className="hover:text-brand transition-colors">
+                  How Can You Compile iPhone Photos using Apple Shortcuts?
+                </Link>
+              </li>
+            </ul>
+          </div>
+
 
           <p>
             Often, you need to convert these photos into a single, cohesive PDF document for school submissions, work reports, or official verification. In this guide, we will show you how to do it in under 30 seconds using free and secure methods.
           </p>
 
-          <h2 className="text-xl font-bold text-foreground pt-4 font-display">Method 1: Using iCreatePDF (Fastest &amp; Safest)</h2>
+          <h2 id="method-1-using-icreatepdf-fastest-amp-safest" className="text-xl font-bold text-foreground pt-4 font-display">Method 1: Using iCreatePDF (Fastest &amp; Safest)</h2>
           <p>
             iCreatePDF allows you to convert multiple HEIC files into a single PDF directly inside your web browser using the <Link href="/tools/heic-to-pdf" className="text-brand hover:underline">HEIC to PDF</Link> tool page. Since it operates entirely client-side, your high-resolution private photos never touch our servers.
           </p>
@@ -112,7 +132,7 @@ export default function BlogPostOne() {
             </p>
           </div>
 
-          <h2 className="text-xl font-bold text-foreground pt-4 font-display">How Can You Compile iPhone Photos using Apple Shortcuts?</h2>
+          <h2 id="how-can-you-compile-iphone-photos-using-apple-shortcuts" className="text-xl font-bold text-foreground pt-4 font-display">How Can You Compile iPhone Photos using Apple Shortcuts?</h2>
           <p>
             If you want to do this completely offline on your device without any website, you can use the built-in system shortcuts or files application workflow:
           </p>

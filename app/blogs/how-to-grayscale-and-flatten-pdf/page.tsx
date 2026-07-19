@@ -60,7 +60,28 @@ export default function GrayscaleFlattenPdfBlog() {
             When preparing corporate decks, legal forms, or worksheets for physical printing, converting the layout to grayscale saves significant color toner cartridge costs. Additionally, if you have filled out interactive PDF form fields or added annotations, flattening the document merges these layers into standard page content, preventing others from editing your entries.
           </p>
 
-          <h2 className="text-xl font-bold text-foreground pt-4 font-display flex items-center gap-2">
+          
+          {/* Table of Contents */}
+          <div className="p-6 rounded-2xl bg-card border border-foreground/10 space-y-3 my-6">
+            <h3 className="text-sm font-bold text-foreground flex items-center gap-2">
+              <span className="w-2.5 h-2.5 rounded-full bg-brand"></span>
+              Table of Contents
+            </h3>
+            <ul className="space-y-2 text-xs sm:text-sm text-foreground/75 pl-1">
+              <li>
+                <Link href="#converting-pdf-to-grayscale-black-amp-white" className="hover:text-brand transition-colors">
+                  Converting PDF to Grayscale (Black &amp; White)
+                </Link>
+              </li>
+              <li>
+                <Link href="#flattening-form-fields-amp-annotations" className="hover:text-brand transition-colors">
+                  Flattening Form Fields &amp; Annotations
+                </Link>
+              </li>
+            </ul>
+          </div>
+
+<h2 id="converting-pdf-to-grayscale-black-amp-white" className="text-xl font-bold text-foreground pt-4 font-display flex items-center gap-2">
             <Printer className="w-5 h-5 text-brand" />
             Converting PDF to Grayscale (Black &amp; White)
           </h2>
@@ -74,7 +95,7 @@ export default function GrayscaleFlattenPdfBlog() {
             <li>Download the monochrome PDF.</li>
           </ol>
 
-          <h2 className="text-xl font-bold text-foreground pt-4 font-display flex items-center gap-2">
+          <h2 id="flattening-form-fields-amp-annotations" className="text-xl font-bold text-foreground pt-4 font-display flex items-center gap-2">
             <Layers className="w-5 h-5 text-brand" />
             Flattening Form Fields &amp; Annotations
           </h2>

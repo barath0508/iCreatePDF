@@ -79,8 +79,33 @@ export default function ScannedPdfToTextBlog() {
               <li><strong>Data Privacy:</strong> Process document scans locally to protect customer ID data.</li>
             </ul>
           </div>
+          {/* Table of Contents */}
+          <div className="p-6 rounded-2xl bg-card border border-foreground/10 space-y-3 my-6">
+            <h3 className="text-sm font-bold text-foreground flex items-center gap-2">
+              <span className="w-2.5 h-2.5 rounded-full bg-brand"></span>
+              Table of Contents
+            </h3>
+            <ul className="space-y-2 text-xs sm:text-sm text-foreground/75 pl-1">
+              <li>
+                <Link href="#in-browser-neural-ocr-webassembly" className="hover:text-brand transition-colors">
+                  In-Browser Neural OCR (WebAssembly)
+                </Link>
+              </li>
+              <li>
+                <Link href="#steps-to-extract-text-from-scanned-pdf" className="hover:text-brand transition-colors">
+                  Steps to Extract Text from Scanned PDF
+                </Link>
+              </li>
+              <li>
+                <Link href="#how-do-you-maximize-ocr-accuracy-for-scanned-pdf-text-extraction" className="hover:text-brand transition-colors">
+                  How Do You Maximize OCR Accuracy for Scanned PDF Text Extraction?
+                </Link>
+              </li>
+            </ul>
+          </div>
 
-          <h2 className="text-xl font-bold text-foreground pt-4 font-display flex items-center gap-2">
+
+          <h2 id="in-browser-neural-ocr-webassembly" className="text-xl font-bold text-foreground pt-4 font-display flex items-center gap-2">
             <Sparkles className="w-5 h-5 text-brand" />
             In-Browser Neural OCR (WebAssembly)
           </h2>
@@ -91,7 +116,7 @@ export default function ScannedPdfToTextBlog() {
             iCreatePDF compiles a browser-version of the Tesseract OCR engine. It renders your PDF pages to image canvas buffers, feeds the frames to the WebAssembly worker thread, checks letters against dictionary databases, and compiles them into clean, copyable unicode text.
           </p>
 
-          <h2 className="text-xl font-bold text-foreground pt-4 font-display flex items-center gap-2">
+          <h2 id="steps-to-extract-text-from-scanned-pdf" className="text-xl font-bold text-foreground pt-4 font-display flex items-center gap-2">
             <FileSearch className="w-5 h-5 text-brand" />
             Steps to Extract Text from Scanned PDF
           </h2>
@@ -110,7 +135,7 @@ export default function ScannedPdfToTextBlog() {
             <li>Copy the resulting text directly to your clipboard or click <strong>Download Plain Text (.txt)</strong> to save it.</li>
           </ol>
 
-          <h2 className="text-xl font-bold text-foreground pt-4 font-display">How Do You Maximize OCR Accuracy for Scanned PDF Text Extraction?</h2>
+          <h2 id="how-do-you-maximize-ocr-accuracy-for-scanned-pdf-text-extraction" className="text-xl font-bold text-foreground pt-4 font-display">How Do You Maximize OCR Accuracy for Scanned PDF Text Extraction?</h2>
           <p className="text-sm leading-relaxed">
             OCR accuracy depends heavily on document readability. For best results:
           </p>

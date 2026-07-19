@@ -86,7 +86,33 @@ export default function ProofZeroServerUploadsBlogPost() {
             <strong>iCreatePDF is built differently.</strong> By utilizing modern WebAssembly (Wasm) engines, PDF-generation libraries, and HTML5 Canvas APIs, all file processing happens entirely inside your local browser memory.
           </p>
 
-          <h2 className="text-2xl font-bold text-foreground pt-4 font-display">The Ultimate Privacy Test</h2>
+          
+          {/* Table of Contents */}
+          <div className="p-6 rounded-2xl bg-card border border-foreground/10 space-y-3 my-6">
+            <h3 className="text-sm font-bold text-foreground flex items-center gap-2">
+              <span className="w-2.5 h-2.5 rounded-full bg-brand"></span>
+              Table of Contents
+            </h3>
+            <ul className="space-y-2 text-xs sm:text-sm text-foreground/75 pl-1">
+              <li>
+                <Link href="#the-ultimate-privacy-test" className="hover:text-brand transition-colors">
+                  The Ultimate Privacy Test
+                </Link>
+              </li>
+              <li>
+                <Link href="#for-developers-inspect-the-network-traffic-f12" className="hover:text-brand transition-colors">
+                  For Developers: Inspect the Network Traffic (F12)
+                </Link>
+              </li>
+              <li>
+                <Link href="#compliance-and-data-sovereignty" className="hover:text-brand transition-colors">
+                  Compliance and Data Sovereignty
+                </Link>
+              </li>
+            </ul>
+          </div>
+
+<h2 id="the-ultimate-privacy-test" className="text-2xl font-bold text-foreground pt-4 font-display">The Ultimate Privacy Test</h2>
           <p>
             The easiest way to gain absolute peace of mind is to test our website without an active internet connection. Try it yourself by following these simple steps:
           </p>
@@ -115,7 +141,7 @@ export default function ProofZeroServerUploadsBlogPost() {
             </p>
           </div>
 
-          <h2 className="text-xl font-bold text-foreground pt-4 font-display">
+          <h2 id="for-developers-inspect-the-network-traffic-f12" className="text-xl font-bold text-foreground pt-4 font-display">
             For Developers: Inspect the Network Traffic (F12)
           </h2>
           <p>
@@ -140,7 +166,7 @@ export default function ProofZeroServerUploadsBlogPost() {
             </div>
           </div>
 
-          <h2 className="text-xl font-bold text-foreground pt-4 font-display">Compliance and Data Sovereignty</h2>
+          <h2 id="compliance-and-data-sovereignty" className="text-xl font-bold text-foreground pt-4 font-display">Compliance and Data Sovereignty</h2>
           <p>
             Because we never touch or store your files, using iCreatePDF complies automatically with the strictest compliance frameworks globally, including:
           </p>

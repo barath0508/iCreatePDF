@@ -60,7 +60,33 @@ export default function ProtectUnlockPdfBlog() {
             When sharing financial reports, personal identities, or legal contracts, leaving files unprotected exposes them to data sniffing or unauthorized access. Standard PDF specifications allow locking files behind user passwords (to view) or owner passwords (to edit/print).
           </p>
 
-          <h2 className="text-xl font-bold text-foreground pt-4 font-display flex items-center gap-2">
+          
+          {/* Table of Contents */}
+          <div className="p-6 rounded-2xl bg-card border border-foreground/10 space-y-3 my-6">
+            <h3 className="text-sm font-bold text-foreground flex items-center gap-2">
+              <span className="w-2.5 h-2.5 rounded-full bg-brand"></span>
+              Table of Contents
+            </h3>
+            <ul className="space-y-2 text-xs sm:text-sm text-foreground/75 pl-1">
+              <li>
+                <Link href="#why-local-encryption-matters" className="hover:text-brand transition-colors">
+                  Why Local Encryption Matters
+                </Link>
+              </li>
+              <li>
+                <Link href="#how-to-password-protect-a-pdf" className="hover:text-brand transition-colors">
+                  How to Password Protect a PDF
+                </Link>
+              </li>
+              <li>
+                <Link href="#how-to-unlock-a-password-protected-pdf" className="hover:text-brand transition-colors">
+                  How to Unlock a Password Protected PDF
+                </Link>
+              </li>
+            </ul>
+          </div>
+
+<h2 id="why-local-encryption-matters" className="text-xl font-bold text-foreground pt-4 font-display flex items-center gap-2">
             <Shield className="w-5 h-5 text-brand" />
             Why Local Encryption Matters
           </h2>
@@ -68,7 +94,7 @@ export default function ProtectUnlockPdfBlog() {
             Standard online lock utilities upload your files and clear-text passwords to remote servers. This completely defeats the purpose of encryption: if their database is breached, your password and files are leaked. iCreatePDF resolves this by running the encryption block locally using WebAssembly routines—meaning your files and passwords never cross the network.
           </p>
 
-          <h2 className="text-xl font-bold text-foreground pt-4 font-display flex items-center gap-2">
+          <h2 id="how-to-password-protect-a-pdf" className="text-xl font-bold text-foreground pt-4 font-display flex items-center gap-2">
             <Key className="w-5 h-5 text-brand" />
             How to Password Protect a PDF
           </h2>
@@ -80,7 +106,7 @@ export default function ProtectUnlockPdfBlog() {
             <li>Download the secure password-protected file.</li>
           </ol>
 
-          <h2 className="text-xl font-bold text-foreground pt-4 font-display flex items-center gap-2">
+          <h2 id="how-to-unlock-a-password-protected-pdf" className="text-xl font-bold text-foreground pt-4 font-display flex items-center gap-2">
             <Unlock className="w-5 h-5 text-brand" />
             How to Unlock a Password Protected PDF
           </h2>

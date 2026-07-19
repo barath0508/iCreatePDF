@@ -60,7 +60,28 @@ export default function PreventCopyBlog() {
             When you send a standard digital PDF, the text content remains selectable. Anyone can open the file, drag their cursor over your text, copy it, and paste it into another document. While password encryption restricts editing, many PDF readers ignore security permissions, allowing users to copy text anyway. The only bulletproof way to disable text copying is **PDF Rasterization**—converting text pages into flat images.
           </p>
 
-          <h2 className="text-xl font-bold text-foreground pt-4 font-display flex items-center gap-2">
+          
+          {/* Table of Contents */}
+          <div className="p-6 rounded-2xl bg-card border border-foreground/10 space-y-3 my-6">
+            <h3 className="text-sm font-bold text-foreground flex items-center gap-2">
+              <span className="w-2.5 h-2.5 rounded-full bg-brand"></span>
+              Table of Contents
+            </h3>
+            <ul className="space-y-2 text-xs sm:text-sm text-foreground/75 pl-1">
+              <li>
+                <Link href="#standard-permissions-vs-rasterization" className="hover:text-brand transition-colors">
+                  Standard Permissions vs. Rasterization
+                </Link>
+              </li>
+              <li>
+                <Link href="#steps-to-make-a-pdf-non-copyable" className="hover:text-brand transition-colors">
+                  Steps to Make a PDF Non-Copyable
+                </Link>
+              </li>
+            </ul>
+          </div>
+
+<h2 id="standard-permissions-vs-rasterization" className="text-xl font-bold text-foreground pt-4 font-display flex items-center gap-2">
             <Lock className="w-5 h-5 text-brand" />
             Standard Permissions vs. Rasterization
           </h2>
@@ -71,7 +92,7 @@ export default function PreventCopyBlog() {
             Rasterizing renders each page onto an image canvas, discarding the underlying font characters, and recompiling the pages into a new PDF. The file looks identical, but there is no longer a text layer to highlight.
           </p>
 
-          <h2 className="text-xl font-bold text-foreground pt-4 font-display flex items-center gap-2">
+          <h2 id="steps-to-make-a-pdf-non-copyable" className="text-xl font-bold text-foreground pt-4 font-display flex items-center gap-2">
             <ShieldAlert className="w-5 h-5 text-brand" />
             Steps to Make a PDF Non-Copyable
           </h2>

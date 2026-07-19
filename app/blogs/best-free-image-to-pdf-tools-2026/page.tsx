@@ -102,12 +102,32 @@ export default function BlogPostTwo() {
               <li><strong>HEIC & Formatting:</strong> Select tools that support native iPhone HEIC formats and offer layout margins.</li>
             </ul>
           </div>
+          {/* Table of Contents */}
+          <div className="p-6 rounded-2xl bg-card border border-foreground/10 space-y-3 my-6">
+            <h3 className="text-sm font-bold text-foreground flex items-center gap-2">
+              <span className="w-2.5 h-2.5 rounded-full bg-brand"></span>
+              Table of Contents
+            </h3>
+            <ul className="space-y-2 text-xs sm:text-sm text-foreground/75 pl-1">
+              <li>
+                <Link href="#how-do-the-top-free-image-to-pdf-tools-compare" className="hover:text-brand transition-colors">
+                  How Do the Top Free Image to PDF Tools Compare?
+                </Link>
+              </li>
+              <li>
+                <Link href="#why-choose-client-side-processing-over-server-side-uploads" className="hover:text-brand transition-colors">
+                  Why Choose Client-Side Processing Over Server-Side Uploads?
+                </Link>
+              </li>
+            </ul>
+          </div>
+
 
           <p>
             In 2026, web standards are advanced enough to handle high-fidelity image resizing, layout formatting, and PDF compression directly inside your web browser. In this article, we evaluate and compare the top tools available for this job to help you choose the best balance of speed, cost, and privacy.
           </p>
 
-          <h2 className="text-xl font-bold text-foreground pt-4 font-display">How Do the Top Free Image to PDF Tools Compare?</h2>
+          <h2 id="how-do-the-top-free-image-to-pdf-tools-compare" className="text-xl font-bold text-foreground pt-4 font-display">How Do the Top Free Image to PDF Tools Compare?</h2>
           
           <div className="space-y-6">
             {tools.map((t, idx) => (
@@ -129,7 +149,7 @@ export default function BlogPostTwo() {
             ))}
           </div>
 
-          <h2 className="text-xl font-bold text-foreground pt-4 font-display">Why Choose Client-Side Processing Over Server-Side Uploads?</h2>
+          <h2 id="why-choose-client-side-processing-over-server-side-uploads" className="text-xl font-bold text-foreground pt-4 font-display">Why Choose Client-Side Processing Over Server-Side Uploads?</h2>
           <p>
             Most traditional online converters upload your images to a remote server, process them using backend services, and host the output PDF for download. While this works, it raises major security concerns:
           </p>

@@ -69,7 +69,43 @@ export default function AccessibilityCheckerBlogPost() {
             A PDF that looks fine visually can still be unusable for someone relying on a screen reader — missing tags, an undeclared language, or an image-only text layer all break the experience silently. An accessibility checker surfaces these issues before you publish or distribute a document, without requiring specialized desktop software.
           </p>
 
-          <h2 className="text-xl font-bold text-foreground pt-4 font-display">Step-by-Step: Check Accessibility Using iCreatePDF</h2>
+          
+          {/* Table of Contents */}
+          <div className="p-6 rounded-2xl bg-card border border-foreground/10 space-y-3 my-6">
+            <h3 className="text-sm font-bold text-foreground flex items-center gap-2">
+              <span className="w-2.5 h-2.5 rounded-full bg-brand"></span>
+              Table of Contents
+            </h3>
+            <ul className="space-y-2 text-xs sm:text-sm text-foreground/75 pl-1">
+              <li>
+                <Link href="#step-by-step-check-accessibility-using-icreatepdf" className="hover:text-brand transition-colors">
+                  Step-by-Step: Check Accessibility Using iCreatePDF
+                </Link>
+              </li>
+              <li>
+                <Link href="#6-reasons-to-audit-pdf-accessibility" className="hover:text-brand transition-colors">
+                  6 Reasons to Audit PDF Accessibility
+                </Link>
+              </li>
+              <li>
+                <Link href="#common-accessibility-issues-and-how-to-fix-them" className="hover:text-brand transition-colors">
+                  Common Accessibility Issues and How to Fix Them
+                </Link>
+              </li>
+              <li>
+                <Link href="#icreatepdf-vs-other-accessibility-checkers" className="hover:text-brand transition-colors">
+                  iCreatePDF vs Other Accessibility Checkers
+                </Link>
+              </li>
+              <li>
+                <Link href="#frequently-asked-questions" className="hover:text-brand transition-colors">
+                  Frequently Asked Questions
+                </Link>
+              </li>
+            </ul>
+          </div>
+
+<h2 id="step-by-step-check-accessibility-using-icreatepdf" className="text-xl font-bold text-foreground pt-4 font-display">Step-by-Step: Check Accessibility Using iCreatePDF</h2>
           <ol className="list-decimal list-inside space-y-3 pl-4 text-sm">
             <li>Open <Link href="/tools/pdf-accessibility-checker" className="text-brand hover:underline">iCreatePDF Accessibility Checker</Link>.</li>
             <li>Upload the PDF you want to audit.</li>
@@ -84,7 +120,7 @@ export default function AccessibilityCheckerBlogPost() {
             </p>
           </div>
 
-          <h2 className="text-xl font-bold text-foreground pt-4 font-display">6 Reasons to Audit PDF Accessibility</h2>
+          <h2 id="6-reasons-to-audit-pdf-accessibility" className="text-xl font-bold text-foreground pt-4 font-display">6 Reasons to Audit PDF Accessibility</h2>
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 my-4">
             {useCases.map((u, i) => (
               <div key={i} className="p-4 rounded-xl bg-card border border-foreground/5 space-y-1.5">
@@ -94,12 +130,12 @@ export default function AccessibilityCheckerBlogPost() {
             ))}
           </div>
 
-          <h2 className="text-xl font-bold text-foreground pt-4 font-display">Common Accessibility Issues and How to Fix Them</h2>
+          <h2 id="common-accessibility-issues-and-how-to-fix-them" className="text-xl font-bold text-foreground pt-4 font-display">Common Accessibility Issues and How to Fix Them</h2>
           <p>
             An <strong className="text-foreground">image-only text layer</strong> (a scan with no real text) means a screen reader has nothing to read — fix it by running the document through <Link href="/tools/pdf-ocr" className="text-brand hover:underline">PDF OCR</Link> to add real, selectable text. <strong className="text-foreground">Unlabeled form fields</strong> leave screen reader users guessing what to type — rebuild the form with proper labels using <Link href="/tools/fillable-pdf-builder" className="text-brand hover:underline">Fillable PDF Builder</Link>. A missing declared document language can cause a screen reader to mispronounce content entirely.
           </p>
 
-          <h2 className="text-xl font-bold text-foreground pt-4 font-display">iCreatePDF vs Other Accessibility Checkers</h2>
+          <h2 id="icreatepdf-vs-other-accessibility-checkers" className="text-xl font-bold text-foreground pt-4 font-display">iCreatePDF vs Other Accessibility Checkers</h2>
           <div className="overflow-x-auto">
             <table className="w-full text-xs text-foreground/70 border border-foreground/10 rounded-xl overflow-hidden">
               <thead className="bg-foreground/5 text-foreground font-semibold">
@@ -126,7 +162,7 @@ export default function AccessibilityCheckerBlogPost() {
             </table>
           </div>
 
-          <h2 className="text-xl font-bold text-foreground pt-4 font-display">Frequently Asked Questions</h2>
+          <h2 id="frequently-asked-questions" className="text-xl font-bold text-foreground pt-4 font-display">Frequently Asked Questions</h2>
           <div className="space-y-4">
             {[
               { q: 'Does this checker guarantee full WCAG compliance?', a: 'It checks the core structural requirements screen readers depend on (tagging, language, real text, labeled fields). Full WCAG compliance also involves reading order, color contrast, and other factors that may need additional manual review.' },

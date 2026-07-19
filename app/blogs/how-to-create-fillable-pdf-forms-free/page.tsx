@@ -85,12 +85,37 @@ export default function BlogPostFillablePdf() {
               <li><strong>Secure Design:</strong> Design student forms, applications, or patient intakes 100% privately.</li>
             </ul>
           </div>
+          {/* Table of Contents */}
+          <div className="p-6 rounded-2xl bg-card border border-foreground/10 space-y-3 my-6">
+            <h3 className="text-sm font-bold text-foreground flex items-center gap-2">
+              <span className="w-2.5 h-2.5 rounded-full bg-brand"></span>
+              Table of Contents
+            </h3>
+            <ul className="space-y-2 text-xs sm:text-sm text-foreground/75 pl-1">
+              <li>
+                <Link href="#why-choose-client-side-form-building" className="hover:text-brand transition-colors">
+                  Why Choose Client-Side Form Building?
+                </Link>
+              </li>
+              <li>
+                <Link href="#steps-to-design-your-fillable-pdf-form" className="hover:text-brand transition-colors">
+                  Steps to Design Your Fillable PDF Form
+                </Link>
+              </li>
+              <li>
+                <Link href="#how-do-you-make-interactive-pdf-forms-accessible-to-screen-readers" className="hover:text-brand transition-colors">
+                  How Do You Make Interactive PDF Forms Accessible to Screen Readers?
+                </Link>
+              </li>
+            </ul>
+          </div>
+
 
           <p>
             In this guide, we will show you how to convert any static PDF template into an interactive fillable PDF form 100% locally inside your web browser in under a minute.
           </p>
 
-          <h2 className="text-xl font-bold text-foreground pt-4 font-display flex items-center gap-2">
+          <h2 id="why-choose-client-side-form-building" className="text-xl font-bold text-foreground pt-4 font-display flex items-center gap-2">
             <Layout className="w-5 h-5 text-brand" />
             Why Choose Client-Side Form Building?
           </h2>
@@ -103,7 +128,7 @@ export default function BlogPostFillablePdf() {
             <li><strong>Standards Compliant:</strong> Fields use official PDF specification structures. The download will be interactive in all PDF readers (Chrome, Adobe Reader, Preview, etc.).</li>
           </ul>
 
-          <h2 className="text-xl font-bold text-foreground pt-4 font-display flex items-center gap-2">
+          <h2 id="steps-to-design-your-fillable-pdf-form" className="text-xl font-bold text-foreground pt-4 font-display flex items-center gap-2">
             <CheckCircle className="w-5 h-5 text-brand" />
             Steps to Design Your Fillable PDF Form
           </h2>
@@ -125,7 +150,7 @@ export default function BlogPostFillablePdf() {
             </p>
           </div>
 
-          <h2 className="text-xl font-bold text-foreground pt-4 font-display">How Do You Make Interactive PDF Forms Accessible to Screen Readers?</h2>
+          <h2 id="how-do-you-make-interactive-pdf-forms-accessible-to-screen-readers" className="text-xl font-bold text-foreground pt-4 font-display">How Do You Make Interactive PDF Forms Accessible to Screen Readers?</h2>
           <p>
             When adding text inputs and dropdown choices, ensure you give each field a unique and descriptive **Field Identifier** (e.g., <code>first_name</code>, <code>agree_to_terms</code>). Standard reader applications use these labels to enable auto-fill and assist screen-readers in reading the form outline aloud for accessibility.
           </p>

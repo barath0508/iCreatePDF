@@ -69,7 +69,43 @@ export default function ScanToPdfBlogPost() {
             You don't need a physical scanner to digitize a document — your phone or laptop's built-in camera is enough. The key is capturing each page cleanly, cropping out the surrounding table or desk, and compiling multiple pages into a single ordered PDF, all of which iCreatePDF handles directly in your browser.
           </p>
 
-          <h2 className="text-xl font-bold text-foreground pt-4 font-display">Step-by-Step: Scan a Document Using iCreatePDF</h2>
+          
+          {/* Table of Contents */}
+          <div className="p-6 rounded-2xl bg-card border border-foreground/10 space-y-3 my-6">
+            <h3 className="text-sm font-bold text-foreground flex items-center gap-2">
+              <span className="w-2.5 h-2.5 rounded-full bg-brand"></span>
+              Table of Contents
+            </h3>
+            <ul className="space-y-2 text-xs sm:text-sm text-foreground/75 pl-1">
+              <li>
+                <Link href="#step-by-step-scan-a-document-using-icreatepdf" className="hover:text-brand transition-colors">
+                  Step-by-Step: Scan a Document Using iCreatePDF
+                </Link>
+              </li>
+              <li>
+                <Link href="#6-reasons-to-scan-with-your-camera-instead-of-a-scanner" className="hover:text-brand transition-colors">
+                  6 Reasons to Scan with Your Camera Instead of a Scanner
+                </Link>
+              </li>
+              <li>
+                <Link href="#tips-for-cleaner-camera-scans" className="hover:text-brand transition-colors">
+                  Tips for Cleaner Camera Scans
+                </Link>
+              </li>
+              <li>
+                <Link href="#icreatepdf-vs-other-scanning-apps" className="hover:text-brand transition-colors">
+                  iCreatePDF vs Other Scanning Apps
+                </Link>
+              </li>
+              <li>
+                <Link href="#frequently-asked-questions" className="hover:text-brand transition-colors">
+                  Frequently Asked Questions
+                </Link>
+              </li>
+            </ul>
+          </div>
+
+<h2 id="step-by-step-scan-a-document-using-icreatepdf" className="text-xl font-bold text-foreground pt-4 font-display">Step-by-Step: Scan a Document Using iCreatePDF</h2>
           <ol className="list-decimal list-inside space-y-3 pl-4 text-sm">
             <li>Open <Link href="/tools/scan-to-pdf" className="text-brand hover:underline">iCreatePDF Scan to PDF</Link> on your phone or laptop.</li>
             <li>Allow camera access and capture each page, or upload existing photos.</li>
@@ -84,7 +120,7 @@ export default function ScanToPdfBlogPost() {
             </p>
           </div>
 
-          <h2 className="text-xl font-bold text-foreground pt-4 font-display">6 Reasons to Scan with Your Camera Instead of a Scanner</h2>
+          <h2 id="6-reasons-to-scan-with-your-camera-instead-of-a-scanner" className="text-xl font-bold text-foreground pt-4 font-display">6 Reasons to Scan with Your Camera Instead of a Scanner</h2>
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 my-4">
             {useCases.map((u, i) => (
               <div key={i} className="p-4 rounded-xl bg-card border border-foreground/5 space-y-1.5">
@@ -94,12 +130,12 @@ export default function ScanToPdfBlogPost() {
             ))}
           </div>
 
-          <h2 className="text-xl font-bold text-foreground pt-4 font-display">Tips for Cleaner Camera Scans</h2>
+          <h2 id="tips-for-cleaner-camera-scans" className="text-xl font-bold text-foreground pt-4 font-display">Tips for Cleaner Camera Scans</h2>
           <p>
             Use even, indirect lighting to avoid glare and shadows, place the document on a plain contrasting surface to make edge detection easier, and hold the camera directly overhead rather than at an angle to minimize perspective distortion. If a page still looks a little crooked afterward, fix it with <Link href="/tools/rotate-pdf" className="text-brand hover:underline">Rotate PDF</Link> before finalizing.
           </p>
 
-          <h2 className="text-xl font-bold text-foreground pt-4 font-display">iCreatePDF vs Other Scanning Apps</h2>
+          <h2 id="icreatepdf-vs-other-scanning-apps" className="text-xl font-bold text-foreground pt-4 font-display">iCreatePDF vs Other Scanning Apps</h2>
           <div className="overflow-x-auto">
             <table className="w-full text-xs text-foreground/70 border border-foreground/10 rounded-xl overflow-hidden">
               <thead className="bg-foreground/5 text-foreground font-semibold">
@@ -126,7 +162,7 @@ export default function ScanToPdfBlogPost() {
             </table>
           </div>
 
-          <h2 className="text-xl font-bold text-foreground pt-4 font-display">Frequently Asked Questions</h2>
+          <h2 id="frequently-asked-questions" className="text-xl font-bold text-foreground pt-4 font-display">Frequently Asked Questions</h2>
           <div className="space-y-4">
             {[
               { q: 'Do I need to install an app to scan with my phone?', a: 'No. iCreatePDF works directly in your phone\'s browser, using its camera through standard web APIs — no app store download required.' },

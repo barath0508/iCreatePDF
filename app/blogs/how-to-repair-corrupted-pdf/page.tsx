@@ -69,7 +69,43 @@ export default function RepairPdfBlogPost() {
             A PDF's internal structure includes a cross-reference table that tells viewers where each page and object lives inside the file. When that table gets corrupted — from an interrupted download, a failed transfer, or a buggy export — the file can fail to open entirely, even though most of its actual content is intact. Repair tools rebuild that structure so the content becomes readable again.
           </p>
 
-          <h2 className="text-xl font-bold text-foreground pt-4 font-display">Step-by-Step: Repair a PDF Using iCreatePDF</h2>
+          
+          {/* Table of Contents */}
+          <div className="p-6 rounded-2xl bg-card border border-foreground/10 space-y-3 my-6">
+            <h3 className="text-sm font-bold text-foreground flex items-center gap-2">
+              <span className="w-2.5 h-2.5 rounded-full bg-brand"></span>
+              Table of Contents
+            </h3>
+            <ul className="space-y-2 text-xs sm:text-sm text-foreground/75 pl-1">
+              <li>
+                <Link href="#step-by-step-repair-a-pdf-using-icreatepdf" className="hover:text-brand transition-colors">
+                  Step-by-Step: Repair a PDF Using iCreatePDF
+                </Link>
+              </li>
+              <li>
+                <Link href="#6-situations-where-pdf-repair-helps" className="hover:text-brand transition-colors">
+                  6 Situations Where PDF Repair Helps
+                </Link>
+              </li>
+              <li>
+                <Link href="#what-repair-can-and-cant-fix" className="hover:text-brand transition-colors">
+                  What Repair Can and Can't Fix
+                </Link>
+              </li>
+              <li>
+                <Link href="#icreatepdf-vs-other-repair-tools" className="hover:text-brand transition-colors">
+                  iCreatePDF vs Other Repair Tools
+                </Link>
+              </li>
+              <li>
+                <Link href="#frequently-asked-questions" className="hover:text-brand transition-colors">
+                  Frequently Asked Questions
+                </Link>
+              </li>
+            </ul>
+          </div>
+
+<h2 id="step-by-step-repair-a-pdf-using-icreatepdf" className="text-xl font-bold text-foreground pt-4 font-display">Step-by-Step: Repair a PDF Using iCreatePDF</h2>
           <ol className="list-decimal list-inside space-y-3 pl-4 text-sm">
             <li>Open <Link href="/tools/repair-pdf" className="text-brand hover:underline">iCreatePDF Repair PDF</Link>.</li>
             <li>Upload the damaged or corrupted PDF file.</li>
@@ -84,7 +120,7 @@ export default function RepairPdfBlogPost() {
             </p>
           </div>
 
-          <h2 className="text-xl font-bold text-foreground pt-4 font-display">6 Situations Where PDF Repair Helps</h2>
+          <h2 id="6-situations-where-pdf-repair-helps" className="text-xl font-bold text-foreground pt-4 font-display">6 Situations Where PDF Repair Helps</h2>
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 my-4">
             {useCases.map((u, i) => (
               <div key={i} className="p-4 rounded-xl bg-card border border-foreground/5 space-y-1.5">
@@ -94,12 +130,12 @@ export default function RepairPdfBlogPost() {
             ))}
           </div>
 
-          <h2 className="text-xl font-bold text-foreground pt-4 font-display">What Repair Can and Can't Fix</h2>
+          <h2 id="what-repair-can-and-cant-fix" className="text-xl font-bold text-foreground pt-4 font-display">What Repair Can and Can't Fix</h2>
           <p>
             Repair tools work by rebuilding a broken structure around content that's still physically present in the file — they can't recover data that was never saved or was overwritten. If your file opens but a specific page is missing entirely (not just displaying incorrectly), that page's data may not be recoverable. Always keep a backup of the original damaged file before attempting repair, in case you need to try a different recovery approach.
           </p>
 
-          <h2 className="text-xl font-bold text-foreground pt-4 font-display">iCreatePDF vs Other Repair Tools</h2>
+          <h2 id="icreatepdf-vs-other-repair-tools" className="text-xl font-bold text-foreground pt-4 font-display">iCreatePDF vs Other Repair Tools</h2>
           <div className="overflow-x-auto">
             <table className="w-full text-xs text-foreground/70 border border-foreground/10 rounded-xl overflow-hidden">
               <thead className="bg-foreground/5 text-foreground font-semibold">
@@ -126,7 +162,7 @@ export default function RepairPdfBlogPost() {
             </table>
           </div>
 
-          <h2 className="text-xl font-bold text-foreground pt-4 font-display">Frequently Asked Questions</h2>
+          <h2 id="frequently-asked-questions" className="text-xl font-bold text-foreground pt-4 font-display">Frequently Asked Questions</h2>
           <div className="space-y-4">
             {[
               { q: 'Why won\'t a PDF open at all?', a: 'Usually because its cross-reference table — the internal index that tells a viewer where each page lives — has become corrupted, often from an interrupted download or failed file transfer.' },

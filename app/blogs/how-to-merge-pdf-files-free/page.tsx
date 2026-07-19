@@ -69,7 +69,43 @@ export default function MergePdfBlogPost() {
             Merging PDF files is one of the most common document tasks — yet many people still email themselves files, use clunky desktop apps, or upload sensitive documents to random websites. There is a better way: merge PDFs directly in your browser with zero uploads.
           </p>
 
-          <h2 className="text-xl font-bold text-foreground pt-4 font-display">Step-by-Step: Merge PDFs Using iCreatePDF</h2>
+          
+          {/* Table of Contents */}
+          <div className="p-6 rounded-2xl bg-card border border-foreground/10 space-y-3 my-6">
+            <h3 className="text-sm font-bold text-foreground flex items-center gap-2">
+              <span className="w-2.5 h-2.5 rounded-full bg-brand"></span>
+              Table of Contents
+            </h3>
+            <ul className="space-y-2 text-xs sm:text-sm text-foreground/75 pl-1">
+              <li>
+                <Link href="#step-by-step-merge-pdfs-using-icreatepdf" className="hover:text-brand transition-colors">
+                  Step-by-Step: Merge PDFs Using iCreatePDF
+                </Link>
+              </li>
+              <li>
+                <Link href="#6-real-world-use-cases-for-pdf-merging" className="hover:text-brand transition-colors">
+                  6 Real-World Use Cases for PDF Merging
+                </Link>
+              </li>
+              <li>
+                <Link href="#merge-vs-combine-what-is-the-difference" className="hover:text-brand transition-colors">
+                  Merge vs Combine — What Is the Difference?
+                </Link>
+              </li>
+              <li>
+                <Link href="#icreatepdf-vs-other-merge-tools" className="hover:text-brand transition-colors">
+                  iCreatePDF vs Other Merge Tools
+                </Link>
+              </li>
+              <li>
+                <Link href="#frequently-asked-questions" className="hover:text-brand transition-colors">
+                  Frequently Asked Questions
+                </Link>
+              </li>
+            </ul>
+          </div>
+
+<h2 id="step-by-step-merge-pdfs-using-icreatepdf" className="text-xl font-bold text-foreground pt-4 font-display">Step-by-Step: Merge PDFs Using iCreatePDF</h2>
           <ol className="list-decimal list-inside space-y-3 pl-4 text-sm">
             <li>Navigate to <Link href="/tools/merge-pdf" className="text-brand hover:underline">iCreatePDF Merge PDF</Link>.</li>
             <li>Click <strong className="text-foreground">Upload Files</strong> and select all the PDFs you want to combine (hold Ctrl or Cmd to select multiple).</li>
@@ -84,7 +120,7 @@ export default function MergePdfBlogPost() {
             </p>
           </div>
 
-          <h2 className="text-xl font-bold text-foreground pt-4 font-display">6 Real-World Use Cases for PDF Merging</h2>
+          <h2 id="6-real-world-use-cases-for-pdf-merging" className="text-xl font-bold text-foreground pt-4 font-display">6 Real-World Use Cases for PDF Merging</h2>
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 my-4">
             {useCases.map((u, i) => (
               <div key={i} className="p-4 rounded-xl bg-card border border-foreground/5 space-y-1.5">
@@ -94,12 +130,12 @@ export default function MergePdfBlogPost() {
             ))}
           </div>
 
-          <h2 className="text-xl font-bold text-foreground pt-4 font-display">Merge vs Combine — What Is the Difference?</h2>
+          <h2 id="merge-vs-combine-what-is-the-difference" className="text-xl font-bold text-foreground pt-4 font-display">Merge vs Combine — What Is the Difference?</h2>
           <p>
             These terms are often used interchangeably, but technically: <strong className="text-foreground">merging</strong> appends all pages of multiple PDF files into a single new file, preserving all existing content. <strong className="text-foreground">Combining</strong> may also refer to creating a PDF portfolio (a ZIP-like container) — a different format. iCreatePDF performs true merging, producing a flat, universally compatible PDF.
           </p>
 
-          <h2 className="text-xl font-bold text-foreground pt-4 font-display">iCreatePDF vs Other Merge Tools</h2>
+          <h2 id="icreatepdf-vs-other-merge-tools" className="text-xl font-bold text-foreground pt-4 font-display">iCreatePDF vs Other Merge Tools</h2>
           <div className="overflow-x-auto">
             <table className="w-full text-xs text-foreground/70 border border-foreground/10 rounded-xl overflow-hidden">
               <thead className="bg-foreground/5 text-foreground font-semibold">
@@ -128,7 +164,7 @@ export default function MergePdfBlogPost() {
             </table>
           </div>
 
-          <h2 className="text-xl font-bold text-foreground pt-4 font-display">Frequently Asked Questions</h2>
+          <h2 id="frequently-asked-questions" className="text-xl font-bold text-foreground pt-4 font-display">Frequently Asked Questions</h2>
           <div className="space-y-4">
             {[
               { q: 'How many PDFs can I merge at once?', a: 'iCreatePDF has no arbitrary file count limit. The practical limit depends on your device RAM — most modern computers handle 20–50 PDFs easily.' },

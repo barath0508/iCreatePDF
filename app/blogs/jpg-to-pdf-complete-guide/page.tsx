@@ -77,7 +77,48 @@ export default function JpgToPdfBlogPost() {
             Converting images to PDF is one of the most frequently searched document tasks on the internet — and for good reason. PDFs preserve layout perfectly, are universally openable, and are the accepted standard for official submissions, applications, and professional sharing.
           </p>
 
-          <h2 className="text-xl font-bold text-foreground pt-4 font-display">Supported Image Formats</h2>
+          
+          {/* Table of Contents */}
+          <div className="p-6 rounded-2xl bg-card border border-foreground/10 space-y-3 my-6">
+            <h3 className="text-sm font-bold text-foreground flex items-center gap-2">
+              <span className="w-2.5 h-2.5 rounded-full bg-brand"></span>
+              Table of Contents
+            </h3>
+            <ul className="space-y-2 text-xs sm:text-sm text-foreground/75 pl-1">
+              <li>
+                <Link href="#supported-image-formats" className="hover:text-brand transition-colors">
+                  Supported Image Formats
+                </Link>
+              </li>
+              <li>
+                <Link href="#step-by-step-convert-jpg-to-pdf" className="hover:text-brand transition-colors">
+                  Step-by-Step: Convert JPG to PDF
+                </Link>
+              </li>
+              <li>
+                <Link href="#pdf-settings-explained" className="hover:text-brand transition-colors">
+                  PDF Settings Explained
+                </Link>
+              </li>
+              <li>
+                <Link href="#why-convert-images-to-pdf" className="hover:text-brand transition-colors">
+                  Why Convert Images to PDF?
+                </Link>
+              </li>
+              <li>
+                <Link href="#tips-for-the-best-output-quality" className="hover:text-brand transition-colors">
+                  Tips for the Best Output Quality
+                </Link>
+              </li>
+              <li>
+                <Link href="#frequently-asked-questions" className="hover:text-brand transition-colors">
+                  Frequently Asked Questions
+                </Link>
+              </li>
+            </ul>
+          </div>
+
+<h2 id="supported-image-formats" className="text-xl font-bold text-foreground pt-4 font-display">Supported Image Formats</h2>
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 my-4">
             {formats.map((f) => (
               <div key={f.ext} className="p-3 rounded-xl bg-card border border-foreground/5 flex items-start gap-3">
@@ -87,7 +128,7 @@ export default function JpgToPdfBlogPost() {
             ))}
           </div>
 
-          <h2 className="text-xl font-bold text-foreground pt-4 font-display">Step-by-Step: Convert JPG to PDF</h2>
+          <h2 id="step-by-step-convert-jpg-to-pdf" className="text-xl font-bold text-foreground pt-4 font-display">Step-by-Step: Convert JPG to PDF</h2>
           <ol className="list-decimal list-inside space-y-3 pl-4 text-sm">
             <li>Open <Link href="/tools/jpg-to-pdf" className="text-brand hover:underline">iCreatePDF — JPG to PDF</Link>.</li>
             <li>Drag and drop your images into the upload zone, or click to browse. Add as many as you need.</li>
@@ -96,7 +137,7 @@ export default function JpgToPdfBlogPost() {
             <li>Click <strong className="text-foreground">Convert to PDF</strong> and download your file. Done.</li>
           </ol>
 
-          <h2 className="text-xl font-bold text-foreground pt-4 font-display">PDF Settings Explained</h2>
+          <h2 id="pdf-settings-explained" className="text-xl font-bold text-foreground pt-4 font-display">PDF Settings Explained</h2>
           <div className="space-y-3 my-4">
             {settings.map((s) => (
               <div key={s.name} className="p-4 rounded-xl bg-card border border-foreground/5 grid grid-cols-3 gap-4">
@@ -113,7 +154,7 @@ export default function JpgToPdfBlogPost() {
             ))}
           </div>
 
-          <h2 className="text-xl font-bold text-foreground pt-4 font-display">Why Convert Images to PDF?</h2>
+          <h2 id="why-convert-images-to-pdf" className="text-xl font-bold text-foreground pt-4 font-display">Why Convert Images to PDF?</h2>
           <p>
             While JPEG and PNG are excellent for photos, they have limitations when it comes to sharing and submissions:
           </p>
@@ -125,7 +166,7 @@ export default function JpgToPdfBlogPost() {
             <li><strong className="text-foreground">Professional presentation</strong> — PDFs are the accepted standard for job applications, legal documents, academic submissions, and business proposals.</li>
           </ul>
 
-          <h2 className="text-xl font-bold text-foreground pt-4 font-display">Tips for the Best Output Quality</h2>
+          <h2 id="tips-for-the-best-output-quality" className="text-xl font-bold text-foreground pt-4 font-display">Tips for the Best Output Quality</h2>
           <div className="space-y-4">
             {[
               { tip: 'Use High quality for documents with small text', detail: 'If your images contain text (receipts, ID cards, typed documents), use the High quality setting to ensure text remains sharp and readable.' },
@@ -140,7 +181,7 @@ export default function JpgToPdfBlogPost() {
             ))}
           </div>
 
-          <h2 className="text-xl font-bold text-foreground pt-4 font-display">Frequently Asked Questions</h2>
+          <h2 id="frequently-asked-questions" className="text-xl font-bold text-foreground pt-4 font-display">Frequently Asked Questions</h2>
           <div className="space-y-4">
             {[
               { q: 'How many images can I convert at once?', a: 'There is no hard limit in iCreatePDF. The practical limit depends on your device memory. Most users process 20–100 images in a single session.' },

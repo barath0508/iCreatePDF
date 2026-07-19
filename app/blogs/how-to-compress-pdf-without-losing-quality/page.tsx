@@ -92,12 +92,47 @@ export default function CompressPdfBlogPost() {
               <li><strong>Browser Safety:</strong> Keep secure legal and accounting records safe from server-side compromises.</li>
             </ul>
           </div>
+          {/* Table of Contents */}
+          <div className="p-6 rounded-2xl bg-card border border-foreground/10 space-y-3 my-6">
+            <h3 className="text-sm font-bold text-foreground flex items-center gap-2">
+              <span className="w-2.5 h-2.5 rounded-full bg-brand"></span>
+              Table of Contents
+            </h3>
+            <ul className="space-y-2 text-xs sm:text-sm text-foreground/75 pl-1">
+              <li>
+                <Link href="#why-do-pdf-files-get-so-large" className="hover:text-brand transition-colors">
+                  Why Do PDF Files Get So Large?
+                </Link>
+              </li>
+              <li>
+                <Link href="#what-are-the-top-4-expert-tips-for-better-pdf-compression" className="hover:text-brand transition-colors">
+                  What Are the Top 4 Expert Tips for Better PDF Compression?
+                </Link>
+              </li>
+              <li>
+                <Link href="#how-do-you-compress-a-pdf-offline-with-icreatepdf" className="hover:text-brand transition-colors">
+                  How Do You Compress a PDF Offline with iCreatePDF?
+                </Link>
+              </li>
+              <li>
+                <Link href="#what-are-the-common-myths-about-pdf-compression" className="hover:text-brand transition-colors">
+                  What Are the Common Myths About PDF Compression?
+                </Link>
+              </li>
+              <li>
+                <Link href="#what-file-size-should-you-target-for-standard-email-attachments" className="hover:text-brand transition-colors">
+                  What File Size Should You Target for Standard Email Attachments?
+                </Link>
+              </li>
+            </ul>
+          </div>
+
 
           <p>
             <strong>PDF compression</strong> is the process of reducing a document's file size by downsampling image resolutions, compacting font streams, and scrubbing metadata. <strong>Lossless compression</strong> reduces bytes without degrading the visual readability of vectors or text labels. Compressing files locally allows you to keep secure legal or accounting records private from cloud servers.
           </p>
 
-          <h2 className="text-xl font-bold text-foreground pt-4 font-display">Why Do PDF Files Get So Large?</h2>
+          <h2 id="why-do-pdf-files-get-so-large" className="text-xl font-bold text-foreground pt-4 font-display">Why Do PDF Files Get So Large?</h2>
           <p>
             Most PDFs originate from scanned documents, design exports (Photoshop, Illustrator, InDesign), or word processors. Each source embeds data differently:
           </p>
@@ -107,7 +142,7 @@ export default function CompressPdfBlogPost() {
             <li><strong className="text-foreground">Design exports</strong> include colour profiles, embedded thumbnails, and uncompressed vector paths.</li>
           </ul>
 
-          <h2 className="text-xl font-bold text-foreground pt-4 font-display">What Are the Top 4 Expert Tips for Better PDF Compression?</h2>
+          <h2 id="what-are-the-top-4-expert-tips-for-better-pdf-compression" className="text-xl font-bold text-foreground pt-4 font-display">What Are the Top 4 Expert Tips for Better PDF Compression?</h2>
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 my-4">
             {tips.map((t, i) => (
               <div key={i} className="p-4 rounded-xl bg-card border border-foreground/5 space-y-2">
@@ -118,7 +153,7 @@ export default function CompressPdfBlogPost() {
             ))}
           </div>
 
-          <h2 className="text-xl font-bold text-foreground pt-4 font-display">How Do You Compress a PDF Offline with iCreatePDF?</h2>
+          <h2 id="how-do-you-compress-a-pdf-offline-with-icreatepdf" className="text-xl font-bold text-foreground pt-4 font-display">How Do You Compress a PDF Offline with iCreatePDF?</h2>
           <ol className="list-decimal list-inside space-y-3 pl-4 text-sm">
             <li>Go to <Link href="/tools/compress-pdf" className="text-brand hover:underline">/compress-pdf</Link> — no sign-up needed.</li>
             <li>Drop your PDF onto the upload zone.</li>
@@ -133,7 +168,7 @@ export default function CompressPdfBlogPost() {
             </p>
           </div>
 
-          <h2 className="text-xl font-bold text-foreground pt-4 font-display">What Are the Common Myths About PDF Compression?</h2>
+          <h2 id="what-are-the-common-myths-about-pdf-compression" className="text-xl font-bold text-foreground pt-4 font-display">What Are the Common Myths About PDF Compression?</h2>
           <div className="space-y-4">
             {myths.map((m, i) => (
               <div key={i} className="p-4 rounded-xl bg-card border border-foreground/5 space-y-1">
@@ -146,7 +181,7 @@ export default function CompressPdfBlogPost() {
             ))}
           </div>
 
-          <h2 className="text-xl font-bold text-foreground pt-4 font-display">What File Size Should You Target for Standard Email Attachments?</h2>
+          <h2 id="what-file-size-should-you-target-for-standard-email-attachments" className="text-xl font-bold text-foreground pt-4 font-display">What File Size Should You Target for Standard Email Attachments?</h2>
           <div className="overflow-x-auto">
             <table className="w-full text-xs text-foreground/70 border border-foreground/10 rounded-xl overflow-hidden">
               <thead className="bg-foreground/5 text-foreground font-semibold">

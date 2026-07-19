@@ -88,8 +88,43 @@ export default function HtmlToPdfBlogPost() {
               <li><strong>Zero Data Transfer:</strong> Keeps web app data and forms secure inside your local session.</li>
             </ul>
           </div>
+          {/* Table of Contents */}
+          <div className="p-6 rounded-2xl bg-card border border-foreground/10 space-y-3 my-6">
+            <h3 className="text-sm font-bold text-foreground flex items-center gap-2">
+              <span className="w-2.5 h-2.5 rounded-full bg-brand"></span>
+              Table of Contents
+            </h3>
+            <ul className="space-y-2 text-xs sm:text-sm text-foreground/75 pl-1">
+              <li>
+                <Link href="#step-by-step-how-do-you-convert-html-to-pdf-offline" className="hover:text-brand transition-colors">
+                  Step-by-Step: How Do You Convert HTML to PDF Offline?
+                </Link>
+              </li>
+              <li>
+                <Link href="#why-convert-html-web-pages-to-pdf-documents" className="hover:text-brand transition-colors">
+                  Why Convert HTML Web Pages to PDF Documents?
+                </Link>
+              </li>
+              <li>
+                <Link href="#how-do-you-optimize-html-and-css-layouts-for-pdf-conversion" className="hover:text-brand transition-colors">
+                  How Do You Optimize HTML and CSS Layouts for PDF Conversion?
+                </Link>
+              </li>
+              <li>
+                <Link href="#how-does-icreatepdf-compare-to-other-html-to-pdf-web-tools" className="hover:text-brand transition-colors">
+                  How Does iCreatePDF Compare to Other HTML-to-PDF Web Tools?
+                </Link>
+              </li>
+              <li>
+                <Link href="#frequently-asked-questions-about-this-tool" className="hover:text-brand transition-colors">
+                  Frequently Asked Questions About This Tool
+                </Link>
+              </li>
+            </ul>
+          </div>
 
-          <h2 className="text-xl font-bold text-foreground pt-4 font-display">Step-by-Step: How Do You Convert HTML to PDF Offline?</h2>
+
+          <h2 id="step-by-step-how-do-you-convert-html-to-pdf-offline" className="text-xl font-bold text-foreground pt-4 font-display">Step-by-Step: How Do You Convert HTML to PDF Offline?</h2>
           <ol className="list-decimal list-inside space-y-3 pl-4 text-sm">
             <li>Open <Link href="/tools/html-to-pdf" className="text-brand hover:underline">iCreatePDF HTML to PDF</Link>.</li>
             <li>Paste your HTML/CSS content, or upload an .html file.</li>
@@ -104,7 +139,7 @@ export default function HtmlToPdfBlogPost() {
             </p>
           </div>
 
-          <h2 className="text-xl font-bold text-foreground pt-4 font-display">Why Convert HTML Web Pages to PDF Documents?</h2>
+          <h2 id="why-convert-html-web-pages-to-pdf-documents" className="text-xl font-bold text-foreground pt-4 font-display">Why Convert HTML Web Pages to PDF Documents?</h2>
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 my-4">
             {useCases.map((u, i) => (
               <div key={i} className="p-4 rounded-xl bg-card border border-foreground/5 space-y-1.5">
@@ -114,12 +149,12 @@ export default function HtmlToPdfBlogPost() {
             ))}
           </div>
 
-          <h2 className="text-xl font-bold text-foreground pt-4 font-display">How Do You Optimize HTML and CSS Layouts for PDF Conversion?</h2>
+          <h2 id="how-do-you-optimize-html-and-css-layouts-for-pdf-conversion" className="text-xl font-bold text-foreground pt-4 font-display">How Do You Optimize HTML and CSS Layouts for PDF Conversion?</h2>
           <p>
             Complex CSS layouts (flexbox grids, absolute positioning, custom fonts) can render slightly differently in a PDF export than in a live browser, because the PDF is a fixed-page format rather than a fluid webpage. Keep page-break behavior in mind for multi-page templates, and use standard web-safe fonts or embed custom fonts for consistent output.
           </p>
 
-          <h2 className="text-xl font-bold text-foreground pt-4 font-display">How Does iCreatePDF Compare to Other HTML-to-PDF Web Tools?</h2>
+          <h2 id="how-does-icreatepdf-compare-to-other-html-to-pdf-web-tools" className="text-xl font-bold text-foreground pt-4 font-display">How Does iCreatePDF Compare to Other HTML-to-PDF Web Tools?</h2>
           <div className="overflow-x-auto">
             <table className="w-full text-xs text-foreground/70 border border-foreground/10 rounded-xl overflow-hidden">
               <thead className="bg-foreground/5 text-foreground font-semibold">
@@ -146,7 +181,7 @@ export default function HtmlToPdfBlogPost() {
             </table>
           </div>
 
-          <h2 className="text-xl font-bold text-foreground pt-4 font-display">Frequently Asked Questions About This Tool</h2>
+          <h2 id="frequently-asked-questions-about-this-tool" className="text-xl font-bold text-foreground pt-4 font-display">Frequently Asked Questions About This Tool</h2>
           <div className="space-y-4">
             {[
               { q: 'Will my CSS styling be preserved exactly?', a: 'Most standard CSS (colors, fonts, spacing, tables, flexbox) renders accurately. Highly dynamic or JavaScript-dependent layouts may need simplification for a static PDF export.' },

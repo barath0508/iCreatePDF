@@ -88,12 +88,47 @@ export default function ComparePdfBlogPost() {
               <li><strong>Fidelity Check:</strong> Useful for checking final signed versions against verified agreements.</li>
             </ul>
           </div>
+          {/* Table of Contents */}
+          <div className="p-6 rounded-2xl bg-card border border-foreground/10 space-y-3 my-6">
+            <h3 className="text-sm font-bold text-foreground flex items-center gap-2">
+              <span className="w-2.5 h-2.5 rounded-full bg-brand"></span>
+              Table of Contents
+            </h3>
+            <ul className="space-y-2 text-xs sm:text-sm text-foreground/75 pl-1">
+              <li>
+                <Link href="#step-by-step-how-do-you-compare-two-pdf-files-side-by-side" className="hover:text-brand transition-colors">
+                  Step-by-Step: How Do You Compare Two PDF Files Side-by-Side?
+                </Link>
+              </li>
+              <li>
+                <Link href="#why-should-you-compare-different-pdf-document-versions" className="hover:text-brand transition-colors">
+                  Why Should You Compare Different PDF Document Versions?
+                </Link>
+              </li>
+              <li>
+                <Link href="#what-is-the-difference-between-visual-comparison-and-text-diffing" className="hover:text-brand transition-colors">
+                  What is the Difference Between Visual Comparison and Text Diffing?
+                </Link>
+              </li>
+              <li>
+                <Link href="#how-does-icreatepdf-compare-to-other-pdf-comparison-software" className="hover:text-brand transition-colors">
+                  How Does iCreatePDF Compare to Other PDF Comparison Software?
+                </Link>
+              </li>
+              <li>
+                <Link href="#frequently-asked-questions-about-this-tool" className="hover:text-brand transition-colors">
+                  Frequently Asked Questions About This Tool
+                </Link>
+              </li>
+            </ul>
+          </div>
+
 
           <p>
             A <strong>PDF comparison</strong> refers to analyzing two versions of a document to identify changes, deletions, or additions. <strong>Side-by-side synchronized scrolling</strong> allows reviewers to scroll both layouts simultaneously, making visual differences stand out. Running this comparison locally is essential for reviewing sensitive contract drafts and corporate agreements.
           </p>
 
-          <h2 className="text-xl font-bold text-foreground pt-4 font-display">Step-by-Step: How Do You Compare Two PDF Files Side-by-Side?</h2>
+          <h2 id="step-by-step-how-do-you-compare-two-pdf-files-side-by-side" className="text-xl font-bold text-foreground pt-4 font-display">Step-by-Step: How Do You Compare Two PDF Files Side-by-Side?</h2>
           <ol className="list-decimal list-inside space-y-3 pl-4 text-sm">
             <li>Open <Link href="/tools/compare-pdf" className="text-brand hover:underline">iCreatePDF Compare PDF</Link>.</li>
             <li>Upload the original version and the revised version.</li>
@@ -108,7 +143,7 @@ export default function ComparePdfBlogPost() {
             </p>
           </div>
 
-          <h2 className="text-xl font-bold text-foreground pt-4 font-display">Why Should You Compare Different PDF Document Versions?</h2>
+          <h2 id="why-should-you-compare-different-pdf-document-versions" className="text-xl font-bold text-foreground pt-4 font-display">Why Should You Compare Different PDF Document Versions?</h2>
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 my-4">
             {useCases.map((u, i) => (
               <div key={i} className="p-4 rounded-xl bg-card border border-foreground/5 space-y-1.5">
@@ -118,12 +153,12 @@ export default function ComparePdfBlogPost() {
             ))}
           </div>
 
-          <h2 className="text-xl font-bold text-foreground pt-4 font-display">What is the Difference Between Visual Comparison and Text Diffing?</h2>
+          <h2 id="what-is-the-difference-between-visual-comparison-and-text-diffing" className="text-xl font-bold text-foreground pt-4 font-display">What is the Difference Between Visual Comparison and Text Diffing?</h2>
           <p>
             iCreatePDF's comparison is a visual, side-by-side view — ideal for catching layout changes, added/removed images, and reformatted sections that a pure text-diff tool would miss. If you specifically need to compare the raw text content word-for-word, extract text from both versions first using <Link href="/tools/pdf-to-text" className="text-brand hover:underline">PDF to Text</Link> and diff the results in a text comparison tool.
           </p>
 
-          <h2 className="text-xl font-bold text-foreground pt-4 font-display">How Does iCreatePDF Compare to Other PDF Comparison Software?</h2>
+          <h2 id="how-does-icreatepdf-compare-to-other-pdf-comparison-software" className="text-xl font-bold text-foreground pt-4 font-display">How Does iCreatePDF Compare to Other PDF Comparison Software?</h2>
           <div className="overflow-x-auto">
             <table className="w-full text-xs text-foreground/70 border border-foreground/10 rounded-xl overflow-hidden">
               <thead className="bg-foreground/5 text-foreground font-semibold">
@@ -150,7 +185,7 @@ export default function ComparePdfBlogPost() {
             </table>
           </div>
 
-          <h2 className="text-xl font-bold text-foreground pt-4 font-display">Frequently Asked Questions About This Tool</h2>
+          <h2 id="frequently-asked-questions-about-this-tool" className="text-xl font-bold text-foreground pt-4 font-display">Frequently Asked Questions About This Tool</h2>
           <div className="space-y-4">
             {[
               { q: 'Does this highlight exact changed words automatically?', a: 'The comparison view is visual and side-by-side, which is best for spotting layout and content changes as you scroll; it does not auto-highlight individual changed words like a text-diff tool.' },

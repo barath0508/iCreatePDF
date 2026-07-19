@@ -85,8 +85,38 @@ export default function ExtractPagesBlog() {
               <li><strong>Confidential separation:</strong> Split company reports locally, keeping remaining pages private.</li>
             </ul>
           </div>
+          {/* Table of Contents */}
+          <div className="p-6 rounded-2xl bg-card border border-foreground/10 space-y-3 my-6">
+            <h3 className="text-sm font-bold text-foreground flex items-center gap-2">
+              <span className="w-2.5 h-2.5 rounded-full bg-brand"></span>
+              Table of Contents
+            </h3>
+            <ul className="space-y-2 text-xs sm:text-sm text-foreground/75 pl-1">
+              <li>
+                <Link href="#what-are-the-three-ways-to-clean-up-and-organize-pdf-pages" className="hover:text-brand transition-colors">
+                  What Are the Three Ways to Clean Up and Organize PDF Pages?
+                </Link>
+              </li>
+              <li>
+                <Link href="#how-can-you-extract-specific-pages-from-a-pdf-instantly" className="hover:text-brand transition-colors">
+                  How Can You Extract Specific Pages from a PDF Instantly?
+                </Link>
+              </li>
+              <li>
+                <Link href="#how-do-you-crop-and-resize-extracted-pdf-pages" className="hover:text-brand transition-colors">
+                  How Do You Crop and Resize Extracted PDF Pages?
+                </Link>
+              </li>
+              <li>
+                <Link href="#frequently-asked-questions-about-this-tool" className="hover:text-brand transition-colors">
+                  Frequently Asked Questions About This Tool
+                </Link>
+              </li>
+            </ul>
+          </div>
 
-          <h2 className="text-xl font-bold text-foreground pt-4 font-display">What Are the Three Ways to Clean Up and Organize PDF Pages?</h2>
+
+          <h2 id="what-are-the-three-ways-to-clean-up-and-organize-pdf-pages" className="text-xl font-bold text-foreground pt-4 font-display">What Are the Three Ways to Clean Up and Organize PDF Pages?</h2>
           <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 my-4">
             {methods.map((m, i) => (
               <div key={i} className="p-4 rounded-xl bg-card border border-foreground/5 space-y-2">
@@ -97,7 +127,7 @@ export default function ExtractPagesBlog() {
             ))}
           </div>
 
-          <h2 className="text-xl font-bold text-foreground pt-4 font-display">How Can You Extract Specific Pages from a PDF Instantly?</h2>
+          <h2 id="how-can-you-extract-specific-pages-from-a-pdf-instantly" className="text-xl font-bold text-foreground pt-4 font-display">How Can You Extract Specific Pages from a PDF Instantly?</h2>
           <p>
             Using iCreatePDF\'s page extractor, you can input a page range (e.g., <code className="text-brand font-mono">1, 3-5, 10</code>) and generate a new PDF containing only those selected pages.
           </p>
@@ -108,7 +138,7 @@ export default function ExtractPagesBlog() {
             <li>Click <em>Extract Pages</em> and download your split document.</li>
           </ol>
 
-          <h2 className="text-xl font-bold text-foreground pt-4 font-display">How Do You Crop and Resize Extracted PDF Pages?</h2>
+          <h2 id="how-do-you-crop-and-resize-extracted-pdf-pages" className="text-xl font-bold text-foreground pt-4 font-display">How Do You Crop and Resize Extracted PDF Pages?</h2>
           <p>
             If your pages are scanned with off-center borders or extra black lines, crop them down. Crop margins let you specify how many millimeters to cut from the top, bottom, left, and right sides.
           </p>
@@ -116,7 +146,7 @@ export default function ExtractPagesBlog() {
             Similarly, if you need to print a document on A4 but it was designed on Letter size, the Resizer tool handles rescaling content properly without cropping important text.
           </p>
 
-          <h2 className="text-xl font-bold text-foreground pt-4 font-display">Frequently Asked Questions About This Tool</h2>
+          <h2 id="frequently-asked-questions-about-this-tool" className="text-xl font-bold text-foreground pt-4 font-display">Frequently Asked Questions About This Tool</h2>
           <div className="space-y-4">
             <div className="p-4 rounded-xl bg-card border border-foreground/5 space-y-1">
               <h4 className="text-sm font-semibold text-foreground">Does extracting pages reduce quality?</h4>

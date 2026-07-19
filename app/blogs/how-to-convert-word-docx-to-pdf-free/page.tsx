@@ -79,8 +79,33 @@ export default function WordToPdfBlog() {
               <li><strong>Immediate Download:</strong> Convert in milliseconds using browser-based styling engines.</li>
             </ul>
           </div>
+          {/* Table of Contents */}
+          <div className="p-6 rounded-2xl bg-card border border-foreground/10 space-y-3 my-6">
+            <h3 className="text-sm font-bold text-foreground flex items-center gap-2">
+              <span className="w-2.5 h-2.5 rounded-full bg-brand"></span>
+              Table of Contents
+            </h3>
+            <ul className="space-y-2 text-xs sm:text-sm text-foreground/75 pl-1">
+              <li>
+                <Link href="#the-layout-shift-problem" className="hover:text-brand transition-colors">
+                  The Layout Shift Problem
+                </Link>
+              </li>
+              <li>
+                <Link href="#steps-to-convert-documents-to-pdf" className="hover:text-brand transition-colors">
+                  Steps to Convert Documents to PDF
+                </Link>
+              </li>
+              <li>
+                <Link href="#what-are-the-main-advantages-of-converting-word-docs-to-universal-pdfs" className="hover:text-brand transition-colors">
+                  What Are the Main Advantages of Converting Word Docs to Universal PDFs?
+                </Link>
+              </li>
+            </ul>
+          </div>
 
-          <h2 className="text-xl font-bold text-foreground pt-4 font-display flex items-center gap-2">
+
+          <h2 id="the-layout-shift-problem" className="text-xl font-bold text-foreground pt-4 font-display flex items-center gap-2">
             <FileText className="w-5 h-5 text-brand" />
             The Layout Shift Problem
           </h2>
@@ -88,7 +113,7 @@ export default function WordToPdfBlog() {
             Standard online converters frequently break spacing, tables, or image captions. This is because they use basic server translation frameworks that lack proper layout compatibility. iCreatePDF processes conversions locally using modern document parsing libraries to preserve structural layouts, tables, borders, and margins.
           </p>
 
-          <h2 className="text-xl font-bold text-foreground pt-4 font-display flex items-center gap-2">
+          <h2 id="steps-to-convert-documents-to-pdf" className="text-xl font-bold text-foreground pt-4 font-display flex items-center gap-2">
             <CheckCircle className="w-5 h-5 text-brand" />
             Steps to Convert Documents to PDF
           </h2>
@@ -99,7 +124,7 @@ export default function WordToPdfBlog() {
             <li>Click <strong>Download PDF</strong>.</li>
           </ol>
 
-          <h2 className="text-xl font-bold text-foreground pt-4 font-display">What Are the Main Advantages of Converting Word Docs to Universal PDFs?</h2>
+          <h2 id="what-are-the-main-advantages-of-converting-word-docs-to-universal-pdfs" className="text-xl font-bold text-foreground pt-4 font-display">What Are the Main Advantages of Converting Word Docs to Universal PDFs?</h2>
           <ul className="list-disc list-inside space-y-2 pl-4 text-sm">
             <li><strong className="text-foreground">Cross-Platform Consistency:</strong> Various mobile and desktop platforms display the exact same formatting.</li>
             <li><strong className="text-foreground">Non-Editable by Default:</strong> Restricts casual edits to pricing structures or legal clauses.</li>

@@ -88,12 +88,47 @@ export default function HeaderFooterBlogPost() {
               <li><strong>Simple Layouts:</strong> Pick margins that prevent headers from overlapping primary document text.</li>
             </ul>
           </div>
+          {/* Table of Contents */}
+          <div className="p-6 rounded-2xl bg-card border border-foreground/10 space-y-3 my-6">
+            <h3 className="text-sm font-bold text-foreground flex items-center gap-2">
+              <span className="w-2.5 h-2.5 rounded-full bg-brand"></span>
+              Table of Contents
+            </h3>
+            <ul className="space-y-2 text-xs sm:text-sm text-foreground/75 pl-1">
+              <li>
+                <Link href="#step-by-step-how-do-you-add-a-header-or-footer-to-a-pdf" className="hover:text-brand transition-colors">
+                  Step-by-Step: How Do You Add a Header or Footer to a PDF?
+                </Link>
+              </li>
+              <li>
+                <Link href="#what-are-the-common-reasons-to-add-a-header-or-footer" className="hover:text-brand transition-colors">
+                  What Are the Common Reasons to Add a Header or Footer?
+                </Link>
+              </li>
+              <li>
+                <Link href="#how-do-headers-and-footers-compare-to-page-numbers-and-bates-numbering" className="hover:text-brand transition-colors">
+                  How Do Headers and Footers Compare to Page Numbers and Bates Numbering?
+                </Link>
+              </li>
+              <li>
+                <Link href="#how-does-icreatepdf-compare-to-other-header-and-footer-tools" className="hover:text-brand transition-colors">
+                  How Does iCreatePDF Compare to Other Header and Footer Tools?
+                </Link>
+              </li>
+              <li>
+                <Link href="#frequently-asked-questions-about-this-tool" className="hover:text-brand transition-colors">
+                  Frequently Asked Questions About This Tool
+                </Link>
+              </li>
+            </ul>
+          </div>
+
 
           <p>
             A <strong>PDF header</strong> represents identifying content aligned at the top margin of a page, while a <strong>PDF footer</strong> appears at the bottom. Stamping these components allows you to establish legal notices, version dates, or corporate ownership across a document. Processing your document layout locally means company agreements remain safe from server leaks.
           </p>
 
-          <h2 className="text-xl font-bold text-foreground pt-4 font-display">Step-by-Step: How Do You Add a Header or Footer to a PDF?</h2>
+          <h2 id="step-by-step-how-do-you-add-a-header-or-footer-to-a-pdf" className="text-xl font-bold text-foreground pt-4 font-display">Step-by-Step: How Do You Add a Header or Footer to a PDF?</h2>
           <ol className="list-decimal list-inside space-y-3 pl-4 text-sm">
             <li>Open <Link href="/tools/header-footer" className="text-brand hover:underline">iCreatePDF Header &amp; Footer</Link>.</li>
             <li>Upload the PDF you want to stamp.</li>
@@ -108,7 +143,7 @@ export default function HeaderFooterBlogPost() {
             </p>
           </div>
 
-          <h2 className="text-xl font-bold text-foreground pt-4 font-display">What Are the Common Reasons to Add a Header or Footer?</h2>
+          <h2 id="what-are-the-common-reasons-to-add-a-header-or-footer" className="text-xl font-bold text-foreground pt-4 font-display">What Are the Common Reasons to Add a Header or Footer?</h2>
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 my-4">
             {useCases.map((u, i) => (
               <div key={i} className="p-4 rounded-xl bg-card border border-foreground/5 space-y-1.5">
@@ -118,12 +153,12 @@ export default function HeaderFooterBlogPost() {
             ))}
           </div>
 
-          <h2 className="text-xl font-bold text-foreground pt-4 font-display">How Do Headers and Footers Compare to Page Numbers and Bates Numbering?</h2>
+          <h2 id="how-do-headers-and-footers-compare-to-page-numbers-and-bates-numbering" className="text-xl font-bold text-foreground pt-4 font-display">How Do Headers and Footers Compare to Page Numbers and Bates Numbering?</h2>
           <p>
             If all you need is sequential page numbers, use the dedicated <Link href="/tools/add-page-numbers" className="text-brand hover:underline">Add Page Numbers</Link> tool for a simpler workflow. If you need legal-style sequential document identifiers (common in litigation), use <Link href="/tools/bates-numbering" className="text-brand hover:underline">Bates Numbering</Link> instead. Header &amp; Footer is best for custom text — names, dates, notices — that isn't a simple counter.
           </p>
 
-          <h2 className="text-xl font-bold text-foreground pt-4 font-display">How Does iCreatePDF Compare to Other Header and Footer Tools?</h2>
+          <h2 id="how-does-icreatepdf-compare-to-other-header-and-footer-tools" className="text-xl font-bold text-foreground pt-4 font-display">How Does iCreatePDF Compare to Other Header and Footer Tools?</h2>
           <div className="overflow-x-auto">
             <table className="w-full text-xs text-foreground/70 border border-foreground/10 rounded-xl overflow-hidden">
               <thead className="bg-foreground/5 text-foreground font-semibold">
@@ -150,7 +185,7 @@ export default function HeaderFooterBlogPost() {
             </table>
           </div>
 
-          <h2 className="text-xl font-bold text-foreground pt-4 font-display">Frequently Asked Questions About This Tool</h2>
+          <h2 id="frequently-asked-questions-about-this-tool" className="text-xl font-bold text-foreground pt-4 font-display">Frequently Asked Questions About This Tool</h2>
           <div className="space-y-4">
             {[
               { q: 'Can I add different text to the header and footer at the same time?', a: 'Yes — set independent header and footer text, and both are applied together across every page in one pass.' },

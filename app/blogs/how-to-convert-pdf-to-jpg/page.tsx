@@ -88,8 +88,43 @@ export default function PdfToJpgBlogPost() {
               <li><strong>Offline Conversion:</strong> Processes pages on local hardware, keeping confidential page images private.</li>
             </ul>
           </div>
+          {/* Table of Contents */}
+          <div className="p-6 rounded-2xl bg-card border border-foreground/10 space-y-3 my-6">
+            <h3 className="text-sm font-bold text-foreground flex items-center gap-2">
+              <span className="w-2.5 h-2.5 rounded-full bg-brand"></span>
+              Table of Contents
+            </h3>
+            <ul className="space-y-2 text-xs sm:text-sm text-foreground/75 pl-1">
+              <li>
+                <Link href="#step-by-step-how-do-you-convert-pdf-pages-to-jpg-images" className="hover:text-brand transition-colors">
+                  Step-by-Step: How Do You Convert PDF Pages to JPG Images?
+                </Link>
+              </li>
+              <li>
+                <Link href="#why-convert-pdf-pages-into-discrete-jpg-files" className="hover:text-brand transition-colors">
+                  Why Convert PDF Pages into Discrete JPG Files?
+                </Link>
+              </li>
+              <li>
+                <Link href="#does-converting-a-pdf-to-jpg-reduce-image-and-text-quality" className="hover:text-brand transition-colors">
+                  Does Converting a PDF to JPG Reduce Image and Text Quality?
+                </Link>
+              </li>
+              <li>
+                <Link href="#how-does-icreatepdf-compare-to-other-pdf-to-jpg-converters" className="hover:text-brand transition-colors">
+                  How Does iCreatePDF Compare to Other PDF-to-JPG Converters?
+                </Link>
+              </li>
+              <li>
+                <Link href="#frequently-asked-questions-about-this-tool" className="hover:text-brand transition-colors">
+                  Frequently Asked Questions About This Tool
+                </Link>
+              </li>
+            </ul>
+          </div>
 
-          <h2 className="text-xl font-bold text-foreground pt-4 font-display">Step-by-Step: How Do You Convert PDF Pages to JPG Images?</h2>
+
+          <h2 id="step-by-step-how-do-you-convert-pdf-pages-to-jpg-images" className="text-xl font-bold text-foreground pt-4 font-display">Step-by-Step: How Do You Convert PDF Pages to JPG Images?</h2>
           <ol className="list-decimal list-inside space-y-3 pl-4 text-sm">
             <li>Open <Link href="/tools/pdf-to-jpg" className="text-brand hover:underline">iCreatePDF PDF to JPG</Link>.</li>
             <li>Drag and drop your PDF file, or click to browse and select it.</li>
@@ -104,7 +139,7 @@ export default function PdfToJpgBlogPost() {
             </p>
           </div>
 
-          <h2 className="text-xl font-bold text-foreground pt-4 font-display">Why Convert PDF Pages into Discrete JPG Files?</h2>
+          <h2 id="why-convert-pdf-pages-into-discrete-jpg-files" className="text-xl font-bold text-foreground pt-4 font-display">Why Convert PDF Pages into Discrete JPG Files?</h2>
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 my-4">
             {useCases.map((u, i) => (
               <div key={i} className="p-4 rounded-xl bg-card border border-foreground/5 space-y-1.5">
@@ -114,12 +149,12 @@ export default function PdfToJpgBlogPost() {
             ))}
           </div>
 
-          <h2 className="text-xl font-bold text-foreground pt-4 font-display">Does Converting a PDF to JPG Reduce Image and Text Quality?</h2>
+          <h2 id="does-converting-a-pdf-to-jpg-reduce-image-and-text-quality" className="text-xl font-bold text-foreground pt-4 font-display">Does Converting a PDF to JPG Reduce Image and Text Quality?</h2>
           <p>
             JPG is a lossy format, so extremely fine text can look slightly softer than in the original vector PDF, especially at low resolution. iCreatePDF renders pages at a high pixel density by default, which keeps most documents sharp and readable. If you need to preserve exact text fidelity — for example, to keep text selectable — convert to <Link href="/tools/pdf-to-text" className="text-brand hover:underline">plain text</Link> instead, or keep the file as a PDF.
           </p>
 
-          <h2 className="text-xl font-bold text-foreground pt-4 font-display">How Does iCreatePDF Compare to Other PDF-to-JPG Converters?</h2>
+          <h2 id="how-does-icreatepdf-compare-to-other-pdf-to-jpg-converters" className="text-xl font-bold text-foreground pt-4 font-display">How Does iCreatePDF Compare to Other PDF-to-JPG Converters?</h2>
           <div className="overflow-x-auto">
             <table className="w-full text-xs text-foreground/70 border border-foreground/10 rounded-xl overflow-hidden">
               <thead className="bg-foreground/5 text-foreground font-semibold">
@@ -147,7 +182,7 @@ export default function PdfToJpgBlogPost() {
             </table>
           </div>
 
-          <h2 className="text-xl font-bold text-foreground pt-4 font-display">Frequently Asked Questions About This Tool</h2>
+          <h2 id="frequently-asked-questions-about-this-tool" className="text-xl font-bold text-foreground pt-4 font-display">Frequently Asked Questions About This Tool</h2>
           <div className="space-y-4">
             {[
               { q: 'Can I convert just one page instead of the whole PDF?', a: 'Yes. After conversion, every page appears as a separate thumbnail — download the ones you need individually instead of the full ZIP.' },

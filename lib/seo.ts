@@ -112,12 +112,15 @@ export function articleSchema({
   description,
   url,
   datePublished,
+  image,
 }: {
   title: string;
   description: string;
   url: string;
   datePublished: string;
+  image?: string;
 }) {
+  const imageUrl = image ? (image.startsWith('http') ? image : `${SITE_URL}${image}`) : `${SITE_URL}/logo.png`;
   return [
     {
       '@context': 'https://schema.org',
@@ -126,6 +129,7 @@ export function articleSchema({
       description,
       url: `${SITE_URL}${url}`,
       datePublished,
+      image: imageUrl,
       author: {
         '@type': 'Person',
         name: 'Barath R',

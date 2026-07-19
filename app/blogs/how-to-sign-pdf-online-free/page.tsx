@@ -81,7 +81,43 @@ export default function SignPdfBlogPost() {
             In 2026, you should not have to pay $15/month for the privilege of signing a PDF. Whether you need to sign a rental agreement, an NDA, a school form, or a client contract, it can be done for free in under a minute using just your browser.
           </p>
 
-          <h2 className="text-xl font-bold text-foreground pt-4 font-display">3 Types of PDF Signatures — Which Do You Need?</h2>
+          
+          {/* Table of Contents */}
+          <div className="p-6 rounded-2xl bg-card border border-foreground/10 space-y-3 my-6">
+            <h3 className="text-sm font-bold text-foreground flex items-center gap-2">
+              <span className="w-2.5 h-2.5 rounded-full bg-brand"></span>
+              Table of Contents
+            </h3>
+            <ul className="space-y-2 text-xs sm:text-sm text-foreground/75 pl-1">
+              <li>
+                <Link href="#3-types-of-pdf-signatures-which-do-you-need" className="hover:text-brand transition-colors">
+                  3 Types of PDF Signatures — Which Do You Need?
+                </Link>
+              </li>
+              <li>
+                <Link href="#step-by-step-sign-a-pdf-with-icreatepdf" className="hover:text-brand transition-colors">
+                  Step-by-Step: Sign a PDF With iCreatePDF
+                </Link>
+              </li>
+              <li>
+                <Link href="#is-a-browser-based-signed-pdf-legally-valid" className="hover:text-brand transition-colors">
+                  Is a Browser-Based Signed PDF Legally Valid?
+                </Link>
+              </li>
+              <li>
+                <Link href="#how-to-verify-a-signed-pdf" className="hover:text-brand transition-colors">
+                  How to Verify a Signed PDF
+                </Link>
+              </li>
+              <li>
+                <Link href="#frequently-asked-questions" className="hover:text-brand transition-colors">
+                  Frequently Asked Questions
+                </Link>
+              </li>
+            </ul>
+          </div>
+
+<h2 id="3-types-of-pdf-signatures-which-do-you-need" className="text-xl font-bold text-foreground pt-4 font-display">3 Types of PDF Signatures — Which Do You Need?</h2>
           <div className="space-y-4 my-4">
             {signatureTypes.map((s) => (
               <div key={s.type} className="p-4 rounded-xl bg-card border border-foreground/5 flex gap-4">
@@ -104,7 +140,7 @@ export default function SignPdfBlogPost() {
             </p>
           </div>
 
-          <h2 className="text-xl font-bold text-foreground pt-4 font-display">Step-by-Step: Sign a PDF With iCreatePDF</h2>
+          <h2 id="step-by-step-sign-a-pdf-with-icreatepdf" className="text-xl font-bold text-foreground pt-4 font-display">Step-by-Step: Sign a PDF With iCreatePDF</h2>
           <ol className="list-decimal list-inside space-y-3 pl-4 text-sm">
             <li>Go to <Link href="/tools/sign-pdf" className="text-brand hover:underline">iCreatePDF Sign PDF</Link>.</li>
             <li>Upload the PDF you need to sign.</li>
@@ -121,7 +157,7 @@ export default function SignPdfBlogPost() {
             </p>
           </div>
 
-          <h2 className="text-xl font-bold text-foreground pt-4 font-display">Is a Browser-Based Signed PDF Legally Valid?</h2>
+          <h2 id="is-a-browser-based-signed-pdf-legally-valid" className="text-xl font-bold text-foreground pt-4 font-display">Is a Browser-Based Signed PDF Legally Valid?</h2>
           <p>
             In most countries — including the United States (ESIGN Act), European Union (eIDAS Regulation), United Kingdom, India, and Australia — electronic signatures on contracts are legally binding when both parties intend to be bound.
           </p>
@@ -129,12 +165,12 @@ export default function SignPdfBlogPost() {
             The visual signature approach (draw/type) qualifies as a <strong className="text-foreground">Simple Electronic Signature (SES)</strong> under eIDAS and is valid for most everyday contracts, agreements, and acknowledgements. For high-value legal transactions requiring a Qualified Electronic Signature (QES), you would need a certificate from a Trust Service Provider (TSP).
           </p>
 
-          <h2 className="text-xl font-bold text-foreground pt-4 font-display">How to Verify a Signed PDF</h2>
+          <h2 id="how-to-verify-a-signed-pdf" className="text-xl font-bold text-foreground pt-4 font-display">How to Verify a Signed PDF</h2>
           <p>
             Once a document has been signed with a cryptographic certificate, you can verify its authenticity using iCreatePDF's <Link href="/tools/verify-signature" className="text-brand hover:underline">Verify Signature</Link> tool. It reads the embedded PKCS#7 signature block, extracts the signer identity and timestamp, and performs a byte-range integrity check — all locally in your browser.
           </p>
 
-          <h2 className="text-xl font-bold text-foreground pt-4 font-display">Frequently Asked Questions</h2>
+          <h2 id="frequently-asked-questions" className="text-xl font-bold text-foreground pt-4 font-display">Frequently Asked Questions</h2>
           <div className="space-y-4">
             {[
               { q: 'Can I sign a PDF on my phone?', a: 'Yes. iCreatePDF Sign PDF works on mobile browsers. Use the draw mode with your finger for a natural handwritten signature.' },

@@ -88,12 +88,47 @@ export default function CertifyPdfBlogPost() {
               <li><strong>Private Signatures:</strong> Generating cryptographic hashes locally protects your private keys.</li>
             </ul>
           </div>
+          {/* Table of Contents */}
+          <div className="p-6 rounded-2xl bg-card border border-foreground/10 space-y-3 my-6">
+            <h3 className="text-sm font-bold text-foreground flex items-center gap-2">
+              <span className="w-2.5 h-2.5 rounded-full bg-brand"></span>
+              Table of Contents
+            </h3>
+            <ul className="space-y-2 text-xs sm:text-sm text-foreground/75 pl-1">
+              <li>
+                <Link href="#step-by-step-how-do-you-certify-a-pdf-locally" className="hover:text-brand transition-colors">
+                  Step-by-Step: How Do You Certify a PDF locally?
+                </Link>
+              </li>
+              <li>
+                <Link href="#what-are-the-main-reasons-to-certify-a-pdf-document" className="hover:text-brand transition-colors">
+                  What Are the Main Reasons to Certify a PDF Document?
+                </Link>
+              </li>
+              <li>
+                <Link href="#what-is-the-difference-between-certifying-and-digitally-signing" className="hover:text-brand transition-colors">
+                  What is the Difference Between Certifying and Digitally Signing?
+                </Link>
+              </li>
+              <li>
+                <Link href="#how-does-icreatepdf-compare-to-other-pdf-certification-tools" className="hover:text-brand transition-colors">
+                  How Does iCreatePDF Compare to Other PDF Certification Tools?
+                </Link>
+              </li>
+              <li>
+                <Link href="#frequently-asked-questions-about-this-tool" className="hover:text-brand transition-colors">
+                  Frequently Asked Questions About This Tool
+                </Link>
+              </li>
+            </ul>
+          </div>
+
 
           <p>
             To <strong>certify a PDF</strong> means to lock its layout and generate a unique cryptographic hash, also known as a <strong>document fingerprint</strong>. This fingerprint allows recipients to verify that the file has not been altered or tampered with since signing. Doing this locally protects your private keys and cryptographic inputs from exposure.
           </p>
 
-          <h2 className="text-xl font-bold text-foreground pt-4 font-display">Step-by-Step: How Do You Certify a PDF locally?</h2>
+          <h2 id="step-by-step-how-do-you-certify-a-pdf-locally" className="text-xl font-bold text-foreground pt-4 font-display">Step-by-Step: How Do You Certify a PDF locally?</h2>
           <ol className="list-decimal list-inside space-y-3 pl-4 text-sm">
             <li>Open <Link href="/tools/certify-pdf" className="text-brand hover:underline">iCreatePDF Certify PDF</Link>.</li>
             <li>Upload the PDF you want to certify.</li>
@@ -108,7 +143,7 @@ export default function CertifyPdfBlogPost() {
             </p>
           </div>
 
-          <h2 className="text-xl font-bold text-foreground pt-4 font-display">What Are the Main Reasons to Certify a PDF Document?</h2>
+          <h2 id="what-are-the-main-reasons-to-certify-a-pdf-document" className="text-xl font-bold text-foreground pt-4 font-display">What Are the Main Reasons to Certify a PDF Document?</h2>
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 my-4">
             {useCases.map((u, i) => (
               <div key={i} className="p-4 rounded-xl bg-card border border-foreground/5 space-y-1.5">
@@ -118,12 +153,12 @@ export default function CertifyPdfBlogPost() {
             ))}
           </div>
 
-          <h2 className="text-xl font-bold text-foreground pt-4 font-display">What is the Difference Between Certifying and Digitally Signing?</h2>
+          <h2 id="what-is-the-difference-between-certifying-and-digitally-signing" className="text-xl font-bold text-foreground pt-4 font-display">What is the Difference Between Certifying and Digitally Signing?</h2>
           <p>
             Certifying with a fingerprint is a lightweight integrity check anyone can generate and verify without a formal certificate authority. A digital signature, by contrast, cryptographically ties a document to a specific signer's identity and is the standard for legally binding approvals. If you need to check whether an already-signed document is authentic, use <Link href="/tools/verify-signature" className="text-brand hover:underline">Verify Signature</Link> instead.
           </p>
 
-          <h2 className="text-xl font-bold text-foreground pt-4 font-display">How Does iCreatePDF Compare to Other PDF Certification Tools?</h2>
+          <h2 id="how-does-icreatepdf-compare-to-other-pdf-certification-tools" className="text-xl font-bold text-foreground pt-4 font-display">How Does iCreatePDF Compare to Other PDF Certification Tools?</h2>
           <div className="overflow-x-auto">
             <table className="w-full text-xs text-foreground/70 border border-foreground/10 rounded-xl overflow-hidden">
               <thead className="bg-foreground/5 text-foreground font-semibold">
@@ -150,7 +185,7 @@ export default function CertifyPdfBlogPost() {
             </table>
           </div>
 
-          <h2 className="text-xl font-bold text-foreground pt-4 font-display">Frequently Asked Questions About This Tool</h2>
+          <h2 id="frequently-asked-questions-about-this-tool" className="text-xl font-bold text-foreground pt-4 font-display">Frequently Asked Questions About This Tool</h2>
           <div className="space-y-4">
             {[
               { q: 'Is a SHA-256 fingerprint legally binding like a signature?', a: 'No. A fingerprint proves content integrity (the file hasn\'t changed), but doesn\'t carry the legal weight of a certificate-based digital signature tied to a verified identity.' },

@@ -60,7 +60,28 @@ export default function InvertPdfBlog() {
             Most books, academic papers, and company guides are exported as black text on bright white background paper. While this simulates physical print during the day, it is incredibly harsh on the eyes when reading on screens at night. Inverting colors changes white to black, black to white, and remaps colors to their opposite spectral values, giving you a perfect dark mode reading experience.
           </p>
 
-          <h2 className="text-xl font-bold text-foreground pt-4 font-display flex items-center gap-2">
+          
+          {/* Table of Contents */}
+          <div className="p-6 rounded-2xl bg-card border border-foreground/10 space-y-3 my-6">
+            <h3 className="text-sm font-bold text-foreground flex items-center gap-2">
+              <span className="w-2.5 h-2.5 rounded-full bg-brand"></span>
+              Table of Contents
+            </h3>
+            <ul className="space-y-2 text-xs sm:text-sm text-foreground/75 pl-1">
+              <li>
+                <Link href="#benefits-of-dark-mode-pdfs" className="hover:text-brand transition-colors">
+                  Benefits of Dark Mode PDFs
+                </Link>
+              </li>
+              <li>
+                <Link href="#how-to-invert-pdf-colors" className="hover:text-brand transition-colors">
+                  How to Invert PDF Colors
+                </Link>
+              </li>
+            </ul>
+          </div>
+
+<h2 id="benefits-of-dark-mode-pdfs" className="text-xl font-bold text-foreground pt-4 font-display flex items-center gap-2">
             <Moon className="w-5 h-5 text-brand" />
             Benefits of Dark Mode PDFs
           </h2>
@@ -70,7 +91,7 @@ export default function InvertPdfBlog() {
             <li><strong className="text-foreground">Better Battery Life:</strong> On OLED or AMOLED screens, dark backgrounds turn off pixels, extending laptop, tablet, or phone battery life.</li>
           </ul>
 
-          <h2 className="text-xl font-bold text-foreground pt-4 font-display">How to Invert PDF Colors</h2>
+          <h2 id="how-to-invert-pdf-colors" className="text-xl font-bold text-foreground pt-4 font-display">How to Invert PDF Colors</h2>
           <ol className="list-decimal list-inside space-y-2 pl-4 text-sm">
             <li>Visit the <Link href="/tools/invert-pdf" className="text-brand hover:underline">/invert-pdf</Link> page.</li>
             <li>Upload your document. The application reads each page, rendering it onto a canvas.</li>

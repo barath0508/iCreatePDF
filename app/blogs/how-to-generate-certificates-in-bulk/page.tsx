@@ -60,7 +60,33 @@ export default function BulkCertificatesBlog() {
             Whether you run a training course, coordinate a seminar, or manage award distributions, you regularly need to issue customized certificates. Standard mail merge in traditional desktop office tools is slow, shifts formatting fonts, and uploads documents to third-party clouds. Performing a local PDF mail merge solves these issues.
           </p>
 
-          <h2 className="text-xl font-bold text-foreground pt-4 font-display flex items-center gap-2">
+          
+          {/* Table of Contents */}
+          <div className="p-6 rounded-2xl bg-card border border-foreground/10 space-y-3 my-6">
+            <h3 className="text-sm font-bold text-foreground flex items-center gap-2">
+              <span className="w-2.5 h-2.5 rounded-full bg-brand"></span>
+              Table of Contents
+            </h3>
+            <ul className="space-y-2 text-xs sm:text-sm text-foreground/75 pl-1">
+              <li>
+                <Link href="#the-bulk-generation-workflow" className="hover:text-brand transition-colors">
+                  The Bulk Generation Workflow
+                </Link>
+              </li>
+              <li>
+                <Link href="#formatting-fonts-amp-colors-locally" className="hover:text-brand transition-colors">
+                  Formatting Fonts &amp; Colors Locally
+                </Link>
+              </li>
+              <li>
+                <Link href="#export-options-zip-vs-combined-pdf" className="hover:text-brand transition-colors">
+                  Export Options: ZIP vs. Combined PDF
+                </Link>
+              </li>
+            </ul>
+          </div>
+
+<h2 id="the-bulk-generation-workflow" className="text-xl font-bold text-foreground pt-4 font-display flex items-center gap-2">
             <Award className="w-5 h-5 text-brand" />
             The Bulk Generation Workflow
           </h2>
@@ -73,7 +99,7 @@ export default function BulkCertificatesBlog() {
             <li><strong>Map Draggable Placeholders:</strong> A visual browser preview where you drag spreadsheet variable labels onto their positions on the template page.</li>
           </ul>
 
-          <h2 className="text-xl font-bold text-foreground pt-4 font-display flex items-center gap-2">
+          <h2 id="formatting-fonts-amp-colors-locally" className="text-xl font-bold text-foreground pt-4 font-display flex items-center gap-2">
             <PlusCircle className="w-5 h-5 text-brand" />
             Formatting Fonts &amp; Colors Locally
           </h2>
@@ -87,7 +113,7 @@ export default function BulkCertificatesBlog() {
             <li><strong>Branding Color:</strong> Pick custom hex color codes matching your corporate style guide.</li>
           </ul>
 
-          <h2 className="text-xl font-bold text-foreground pt-4 font-display flex items-center gap-2">
+          <h2 id="export-options-zip-vs-combined-pdf" className="text-xl font-bold text-foreground pt-4 font-display flex items-center gap-2">
             <ShieldAlert className="w-5 h-5 text-brand" />
             Export Options: ZIP vs. Combined PDF
           </h2>

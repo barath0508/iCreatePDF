@@ -69,7 +69,43 @@ export default function QrToPdfBlogPost() {
             QR codes bridge print and digital — a flyer, poster, or product label can link directly to a website, form, or file just by scanning. Generating one as a ready-to-print PDF means you can drop it straight into a print shop order or your own document without extra formatting steps.
           </p>
 
-          <h2 className="text-xl font-bold text-foreground pt-4 font-display">Step-by-Step: Generate a QR Code PDF Using iCreatePDF</h2>
+          
+          {/* Table of Contents */}
+          <div className="p-6 rounded-2xl bg-card border border-foreground/10 space-y-3 my-6">
+            <h3 className="text-sm font-bold text-foreground flex items-center gap-2">
+              <span className="w-2.5 h-2.5 rounded-full bg-brand"></span>
+              Table of Contents
+            </h3>
+            <ul className="space-y-2 text-xs sm:text-sm text-foreground/75 pl-1">
+              <li>
+                <Link href="#step-by-step-generate-a-qr-code-pdf-using-icreatepdf" className="hover:text-brand transition-colors">
+                  Step-by-Step: Generate a QR Code PDF Using iCreatePDF
+                </Link>
+              </li>
+              <li>
+                <Link href="#6-uses-for-a-qr-code-pdf" className="hover:text-brand transition-colors">
+                  6 Uses for a QR Code PDF
+                </Link>
+              </li>
+              <li>
+                <Link href="#tips-for-a-scannable-qr-code" className="hover:text-brand transition-colors">
+                  Tips for a Scannable QR Code
+                </Link>
+              </li>
+              <li>
+                <Link href="#icreatepdf-vs-other-qr-code-generators" className="hover:text-brand transition-colors">
+                  iCreatePDF vs Other QR Code Generators
+                </Link>
+              </li>
+              <li>
+                <Link href="#frequently-asked-questions" className="hover:text-brand transition-colors">
+                  Frequently Asked Questions
+                </Link>
+              </li>
+            </ul>
+          </div>
+
+<h2 id="step-by-step-generate-a-qr-code-pdf-using-icreatepdf" className="text-xl font-bold text-foreground pt-4 font-display">Step-by-Step: Generate a QR Code PDF Using iCreatePDF</h2>
           <ol className="list-decimal list-inside space-y-3 pl-4 text-sm">
             <li>Open <Link href="/tools/qr-to-pdf" className="text-brand hover:underline">iCreatePDF QR to PDF</Link>.</li>
             <li>Enter the URL or text you want the QR code to link to.</li>
@@ -84,7 +120,7 @@ export default function QrToPdfBlogPost() {
             </p>
           </div>
 
-          <h2 className="text-xl font-bold text-foreground pt-4 font-display">6 Uses for a QR Code PDF</h2>
+          <h2 id="6-uses-for-a-qr-code-pdf" className="text-xl font-bold text-foreground pt-4 font-display">6 Uses for a QR Code PDF</h2>
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 my-4">
             {useCases.map((u, i) => (
               <div key={i} className="p-4 rounded-xl bg-card border border-foreground/5 space-y-1.5">
@@ -94,12 +130,12 @@ export default function QrToPdfBlogPost() {
             ))}
           </div>
 
-          <h2 className="text-xl font-bold text-foreground pt-4 font-display">Tips for a Scannable QR Code</h2>
+          <h2 id="tips-for-a-scannable-qr-code" className="text-xl font-bold text-foreground pt-4 font-display">Tips for a Scannable QR Code</h2>
           <p>
             Keep enough white space (quiet zone) around the code, avoid printing it smaller than about 2cm x 2cm for typical scanning distances, and test your printed code with a phone camera before mass printing. If you need machine-readable product codes (Code 128, EAN-13, UPC-A) instead of a scannable link, use <Link href="/tools/barcode-to-pdf" className="text-brand hover:underline">Barcode to PDF</Link> instead.
           </p>
 
-          <h2 className="text-xl font-bold text-foreground pt-4 font-display">iCreatePDF vs Other QR Code Generators</h2>
+          <h2 id="icreatepdf-vs-other-qr-code-generators" className="text-xl font-bold text-foreground pt-4 font-display">iCreatePDF vs Other QR Code Generators</h2>
           <div className="overflow-x-auto">
             <table className="w-full text-xs text-foreground/70 border border-foreground/10 rounded-xl overflow-hidden">
               <thead className="bg-foreground/5 text-foreground font-semibold">
@@ -126,7 +162,7 @@ export default function QrToPdfBlogPost() {
             </table>
           </div>
 
-          <h2 className="text-xl font-bold text-foreground pt-4 font-display">Frequently Asked Questions</h2>
+          <h2 id="frequently-asked-questions" className="text-xl font-bold text-foreground pt-4 font-display">Frequently Asked Questions</h2>
           <div className="space-y-4">
             {[
               { q: 'Do QR codes generated this way expire?', a: 'No. A QR code simply encodes the text or URL you enter — it works as long as that destination stays valid, with no third-party service or expiration involved.' },

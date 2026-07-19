@@ -96,8 +96,48 @@ export default function ExcelToPdfBlogPost() {
               </li>
             </ul>
           </div>
+          {/* Table of Contents */}
+          <div className="p-6 rounded-2xl bg-card border border-foreground/10 space-y-3 my-6">
+            <h3 className="text-sm font-bold text-foreground flex items-center gap-2">
+              <span className="w-2.5 h-2.5 rounded-full bg-brand"></span>
+              Table of Contents
+            </h3>
+            <ul className="space-y-2 text-xs sm:text-sm text-foreground/75 pl-1">
+              <li>
+                <Link href="#what-is-a-client-side-excel-to-pdf-conversion" className="hover:text-brand transition-colors">
+                  What is a Client-Side Excel to PDF Conversion?
+                </Link>
+              </li>
+              <li>
+                <Link href="#how-can-you-convert-excel-to-pdf-online-with-icreatepdf" className="hover:text-brand transition-colors">
+                  How Can You Convert Excel to PDF Online with iCreatePDF?
+                </Link>
+              </li>
+              <li>
+                <Link href="#why-convert-spreadsheets-to-pdf-6-common-use-cases" className="hover:text-brand transition-colors">
+                  Why Convert Spreadsheets to PDF? (6 Common Use Cases)
+                </Link>
+              </li>
+              <li>
+                <Link href="#how-do-you-format-wide-excel-tables-for-a4-pdf-layouts" className="hover:text-brand transition-colors">
+                  How Do You Format Wide Excel Tables for A4 PDF Layouts?
+                </Link>
+              </li>
+              <li>
+                <Link href="#how-does-icreatepdf-compare-to-typical-cloud-based-converters" className="hover:text-brand transition-colors">
+                  How Does iCreatePDF Compare to Typical Cloud-Based Converters?
+                </Link>
+              </li>
+              <li>
+                <Link href="#frequently-asked-questions-about-excel-to-pdf-conversion" className="hover:text-brand transition-colors">
+                  Frequently Asked Questions About Excel to PDF Conversion
+                </Link>
+              </li>
+            </ul>
+          </div>
 
-          <h2 className="text-xl font-bold text-foreground pt-4 font-display">What is a Client-Side Excel to PDF Conversion?</h2>
+
+          <h2 id="what-is-a-client-side-excel-to-pdf-conversion" className="text-xl font-bold text-foreground pt-4 font-display">What is a Client-Side Excel to PDF Conversion?</h2>
           <p>
             An <strong>Excel file (.xlsx or .xls)</strong> is a dynamic grid document containing formulas, calculations, and active cells. A <strong>PDF (Portable Document Format)</strong> is a static, vector-based format designed to lock document layout, typography, and styling so it displays exactly the same on any device.
           </p>
@@ -108,7 +148,7 @@ export default function ExcelToPdfBlogPost() {
             According to recent cybersecurity statistics, server-side data leaks rose by over 30% in recent years. This trend makes local, browser-based file conversion an essential safety practice for modern compliance-minded businesses.
           </p>
 
-          <h2 className="text-xl font-bold text-foreground pt-4 font-display">How Can You Convert Excel to PDF Online with iCreatePDF?</h2>
+          <h2 id="how-can-you-convert-excel-to-pdf-online-with-icreatepdf" className="text-xl font-bold text-foreground pt-4 font-display">How Can You Convert Excel to PDF Online with iCreatePDF?</h2>
           <ol className="list-decimal list-inside space-y-3 pl-4 text-sm">
             <li>Navigate to the <Link href="/tools/excel-to-pdf" className="text-brand hover:underline font-semibold">Excel to PDF Converter</Link>.</li>
             <li>Drag and drop your spreadsheet (.xlsx, .xls, or .csv) into the local upload box.</li>
@@ -124,7 +164,7 @@ export default function ExcelToPdfBlogPost() {
             </p>
           </div>
 
-          <h2 className="text-xl font-bold text-foreground pt-4 font-display">Why Convert Spreadsheets to PDF? (6 Common Use Cases)</h2>
+          <h2 id="why-convert-spreadsheets-to-pdf-6-common-use-cases" className="text-xl font-bold text-foreground pt-4 font-display">Why Convert Spreadsheets to PDF? (6 Common Use Cases)</h2>
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 my-4">
             {useCases.map((u, i) => (
               <div key={i} className="p-4 rounded-xl bg-card border border-foreground/5 space-y-1.5">
@@ -134,7 +174,7 @@ export default function ExcelToPdfBlogPost() {
             ))}
           </div>
 
-          <h2 className="text-xl font-bold text-foreground pt-4 font-display">How Do You Format Wide Excel Tables for A4 PDF Layouts?</h2>
+          <h2 id="how-do-you-format-wide-excel-tables-for-a4-pdf-layouts" className="text-xl font-bold text-foreground pt-4 font-display">How Do You Format Wide Excel Tables for A4 PDF Layouts?</h2>
           <p>
             Excel tables often expand horizontally with many columns. To prevent your columns from getting cut off on standard PDF sheets, apply these simple formatting options in the configuration panel:
           </p>
@@ -156,7 +196,7 @@ export default function ExcelToPdfBlogPost() {
             as well as open-source spreadsheet editors.
           </p>
 
-          <h2 className="text-xl font-bold text-foreground pt-4 font-display">How Does iCreatePDF Compare to Typical Cloud-Based Converters?</h2>
+          <h2 id="how-does-icreatepdf-compare-to-typical-cloud-based-converters" className="text-xl font-bold text-foreground pt-4 font-display">How Does iCreatePDF Compare to Typical Cloud-Based Converters?</h2>
           <div className="overflow-x-auto">
             <table className="w-full text-xs text-foreground/70 border border-foreground/10 rounded-xl overflow-hidden">
               <thead className="bg-foreground/5 text-foreground font-semibold">
@@ -184,7 +224,7 @@ export default function ExcelToPdfBlogPost() {
             </table>
           </div>
 
-          <h2 className="text-xl font-bold text-foreground pt-4 font-display">Frequently Asked Questions About Excel to PDF Conversion</h2>
+          <h2 id="frequently-asked-questions-about-excel-to-pdf-conversion" className="text-xl font-bold text-foreground pt-4 font-display">Frequently Asked Questions About Excel to PDF Conversion</h2>
           <div className="space-y-4">
             {[
               { q: 'Can I select a sheet from a multi-sheet workbook?', a: 'Yes! If your uploaded Excel file contains multiple sheets, a sheet selector bar will appear above the preview grid, letting you browse and convert sheets individually.' },

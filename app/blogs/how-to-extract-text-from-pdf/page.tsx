@@ -69,7 +69,43 @@ export default function PdfToTextBlogPost() {
             PDFs are great for preserving layout, but that same layout makes it awkward to copy and reuse the text inside them. Extracting the raw text lets you search it, quote it, translate it, or feed it into another tool — and you can do it directly in your browser.
           </p>
 
-          <h2 className="text-xl font-bold text-foreground pt-4 font-display">Step-by-Step: Extract Text Using iCreatePDF</h2>
+          
+          {/* Table of Contents */}
+          <div className="p-6 rounded-2xl bg-card border border-foreground/10 space-y-3 my-6">
+            <h3 className="text-sm font-bold text-foreground flex items-center gap-2">
+              <span className="w-2.5 h-2.5 rounded-full bg-brand"></span>
+              Table of Contents
+            </h3>
+            <ul className="space-y-2 text-xs sm:text-sm text-foreground/75 pl-1">
+              <li>
+                <Link href="#step-by-step-extract-text-using-icreatepdf" className="hover:text-brand transition-colors">
+                  Step-by-Step: Extract Text Using iCreatePDF
+                </Link>
+              </li>
+              <li>
+                <Link href="#6-reasons-to-extract-text-from-a-pdf" className="hover:text-brand transition-colors">
+                  6 Reasons to Extract Text from a PDF
+                </Link>
+              </li>
+              <li>
+                <Link href="#what-if-my-pdf-is-a-scanned-image" className="hover:text-brand transition-colors">
+                  What if My PDF Is a Scanned Image?
+                </Link>
+              </li>
+              <li>
+                <Link href="#icreatepdf-vs-other-text-extraction-tools" className="hover:text-brand transition-colors">
+                  iCreatePDF vs Other Text Extraction Tools
+                </Link>
+              </li>
+              <li>
+                <Link href="#frequently-asked-questions" className="hover:text-brand transition-colors">
+                  Frequently Asked Questions
+                </Link>
+              </li>
+            </ul>
+          </div>
+
+<h2 id="step-by-step-extract-text-using-icreatepdf" className="text-xl font-bold text-foreground pt-4 font-display">Step-by-Step: Extract Text Using iCreatePDF</h2>
           <ol className="list-decimal list-inside space-y-3 pl-4 text-sm">
             <li>Open <Link href="/tools/pdf-to-text" className="text-brand hover:underline">iCreatePDF Extract Text</Link>.</li>
             <li>Upload your PDF — text is parsed page-by-page directly in your browser.</li>
@@ -84,7 +120,7 @@ export default function PdfToTextBlogPost() {
             </p>
           </div>
 
-          <h2 className="text-xl font-bold text-foreground pt-4 font-display">6 Reasons to Extract Text from a PDF</h2>
+          <h2 id="6-reasons-to-extract-text-from-a-pdf" className="text-xl font-bold text-foreground pt-4 font-display">6 Reasons to Extract Text from a PDF</h2>
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 my-4">
             {useCases.map((u, i) => (
               <div key={i} className="p-4 rounded-xl bg-card border border-foreground/5 space-y-1.5">
@@ -94,12 +130,12 @@ export default function PdfToTextBlogPost() {
             ))}
           </div>
 
-          <h2 className="text-xl font-bold text-foreground pt-4 font-display">What if My PDF Is a Scanned Image?</h2>
+          <h2 id="what-if-my-pdf-is-a-scanned-image" className="text-xl font-bold text-foreground pt-4 font-display">What if My PDF Is a Scanned Image?</h2>
           <p>
             Standard text extraction only works on PDFs that already contain a text layer — documents created digitally (Word exports, e-signed contracts, etc.). If your PDF is a scan or photo with no underlying text layer, extraction will return nothing because there's no text to find. In that case, use <Link href="/tools/pdf-ocr" className="text-brand hover:underline">PDF OCR</Link> first to recognize the text in the scanned image, then extract it.
           </p>
 
-          <h2 className="text-xl font-bold text-foreground pt-4 font-display">iCreatePDF vs Other Text Extraction Tools</h2>
+          <h2 id="icreatepdf-vs-other-text-extraction-tools" className="text-xl font-bold text-foreground pt-4 font-display">iCreatePDF vs Other Text Extraction Tools</h2>
           <div className="overflow-x-auto">
             <table className="w-full text-xs text-foreground/70 border border-foreground/10 rounded-xl overflow-hidden">
               <thead className="bg-foreground/5 text-foreground font-semibold">
@@ -127,7 +163,7 @@ export default function PdfToTextBlogPost() {
             </table>
           </div>
 
-          <h2 className="text-xl font-bold text-foreground pt-4 font-display">Frequently Asked Questions</h2>
+          <h2 id="frequently-asked-questions" className="text-xl font-bold text-foreground pt-4 font-display">Frequently Asked Questions</h2>
           <div className="space-y-4">
             {[
               { q: 'Does this preserve formatting like bold or bullet points?', a: 'No — extraction returns raw text content. Formatting, fonts, and layout are not preserved, since the output is a plain text file.' },
