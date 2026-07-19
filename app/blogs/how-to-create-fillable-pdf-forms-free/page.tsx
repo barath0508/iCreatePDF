@@ -33,12 +33,38 @@ export default function BlogPostFillablePdf() {
     <div className="bg-background min-h-screen text-foreground flex flex-col justify-between selection:bg-brand/30">
       <script
         type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(articleSchema({
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify([
+            ...articleSchema({
           title: 'How to Create Fillable PDF Forms Free Online | iCreatePDF Blog',
           description: 'Learn how to easily create interactive fillable PDF forms client-side for free. Add text inputs, checkboxes, dropdown lists, and radio selectors in the browser sandbox.',
           url: '/blogs/how-to-create-fillable-pdf-forms-free',
           datePublished: '2026-07-12T00:00:00Z'
-        })) }}
+        }),
+            {
+            "@context": "https://schema.org",
+            "@type": "FAQPage",
+            "mainEntity": [
+              {
+                "@type": "Question",
+                "name": "How do I build a fillable PDF form for free?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Open our fillable form builder, drag and drop inputs, checkboxes, or text fields, and export your interactive PDF form."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "Can users fill out my exported PDF form?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Yes, the output forms are standard-compliant and can be filled out using any common PDF reader or web browser."
+                }
+              }
+            ]
+          }
+          ]),
+        }}
       />
       <Navigation />
       
@@ -169,7 +195,20 @@ export default function BlogPostFillablePdf() {
               <ArrowRight className="w-3.5 h-3.5 ml-1 transition-transform group-hover:translate-x-1" />
             </Button>
           </Link>
-        </div>
+        </div>          <h2 id="frequently-asked-questions" className="text-xl font-bold text-foreground pt-6 font-display">Frequently Asked Questions</h2>
+          <div className="space-y-4 my-6">
+            {[
+              { q: 'How do I build a fillable PDF form for free?', a: 'Open our fillable form builder, drag and drop inputs, checkboxes, or text fields, and export your interactive PDF form.' },
+              { q: 'Can users fill out my exported PDF form?', a: 'Yes, the output forms are standard-compliant and can be filled out using any common PDF reader or web browser.' }
+            ].map(({ q, a }) => (
+              <div key={q} className="p-4 rounded-xl bg-card border border-foreground/5">
+                <p className="text-sm font-bold text-foreground mb-1">{q}</p>
+                <p className="text-xs text-foreground/60 leading-relaxed">{a}</p>
+              </div>
+            ))}
+          </div>
+
+
 
         <RelatedPosts currentSlug="how-to-convert-iphone-photos-to-pdf" />
       </article>

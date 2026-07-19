@@ -35,12 +35,54 @@ export default function HtmlToPdfBlogPost() {
     <div className="bg-background min-h-screen text-foreground flex flex-col justify-between selection:bg-brand/30">
       <script
         type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(articleSchema({
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify([
+            ...articleSchema({
           title: 'How to Convert HTML to PDF Online — Free Guide | iCreatePDF',
           description: 'Turn HTML and CSS templates into formatted PDF documents in your browser. No upload, no server rendering — paste code or a template and export instantly.',
           url: '/blogs/how-to-convert-html-to-pdf',
           datePublished: '2026-07-18T00:00:00Z'
-        })) }}
+        }),
+            {
+            "@context": "https://schema.org",
+            "@type": "FAQPage",
+            "mainEntity": [
+              {
+                "@type": "Question",
+                "name": "Will my CSS styling be preserved exactly?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Most standard CSS (colors, fonts, spacing, tables, flexbox) renders accurately. Highly dynamic or JavaScript-dependent layouts may need simplification for a static PDF export."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "Can I convert a full webpage, not just a snippet?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Yes \u2014 paste the full HTML document including your <head> and <style> tags, or upload a complete .html file."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "Does this work for multi-page documents?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Yes. Long content automatically flows across multiple PDF pages; use CSS page-break rules for precise control over where pages split."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "Can I add custom fonts?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Yes, use @font-face declarations in your CSS, or web-safe system fonts for the most reliable results."
+                }
+              }
+            ]
+          }
+          ]),
+        }}
       />
       <Navigation />
 

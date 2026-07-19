@@ -26,14 +26,36 @@ export default function HowToConvertBase64ToPdfPage() {
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{
-          __html: JSON.stringify(
-            articleSchema({
+          __html: JSON.stringify([
+            ...articleSchema({
               title: 'How to Convert Base64 to PDF Online — Free Developer Guide',
               description: 'Learn how to safely decode a Base64 string back into a PDF document, write custom scripts in JavaScript/Python, and decode payloads client-side.',
               url: '/blogs/how-to-convert-base64-to-pdf',
               datePublished: '2026-07-19T00:00:00Z',
-            })
-          ),
+            }),
+            {
+            "@context": "https://schema.org",
+            "@type": "FAQPage",
+            "mainEntity": [
+              {
+                "@type": "Question",
+                "name": "How do I decode Base64 to PDF?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Simply copy and paste the Base64 string payload into our converter tool, and download the compiled PDF instantly."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "Is decoding Base64 strings secure?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Yes, decoding is processed entirely client-side using JavaScript, keeping your payloads safe from third-party server logging."
+                }
+              }
+            ]
+          }
+          ]),
         }}
       />
       <Navigation />
@@ -220,7 +242,20 @@ print("PDF file successfully created!")`}
               <ArrowRight className="w-3.5 h-3.5 ml-1 transition-transform group-hover:translate-x-1" />
             </Button>
           </Link>
-        </div>
+        </div>          <h2 id="frequently-asked-questions" className="text-xl font-bold text-foreground pt-6 font-display">Frequently Asked Questions</h2>
+          <div className="space-y-4 my-6">
+            {[
+              { q: 'How do I decode Base64 to PDF?', a: 'Simply copy and paste the Base64 string payload into our converter tool, and download the compiled PDF instantly.' },
+              { q: 'Is decoding Base64 strings secure?', a: 'Yes, decoding is processed entirely client-side using JavaScript, keeping your payloads safe from third-party server logging.' }
+            ].map(({ q, a }) => (
+              <div key={q} className="p-4 rounded-xl bg-card border border-foreground/5">
+                <p className="text-sm font-bold text-foreground mb-1">{q}</p>
+                <p className="text-xs text-foreground/60 leading-relaxed">{a}</p>
+              </div>
+            ))}
+          </div>
+
+
 
         <RelatedPosts currentSlug="how-to-convert-base64-to-pdf" />
       </article>

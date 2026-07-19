@@ -35,12 +35,54 @@ export default function MarkdownToPdfBlogPost() {
     <div className="bg-background min-h-screen text-foreground flex flex-col justify-between selection:bg-brand/30">
       <script
         type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(articleSchema({
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify([
+            ...articleSchema({
           title: 'How to Convert Markdown to PDF Online — Free Guide | iCreatePDF',
           description: 'Convert styled Markdown (.md) files to formatted PDF documents. 100% browser-based, no uploads, preserves headings, lists, code blocks, and links.',
           url: '/blogs/how-to-convert-markdown-to-pdf',
           datePublished: '2026-07-18T00:00:00Z'
-        })) }}
+        }),
+            {
+            "@context": "https://schema.org",
+            "@type": "FAQPage",
+            "mainEntity": [
+              {
+                "@type": "Question",
+                "name": "Does it support GitHub Flavored Markdown (tables, checkboxes)?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Yes \u2014 common GitHub Flavored Markdown extensions like tables and task lists render correctly in the exported PDF."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "Will code blocks keep their formatting?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Yes, fenced code blocks are rendered in monospace font with preserved indentation for readability."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "Can I convert a whole folder of Markdown files at once?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Convert one file at a time through the browser tool; for very large batches, repeat the process for each file."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "Are links in the Markdown clickable in the PDF?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Yes, standard Markdown links are preserved as clickable hyperlinks in the generated PDF."
+                }
+              }
+            ]
+          }
+          ]),
+        }}
       />
       <Navigation />
 

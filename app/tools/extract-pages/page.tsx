@@ -7,12 +7,12 @@ import { buildAlternates, toolSchema } from '@/lib/seo';
 
 export const metadata: Metadata = {
   title: 'Extract Pages from PDF Free Online | iCreatePDF',
-  description: 'Extract specific pages from a PDF file. Enter page numbers or ranges to pull out exactly the pages you need into a new PDF document.',
+  description: 'Extract pages from a PDF document to create a new PDF file online free. Processed 100% locally in your browser for absolute data privacy and security.',
   keywords: 'how to separate a page from a pdf, separate a page from pdf, extract pages from pdf, pdf page extractor, pull pages from pdf, pdf page picker online free',
   alternates: buildAlternates('/tools/extract-pages'),
   openGraph: {
     title: 'Extract Pages from PDF Free Online | iCreatePDF',
-    description: 'Extract specific pages from a PDF file. Enter page numbers or ranges to pull out exactly the pages you need into a new PDF document.',
+    description: 'Extract pages from a PDF document to create a new PDF file online free. Processed 100% locally in your browser for absolute data privacy and security.',
     type: 'website',
   }
 };

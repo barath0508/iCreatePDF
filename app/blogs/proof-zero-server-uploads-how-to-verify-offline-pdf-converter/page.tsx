@@ -49,12 +49,38 @@ export default function ProofZeroServerUploadsBlogPost() {
     <div className="bg-background min-h-screen text-foreground flex flex-col justify-between selection:bg-brand/30">
       <script
         type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(articleSchema({
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify([
+            ...articleSchema({
           title: 'Proof: Verify iCreatePDF is 100% Server-Free (Convert Offline) | iCreatePDF',
           description: 'Wondering if your private documents are safe? Learn how to verify that iCreatePDF runs 100% locally by converting and editing PDFs completely offline.',
           url: '/blogs/proof-zero-server-uploads-how-to-verify-offline-pdf-converter',
           datePublished: '2026-07-16T00:00:00Z'
-        })) }}
+        }),
+            {
+            "@context": "https://schema.org",
+            "@type": "FAQPage",
+            "mainEntity": [
+              {
+                "@type": "Question",
+                "name": "How do I verify a PDF converter is offline?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Load the page, disconnect your device from the internet, process a PDF file, and see it complete successfully without network access."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "Is client-side PDF processing truly secure?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Yes, keeping documents locally on your device removes interception risks and data logging exposures."
+                }
+              }
+            ]
+          }
+          ]),
+        }}
       />
       <Navigation />
 
@@ -193,7 +219,20 @@ export default function ProofZeroServerUploadsBlogPost() {
               <ArrowRight className="w-3.5 h-3.5 ml-1 transition-transform group-hover:translate-x-1" />
             </Button>
           </Link>
-        </div>
+        </div>          <h2 id="frequently-asked-questions" className="text-xl font-bold text-foreground pt-6 font-display">Frequently Asked Questions</h2>
+          <div className="space-y-4 my-6">
+            {[
+              { q: 'How do I verify a PDF converter is offline?', a: 'Load the page, disconnect your device from the internet, process a PDF file, and see it complete successfully without network access.' },
+              { q: 'Is client-side PDF processing truly secure?', a: 'Yes, keeping documents locally on your device removes interception risks and data logging exposures.' }
+            ].map(({ q, a }) => (
+              <div key={q} className="p-4 rounded-xl bg-card border border-foreground/5">
+                <p className="text-sm font-bold text-foreground mb-1">{q}</p>
+                <p className="text-xs text-foreground/60 leading-relaxed">{a}</p>
+              </div>
+            ))}
+          </div>
+
+
 
         <RelatedPosts currentSlug="proof-zero-server-uploads-how-to-verify-offline-pdf-converter" />
       </article>

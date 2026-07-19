@@ -10,12 +10,12 @@ import { RelatedPosts } from '@/components/blog/RelatedPosts';
 
 export const metadata: Metadata = {
   title: 'How to Generate a QR Code PDF Online — Free Guide | iCreatePDF',
-  description: 'Turn any URL or text into a QR code and download it as a clean, print-ready PDF. 100% browser-based, no uploads, customize labels and size.',
-  keywords: 'qr code pdf, generate qr code pdf, qr code generator free, printable qr code, qr to pdf 2026',
+  description: 'Wondering how to get a QR code to PDF? Learn how to generate a custom QR code from any URL or text and download it as a print-ready PDF for free.',
+  keywords: 'qr code to pdf, convert qr code to pdf, qr code to pdf free, qr to pdf converter, qr code pdf, generate qr code pdf, qr code generator free, printable qr code, qr to pdf 2026',
   alternates: buildAlternates('/blogs/how-to-generate-qr-code-pdf'),
   openGraph: {
     title: 'How to Generate a QR Code PDF Online — Free Guide',
-    description: 'Turn any URL or text into a QR code and download it as a clean, print-ready PDF.',
+    description: 'Wondering how to get a QR code to PDF? Learn how to generate a custom QR code from any URL or text and download it as a print-ready PDF for free.',
     type: 'article',
     publishedTime: '2026-07-18T00:00:00Z',
   },
@@ -35,12 +35,44 @@ export default function QrToPdfBlogPost() {
     <div className="bg-background min-h-screen text-foreground flex flex-col justify-between selection:bg-brand/30">
       <script
         type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(articleSchema({
-          title: 'How to Generate a QR Code PDF Online — Free Guide | iCreatePDF',
-          description: 'Turn any URL or text into a QR code and download it as a clean, print-ready PDF. 100% browser-based, no uploads, customize labels and size.',
-          url: '/blogs/how-to-generate-qr-code-pdf',
-          datePublished: '2026-07-18T00:00:00Z'
-        })) }}
+        dangerouslySetInnerHTML={{ __html: JSON.stringify([
+          ...articleSchema({
+            title: 'How to Generate a QR Code PDF Online — Free Guide | iCreatePDF',
+            description: 'Wondering how to get a QR code to PDF? Learn how to generate a custom QR code from any URL or text and download it as a print-ready PDF for free.',
+            url: '/blogs/how-to-generate-qr-code-pdf',
+            datePublished: '2026-07-18T00:00:00Z'
+          }),
+          {
+            '@context': 'https://schema.org',
+            '@type': 'FAQPage',
+            mainEntity: [
+              {
+                '@type': 'Question',
+                name: 'How do I convert a QR code to PDF?',
+                acceptedAnswer: {
+                  '@type': 'Answer',
+                  text: 'To convert or generate a QR code to PDF, open the iCreatePDF QR to PDF tool, enter the URL or text to encode, customize size and label parameters, and click Download. This compiles your QR code into a print-ready A4 PDF directly in your browser.'
+                }
+              },
+              {
+                '@type': 'Question',
+                name: 'Is it free to generate a QR code PDF?',
+                acceptedAnswer: {
+                  '@type': 'Answer',
+                  text: 'Yes. iCreatePDF is a 100% free online utility. There are no limits, no watermarks, and no sign-ups required. Your QR code is created completely locally on your device.'
+                }
+              },
+              {
+                '@type': 'Question',
+                name: 'Do the generated QR codes expire?',
+                acceptedAnswer: {
+                  '@type': 'Answer',
+                  text: 'No. The QR code directly encodes the text or link you enter, meaning it will function indefinitely as long as your destination URL remains active.'
+                }
+              }
+            ]
+          }
+        ]) }}
       />
       <Navigation />
 
@@ -114,7 +146,7 @@ export default function QrToPdfBlogPost() {
 
 <h2 id="step-by-step-generate-a-qr-code-pdf-using-icreatepdf" className="text-xl font-bold text-foreground pt-4 font-display">Step-by-Step: Generate a QR Code PDF Using iCreatePDF</h2>
           <ol className="list-decimal list-inside space-y-3 pl-4 text-sm">
-            <li>Open <Link href="/tools/qr-to-pdf" className="text-brand hover:underline">iCreatePDF QR to PDF</Link>.</li>
+            <li>Open our <Link href="/tools/qr-to-pdf" className="text-brand hover:underline">QR code to PDF converter</Link>.</li>
             <li>Enter the URL or text you want the QR code to link to.</li>
             <li>Customize the label text and QR code size.</li>
             <li>Download the generated code as a clean A4 PDF, ready to print.</li>
@@ -172,6 +204,8 @@ export default function QrToPdfBlogPost() {
           <h2 id="frequently-asked-questions" className="text-xl font-bold text-foreground pt-4 font-display">Frequently Asked Questions</h2>
           <div className="space-y-4">
             {[
+              { q: 'How do I convert a QR code to PDF?', a: 'Use our free QR code to PDF tool by entering your URL or text. Adjust any margins or custom labels, and then download the file. The tool compiles your QR code into a print-ready A4 PDF directly in your browser.' },
+              { q: 'Is it free to generate a QR code PDF?', a: 'Yes, iCreatePDF is a 100% free tool to generate and download QR code PDFs. There are no watermarks, account registrations, or hidden fees.' },
               { q: 'Do QR codes generated this way expire?', a: 'No. A QR code simply encodes the text or URL you enter — it works as long as that destination stays valid, with no third-party service or expiration involved.' },
               { q: 'Can I encode WiFi credentials, not just URLs?', a: 'Yes, enter the WiFi network details in the standard WiFi QR format and the code will let compatible devices connect by scanning.' },
               { q: 'Will the PDF be high enough resolution for large print?', a: 'The generated QR code is vector-based, so it scales cleanly to large print sizes like posters without pixelation.' },

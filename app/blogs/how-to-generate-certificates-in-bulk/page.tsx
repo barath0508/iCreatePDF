@@ -26,12 +26,38 @@ export default function BulkCertificatesBlog() {
     <div className="bg-background min-h-screen text-foreground flex flex-col justify-between selection:bg-brand/30">
       <script
         type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(articleSchema({
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify([
+            ...articleSchema({
           title: 'How to Generate Certificates in Bulk from Excel List | iCreatePDF',
           description: 'Need to create certificates, invitation cards, or tickets for hundreds of recipients? Learn how to generate personalized certificates client-side in bulk using a template and Excel.',
           url: '/blogs/how-to-generate-certificates-in-bulk',
           datePublished: '2026-05-29T00:00:00Z'
-        })) }}
+        }),
+            {
+            "@context": "https://schema.org",
+            "@type": "FAQPage",
+            "mainEntity": [
+              {
+                "@type": "Question",
+                "name": "How do I generate certificates in bulk?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Upload your certificate background template, upload a CSV spreadsheet containing names or serial numbers, map the text fields, and download the generated PDF certificates instantly."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "Is batch certificate generation private?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Yes, name mappings and certificate compiling run entirely in your local browser sandbox."
+                }
+              }
+            ]
+          }
+          ]),
+        }}
       />
       <Navigation />
 
@@ -145,7 +171,20 @@ export default function BulkCertificatesBlog() {
               <ArrowRight className="w-3.5 h-3.5 ml-1 transition-transform group-hover:translate-x-1" />
             </Button>
           </Link>
-        </div>
+        </div>          <h2 id="frequently-asked-questions" className="text-xl font-bold text-foreground pt-6 font-display">Frequently Asked Questions</h2>
+          <div className="space-y-4 my-6">
+            {[
+              { q: 'How do I generate certificates in bulk?', a: 'Upload your certificate background template, upload a CSV spreadsheet containing names or serial numbers, map the text fields, and download the generated PDF certificates instantly.' },
+              { q: 'Is batch certificate generation private?', a: 'Yes, name mappings and certificate compiling run entirely in your local browser sandbox.' }
+            ].map(({ q, a }) => (
+              <div key={q} className="p-4 rounded-xl bg-card border border-foreground/5">
+                <p className="text-sm font-bold text-foreground mb-1">{q}</p>
+                <p className="text-xs text-foreground/60 leading-relaxed">{a}</p>
+              </div>
+            ))}
+          </div>
+
+
 
         <RelatedPosts currentSlug="how-to-generate-certificates-in-bulk" />
       </article>

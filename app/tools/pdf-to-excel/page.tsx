@@ -12,7 +12,7 @@ export const metadata: Metadata = {
   alternates: buildAlternates('/tools/pdf-to-excel'),
   openGraph: {
     title: 'PDF to Excel — Extract Tables to CSV Online Free | iCreatePDF',
-    description: 'Extract tables from any PDF into Excel-ready CSV files, right in your browser — no upload, no sign-up.',
+    description: 'Extract tables from any PDF into Excel-ready CSV files. Detects rows and columns from text layout automatically, right in your browser — no upload, no sign-up.',
     type: 'website',
   }
 };

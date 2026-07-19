@@ -47,12 +47,54 @@ export default function SignPdfBlogPost() {
     <div className="bg-background min-h-screen text-foreground flex flex-col justify-between selection:bg-brand/30">
       <script
         type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(articleSchema({
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify([
+            ...articleSchema({
           title: 'How to Add a Digital Signature to a PDF Online (Free) | iCreatePDF',
           description: 'Sign PDF documents online for free without uploading them to a server. Draw, type, or import your signature and save a signed copy locally.',
           url: '/blogs/how-to-sign-pdf-online-free',
           datePublished: '2026-05-20T00:00:00Z'
-        })) }}
+        }),
+            {
+            "@context": "https://schema.org",
+            "@type": "FAQPage",
+            "mainEntity": [
+              {
+                "@type": "Question",
+                "name": "Can I sign a PDF on my phone?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Yes. iCreatePDF Sign PDF works on mobile browsers. Use the draw mode with your finger for a natural handwritten signature."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "Can I add my signature image instead of drawing it?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Yes. You can upload a PNG image of your handwritten signature (ideally on a white or transparent background) and position it on the document."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "Does signing a PDF lock it from editing?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "The visual signature is burned into the PDF layer \u2014 you can still edit other parts if the PDF is not password-protected. Use the Protect PDF tool to restrict editing after signing."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "Will the recipient be able to see my signature?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Absolutely. The signature is embedded as visible content on the specified page and position, viewable in any PDF reader."
+                }
+              }
+            ]
+          }
+          ]),
+        }}
       />
       <Navigation />
 

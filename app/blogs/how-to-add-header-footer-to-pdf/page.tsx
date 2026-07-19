@@ -35,12 +35,54 @@ export default function HeaderFooterBlogPost() {
     <div className="bg-background min-h-screen text-foreground flex flex-col justify-between selection:bg-brand/30">
       <script
         type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(articleSchema({
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify([
+            ...articleSchema({
           title: 'How to Add a Header and Footer to a PDF — Free Guide | iCreatePDF',
           description: 'Add custom headers and footers to every page of a PDF — company name, date, page numbers, or any text. 100% browser-based, no uploads.',
           url: '/blogs/how-to-add-header-footer-to-pdf',
           datePublished: '2026-07-18T00:00:00Z'
-        })) }}
+        }),
+            {
+            "@context": "https://schema.org",
+            "@type": "FAQPage",
+            "mainEntity": [
+              {
+                "@type": "Question",
+                "name": "Can I add different text to the header and footer at the same time?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Yes \u2014 set independent header and footer text, and both are applied together across every page in one pass."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "Will the header/footer overlap my existing content?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "No, text is placed in the page margin area, which keeps it clear of your document's main content."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "Can I include the current date automatically?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Yes \u2014 insert a date placeholder that's filled in automatically when the PDF is generated."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "Can I apply this to only some pages instead of all?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "The tool is designed for consistent headers/footers across the whole document; for page-specific text, use Edit PDF to add custom overlays to individual pages."
+                }
+              }
+            ]
+          }
+          ]),
+        }}
       />
       <Navigation />
 

@@ -39,12 +39,38 @@ export default function CompressPdfBlogPost() {
     <div className="bg-background min-h-screen text-foreground flex flex-col justify-between selection:bg-brand/30">
       <script
         type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(articleSchema({
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify([
+            ...articleSchema({
           title: 'How to Compress a PDF Without Losing Quality (2026 Guide) | iCreatePDF',
           description: 'Learn the best methods to reduce PDF file size while keeping images and text sharp. No quality loss, no uploads, all done in your browser for free.',
           url: '/blogs/how-to-compress-pdf-without-losing-quality',
           datePublished: '2026-05-25T00:00:00Z'
-        })) }}
+        }),
+            {
+            "@context": "https://schema.org",
+            "@type": "FAQPage",
+            "mainEntity": [
+              {
+                "@type": "Question",
+                "name": "How do you compress a PDF without quality loss?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "iCreatePDF optimizes internal document streams, compressing images and removing redundant meta elements without impacting text readability."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "Is there a file size limit for PDF compression?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "No. Since processing runs inside your browser tab using your CPU, there are no fixed limits on file sizes."
+                }
+              }
+            ]
+          }
+          ]),
+        }}
       />
       <Navigation />
 
@@ -219,7 +245,20 @@ export default function CompressPdfBlogPost() {
               <ArrowRight className="w-3.5 h-3.5 ml-1 transition-transform group-hover:translate-x-1" />
             </Button>
           </Link>
-        </div>
+        </div>          <h2 id="frequently-asked-questions" className="text-xl font-bold text-foreground pt-6 font-display">Frequently Asked Questions</h2>
+          <div className="space-y-4 my-6">
+            {[
+              { q: 'How do you compress a PDF without quality loss?', a: 'iCreatePDF optimizes internal document streams, compressing images and removing redundant meta elements without impacting text readability.' },
+              { q: 'Is there a file size limit for PDF compression?', a: 'No. Since processing runs inside your browser tab using your CPU, there are no fixed limits on file sizes.' }
+            ].map(({ q, a }) => (
+              <div key={q} className="p-4 rounded-xl bg-card border border-foreground/5">
+                <p className="text-sm font-bold text-foreground mb-1">{q}</p>
+                <p className="text-xs text-foreground/60 leading-relaxed">{a}</p>
+              </div>
+            ))}
+          </div>
+
+
 
         <RelatedPosts currentSlug="how-to-compress-pdf-without-losing-quality" />
       </article>

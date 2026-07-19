@@ -32,12 +32,38 @@ export default function ExtractPagesBlog() {
     <div className="bg-background min-h-screen text-foreground flex flex-col justify-between selection:bg-brand/30">
       <script
         type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(articleSchema({
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify([
+            ...articleSchema({
           title: 'How to Extract Pages from PDF Files Free Online | iCreatePDF',
           description: 'Learn how to split, pull, and extract specific pages from a PDF. Crop margins and resize pages easily. 100% offline, privacy first.',
           url: '/blogs/how-to-extract-pages-from-pdf',
           datePublished: '2026-05-26T00:00:00Z'
-        })) }}
+        }),
+            {
+            "@context": "https://schema.org",
+            "@type": "FAQPage",
+            "mainEntity": [
+              {
+                "@type": "Question",
+                "name": "Does extracting pages reduce quality?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "No. The text layers, vector images, and font styles are copied directly from the source pages, meaning the output has the exact same resolution and format."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "Can I extract pages from a protected PDF?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "If a PDF is locked with a password, you must first unlock it using the Unlock PDF tool, then proceed to extract pages."
+                }
+              }
+            ]
+          }
+          ]),
+        }}
       />
       <Navigation />
 
@@ -146,16 +172,17 @@ export default function ExtractPagesBlog() {
             Similarly, if you need to print a document on A4 but it was designed on Letter size, the Resizer tool handles rescaling content properly without cropping important text.
           </p>
 
-          <h2 id="frequently-asked-questions-about-this-tool" className="text-xl font-bold text-foreground pt-4 font-display">Frequently Asked Questions About This Tool</h2>
+          <h2 id="frequently-asked-questions" className="text-xl font-bold text-foreground pt-4 font-display">Frequently Asked Questions</h2>
           <div className="space-y-4">
-            <div className="p-4 rounded-xl bg-card border border-foreground/5 space-y-1">
-              <h4 className="text-sm font-semibold text-foreground">Does extracting pages reduce quality?</h4>
-              <p className="text-xs text-foreground/50 leading-relaxed">No. The text layers, vector images, and font styles are copied directly from the source pages, meaning the output has the exact same resolution and format.</p>
-            </div>
-            <div className="p-4 rounded-xl bg-card border border-foreground/5 space-y-1">
-              <h4 className="text-sm font-semibold text-foreground">Can I extract pages from a protected PDF?</h4>
-              <p className="text-xs text-foreground/50 leading-relaxed">If a PDF is locked with a password, you must first unlock it using the Unlock PDF tool, then proceed to extract pages.</p>
-            </div>
+            {[
+              { q: 'Does extracting pages reduce quality?', a: 'No. The text layers, vector images, and font styles are copied directly from the source pages, meaning the output has the exact same resolution and format.' },
+              { q: 'Can I extract pages from a protected PDF?', a: 'If a PDF is locked with a password, you must first unlock it using the Unlock PDF tool, then proceed to extract pages.' }
+            ].map(({ q, a }) => (
+              <div key={q} className="p-4 rounded-xl bg-card border border-foreground/5">
+                <p className="text-sm font-bold text-foreground mb-1">{q}</p>
+                <p className="text-xs text-foreground/60 leading-relaxed">{a}</p>
+              </div>
+            ))}
           </div>
         </div>
 

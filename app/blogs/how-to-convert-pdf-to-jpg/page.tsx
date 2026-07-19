@@ -35,12 +35,54 @@ export default function PdfToJpgBlogPost() {
     <div className="bg-background min-h-screen text-foreground flex flex-col justify-between selection:bg-brand/30">
       <script
         type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(articleSchema({
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify([
+            ...articleSchema({
           title: 'How to Convert PDF to JPG Online — Free Guide | iCreatePDF',
           description: 'Turn every page of a PDF into a JPG image in seconds, right in your browser. No uploads, no watermark, download as a ZIP instantly.',
           url: '/blogs/how-to-convert-pdf-to-jpg',
           datePublished: '2026-07-18T00:00:00Z'
-        })) }}
+        }),
+            {
+            "@context": "https://schema.org",
+            "@type": "FAQPage",
+            "mainEntity": [
+              {
+                "@type": "Question",
+                "name": "Can I convert just one page instead of the whole PDF?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Yes. After conversion, every page appears as a separate thumbnail \u2014 download the ones you need individually instead of the full ZIP."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "What resolution are the JPG images?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "iCreatePDF renders pages at a high pixel density suitable for screen use and most printing. For extremely high-DPI print jobs, check the exported file size before sending to a print shop."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "Does this work with scanned PDFs?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Yes \u2014 scanned PDFs are already page images internally, so conversion to JPG is fast and preserves the original scan quality."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "Is there a page limit?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "No arbitrary limit is enforced. The practical ceiling depends on your device's available memory for very long documents."
+                }
+              }
+            ]
+          }
+          ]),
+        }}
       />
       <Navigation />
 

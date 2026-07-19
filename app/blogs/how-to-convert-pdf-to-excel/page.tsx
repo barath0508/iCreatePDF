@@ -35,12 +35,54 @@ export default function PdfToExcelBlogPost() {
     <div className="bg-background min-h-screen text-foreground flex flex-col justify-between selection:bg-brand/30">
       <script
         type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(articleSchema({
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify([
+            ...articleSchema({
           title: 'How to Convert PDF to Excel Online — Free Guide | iCreatePDF',
           description: 'Extract tables from a PDF into Excel-ready CSV files. Automatic row and column detection, entirely in your browser — no upload, no sign-up.',
           url: '/blogs/how-to-convert-pdf-to-excel',
           datePublished: '2026-07-18T00:00:00Z'
-        })) }}
+        }),
+            {
+            "@context": "https://schema.org",
+            "@type": "FAQPage",
+            "mainEntity": [
+              {
+                "@type": "Question",
+                "name": "Does this export a .xlsx file or a CSV?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "iCreatePDF exports a CSV file, which opens natively in Excel, Google Sheets, and Numbers, and preserves all row and column data without proprietary formatting locks."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "Will it detect multiple tables in one PDF?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Yes \u2014 each table region is detected independently based on layout, and you can extract and download them separately."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "What if the columns are misaligned in the output?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Table detection depends on consistent spacing in the source PDF; irregular layouts may need minor manual cleanup after export."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "Can I extract a table from a scanned PDF?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Run the file through PDF OCR first to generate a text layer, then use PDF to Excel on the OCR output."
+                }
+              }
+            ]
+          }
+          ]),
+        }}
       />
       <Navigation />
 

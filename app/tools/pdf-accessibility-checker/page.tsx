@@ -12,7 +12,7 @@ export const metadata: Metadata = {
   alternates: buildAlternates('/tools/pdf-accessibility-checker'),
   openGraph: {
     title: 'PDF Accessibility Checker — WCAG & Screen Reader Audit | iCreatePDF',
-    description: 'Audit any PDF for screen-reader accessibility: tagging, declared language, real text layers, and labeled form fields.',
+    description: 'Audit any PDF for screen-reader accessibility: tagging, declared language, real text layers, and labeled form fields. Free, instant, and fully private in your browser.',
     type: 'website',
   }
 };

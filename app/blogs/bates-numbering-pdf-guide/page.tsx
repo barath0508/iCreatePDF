@@ -26,12 +26,38 @@ export default function BatesNumberingBlog() {
     <div className="bg-background min-h-screen text-foreground flex flex-col justify-between selection:bg-brand/30">
       <script
         type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(articleSchema({
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify([
+            ...articleSchema({
           title: 'What is Bates Numbering & How to Add Stamps to PDF | iCreatePDF',
           description: 'Learn the purpose of Bates numbering in legal discovery and how to apply sequential stamps to PDF pages. 100% free and secure offline stamp tool.',
           url: '/blogs/bates-numbering-pdf-guide',
           datePublished: '2026-05-26T00:00:00Z'
-        })) }}
+        }),
+            {
+            "@context": "https://schema.org",
+            "@type": "FAQPage",
+            "mainEntity": [
+              {
+                "@type": "Question",
+                "name": "What is Bates numbering?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Bates numbering is a method of indexing and identifying legal and medical documents using sequential identification numbers."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "Is Bates numbering done without uploading files?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Yes, our tool numbers every page 100% locally in your browser memory for total privacy."
+                }
+              }
+            ]
+          }
+          ]),
+        }}
       />
       <Navigation />
 
@@ -168,7 +194,20 @@ export default function BatesNumberingBlog() {
               <ArrowRight className="w-3.5 h-3.5 ml-1 transition-transform group-hover:translate-x-1" />
             </Button>
           </Link>
-        </div>
+        </div>          <h2 id="frequently-asked-questions" className="text-xl font-bold text-foreground pt-6 font-display">Frequently Asked Questions</h2>
+          <div className="space-y-4 my-6">
+            {[
+              { q: 'What is Bates numbering?', a: 'Bates numbering is a method of indexing and identifying legal and medical documents using sequential identification numbers.' },
+              { q: 'Is Bates numbering done without uploading files?', a: 'Yes, our tool numbers every page 100% locally in your browser memory for total privacy.' }
+            ].map(({ q, a }) => (
+              <div key={q} className="p-4 rounded-xl bg-card border border-foreground/5">
+                <p className="text-sm font-bold text-foreground mb-1">{q}</p>
+                <p className="text-xs text-foreground/60 leading-relaxed">{a}</p>
+              </div>
+            ))}
+          </div>
+
+
 
         <RelatedPosts currentSlug="bates-numbering-pdf-guide" />
       </article>

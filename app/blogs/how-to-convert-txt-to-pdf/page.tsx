@@ -35,12 +35,54 @@ export default function TxtToPdfBlogPost() {
     <div className="bg-background min-h-screen text-foreground flex flex-col justify-between selection:bg-brand/30">
       <script
         type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(articleSchema({
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify([
+            ...articleSchema({
           title: 'How to Convert TXT to PDF Online — Free Guide | iCreatePDF',
           description: 'Convert plain text (.txt) files or pasted text into styled PDF documents. Customize margins, page size, and fonts, entirely in your browser.',
           url: '/blogs/how-to-convert-txt-to-pdf',
           datePublished: '2026-07-18T00:00:00Z'
-        })) }}
+        }),
+            {
+            "@context": "https://schema.org",
+            "@type": "FAQPage",
+            "mainEntity": [
+              {
+                "@type": "Question",
+                "name": "Can I customize the font used in the PDF?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Yes, choose from available font options before generating the PDF to match your preferred look."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "Will long text automatically paginate correctly?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Yes \u2014 text flows and paginates automatically based on your chosen page size and margins, so you don't need to manually insert page breaks."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "Does it support special characters and different languages?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Standard Unicode text renders correctly, covering most languages and special characters used in plain text files."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "Can I add a header or footer to the exported PDF?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "For dedicated header and footer text on every page, use Header & Footer on the resulting PDF after conversion."
+                }
+              }
+            ]
+          }
+          ]),
+        }}
       />
       <Navigation />
 

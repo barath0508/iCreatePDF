@@ -35,12 +35,54 @@ export default function EditPdfBlogPost() {
     <div className="bg-background min-h-screen text-foreground flex flex-col justify-between selection:bg-brand/30">
       <script
         type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(articleSchema({
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify([
+            ...articleSchema({
           title: 'How to Edit a PDF Online for Free — Text Overlays & Annotations | iCreatePDF',
           description: 'Add text, annotations, and overlays to any PDF directly in your browser. No account, no upload — write directly into the document and download instantly.',
           url: '/blogs/how-to-edit-pdf-online-free',
           datePublished: '2026-07-18T00:00:00Z'
-        })) }}
+        }),
+            {
+            "@context": "https://schema.org",
+            "@type": "FAQPage",
+            "mainEntity": [
+              {
+                "@type": "Question",
+                "name": "Can I edit existing text in the PDF, not just add new text?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "iCreatePDF adds text overlays on top of the page rather than rewriting existing embedded text. To hide old text before overlaying a correction, use a colored box matching the background."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "Can I change the font, size, or color of the text I add?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Yes \u2014 size and color are adjustable when you place a text box. Reposition or delete a text box any time before saving."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "Is the edited PDF editable again later?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Yes. Once saved and downloaded, you can re-upload the file to iCreatePDF (or any editor) to add further overlays."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "Does editing work on scanned PDFs?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Yes \u2014 since edits are overlays placed on top of the rendered page, they work the same way whether the underlying PDF is scanned or digitally created."
+                }
+              }
+            ]
+          }
+          ]),
+        }}
       />
       <Navigation />
 

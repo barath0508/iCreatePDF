@@ -35,12 +35,54 @@ export default function CertifyPdfBlogPost() {
     <div className="bg-background min-h-screen text-foreground flex flex-col justify-between selection:bg-brand/30">
       <script
         type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(articleSchema({
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify([
+            ...articleSchema({
           title: 'How to Certify a PDF with a SHA-256 Fingerprint — Free Guide | iCreatePDF',
           description: 'Stamp a PDF with a cryptographic SHA-256 fingerprint and scannable QR code, then verify it later to prove it hasn\'t been altered. 100% browser-based.',
           url: '/blogs/how-to-certify-pdf-with-fingerprint',
           datePublished: '2026-07-18T00:00:00Z'
-        })) }}
+        }),
+            {
+            "@context": "https://schema.org",
+            "@type": "FAQPage",
+            "mainEntity": [
+              {
+                "@type": "Question",
+                "name": "Is a SHA-256 fingerprint legally binding like a signature?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "No. A fingerprint proves content integrity (the file hasn't changed), but doesn't carry the legal weight of a certificate-based digital signature tied to a verified identity."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "What happens if I edit the PDF after certifying it?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "The fingerprint will no longer match, since even a single-character change produces a completely different SHA-256 hash \u2014 this is exactly what makes it useful for detecting tampering."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "How do I verify a certified PDF later?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Scan the embedded QR code or recompute the SHA-256 fingerprint of the file and compare it against the one recorded at certification time."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "Can I certify a document that's already digitally signed?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Yes \u2014 certification and signing are independent processes and can be applied to the same document for layered integrity assurance."
+                }
+              }
+            ]
+          }
+          ]),
+        }}
       />
       <Navigation />
 

@@ -35,12 +35,54 @@ export default function ScanToPdfBlogPost() {
     <div className="bg-background min-h-screen text-foreground flex flex-col justify-between selection:bg-brand/30">
       <script
         type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(articleSchema({
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify([
+            ...articleSchema({
           title: 'How to Scan Documents to PDF with Your Phone or Webcam — Free Guide | iCreatePDF',
           description: 'Turn your phone or webcam camera into a document scanner. Crop, compile, and convert captured photos into a single PDF, entirely in your browser.',
           url: '/blogs/how-to-scan-documents-to-pdf',
           datePublished: '2026-07-18T00:00:00Z'
-        })) }}
+        }),
+            {
+            "@context": "https://schema.org",
+            "@type": "FAQPage",
+            "mainEntity": [
+              {
+                "@type": "Question",
+                "name": "Do I need to install an app to scan with my phone?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "No. iCreatePDF works directly in your phone's browser, using its camera through standard web APIs \u2014 no app store download required."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "Can I combine multiple scanned pages into one PDF?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Yes \u2014 capture or upload as many pages as needed, arrange them in order, and compile them into a single multi-page PDF."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "Is the scan quality good enough to read text clearly?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Yes, for most standard printed or handwritten documents. If you need the scanned text to be searchable, run the result through PDF OCR afterward."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "Does this work on desktop with a webcam?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Yes \u2014 any device with camera access, including laptop webcams, can be used for scanning through the same browser-based tool."
+                }
+              }
+            ]
+          }
+          ]),
+        }}
       />
       <Navigation />
 

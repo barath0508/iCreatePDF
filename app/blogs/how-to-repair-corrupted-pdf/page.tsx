@@ -35,12 +35,54 @@ export default function RepairPdfBlogPost() {
     <div className="bg-background min-h-screen text-foreground flex flex-col justify-between selection:bg-brand/30">
       <script
         type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(articleSchema({
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify([
+            ...articleSchema({
           title: 'How to Repair a Corrupted PDF Online — Free Guide | iCreatePDF',
           description: 'Fix corrupted, damaged, or broken PDF files by rebuilding cross-reference tables and object streams. 100% browser-based recovery, no uploads.',
           url: '/blogs/how-to-repair-corrupted-pdf',
           datePublished: '2026-07-18T00:00:00Z'
-        })) }}
+        }),
+            {
+            "@context": "https://schema.org",
+            "@type": "FAQPage",
+            "mainEntity": [
+              {
+                "@type": "Question",
+                "name": "Why won't a PDF open at all?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Usually because its cross-reference table \u2014 the internal index that tells a viewer where each page lives \u2014 has become corrupted, often from an interrupted download or failed file transfer."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "Can every corrupted PDF be repaired?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Not always. If content was actually overwritten or never fully saved, no repair tool can recreate data that no longer exists in the file."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "Is it safe to repair a sensitive document online?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "With iCreatePDF, yes \u2014 repair happens entirely in your browser, so a damaged contract or ID document is never sent to a server, unlike most repair tools."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "What should I do if repair doesn't fix the file?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Try the original source again if available (re-download, ask the sender to resend), since some corruption is unrecoverable from the damaged copy alone."
+                }
+              }
+            ]
+          }
+          ]),
+        }}
       />
       <Navigation />
 

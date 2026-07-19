@@ -35,12 +35,54 @@ export default function AccessibilityCheckerBlogPost() {
     <div className="bg-background min-h-screen text-foreground flex flex-col justify-between selection:bg-brand/30">
       <script
         type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(articleSchema({
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify([
+            ...articleSchema({
           title: 'How to Check PDF Accessibility (WCAG & Screen Reader Audit) — Free Guide | iCreatePDF',
           description: 'Audit any PDF for screen-reader accessibility: tagging, declared language, real text layers, and labeled form fields. Free, instant, fully private.',
           url: '/blogs/pdf-accessibility-checker-guide',
           datePublished: '2026-07-18T00:00:00Z'
-        })) }}
+        }),
+            {
+            "@context": "https://schema.org",
+            "@type": "FAQPage",
+            "mainEntity": [
+              {
+                "@type": "Question",
+                "name": "Does this checker guarantee full WCAG compliance?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "It checks the core structural requirements screen readers depend on (tagging, language, real text, labeled fields). Full WCAG compliance also involves reading order, color contrast, and other factors that may need additional manual review."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "What does it mean if my PDF has no tags?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Tags define the logical reading order and structure (headings, paragraphs, lists) that screen readers rely on. An untagged PDF may read out of order or skip structural cues entirely."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "Can I fix issues found in the audit within iCreatePDF?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Yes \u2014 pair the checker with tools like PDF OCR (for text layers) or Fillable PDF Builder (for labeled form fields) to address common flagged issues."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "Is this suitable for legal accessibility compliance audits?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "It's a strong first-pass screening tool. For formal legal compliance certification, consult your organization's accessibility policy for any additional required review steps."
+                }
+              }
+            ]
+          }
+          ]),
+        }}
       />
       <Navigation />
 

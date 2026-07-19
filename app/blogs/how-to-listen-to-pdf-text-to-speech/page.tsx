@@ -35,12 +35,54 @@ export default function ReadAloudBlogPost() {
     <div className="bg-background min-h-screen text-foreground flex flex-col justify-between selection:bg-brand/30">
       <script
         type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(articleSchema({
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify([
+            ...articleSchema({
           title: 'How to Listen to a PDF Read Aloud (Text-to-Speech) — Free Guide | iCreatePDF',
           description: 'Listen to any PDF read aloud in your browser with adjustable voice and speed, plus live word highlighting. 100% private, no upload required.',
           url: '/blogs/how-to-listen-to-pdf-text-to-speech',
           datePublished: '2026-07-18T00:00:00Z'
-        })) }}
+        }),
+            {
+            "@context": "https://schema.org",
+            "@type": "FAQPage",
+            "mainEntity": [
+              {
+                "@type": "Question",
+                "name": "Can I choose a different voice or accent?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Yes \u2014 available voices depend on your browser and operating system's installed speech synthesis voices, and you can pick from whichever are available."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "Can I speed up or slow down the reading?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Yes, adjust the playback speed to read faster for quick review or slower for careful listening."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "Does this work offline?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Once the page and voices are loaded, reading works without needing an active internet connection, since synthesis happens locally in your browser."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "Can I pause and resume reading?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Yes, playback controls let you pause, resume, and skip around the document as needed."
+                }
+              }
+            ]
+          }
+          ]),
+        }}
       />
       <Navigation />
 

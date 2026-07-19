@@ -26,12 +26,38 @@ export default function InvertPdfBlog() {
     <div className="bg-background min-h-screen text-foreground flex flex-col justify-between selection:bg-brand/30">
       <script
         type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(articleSchema({
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify([
+            ...articleSchema({
           title: 'How to Invert PDF Colors for Dark Mode Reading | iCreatePDF',
           description: 'Learn how to invert the colors of your PDF pages for comfortable night reading, dark mode setups, and printing ink savings. 100% free and client-side.',
           url: '/blogs/how-to-invert-pdf-colors-dark-mode',
           datePublished: '2026-05-26T00:00:00Z'
-        })) }}
+        }),
+            {
+            "@context": "https://schema.org",
+            "@type": "FAQPage",
+            "mainEntity": [
+              {
+                "@type": "Question",
+                "name": "How do I invert PDF colors for dark mode?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Drop your PDF file into our color inverter tool. It pixel-inverts colors locally in your browser for comfortable reading."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "Does PDF color inversion work offline?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Yes, once loaded, the processing runs entirely client-side on your device."
+                }
+              }
+            ]
+          }
+          ]),
+        }}
       />
       <Navigation />
 
@@ -144,7 +170,20 @@ export default function InvertPdfBlog() {
               <ArrowRight className="w-3.5 h-3.5 ml-1 transition-transform group-hover:translate-x-1" />
             </Button>
           </Link>
-        </div>
+        </div>          <h2 id="frequently-asked-questions" className="text-xl font-bold text-foreground pt-6 font-display">Frequently Asked Questions</h2>
+          <div className="space-y-4 my-6">
+            {[
+              { q: 'How do I invert PDF colors for dark mode?', a: 'Drop your PDF file into our color inverter tool. It pixel-inverts colors locally in your browser for comfortable reading.' },
+              { q: 'Does PDF color inversion work offline?', a: 'Yes, once loaded, the processing runs entirely client-side on your device.' }
+            ].map(({ q, a }) => (
+              <div key={q} className="p-4 rounded-xl bg-card border border-foreground/5">
+                <p className="text-sm font-bold text-foreground mb-1">{q}</p>
+                <p className="text-xs text-foreground/60 leading-relaxed">{a}</p>
+              </div>
+            ))}
+          </div>
+
+
 
         <RelatedPosts currentSlug="how-to-invert-pdf-colors-dark-mode" />
       </article>

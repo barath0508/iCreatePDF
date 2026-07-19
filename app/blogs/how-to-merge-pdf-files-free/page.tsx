@@ -35,12 +35,54 @@ export default function MergePdfBlogPost() {
     <div className="bg-background min-h-screen text-foreground flex flex-col justify-between selection:bg-brand/30">
       <script
         type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(articleSchema({
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify([
+            ...articleSchema({
           title: 'How to Merge Multiple PDFs Into One File — Free Guide | iCreatePDF',
           description: 'Combine multiple PDF files into a single document in seconds using your browser. No software installation, no file uploads, completely free.',
           url: '/blogs/how-to-merge-pdf-files-free',
           datePublished: '2026-05-22T00:00:00Z'
-        })) }}
+        }),
+            {
+            "@context": "https://schema.org",
+            "@type": "FAQPage",
+            "mainEntity": [
+              {
+                "@type": "Question",
+                "name": "How many PDFs can I merge at once?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "iCreatePDF has no arbitrary file count limit. The practical limit depends on your device RAM \u2014 most modern computers handle 20\u201350 PDFs easily."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "Will the merged PDF keep all fonts and images?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Yes. PDF merging preserves all embedded fonts, images, vector graphics, and document structure from each source file."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "Can I merge password-protected PDFs?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "You will need to unlock the PDFs first using the Unlock PDF tool on iCreatePDF, then merge them."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "Is the page order maintained?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Pages are added in the order you arrange the files in the upload area. You can drag and reorder before merging."
+                }
+              }
+            ]
+          }
+          ]),
+        }}
       />
       <Navigation />
 

@@ -7,12 +7,12 @@ import { buildAlternates, toolSchema } from '@/lib/seo';
 
 export const metadata: Metadata = {
   title: 'Edit PDF Metadata Online Free | iCreatePDF',
-  description: 'View and edit PDF metadata fields: title, author, subject, keywords, and creator. Update document properties without uploading files.',
+  description: 'View, edit, and strip PDF metadata including author, title, and creator. Processed 100% locally in your browser for absolute document privacy and security.',
   keywords: 'edit pdf metadata, pdf properties editor, change pdf author, pdf title editor online, pdf document properties',
   alternates: buildAlternates('/tools/pdf-metadata'),
   openGraph: {
     title: 'Edit PDF Metadata Online Free | iCreatePDF',
-    description: 'View and edit PDF metadata fields: title, author, subject, keywords, and creator. Update document properties without uploading files.',
+    description: 'View, edit, and strip PDF metadata including author, title, and creator. Processed 100% locally in your browser for absolute document privacy and security.',
     type: 'website',
   }
 };

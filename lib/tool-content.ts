@@ -610,7 +610,7 @@ export const toolContent: Record<string, ToolContent> = {
     name: 'QR Code to PDF',
     url: '/tools/qr-to-pdf',
     overview:
-      'Need a reliable qr code to pdf converter or looking for a way to embed a qr code to pdf free? iCreatePDF generates a scannable QR code from any URL, text, or contact info and compiles it into a clean, print-ready A4 PDF layout. It works completely in your browser, providing a live preview and downloading your QR code as a PDF instantly without any signup.',
+      'Looking to generate a qr code to pdf free? iCreatePDF is a web-based qr code to pdf converter that lets you turn any URL, text, or contact info into a high-quality, print-ready A4 PDF layout. Everything is processed locally in your browser sandbox, allowing you to create and download your QR code as a PDF instantly with complete data privacy.',
     steps: [
       { title: 'Enter your URL or text', description: 'Type the link, message, or contact info to encode.' },
       { title: 'Customize size and labels', description: 'Adjust the QR code size and add an optional caption.' },
@@ -628,8 +628,8 @@ export const toolContent: Record<string, ToolContent> = {
       { question: 'Can I add a label or caption under the QR code?', answer: 'Yes, you can add descriptive text alongside the code before generating the PDF.' },
       { question: 'Is the QR code generated locally?', answer: 'Yes, the QR image and PDF are both generated entirely in your browser.' },
       { question: 'What page size is the output PDF?', answer: 'The QR code is compiled onto a clean A4 page, ready for printing.' },
-      { question: 'How does this qr to pdf converter work?', answer: 'Our online qr to pdf converter generates a high-quality vector QR code based on your inputs (like links, text, or phone numbers) and compiles it directly into a clean A4 PDF file. Everything is processed locally in your browser, ensuring complete privacy.' },
-      { question: 'Is it free to generate a QR code PDF?', answer: 'Yes! iCreatePDF is a 100% free online QR to PDF compiler. There are no watermarks, no registration prompts, and no premium restrictions. You can generate and print as many QR code PDFs as you need.' },
+      { question: 'How does this qr code to pdf converter work?', answer: 'Our online qr code to pdf converter generates a high-quality vector QR code based on your inputs (like links, text, or phone numbers) and compiles it directly into a clean A4 PDF file. Everything is processed locally in your browser, ensuring complete privacy.' },
+      { question: 'How do I generate a QR code to PDF for free?', answer: 'To generate a QR code to PDF, simply enter your destination URL or text in the tool above, customize the label and size, and click download. It compiles your QR code into a clean, vector-based A4 PDF layout instantly and is 100% free.' },
       { question: 'How to convert qr code to pdf format?', answer: 'To convert or generate a QR code into a PDF, type your link or text into our qr code to pdf generator. Customize the size, margin, and label as needed. The tool generates the QR code and places it directly on a downloadable A4 PDF page immediately.' },
     ],
   },
@@ -945,7 +945,7 @@ export const toolContent: Record<string, ToolContent> = {
     name: 'Word to PDF',
     url: '/tools/word-to-pdf',
     overview:
-      "Wondering how to convert docx to pdf without formatting shifting on the recipient's device? iCreatePDF is an online docx to pdf converter free and web-based docx to pdf freeware. Learn how to convert docx to pdf, or how to save docx as pdf in seconds. We help you convert a docx file to pdf, supporting standard .docx to pdf operations. The entire tool functions to convert word to pdf local to your machine, meaning files are processed in your browser sandbox, keeping your documents 100% private and secure.",
+      "Wondering how to convert docx to pdf without formatting shifting on the recipient's device? iCreatePDF is an online docx to pdf converter free and web-based docx to pdf freeware. Learn how to convert docx to pdf, or how to change from docx to pdf in seconds. We help you convert a docx file to pdf, supporting standard .docx to pdf operations. The entire tool functions to convert word to pdf local to your machine, meaning files are processed in your browser sandbox, keeping your documents 100% private and secure.",
     steps: [
       { title: 'Upload your Word document', description: 'Add the .docx file you want to convert.' },
       { title: 'Preview the conversion', description: 'Check how the document will render as a PDF.' },
@@ -964,7 +964,7 @@ export const toolContent: Record<string, ToolContent> = {
       { question: 'Is my Word document uploaded to a server?', answer: 'No, conversion happens entirely inside your browser sandbox — this is a secure way to convert word to pdf free offline, and the file never leaves your device.' },
       { question: 'Can I convert documents with images and tables?', answer: 'Yes, embedded images and tables are carried over into the converted PDF layout.' },
       { question: 'How do I save docx as pdf on my device?', answer: 'Simply drag and drop your file into our Word to PDF tool. It converts your Word docx to pdf in real-time, preserving fonts, images, and tables without uploading the file to any server.' },
-      { question: 'How to convert docx to pdf or change a docx to pdf for free?', answer: 'Our Word to PDF tool is completely free with no registration. To transform docx to pdf, just drop the .docx file above, review the preview, and download your formatted PDF.' },
+      { question: 'How do I convert DOCX to PDF or change from DOCX to PDF?', answer: 'To convert DOCX to PDF or change from DOCX to PDF for free, simply drag and drop your .docx file into the tool above. Your document is instantly rendered client-side in your browser, preserving all text layouts, tables, and images. Once you review the preview, click Download PDF to save the file.' },
       { question: 'How do I convert docx to pdf in Microsoft Word?', answer: 'In Word, you can click File > Save As and select PDF (*.pdf) as the format. However, if you do not have Word installed, you can use our tool to convert docx to pdf without word, right in your web browser.' },
       { question: 'Can I convert ooxml or dox files to PDF?', answer: 'Yes! OOXML format (which is the standard XML structure of .docx files) is fully supported. If you have files named dox, doc, or docx, ensure they are in the modern .docx structure and our tool will easily convert them to PDF.' },
       { question: 'How do I convert word to pdf local to my machine?', answer: 'iCreatePDF works entirely client-side inside your browser. Because of this local architecture, you can convert word to pdf local to your own device without uploading files to any external servers, which even functions offline once loaded.' },

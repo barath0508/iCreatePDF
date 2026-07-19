@@ -35,12 +35,54 @@ export default function RisToPdfBlogPost() {
     <div className="bg-background min-h-screen text-foreground flex flex-col justify-between selection:bg-brand/30">
       <script
         type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(articleSchema({
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify([
+            ...articleSchema({
           title: 'How to Convert RIS to PDF (Bibliography & Citations) — Free Guide | iCreatePDF',
           description: 'Parse RIS bibliographic citation files and compile them into a formatted PDF in APA, MLA, Chicago, or Harvard style. 100% browser-based, no uploads.',
           url: '/blogs/how-to-convert-ris-to-pdf-bibliography',
           datePublished: '2026-07-18T00:00:00Z'
-        })) }}
+        }),
+            {
+            "@context": "https://schema.org",
+            "@type": "FAQPage",
+            "mainEntity": [
+              {
+                "@type": "Question",
+                "name": "Where do I get an RIS file?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Most reference managers (Zotero, EndNote, Mendeley) and academic databases have an \"Export as RIS\" option in their citation or library export menu."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "Does it support large citation libraries?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Yes \u2014 a single RIS file with hundreds of entries can be processed, limited only by your device's available memory for very large libraries."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "Can I switch citation style after generating the PDF?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Yes, simply re-run the conversion with a different style selected \u2014 the source RIS data stays the same, only the formatting output changes."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "Will incomplete citation entries cause errors?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Entries missing some fields (like a DOI) still convert, using the available data \u2014 check the output for any fields you may want to fill in manually."
+                }
+              }
+            ]
+          }
+          ]),
+        }}
       />
       <Navigation />
 

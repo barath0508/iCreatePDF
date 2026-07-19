@@ -12,7 +12,7 @@ export const metadata: Metadata = {
   alternates: buildAlternates('/tools/excel-to-pdf'),
   openGraph: {
     title: 'Excel to PDF — Convert Spreadsheet Online Free | iCreatePDF',
-    description: 'Convert Excel spreadsheets (.xlsx, .xls) and CSV files to printable, beautifully formatted PDF tables client-side — 100% private, no upload.',
+    description: 'Convert Excel spreadsheets (.xlsx, .xls) and CSV files to printable, beautifully formatted PDF tables. Customize columns, orientations, margins, and themes client-side — no upload, 100% private.',
     type: 'website',
   }
 };

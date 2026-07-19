@@ -7,12 +7,12 @@ import { buildAlternates, toolSchema } from '@/lib/seo';
 
 export const metadata: Metadata = {
   title: 'Convert JPG to PDF Online - Free & Private | iCreatePDF',
-  description: 'Convert JPG or JPEG images to high-quality PDF files. Completely client-side, drag & drop multiple JPGs, reorder, adjust sizes, and download instantly.',
+  description: 'Convert JPG or JPEG images to high-quality PDF files. Drag and drop multiple JPGs, reorder, and download instantly. Processed 100% locally for absolute privacy.',
   keywords: 'jpg to pdf, convert jpg to pdf, jpeg to pdf, convert image to pdf, free online jpg to pdf, private pdf converter',
   alternates: buildAlternates('/tools/jpg-to-pdf'),
   openGraph: {
     title: 'Convert JPG to PDF Online - Free & Private | iCreatePDF',
-    description: 'Convert JPG or JPEG images to high-quality PDF files. Completely client-side, drag & drop multiple JPGs, reorder, adjust sizes, and download instantly.',
+    description: 'Convert JPG or JPEG images to high-quality PDF files. Drag and drop multiple JPGs, reorder, and download instantly. Processed 100% locally for absolute privacy.',
     type: 'website',
   }
 };

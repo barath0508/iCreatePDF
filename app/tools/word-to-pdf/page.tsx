@@ -6,13 +6,13 @@ import { toolContent } from '@/lib/tool-content';
 import { buildAlternates, toolSchema } from '@/lib/seo';
 
 export const metadata: Metadata = {
-  title: 'Convert Word DOCX to PDF Online Free (100% Private) | iCreatePDF',
-  description: 'Wondering how to convert DOCX to PDF? Save Word documents as PDF files online instantly. 100% private, local browser conversion that preserves layouts perfectly.',
-  keywords: 'how to convert docx to pdf, docx to pdf freeware, docx to pdf free, convert word to pdf local, docx to pdf converter free, docx to pdf for free, docx to pdf converter, convert docx to pdf free, microsoft word docx to pdf, docx into pdf, docx a pdf, docx file to pdf, docx to pf, docx in pdf, .docx to pdf, convert docx to pdf for free, docx to pdf, convert word to pdf free offline, word to pdf without changing format, convert docx to pdf without word, save docx as pdf, private pdf converter, icreatepdf',
+  title: 'Convert DOCX to PDF Online Free (100% Private) | iCreatePDF',
+  description: 'Convert DOCX to PDF online for free. Wondering how to change from DOCX to PDF without formatting shifts? Convert Word documents 100% privately in your browser.',
+  keywords: 'convert docx to pdf, change from docx to pdf, docx to pdf, change docx to pdf, how to convert docx to pdf, docx to pdf freeware, docx to pdf free, convert word to pdf local, docx to pdf converter free, docx to pdf for free, docx to pdf converter, convert docx to pdf free, microsoft word docx to pdf, docx into pdf, docx a pdf, docx file to pdf, docx to pf, docx in pdf, .docx to pdf, convert docx to pdf for free, convert word to pdf free offline, word to pdf without changing format, convert docx to pdf without word, save docx as pdf, private pdf converter, icreatepdf',
   alternates: buildAlternates('/tools/word-to-pdf'),
   openGraph: {
-    title: 'Convert Word DOCX to PDF Online Free (100% Private) | iCreatePDF',
-    description: 'Wondering how to convert DOCX to PDF? Save Word documents as PDF files online instantly. 100% private, local browser conversion that preserves layouts perfectly.',
+    title: 'Convert DOCX to PDF Online Free (100% Private) | iCreatePDF',
+    description: 'Convert DOCX to PDF online for free. Wondering how to change from DOCX to PDF without formatting shifts? Convert Word documents 100% privately in your browser.',
     type: 'website',
   }
 };

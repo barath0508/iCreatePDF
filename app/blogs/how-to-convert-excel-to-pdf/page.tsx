@@ -35,12 +35,54 @@ export default function ExcelToPdfBlogPost() {
     <div className="bg-background min-h-screen text-foreground flex flex-col justify-between selection:bg-brand/30">
       <script
         type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(articleSchema({
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify([
+            ...articleSchema({
           title: 'How to Convert Excel to PDF Online — Free Guide | iCreatePDF',
           description: 'Convert Excel spreadsheets (.xlsx, .xls) and CSV files to printable, beautifully formatted PDF tables client-side — no upload, 100% private.',
           url: '/blogs/how-to-convert-excel-to-pdf',
           datePublished: '2026-07-18T00:00:00Z'
-        })) }}
+        }),
+            {
+            "@context": "https://schema.org",
+            "@type": "FAQPage",
+            "mainEntity": [
+              {
+                "@type": "Question",
+                "name": "Can I select a sheet from a multi-sheet workbook?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Yes! If your uploaded Excel file contains multiple sheets, a sheet selector bar will appear above the preview grid, letting you browse and convert sheets individually."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "Will the gridlines display in my final PDF?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "By default, yes. However, you can toggle the \"Gridlines\" checkbox in the sidebar settings off if you want a clean borderless design."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "Can I add a custom title to the PDF table report?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Yes, just fill in the \"Document Title\" text input in the sidebar settings. It will render as a prominent title centered above your table report."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "Do you support legacy .xls files?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Yes, we support both modern Excel files (.xlsx) and legacy workbooks (.xls), as well as text spreadsheets (.csv)."
+                }
+              }
+            ]
+          }
+          ]),
+        }}
       />
       <Navigation />
 

@@ -26,12 +26,38 @@ export default function GrayscaleFlattenPdfBlog() {
     <div className="bg-background min-h-screen text-foreground flex flex-col justify-between selection:bg-brand/30">
       <script
         type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(articleSchema({
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify([
+            ...articleSchema({
           title: 'How to Grayscale and Flatten PDF Documents | iCreatePDF',
           description: 'Learn how to convert color PDFs to black & white for ink-saving printing, and flatten form fields, annotation layers, and signatures locally.',
           url: '/blogs/how-to-grayscale-and-flatten-pdf',
           datePublished: '2026-05-29T00:00:00Z'
-        })) }}
+        }),
+            {
+            "@context": "https://schema.org",
+            "@type": "FAQPage",
+            "mainEntity": [
+              {
+                "@type": "Question",
+                "name": "What does flattening a PDF do?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Flattening merges form fields, electronic signatures, and visual annotation layers into static background graphics, preventing further changes."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "How do I convert a color PDF to grayscale?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Use our Grayscale PDF tool to render color elements into black-and-white print-ready versions locally."
+                }
+              }
+            ]
+          }
+          ]),
+        }}
       />
       <Navigation />
 
@@ -139,7 +165,20 @@ export default function GrayscaleFlattenPdfBlog() {
               </Button>
             </Link>
           </div>
-        </div>
+        </div>          <h2 id="frequently-asked-questions" className="text-xl font-bold text-foreground pt-6 font-display">Frequently Asked Questions</h2>
+          <div className="space-y-4 my-6">
+            {[
+              { q: 'What does flattening a PDF do?', a: 'Flattening merges form fields, electronic signatures, and visual annotation layers into static background graphics, preventing further changes.' },
+              { q: 'How do I convert a color PDF to grayscale?', a: 'Use our Grayscale PDF tool to render color elements into black-and-white print-ready versions locally.' }
+            ].map(({ q, a }) => (
+              <div key={q} className="p-4 rounded-xl bg-card border border-foreground/5">
+                <p className="text-sm font-bold text-foreground mb-1">{q}</p>
+                <p className="text-xs text-foreground/60 leading-relaxed">{a}</p>
+              </div>
+            ))}
+          </div>
+
+
 
         <RelatedPosts currentSlug="how-to-grayscale-and-flatten-pdf" />
       </article>

@@ -35,12 +35,54 @@ export default function PdfToTextBlogPost() {
     <div className="bg-background min-h-screen text-foreground flex flex-col justify-between selection:bg-brand/30">
       <script
         type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(articleSchema({
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify([
+            ...articleSchema({
           title: 'How to Extract Text from a PDF Online — Free Guide | iCreatePDF',
           description: 'Pull the raw text out of any PDF, page by page, entirely in your browser. No uploads, no software, copy or download as .txt instantly.',
           url: '/blogs/how-to-extract-text-from-pdf',
           datePublished: '2026-07-18T00:00:00Z'
-        })) }}
+        }),
+            {
+            "@context": "https://schema.org",
+            "@type": "FAQPage",
+            "mainEntity": [
+              {
+                "@type": "Question",
+                "name": "Does this preserve formatting like bold or bullet points?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "No \u2014 extraction returns raw text content. Formatting, fonts, and layout are not preserved, since the output is a plain text file."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "Why is some text missing from my extraction?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "If a PDF page is a scanned image rather than digitally created text, there is no text layer to extract. Run it through PDF OCR first."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "Can I extract text from just one page?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Yes \u2014 each page's text is shown separately, so you can copy only the page you need instead of the whole document."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "Is the extracted text editable?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Yes, once downloaded as a .txt file or copied to your clipboard, it can be pasted and edited in any text editor or word processor."
+                }
+              }
+            ]
+          }
+          ]),
+        }}
       />
       <Navigation />
 

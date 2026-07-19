@@ -33,12 +33,38 @@ export default function RedactPdfBlog() {
     <div className="bg-background min-h-screen text-foreground flex flex-col justify-between selection:bg-brand/30">
       <script
         type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(articleSchema({
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify([
+            ...articleSchema({
           title: 'How to Redact PDF Files Online Free & Securely | iCreatePDF',
           description: 'Learn how to black out sensitive information, text, and images from your PDFs. 100% private, browser-based redaction with no server uploads.',
           url: '/blogs/how-to-redact-pdf-online-free',
           datePublished: '2026-05-26T00:00:00Z'
-        })) }}
+        }),
+            {
+            "@context": "https://schema.org",
+            "@type": "FAQPage",
+            "mainEntity": [
+              {
+                "@type": "Question",
+                "name": "How do I permanently black out PDF text?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Open our redact tool, draw black boxes over sensitive names, dates, or financial data, and download. The redacted content is permanently burned out of the file."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "Is online redaction secure?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Yes, since processing is client-side, the text is redacted from the byte stream in your browser memory before output."
+                }
+              }
+            ]
+          }
+          ]),
+        }}
       />
       <Navigation />
 
@@ -172,7 +198,20 @@ export default function RedactPdfBlog() {
               <ArrowRight className="w-3.5 h-3.5 ml-1 transition-transform group-hover:translate-x-1" />
             </Button>
           </Link>
-        </div>
+        </div>          <h2 id="frequently-asked-questions" className="text-xl font-bold text-foreground pt-6 font-display">Frequently Asked Questions</h2>
+          <div className="space-y-4 my-6">
+            {[
+              { q: 'How do I permanently black out PDF text?', a: 'Open our redact tool, draw black boxes over sensitive names, dates, or financial data, and download. The redacted content is permanently burned out of the file.' },
+              { q: 'Is online redaction secure?', a: 'Yes, since processing is client-side, the text is redacted from the byte stream in your browser memory before output.' }
+            ].map(({ q, a }) => (
+              <div key={q} className="p-4 rounded-xl bg-card border border-foreground/5">
+                <p className="text-sm font-bold text-foreground mb-1">{q}</p>
+                <p className="text-xs text-foreground/60 leading-relaxed">{a}</p>
+              </div>
+            ))}
+          </div>
+
+
 
         <RelatedPosts currentSlug="how-to-redact-pdf-online-free" />
       </article>

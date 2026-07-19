@@ -35,12 +35,54 @@ export default function OrganizePdfBlogPost() {
     <div className="bg-background min-h-screen text-foreground flex flex-col justify-between selection:bg-brand/30">
       <script
         type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(articleSchema({
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify([
+            ...articleSchema({
           title: 'How to Organize PDF Pages Online — Free Guide | iCreatePDF',
           description: 'Rearrange, rotate, or delete specific pages in a PDF using visual thumbnails. 100% browser-based, no uploads, all in one pass.',
           url: '/blogs/how-to-organize-pdf-pages',
           datePublished: '2026-07-18T00:00:00Z'
-        })) }}
+        }),
+            {
+            "@context": "https://schema.org",
+            "@type": "FAQPage",
+            "mainEntity": [
+              {
+                "@type": "Question",
+                "name": "Can I undo a page reorder before saving?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Yes \u2014 drag pages again to fix the order any time before you click Save; nothing is finalized until you download the result."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "Does organizing affect page content quality?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "No. Reordering, rotating, and deleting only change page position and orientation metadata \u2014 the underlying content is untouched."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "Can I merge two files and then organize them together?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Yes \u2014 merge your files first with Merge PDF, then open the combined file in Organize PDF to fine-tune the order."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "Is there a page count limit?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "No arbitrary limit. Very large documents (hundreds of pages) depend on your device's available memory to load smoothly."
+                }
+              }
+            ]
+          }
+          ]),
+        }}
       />
       <Navigation />
 

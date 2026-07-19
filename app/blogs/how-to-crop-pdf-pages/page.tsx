@@ -35,12 +35,54 @@ export default function CropPdfBlogPost() {
     <div className="bg-background min-h-screen text-foreground flex flex-col justify-between selection:bg-brand/30">
       <script
         type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(articleSchema({
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify([
+            ...articleSchema({
           title: 'How to Crop PDF Pages Online — Free Guide | iCreatePDF',
           description: 'Trim margins, remove scanner borders, and cut white space from PDF pages. 100% browser-based cropping — no uploads, apply to one page or all.',
           url: '/blogs/how-to-crop-pdf-pages',
           datePublished: '2026-07-18T00:00:00Z'
-        })) }}
+        }),
+            {
+            "@context": "https://schema.org",
+            "@type": "FAQPage",
+            "mainEntity": [
+              {
+                "@type": "Question",
+                "name": "Does cropping delete content permanently?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Cropping changes the visible page boundary. Content outside the crop area is no longer displayed or included in the exported file, so keep your original if you may need the full page later."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "Can I apply different crop margins to different pages?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Yes \u2014 select individual pages and adjust crop handles independently, or apply the same crop to every page at once."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "Will cropping affect text selectability?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "No. Cropping only changes the visible page area; any text remaining within the cropped boundary stays fully selectable and searchable."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "Is there a limit to how much I can crop?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "You can crop as tightly as needed, down to the bounds of your visible content."
+                }
+              }
+            ]
+          }
+          ]),
+        }}
       />
       <Navigation />
 

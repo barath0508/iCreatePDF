@@ -35,12 +35,54 @@ export default function ComparePdfBlogPost() {
     <div className="bg-background min-h-screen text-foreground flex flex-col justify-between selection:bg-brand/30">
       <script
         type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(articleSchema({
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify([
+            ...articleSchema({
           title: 'How to Compare Two PDF Files Side-by-Side — Free Guide | iCreatePDF',
           description: 'Compare two PDF document versions side-by-side with synchronized scrolling to spot content differences instantly. 100% browser-based, no uploads.',
           url: '/blogs/how-to-compare-two-pdf-files',
           datePublished: '2026-07-18T00:00:00Z'
-        })) }}
+        }),
+            {
+            "@context": "https://schema.org",
+            "@type": "FAQPage",
+            "mainEntity": [
+              {
+                "@type": "Question",
+                "name": "Does this highlight exact changed words automatically?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "The comparison view is visual and side-by-side, which is best for spotting layout and content changes as you scroll; it does not auto-highlight individual changed words like a text-diff tool."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "Can I compare PDFs with different page counts?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Yes, both documents load independently in their own panel, so you can compare files even if one has more or fewer pages than the other."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "Is this useful for scanned document comparisons?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Yes \u2014 since comparison is visual, it works on scanned pages just as well as digitally created PDFs, since you're looking at rendered pages rather than raw text."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "Can I compare more than two files at once?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "The tool is designed for pairwise comparison; for more than two versions, compare them two at a time in sequence."
+                }
+              }
+            ]
+          }
+          ]),
+        }}
       />
       <Navigation />
 

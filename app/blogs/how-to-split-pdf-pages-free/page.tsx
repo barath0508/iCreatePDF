@@ -26,12 +26,38 @@ export default function SplitPdfBlog() {
     <div className="bg-background min-h-screen text-foreground flex flex-col justify-between selection:bg-brand/30">
       <script
         type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(articleSchema({
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify([
+            ...articleSchema({
           title: 'How to Split and Delete PDF Pages Free | iCreatePDF',
           description: 'Learn how to extract pages, split files, or delete specific pages visually with previews. Done entirely in the browser with no server uploads.',
           url: '/blogs/how-to-split-pdf-pages-free',
           datePublished: '2026-05-29T00:00:00Z'
-        })) }}
+        }),
+            {
+            "@context": "https://schema.org",
+            "@type": "FAQPage",
+            "mainEntity": [
+              {
+                "@type": "Question",
+                "name": "How do I split PDF pages?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Upload the PDF, select custom page ranges or extract all pages individually, and download the separate files."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "Is splitting a PDF free?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Yes, iCreatePDF split tool is completely free with no file limitations or registration requirements."
+                }
+              }
+            ]
+          }
+          ]),
+        }}
       />
       <Navigation />
 
@@ -155,7 +181,20 @@ export default function SplitPdfBlog() {
               </Button>
             </Link>
           </div>
-        </div>
+        </div>          <h2 id="frequently-asked-questions" className="text-xl font-bold text-foreground pt-6 font-display">Frequently Asked Questions</h2>
+          <div className="space-y-4 my-6">
+            {[
+              { q: 'How do I split PDF pages?', a: 'Upload the PDF, select custom page ranges or extract all pages individually, and download the separate files.' },
+              { q: 'Is splitting a PDF free?', a: 'Yes, iCreatePDF split tool is completely free with no file limitations or registration requirements.' }
+            ].map(({ q, a }) => (
+              <div key={q} className="p-4 rounded-xl bg-card border border-foreground/5">
+                <p className="text-sm font-bold text-foreground mb-1">{q}</p>
+                <p className="text-xs text-foreground/60 leading-relaxed">{a}</p>
+              </div>
+            ))}
+          </div>
+
+
 
         <RelatedPosts currentSlug="how-to-split-pdf-pages-free" />
       </article>

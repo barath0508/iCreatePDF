@@ -35,12 +35,54 @@ export default function VerifySignatureBlogPost() {
     <div className="bg-background min-h-screen text-foreground flex flex-col justify-between selection:bg-brand/30">
       <script
         type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(articleSchema({
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify([
+            ...articleSchema({
           title: 'How to Verify a PDF Digital Signature Online — Free Guide | iCreatePDF',
           description: 'Validate cryptographic signatures on a PDF and inspect signer identity and byte-range integrity. 100% browser-based verification, no uploads.',
           url: '/blogs/how-to-verify-pdf-signature',
           datePublished: '2026-07-18T00:00:00Z'
-        })) }}
+        }),
+            {
+            "@context": "https://schema.org",
+            "@type": "FAQPage",
+            "mainEntity": [
+              {
+                "@type": "Question",
+                "name": "What does it mean if a signature shows as invalid?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "It usually means the document was modified after signing, or the signature data itself is corrupted. Either way, treat the document as unverified until confirmed with the original signer."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "Can I verify multiple signatures on one document?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Yes \u2014 PDFs can carry multiple signatures (for example, from different approval stages), and each is validated independently."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "Does verification confirm the signer's real-world identity?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Verification confirms the certificate used matches the signature and the document is unaltered. Trusting the signer's identity also depends on whether that certificate was issued by a trusted authority."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "Is this the same as checking if a PDF is encrypted?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "No \u2014 encryption and digital signatures are separate features. Verification here checks signature validity, not password protection."
+                }
+              }
+            ]
+          }
+          ]),
+        }}
       />
       <Navigation />
 

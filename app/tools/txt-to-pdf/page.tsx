@@ -7,12 +7,12 @@ import { buildAlternates, toolSchema } from '@/lib/seo';
 
 export const metadata: Metadata = {
   title: 'Convert Text to PDF Online - Free & Private | iCreatePDF',
-  description: 'Convert plain text (.txt) files or pasted text into styled PDF documents. Customize page margins, size, fonts, and headers/footers client-side.',
+  description: 'Convert plain text files (.txt) or raw typed text into formatted PDF sheets. Processed 100% locally in your browser sandbox for absolute data privacy.',
   keywords: 'text to pdf, txt to pdf online, convert plain text to pdf, free local pdf converter, text layout to pdf',
   alternates: buildAlternates('/tools/txt-to-pdf'),
   openGraph: {
     title: 'Convert Text to PDF Online - Free & Private | iCreatePDF',
-    description: 'Convert plain text (.txt) files or pasted text into styled PDF documents. Customize page margins, size, fonts, and headers/footers client-side.',
+    description: 'Convert plain text files (.txt) or raw typed text into formatted PDF sheets. Processed 100% locally in your browser sandbox for absolute data privacy.',
     type: 'website',
   }
 };

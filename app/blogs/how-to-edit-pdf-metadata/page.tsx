@@ -34,12 +34,38 @@ export default function EditMetadataBlog() {
     <div className="bg-background min-h-screen text-foreground flex flex-col justify-between selection:bg-brand/30">
       <script
         type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(articleSchema({
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify([
+            ...articleSchema({
           title: 'How to Edit PDF Metadata & Properties Online | iCreatePDF',
           description: 'Learn how to view and edit metadata fields in a PDF. Change title, author, subject, keywords, and add professional headers or footers locally.',
           url: '/blogs/how-to-edit-pdf-metadata',
           datePublished: '2026-05-26T00:00:00Z'
-        })) }}
+        }),
+            {
+            "@context": "https://schema.org",
+            "@type": "FAQPage",
+            "mainEntity": [
+              {
+                "@type": "Question",
+                "name": "How do I edit PDF metadata?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Upload your file, customize the title, author, subject, or keywords fields, and download the updated PDF document."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "Is modifying PDF properties secure?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Yes, iCreatePDF edits PDF headers locally in your browser, bypassing cloud uploads to keep metadata changes private."
+                }
+              }
+            ]
+          }
+          ]),
+        }}
       />
       <Navigation />
 
@@ -154,7 +180,20 @@ export default function EditMetadataBlog() {
               <ArrowRight className="w-3.5 h-3.5 ml-1 transition-transform group-hover:translate-x-1" />
             </Button>
           </Link>
-        </div>
+        </div>          <h2 id="frequently-asked-questions" className="text-xl font-bold text-foreground pt-6 font-display">Frequently Asked Questions</h2>
+          <div className="space-y-4 my-6">
+            {[
+              { q: 'How do I edit PDF metadata?', a: 'Upload your file, customize the title, author, subject, or keywords fields, and download the updated PDF document.' },
+              { q: 'Is modifying PDF properties secure?', a: 'Yes, iCreatePDF edits PDF headers locally in your browser, bypassing cloud uploads to keep metadata changes private.' }
+            ].map(({ q, a }) => (
+              <div key={q} className="p-4 rounded-xl bg-card border border-foreground/5">
+                <p className="text-sm font-bold text-foreground mb-1">{q}</p>
+                <p className="text-xs text-foreground/60 leading-relaxed">{a}</p>
+              </div>
+            ))}
+          </div>
+
+
 
         <RelatedPosts currentSlug="how-to-edit-pdf-metadata" />
       </article>

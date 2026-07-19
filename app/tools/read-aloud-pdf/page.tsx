@@ -12,7 +12,7 @@ export const metadata: Metadata = {
   alternates: buildAlternates('/tools/read-aloud-pdf'),
   openGraph: {
     title: 'PDF Read Aloud — Text-to-Speech Reader Online Free | iCreatePDF',
-    description: 'Listen to any PDF read aloud in your browser with adjustable voice and speed. 100% private, no upload required.',
+    description: 'Listen to any PDF read aloud in your browser. Choose a voice, adjust reading speed, and follow along with live word highlighting. 100% private, no upload required.',
     type: 'website',
   }
 };

@@ -33,12 +33,38 @@ export default function BlogPostOne() {
     <div className="bg-background min-h-screen text-foreground flex flex-col justify-between selection:bg-brand/30">
       <script
         type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(articleSchema({
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify([
+            ...articleSchema({
           title: 'How to Convert HEIC Photos to PDF | iCreatePDF Blog',
           description: 'Learn the easiest ways to convert HEIC photos from your mobile device into a single PDF document. Browser methods, offline methods, and step-by-step guides.',
           url: '/blogs/how-to-convert-iphone-photos-to-pdf',
           datePublished: '2026-05-20T00:00:00Z'
-        })) }}
+        }),
+            {
+            "@context": "https://schema.org",
+            "@type": "FAQPage",
+            "mainEntity": [
+              {
+                "@type": "Question",
+                "name": "How can I convert HEIC iPhone photos to PDF?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Upload the HEIC images into our local converter, reorder pages, adjust sizing if needed, and export as a PDF."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "Do you support converting HEIC images offline?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Yes, our browser-based engine supports local HEIC-to-PDF compilation even if you are offline."
+                }
+              }
+            ]
+          }
+          ]),
+        }}
       />
       <Navigation />
       
@@ -158,7 +184,20 @@ export default function BlogPostOne() {
               <ArrowRight className="w-3.5 h-3.5 ml-1 transition-transform group-hover:translate-x-1" />
             </Button>
           </Link>
-        </div>
+        </div>          <h2 id="frequently-asked-questions" className="text-xl font-bold text-foreground pt-6 font-display">Frequently Asked Questions</h2>
+          <div className="space-y-4 my-6">
+            {[
+              { q: 'How can I convert HEIC iPhone photos to PDF?', a: 'Upload the HEIC images into our local converter, reorder pages, adjust sizing if needed, and export as a PDF.' },
+              { q: 'Do you support converting HEIC images offline?', a: 'Yes, our browser-based engine supports local HEIC-to-PDF compilation even if you are offline.' }
+            ].map(({ q, a }) => (
+              <div key={q} className="p-4 rounded-xl bg-card border border-foreground/5">
+                <p className="text-sm font-bold text-foreground mb-1">{q}</p>
+                <p className="text-xs text-foreground/60 leading-relaxed">{a}</p>
+              </div>
+            ))}
+          </div>
+
+
 
         <RelatedPosts currentSlug="how-to-convert-iphone-photos-to-pdf" />
       </article>

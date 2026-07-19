@@ -6,13 +6,13 @@ import { toolContent } from '@/lib/tool-content';
 import { buildAlternates, toolSchema } from '@/lib/seo';
 
 export const metadata: Metadata = {
-  title: 'QR to PDF Converter: Generate QR Codes in PDF Free | iCreatePDF',
-  description: 'Free online QR to PDF converter. Generate a custom QR code for any URL or text, customize labels and sizes, and download as a clean A4 PDF instantly.',
-  keywords: 'qr code to pdf, how to convert qr code to pdf, convert qr code to pdf, qr code to pdf generator, qr code to pdf free, qr to pdf converter, qr code to pdf converter, generate qr code pdf, create pdf with qr code, qr code generator pdf, embed qr code pdf free',
+  title: 'QR Code to PDF Converter: Generate QR Codes Free | iCreatePDF',
+  description: 'Free online QR Code to PDF converter. Generate custom QR codes from any URL or text. Processed 100% locally in your browser sandbox for absolute privacy.',
+  keywords: 'qr code to pdf, qr code to pdf converter, qr code to pdf generator, how to convert qr code to pdf, convert qr code to pdf, qr code to pdf free, qr to pdf converter, generate qr code pdf, create pdf with qr code, qr code generator pdf, embed qr code pdf free',
   alternates: buildAlternates('/tools/qr-to-pdf'),
   openGraph: {
-    title: 'QR to PDF Converter: Generate QR Codes in PDF Free | iCreatePDF',
-    description: 'Free online QR to PDF converter. Generate a custom QR code for any URL or text, customize labels and sizes, and download as a clean A4 PDF instantly.',
+    title: 'QR Code to PDF Converter: Generate QR Codes Free | iCreatePDF',
+    description: 'Free online QR Code to PDF converter. Generate custom QR codes from any URL or text. Processed 100% locally in your browser sandbox for absolute privacy.',
     type: 'website',
   }
 };

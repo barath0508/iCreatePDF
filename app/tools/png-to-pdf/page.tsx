@@ -7,12 +7,12 @@ import { buildAlternates, toolSchema } from '@/lib/seo';
 
 export const metadata: Metadata = {
   title: 'Convert PNG to PDF Online - Free & Private | iCreatePDF',
-  description: 'Convert PNG images to high-quality PDF files. Completely client-side, drag & drop multiple PNGs, reorder, adjust sizes, and download instantly.',
+  description: 'Convert PNG images into a high-quality PDF document online for free. Drag and drop, reorder pages. Processed 100% locally in-browser for complete privacy.',
   keywords: 'convert png to pdf, png to pdf, convert image to pdf, free online png to pdf, private pdf converter',
   alternates: buildAlternates('/tools/png-to-pdf'),
   openGraph: {
     title: 'Convert PNG to PDF Online - Free & Private | iCreatePDF',
-    description: 'Convert PNG images to high-quality PDF files. Completely client-side, drag & drop multiple PNGs, reorder, adjust sizes, and download instantly.',
+    description: 'Convert PNG images into a high-quality PDF document online for free. Drag and drop, reorder pages. Processed 100% locally in-browser for complete privacy.',
     type: 'website',
   }
 };

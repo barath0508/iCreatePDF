@@ -26,12 +26,38 @@ export default function WatermarkPageNumbersPdfBlog() {
     <div className="bg-background min-h-screen text-foreground flex flex-col justify-between selection:bg-brand/30">
       <script
         type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(articleSchema({
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify([
+            ...articleSchema({
           title: 'How to Add Custom Watermark and Page Numbers to PDF | iCreatePDF',
           description: 'Learn how to stamp configurable watermarks and sequential page numbers on all pages of your PDF document securely in your browser.',
           url: '/blogs/how-to-add-watermark-and-page-numbers-to-pdf',
           datePublished: '2026-05-29T00:00:00Z'
-        })) }}
+        }),
+            {
+            "@context": "https://schema.org",
+            "@type": "FAQPage",
+            "mainEntity": [
+              {
+                "@type": "Question",
+                "name": "Can I add a watermark and page numbers to a PDF for free?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Yes. Use iCreatePDF to place stamp text overlays, configure page numbers, customize sizes and fonts, and download instantly."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "Are my documents safe when watermarking?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Yes, all watermarking and numbering processes run client-side on your local device."
+                }
+              }
+            ]
+          }
+          ]),
+        }}
       />
       <Navigation />
 
@@ -157,7 +183,20 @@ export default function WatermarkPageNumbersPdfBlog() {
               </Button>
             </Link>
           </div>
-        </div>
+        </div>          <h2 id="frequently-asked-questions" className="text-xl font-bold text-foreground pt-6 font-display">Frequently Asked Questions</h2>
+          <div className="space-y-4 my-6">
+            {[
+              { q: 'Can I add a watermark and page numbers to a PDF for free?', a: 'Yes. Use iCreatePDF to place stamp text overlays, configure page numbers, customize sizes and fonts, and download instantly.' },
+              { q: 'Are my documents safe when watermarking?', a: 'Yes, all watermarking and numbering processes run client-side on your local device.' }
+            ].map(({ q, a }) => (
+              <div key={q} className="p-4 rounded-xl bg-card border border-foreground/5">
+                <p className="text-sm font-bold text-foreground mb-1">{q}</p>
+                <p className="text-xs text-foreground/60 leading-relaxed">{a}</p>
+              </div>
+            ))}
+          </div>
+
+
 
         <RelatedPosts currentSlug="how-to-add-watermark-and-page-numbers-to-pdf" />
       </article>

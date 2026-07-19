@@ -35,12 +35,54 @@ export default function BarcodeToPdfBlogPost() {
     <div className="bg-background min-h-screen text-foreground flex flex-col justify-between selection:bg-brand/30">
       <script
         type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(articleSchema({
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify([
+            ...articleSchema({
           title: 'How to Generate a Barcode PDF Online — Free Guide | iCreatePDF',
           description: 'Generate Code 128, EAN-13, UPC-A, Code 39, Data Matrix, or PDF417 barcodes and download as a print-ready PDF. 100% browser-based, no uploads.',
           url: '/blogs/how-to-generate-barcode-pdf',
           datePublished: '2026-07-18T00:00:00Z'
-        })) }}
+        }),
+            {
+            "@context": "https://schema.org",
+            "@type": "FAQPage",
+            "mainEntity": [
+              {
+                "@type": "Question",
+                "name": "Can I use these barcodes for real retail products?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "For EAN-13/UPC-A codes to work at retail checkout systems, the code number itself must be officially registered with GS1. iCreatePDF generates the correct visual barcode for any number you enter, but registration is a separate step handled outside this tool."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "Will the generated barcode scan correctly?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Yes \u2014 codes follow the standard encoding specification for each format, so any compliant barcode scanner or scanning app can read them."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "Can I generate multiple barcodes at once?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Generate and download codes one at a time through the tool; for bulk batches, repeat the process for each value you need."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "What size should I print barcodes at?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Keep to at least the minimum recommended width for your chosen format \u2014 very small prints can become unreadable to standard scanners."
+                }
+              }
+            ]
+          }
+          ]),
+        }}
       />
       <Navigation />
 

@@ -26,12 +26,38 @@ export default function ScannedPdfToTextBlog() {
     <div className="bg-background min-h-screen text-foreground flex flex-col justify-between selection:bg-brand/30">
       <script
         type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(articleSchema({
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify([
+            ...articleSchema({
           title: 'How to Convert Scanned PDF to Text (Free Online OCR) | iCreatePDF',
           description: 'Learn how to extract copyable text from scanned documents and image-only PDF files using client-side OCR character recognition in English, Spanish, Tamil, and Hindi.',
           url: '/blogs/how-to-convert-scanned-pdf-to-text-ocr',
           datePublished: '2026-05-28T00:00:00Z'
-        })) }}
+        }),
+            {
+            "@context": "https://schema.org",
+            "@type": "FAQPage",
+            "mainEntity": [
+              {
+                "@type": "Question",
+                "name": "How do I extract text from a scanned PDF?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Use our in-browser OCR tool. It scans the document images and converts them into selectable, searchable, copy-pasteable text."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "Does the PDF OCR tool upload my files?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "No. The optical character recognition engine runs inside your browser sandbox, keeping your documents confidential."
+                }
+              }
+            ]
+          }
+          ]),
+        }}
       />
       <Navigation />
 
@@ -158,7 +184,20 @@ export default function ScannedPdfToTextBlog() {
               <ArrowRight className="w-3.5 h-3.5 ml-1 transition-transform group-hover:translate-x-1" />
             </Button>
           </Link>
-        </div>
+        </div>          <h2 id="frequently-asked-questions" className="text-xl font-bold text-foreground pt-6 font-display">Frequently Asked Questions</h2>
+          <div className="space-y-4 my-6">
+            {[
+              { q: 'How do I extract text from a scanned PDF?', a: 'Use our in-browser OCR tool. It scans the document images and converts them into selectable, searchable, copy-pasteable text.' },
+              { q: 'Does the PDF OCR tool upload my files?', a: 'No. The optical character recognition engine runs inside your browser sandbox, keeping your documents confidential.' }
+            ].map(({ q, a }) => (
+              <div key={q} className="p-4 rounded-xl bg-card border border-foreground/5">
+                <p className="text-sm font-bold text-foreground mb-1">{q}</p>
+                <p className="text-xs text-foreground/60 leading-relaxed">{a}</p>
+              </div>
+            ))}
+          </div>
+
+
 
         <RelatedPosts currentSlug="how-to-convert-scanned-pdf-to-text-ocr" />
       </article>

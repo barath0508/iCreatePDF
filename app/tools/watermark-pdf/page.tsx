@@ -7,12 +7,12 @@ import { buildAlternates, toolSchema } from '@/lib/seo';
 
 export const metadata: Metadata = {
   title: 'Watermark PDF Online - Free & Private | iCreatePDF',
-  description: 'Add custom text watermarks to all pages of a PDF file. 100% client-side with positioning, size, and opacity adjustments.',
+  description: 'Stamp configurable text overlays on all pages of a PDF document. Customize text, font, and position. Processed 100% locally in-browser for complete privacy.',
   keywords: 'watermark pdf, add watermark to pdf, watermark pdf online, free watermark pdf, private pdf watermark',
   alternates: buildAlternates('/tools/watermark-pdf'),
   openGraph: {
     title: 'Watermark PDF Online - Free & Private | iCreatePDF',
-    description: 'Add custom text watermarks to all pages of a PDF file. 100% client-side with positioning, size, and opacity adjustments.',
+    description: 'Stamp configurable text overlays on all pages of a PDF document. Customize text, font, and position. Processed 100% locally in-browser for complete privacy.',
     type: 'website',
   }
 };

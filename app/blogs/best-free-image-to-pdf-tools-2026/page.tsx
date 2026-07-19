@@ -50,12 +50,38 @@ export default function BlogPostTwo() {
     <div className="bg-background min-h-screen text-foreground flex flex-col justify-between selection:bg-brand/30">
       <script
         type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(articleSchema({
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify([
+            ...articleSchema({
           title: 'Best Free Image to PDF Online Tools (2026 Review) | iCreatePDF Blog',
           description: 'Looking for the best way to convert images to PDF? We compare top free online image-to-PDF tools in 2026 for speed, pricing, and privacy.',
           url: '/blogs/best-free-image-to-pdf-tools-2026',
           datePublished: '2026-05-15T00:00:00Z'
-        })) }}
+        }),
+            {
+            "@context": "https://schema.org",
+            "@type": "FAQPage",
+            "mainEntity": [
+              {
+                "@type": "Question",
+                "name": "Which is the best free image to PDF tool?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "iCreatePDF is the top free utility because it processes conversions offline in the browser sandbox, removing privacy risks and file limits."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "Can I convert multiple images to PDF at once?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Yes, you can upload multiple JPG, PNG, or HEIC files, reorder pages, and save them in one clean PDF."
+                }
+              }
+            ]
+          }
+          ]),
+        }}
       />
       <Navigation />
       
@@ -177,7 +203,20 @@ export default function BlogPostTwo() {
               <ArrowRight className="w-3.5 h-3.5 ml-1 transition-transform group-hover:translate-x-1" />
             </Button>
           </Link>
-        </div>
+        </div>          <h2 id="frequently-asked-questions" className="text-xl font-bold text-foreground pt-6 font-display">Frequently Asked Questions</h2>
+          <div className="space-y-4 my-6">
+            {[
+              { q: 'Which is the best free image to PDF tool?', a: 'iCreatePDF is the top free utility because it processes conversions offline in the browser sandbox, removing privacy risks and file limits.' },
+              { q: 'Can I convert multiple images to PDF at once?', a: 'Yes, you can upload multiple JPG, PNG, or HEIC files, reorder pages, and save them in one clean PDF.' }
+            ].map(({ q, a }) => (
+              <div key={q} className="p-4 rounded-xl bg-card border border-foreground/5">
+                <p className="text-sm font-bold text-foreground mb-1">{q}</p>
+                <p className="text-xs text-foreground/60 leading-relaxed">{a}</p>
+              </div>
+            ))}
+          </div>
+
+
 
         <RelatedPosts currentSlug="best-free-image-to-pdf-tools-2026" />
       </article>

@@ -35,12 +35,54 @@ export default function DeletePagesBlogPost() {
     <div className="bg-background min-h-screen text-foreground flex flex-col justify-between selection:bg-brand/30">
       <script
         type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(articleSchema({
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify([
+            ...articleSchema({
           title: 'How to Delete Pages from a PDF Online — Free Guide | iCreatePDF',
           description: 'Cut, delete, or remove unwanted pages from a PDF document. 100% browser-based, no uploads, remove one page or several at once.',
           url: '/blogs/how-to-delete-pages-from-pdf',
           datePublished: '2026-07-18T00:00:00Z'
-        })) }}
+        }),
+            {
+            "@context": "https://schema.org",
+            "@type": "FAQPage",
+            "mainEntity": [
+              {
+                "@type": "Question",
+                "name": "Can I delete multiple pages at once?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Yes \u2014 select as many pages as you need from the thumbnail grid before saving; they are all removed in a single operation."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "Will deleting pages affect the ones that remain?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "No. Remaining pages keep their original content and quality; only their page numbers shift to fill the gap."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "Can I undo a deletion after saving?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Once downloaded, re-upload your original file if you kept a copy \u2014 the deletion itself cannot be undone within the tool after saving."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "Is there a limit to how many pages I can delete?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "No arbitrary limit \u2014 you can delete any number of pages, including down to a single remaining page."
+                }
+              }
+            ]
+          }
+          ]),
+        }}
       />
       <Navigation />
 

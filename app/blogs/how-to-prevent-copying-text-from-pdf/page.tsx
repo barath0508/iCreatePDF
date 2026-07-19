@@ -26,12 +26,38 @@ export default function PreventCopyBlog() {
     <div className="bg-background min-h-screen text-foreground flex flex-col justify-between selection:bg-brand/30">
       <script
         type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(articleSchema({
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify([
+            ...articleSchema({
           title: 'How to Prevent Copying Text from PDF Online Free | iCreatePDF',
           description: 'Learn the absolute safest way to disable text highlighting, selection, and copy-pasting from your PDF documents client-side using local page rasterization.',
           url: '/blogs/how-to-prevent-copying-text-from-pdf',
           datePublished: '2026-05-28T00:00:00Z'
-        })) }}
+        }),
+            {
+            "@context": "https://schema.org",
+            "@type": "FAQPage",
+            "mainEntity": [
+              {
+                "@type": "Question",
+                "name": "How do I restrict text copying from a PDF?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Upload your PDF to rasterize text layers into flat graphics, making direct copy-pasting and highlighting impossible."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "Is rasterizing a PDF secure?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Yes, it runs locally in your browser to remove text selection capabilities without sending pages to any external servers."
+                }
+              }
+            ]
+          }
+          ]),
+        }}
       />
       <Navigation />
 
@@ -155,7 +181,20 @@ export default function PreventCopyBlog() {
               <ArrowRight className="w-3.5 h-3.5 ml-1 transition-transform group-hover:translate-x-1" />
             </Button>
           </Link>
-        </div>
+        </div>          <h2 id="frequently-asked-questions" className="text-xl font-bold text-foreground pt-6 font-display">Frequently Asked Questions</h2>
+          <div className="space-y-4 my-6">
+            {[
+              { q: 'How do I restrict text copying from a PDF?', a: 'Upload your PDF to rasterize text layers into flat graphics, making direct copy-pasting and highlighting impossible.' },
+              { q: 'Is rasterizing a PDF secure?', a: 'Yes, it runs locally in your browser to remove text selection capabilities without sending pages to any external servers.' }
+            ].map(({ q, a }) => (
+              <div key={q} className="p-4 rounded-xl bg-card border border-foreground/5">
+                <p className="text-sm font-bold text-foreground mb-1">{q}</p>
+                <p className="text-xs text-foreground/60 leading-relaxed">{a}</p>
+              </div>
+            ))}
+          </div>
+
+
 
         <RelatedPosts currentSlug="how-to-prevent-copying-text-from-pdf" />
       </article>

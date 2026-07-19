@@ -76,7 +76,7 @@ const tools = [
   {
     icon: FileText,
     title: 'Word to PDF',
-    desc: 'Convert standard word processor (.docx) documents into clean PDFs.',
+    desc: 'Convert standard word processor (.docx) documents into clean PDFs. Change from DOCX to PDF for free.',
     href: '/tools/word-to-pdf',
     category: 'convert',
   },
@@ -307,7 +307,7 @@ const tools = [
   {
     icon: QrCode,
     title: 'QR to PDF',
-    desc: 'Generate a clean A4 PDF with an embedded QR code for any URL or text.',
+    desc: 'Generate a clean A4 PDF with an embedded QR code for any URL or text. Create your QR code to PDF instantly.',
     href: '/tools/qr-to-pdf',
     category: 'convert',
   },

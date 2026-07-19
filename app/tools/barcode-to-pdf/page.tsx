@@ -7,12 +7,12 @@ import { buildAlternates, toolSchema } from '@/lib/seo';
 
 export const metadata: Metadata = {
   title: 'Barcode to PDF Generator: Code 128, EAN-13, UPC-A & More | iCreatePDF',
-  description: 'Generate Code 128, EAN-13, UPC-A, Code 39, Data Matrix, or PDF417 barcodes and embed them into a clean A4 PDF. 100% client-side, free, no sign-up.',
+  description: 'Generate Code 128, EAN-13, UPC-A, Code 39, Data Matrix, or PDF417 barcodes. Download as A4 PDF. Processed 100% locally in-browser for complete privacy.',
   keywords: 'barcode to pdf, barcode generator pdf, code 128 generator, ean-13 barcode generator, upc-a barcode generator, code 39 generator, data matrix generator, pdf417 generator, free barcode to pdf, product label generator',
   alternates: buildAlternates('/tools/barcode-to-pdf'),
   openGraph: {
     title: 'Barcode to PDF Generator: Code 128, EAN-13, UPC-A & More | iCreatePDF',
-    description: 'Generate Code 128, EAN-13, UPC-A, Code 39, Data Matrix, or PDF417 barcodes and embed them into a clean A4 PDF. 100% client-side, free, no sign-up.',
+    description: 'Generate Code 128, EAN-13, UPC-A, Code 39, Data Matrix, or PDF417 barcodes. Download as A4 PDF. Processed 100% locally in-browser for complete privacy.',
     type: 'website',
   }
 };

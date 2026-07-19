@@ -35,12 +35,54 @@ export default function RotatePdfBlogPost() {
     <div className="bg-background min-h-screen text-foreground flex flex-col justify-between selection:bg-brand/30">
       <script
         type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(articleSchema({
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify([
+            ...articleSchema({
           title: 'How to Rotate PDF Pages Online — Free Guide | iCreatePDF',
           description: 'Fix sideways or upside-down PDF pages in seconds. Rotate one page or the whole document, entirely in your browser — no uploads, no software.',
           url: '/blogs/how-to-rotate-pdf-pages',
           datePublished: '2026-07-18T00:00:00Z'
-        })) }}
+        }),
+            {
+            "@context": "https://schema.org",
+            "@type": "FAQPage",
+            "mainEntity": [
+              {
+                "@type": "Question",
+                "name": "Does rotating a PDF page reduce quality?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "No. Rotation changes the page display orientation metadata \u2014 it does not re-render or compress any content, so quality is fully preserved."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "Can I rotate only some pages and leave others untouched?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Yes. Select individual pages from the thumbnail grid before applying rotation; unselected pages remain exactly as they were."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "Will the rotation stick when I open the file elsewhere?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Yes \u2014 the rotation is saved into the PDF file itself, so it displays correctly in any PDF viewer, not just in iCreatePDF."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "Can I undo a rotation?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "You can rotate the same page again in the opposite direction, or re-upload your original file if you kept a copy."
+                }
+              }
+            ]
+          }
+          ]),
+        }}
       />
       <Navigation />
 

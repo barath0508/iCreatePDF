@@ -35,12 +35,54 @@ export default function ResizePdfBlogPost() {
     <div className="bg-background min-h-screen text-foreground flex flex-col justify-between selection:bg-brand/30">
       <script
         type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(articleSchema({
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify([
+            ...articleSchema({
           title: 'How to Resize PDF Pages to A4, Letter or Custom Size — Free Guide | iCreatePDF',
           description: 'Normalize every page of a PDF to A4, Letter, A3, Legal, or a custom size without losing content quality. 100% browser-based, no uploads.',
           url: '/blogs/how-to-resize-pdf-pages',
           datePublished: '2026-07-18T00:00:00Z'
-        })) }}
+        }),
+            {
+            "@context": "https://schema.org",
+            "@type": "FAQPage",
+            "mainEntity": [
+              {
+                "@type": "Question",
+                "name": "What is the difference between resizing and cropping?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Resizing changes the overall page dimensions and scales content to fit; cropping trims the visible margin without rescaling the remaining content. Use Crop PDF if you just need to remove borders."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "Can I resize only some pages, not the whole document?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Yes \u2014 select the specific pages you want to standardize, or apply the same target size across the entire document."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "Does resizing reduce text or image quality?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "No. Content is scaled proportionally without re-compression, so vector text and embedded images retain their original quality."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "Can I enter exact custom dimensions?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Yes, enter a specific width and height for non-standard formats beyond the built-in A4/Letter/A3/Legal presets."
+                }
+              }
+            ]
+          }
+          ]),
+        }}
       />
       <Navigation />
 

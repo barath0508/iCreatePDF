@@ -26,12 +26,38 @@ export default function ProtectUnlockPdfBlog() {
     <div className="bg-background min-h-screen text-foreground flex flex-col justify-between selection:bg-brand/30">
       <script
         type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(articleSchema({
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify([
+            ...articleSchema({
           title: 'How to Password Protect and Unlock PDF Files Securely | iCreatePDF',
           description: 'Learn how to encrypt your PDF files with owner/user passwords and strip passwords from encrypted files 100% locally in your browser sandbox.',
           url: '/blogs/how-to-password-protect-and-unlock-pdf',
           datePublished: '2026-05-29T00:00:00Z'
-        })) }}
+        }),
+            {
+            "@context": "https://schema.org",
+            "@type": "FAQPage",
+            "mainEntity": [
+              {
+                "@type": "Question",
+                "name": "How do I password protect a PDF?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Upload your PDF file, enter a strong password, choose permission settings if needed, and download the encrypted PDF document."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "Can I remove a password from a PDF?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Yes, upload the locked document, enter the correct password, and download the decrypted PDF."
+                }
+              }
+            ]
+          }
+          ]),
+        }}
       />
       <Navigation />
 
@@ -151,7 +177,20 @@ export default function ProtectUnlockPdfBlog() {
               </Button>
             </Link>
           </div>
-        </div>
+        </div>          <h2 id="frequently-asked-questions" className="text-xl font-bold text-foreground pt-6 font-display">Frequently Asked Questions</h2>
+          <div className="space-y-4 my-6">
+            {[
+              { q: 'How do I password protect a PDF?', a: 'Upload your PDF file, enter a strong password, choose permission settings if needed, and download the encrypted PDF document.' },
+              { q: 'Can I remove a password from a PDF?', a: 'Yes, upload the locked document, enter the correct password, and download the decrypted PDF.' }
+            ].map(({ q, a }) => (
+              <div key={q} className="p-4 rounded-xl bg-card border border-foreground/5">
+                <p className="text-sm font-bold text-foreground mb-1">{q}</p>
+                <p className="text-xs text-foreground/60 leading-relaxed">{a}</p>
+              </div>
+            ))}
+          </div>
+
+
 
         <RelatedPosts currentSlug="how-to-password-protect-and-unlock-pdf" />
       </article>

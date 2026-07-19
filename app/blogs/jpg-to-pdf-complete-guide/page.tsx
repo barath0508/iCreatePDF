@@ -43,12 +43,54 @@ export default function JpgToPdfBlogPost() {
     <div className="bg-background min-h-screen text-foreground flex flex-col justify-between selection:bg-brand/30">
       <script
         type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(articleSchema({
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify([
+            ...articleSchema({
           title: 'JPG to PDF: How to Convert Images to PDF Online Free | iCreatePDF',
           description: 'Convert JPG, PNG, WEBP, and HEIC images to PDF instantly in your browser. No signup, no upload, no file size limits. Step-by-step guide.',
           url: '/blogs/jpg-to-pdf-complete-guide',
           datePublished: '2026-05-18T00:00:00Z'
-        })) }}
+        }),
+            {
+            "@context": "https://schema.org",
+            "@type": "FAQPage",
+            "mainEntity": [
+              {
+                "@type": "Question",
+                "name": "How many images can I convert at once?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "There is no hard limit in iCreatePDF. The practical limit depends on your device memory. Most users process 20\u2013100 images in a single session."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "Will converting to PDF reduce image quality?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Only if you choose Medium or Low quality settings. With High quality, the image is embedded nearly losslessly and the visual difference is imperceptible."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "Can I convert a PDF back to JPG?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Yes \u2014 use the PDF to JPG tool on iCreatePDF to extract each page as a high-resolution JPEG image."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "Does the converter work on mobile?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Yes. iCreatePDF is fully responsive. You can select photos from your camera roll and convert them on iPhone, Android, or any tablet browser."
+                }
+              }
+            ]
+          }
+          ]),
+        }}
       />
       <Navigation />
 

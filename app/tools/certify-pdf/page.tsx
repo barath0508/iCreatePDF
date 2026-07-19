@@ -12,7 +12,7 @@ export const metadata: Metadata = {
   alternates: buildAlternates('/tools/certify-pdf'),
   openGraph: {
     title: 'Certify PDF — SHA-256 Fingerprint & Tamper-Proof Stamp | iCreatePDF',
-    description: 'Certify any PDF with a cryptographic SHA-256 fingerprint and a scannable QR code, then verify a file against its fingerprint later.',
+    description: 'Certify any PDF with a cryptographic SHA-256 fingerprint and a scannable QR code, then verify a file against its fingerprint later. 100% private, browser-based integrity checking.',
     type: 'website',
   }
 };

@@ -7,12 +7,12 @@ import { buildAlternates, toolSchema } from '@/lib/seo';
 
 export const metadata: Metadata = {
   title: 'Local PDF Password Remover - Decrypt PDF Securely | iCreatePDF',
-  description: 'Remove passwords and decryption locks from PDF files client-side. Your files and passwords are never uploaded to any remote server.',
+  description: 'Strip password encryption locks from PDF files online for free. Processed 100% locally inside your browser sandbox with zero uploads for absolute privacy.',
   keywords: 'local pdf password remover, decrypt pdf client-side, remove pdf security password private, offline pdf unlocker, strip pdf permissions local, unlock pdf owner password, bypass pdf print restriction, remove copy restriction pdf',
   alternates: buildAlternates('/tools/unlock-pdf'),
   openGraph: {
     title: 'Local PDF Password Remover - Decrypt PDF Securely | iCreatePDF',
-    description: 'Remove passwords and decryption locks from PDF files client-side. Your files and passwords are never uploaded to any remote server.',
+    description: 'Strip password encryption locks from PDF files online for free. Processed 100% locally inside your browser sandbox with zero uploads for absolute privacy.',
     type: 'website',
   }
 };
