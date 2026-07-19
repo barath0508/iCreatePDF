@@ -187,7 +187,7 @@ export function ConverterSection({ initialFormatFilter }: ConverterSectionProps)
         name: `converted-icreatepdf-${Date.now()}.pdf`,
         size: blob.size,
         toolName: initialFormatFilter ? `${initialFormatFilter.toUpperCase()} to PDF` : 'Image to PDF',
-        href: initialFormatFilter ? `/${initialFormatFilter}-to-pdf` : '/jpg-to-pdf',
+        href: initialFormatFilter ? `/${initialFormatFilter}-to-pdf` : '/tools/jpg-to-pdf',
         downloadUrl: url,
       });
     } catch (err: any) {

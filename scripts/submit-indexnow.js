@@ -2,7 +2,7 @@ const http = require('https');
 const fs = require('fs');
 const path = require('path');
 
-const HOST = 'icreatepdf.online';
+const HOST = 'www.icreatepdf.online';
 const KEY = '137b258eeaf54fc79cfc0fee07c11e3e';
 const KEY_LOCATION = `https://${HOST}/${KEY}.txt`;
 const SITEMAP_URL = `https://${HOST}/sitemap.xml`;

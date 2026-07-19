@@ -20,7 +20,7 @@ export interface ToolContent {
 export const toolContent: Record<string, ToolContent> = {
   'add-page-numbers': {
     name: 'Add Page Numbers to PDF',
-    url: '/add-page-numbers',
+    url: '/tools/add-page-numbers',
     overview:
       'Numbering a PDF by hand or re-exporting from a source document just to add "Page X of Y" wastes time. iCreatePDF stamps sequential page numbers onto an existing PDF directly in your browser, so contracts, theses, reports, and manuals get consistent pagination without a trip through a desktop editor or a third-party upload.',
     steps: [
@@ -45,7 +45,7 @@ export const toolContent: Record<string, ToolContent> = {
 
   'bates-numbering': {
     name: 'Bates Numbering',
-    url: '/bates-numbering',
+    url: '/tools/bates-numbering',
     overview:
       'Bates numbering is the standard method litigation teams, paralegals, and compliance departments use to uniquely identify every page of a document. If you are looking for an EasyBates online alternative that is free and secure, iCreatePDF is the perfect choice. It applies sequential Bates stamps—with custom prefixes, padding, and suffixes—locally in your browser sandbox, so discovery files never touch a third-party server.',
     steps: [
@@ -71,7 +71,7 @@ export const toolContent: Record<string, ToolContent> = {
 
   'compare-pdf': {
     name: 'Compare PDF',
-    url: '/compare-pdf',
+    url: '/tools/compare-pdf',
     overview:
       'Spotting what changed between two contract drafts or report revisions by eye is slow and error-prone. iCreatePDF renders two PDF versions side-by-side with synchronized scrolling, so you can visually audit differences between redlines, revisions, or signed versions without installing diff software.',
     steps: [
@@ -96,7 +96,7 @@ export const toolContent: Record<string, ToolContent> = {
 
   'compress-pdf': {
     name: 'Compress PDF',
-    url: '/compress-pdf',
+    url: '/tools/compress-pdf',
     overview:
       'Large PDFs bounce off email attachment limits and slow down every share. iCreatePDF shrinks PDF file size by optimizing internal image streams and object structures, running the entire compression pipeline locally in your browser so oversized scans and reports become email-friendly without a quality-destroying re-export.',
     steps: [
@@ -121,7 +121,7 @@ export const toolContent: Record<string, ToolContent> = {
 
   'crop-pdf': {
     name: 'Crop PDF',
-    url: '/crop-pdf',
+    url: '/tools/crop-pdf',
     overview:
       'Scanned pages often come with uneven borders, dark scanner edges, or excess whitespace that look unprofessional. iCreatePDF is a fast, offline alternative to online converters like i2pdf crop. It lets you crop page layouts, perform pdf cut pages operations, and trim margins from any side of every page in a PDF, cleaning up document scans and layouts entirely inside your browser.',
     steps: [
@@ -148,7 +148,7 @@ export const toolContent: Record<string, ToolContent> = {
 
   'delete-pdf-pages': {
     name: 'Delete PDF Pages',
-    url: '/delete-pdf-pages',
+    url: '/tools/delete-pdf-pages',
     overview:
       'Wondering how to cut a page from pdf easily or how to separate a page from a pdf? iCreatePDF lets you cut pdf pages, separate a page from pdf, and remove pages from a pdf document online for free. Whether you need to delete blank scans, duplicate cover sheets, or cut pages out of pdf files, our tool removes pages from a document in your browser sandbox without any uploads.',
     steps: [
@@ -176,7 +176,7 @@ export const toolContent: Record<string, ToolContent> = {
 
   'edit-pdf': {
     name: 'Edit PDF',
-    url: '/edit-pdf',
+    url: '/tools/edit-pdf',
     overview:
       'Quick corrections to a PDF — adding a note, filling in a missing field, or annotating a clause — usually mean opening a heavier desktop editor. iCreatePDF lets you place text overlay annotations directly onto PDF pages in the browser, with custom colors and positioning, and writes them permanently into the document.',
     steps: [
@@ -201,7 +201,7 @@ export const toolContent: Record<string, ToolContent> = {
 
   'extract-pages': {
     name: 'Extract Pages from PDF',
-    url: '/extract-pages',
+    url: '/tools/extract-pages',
     overview:
       'Sometimes you only need to separate a page from pdf or pull a handful of pages out of a much larger PDF — a single invoice from a batch export, or a chapter from a full manual. iCreatePDF pulls specific pages or ranges out of a document and saves them as a new standalone PDF, processed entirely in your browser.',
     steps: [
@@ -227,7 +227,7 @@ export const toolContent: Record<string, ToolContent> = {
 
   'flatten-pdf': {
     name: 'Flatten PDF',
-    url: '/flatten-pdf',
+    url: '/tools/flatten-pdf',
     overview:
       'Interactive form fields, comment layers, and annotations can be accidentally altered after a document is finalized. iCreatePDF merges form fields and annotation layers into static, non-editable page content directly in the browser, locking a PDF’s appearance for distribution or archiving.',
     steps: [
@@ -252,7 +252,7 @@ export const toolContent: Record<string, ToolContent> = {
 
   'grayscale-pdf': {
     name: 'Grayscale PDF',
-    url: '/grayscale-pdf',
+    url: '/tools/grayscale-pdf',
     overview:
       'Printing a color PDF on an office printer burns through color ink even when the content doesn’t need it. iCreatePDF converts every page of a PDF to black and white locally, giving you an ink-efficient version ready for printing without altering the original color file.',
     steps: [
@@ -277,7 +277,7 @@ export const toolContent: Record<string, ToolContent> = {
 
   'header-footer': {
     name: 'Add Header and Footer to PDF',
-    url: '/header-footer',
+    url: '/tools/header-footer',
     overview:
       'Company reports, legal filings, and manuals often need consistent headers and footers — a firm name, a document title, or a date stamp — repeated across every page. iCreatePDF stamps custom header and footer text onto a PDF, including automatic page-number tokens, entirely in your browser.',
     steps: [
@@ -302,7 +302,7 @@ export const toolContent: Record<string, ToolContent> = {
 
   'heic-to-pdf': {
     name: 'HEIC to PDF',
-    url: '/heic-to-pdf',
+    url: '/tools/heic-to-pdf',
     overview:
       "Photos saved in HEIC format on iOS devices often can't be opened on older devices or Windows. iCreatePDF is the ultimate heic to pdf iphone converter, turning HEIC and HEIF photos directly into a PDF inside your browser. Convert iPhone photos to PDF without installing an app or uploading your private files.",
     steps: [
@@ -329,7 +329,7 @@ export const toolContent: Record<string, ToolContent> = {
 
   'html-to-pdf': {
     name: 'HTML to PDF',
-    url: '/html-to-pdf',
+    url: '/tools/html-to-pdf',
     overview:
       'Turning a styled HTML page or email template into a shareable, print-ready document usually requires a headless browser or a paid API. iCreatePDF compiles custom HTML and CSS directly into a formatted A4 PDF inside your own browser, so developers and marketers can generate documents without sending markup to a third-party service.',
     steps: [
@@ -355,7 +355,7 @@ export const toolContent: Record<string, ToolContent> = {
 
   'invert-pdf': {
     name: 'Invert PDF Colors',
-    url: '/invert-pdf',
+    url: '/tools/invert-pdf',
     overview:
       'Wondering how to invert pdf colors on your document? iCreatePDF is a fast, free pdf color inverter, pdf dark mode converter, and pdf reverse color tool. Reading a bright white PDF in a dark room strains the eyes and drains battery. We invert the red, green, and blue values of every page to produce a dark-mode version of your document, processed 100% locally in your browser so nothing is uploaded.',
     steps: [
@@ -382,7 +382,7 @@ export const toolContent: Record<string, ToolContent> = {
 
   'jpg-to-pdf': {
     name: 'JPG to PDF',
-    url: '/jpg-to-pdf',
+    url: '/tools/jpg-to-pdf',
     overview:
       'Turning a batch of JPG or JPEG photos into a single shareable document is one of the most common PDF tasks. iCreatePDF converts JPG images to a high-quality PDF entirely in your browser — drag in multiple photos, reorder them, adjust sizing, and download instantly without any account or upload.',
     steps: [
@@ -407,7 +407,7 @@ export const toolContent: Record<string, ToolContent> = {
 
   'markdown-to-pdf': {
     name: 'Markdown to PDF',
-    url: '/markdown-to-pdf',
+    url: '/tools/markdown-to-pdf',
     overview:
       'Need to convert markdown to pdf free and securely? iCreatePDF is a fast online markdown to pdf tool that compiles your styled Markdown (headings, lists, code blocks, and emphasis) into a clean, formatted A4 PDF directly in your browser. This means you can convert md to pdf online free with absolute privacy — no files ever leave your device.',
     steps: [
@@ -432,7 +432,7 @@ export const toolContent: Record<string, ToolContent> = {
 
   'merge-pdf': {
     name: 'Merge PDF',
-    url: '/merge-pdf',
+    url: '/tools/merge-pdf',
     overview:
       'Combining bank statements, scanned receipts, or multiple report sections into one file is one of the most requested PDF operations — and one of the most sensitive, since financial and personal documents shouldn’t need to touch a stranger’s server. iCreatePDF merges multiple PDF files into a single document entirely client-side via WebAssembly.',
     steps: [
@@ -457,7 +457,7 @@ export const toolContent: Record<string, ToolContent> = {
 
   'organize-pdf': {
     name: 'Organize PDF',
-    url: '/organize-pdf',
+    url: '/tools/organize-pdf',
     overview:
       'Scanned documents rarely come out in the right order, and reports assembled from multiple sources often need a page or two rotated or dropped. iCreatePDF gives you a visual page-thumbnail view of a PDF where you can drag to reorder, rotate, or flag pages for removal — all client-side, with an instant preview.',
     steps: [
@@ -482,7 +482,7 @@ export const toolContent: Record<string, ToolContent> = {
 
   'pdf-metadata': {
     name: 'PDF Metadata Editor',
-    url: '/pdf-metadata',
+    url: '/tools/pdf-metadata',
     overview:
       'Every PDF carries hidden metadata — title, author, subject, and keyword fields — that can leak a previous editor’s name or an outdated document title. iCreatePDF reads and updates these document properties directly in your browser, letting you clean up or correct metadata without uploading the file.',
     steps: [
@@ -507,7 +507,7 @@ export const toolContent: Record<string, ToolContent> = {
 
   'pdf-to-jpg': {
     name: 'PDF to JPG',
-    url: '/pdf-to-jpg',
+    url: '/tools/pdf-to-jpg',
     overview:
       'Sometimes you need a PDF page as an image — to drop into a slide deck, post on social media, or preview in a system that doesn’t render PDFs. iCreatePDF converts every page of a PDF into a high-fidelity JPEG image locally in the browser and packages the results into a downloadable ZIP.',
     steps: [
@@ -532,7 +532,7 @@ export const toolContent: Record<string, ToolContent> = {
 
   'pdf-to-text': {
     name: 'PDF to Text',
-    url: '/pdf-to-text',
+    url: '/tools/pdf-to-text',
     overview:
       'Copy-pasting from a PDF often mangles line breaks and spacing. If you want to convert pdf image to text, extract text from pdf, or convert pdf to machine readable format, iCreatePDF extracts the structured text layout of a PDF page-by-page directly in your browser. This gives you clean plain text you can paste into a note, search index, or another document without formatting artifacts. For scanned PDFs or images, please use our [PDF OCR (Scan to Text)](file:///pdf-ocr) tool.',
     steps: [
@@ -558,7 +558,7 @@ export const toolContent: Record<string, ToolContent> = {
 
   'png-to-pdf': {
     name: 'PNG to PDF',
-    url: '/png-to-pdf',
+    url: '/tools/png-to-pdf',
     overview:
       'PNG screenshots and graphics with transparency are common but awkward to share as a single document. iCreatePDF converts PNG images into a high-quality PDF entirely in the browser, letting you drag in multiple PNGs, reorder them, adjust sizing, and download a combined file instantly.',
     steps: [
@@ -583,7 +583,7 @@ export const toolContent: Record<string, ToolContent> = {
 
   'protect-pdf': {
     name: 'Protect PDF (Password Encrypt)',
-    url: '/protect-pdf',
+    url: '/tools/protect-pdf',
     overview:
       'Sharing a bank statement, tax form, or contract by email is safer when the file itself is locked. iCreatePDF encrypts a PDF with a password entirely inside your browser, setting secure owner and user passwords without ever transmitting the file or the password to a remote server.',
     steps: [
@@ -608,7 +608,7 @@ export const toolContent: Record<string, ToolContent> = {
 
   'qr-to-pdf': {
     name: 'QR Code to PDF',
-    url: '/qr-to-pdf',
+    url: '/tools/qr-to-pdf',
     overview:
       'Need a reliable qr code to pdf converter or looking for a way to embed a qr code to pdf free? iCreatePDF generates a scannable QR code from any URL, text, or contact info and compiles it into a clean, print-ready A4 PDF layout. It works completely in your browser, providing a live preview and downloading your QR code as a PDF instantly without any signup.',
     steps: [
@@ -636,7 +636,7 @@ export const toolContent: Record<string, ToolContent> = {
 
   'barcode-to-pdf': {
     name: 'Barcode to PDF',
-    url: '/barcode-to-pdf',
+    url: '/tools/barcode-to-pdf',
     overview:
       'Retail, logistics, and inventory workflows rely on barcode formats that a plain QR generator can\'t produce — Code 128 shipping labels, EAN-13 and UPC-A retail codes, Code 39 asset tags, and 2D formats like Data Matrix and PDF417. iCreatePDF renders any of these symbologies and compiles them into a clean, print-ready A4 PDF entirely in your browser.',
     steps: [
@@ -661,7 +661,7 @@ export const toolContent: Record<string, ToolContent> = {
 
   'redact-pdf': {
     name: 'Redact PDF',
-    url: '/redact-pdf',
+    url: '/tools/redact-pdf',
     overview:
       'Simply drawing a black rectangle in an image editor doesn’t remove the underlying text — it just hides it, leaving sensitive data recoverable by copy-paste. iCreatePDF permanently burns redaction boxes into the page content, so social security numbers, account details, or names are genuinely destroyed, not just covered. Click Auto-Detect and it scans every page for emails, phone numbers, SSNs, IBANs, and credit card numbers, suggesting boxes you can accept or dismiss before anything is burned in — all without the file ever leaving your browser.',
     steps: [
@@ -687,7 +687,7 @@ export const toolContent: Record<string, ToolContent> = {
 
   'repair-pdf': {
     name: 'Repair PDF',
-    url: '/repair-pdf',
+    url: '/tools/repair-pdf',
     overview:
       'A corrupted PDF that won’t open usually has a broken cross-reference table or damaged object stream, not fundamentally lost content. iCreatePDF attempts to rebuild these internal structures locally in your browser, recovering a readable document from files that other viewers refuse to open.',
     steps: [
@@ -712,7 +712,7 @@ export const toolContent: Record<string, ToolContent> = {
 
   'resize-pdf': {
     name: 'Resize PDF',
-    url: '/resize-pdf',
+    url: '/tools/resize-pdf',
     overview:
       'Documents assembled from multiple sources often end up with inconsistent page sizes — some Letter, some A4 — which looks unprofessional when printed or bound together. iCreatePDF normalizes every page in a PDF to a standard size like A4, Letter, A3, Legal, or A5, in portrait or landscape, without losing content.',
     steps: [
@@ -737,7 +737,7 @@ export const toolContent: Record<string, ToolContent> = {
 
   'rotate-pdf': {
     name: 'Rotate PDF',
-    url: '/rotate-pdf',
+    url: '/tools/rotate-pdf',
     overview:
       'Pages scanned sideways or upside down are one of the most common PDF annoyances. iCreatePDF rotates specific pages or the entire document in seconds, letting you select rotation angles visually and download the corrected file instantly, all processed client-side.',
     steps: [
@@ -762,7 +762,7 @@ export const toolContent: Record<string, ToolContent> = {
 
   'scan-to-pdf': {
     name: 'Scan to PDF',
-    url: '/scan-to-pdf',
+    url: '/tools/scan-to-pdf',
     overview:
       'A dedicated scanner isn’t always available when you need to digitize a document quickly. iCreatePDF turns your phone or webcam camera into a document scanner, letting you capture, crop, and compile multiple pages into a single high-quality PDF entirely in your browser.',
     steps: [
@@ -787,7 +787,7 @@ export const toolContent: Record<string, ToolContent> = {
 
   'sign-pdf': {
     name: 'Sign PDF',
-    url: '/sign-pdf',
+    url: '/tools/sign-pdf',
     overview:
       'Printing a contract to sign it is slow, and third-party platforms pose privacy risks. iCreatePDF lets you add digital signature to pdf online for free. Whether you need to digitally sign pdf online, apply an electronic signature pdf free online, or e sign document online, our browser-based tool makes it simple. Draw, type, or upload your signature and stamp it directly onto PDF pages client-side, keeping your document and signature 100% private.',
     steps: [
@@ -815,7 +815,7 @@ export const toolContent: Record<string, ToolContent> = {
 
   'split-pdf': {
     name: 'Split PDF',
-    url: '/split-pdf',
+    url: '/tools/split-pdf',
     overview:
       'A large combined PDF sometimes needs to become several smaller files. If you want to learn how to separate a page from a pdf, how to split pdf pages free, or perform a pdf cut pages task, iCreatePDF extracts page ranges or separates every page of a document into individual files, processed locally with instant download of the split parts.',
     steps: [
@@ -843,7 +843,7 @@ export const toolContent: Record<string, ToolContent> = {
 
   'txt-to-pdf': {
     name: 'Text to PDF',
-    url: '/txt-to-pdf',
+    url: '/tools/txt-to-pdf',
     overview:
       'Plain .txt files and pasted notes don’t look presentable when shared as-is. iCreatePDF converts plain text files or pasted content into a styled, structured PDF document, letting you customize margins, page size, fonts, and headers or footers entirely in the browser.',
     steps: [
@@ -868,7 +868,7 @@ export const toolContent: Record<string, ToolContent> = {
 
   'unlock-pdf': {
     name: 'Unlock PDF (Remove Password)',
-    url: '/unlock-pdf',
+    url: '/tools/unlock-pdf',
     overview:
       'A password-protected PDF you have the legitimate right to open can still be a hassle if the restriction blocks printing or copying you actually need. iCreatePDF removes password locks and permission restrictions from a PDF entirely client-side, so neither your file nor your password is ever sent to a remote server.',
     steps: [
@@ -893,7 +893,7 @@ export const toolContent: Record<string, ToolContent> = {
 
   'verify-signature': {
     name: 'Verify PDF Signature',
-    url: '/verify-signature',
+    url: '/tools/verify-signature',
     overview:
       'A digitally signed PDF is only trustworthy if the signature and the document haven’t been tampered with since signing. iCreatePDF validates cryptographic signatures on a PDF locally, inspecting signer identity details and checking byte-range integrity without uploading the file to a validation service.',
     steps: [
@@ -918,7 +918,7 @@ export const toolContent: Record<string, ToolContent> = {
 
   'watermark-pdf': {
     name: 'Watermark PDF',
-    url: '/watermark-pdf',
+    url: '/tools/watermark-pdf',
     overview:
       'Marking drafts as "Confidential" or branding a document with a company name across every page protects against unauthorized reuse. iCreatePDF applies custom text watermarks to all pages of a PDF, with control over position, size, opacity, and color, all rendered locally in your browser.',
     steps: [
@@ -943,7 +943,7 @@ export const toolContent: Record<string, ToolContent> = {
 
   'word-to-pdf': {
     name: 'Word to PDF',
-    url: '/word-to-pdf',
+    url: '/tools/word-to-pdf',
     overview:
       "Wondering how to convert docx to pdf without formatting shifting on the recipient's device? iCreatePDF is an online docx to pdf converter free and web-based docx to pdf freeware. Learn how to convert docx to pdf, or how to save docx as pdf in seconds. We help you convert a docx file to pdf, supporting standard .docx to pdf operations. The entire tool functions to convert word to pdf local to your machine, meaning files are processed in your browser sandbox, keeping your documents 100% private and secure.",
     steps: [
@@ -974,7 +974,7 @@ export const toolContent: Record<string, ToolContent> = {
 
   'prevent-copy': {
     name: 'Prevent PDF Copy',
-    url: '/prevent-copy',
+    url: '/tools/prevent-copy',
     overview:
       'Prevent text copying and text extraction from your PDF documents. By rasterizing each page into a high-resolution flat image and compiling them into a new file, iCreatePDF strips the selectable text layer entirely. The visual layout, fonts, and images are perfectly preserved, but direct highlighting, selection, or copy-pasting is made impossible.',
     steps: [
@@ -1000,7 +1000,7 @@ export const toolContent: Record<string, ToolContent> = {
 
   'pdf-ocr': {
     name: 'PDF OCR (Scan to Text)',
-    url: '/pdf-ocr',
+    url: '/tools/pdf-ocr',
     overview:
       'Extract text from scanned, image-only, or copy-protected PDF files using our free ocr online pdf tool. iCreatePDF functions as a local pdf text scanner and online ocr pdf converter, running character recognition locally inside your browser sandbox using WebAssembly. This lets you convert a pdf image to text, extract scanned text from pages, and run ocr conversion pdf functions to get copyable plain text instantly without any server uploads.',
     steps: [
@@ -1030,7 +1030,7 @@ export const toolContent: Record<string, ToolContent> = {
 
   'certify-pdf': {
     name: 'Certify PDF',
-    url: '/certify-pdf',
+    url: '/tools/certify-pdf',
     overview: 'Create a tamper-evident record for an important PDF without uploading it to a third party. iCreatePDF calculates a SHA-256 fingerprint and adds a QR-enabled certificate, making it easy to identify whether a later copy is the same file you certified.',
     steps: [
       { title: 'Add the PDF', description: 'Choose the document you want to fingerprint. It stays in your browser.' },
@@ -1048,7 +1048,7 @@ export const toolContent: Record<string, ToolContent> = {
 
   'pdf-accessibility-checker': {
     name: 'PDF Accessibility Checker',
-    url: '/pdf-accessibility-checker',
+    url: '/tools/pdf-accessibility-checker',
     overview: 'Check a PDF for common barriers that affect screen-reader users before publishing it. This browser-based PDF accessibility checker reviews useful signals such as document tags, language settings, text layers, and form-field labels while keeping the file on your device.',
     steps: [
       { title: 'Open the PDF', description: 'Select the document you want to review locally.' },
@@ -1066,7 +1066,7 @@ export const toolContent: Record<string, ToolContent> = {
 
   'pdf-to-excel': {
     name: 'PDF to Excel Table Extractor',
-    url: '/pdf-to-excel',
+    url: '/tools/pdf-to-excel',
     overview: 'Extract tables from a PDF into Excel-ready CSV without sending statements, reports, or invoices to a conversion server. The tool uses the positions of selectable text to reconstruct rows and columns in your browser, giving you data that is easier to sort and analyze.',
     steps: [
       { title: 'Choose a text-based PDF', description: 'Open the report, invoice, or statement that contains the table.' },
@@ -1084,7 +1084,7 @@ export const toolContent: Record<string, ToolContent> = {
 
   'read-aloud-pdf': {
     name: 'PDF Read Aloud',
-    url: '/read-aloud-pdf',
+    url: '/tools/read-aloud-pdf',
     overview: 'Listen to a PDF with browser-based text-to-speech while keeping sensitive documents local. Choose an available voice, adjust the reading speed, and follow the text as it is read aloud—useful for proofreading, studying, and more accessible document review.',
     steps: [
       { title: 'Open a text-based PDF', description: 'Choose the document you want to hear read aloud.' },
@@ -1102,7 +1102,7 @@ export const toolContent: Record<string, ToolContent> = {
 
   'bulk-certificates': {
     name: 'Bulk Certificate Generator',
-    url: '/bulk-certificates',
+    url: '/tools/bulk-certificates',
     overview:
       'Need to generate certificates from csv or excel files in bulk? iCreatePDF lets you generate hundreds of personalized PDF certificates, letters, or tickets instantly inside your browser. Upload your PDF certificate template, import your CSV/Excel spreadsheet, drag-and-drop placeholders (like student names or dates) onto the preview, and download them. 100% private, free, and secure.',
     steps: [
@@ -1129,7 +1129,7 @@ export const toolContent: Record<string, ToolContent> = {
 
   'fillable-pdf-builder': {
     name: 'Fillable PDF Form Builder',
-    url: '/fillable-pdf-builder',
+    url: '/tools/fillable-pdf-builder',
     overview:
       'Design interactive forms client-side without purchasing expensive software. If you need to create pdf form options or want the best free fillable pdf form creator, iCreatePDF lets you upload any flat PDF page and overlay interactive text fields, checkboxes, dropdown lists, and radio options. The tool generates standards-compliant fillable PDF form widgets locally in your browser memory, keeping your documents 100% private.',
     steps: [
@@ -1155,7 +1155,7 @@ export const toolContent: Record<string, ToolContent> = {
 
   'ris-to-pdf': {
     name: 'RIS to PDF Citation Converter',
-    url: '/ris-to-pdf',
+    url: '/tools/ris-to-pdf',
     overview:
       "Wondering how to convert RIS to PDF? iCreatePDF provides an online RIS to PDF converter free. Learn how to transform RIS citation data into beautifully formatted bibliographies. We help you parse and compile RIS files into styled PDFs, supporting standard citation formats like APA, MLA, Harvard, and Chicago. The entire compilation runs in your browser sandbox, keeping your references and documents 100% private.",
     steps: [
@@ -1181,7 +1181,7 @@ export const toolContent: Record<string, ToolContent> = {
 
   'excel-to-pdf': {
     name: 'Excel to PDF Converter',
-    url: '/excel-to-pdf',
+    url: '/tools/excel-to-pdf',
     overview:
       'Wondering how to convert Excel to PDF? iCreatePDF offers a free online Excel to PDF converter that processes files entirely in your browser sandbox. Convert spreadsheets (.xlsx, .xls) and CSV (.csv) tables into professional, print-ready PDF reports. Customize columns, orientations (portrait/landscape), paper sizes, margins, fonts, and gridlines. All spreadsheet compilation happens on your local device, keeping your financial, commercial, and personal data 100% secure.',
     steps: [

@@ -109,7 +109,7 @@ tool pages in a browser (drag/drop still works, progress bar renders, download b
 ### 3c. Rewrite all 36 `app/*/page.tsx` files
 Each currently looks like (example, `app/merge-pdf/page.tsx`):
 ```tsx
-export const metadata: Metadata = { title: '...', description: '...', alternates: { canonical: '/merge-pdf' }, ... };
+export const metadata: Metadata = { title: '...', description: '...', alternates: { canonical: '/tools/merge-pdf' }, ... };
 export default function MergePdfPage() {
   return (
     <main className="relative min-h-screen ... bg-black text-white ...">

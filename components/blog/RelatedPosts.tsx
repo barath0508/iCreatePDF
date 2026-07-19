@@ -294,7 +294,7 @@ export function RelatedPosts({ currentSlug }: { currentSlug: string }) {
         {related.map((post) => (
           <Link
             key={post.slug}
-            href={`/blog/${post.slug}`}
+            href={`/blogs/${post.slug}`}
             className="group block p-6 rounded-2xl bg-card border border-foreground/5 hover:border-brand/30 hover:bg-card/80 transition-all duration-300 flex flex-col justify-between min-h-[160px]"
           >
             <div className="space-y-3">

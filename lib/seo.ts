@@ -127,8 +127,9 @@ export function articleSchema({
       url: `${SITE_URL}${url}`,
       datePublished,
       author: {
-        '@type': 'Organization',
-        name: 'iCreatePDF',
+        '@type': 'Person',
+        name: 'Barath R',
+        jobTitle: 'Founder & Lead Developer',
         url: SITE_URL,
       },
       publisher: {
@@ -147,7 +148,7 @@ export function articleSchema({
     },
     breadcrumbSchema([
       { name: 'iCreatePDF', url: '/' },
-      { name: 'Blog', url: '/blog' },
+      { name: 'Blog', url: '/blogs' },
       { name: title },
     ]),
   ];

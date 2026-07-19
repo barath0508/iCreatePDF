@@ -77,7 +77,7 @@ export function HeroSection() {
     const allPdfs = fileArray.every(f => f.name.toLowerCase().endsWith('.pdf'));
     if (fileArray.length > 1 && allPdfs) {
       setPreloadedFiles(fileArray);
-      router.push('/merge-pdf');
+      router.push('/tools/merge-pdf');
       return;
     }
 
@@ -88,7 +88,7 @@ export function HeroSection() {
     });
     if (fileArray.length > 1 && allImages) {
       setPreloadedFiles(fileArray);
-      router.push('/jpg-to-pdf');
+      router.push('/tools/jpg-to-pdf');
       return;
     }
 
@@ -101,16 +101,16 @@ export function HeroSection() {
       setIsPdfModalOpen(true);
     } else if (ext === 'docx') {
       setPreloadedFiles(fileArray);
-      router.push('/word-to-pdf');
+      router.push('/tools/word-to-pdf');
     } else if (ext === 'txt') {
       setPreloadedFiles(fileArray);
-      router.push('/txt-to-pdf');
+      router.push('/tools/txt-to-pdf');
     } else if (ext === 'heic' || ext === 'heif') {
       setPreloadedFiles(fileArray);
-      router.push('/heic-to-pdf');
+      router.push('/tools/heic-to-pdf');
     } else if (['jpg', 'jpeg', 'png', 'webp', 'bmp'].includes(ext || '')) {
       setPreloadedFiles(fileArray);
-      router.push('/jpg-to-pdf');
+      router.push('/tools/jpg-to-pdf');
     } else {
       // Unhandled extension, default to converter section
       setPreloadedFiles(fileArray);
@@ -275,16 +275,16 @@ export function HeroSection() {
                   </h4>
                   <div className="grid grid-cols-2 gap-1.5">
                     {[
-                      { label: 'Compress PDF', path: '/compress-pdf' },
-                      { label: 'Sign PDF', path: '/sign-pdf' },
-                      { label: 'Organize pages', path: '/organize-pdf' },
-                      { label: 'Convert to JPG', path: '/pdf-to-jpg' },
-                      { label: 'Protect PDF', path: '/protect-pdf' },
-                      { label: 'Unlock PDF', path: '/unlock-pdf' },
-                      { label: 'PDF OCR (Text)', path: '/pdf-ocr' },
-                      { label: 'Watermark PDF', path: '/watermark-pdf' },
-                      { label: 'Redact Text', path: '/redact-pdf' },
-                      { label: 'Delete pages', path: '/delete-pdf-pages' },
+                      { label: 'Compress PDF', path: '/tools/compress-pdf' },
+                      { label: 'Sign PDF', path: '/tools/sign-pdf' },
+                      { label: 'Organize pages', path: '/tools/organize-pdf' },
+                      { label: 'Convert to JPG', path: '/tools/pdf-to-jpg' },
+                      { label: 'Protect PDF', path: '/tools/protect-pdf' },
+                      { label: 'Unlock PDF', path: '/tools/unlock-pdf' },
+                      { label: 'PDF OCR (Text)', path: '/tools/pdf-ocr' },
+                      { label: 'Watermark PDF', path: '/tools/watermark-pdf' },
+                      { label: 'Redact Text', path: '/tools/redact-pdf' },
+                      { label: 'Delete pages', path: '/tools/delete-pdf-pages' },
                     ].map((opt) => (
                       <button
                         key={opt.label}

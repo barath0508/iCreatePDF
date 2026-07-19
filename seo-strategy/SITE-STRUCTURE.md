@@ -6,7 +6,7 @@
 /
 ├── /[tool]                 (51 flat tool routes, e.g. /merge-pdf, /pdf-ocr)
 ├── /blog
-│   └── /blog/[slug]         (22 posts, mostly 1:1 with a tool)
+│   └── /blogs/[slug]         (22 posts, mostly 1:1 with a tool)
 ├── /compare                 (single page: vs. server-based editors, generic)
 ├── /contact, /privacy, /terms
 ├── /es, /hi, /ta            (homepage only)
@@ -21,7 +21,7 @@ Flat tool URLs (`/merge-pdf` not `/tools/merge-pdf`) are correct for this niche 
 /
 ├── /[tool]                          (existing 51 — unchanged URLs)
 ├── /blog
-│   └── /blog/[slug]                 (existing 22 + new posts per CONTENT-CALENDAR.md)
+│   └── /blogs/[slug]                 (existing 22 + new posts per CONTENT-CALENDAR.md)
 ├── /compare
 │   ├── /compare                     (existing — keep, expand table)
 │   ├── /ilovepdf-alternative         (NEW — comparison landing page)
