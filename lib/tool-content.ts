@@ -91,6 +91,7 @@ export const toolContent: Record<string, ToolContent> = {
       { question: 'Can I compare PDFs with a different number of pages?', answer: 'Yes, both documents load independently and scroll in sync as far as their page counts allow.' },
       { question: 'Are both PDFs uploaded to a server for comparison?', answer: 'No, both files are rendered and compared entirely in your browser — nothing is sent anywhere.' },
       { question: 'Is this useful for legal document review?', answer: 'Yes, it is commonly used to check contract redlines, revised agreements, and signed-vs-draft discrepancies.' },
+      { question: 'How do I compare PDF documents side-by-side online for free?', answer: 'To compare PDF documents online for free, simply drag and drop both original and revised PDF files into our Compare PDF tool. The side-by-side document viewer synchronizes scrolling between both versions, making it easy to visually compare contract revisions, redlines, or document edits without uploading your files to any external server.' },
     ],
   },
 
@@ -171,6 +172,7 @@ export const toolContent: Record<string, ToolContent> = {
       { question: 'Can I cut pdf pages from a document for free?', answer: 'Yes! Our tool is completely free with no usage limits. You can cut pages out of pdf files, remove unwanted ranges (like 2, 5-8), and download your updated PDF instantly.' },
       { question: 'How to separate a page from a PDF?', answer: 'To separate a page from a PDF, you can use our Delete PDF Pages tool (to remove unwanted pages and save the remaining ones) or use our [Split PDF](file:///split-pdf) / [Extract Pages](file:///extract-pages) tools to pull out specific pages into a new standalone PDF.' },
       { question: 'How to cut a page from a PDF or delete pages?', answer: 'Simply drag and drop your document into our Delete PDF Pages tool. Type in the page numbers or page ranges you want to cut (such as 2, 5-8), preview the result, and download the trimmed PDF. All processing happens 100% privately in your browser.' },
+      { question: 'How do I cut pages from a PDF?', answer: 'To cut pages from a PDF, drag your file into our Delete PDF Pages tool. Enter the specific page numbers or page ranges you wish to cut out (e.g. 2, 5-8), preview the updated document, and click download to export your trimmed PDF for free.' },
     ],
   },
 
@@ -553,6 +555,7 @@ export const toolContent: Record<string, ToolContent> = {
       { question: 'Can I extract text from just one page?', answer: 'Text is extracted page-by-page, so you can review and use the content from any individual page.' },
       { question: 'Is the extraction processed locally?', answer: 'Yes, everything runs client-side in your browser with no file upload.' },
       { question: 'How do I convert a scanned PDF or PDF image to text?', answer: 'For purely scanned image-based PDFs, a standard text extractor won\'t work. Instead, you need to use our [PDF OCR (Scan to Text)](file:///pdf-ocr) tool, which uses an in-browser neural network to read and recognize text from scanned document images and convert them into machine readable format.' },
+      { question: 'How do I convert PDF to readable text?', answer: 'Upload your document to our PDF to Text tool to extract all selectable text page-by-page into clean, readable plain text. If your PDF is scanned or image-based, use our [PDF OCR (Scan to Text)](file:///pdf-ocr) tool to convert scanned pages into machine-readable text.' },
     ],
   },
 
@@ -631,6 +634,7 @@ export const toolContent: Record<string, ToolContent> = {
       { question: 'How does this qr code to pdf converter work?', answer: 'Our online qr code to pdf converter generates a high-quality vector QR code based on your inputs (like links, text, or phone numbers) and compiles it directly into a clean A4 PDF file. Everything is processed locally in your browser, ensuring complete privacy.' },
       { question: 'How do I generate a QR code to PDF for free?', answer: 'To generate a QR code to PDF, simply enter your destination URL or text in the tool above, customize the label and size, and click download. It compiles your QR code into a clean, vector-based A4 PDF layout instantly and is 100% free.' },
       { question: 'How to convert qr code to pdf format?', answer: 'To convert or generate a QR code into a PDF, type your link or text into our qr code to pdf generator. Customize the size, margin, and label as needed. The tool generates the QR code and places it directly on a downloadable A4 PDF page immediately.' },
+      { question: 'Is this QR code to PDF generator completely free?', answer: 'Yes! Our QR code to PDF generator is 100% free with no registration required. Enter your URL or text, customize the layout, and generate a print-ready A4 PDF with embedded QR codes instantly.' },
     ],
   },
 
@@ -969,6 +973,7 @@ export const toolContent: Record<string, ToolContent> = {
       { question: 'Can I convert ooxml or dox files to PDF?', answer: 'Yes! OOXML format (which is the standard XML structure of .docx files) is fully supported. If you have files named dox, doc, or docx, ensure they are in the modern .docx structure and our tool will easily convert them to PDF.' },
       { question: 'How do I convert word to pdf local to my machine?', answer: 'iCreatePDF works entirely client-side inside your browser. Because of this local architecture, you can convert word to pdf local to your own device without uploading files to any external servers, which even functions offline once loaded.' },
       { question: 'Is this docx to pdf freeware safe to use?', answer: 'Yes! Unlike downloadable freeware that might bundle third-party ads or malware, our in-browser docx to pdf freeware is completely web-based, runs in a secure sandbox on your machine, and never transmits your document data across the internet.' },
+      { question: 'Can I convert DOCX to PDF for free online?', answer: 'Yes! Our Word to PDF tool allows you to convert DOCX to PDF online for free. It processes your document 100% locally in your browser, preserving all formatting, tables, and fonts without uploading your files to any third-party server.' },
     ],
   },
 
@@ -1025,6 +1030,7 @@ export const toolContent: Record<string, ToolContent> = {
       { question: 'How do I convert a scanned PDF back to a normal PDF with editable text?', answer: 'To convert a scanned PDF to a normal PDF with selectable text, first run our OCR tool above to extract the text. Then, paste the text into our Markdown to PDF or HTML to PDF tool to compile it into a fresh, clean, search-indexed PDF document.' },
       { question: 'How do I use this tool as a pdf to text scanner?', answer: 'Just drop your file into our browser-based pdf to text scanner. Select your language, and click the OCR button. The tool will scan to pdf text locally, extracting all characters and outputting them as editable text you can copy immediately.' },
       { question: 'Can this convert scanned pdf to text accurately?', answer: 'Yes! Our local OCR engine performs high-precision ocr conversion pdf operations on scanned text, books, invoices, or forms, turning image-based files into selectable, copy-pasteable text.' },
+      { question: 'How do I convert PDF OCR to text or run OCR PDF to text?', answer: 'Upload your scanned document to our free OCR PDF to Text tool. Select your language (English, Spanish, Hindi, or Tamil), and click to run local character recognition. The tool extracts all text from your image-only PDF into copyable plain text without sending any data to a remote server.' },
     ],
   },
 
