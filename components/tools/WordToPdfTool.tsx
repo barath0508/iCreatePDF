@@ -88,7 +88,6 @@ export function WordToPdfTool() {
       container.appendChild(style);
 
       // Render the DOCX
-      // @ts-expect-error
       const docx = await import('docx-preview');
       setProgress(50);
       await docx.renderAsync(buffer, container, undefined, {
@@ -106,19 +105,18 @@ export function WordToPdfTool() {
       await new Promise(resolve => setTimeout(resolve, 1000));
 
       // Convert the container to PDF
-      // @ts-expect-error
       const html2pdf = (await import('html2pdf.js')).default || (await import('html2pdf.js'));
       setProgress(85);
       const opt = {
         margin:       0, // No extra margin (preserve native docx margins)
         filename:     `${file.name.replace('.docx', '')}.pdf`,
-        image:        { type: 'jpeg', quality: 1.0 }, // Maximum image quality
+        image:        { type: 'jpeg' as const, quality: 1.0 }, // Maximum image quality
         html2canvas:  { 
           scale: 4.0, // High quality crisp scale (4x resolution)
           useCORS: true, 
           logging: false 
         },
-        jsPDF:        { unit: 'mm', format: 'a4', orientation: 'portrait' },
+        jsPDF:        { unit: 'mm', format: 'a4', orientation: 'portrait' as const },
         pagebreak:    { mode: ['css', 'legacy'] }
       };
 

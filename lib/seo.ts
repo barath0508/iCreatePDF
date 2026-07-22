@@ -157,3 +157,45 @@ export function articleSchema({
     ]),
   ];
 }
+
+/**
+ * Generate HowTo JSON-LD schema for step-by-step tool instructions.
+ */
+export function howToSchema({
+  name,
+  description,
+  url,
+  steps,
+}: {
+  name: string;
+  description: string;
+  url: string;
+  steps: { title: string; description: string }[];
+}) {
+  return {
+    '@context': 'https://schema.org',
+    '@type': 'HowTo',
+    name: `How to ${name}`,
+    description,
+    totalTime: 'PT1M',
+    estimatedCost: {
+      '@type': 'MonetaryAmount',
+      currency: 'USD',
+      value: '0',
+    },
+    tool: [
+      {
+        '@type': 'HowToTool',
+        name: 'iCreatePDF Web App',
+      },
+    ],
+    step: steps.map((s, index) => ({
+      '@type': 'HowToStep',
+      position: index + 1,
+      name: s.title,
+      text: s.description,
+      url: `${SITE_URL}${url}#step-${index + 1}`,
+    })),
+  };
+}
+

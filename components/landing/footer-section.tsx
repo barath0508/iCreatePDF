@@ -143,13 +143,18 @@ export function FooterSection() {
         </div>
 
         <div className="py-8 border-t border-border flex flex-col md:flex-row items-center justify-between gap-4">
-          <p className="text-sm text-muted-foreground/70">
-            &copy; {currentYear} iCreatePDF. All rights reserved.
-          </p>
+          <div className="space-y-1 text-center md:text-left">
+            <p className="text-sm text-muted-foreground/70">
+              &copy; {currentYear} iCreatePDF. All rights reserved. Built for complete local privacy.
+            </p>
+            <p className="text-xs text-muted-foreground/50">
+              iCreatePDF is funded by privacy-respecting contextual ads through Google AdSense. Your files never leave your browser.
+            </p>
+          </div>
 
           <div className="flex items-center gap-4 text-sm text-muted-foreground/70">
             <span className="flex items-center gap-2">
-              <span className="w-2 h-2 rounded-full bg-brand" />
+              <span className="w-2 h-2 rounded-full bg-brand animate-pulse" />
               Privacy-First Sandbox Mode Active
             </span>
           </div>

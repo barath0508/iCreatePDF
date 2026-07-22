@@ -250,27 +250,27 @@ export function ExcelToPdfTool() {
         ` : ''}
         ${theme === 'default' ? `
           .pdf-table th {
-            background-color: ${theme === 'dark' ? '#27272a' : '#f4f4f5'};
-            color: ${theme === 'dark' ? '#f4f4f5' : '#09090b'};
+            background-color: #f4f4f5;
+            color: #09090b;
           }
           .pdf-table tr:nth-child(even) {
-            background-color: ${theme === 'dark' ? '#18181b' : '#fafafa'};
+            background-color: #fafafa;
           }
         ` : ''}
         ${theme === 'minimalist' ? `
           .pdf-table th {
-            border-bottom: 2px solid ${theme === 'dark' ? '#71717a' : '#27272a'} !important;
+            border-bottom: 2px solid #27272a !important;
             border-top: none !important;
             border-left: none !important;
             border-right: none !important;
             background: transparent;
-            color: ${theme === 'dark' ? '#e4e4e7' : '#27272a'};
+            color: #27272a;
           }
           .pdf-table td {
             border-top: none !important;
             border-left: none !important;
             border-right: none !important;
-            border-bottom: 1px solid ${theme === 'dark' ? '#27272a' : '#f4f4f5'} !important;
+            border-bottom: 1px solid #f4f4f5 !important;
           }
         ` : ''}
         ${theme === 'warm' ? `
@@ -369,9 +369,9 @@ export function ExcelToPdfTool() {
       setProgress(75);
 
       const opt = {
-        margin:       [margin, margin, margin, margin],
+        margin:       [margin, margin, margin, margin] as [number, number, number, number],
         filename:     `${file?.name.substring(0, file.name.lastIndexOf('.')) || 'spreadsheet'}.pdf`,
-        image:        { type: 'jpeg', quality: 1.0 },
+        image:        { type: 'jpeg' as const, quality: 1.0 },
         html2canvas:  { 
           scale: 3.0, 
           useCORS: true,

@@ -1,5 +1,6 @@
 import { CheckCircle2, HelpCircle, ListOrdered } from 'lucide-react';
 import type { ToolContent } from '@/lib/tool-content';
+import { howToSchema } from '@/lib/seo';
 
 function faqSchema(content: ToolContent) {
   return {
@@ -17,11 +18,22 @@ function faqSchema(content: ToolContent) {
 }
 
 export function ToolSeoContent({ content }: { content: ToolContent }) {
+  const hSchema = howToSchema({
+    name: content.name,
+    description: content.overview,
+    url: content.url,
+    steps: content.steps,
+  });
+
   return (
     <section className="border-t border-foreground/5 py-16 relative z-10">
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema(content)) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(hSchema) }}
       />
 
       <div className="max-w-[900px] mx-auto px-6 space-y-16">
@@ -43,7 +55,7 @@ export function ToolSeoContent({ content }: { content: ToolContent }) {
           </h2>
           <ol className="space-y-4">
             {content.steps.map((step, i) => (
-              <li key={step.title} className="flex gap-4">
+              <li key={step.title} id={`step-${i + 1}`} className="flex gap-4 scroll-mt-24">
                 <span className="shrink-0 w-7 h-7 rounded-full bg-brand/10 text-brand text-xs font-mono font-bold flex items-center justify-center mt-0.5">
                   {i + 1}
                 </span>
