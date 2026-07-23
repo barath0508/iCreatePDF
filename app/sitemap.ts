@@ -108,6 +108,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     '/privacy',
     '/terms',
     '/about',
+    '/adsense-policy',
   ];
 
   const comparisonRoutes = [

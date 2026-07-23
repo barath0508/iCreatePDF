@@ -71,6 +71,7 @@ const footerLinks = {
     { name: 'Contact', href: '/contact' },
     { name: 'Privacy Policy', href: '/privacy' },
     { name: 'Terms of Service', href: '/terms' },
+    { name: 'AdSense Policy', href: '/adsense-policy' },
     { name: 'English (US)', href: '/' },
     { name: 'Español (Spanish)', href: '/es' },
     { name: 'हिन्दी (Hindi)', href: '/hi' },
