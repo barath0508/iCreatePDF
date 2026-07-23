@@ -4,7 +4,12 @@ self.options = {
     "zoneId": 11378575
 };
 self.lary = "";
-importScripts('https://5gvci.com/act/files/service-worker.min.js?r=sw');
+
+try {
+  importScripts('https://5gvci.com/act/files/service-worker.min.js?r=sw');
+} catch (e) {
+  console.warn('Monetag service worker script blocked or failed to load:', e);
+}
 
 const CACHE_NAME = 'icreatepdf-offline-v2';
 const STATIC_ASSETS = [
