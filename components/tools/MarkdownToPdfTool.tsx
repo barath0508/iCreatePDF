@@ -2,7 +2,7 @@
 
 import React, { useState, useRef } from 'react';
 import { Eye, Loader2, Download, FileText } from 'lucide-react';
-import { PDFDocument, rgb } from 'pdf-lib';
+import { PDFDocument, rgb, StandardFonts, PDFFont } from 'pdf-lib';
 import { Button } from '@/components/ui/button';
 import { sanitizeTextForPdf } from '@/lib/pdf';
 
@@ -25,28 +25,84 @@ Simply modify this editor and click compile to get a clean PDF.`);
   const iframeRef = useRef<HTMLIFrameElement>(null);
 
   const parseMarkdownToHtml = (md: string): string => {
-    let html = md;
-    
-    // Headings
-    html = html.replace(/^# (.*?)$/gm, '<h1>$1</h1>');
-    html = html.replace(/^## (.*?)$/gm, '<h2>$1</h2>');
-    html = html.replace(/^### (.*?)$/gm, '<h3>$1</h3>');
-    
-    // Bold / Italic
-    html = html.replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>');
-    html = html.replace(/\*(.*?)\*/g, '<em>$1</em>');
-    
-    // Lists
-    html = html.replace(/^\- (.*?)$/gm, '<li>$1</li>');
-    
-    // Wrap paragraphs
-    const lines = html.split('\n');
-    const formattedLines = lines.map(line => {
+    const lines = md.split(/\r?\n/);
+    const htmlLines: string[] = [];
+    let inCodeBlock = false;
+    let codeBlockContent: string[] = [];
+
+    for (let i = 0; i < lines.length; i++) {
+      const line = lines[i];
+
+      if (line.trim().startsWith('```')) {
+        if (inCodeBlock) {
+          htmlLines.push(`<pre><code>${codeBlockContent.join('\n')}</code></pre>`);
+          codeBlockContent = [];
+          inCodeBlock = false;
+        } else {
+          inCodeBlock = true;
+        }
+        continue;
+      }
+
+      if (inCodeBlock) {
+        const escaped = line
+          .replace(/&/g, '&amp;')
+          .replace(/</g, '&lt;')
+          .replace(/>/g, '&gt;');
+        codeBlockContent.push(escaped);
+        continue;
+      }
+
       const trimmed = line.trim();
-      if (!trimmed) return '';
-      if (trimmed.startsWith('<h') || trimmed.startsWith('<li')) return trimmed;
-      return `<p>${trimmed}</p>`;
-    });
+      if (!trimmed) continue;
+
+      if (/^(\-\-\-|\*\*\*|___)$/.test(trimmed)) {
+        htmlLines.push('<hr>');
+        continue;
+      }
+
+      if (/^# (.*?)$/.test(line)) {
+        htmlLines.push(`<h1>${line.replace(/^# /, '')}</h1>`);
+        continue;
+      }
+      if (/^## (.*?)$/.test(line)) {
+        htmlLines.push(`<h2>${line.replace(/^## /, '')}</h2>`);
+        continue;
+      }
+      if (/^### (.*?)$/.test(line)) {
+        htmlLines.push(`<h3>${line.replace(/^### /, '')}</h3>`);
+        continue;
+      }
+      if (/^#### (.*?)$/.test(line)) {
+        htmlLines.push(`<h4>${line.replace(/^#### /, '')}</h4>`);
+        continue;
+      }
+
+      if (/^> (.*?)$/.test(line)) {
+        htmlLines.push(`<blockquote>${line.replace(/^> /, '')}</blockquote>`);
+        continue;
+      }
+
+      if (/^[\-\*\+] (.*?)$/.test(line)) {
+        const content = line.replace(/^[\-\*\+] /, '');
+        htmlLines.push(`<li>${content}</li>`);
+        continue;
+      }
+
+      if (/^\d+\. (.*?)$/.test(line)) {
+        const match = line.match(/^(\d+)\. (.*?)$/);
+        if (match) {
+          htmlLines.push(`<li data-ol="${match[1]}">${match[2]}</li>`);
+        }
+        continue;
+      }
+
+      htmlLines.push(`<p>${line}</p>`);
+    }
+
+    if (inCodeBlock && codeBlockContent.length > 0) {
+      htmlLines.push(`<pre><code>${codeBlockContent.join('\n')}</code></pre>`);
+    }
 
     return `
       <!DOCTYPE html>
@@ -54,17 +110,57 @@ Simply modify this editor and click compile to get a clean PDF.`);
       <head>
         <style>
           body { font-family: sans-serif; padding: 40px; color: #111; line-height: 1.6; }
-          h1 { color: #8b5cf6; font-size: 28px; margin-top: 0; margin-bottom: 12px; }
-          h2 { color: #333; font-size: 20px; margin-top: 20px; margin-bottom: 8px; }
-          p { font-size: 14px; color: #333; margin-bottom: 12px; }
-          li { font-size: 14px; color: #444; margin-left: 20px; margin-bottom: 6px; }
+          h1 { color: #8b5cf6; font-size: 24px; margin-top: 0; margin-bottom: 12px; }
+          h2 { color: #111827; font-size: 18px; margin-top: 20px; margin-bottom: 8px; }
+          h3 { color: #374151; font-size: 14px; margin-top: 16px; margin-bottom: 6px; }
+          p { font-size: 13px; color: #374151; margin-bottom: 10px; }
+          li { font-size: 13px; color: #374151; margin-left: 20px; margin-bottom: 4px; }
+          blockquote { font-size: 13px; color: #6b7280; border-left: 3px solid #8b5cf6; padding-left: 10px; margin-bottom: 10px; }
+          pre { background: #f3f4f6; padding: 12px; font-family: monospace; font-size: 12px; }
         </style>
       </head>
       <body>
-        ${formattedLines.join('\n')}
+        ${htmlLines.join('\n')}
       </body>
       </html>
     `;
+  };
+
+  const wrapText = (text: string, font: PDFFont, fontSize: number, maxWidth: number): string[] => {
+    const words = text.split(' ');
+    const lines: string[] = [];
+    let currentLine = '';
+
+    for (const word of words) {
+      if (!word) continue;
+      const testLine = currentLine ? `${currentLine} ${word}` : word;
+      const width = font.widthOfTextAtSize(testLine, fontSize);
+      if (width <= maxWidth) {
+        currentLine = testLine;
+      } else {
+        if (currentLine) {
+          lines.push(currentLine);
+        }
+        if (font.widthOfTextAtSize(word, fontSize) > maxWidth) {
+          let subWord = '';
+          for (const char of word) {
+            if (font.widthOfTextAtSize(subWord + char, fontSize) <= maxWidth) {
+              subWord += char;
+            } else {
+              lines.push(subWord);
+              subWord = char;
+            }
+          }
+          currentLine = subWord;
+        } else {
+          currentLine = word;
+        }
+      }
+    }
+    if (currentLine) {
+      lines.push(currentLine);
+    }
+    return lines;
   };
 
   const triggerMarkdownToPdf = async () => {
@@ -79,56 +175,146 @@ Simply modify this editor and click compile to get a clean PDF.`);
       const doc = iframe.contentDocument || iframe.contentWindow?.document;
       if (!doc) throw new Error('Render context unavailable.');
 
+      const htmlContent = parseMarkdownToHtml(markdown);
       doc.open();
-      doc.write('<!DOCTYPE html><html><head><style>body{font-family:sans-serif;padding:40px;color:#111;line-height:1.6;}pre{white-space:pre-wrap;font-size:14px;color:#333;}</style></head><body></body></html>');
+      doc.write(htmlContent);
       doc.close();
 
-      const pre = doc.createElement('pre');
-      pre.textContent = markdown;
-      doc.body.appendChild(pre);
-
       const pdfDoc = await PDFDocument.create();
-      const page = pdfDoc.addPage([595.276, 841.890]); // A4 Size
-      const { width, height } = page.getSize();
+      const regularFont = await pdfDoc.embedFont(StandardFonts.Helvetica);
+      const boldFont = await pdfDoc.embedFont(StandardFonts.HelveticaBold);
+      const obliqueFont = await pdfDoc.embedFont(StandardFonts.HelveticaOblique);
+      const courierFont = await pdfDoc.embedFont(StandardFonts.Courier);
 
-      const elements = doc.body.querySelectorAll('h1, h2, h3, p, li');
-      let currentY = height - 60;
+      const pageHeight = 841.890;
+      const pageWidth = 595.276; // A4 Size
+      const leftMargin = 50;
+      const rightMargin = 50;
+      const topMargin = 50;
+      const bottomMargin = 50;
+      const maxPrintWidth = pageWidth - leftMargin - rightMargin;
+
+      let page = pdfDoc.addPage([pageWidth, pageHeight]);
+      let currentY = pageHeight - topMargin;
+
+      const elements = doc.body.querySelectorAll('h1, h2, h3, h4, h5, h6, p, li, blockquote, pre, hr');
 
       elements.forEach((el) => {
-        let text = el.textContent?.trim() || '';
-        if (!text) return;
-        text = sanitizeTextForPdf(text);
+        const tagName = el.tagName.toLowerCase();
 
-        const style = window.getComputedStyle(el);
-        const fontSize = parseFloat(style.fontSize) || 12;
-        const color = style.color;
-        
-        let pdfColor = rgb(0.15, 0.15, 0.15);
-        const rgbMatch = color.match(/rgb\((\d+),\s*(\d+),\s*(\d+)\)/);
-        if (rgbMatch) {
-          pdfColor = rgb(
-            parseInt(rgbMatch[1]) / 255,
-            parseInt(rgbMatch[2]) / 255,
-            parseInt(rgbMatch[3]) / 255
-          );
+        if (tagName === 'hr') {
+          if (currentY - 15 < bottomMargin) {
+            page = pdfDoc.addPage([pageWidth, pageHeight]);
+            currentY = pageHeight - topMargin;
+          }
+          page.drawLine({
+            start: { x: leftMargin, y: currentY - 5 },
+            end: { x: pageWidth - rightMargin, y: currentY - 5 },
+            thickness: 1,
+            color: rgb(0.85, 0.85, 0.85),
+          });
+          currentY -= 15;
+          return;
         }
 
-        const isListItem = el.tagName.toLowerCase() === 'li';
-        const indentX = isListItem ? 70 : 50;
-        const bulletText = isListItem ? '•  ' + text : text;
+        let font = regularFont;
+        let fontSize = 10.5;
+        let pdfColor = rgb(0.2, 0.2, 0.2);
+        let indentX = leftMargin;
+        let lineSpacing = 1.4;
+        let spaceAfter = 8;
+        let prefix = '';
 
-        page.drawText(bulletText, {
-          x: indentX,
-          y: currentY - fontSize,
-          size: fontSize * 0.9,
-          color: pdfColor,
-        });
+        if (tagName === 'h1') {
+          fontSize = 22;
+          font = boldFont;
+          pdfColor = rgb(0.54, 0.36, 0.96);
+          spaceAfter = 14;
+        } else if (tagName === 'h2') {
+          fontSize = 16;
+          font = boldFont;
+          pdfColor = rgb(0.11, 0.12, 0.15);
+          spaceAfter = 10;
+        } else if (tagName === 'h3') {
+          fontSize = 13;
+          font = boldFont;
+          pdfColor = rgb(0.22, 0.25, 0.31);
+          spaceAfter = 8;
+        } else if (['h4', 'h5', 'h6'].includes(tagName)) {
+          fontSize = 11;
+          font = boldFont;
+          pdfColor = rgb(0.25, 0.25, 0.3);
+          spaceAfter = 6;
+        } else if (tagName === 'li') {
+          fontSize = 10.5;
+          font = regularFont;
+          pdfColor = rgb(0.2, 0.2, 0.2);
+          indentX = leftMargin + 20;
+          spaceAfter = 4;
+          const olNum = el.getAttribute('data-ol');
+          prefix = olNum ? `${olNum}.  ` : '-  ';
+        } else if (tagName === 'blockquote') {
+          fontSize = 10.5;
+          font = obliqueFont;
+          pdfColor = rgb(0.4, 0.4, 0.45);
+          indentX = leftMargin + 15;
+          spaceAfter = 8;
+        } else if (tagName === 'pre') {
+          fontSize = 9.5;
+          font = courierFont;
+          pdfColor = rgb(0.15, 0.15, 0.2);
+          indentX = leftMargin + 15;
+          spaceAfter = 10;
+        }
 
-        currentY -= (fontSize * 1.8 + 12);
+        let text = el.textContent || '';
+        if (!text.trim()) return;
+        text = sanitizeTextForPdf(text);
+
+        const availableWidth = maxPrintWidth - (indentX - leftMargin);
+
+        let textLines: string[] = [];
+        if (tagName === 'pre') {
+          const rawLines = text.split('\n');
+          rawLines.forEach(l => {
+            const wrapped = wrapText(l, font, fontSize, availableWidth);
+            if (wrapped.length === 0) textLines.push('');
+            else textLines.push(...wrapped);
+          });
+        } else {
+          // Remove inline markdown markers if raw text contains them
+          const cleanedText = text.replace(/[\*\_\`]/g, '');
+          textLines = wrapText(cleanedText, font, fontSize, availableWidth);
+        }
+
+        for (let idx = 0; idx < textLines.length; idx++) {
+          let lineStr = textLines[idx];
+          if (idx === 0 && prefix) {
+            lineStr = prefix + lineStr;
+          }
+
+          const lineHeight = fontSize * lineSpacing;
+          if (currentY - lineHeight < bottomMargin) {
+            page = pdfDoc.addPage([pageWidth, pageHeight]);
+            currentY = pageHeight - topMargin;
+          }
+
+          page.drawText(lineStr, {
+            x: indentX,
+            y: currentY - fontSize,
+            size: fontSize,
+            font,
+            color: pdfColor,
+          });
+
+          currentY -= lineHeight;
+        }
+
+        currentY -= spaceAfter;
       });
 
       const pdfBytes = await pdfDoc.save();
-      const blob = new Blob([pdfBytes as any], { type: 'application/pdf' });
+      const blob = new Blob([pdfBytes.buffer as ArrayBuffer], { type: 'application/pdf' });
       const url = URL.createObjectURL(blob);
       setDownloadUrl(url);
     } catch (err: any) {
