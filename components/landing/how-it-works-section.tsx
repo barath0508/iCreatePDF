@@ -81,13 +81,14 @@ export function HowItWorksSection() {
         </div>
       </div>
 
-      <style jsx>{`
+      <style>{`
         @keyframes progress {
-          from { width: 0%; }
-          to { width: 100%; }
+          from { transform: scaleX(0); }
+          to { transform: scaleX(1); }
         }
         .animate-progress {
           animation: progress 6s linear forwards;
+          transform-origin: left;
         }
       `}</style>
     </section>

@@ -11,7 +11,7 @@ try {
   console.warn('Monetag service worker script blocked or failed to load:', e);
 }
 
-const CACHE_NAME = 'icreatepdf-offline-v2';
+const CACHE_NAME = 'icreatepdf-offline-v3';
 const STATIC_ASSETS = [
   '/',
   '/logo.png',
@@ -62,8 +62,8 @@ self.addEventListener('fetch', (event) => {
     return;
   }
 
-  // Network-First strategy for HTML document navigation requests (routes)
-  // This avoids ChunkLoadErrors when the HTML page is updated to point to new JS chunks.
+  // Network-First strategy for HTML document navigation requests (routes).
+  // Avoids ChunkLoadErrors when the HTML page is updated to point to new JS chunks.
   if (event.request.mode === 'navigate') {
     event.respondWith(
       fetch(event.request)
@@ -90,7 +90,30 @@ self.addEventListener('fetch', (event) => {
     return;
   }
 
-  // Stale-While-Revalidate strategy for static assets (images, scripts, styles)
+  // Network-First for ALL /_next/static/ JS/CSS chunks.
+  // These are content-hashed by Next.js — safe to cache once fetched, but we must
+  // NEVER serve a stale chunk from a previous build or we get "module factory not available".
+  if (url.pathname.startsWith('/_next/static/')) {
+    event.respondWith(
+      fetch(event.request)
+        .then((networkResponse) => {
+          if (networkResponse.status === 200) {
+            const responseToCache = networkResponse.clone();
+            caches.open(CACHE_NAME).then((cache) => {
+              cache.put(event.request, responseToCache);
+            });
+          }
+          return networkResponse;
+        })
+        .catch(() => {
+          // Only fall back to cache when truly offline
+          return caches.match(event.request);
+        })
+    );
+    return;
+  }
+
+  // Stale-While-Revalidate for everything else (images, fonts, etc.)
   event.respondWith(
     caches.match(event.request).then((cachedResponse) => {
       const fetchPromise = fetch(event.request)

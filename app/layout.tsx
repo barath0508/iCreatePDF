@@ -87,7 +87,9 @@ export default function RootLayout({
     <html lang="en" className={`dark ${GeistSans.variable} ${GeistMono.variable}`}>
       <head>
         {/* Google Consent Mode v2 Default Initialization */}
-        <script
+        <Script
+          id="consent-mode"
+          strategy="beforeInteractive"
           dangerouslySetInnerHTML={{
             __html: `
               window.dataLayer = window.dataLayer || [];
