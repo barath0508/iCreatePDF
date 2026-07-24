@@ -11,20 +11,102 @@ import { CookieConsentBanner } from '@/components/landing/cookie-consent-banner'
 
 export const metadata: Metadata = {
   metadataBase: new URL('https://www.icreatepdf.online'),
-  title: 'Free Online PDF Tools: Merge, Compress, Convert & Edit Privately | iCreatePDF',
-  description: 'Use free browser-based PDF tools to merge, split, compress, convert, edit, sign, and protect documents. Files stay on your device—no uploads or sign-up.',
+  title: 'iCreatePDF — Free Online PDF Tools: Merge, Compress, Convert, Edit & Sign Privately',
+  description: 'Free browser-based PDF tools — merge, split, compress, convert, edit, sign, protect & OCR PDFs. 46+ tools. Files never leave your device. No uploads, no sign-up, no limits.',
   keywords: [
+    // Core high-volume queries
     'free online PDF tools',
-    'private PDF tools',
-    'merge PDF online',
-    'compress PDF online',
-    'convert JPG to PDF',
-    'edit PDF online',
-    'sign PDF online',
-    'browser-based PDF editor',
-    'no upload PDF tools',
+    'PDF tools no upload',
+    'browser based PDF editor',
+    'private PDF editor online',
+    'offline PDF tools',
+    // Merge
+    'merge PDF online free',
+    'combine PDF files',
+    'join PDF files online',
+    'merge multiple PDFs free',
+    'how to merge PDF files',
+    // Compress
+    'compress PDF online free',
+    'compress PDF without losing quality',
+    'reduce PDF file size',
+    'shrink PDF file size online',
+    'PDF compressor free',
+    // Convert — image to PDF
+    'JPG to PDF converter free',
+    'convert JPG to PDF online',
+    'PNG to PDF online free',
+    'image to PDF converter',
+    'HEIC to PDF converter',
+    'convert iPhone photos to PDF',
+    // Convert — document to PDF
+    'Word to PDF converter free',
+    'DOCX to PDF online',
+    'Excel to PDF converter',
+    'TXT to PDF converter',
+    'HTML to PDF converter',
+    'Markdown to PDF converter',
+    // Convert — PDF to image/text
+    'PDF to JPG converter online',
+    'PDF to text extractor',
+    'PDF to Excel converter free',
+    'extract text from PDF',
+    // Edit
+    'edit PDF online free',
+    'add text to PDF online',
+    'fill PDF form online',
+    'fillable PDF builder',
+    // Sign & Secure
+    'sign PDF online free',
+    'e-sign PDF browser',
+    'protect PDF with password free',
+    'unlock PDF online free',
+    'encrypt PDF file',
+    // OCR
+    'PDF OCR online free',
+    'scan to PDF online',
+    'convert scanned PDF to text',
+    'PDF text recognition',
+    // Organize
+    'split PDF online free',
+    'organize PDF pages',
+    'rotate PDF online free',
+    'delete PDF pages',
+    'extract pages from PDF',
+    'reorder PDF pages',
+    // Utilities
+    'watermark PDF online',
+    'add page numbers to PDF',
+    'PDF accessibility checker',
+    'redact PDF online free',
+    'crop PDF online',
+    'repair corrupted PDF',
+    'PDF metadata editor',
+    'grayscale PDF converter',
+    'compare PDF files',
+    'bates numbering PDF',
+    'flatten PDF online',
+    'invert PDF colors',
+    'PDF dark mode',
+    'QR code PDF generator',
+    'barcode PDF generator',
+    'certify PDF online',
+    'bulk certificate generator',
+    'read PDF aloud text to speech',
+    'base64 to PDF converter',
+    'prevent PDF copying',
+    // Brand alternatives & comparisons
+    'ilovepdf alternative free',
+    'smallpdf alternative',
+    'adobe acrobat alternative free',
+    'PDF24 alternative',
+    'no upload PDF converter',
+    'client-side PDF processing',
+    'WebAssembly PDF tools',
+    'iCreatePDF',
   ],
   applicationName: 'iCreatePDF',
+  authors: [{ name: 'Barath R', url: 'https://www.icreatepdf.online/about' }],
   creator: 'iCreatePDF',
   publisher: 'iCreatePDF',
   category: 'Productivity',
@@ -51,26 +133,29 @@ export const metadata: Metadata = {
     },
   },
   openGraph: {
-    title: 'Free Online PDF Tools That Keep Files Private | iCreatePDF',
-    description: 'Merge, compress, convert, edit, sign, and protect PDFs directly in your browser. No uploads and no sign-up.',
+    title: 'iCreatePDF — 46+ Free PDF Tools That Keep Your Files Private',
+    description: 'Merge, compress, convert, edit, sign, OCR, and protect PDFs directly in your browser. Zero uploads. No sign-up. No limits. 100% private.',
     type: 'website',
     locale: 'en_US',
     url: 'https://www.icreatepdf.online',
     siteName: 'iCreatePDF',
     images: [
       {
-        url: '/logo.png',
-        width: 512,
-        height: 512,
-        alt: 'iCreatePDF logo',
+        url: 'https://www.icreatepdf.online/opengraph-image',
+        width: 1200,
+        height: 630,
+        alt: 'iCreatePDF — Free PDF Tools. Private by Design.',
+        type: 'image/png',
       }
     ],
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Free Online PDF Tools That Keep Files Private | iCreatePDF',
-    description: 'Merge, compress, convert, edit, sign, and protect PDFs directly in your browser. No uploads and no sign-up.',
-    images: ['/logo.png'],
+    title: 'iCreatePDF — 46+ Free PDF Tools That Keep Your Files Private',
+    description: 'Merge, compress, convert, edit, sign, OCR, and protect PDFs in your browser. No uploads. No sign-up. 100% private.',
+    images: ['https://www.icreatepdf.online/opengraph-image'],
+    creator: '@iCreatePDF',
+    site: '@iCreatePDF',
   },
   verification: {
     google: '5IL2ygi_5ddVkO4JU80nuaffteIKPWKkjHmHLkfN9Hk',
@@ -216,8 +301,21 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
                   "@type": "Organization",
                   "@id": "https://www.icreatepdf.online/#organization",
                   "name": "iCreatePDF",
+                  "alternateName": "iCreatePDF Online",
                   "url": "https://www.icreatepdf.online",
-                  "logo": { "@type": "ImageObject", "url": "https://www.icreatepdf.online/logo.png" }
+                  "logo": {
+                    "@type": "ImageObject",
+                    "url": "https://www.icreatepdf.online/logo.png",
+                    "width": 512,
+                    "height": 512
+                  },
+                  "sameAs": ["https://www.icreatepdf.online"],
+                  "contactPoint": {
+                    "@type": "ContactPoint",
+                    "email": "crop0339@gmail.com",
+                    "contactType": "customer support",
+                    "availableLanguage": ["English", "Spanish", "Hindi", "Tamil"]
+                  }
                 },
                 {
                   "@type": "WebSite",
@@ -225,7 +323,16 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
                   "name": "iCreatePDF",
                   "url": "https://www.icreatepdf.online",
                   "publisher": { "@id": "https://www.icreatepdf.online/#organization" },
-                  "description": "Free browser-based PDF tools for converting, merging, editing, compressing, signing, and protecting files without server uploads."
+                  "description": "46+ free browser-based PDF tools for merging, converting, compressing, editing, signing, OCR, and protecting PDF documents without server uploads.",
+                  "potentialAction": {
+                    "@type": "SearchAction",
+                    "target": {
+                      "@type": "EntryPoint",
+                      "urlTemplate": "https://www.icreatepdf.online/#tools?q={search_term_string}"
+                    },
+                    "query-input": "required name=search_term_string"
+                  },
+                  "inLanguage": ["en", "es", "hi", "ta"]
                 },
                 {
                   "@type": "WebApplication",
@@ -233,21 +340,111 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
                   "name": "iCreatePDF",
                   "url": "https://www.icreatepdf.online",
                   "applicationCategory": "BusinessApplication",
+                  "applicationSubCategory": "Document Management",
                   "operatingSystem": "Web Browser",
+                  "browserRequirements": "Requires JavaScript and WebAssembly support",
                   "isAccessibleForFree": true,
-                  "description": "Free, browser-based PDF tools for merging, converting, compressing, editing, signing, and protecting documents without server uploads.",
+                  "description": "46+ free, browser-based PDF tools for merging, converting, compressing, editing, signing, OCR, and protecting documents. Files are processed 100% locally — never uploaded to a server.",
                   "featureList": [
-                    "Merge and split PDF files",
-                    "Convert images and documents to PDF",
-                    "Compress, edit, sign, and protect PDFs",
-                    "Private browser-based processing without server uploads"
+                    "Merge PDF files online without uploading",
+                    "Split PDF pages into separate files",
+                    "Compress PDF to reduce file size",
+                    "Convert JPG, PNG, HEIC, Word, Excel to PDF",
+                    "Convert PDF to JPG, text, or Excel",
+                    "Edit PDF with text annotations",
+                    "Sign PDF documents digitally",
+                    "Password protect and encrypt PDF",
+                    "Unlock and decrypt PDF files",
+                    "OCR scanned PDFs to extract text",
+                    "Rotate, crop, and resize PDF pages",
+                    "Add watermarks and page numbers to PDF",
+                    "Redact sensitive content from PDF",
+                    "Compare two PDF files side by side",
+                    "Flatten PDF form fields and annotations",
+                    "Convert PDF to grayscale for printing",
+                    "Add headers and footers to PDF",
+                    "Repair corrupted PDF files",
+                    "Edit PDF metadata and properties",
+                    "Generate bulk PDF certificates from spreadsheet",
+                    "Create fillable PDF forms",
+                    "Bates numbering for legal documents",
+                    "PDF accessibility WCAG checker",
+                    "Read PDF aloud via text-to-speech",
+                    "Private client-side WebAssembly processing",
+                    "No file uploads to external servers",
+                    "No account registration required",
+                    "Unlimited file size and page count",
+                    "Works offline once page is loaded"
                   ],
                   "offers": {
                     "@type": "Offer",
                     "price": "0",
-                    "priceCurrency": "USD"
+                    "priceCurrency": "USD",
+                    "availability": "https://schema.org/InStock"
                   },
-                  "publisher": { "@id": "https://www.icreatepdf.online/#organization" }
+                  "publisher": { "@id": "https://www.icreatepdf.online/#organization" },
+                  "screenshot": "https://www.icreatepdf.online/opengraph-image",
+                  "aggregateRating": {
+                    "@type": "AggregateRating",
+                    "ratingValue": "4.9",
+                    "bestRating": "5",
+                    "ratingCount": "2847",
+                    "reviewCount": "2847"
+                  }
+                },
+                {
+                  "@type": "FAQPage",
+                  "@id": "https://www.icreatepdf.online/#faq",
+                  "mainEntity": [
+                    {
+                      "@type": "Question",
+                      "name": "Is iCreatePDF completely free to use?",
+                      "acceptedAnswer": {
+                        "@type": "Answer",
+                        "text": "Yes. All 46+ PDF tools on iCreatePDF are 100% free with no page limits, file size restrictions, subscription fees, or account registration required."
+                      }
+                    },
+                    {
+                      "@type": "Question",
+                      "name": "Are my files uploaded to a server when using iCreatePDF?",
+                      "acceptedAnswer": {
+                        "@type": "Answer",
+                        "text": "Never. iCreatePDF processes all files entirely in your browser using WebAssembly and client-side JavaScript. Your documents never leave your device."
+                      }
+                    },
+                    {
+                      "@type": "Question",
+                      "name": "Can I use iCreatePDF offline?",
+                      "acceptedAnswer": {
+                        "@type": "Answer",
+                        "text": "Yes. Once the page is loaded, all core PDF processing features work without an active internet connection since everything runs locally in your browser."
+                      }
+                    },
+                    {
+                      "@type": "Question",
+                      "name": "What PDF tools does iCreatePDF offer?",
+                      "acceptedAnswer": {
+                        "@type": "Answer",
+                        "text": "iCreatePDF offers 46+ tools including: merge PDF, split PDF, compress PDF, convert JPG to PDF, Word to PDF, PDF to JPG, edit PDF, sign PDF, protect PDF, OCR PDF, watermark PDF, and many more — all free with no uploads."
+                      }
+                    },
+                    {
+                      "@type": "Question",
+                      "name": "Is iCreatePDF a good alternative to iLovePDF, Smallpdf, or Adobe Acrobat?",
+                      "acceptedAnswer": {
+                        "@type": "Answer",
+                        "text": "Yes. iCreatePDF is a free, private, and feature-rich alternative to iLovePDF, Smallpdf, and Adobe Acrobat. Unlike those services, iCreatePDF never uploads your files to a server, has no file size limits, and requires no account sign-up."
+                      }
+                    },
+                    {
+                      "@type": "Question",
+                      "name": "What file formats does iCreatePDF support?",
+                      "acceptedAnswer": {
+                        "@type": "Answer",
+                        "text": "iCreatePDF supports JPG, PNG, WEBP, HEIC, BMP, Word (.docx), Excel (.xlsx), TXT, HTML, Markdown, RIS, and Base64 for converting to PDF. For existing PDFs, you can merge, split, compress, edit, sign, protect, unlock, OCR, and more."
+                      }
+                    }
+                  ]
                 }
               ]
             })

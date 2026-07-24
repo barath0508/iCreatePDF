@@ -70,6 +70,26 @@ const nextConfig: NextConfig = {
             key: 'Cache-Control',
             value: 'public, max-age=3600, s-maxage=31536000, stale-while-revalidate=86400',
           },
+          {
+            // Tell Google to index all pages and follow links (belt-and-suspenders alongside meta robots)
+            key: 'X-Robots-Tag',
+            value: 'index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1',
+          },
+          {
+            // Prevent MIME type sniffing \u2014 improves trust score with Google Safe Browsing
+            key: 'X-Content-Type-Options',
+            value: 'nosniff',
+          },
+          {
+            // Protect against clickjacking, a spam/malware signal Google checks
+            key: 'X-Frame-Options',
+            value: 'SAMEORIGIN',
+          },
+          {
+            // Controls referrer data sent to third parties
+            key: 'Referrer-Policy',
+            value: 'strict-origin-when-cross-origin',
+          },
         ],
       },
       {

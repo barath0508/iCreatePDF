@@ -6,15 +6,22 @@ import { toolContent } from '@/lib/tool-content';
 import { buildAlternates, toolSchema } from '@/lib/seo';
 
 export const metadata: Metadata = {
-  title: 'Local PDF Password Encrypter - Protect PDF Securely | iCreatePDF',
-  description: 'Encrypt and password protect your PDF files client-side. Set secure owner and user passwords locally in your browser memory space.',
-  keywords: 'local pdf password encrypter, protect pdf client-side, encrypt pdf file private, secure pdf lock tool, password protect pdf offline, client-side document encryption, protect sensitive bank statements pdf, AES pdf encryption free',
+  title: 'Password Protect PDF \u2014 Encrypt PDF Free Online | iCreatePDF',
+  description: 'Password protect and encrypt PDF files free online. Add owner and user passwords with AES encryption \u2014 100% private, processed locally in your browser, no uploads.',
+  keywords: 'password protect pdf, encrypt pdf, protect pdf with password, lock pdf, pdf password protection, add password to pdf free, encrypt pdf file, secure pdf online free, pdf encryption free, password protect pdf locally, how to lock a pdf, pdf password lock, protect pdf document, add password to pdf online free, password protect pdf no upload, secure pdf file, pdf security online free, AES pdf encryption, protect confidential pdf',
   alternates: buildAlternates('/tools/protect-pdf'),
   openGraph: {
-    title: 'Local PDF Password Encrypter - Protect PDF Securely | iCreatePDF',
-    description: 'Encrypt and password protect your PDF files client-side. Set secure owner and user passwords locally in your browser memory space.',
+    title: 'Password Protect PDF \u2014 Encrypt PDF Free Online | iCreatePDF',
+    description: 'Password protect and encrypt PDF files. AES encryption, 100% private \u2014 no uploads.',
     type: 'website',
-  }
+    images: [{ url: 'https://www.icreatepdf.online/opengraph-image', width: 1200, height: 630, alt: 'Protect PDF \u2014 iCreatePDF' }],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Password Protect PDF \u2014 Encrypt PDF Free Online | iCreatePDF',
+    description: 'Password protect PDF. AES encryption. No uploads. 100% private.',
+    images: ['https://www.icreatepdf.online/opengraph-image'],
+  },
 };
 
 export default function ProtectPdfPage() {

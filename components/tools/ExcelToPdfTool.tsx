@@ -462,7 +462,7 @@ export function ExcelToPdfTool() {
         </div>
       ) : (
         // Workspace Layout
-        <div className="grid grid-cols-1 xl:grid-cols-12 gap-8 items-start">
+        <div className="grid grid-cols-1 xl:grid-cols-12 gap-8 items-stretch">
           
           {/* Main Workspace (Preview + Sheets) */}
           <div className="xl:col-span-8 space-y-6">

@@ -152,15 +152,15 @@ export function CertifyTool() {
       </div>
 
       {mode === 'certify' ? (
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
-          <div className="lg:col-span-8 space-y-6">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-stretch">
+          <div className="lg:col-span-8 space-y-6 flex flex-col">
             {!file ? (
               <div
                 onDragOver={(e) => { e.preventDefault(); setIsDraggingOver(true); }}
                 onDragLeave={() => setIsDraggingOver(false)}
                 onDrop={(e) => { e.preventDefault(); setIsDraggingOver(false); e.dataTransfer.files && handleFiles(e.dataTransfer.files); }}
                 onClick={() => fileInputRef.current?.click()}
-                className={`cursor-pointer border border-dashed rounded-2xl p-12 transition-all text-center flex flex-col items-center justify-center min-h-[220px] ${isDraggingOver ? 'border-brand bg-brand/5' : 'border-foreground/10 bg-card/40 hover:border-foreground/20'}`}
+                className={`cursor-pointer border border-dashed rounded-2xl p-12 transition-all text-center flex-1 flex flex-col items-center justify-center min-h-[220px] ${isDraggingOver ? 'border-brand bg-brand/5' : 'border-foreground/10 bg-card/40 hover:border-foreground/20'}`}
               >
                 <input type="file" ref={fileInputRef} onChange={(e) => e.target.files && handleFiles(e.target.files)} accept=".pdf" className="hidden" />
                 <div className="p-4 rounded-full bg-foreground/5 mb-4 border border-foreground/10"><Stamp className="w-6 h-6 text-brand" /></div>
@@ -190,7 +190,7 @@ export function CertifyTool() {
             {error && <div className="p-4 rounded-xl bg-red-500/10 border border-red-500/20 text-red-200 text-sm">{error}</div>}
           </div>
 
-          <div className="lg:col-span-4 bg-card border border-foreground/10 rounded-2xl p-6 space-y-6">
+          <div className="lg:col-span-4 h-full bg-card border border-foreground/10 rounded-2xl p-6 space-y-6">
             <div className="flex items-center gap-2 border-b border-foreground/5 pb-4">
               <Stamp className="w-4 h-4 text-brand" />
               <h3 className="font-mono text-sm uppercase tracking-wider text-foreground">PDF Certify</h3>
@@ -211,10 +211,10 @@ export function CertifyTool() {
           </div>
         </div>
       ) : (
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
-          <div className="lg:col-span-8 space-y-6">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-stretch">
+          <div className="lg:col-span-8 space-y-6 flex flex-col">
             {!verifyFile ? (
-              <div onClick={() => verifyInputRef.current?.click()} className="cursor-pointer border border-dashed rounded-2xl p-12 transition-all text-center flex flex-col items-center justify-center min-h-[220px] border-foreground/10 bg-card/40 hover:border-foreground/20">
+              <div onClick={() => verifyInputRef.current?.click()} className="cursor-pointer border border-dashed rounded-2xl p-12 transition-all text-center flex-1 flex flex-col items-center justify-center min-h-[220px] border-foreground/10 bg-card/40 hover:border-foreground/20">
                 <input type="file" ref={verifyInputRef} onChange={(e) => e.target.files && handleVerifyFiles(e.target.files)} accept=".pdf" className="hidden" />
                 <div className="p-4 rounded-full bg-foreground/5 mb-4 border border-foreground/10"><Fingerprint className="w-6 h-6 text-brand" /></div>
                 <h3 className="text-xl font-display text-foreground mb-2">Upload the original file to verify</h3>
@@ -248,7 +248,7 @@ export function CertifyTool() {
             )}
           </div>
 
-          <div className="lg:col-span-4 bg-card border border-foreground/10 rounded-2xl p-6 space-y-6">
+          <div className="lg:col-span-4 h-full bg-card border border-foreground/10 rounded-2xl p-6 space-y-6">
             <div className="flex items-center gap-2 border-b border-foreground/5 pb-4">
               <ShieldQuestion className="w-4 h-4 text-brand" />
               <h3 className="font-mono text-sm uppercase tracking-wider text-foreground">Verify Fingerprint</h3>

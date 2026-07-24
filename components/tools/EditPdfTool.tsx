@@ -219,17 +219,17 @@ export function EditPdfTool() {
 
   return (
     <div className="w-full max-w-6xl mx-auto px-6 lg:px-12 py-16">
-      <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+      <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-stretch">
         
         {/* Workspace */}
-        <div className="lg:col-span-8 space-y-6">
+        <div className="lg:col-span-8 space-y-6 flex flex-col">
           {!file ? (
             <div
               onDragOver={(e) => { e.preventDefault(); setIsDraggingOver(true); }}
               onDragLeave={() => setIsDraggingOver(false)}
               onDrop={(e) => { e.preventDefault(); setIsDraggingOver(false); e.dataTransfer.files && handleFiles(e.dataTransfer.files); }}
               onClick={() => fileInputRef.current?.click()}
-              className="relative cursor-pointer border border-dashed rounded-2xl p-12 transition-all duration-300 text-center flex flex-col items-center justify-center min-h-[220px] border-foreground/10 bg-card/40 hover:border-foreground/20"
+              className="relative cursor-pointer border border-dashed rounded-2xl p-12 transition-all duration-300 text-center flex-1 flex flex-col items-center justify-center min-h-[220px] border-foreground/10 bg-card/40 hover:border-foreground/20"
             >
               <input
                 type="file"
@@ -316,7 +316,7 @@ export function EditPdfTool() {
         </div>
 
         {/* Action Panel */}
-        <div className="lg:col-span-4 bg-card border border-foreground/10 rounded-2xl p-6 space-y-6">
+        <div className="lg:col-span-4 h-full bg-card border border-foreground/10 rounded-2xl p-6 space-y-6">
           <div className="flex items-center gap-2 border-b border-foreground/5 pb-4">
             <Edit className="w-4 h-4 text-brand" />
             <h3 className="font-mono text-sm uppercase tracking-wider text-foreground">Edit PDF</h3>

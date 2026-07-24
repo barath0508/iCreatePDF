@@ -299,10 +299,10 @@ export function WordToPdfTool() {
 
   return (
     <div className="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10">
-      <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+      <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-stretch">
         
         {/* Left Column: Upload / Live Document Preview */}
-        <div className="lg:col-span-8 space-y-6">
+        <div className="lg:col-span-8 space-y-6 flex flex-col">
           {!file ? (
             <div
               onDragOver={onDragOver}

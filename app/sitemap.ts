@@ -1,5 +1,8 @@
 import { MetadataRoute } from 'next';
 
+const TODAY = new Date().toISOString().split('T')[0];
+const STATIC_DATE = '2026-07-01';
+
 export default function sitemap(): MetadataRoute.Sitemap {
   const baseUrl = 'https://www.icreatepdf.online';
   const toolRoutes = [
@@ -129,36 +132,42 @@ export default function sitemap(): MetadataRoute.Sitemap {
     // Homepage — highest priority
     {
       url: baseUrl,
+      lastModified: TODAY,
       changeFrequency: 'daily',
       priority: 1.0,
     },
     // Tool pages — core content
     ...toolRoutes.map((route) => ({
       url: `${baseUrl}${route}`,
+      lastModified: TODAY,
       changeFrequency: 'weekly' as const,
       priority: 0.9,
     })),
     // Blog pages
     ...blogRoutes.map((route) => ({
       url: `${baseUrl}${route}`,
+      lastModified: TODAY,
       changeFrequency: 'weekly' as const,
       priority: 0.8,
     })),
     // Static pages (Contact, Privacy, Terms, About)
     ...staticRoutes.map((route) => ({
       url: `${baseUrl}${route}`,
+      lastModified: STATIC_DATE,
       changeFrequency: 'monthly' as const,
       priority: 0.5,
     })),
     // Comparison / alternative pages — commercial intent
     ...comparisonRoutes.map((route) => ({
       url: `${baseUrl}${route}`,
+      lastModified: TODAY,
       changeFrequency: 'monthly' as const,
       priority: 0.7,
     })),
     // Localised landing pages
     ...langRoutes.map((route) => ({
       url: `${baseUrl}${route}`,
+      lastModified: TODAY,
       changeFrequency: 'weekly' as const,
       priority: 0.7,
     })),

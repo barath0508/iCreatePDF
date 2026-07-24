@@ -516,10 +516,10 @@ export function BulkCertificatesTool() {
 
   return (
     <div className="w-full max-w-7xl mx-auto px-6 lg:px-12 py-12">
-      <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+      <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-stretch">
         
         {/* Left Workspace / Upload / Canvas Area */}
-        <div className="lg:col-span-8 space-y-6">
+        <div className="lg:col-span-8 space-y-6 flex flex-col">
           
           {/* File Uploaders */}
           {(!templateFile || !dataFile) && (
@@ -531,7 +531,7 @@ export function BulkCertificatesTool() {
                 onDragLeave={() => setIsDraggingOverTemplate(false)}
                 onDrop={(e) => { e.preventDefault(); setIsDraggingOverTemplate(false); e.dataTransfer.files && handleTemplateFiles(e.dataTransfer.files); }}
                 onClick={() => templateInputRef.current?.click()}
-                className={`cursor-pointer border border-dashed rounded-2xl p-8 text-center flex flex-col items-center justify-center min-h-[220px] transition-all duration-300 ${
+                className={`cursor-pointer border border-dashed rounded-2xl p-8 text-center flex-1 flex flex-col items-center justify-center min-h-[220px] transition-all duration-300 ${
                   isDraggingOverTemplate ? 'border-brand bg-brand/5' : 'border-foreground/10 bg-card/40 hover:border-foreground/20'
                 }`}
               >
@@ -553,7 +553,7 @@ export function BulkCertificatesTool() {
                 onDragLeave={() => setIsDraggingOverData(false)}
                 onDrop={(e) => { e.preventDefault(); setIsDraggingOverData(false); e.dataTransfer.files && handleDataFiles(e.dataTransfer.files); }}
                 onClick={() => dataInputRef.current?.click()}
-                className={`cursor-pointer border border-dashed rounded-2xl p-8 text-center flex flex-col items-center justify-center min-h-[220px] transition-all duration-300 ${
+                className={`cursor-pointer border border-dashed rounded-2xl p-8 text-center flex-1 flex flex-col items-center justify-center min-h-[220px] transition-all duration-300 ${
                   isDraggingOverData ? 'border-brand bg-brand/5' : 'border-foreground/10 bg-card/40 hover:border-foreground/20'
                 }`}
               >
@@ -782,7 +782,7 @@ export function BulkCertificatesTool() {
         </div>
 
         {/* Right Controls & Styling Panel */}
-        <div className="lg:col-span-4 bg-card border border-foreground/10 rounded-2xl p-6 space-y-6">
+        <div className="lg:col-span-4 h-full bg-card border border-foreground/10 rounded-2xl p-6 space-y-6">
           <div className="flex items-center gap-2 border-b border-foreground/5 pb-4">
             <Settings className="w-4 h-4 text-brand" />
             <h3 className="font-mono text-sm uppercase tracking-wider text-foreground">Generator Controls</h3>

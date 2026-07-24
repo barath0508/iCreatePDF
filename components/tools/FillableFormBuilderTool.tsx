@@ -287,9 +287,9 @@ export function FillableFormBuilderTool() {
   const activeField = fields.find((f) => f.id === activeFieldId);
 
   return (
-    <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+    <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-stretch">
       {/* Workspace Area */}
-      <div className="lg:col-span-8 space-y-6">
+      <div className="lg:col-span-8 space-y-6 flex flex-col">
         {!file ? (
           // File upload dropzone
           <div
@@ -460,7 +460,7 @@ export function FillableFormBuilderTool() {
       </div>
 
       {/* Control / Sidebar Panel */}
-      <div className="lg:col-span-4 bg-card border border-foreground/10 rounded-2xl p-6 space-y-6">
+      <div className="lg:col-span-4 h-full bg-card border border-foreground/10 rounded-2xl p-6 space-y-6">
         <div className="flex items-center gap-2 border-b border-foreground/5 pb-4">
           <Layers className="w-4 h-4 text-brand" />
           <h3 className="font-mono text-sm uppercase tracking-wider text-foreground">Form Controls</h3>

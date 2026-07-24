@@ -2,6 +2,7 @@
 
 import React, { useState } from 'react';
 import Link from 'next/link';
+import Script from 'next/script';
 import { Navigation } from '@/components/landing/navigation';
 import { HeroSection } from '@/components/landing/hero-section';
 import { RecentFilesWidget } from '@/components/landing/RecentFilesWidget';
@@ -86,12 +87,34 @@ export default function Home() {
 
   return (
     <main className="relative min-h-screen overflow-x-hidden bg-background text-foreground selection:bg-foreground selection:text-background">
+      {/* ItemList JSON-LD: structured data for all 46+ tools */}
+      <Script
+        id="tools-itemlist-schema"
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            '@context': 'https://schema.org',
+            '@type': 'ItemList',
+            name: 'iCreatePDF Free Online PDF Tools',
+            description: '46+ free browser-based PDF tools — no uploads, no sign-up, no limits.',
+            url: 'https://www.icreatepdf.online',
+            numberOfItems: tools.length,
+            itemListElement: tools.map((tool, index) => ({
+              '@type': 'ListItem',
+              position: index + 1,
+              name: tool.title,
+              url: `https://www.icreatepdf.online${tool.href}`,
+              description: tool.desc,
+            })),
+          }),
+        }}
+      />
       <Navigation />
       
       <HeroSection />
 
       {/* Tools Dashboard Studio Suite */}
-      <section id="tools" className="py-20 lg:py-28 bg-background relative z-10 border-t border-border/60">
+      <section id="tools" aria-label="PDF Tools Suite" className="py-20 lg:py-28 bg-background relative z-10 border-t border-border/60">
         <div className="max-w-7xl mx-auto px-6 lg:px-8">
           <div className="text-center mb-12 space-y-4">
             <SectionEyebrow className="justify-center">STUDIO TOOLKIT SUITE</SectionEyebrow>

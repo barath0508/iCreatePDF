@@ -274,10 +274,10 @@ export function ScanToPdfTool() {
 
   return (
     <div className="w-full max-w-6xl mx-auto px-6 lg:px-12 py-16">
-      <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+      <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-stretch">
         
         {/* Workspace */}
-        <div className="lg:col-span-8 space-y-6">
+        <div className="lg:col-span-8 space-y-6 flex flex-col">
           <canvas ref={canvasRef} className="hidden" />
 
           {/* Camera Viewer / Status */}
@@ -419,7 +419,7 @@ export function ScanToPdfTool() {
         </div>
 
         {/* Action Panel */}
-        <div className="lg:col-span-4 bg-card border border-foreground/10 rounded-2xl p-6 space-y-6">
+        <div className="lg:col-span-4 h-full bg-card border border-foreground/10 rounded-2xl p-6 space-y-6">
           <div className="flex items-center gap-2 border-b border-foreground/5 pb-4">
             <Camera className="w-4 h-4 text-brand" />
             <h3 className="font-mono text-sm uppercase tracking-wider text-foreground">Scan to PDF</h3>

@@ -6,15 +6,22 @@ import { toolContent } from '@/lib/tool-content';
 import { buildAlternates, toolSchema } from '@/lib/seo';
 
 export const metadata: Metadata = {
-  title: 'Convert DOCX to PDF Online Free (100% Private) | iCreatePDF',
-  description: 'Convert DOCX to PDF online for free. Wondering how to change from DOCX to PDF without formatting shifts? Convert Word documents 100% privately in your browser.',
-  keywords: 'convert docx to pdf, change from docx to pdf, docx to pdf, change docx to pdf, how to convert docx to pdf, docx to pdf freeware, docx to pdf free, convert word to pdf local, docx to pdf converter free, docx to pdf for free, docx to pdf converter, convert docx to pdf free, microsoft word docx to pdf, docx into pdf, docx a pdf, docx file to pdf, docx to pf, docx in pdf, .docx to pdf, convert docx to pdf for free, convert word to pdf free offline, word to pdf without changing format, convert docx to pdf without word, save docx as pdf, private pdf converter, icreatepdf',
+  title: 'Word to PDF Converter — Free, Private, No Upload | iCreatePDF',
+  description: 'Convert Word DOCX to PDF online free without losing formatting. 100% private — Word documents are processed locally in your browser, never uploaded to any server.',
+  keywords: 'word to pdf, docx to pdf, convert word to pdf, word to pdf free, convert docx to pdf, word document to pdf, doc to pdf, microsoft word to pdf, word to pdf online free, convert word to pdf without losing formatting, docx to pdf converter, word to pdf locally, word to pdf no upload, save word as pdf, how to convert word to pdf, word to pdf iphone, word to pdf android, word to pdf free offline, word file to pdf',
   alternates: buildAlternates('/tools/word-to-pdf'),
   openGraph: {
-    title: 'Convert DOCX to PDF Online Free (100% Private) | iCreatePDF',
-    description: 'Convert DOCX to PDF online for free. Wondering how to change from DOCX to PDF without formatting shifts? Convert Word documents 100% privately in your browser.',
+    title: 'Word to PDF Converter — Free, Private, No Upload | iCreatePDF',
+    description: 'Convert Word DOCX to PDF free online. No uploads, no formatting loss. 100% private.',
     type: 'website',
-  }
+    images: [{ url: 'https://www.icreatepdf.online/opengraph-image', width: 1200, height: 630, alt: 'Word to PDF — iCreatePDF' }],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Word to PDF Converter — Free, Private, No Upload | iCreatePDF',
+    description: 'Convert DOCX to PDF free. No uploads. 100% private.',
+    images: ['https://www.icreatepdf.online/opengraph-image'],
+  },
 };
 
 export default function WordToPdfPage() {

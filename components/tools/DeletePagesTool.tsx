@@ -102,15 +102,15 @@ export function DeletePagesTool() {
 
   return (
     <div className="w-full max-w-6xl mx-auto px-6 lg:px-12 py-16">
-      <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
-        <div className="lg:col-span-8 space-y-6">
+      <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-stretch">
+        <div className="lg:col-span-8 space-y-6 flex flex-col">
           {!file ? (
             <div
               onDragOver={(e) => { e.preventDefault(); setIsDraggingOver(true); }}
               onDragLeave={() => setIsDraggingOver(false)}
               onDrop={(e) => { e.preventDefault(); setIsDraggingOver(false); e.dataTransfer.files && handleFiles(e.dataTransfer.files); }}
               onClick={() => fileInputRef.current?.click()}
-              className={`cursor-pointer border border-dashed rounded-2xl p-12 transition-all text-center flex flex-col items-center justify-center min-h-[220px] ${isDraggingOver ? 'border-brand bg-brand/5' : 'border-foreground/10 bg-card/40 hover:border-foreground/20'}`}
+              className={`cursor-pointer border border-dashed rounded-2xl p-12 transition-all text-center flex-1 flex flex-col items-center justify-center min-h-[220px] ${isDraggingOver ? 'border-brand bg-brand/5' : 'border-foreground/10 bg-card/40 hover:border-foreground/20'}`}
             >
               <input type="file" ref={fileInputRef} onChange={(e) => e.target.files && handleFiles(e.target.files)} accept=".pdf" className="hidden" />
               <div className="p-4 rounded-full bg-foreground/5 mb-4 border border-foreground/10"><Trash2 className="w-6 h-6 text-brand" /></div>
@@ -146,7 +146,7 @@ export function DeletePagesTool() {
           {error && <div className="p-4 rounded-xl bg-red-500/10 border border-red-500/20 text-red-200 text-sm flex items-center gap-2"><AlertCircle className="w-4 h-4 text-red-400 shrink-0" />{error}</div>}
         </div>
 
-        <div className="lg:col-span-4 bg-card border border-foreground/10 rounded-2xl p-6 space-y-6">
+        <div className="lg:col-span-4 h-full bg-card border border-foreground/10 rounded-2xl p-6 space-y-6">
           <div className="flex items-center gap-2 border-b border-foreground/5 pb-4">
             <Trash2 className="w-4 h-4 text-brand" />
             <h3 className="font-mono text-sm uppercase tracking-wider text-foreground">Delete PDF Pages</h3>

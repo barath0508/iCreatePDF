@@ -118,10 +118,10 @@ export function HtmlToPdfTool() {
 
   return (
     <div className="w-full max-w-6xl mx-auto px-6 lg:px-12 py-16">
-      <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+      <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-stretch">
         
         {/* Workspace Code Editor */}
-        <div className="lg:col-span-8 space-y-6">
+        <div className="lg:col-span-8 space-y-6 flex flex-col">
           <div className="bg-card border border-foreground/10 rounded-2xl overflow-hidden">
             <div className="flex justify-between items-center bg-card/60 px-4 py-3 border-b border-foreground/10">
               <span className="text-xs font-mono text-brand flex items-center gap-1.5">
@@ -147,7 +147,7 @@ export function HtmlToPdfTool() {
         </div>
 
         {/* Action Panel */}
-        <div className="lg:col-span-4 bg-card border border-foreground/10 rounded-2xl p-6 space-y-6">
+        <div className="lg:col-span-4 h-full bg-card border border-foreground/10 rounded-2xl p-6 space-y-6">
           <div className="flex items-center gap-2 border-b border-foreground/5 pb-4">
             <FileCode className="w-4 h-4 text-brand" />
             <h3 className="font-mono text-sm uppercase tracking-wider text-foreground">HTML to PDF</h3>

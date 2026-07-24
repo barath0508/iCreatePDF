@@ -141,8 +141,8 @@ export function BarcodeToPdfTool() {
 
   return (
     <div className="w-full max-w-6xl mx-auto px-6 lg:px-12 py-16">
-      <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
-        <div className="lg:col-span-8 space-y-6">
+      <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-stretch">
+        <div className="lg:col-span-8 space-y-6 flex flex-col">
           <div className="p-6 bg-card border border-foreground/10 rounded-2xl space-y-5">
             <div className="space-y-2">
               <label className="text-[10px] font-mono text-foreground/40 uppercase">Barcode Type</label>
@@ -196,7 +196,7 @@ export function BarcodeToPdfTool() {
           {error && <div className="p-4 rounded-xl bg-red-500/10 border border-red-500/20 text-red-200 text-sm">{error}</div>}
         </div>
 
-        <div className="lg:col-span-4 bg-card border border-foreground/10 rounded-2xl p-6 space-y-6">
+        <div className="lg:col-span-4 h-full bg-card border border-foreground/10 rounded-2xl p-6 space-y-6">
           <div className="flex items-center gap-2 border-b border-foreground/5 pb-4">
             <BarcodeIcon className="w-4 h-4 text-brand" />
             <h3 className="font-mono text-sm uppercase tracking-wider text-foreground">Barcode to PDF</h3>

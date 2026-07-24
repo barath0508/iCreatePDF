@@ -6,15 +6,22 @@ import { toolContent } from '@/lib/tool-content';
 import { buildAlternates, toolSchema } from '@/lib/seo';
 
 export const metadata: Metadata = {
-  title: 'Convert JPG to PDF Online - Free & Private | iCreatePDF',
-  description: 'Convert JPG or JPEG images to high-quality PDF files. Drag and drop multiple JPGs, reorder, and download instantly. Processed 100% locally for absolute privacy.',
-  keywords: 'jpg to pdf, convert jpg to pdf, jpeg to pdf, convert image to pdf, free online jpg to pdf, private pdf converter',
+  title: 'JPG to PDF Converter \u2014 Free, Private, No Upload | iCreatePDF',
+  description: 'Convert JPG, JPEG, PNG, WEBP, or HEIC images to PDF free online. Drag & drop multiple photos, reorder pages, and download instantly. 100% private \u2014 files never leave your browser.',
+  keywords: 'jpg to pdf, jpeg to pdf, convert jpg to pdf, image to pdf, png to pdf, webp to pdf, heic to pdf, jpg to pdf free, convert image to pdf online, multiple jpg to pdf, jpg to pdf no upload, iphone photos to pdf, combine images to pdf, photo to pdf converter, jpg to pdf converter free, convert jpeg to pdf online, image to pdf converter online free, how to convert jpg to pdf, make pdf from image, jpg to pdf without quality loss, compress jpg to pdf, jpg to pdf iphone, jpg to pdf android',
   alternates: buildAlternates('/tools/jpg-to-pdf'),
   openGraph: {
-    title: 'Convert JPG to PDF Online - Free & Private | iCreatePDF',
-    description: 'Convert JPG or JPEG images to high-quality PDF files. Drag and drop multiple JPGs, reorder, and download instantly. Processed 100% locally for absolute privacy.',
+    title: 'JPG to PDF Converter \u2014 Free, Private, No Upload | iCreatePDF',
+    description: 'Convert JPG, JPEG, PNG, WEBP, or HEIC images to PDF free. No uploads, no account. 100% private browser-based processing.',
     type: 'website',
-  }
+    images: [{ url: 'https://www.icreatepdf.online/opengraph-image', width: 1200, height: 630, alt: 'JPG to PDF Converter \u2014 iCreatePDF' }],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'JPG to PDF Converter \u2014 Free, Private, No Upload | iCreatePDF',
+    description: 'Convert JPG, JPEG, PNG, WEBP, or HEIC images to PDF free. No uploads. 100% private.',
+    images: ['https://www.icreatepdf.online/opengraph-image'],
+  },
 };
 
 export default function JpgToPdfPage() {

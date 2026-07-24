@@ -70,10 +70,12 @@ export function toolSchema({
   name,
   description,
   url,
+  featureList,
 }: {
   name: string;
   description: string;
   url: string;
+  featureList?: string[];
 }) {
   return [
     {
@@ -85,20 +87,31 @@ export function toolSchema({
       image: `${SITE_URL}/logo.png`,
       applicationCategory: 'UtilityApplication',
       operatingSystem: 'Web Browser',
+      browserRequirements: 'Requires JavaScript and WebAssembly support',
       isAccessibleForFree: true,
-      featureList: [
+      featureList: featureList ?? [
         'Free browser-based PDF processing',
-        'Private local file processing',
-        'No server uploads required',
+        'Private local file processing — no server uploads',
+        'No account registration required',
+        'Unlimited file size and page count',
+        'Works offline once loaded',
       ],
       offers: {
         '@type': 'Offer',
         price: '0',
         priceCurrency: 'USD',
+        availability: 'https://schema.org/InStock',
+      },
+      publisher: {
+        '@type': 'Organization',
+        '@id': `${SITE_URL}/#organization`,
+        name: 'iCreatePDF',
+        url: SITE_URL,
       },
     },
     breadcrumbSchema([
       { name: 'iCreatePDF', url: '/' },
+      { name: 'PDF Tools', url: '/tools' },
       { name },
     ]),
   ];
@@ -195,6 +208,45 @@ export function howToSchema({
       name: s.title,
       text: s.description,
       url: `${SITE_URL}${url}#step-${index + 1}`,
+    })),
+  };
+}
+
+/**
+ * Generate FAQPage JSON-LD for a tool or page.
+ * Pair with toolSchema to get both SoftwareApplication and FAQ rich results.
+ */
+export function faqSchema(faqs: { question: string; answer: string }[]) {
+  return {
+    '@context': 'https://schema.org',
+    '@type': 'FAQPage',
+    mainEntity: faqs.map((faq) => ({
+      '@type': 'Question',
+      name: faq.question,
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: faq.answer,
+      },
+    })),
+  };
+}
+
+/**
+ * Generate ItemList JSON-LD for a page that lists multiple tools or blog posts.
+ */
+export function itemListSchema(items: { name: string; url: string; description?: string }[]) {
+  return {
+    '@context': 'https://schema.org',
+    '@type': 'ItemList',
+    name: 'iCreatePDF Online PDF Tools',
+    description: '46+ free browser-based PDF tools — merge, compress, convert, edit, sign, OCR, and protect PDFs without server uploads.',
+    numberOfItems: items.length,
+    itemListElement: items.map((item, index) => ({
+      '@type': 'ListItem',
+      position: index + 1,
+      name: item.name,
+      url: item.url.startsWith('http') ? item.url : `${SITE_URL}${item.url}`,
+      ...(item.description ? { description: item.description } : {}),
     })),
   };
 }
