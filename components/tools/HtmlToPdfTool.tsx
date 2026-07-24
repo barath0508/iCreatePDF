@@ -167,7 +167,7 @@ export function HtmlToPdfTool() {
               <div className="space-y-2">
                 <Button
                   onClick={handleDownload}
-                  className="w-full bg-emerald-600 hover:bg-emerald-700 text-foreground font-medium py-6 rounded-xl flex items-center justify-center gap-2"
+                  className="w-full bg-emerald-600 hover:bg-emerald-700 text-white font-medium py-6 rounded-xl flex items-center justify-center gap-2"
                 >
                   <Download className="w-5 h-5" />
                   Download PDF
@@ -183,7 +183,7 @@ export function HtmlToPdfTool() {
             ) : (
               <Button
                 onClick={triggerHtmlToPdf}
-                className="w-full bg-brand hover:bg-brand/90 text-foreground font-medium py-6 rounded-xl flex items-center justify-center gap-2"
+                className="w-full bg-primary text-primary-foreground hover:bg-primary/90 font-bold font-medium py-6 rounded-xl flex items-center justify-center gap-2"
               >
                 <Eye className="w-4 h-4" />
                 Compile to PDF

@@ -195,7 +195,7 @@ export function AccessibilityCheckerTool() {
                   {langCheck?.status === 'fail' && (
                     <div className="pt-2">
                       {fixedUrl ? (
-                        <Button onClick={() => { const a = document.createElement('a'); a.href = fixedUrl; a.download = `lang-fixed-${file.name}`; a.click(); }} className="w-full bg-emerald-600 hover:bg-emerald-700 text-foreground font-medium py-5 rounded-xl flex items-center justify-center gap-2 text-sm">
+                        <Button onClick={() => { const a = document.createElement('a'); a.href = fixedUrl; a.download = `lang-fixed-${file.name}`; a.click(); }} className="w-full bg-emerald-600 hover:bg-emerald-700 text-white font-medium py-5 rounded-xl flex items-center justify-center gap-2 text-sm">
                           <Download className="w-4 h-4" />Download with Language Fixed
                         </Button>
                       ) : (
@@ -222,7 +222,7 @@ export function AccessibilityCheckerTool() {
             {isProcessing ? (
               <Button disabled className="w-full bg-brand/50 text-foreground font-medium py-6 rounded-xl flex items-center justify-center gap-2"><Loader2 className="w-4 h-4 animate-spin" />Analyzing...</Button>
             ) : (
-              <Button disabled={!file} onClick={runCheck} className={`w-full font-medium py-6 rounded-xl flex items-center justify-center gap-2 ${file ? 'bg-brand hover:bg-brand/90 text-foreground' : 'bg-foreground/5 text-foreground/30 cursor-not-allowed'}`}><Accessibility className="w-4 h-4" />Run Accessibility Check</Button>
+              <Button disabled={!file} onClick={runCheck} className={`w-full font-medium py-6 rounded-xl flex items-center justify-center gap-2 ${file ? 'bg-primary text-primary-foreground hover:bg-primary/90 font-bold' : 'bg-foreground/5 text-muted-foreground/60 cursor-not-allowed'}`}><Accessibility className="w-4 h-4" />Run Accessibility Check</Button>
             )}
           </div>
         </div>

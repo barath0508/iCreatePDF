@@ -8,15 +8,12 @@ export function CookieConsentBanner() {
   const [isVisible, setIsVisible] = useState(false);
   const [showPreferences, setShowPreferences] = useState(false);
   
-  // Custom preference toggles
   const [analytics, setAnalytics] = useState(true);
   const [marketing, setMarketing] = useState(true);
 
   useEffect(() => {
-    // Check if consent has already been given
     const consent = localStorage.getItem('cookie_consent');
     if (!consent) {
-      // Small delay for clean entrance
       const timer = setTimeout(() => {
         setIsVisible(true);
       }, 1000);
@@ -30,15 +27,12 @@ export function CookieConsentBanner() {
     ad_personalization: 'granted' | 'denied';
     analytics_storage: 'granted' | 'denied';
   }) => {
-    // Save to localStorage
     localStorage.setItem('cookie_consent', JSON.stringify(preferences));
 
-    // Update Google Tag Manager / gtag.js Consent Mode
     if (typeof window !== 'undefined' && (window as any).gtag) {
       (window as any).gtag('consent', 'update', preferences);
     }
 
-    // Hide banner
     setIsVisible(false);
   };
 
@@ -74,14 +68,11 @@ export function CookieConsentBanner() {
 
   return (
     <div className="fixed bottom-6 right-6 left-6 sm:left-auto z-[999] w-[calc(100%-3rem)] sm:w-[420px] transition-all duration-500 ease-out transform animate-fade-in-up">
-      <div className="p-6 rounded-2xl border border-foreground/10 bg-card/90 backdrop-blur-xl shadow-2xl flex flex-col gap-4 relative overflow-hidden select-none">
-        {/* Glow effect */}
-        <div className="absolute top-[-30px] right-[-30px] w-24 h-24 bg-brand/10 rounded-full blur-2xl pointer-events-none" />
-
+      <div className="p-6 rounded-2xl border border-border bg-card/95 backdrop-blur-xl shadow-2xl flex flex-col gap-4 relative overflow-hidden select-none">
         {/* Header */}
         <div className="flex items-center gap-3">
-          <div className="p-2 rounded-xl bg-brand/10 text-brand border border-brand/20">
-            <ShieldCheck className="w-5 h-5" />
+          <div className="p-2 rounded-xl bg-background border border-border text-foreground">
+            <ShieldCheck className="w-5 h-5 stroke-[1.5]" />
           </div>
           <div>
             <h4 className="text-sm font-semibold text-foreground font-display">Cookie Preferences</h4>
@@ -93,8 +84,8 @@ export function CookieConsentBanner() {
         {!showPreferences ? (
           <>
             <p className="text-xs text-muted-foreground leading-relaxed">
-              We process your files 100% locally in your browser. However, we use third-party cookies to compile aggregate usage statistics and display non-intrusive, personalized advertisements. Read our{' '}
-              <Link href="/privacy" className="text-brand hover:underline underline-offset-2">
+              We process your files 100% locally in your browser. However, we use third-party cookies to compile aggregate usage statistics and display non-intrusive advertisements. Read our{' '}
+              <Link href="/privacy" className="text-foreground font-medium hover:underline underline-offset-2">
                 Privacy Policy
               </Link>{' '}
               for details.
@@ -104,20 +95,20 @@ export function CookieConsentBanner() {
               <div className="flex gap-2">
                 <button
                   onClick={handleAcceptAll}
-                  className="flex-1 py-2 px-3 text-xs font-semibold rounded-xl bg-brand hover:bg-brand/90 text-foreground transition-all active:scale-[0.98]"
+                  className="flex-1 py-2 px-3 text-xs font-bold rounded-xl bg-foreground text-background hover:bg-foreground/90 transition-all active:scale-[0.98]"
                 >
                   Accept All
                 </button>
                 <button
                   onClick={handleRejectAll}
-                  className="flex-1 py-2 px-3 text-xs font-semibold rounded-xl bg-transparent border border-foreground/10 hover:bg-foreground/5 text-foreground transition-all active:scale-[0.98]"
+                  className="flex-1 py-2 px-3 text-xs font-semibold rounded-xl bg-background border border-border hover:bg-muted text-foreground transition-all active:scale-[0.98]"
                 >
                   Reject All
                 </button>
               </div>
               <button
                 onClick={() => setShowPreferences(true)}
-                className="w-full py-1.5 text-[11px] font-medium text-muted-foreground hover:text-foreground hover:underline transition-colors flex items-center justify-center gap-1.5"
+                className="w-full py-1.5 text-[11px] font-mono text-muted-foreground hover:text-foreground hover:underline transition-colors flex items-center justify-center gap-1.5"
               >
                 <Settings className="w-3.5 h-3.5" />
                 Customize Preferences
@@ -128,22 +119,22 @@ export function CookieConsentBanner() {
           <>
             <div className="flex flex-col gap-3 my-1">
               {/* Essential */}
-              <div className="flex items-center justify-between p-2.5 rounded-xl border border-foreground/5 bg-foreground/[0.01]">
+              <div className="flex items-center justify-between p-2.5 rounded-xl border border-border bg-background">
                 <div className="flex flex-col gap-0.5 max-w-[80%]">
                   <span className="text-[11px] font-semibold text-foreground flex items-center gap-1">
-                    <Lock className="w-3 h-3 text-brand" /> Essential
+                    <Lock className="w-3 h-3 text-foreground" /> Essential
                   </span>
                   <span className="text-[9px] text-muted-foreground leading-snug">
                     Required for site security, settings preferences, and local processing.
                   </span>
                 </div>
-                <span className="text-[10px] font-semibold text-emerald-400 bg-emerald-500/10 px-2 py-0.5 rounded-md">
+                <span className="text-[10px] font-mono font-semibold text-foreground bg-muted px-2 py-0.5 rounded-md border border-border">
                   Active
                 </span>
               </div>
 
               {/* Analytics */}
-              <div className="flex items-center justify-between p-2.5 rounded-xl border border-foreground/5 bg-foreground/[0.01]">
+              <div className="flex items-center justify-between p-2.5 rounded-xl border border-border bg-background">
                 <div className="flex flex-col gap-0.5 max-w-[80%]">
                   <span className="text-[11px] font-semibold text-foreground">Analytics</span>
                   <span className="text-[9px] text-muted-foreground leading-snug">
@@ -157,12 +148,12 @@ export function CookieConsentBanner() {
                     onChange={(e) => setAnalytics(e.target.checked)}
                     className="sr-only peer"
                   />
-                  <div className="w-7 h-4 bg-foreground/10 peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-3 after:w-3 after:transition-all peer-checked:bg-brand" />
+                  <div className="w-7 h-4 bg-muted border border-border rounded-full peer peer-checked:after:translate-x-full after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-foreground after:rounded-full after:h-3 after:w-3 after:transition-all peer-checked:bg-foreground/20" />
                 </label>
               </div>
 
               {/* Advertising */}
-              <div className="flex items-center justify-between p-2.5 rounded-xl border border-foreground/5 bg-foreground/[0.01]">
+              <div className="flex items-center justify-between p-2.5 rounded-xl border border-border bg-background">
                 <div className="flex flex-col gap-0.5 max-w-[80%]">
                   <span className="text-[11px] font-semibold text-foreground">Personalized Ads</span>
                   <span className="text-[9px] text-muted-foreground leading-snug">
@@ -176,7 +167,7 @@ export function CookieConsentBanner() {
                     onChange={(e) => setMarketing(e.target.checked)}
                     className="sr-only peer"
                   />
-                  <div className="w-7 h-4 bg-foreground/10 peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-3 after:w-3 after:transition-all peer-checked:bg-brand" />
+                  <div className="w-7 h-4 bg-muted border border-border rounded-full peer peer-checked:after:translate-x-full after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-foreground after:rounded-full after:h-3 after:w-3 after:transition-all peer-checked:bg-foreground/20" />
                 </label>
               </div>
             </div>
@@ -184,13 +175,13 @@ export function CookieConsentBanner() {
             <div className="flex gap-2">
               <button
                 onClick={() => setShowPreferences(false)}
-                className="py-2 px-3 text-xs font-semibold rounded-xl bg-transparent border border-foreground/10 hover:bg-foreground/5 text-foreground transition-all active:scale-[0.98]"
+                className="py-2 px-3 text-xs font-semibold rounded-xl bg-background border border-border hover:bg-muted text-foreground transition-all active:scale-[0.98]"
               >
                 Back
               </button>
               <button
                 onClick={handleSavePreferences}
-                className="flex-1 py-2 px-3 text-xs font-semibold rounded-xl bg-brand hover:bg-brand/90 text-foreground transition-all active:scale-[0.98] flex items-center justify-center gap-1"
+                className="flex-1 py-2 px-3 text-xs font-bold rounded-xl bg-foreground text-background hover:bg-foreground/90 transition-all active:scale-[0.98] flex items-center justify-center gap-1"
               >
                 <Check className="w-3.5 h-3.5" /> Save Preferences
               </button>

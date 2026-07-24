@@ -223,7 +223,7 @@ export function PageNumbersTool() {
                     
                     {/* Page Number Overlay */}
                     <div 
-                      className={`absolute pointer-events-none text-zinc-500 font-sans font-medium text-[10px] bg-foreground/80 dark:bg-background/80 px-2 py-1 rounded shadow-sm border border-background/10 dark:border-foreground/10 ${getPositionClasses()}`}
+                      className={`absolute pointer-events-none text-muted-foreground font-sans font-medium text-[10px] bg-foreground/80 dark:bg-background/80 px-2 py-1 rounded shadow-sm border border-background/10 dark:border-foreground/10 ${getPositionClasses()}`}
                     >
                       {getPageNumText()}
                     </div>
@@ -262,7 +262,7 @@ export function PageNumbersTool() {
                     size="sm"
                     onClick={() => setOptions((prev) => ({ ...prev, format: opt.value as any }))}
                     className={`h-8 text-xs rounded-lg ${
-                      options.format === opt.value ? 'bg-brand hover:bg-brand/90 text-foreground' : 'border-foreground/10 text-foreground/60 hover:text-foreground'
+                      options.format === opt.value ? 'bg-primary text-primary-foreground hover:bg-primary/90 font-bold' : 'border-foreground/10 text-foreground/60 hover:text-foreground'
                     }`}
                   >
                     {opt.label}
@@ -287,7 +287,7 @@ export function PageNumbersTool() {
                     size="sm"
                     onClick={() => setOptions((prev) => ({ ...prev, position: opt.value as any }))}
                     className={`h-8 text-xs rounded-lg ${
-                      options.position === opt.value ? 'bg-brand hover:bg-brand/90 text-foreground' : 'border-foreground/10 text-foreground/60 hover:text-foreground'
+                      options.position === opt.value ? 'bg-primary text-primary-foreground hover:bg-primary/90 font-bold' : 'border-foreground/10 text-foreground/60 hover:text-foreground'
                     }`}
                   >
                     {opt.label}
@@ -315,7 +315,7 @@ export function PageNumbersTool() {
               <div className="space-y-2">
                 <Button
                   onClick={handleDownload}
-                  className="w-full bg-emerald-600 hover:bg-emerald-700 text-foreground font-medium py-6 rounded-xl flex items-center justify-center gap-2"
+                  className="w-full bg-emerald-600 hover:bg-emerald-700 text-white font-medium py-6 rounded-xl flex items-center justify-center gap-2"
                 >
                   <Download className="w-5 h-5" />
                   Download PDF
@@ -336,7 +336,7 @@ export function PageNumbersTool() {
                 disabled={!file}
                 onClick={triggerPageNumbers}
                 className={`w-full font-medium py-6 rounded-xl flex items-center justify-center gap-2 ${
-                  file ? 'bg-brand hover:bg-brand/90 text-foreground' : 'bg-foreground/5 text-foreground/30 cursor-not-allowed'
+                  file ? 'bg-primary text-primary-foreground hover:bg-primary/90 font-bold' : 'bg-foreground/5 text-muted-foreground/60 cursor-not-allowed'
                 }`}
               >
                 <Hash className="w-4 h-4" />

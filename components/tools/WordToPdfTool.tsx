@@ -396,7 +396,7 @@ export function WordToPdfTool() {
                   </div>
 
                   <div className="p-3.5 bg-card/60 border border-foreground/10 rounded-xl flex items-center gap-3">
-                    <div className="p-2 rounded-lg bg-purple-500/10 text-purple-500">
+                    <div className="p-2 rounded-lg bg-foreground/10 text-foreground">
                       <FileCheck className="w-4 h-4" />
                     </div>
                     <div>
@@ -671,7 +671,7 @@ export function WordToPdfTool() {
                   className={`w-full font-medium py-6 rounded-xl flex items-center justify-center gap-2 shadow-md ${
                     file 
                       ? 'bg-brand hover:bg-brand/90 text-white shadow-brand/20' 
-                      : 'bg-foreground/10 text-foreground/30 cursor-not-allowed'
+                      : 'bg-foreground/10 text-muted-foreground/60 cursor-not-allowed'
                   }`}
                 >
                   <FileOutput className="w-5 h-5" />

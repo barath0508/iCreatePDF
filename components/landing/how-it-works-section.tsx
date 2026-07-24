@@ -31,25 +31,14 @@ export function HowItWorksSection() {
   return (
     <section id="how-it-works" className="relative py-24 lg:py-32 bg-card/40 text-foreground overflow-hidden border-y border-border">
       <div className="relative z-10 max-w-[1400px] mx-auto px-6 lg:px-12">
-        <div className="relative mb-16 grid lg:grid-cols-2 gap-4 lg:gap-12 items-end">
-          <div>
-            <SectionEyebrow className="mb-8">Process</SectionEyebrow>
-            <Reveal>
-              <h2 className="text-5xl md:text-6xl lg:text-[80px] font-display font-medium tracking-tight leading-[0.95]">
-                <span className="block">Select.</span>
-                <span className="block text-muted-foreground">Process.</span>
-                <span className="block text-foreground/15">Download.</span>
-              </h2>
-            </Reveal>
-          </div>
-
-          <Reveal delay={150} className="relative h-[200px] lg:h-[320px] overflow-hidden hidden lg:block">
-            <img
-              src="/images/tree.png"
-              alt="Processing workflow diagram"
-              className="absolute bottom-0 left-0 w-full h-full object-contain object-bottom opacity-70"
-            />
-            <div className="absolute inset-0 bg-gradient-to-r from-card/40 via-transparent to-transparent pointer-events-none" />
+        <div className="relative mb-16">
+          <SectionEyebrow className="mb-8">Process</SectionEyebrow>
+          <Reveal>
+            <h2 className="text-5xl md:text-6xl lg:text-[80px] font-display font-medium tracking-tight leading-[0.95]">
+              <span className="block">Select.</span>
+              <span className="block text-muted-foreground">Process.</span>
+              <span className="block text-foreground/15">Download.</span>
+            </h2>
           </Reveal>
         </div>
 

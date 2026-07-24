@@ -241,7 +241,7 @@ export function ExcelToPdfTool() {
         /* Theme configs */
         ${theme === 'brand' ? `
           .pdf-table th {
-            background-color: #7e5de0;
+            background-color: #ffffff;
             color: #ffffff;
           }
           .pdf-table tr:nth-child(even) {

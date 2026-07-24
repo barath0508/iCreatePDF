@@ -321,7 +321,7 @@ export function WatermarkTool() {
               <div className="space-y-2">
                 <Button
                   onClick={handleDownload}
-                  className="w-full bg-emerald-600 hover:bg-emerald-700 text-foreground font-medium py-6 rounded-xl flex items-center justify-center gap-2"
+                  className="w-full bg-emerald-600 hover:bg-emerald-700 text-white font-medium py-6 rounded-xl flex items-center justify-center gap-2"
                 >
                   <Download className="w-5 h-5" />
                   Download PDF
@@ -342,7 +342,7 @@ export function WatermarkTool() {
                 disabled={!file}
                 onClick={triggerWatermark}
                 className={`w-full font-medium py-6 rounded-xl flex items-center justify-center gap-2 ${
-                  file ? 'bg-brand hover:bg-brand/90 text-foreground' : 'bg-foreground/5 text-foreground/30 cursor-not-allowed'
+                  file ? 'bg-primary text-primary-foreground hover:bg-primary/90 font-bold' : 'bg-foreground/5 text-muted-foreground/60 cursor-not-allowed'
                 }`}
               >
                 <Type className="w-4 h-4" />

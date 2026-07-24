@@ -17,9 +17,9 @@ export function CTAButtonGroup({
   className?: string;
 }) {
   return (
-    <div className={cn('flex flex-wrap gap-4', className)}>
+    <div className={cn('flex flex-wrap gap-4 items-center', className)}>
       <Link href={primary.href}>
-        <Button size="lg" className="h-12 rounded-full px-8 font-medium">
+        <Button size="lg" className="h-12 rounded-full px-8 bg-foreground text-background hover:bg-foreground/90 font-bold shadow-md">
           {primary.label}
         </Button>
       </Link>
@@ -28,7 +28,7 @@ export function CTAButtonGroup({
           <Button
             size="lg"
             variant="outline"
-            className="h-12 rounded-full border-foreground/15 px-8 font-medium hover:bg-foreground/5"
+            className="h-12 rounded-full border-border bg-card px-8 font-medium hover:bg-muted text-foreground"
           >
             {secondary.label}
           </Button>

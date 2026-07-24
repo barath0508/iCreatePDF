@@ -132,7 +132,7 @@ export function BatesTool() {
                 <label className="text-[10px] font-mono text-foreground/40 uppercase">Position</label>
                 <div className="grid grid-cols-3 gap-2">
                   {positions.map(p => (
-                    <button key={p} onClick={() => setPosition(p)} className={`py-1.5 rounded-lg text-[10px] font-mono capitalize transition-all ${position === p ? 'bg-brand text-foreground' : 'bg-foreground/5 text-foreground/50 hover:bg-foreground/10'}`}>
+                    <button key={p} onClick={() => setPosition(p)} className={`py-1.5 rounded-lg text-[10px] font-mono capitalize transition-all ${position === p ? 'bg-primary text-primary-foreground font-bold' : 'bg-foreground/5 text-foreground/50 hover:bg-foreground/10'}`}>
                       {p.replace('-', ' ')}
                     </button>
                   ))}
@@ -177,13 +177,13 @@ export function BatesTool() {
               </div>
             ) : downloadUrl ? (
               <div className="space-y-2">
-                <Button onClick={() => { const a = document.createElement('a'); a.href = downloadUrl; a.download = `bates-${file?.name}`; a.click(); }} className="w-full bg-emerald-600 hover:bg-emerald-700 text-foreground font-medium py-6 rounded-xl flex items-center justify-center gap-2">
+                <Button onClick={() => { const a = document.createElement('a'); a.href = downloadUrl; a.download = `bates-${file?.name}`; a.click(); }} className="w-full bg-emerald-600 hover:bg-emerald-700 text-white font-medium py-6 rounded-xl flex items-center justify-center gap-2">
                   <Download className="w-5 h-5" />Download Bates PDF
                 </Button>
                 <Button variant="ghost" onClick={() => { setFile(null); setDownloadUrl(null); }} className="w-full text-foreground/50 hover:text-foreground text-xs h-8">Number another file</Button>
               </div>
             ) : (
-              <Button disabled={!file} onClick={process} className={`w-full font-medium py-6 rounded-xl flex items-center justify-center gap-2 ${file ? 'bg-brand hover:bg-brand/90 text-foreground' : 'bg-foreground/5 text-foreground/30 cursor-not-allowed'}`}>
+              <Button disabled={!file} onClick={process} className={`w-full font-medium py-6 rounded-xl flex items-center justify-center gap-2 ${file ? 'bg-primary text-primary-foreground hover:bg-primary/90 font-bold' : 'bg-foreground/5 text-muted-foreground/60 cursor-not-allowed'}`}>
                 <Hash className="w-4 h-4" />Apply Bates Numbers
               </Button>
             )}

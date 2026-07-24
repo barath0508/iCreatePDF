@@ -205,7 +205,7 @@ export function ReadAloudTool() {
                     </Button>
                     <div className="flex items-center gap-2">
                       {!isSpeaking || isPaused ? (
-                        <Button size="sm" onClick={handlePlay} disabled={!currentText} className="bg-brand hover:bg-brand/90 text-foreground rounded-xl px-5">
+                        <Button size="sm" onClick={handlePlay} disabled={!currentText} className="bg-primary text-primary-foreground hover:bg-primary/90 font-bold rounded-xl px-5">
                           <Play className="w-4 h-4 mr-1.5" />{isPaused ? 'Resume' : 'Play'}
                         </Button>
                       ) : (

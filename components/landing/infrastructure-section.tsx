@@ -21,30 +21,20 @@ export function InfrastructureSection() {
         <div className="mb-16 lg:mb-20">
           <SectionEyebrow className="mb-8">Client-Side Architecture</SectionEyebrow>
 
-          <div className="grid lg:grid-cols-[auto_1fr] gap-8 lg:gap-16 items-stretch">
-            <Reveal className="w-40 lg:w-64 xl:w-72 shrink-0">
-              <img
-                src="/images/world.png"
-                alt="Global network sphere"
-                className="w-full h-full object-contain object-center opacity-80"
-              />
+          <div className="flex flex-col justify-center">
+            <Reveal>
+              <h2 className="text-5xl md:text-6xl lg:text-[80px] font-display font-medium tracking-tight leading-[0.95]">
+                Serverless by
+                <br />
+                <span className="text-muted-foreground">design.</span>
+              </h2>
             </Reveal>
 
-            <div className="flex flex-col justify-center">
-              <Reveal>
-                <h2 className="text-5xl md:text-6xl lg:text-[80px] font-display font-medium tracking-tight leading-[0.95]">
-                  Serverless by
-                  <br />
-                  <span className="text-muted-foreground">design.</span>
-                </h2>
-              </Reveal>
-
-              <Reveal delay={100}>
-                <p className="mt-8 text-xl text-muted-foreground leading-relaxed max-w-lg">
-                  Your files are converted completely inside your browser's memory. It eliminates network queues, data breaches, and subscription limits.
-                </p>
-              </Reveal>
-            </div>
+            <Reveal delay={100}>
+              <p className="mt-8 text-xl text-muted-foreground leading-relaxed max-w-lg">
+                Your files are converted completely inside your browser's memory. It eliminates network queues, data breaches, and subscription limits.
+              </p>
+            </Reveal>
           </div>
         </div>
 

@@ -334,7 +334,7 @@ export function EditPdfTool() {
                     placeholder="Enter text overlay..."
                     className="flex-1 bg-background border border-foreground/10 rounded-xl px-3 py-2 text-sm text-foreground focus:outline-none focus:border-brand"
                   />
-                  <Button onClick={addTextAnnotation} className="bg-brand hover:bg-brand/90 text-foreground px-3">
+                  <Button onClick={addTextAnnotation} className="bg-primary text-primary-foreground hover:bg-primary/90 font-bold px-3">
                     Add
                   </Button>
                 </div>
@@ -385,7 +385,7 @@ export function EditPdfTool() {
               <Button
                 disabled={isProcessing || annotations.length === 0}
                 onClick={triggerSave}
-                className="w-full bg-brand hover:bg-brand/90 text-foreground py-6 rounded-xl flex items-center justify-center gap-2"
+                className="w-full bg-primary text-primary-foreground hover:bg-primary/90 font-bold py-6 rounded-xl flex items-center justify-center gap-2"
               >
                 {isProcessing && <Loader2 className="w-4 h-4 animate-spin" />}
                 Burn &amp; Export PDF
@@ -397,7 +397,7 @@ export function EditPdfTool() {
             <div className="space-y-2">
               <Button
                 onClick={handleDownload}
-                className="w-full bg-emerald-600 hover:bg-emerald-700 text-foreground font-medium py-6 rounded-xl flex items-center justify-center gap-2"
+                className="w-full bg-emerald-600 hover:bg-emerald-700 text-white font-medium py-6 rounded-xl flex items-center justify-center gap-2"
               >
                 <Download className="w-5 h-5" />
                 Download Edited PDF

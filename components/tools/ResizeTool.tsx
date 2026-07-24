@@ -106,7 +106,7 @@ export function ResizeTool() {
                 <p className="text-xs font-mono text-foreground/40 uppercase">Target Page Size</p>
                 <div className="grid grid-cols-2 sm:grid-cols-3 gap-2">
                   {Object.keys(PAGE_SIZES).map(size => (
-                    <button key={size} onClick={() => setSelectedSize(size)} className={`px-3 py-2 rounded-xl text-xs font-medium transition-all ${selectedSize === size ? 'bg-brand text-foreground border border-brand' : 'bg-foreground/5 text-foreground/60 border border-foreground/10 hover:border-foreground/20'}`}>
+                    <button key={size} onClick={() => setSelectedSize(size)} className={`px-3 py-2 rounded-xl text-xs font-medium transition-all ${selectedSize === size ? 'bg-primary text-primary-foreground font-bold border border-brand' : 'bg-foreground/5 text-foreground/60 border border-foreground/10 hover:border-foreground/20'}`}>
                       {size.split(' ')[0]}
                     </button>
                   ))}
@@ -116,7 +116,7 @@ export function ResizeTool() {
                 <p className="text-xs font-mono text-foreground/40 uppercase">Orientation</p>
                 <div className="flex gap-2">
                   {(['portrait', 'landscape'] as const).map(o => (
-                    <button key={o} onClick={() => setOrientation(o)} className={`px-4 py-2 rounded-xl text-xs font-medium capitalize transition-all ${orientation === o ? 'bg-brand text-foreground' : 'bg-foreground/5 text-foreground/60 hover:bg-foreground/10'}`}>{o}</button>
+                    <button key={o} onClick={() => setOrientation(o)} className={`px-4 py-2 rounded-xl text-xs font-medium capitalize transition-all ${orientation === o ? 'bg-primary text-primary-foreground font-bold' : 'bg-foreground/5 text-foreground/60 hover:bg-foreground/10'}`}>{o}</button>
                   ))}
                 </div>
               </div>
@@ -142,13 +142,13 @@ export function ResizeTool() {
               </div>
             ) : downloadUrl ? (
               <div className="space-y-2">
-                <Button onClick={() => { const a = document.createElement('a'); a.href = downloadUrl; a.download = `resized-${file?.name}`; a.click(); }} className="w-full bg-emerald-600 hover:bg-emerald-700 text-foreground font-medium py-6 rounded-xl flex items-center justify-center gap-2">
+                <Button onClick={() => { const a = document.createElement('a'); a.href = downloadUrl; a.download = `resized-${file?.name}`; a.click(); }} className="w-full bg-emerald-600 hover:bg-emerald-700 text-white font-medium py-6 rounded-xl flex items-center justify-center gap-2">
                   <Download className="w-5 h-5" />Download Resized PDF
                 </Button>
                 <Button variant="ghost" onClick={() => { setFile(null); setDownloadUrl(null); }} className="w-full text-foreground/50 hover:text-foreground text-xs h-8">Resize another file</Button>
               </div>
             ) : (
-              <Button disabled={!file} onClick={process} className={`w-full font-medium py-6 rounded-xl flex items-center justify-center gap-2 ${file ? 'bg-brand hover:bg-brand/90 text-foreground' : 'bg-foreground/5 text-foreground/30 cursor-not-allowed'}`}>
+              <Button disabled={!file} onClick={process} className={`w-full font-medium py-6 rounded-xl flex items-center justify-center gap-2 ${file ? 'bg-primary text-primary-foreground hover:bg-primary/90 font-bold' : 'bg-foreground/5 text-muted-foreground/60 cursor-not-allowed'}`}>
                 <Maximize2 className="w-4 h-4" />Resize Pages
               </Button>
             )}

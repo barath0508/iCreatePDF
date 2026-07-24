@@ -335,7 +335,7 @@ export function ScanToPdfTool() {
                 <div className="flex flex-col sm:flex-row gap-4 mt-2">
                   <Button
                     onClick={startCamera}
-                    className="bg-brand hover:bg-brand/90 text-foreground rounded-xl px-6 py-5 flex items-center gap-2"
+                    className="bg-primary text-primary-foreground hover:bg-primary/90 font-bold rounded-xl px-6 py-5 flex items-center gap-2"
                   >
                     <Play className="w-4 h-4" />
                     Start Scan Session
@@ -477,7 +477,7 @@ export function ScanToPdfTool() {
               <div className="space-y-2">
                 <Button
                   onClick={handleDownload}
-                  className="w-full bg-emerald-600 hover:bg-emerald-700 text-foreground font-medium py-6 rounded-xl flex items-center justify-center gap-2"
+                  className="w-full bg-emerald-600 hover:bg-emerald-700 text-white font-medium py-6 rounded-xl flex items-center justify-center gap-2"
                 >
                   <Download className="w-5 h-5" />
                   Download Scanned PDF
@@ -498,7 +498,7 @@ export function ScanToPdfTool() {
                 disabled={capturedPhotos.length === 0}
                 onClick={triggerGeneratePdf}
                 className={`w-full font-medium py-6 rounded-xl flex items-center justify-center gap-2 ${
-                  capturedPhotos.length > 0 ? 'bg-brand hover:bg-brand/90 text-foreground' : 'bg-foreground/5 text-foreground/30 cursor-not-allowed'
+                  capturedPhotos.length > 0 ? 'bg-primary text-primary-foreground hover:bg-primary/90 font-bold' : 'bg-foreground/5 text-muted-foreground/60 cursor-not-allowed'
                 }`}
               >
                 <FileText className="w-4 h-4" />

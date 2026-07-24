@@ -156,7 +156,7 @@ export function TableExtractorTool() {
                   <div className="flex items-center justify-between gap-3 flex-wrap">
                     <div className="flex gap-1.5 flex-wrap">
                       {pageRows.map((_, i) => (
-                        <button key={i} onClick={() => setActivePage(i)} className={`px-3 py-1.5 rounded-lg text-xs font-mono transition-all ${activePage === i ? 'bg-brand text-foreground' : 'bg-foreground/5 text-foreground/50 hover:bg-foreground/10'}`}>
+                        <button key={i} onClick={() => setActivePage(i)} className={`px-3 py-1.5 rounded-lg text-xs font-mono transition-all ${activePage === i ? 'bg-primary text-primary-foreground font-bold' : 'bg-foreground/5 text-foreground/50 hover:bg-foreground/10'}`}>
                           Page {i + 1}
                         </button>
                       ))}
@@ -201,13 +201,13 @@ export function TableExtractorTool() {
               <Button disabled className="w-full bg-brand/50 text-foreground font-medium py-6 rounded-xl flex items-center justify-center gap-2"><Loader2 className="w-4 h-4 animate-spin" />Detecting tables...</Button>
             ) : pageRows.length > 0 ? (
               <div className="space-y-2">
-                <Button onClick={handleDownload} className="w-full bg-emerald-600 hover:bg-emerald-700 text-foreground font-medium py-6 rounded-xl flex items-center justify-center gap-2"><Download className="w-5 h-5" />Download CSV (all pages)</Button>
+                <Button onClick={handleDownload} className="w-full bg-emerald-600 hover:bg-emerald-700 text-white font-medium py-6 rounded-xl flex items-center justify-center gap-2"><Download className="w-5 h-5" />Download CSV (all pages)</Button>
                 <Button variant="ghost" onClick={handleCopy} className="w-full text-foreground/60 hover:text-foreground text-xs h-9 flex items-center justify-center gap-1.5">
                   {isCopied ? <Check className="w-3.5 h-3.5 text-emerald-400" /> : <Copy className="w-3.5 h-3.5" />}{isCopied ? 'Copied' : 'Copy as CSV'}
                 </Button>
               </div>
             ) : (
-              <Button disabled={!file} onClick={extract} className={`w-full font-medium py-6 rounded-xl flex items-center justify-center gap-2 ${file ? 'bg-brand hover:bg-brand/90 text-foreground' : 'bg-foreground/5 text-foreground/30 cursor-not-allowed'}`}><FileSpreadsheet className="w-4 h-4" />Extract Tables</Button>
+              <Button disabled={!file} onClick={extract} className={`w-full font-medium py-6 rounded-xl flex items-center justify-center gap-2 ${file ? 'bg-primary text-primary-foreground hover:bg-primary/90 font-bold' : 'bg-foreground/5 text-muted-foreground/60 cursor-not-allowed'}`}><FileSpreadsheet className="w-4 h-4" />Extract Tables</Button>
             )}
           </div>
         </div>

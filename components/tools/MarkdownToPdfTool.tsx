@@ -908,7 +908,7 @@ export function MarkdownToPdfTool() {
                 <div className="space-y-2">
                   <Button
                     onClick={handleDownload}
-                    className="w-full bg-emerald-600 hover:bg-emerald-700 text-foreground font-medium py-6 rounded-xl flex items-center justify-center gap-2 shadow-lg shadow-emerald-600/20"
+                    className="w-full bg-emerald-600 hover:bg-emerald-700 text-white font-medium py-6 rounded-xl flex items-center justify-center gap-2 shadow-lg shadow-emerald-600/20"
                   >
                     <Download className="w-5 h-5" />
                     Download Formatted PDF
@@ -924,7 +924,7 @@ export function MarkdownToPdfTool() {
               ) : (
                 <Button
                   onClick={triggerMarkdownToPdf}
-                  className="w-full bg-brand hover:bg-brand/90 text-foreground font-medium py-6 rounded-xl flex items-center justify-center gap-2 shadow-lg shadow-brand/20"
+                  className="w-full bg-primary text-primary-foreground hover:bg-primary/90 font-bold font-medium py-6 rounded-xl flex items-center justify-center gap-2 shadow-lg shadow-brand/20"
                 >
                   <Eye className="w-4 h-4" />
                   Compile to PDF

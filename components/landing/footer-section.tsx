@@ -1,8 +1,7 @@
 'use client';
 
-import { ArrowUpRight } from 'lucide-react';
+import { ArrowUpRight, ShieldCheck, Cpu } from 'lucide-react';
 import Link from 'next/link';
-import Image from 'next/image';
 
 const footerLinks = {
   Converters: [
@@ -57,7 +56,6 @@ const footerLinks = {
   ],
   Resources: [
     { name: 'Blog', href: '/blogs' },
-    { name: 'How It Works', href: '/#how-it-works' },
     { name: 'Why iCreatePDF', href: '/compare' },
     { name: 'iLovePDF Alternative', href: '/compare/ilovepdf-alternative' },
     { name: 'Smallpdf Alternative', href: '/compare/smallpdf-alternative' },
@@ -79,44 +77,33 @@ const footerLinks = {
   ],
 };
 
-const socialLinks = [
-  { name: 'Website', href: '/' },
-  { name: 'GitHub', href: '#' },
-];
-
 export function FooterSection() {
   const currentYear = new Date().getFullYear();
 
   return (
-    <footer className="relative bg-background text-foreground border-t border-border">
-      <div className="relative max-w-[1400px] mx-auto px-6 lg:px-12">
+    <footer className="relative bg-background text-foreground border-t border-border/80">
+      <div className="relative max-w-7xl mx-auto px-6 lg:px-8">
         <div className="py-16 lg:py-20">
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-7 gap-12 lg:gap-8">
-            <div className="col-span-1 sm:col-span-2">
-              <Link href="/" className="inline-flex items-center gap-2.5 mb-6 group hover:opacity-90 transition-opacity">
-                <div className="relative w-12 h-12 transition-transform duration-300 group-hover:scale-105">
-                  <Image src="/logo.svg" alt="iCreatePDF Logo" fill className="object-contain scale-[1.4]" />
+            <div className="col-span-1 sm:col-span-2 space-y-4">
+              <Link href="/" className="inline-flex items-center gap-3 group">
+                <div className="flex h-9 w-9 items-center justify-center rounded-lg border border-border bg-foreground text-background font-mono text-sm font-bold shadow-xs">
+                  PDF
                 </div>
-                <span className="font-semibold tracking-tight select-none text-foreground text-2xl font-display" style={{ letterSpacing: '-0.02em' }}>
-                  iCreate<span className="text-brand">PDF</span>
+                <span className="font-display text-xl font-bold tracking-tight text-foreground select-none">
+                  iCreate<span className="text-muted-foreground font-mono text-xs ml-1 uppercase">Studio</span>
                 </span>
               </Link>
 
-              <p className="text-muted-foreground leading-relaxed mb-8 max-w-xs text-sm">
-                Fast, secure, and browser-based converter. Drag &amp; drop images, reorder, adjust sizes, and download your consolidated PDF instantly.
+              <p className="text-muted-foreground leading-relaxed max-w-xs text-xs">
+                Private, high-performance client-side PDF engineering suite. Processing is executed entirely in your browser memory without server uploads.
               </p>
 
-              <div className="flex gap-6">
-                {socialLinks.map((link) => (
-                  <Link
-                    key={link.name}
-                    href={link.href}
-                    className="text-sm text-muted-foreground hover:text-foreground transition-colors flex items-center gap-1 group"
-                  >
-                    {link.name}
-                    <ArrowUpRight className="w-3 h-3 opacity-0 -translate-x-1 group-hover:opacity-100 group-hover:translate-x-0 transition-all" />
-                  </Link>
-                ))}
+              <div className="flex items-center gap-2 pt-2">
+                <span className="inline-flex items-center gap-1.5 rounded-md border border-border bg-card px-2.5 py-1 text-[11px] font-mono text-foreground">
+                  <ShieldCheck className="h-3.5 w-3.5 stroke-[1.5]" />
+                  Zero Server Upload Architecture
+                </span>
               </div>
             </div>
 
@@ -124,13 +111,15 @@ export function FooterSection() {
               const isUtilities = title === 'Utilities';
               return (
                 <div key={title} className={isUtilities ? 'col-span-1 sm:col-span-2' : 'col-span-1'}>
-                  <h3 className="text-sm font-medium text-foreground mb-6">{title}</h3>
-                  <ul className={isUtilities ? 'grid grid-cols-1 sm:grid-cols-2 gap-x-6 gap-y-4' : 'space-y-4'}>
+                  <h3 className="text-xs font-mono font-semibold tracking-wider text-foreground uppercase mb-4">
+                    {title}
+                  </h3>
+                  <ul className={isUtilities ? 'grid grid-cols-1 sm:grid-cols-2 gap-x-4 gap-y-2.5' : 'space-y-2.5'}>
                     {links.map((link) => (
                       <li key={link.name}>
                         <Link
                           href={link.href}
-                          className="text-sm text-muted-foreground hover:text-foreground transition-colors inline-flex items-center gap-2"
+                          className="text-xs text-muted-foreground hover:text-foreground transition-colors inline-flex items-center gap-1 group"
                         >
                           {link.name}
                         </Link>
@@ -143,20 +132,17 @@ export function FooterSection() {
           </div>
         </div>
 
-        <div className="py-8 border-t border-border flex flex-col md:flex-row items-center justify-between gap-4">
+        <div className="py-8 border-t border-border/60 flex flex-col md:flex-row items-center justify-between gap-4">
           <div className="space-y-1 text-center md:text-left">
-            <p className="text-sm text-muted-foreground/70">
-              &copy; {currentYear} iCreatePDF. All rights reserved. Built for complete local privacy.
-            </p>
-            <p className="text-xs text-muted-foreground/50">
-              iCreatePDF is funded by privacy-respecting contextual ads through Google AdSense. Your files never leave your browser.
+            <p className="text-xs text-muted-foreground">
+              &copy; {currentYear} iCreatePDF. All rights reserved. Architected for client-side privacy.
             </p>
           </div>
 
-          <div className="flex items-center gap-4 text-sm text-muted-foreground/70">
-            <span className="flex items-center gap-2">
-              <span className="w-2 h-2 rounded-full bg-brand animate-pulse" />
-              Privacy-First Sandbox Mode Active
+          <div className="flex items-center gap-4 text-xs font-mono text-muted-foreground">
+            <span className="flex items-center gap-2 border border-border/80 bg-card px-3 py-1 rounded-full">
+              <span className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse" />
+              Client-Side WebAssembly Active
             </span>
           </div>
         </div>
@@ -164,3 +150,5 @@ export function FooterSection() {
     </footer>
   );
 }
+
+export default FooterSection;

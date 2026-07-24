@@ -146,8 +146,8 @@ export function CertifyTool() {
     <div className="w-full max-w-6xl mx-auto px-6 lg:px-12 py-16">
       <div className="flex justify-center mb-8">
         <div className="inline-flex bg-foreground/5 border border-foreground/10 rounded-xl p-1 gap-1">
-          <button onClick={() => setMode('certify')} className={`px-5 py-2 rounded-lg text-xs font-medium transition-all ${mode === 'certify' ? 'bg-brand text-foreground' : 'text-foreground/50 hover:text-foreground'}`}>Certify a PDF</button>
-          <button onClick={() => setMode('verify')} className={`px-5 py-2 rounded-lg text-xs font-medium transition-all ${mode === 'verify' ? 'bg-brand text-foreground' : 'text-foreground/50 hover:text-foreground'}`}>Verify a Fingerprint</button>
+          <button onClick={() => setMode('certify')} className={`px-5 py-2 rounded-lg text-xs font-medium transition-all ${mode === 'certify' ? 'bg-primary text-primary-foreground font-bold' : 'text-foreground/50 hover:text-foreground'}`}>Certify a PDF</button>
+          <button onClick={() => setMode('verify')} className={`px-5 py-2 rounded-lg text-xs font-medium transition-all ${mode === 'verify' ? 'bg-primary text-primary-foreground font-bold' : 'text-foreground/50 hover:text-foreground'}`}>Verify a Fingerprint</button>
         </div>
       </div>
 
@@ -201,11 +201,11 @@ export function CertifyTool() {
                 <Button disabled className="w-full bg-brand/50 text-foreground font-medium py-6 rounded-xl flex items-center justify-center gap-2"><Loader2 className="w-4 h-4 animate-spin" />Certifying...</Button>
               ) : downloadUrl ? (
                 <div className="space-y-2">
-                  <Button onClick={() => { const a = document.createElement('a'); a.href = downloadUrl; a.download = `certified-${file?.name}`; a.click(); }} className="w-full bg-emerald-600 hover:bg-emerald-700 text-foreground font-medium py-6 rounded-xl flex items-center justify-center gap-2"><Download className="w-5 h-5" />Download Certified PDF</Button>
+                  <Button onClick={() => { const a = document.createElement('a'); a.href = downloadUrl; a.download = `certified-${file?.name}`; a.click(); }} className="w-full bg-emerald-600 hover:bg-emerald-700 text-white font-medium py-6 rounded-xl flex items-center justify-center gap-2"><Download className="w-5 h-5" />Download Certified PDF</Button>
                   <Button variant="ghost" onClick={resetCertify} className="w-full text-foreground/50 hover:text-foreground text-xs h-8">Certify another file</Button>
                 </div>
               ) : (
-                <Button disabled={!file} onClick={certify} className={`w-full font-medium py-6 rounded-xl flex items-center justify-center gap-2 ${file ? 'bg-brand hover:bg-brand/90 text-foreground' : 'bg-foreground/5 text-foreground/30 cursor-not-allowed'}`}><Stamp className="w-4 h-4" />Certify PDF</Button>
+                <Button disabled={!file} onClick={certify} className={`w-full font-medium py-6 rounded-xl flex items-center justify-center gap-2 ${file ? 'bg-primary text-primary-foreground hover:bg-primary/90 font-bold' : 'bg-foreground/5 text-muted-foreground/60 cursor-not-allowed'}`}><Stamp className="w-4 h-4" />Certify PDF</Button>
               )}
             </div>
           </div>

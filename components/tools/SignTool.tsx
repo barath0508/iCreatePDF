@@ -93,7 +93,7 @@ export function SignTool() {
     const ctx = canvas.getContext('2d');
     if (!ctx) return;
 
-    ctx.strokeStyle = '#7e5de0';
+    ctx.strokeStyle = '#ffffff';
     ctx.lineWidth = 3;
     ctx.lineCap = 'round';
 
@@ -158,7 +158,7 @@ export function SignTool() {
       if (ctx) {
         ctx.fillStyle = 'rgba(0,0,0,0)';
         ctx.fillRect(0, 0, 400, 150);
-        ctx.fillStyle = '#7e5de0';
+        ctx.fillStyle = '#ffffff';
         ctx.font = 'italic 48px Georgia';
         ctx.textAlign = 'center';
         ctx.textBaseline = 'middle';
@@ -389,14 +389,14 @@ export function SignTool() {
               <div className="flex bg-background border border-foreground/10 rounded-xl p-1">
                 <Button
                   onClick={() => setSignatureType('draw')}
-                  className={`flex-1 rounded-lg text-xs py-2 h-auto ${signatureType === 'draw' ? 'bg-brand text-foreground' : 'bg-transparent text-foreground/60'}`}
+                  className={`flex-1 rounded-lg text-xs py-2 h-auto ${signatureType === 'draw' ? 'bg-primary text-primary-foreground font-bold' : 'bg-transparent text-foreground/60'}`}
                 >
                   <PenTool className="w-3.5 h-3.5 mr-1" />
                   Draw
                 </Button>
                 <Button
                   onClick={() => setSignatureType('type')}
-                  className={`flex-1 rounded-lg text-xs py-2 h-auto ${signatureType === 'type' ? 'bg-brand text-foreground' : 'bg-transparent text-foreground/60'}`}
+                  className={`flex-1 rounded-lg text-xs py-2 h-auto ${signatureType === 'type' ? 'bg-primary text-primary-foreground font-bold' : 'bg-transparent text-foreground/60'}`}
                 >
                   <Type className="w-3.5 h-3.5 mr-1" />
                   Type
@@ -422,7 +422,7 @@ export function SignTool() {
                   </div>
                   <div className="flex justify-between items-center">
                     <button onClick={clearDrawing} className="text-xs text-foreground/40 hover:text-foreground">Clear Pad</button>
-                    <Button size="sm" onClick={saveSignature} className="bg-brand hover:bg-brand/90 text-foreground">
+                    <Button size="sm" onClick={saveSignature} className="bg-primary text-primary-foreground hover:bg-primary/90 font-bold">
                       Create
                     </Button>
                   </div>
@@ -436,7 +436,7 @@ export function SignTool() {
                     placeholder="Type your signature name"
                     className="w-full bg-background border border-foreground/10 rounded-xl px-4 py-3 text-sm text-foreground focus:outline-none focus:border-brand"
                   />
-                  <Button onClick={saveSignature} className="w-full bg-brand hover:bg-brand/90 text-foreground py-3">
+                  <Button onClick={saveSignature} className="w-full bg-primary text-primary-foreground hover:bg-primary/90 font-bold py-3">
                     Generate
                   </Button>
                 </div>
@@ -473,7 +473,7 @@ export function SignTool() {
               <Button
                 disabled={isProcessing}
                 onClick={triggerSign}
-                className="w-full bg-brand hover:bg-brand/90 text-foreground py-6 rounded-xl flex items-center justify-center gap-2"
+                className="w-full bg-primary text-primary-foreground hover:bg-primary/90 font-bold py-6 rounded-xl flex items-center justify-center gap-2"
               >
                 {isProcessing ? <Loader2 className="w-4 h-4 animate-spin" /> : <Check className="w-4 h-4" />}
                 Sign &amp; Save PDF
@@ -485,7 +485,7 @@ export function SignTool() {
             <div className="space-y-2">
               <Button
                 onClick={handleDownload}
-                className="w-full bg-emerald-600 hover:bg-emerald-700 text-foreground font-medium py-6 rounded-xl flex items-center justify-center gap-2"
+                className="w-full bg-emerald-600 hover:bg-emerald-700 text-white font-medium py-6 rounded-xl flex items-center justify-center gap-2"
               >
                 <Download className="w-5 h-5" />
                 Download Signed PDF

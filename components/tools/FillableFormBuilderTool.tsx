@@ -325,7 +325,7 @@ export function FillableFormBuilderTool() {
             </p>
             <Button
               onClick={() => fileInputRef.current?.click()}
-              className="bg-brand hover:bg-brand/90 text-foreground font-semibold text-xs px-6 py-3 rounded-full"
+              className="bg-primary text-primary-foreground hover:bg-primary/90 font-bold font-semibold text-xs px-6 py-3 rounded-full"
             >
               Select PDF File
             </Button>
@@ -409,7 +409,7 @@ export function FillableFormBuilderTool() {
             {/* Draggable Sandbox canvas */}
             <div
               ref={containerRef}
-              className="relative overflow-auto border border-foreground/10 rounded-2xl bg-zinc-950/40 p-4 flex justify-center min-h-[500px]"
+              className="relative overflow-auto border border-foreground/10 rounded-2xl bg-card/40 p-4 flex justify-center min-h-[500px]"
             >
               {isPreviewLoading && (
                 <div className="absolute inset-0 z-20 flex items-center justify-center bg-background/50 backdrop-blur-xs rounded-2xl">
@@ -606,7 +606,7 @@ export function FillableFormBuilderTool() {
               {downloadUrl ? (
                 <div className="space-y-2">
                   <a href={downloadUrl} download={`fillable_${file.name}`}>
-                    <Button className="w-full bg-emerald-500 hover:bg-emerald-600 text-foreground font-semibold text-xs px-4 py-3 rounded-full flex items-center justify-center gap-2">
+                    <Button className="w-full bg-emerald-500 hover:bg-emerald-600 text-white font-semibold text-xs px-4 py-3 rounded-full flex items-center justify-center gap-2">
                       <Download className="w-4 h-4" />
                       Download Fillable PDF
                     </Button>
@@ -627,7 +627,7 @@ export function FillableFormBuilderTool() {
                 <Button
                   onClick={generateFormPdf}
                   disabled={isProcessing || fields.length === 0}
-                  className="w-full bg-brand hover:bg-brand/90 text-foreground font-semibold text-xs px-4 py-3 rounded-full flex items-center justify-center gap-2"
+                  className="w-full bg-primary text-primary-foreground hover:bg-primary/90 font-bold font-semibold text-xs px-4 py-3 rounded-full flex items-center justify-center gap-2"
                 >
                   {isProcessing ? (
                     <>

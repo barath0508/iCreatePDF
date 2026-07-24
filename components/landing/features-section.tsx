@@ -8,27 +8,27 @@ import { Reveal } from './shared/reveal';
 const features = [
   {
     number: '01',
-    title: '100% Client-Side Privacy',
-    description: 'We process all files directly inside your browser sandbox using WebAssembly and local JavaScript. No files are ever uploaded to any remote servers. Absolute security.',
-    stats: { value: '0%', label: 'remote server uploads' },
+    title: 'Instant Processing',
+    description: 'Execute document transformations in seconds. Our WebAssembly engine converts, merges, and edits PDFs locally inside your browser memory anywhere in the world.',
+    stats: { value: '< 10ms', label: 'Local Latency' },
   },
   {
     number: '02',
-    title: 'Complete PDF Tools Suite',
-    description: 'Merge, split, compress, protect, sign, rotate, crop, watermark, and convert documents. Everything you need for daily document workflows in one place.',
-    stats: { value: '35+', label: 'free local tools' },
+    title: 'Zero Server Uploads',
+    description: 'Keep your documents strictly confidential. No bytes leave your device—all processing occurs entirely within your local browser sandbox.',
+    stats: { value: '0.0 MB', label: 'Cloud Uploads' },
   },
   {
     number: '03',
-    title: 'Fast Local Processing',
-    description: 'Because there are no upload or download queues, conversions and edits execute at hardware speed on your device instantly.',
-    stats: { value: '<1s', label: 'average processing time' },
+    title: 'Complete Toolset Engine',
+    description: 'Access 49+ browser-native micro-tools for converting, compressing, organizing, protecting, and annotating PDFs without paywalls.',
+    stats: { value: '49+', label: 'Local Utilities' },
   },
   {
     number: '04',
-    title: 'Universal File Compatibility',
-    description: 'Seamlessly convert and process JPG, PNG, WEBP, HEIC, Word, Markdown, HTML, and PDF files locally without installing any desktop software.',
-    stats: { value: '100%', label: 'offline capable' },
+    title: 'Universal Air-Gapped Operation',
+    description: 'Full offline compatibility. Convert JPG, PNG, DOCX, TXT, HEIC, and Markdown to PDF without requiring an active internet connection.',
+    stats: { value: '100%', label: 'Offline Capable' },
   },
 ];
 
@@ -62,7 +62,7 @@ function ParticleVisualization() {
     };
     canvas.addEventListener('mousemove', handleMouseMove);
 
-    const COUNT = 70;
+    const COUNT = 60;
     const particles = Array.from({ length: COUNT }, (_, i) => {
       const seed = i * 1.618;
       return {
@@ -70,7 +70,7 @@ function ParticleVisualization() {
         by: (seed * 311.7) % 1,
         phase: seed * Math.PI * 2,
         speed: 0.4 + (seed % 0.4),
-        radius: 1.2 + (seed % 2.2),
+        radius: 1.2 + (seed % 2.0),
       };
     });
 
@@ -100,11 +100,11 @@ function ParticleVisualization() {
         const y = by + flowY + influence * Math.sin(time + p.phase) * 36;
 
         const pulse = Math.sin(time * p.speed + p.phase) * 0.5 + 0.5;
-        const alpha = 0.06 + pulse * 0.14 + influence * 0.25;
+        const alpha = 0.08 + pulse * 0.12 + influence * 0.2;
 
         ctx.beginPath();
         ctx.arc(x, y, p.radius + pulse * 0.8, 0, Math.PI * 2);
-        ctx.fillStyle = `rgba(126, 93, 224, ${alpha})`;
+        ctx.fillStyle = `rgba(180, 180, 180, ${alpha})`;
         ctx.fill();
       });
 
@@ -125,48 +125,47 @@ function ParticleVisualization() {
 
 export function FeaturesSection() {
   return (
-    <section id="features" className="relative py-24 lg:py-32 overflow-hidden bg-background">
-      <div className="max-w-[1400px] mx-auto px-6 lg:px-12">
-        <div className="relative mb-16 lg:mb-20">
-          <div className="grid lg:grid-cols-12 gap-8 items-end">
-            <div className="lg:col-span-7">
-              <SectionEyebrow className="mb-6">Capabilities</SectionEyebrow>
+    <section id="architecture" className="relative py-28 lg:py-36 overflow-hidden bg-background border-t border-border/60">
+      <div className="max-w-7xl mx-auto px-6 lg:px-8">
+        <div className="relative mb-20 lg:mb-24">
+          <div className="grid lg:grid-cols-12 gap-8 items-start">
+            <div className="lg:col-span-8 space-y-4">
+              <SectionEyebrow>ARCHITECTURE & CAPABILITIES</SectionEyebrow>
               <Reveal>
                 <SectionHeading>
-                  Features built for
-                  <br />
-                  <span className="text-muted-foreground">everyday work.</span>
+                  <span className="block font-medium">Everything you need.</span>
+                  <span className="block text-muted-foreground/75 font-normal">Nothing you don't.</span>
                 </SectionHeading>
               </Reveal>
             </div>
-            <div className="lg:col-span-5 lg:pb-4">
+            <div className="lg:col-span-4 lg:pt-14">
               <Reveal delay={150}>
-                <p className="text-xl text-muted-foreground leading-relaxed">
-                  We designed iCreatePDF to be completely client-side, avoiding server queues, file size limits, and security/privacy concerns.
+                <p className="text-base sm:text-xl text-muted-foreground leading-relaxed font-normal">
+                  Traditional web PDF converters upload sensitive documents to remote servers. iCreatePDF compiles document processing into your local browser sandbox.
                 </p>
               </Reveal>
             </div>
           </div>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-10">
           {features.map((feature, idx) => (
             <Reveal key={idx} delay={idx * 80}>
-              <div className="relative bg-card/50 border border-border rounded-2xl p-8 lg:p-12 overflow-hidden group flex flex-col justify-between min-h-[340px]">
+              <div className="relative bg-card/60 border border-border/80 rounded-3xl p-8 lg:p-12 overflow-hidden group flex flex-col justify-between min-h-[320px] transition-all hover:border-foreground/30">
                 {idx === 0 && <ParticleVisualization />}
-                <div className="relative z-10">
-                  <span className="font-mono text-xs text-muted-foreground">{feature.number}</span>
-                  <h3 className="text-2xl lg:text-3xl font-display font-medium mt-4 mb-4 text-foreground">
+                <div className="relative z-10 space-y-4">
+                  <span className="font-mono text-sm font-semibold text-muted-foreground">{feature.number}</span>
+                  <h3 className="text-2xl lg:text-3xl font-bold tracking-tight text-foreground font-display">
                     {feature.title}
                   </h3>
-                  <p className="text-sm text-muted-foreground leading-relaxed max-w-sm">
+                  <p className="text-sm sm:text-base text-muted-foreground/90 leading-relaxed max-w-md font-normal">
                     {feature.description}
                   </p>
                 </div>
-                <div className="pt-8 relative z-10 border-t border-border mt-8 flex justify-between items-end">
+                <div className="pt-6 relative z-10 border-t border-border/60 mt-8 flex justify-between items-end">
                   <div>
-                    <span className="text-4xl lg:text-5xl font-display font-medium text-foreground">{feature.stats.value}</span>
-                    <span className="block text-[10px] text-muted-foreground font-mono mt-1 uppercase tracking-wider">{feature.stats.label}</span>
+                    <span className="text-3xl lg:text-4xl font-extrabold font-mono text-foreground">{feature.stats.value}</span>
+                    <span className="block text-xs text-muted-foreground font-mono mt-1 uppercase tracking-wider font-semibold">{feature.stats.label}</span>
                   </div>
                 </div>
               </div>
@@ -177,3 +176,5 @@ export function FeaturesSection() {
     </section>
   );
 }
+
+export default FeaturesSection;

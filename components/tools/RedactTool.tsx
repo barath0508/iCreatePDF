@@ -267,7 +267,7 @@ export function RedactTool() {
               {totalPages > 1 && (
                 <div className="flex gap-2 flex-wrap">
                   {Array.from({ length: totalPages }, (_, i) => i + 1).map(p => (
-                    <button key={p} onClick={() => changePage(p)} className={`px-3 py-1 rounded-lg text-xs font-mono transition-all ${currentPage === p ? 'bg-brand text-foreground' : 'bg-foreground/5 text-foreground/50 hover:bg-foreground/10'}`}>
+                    <button key={p} onClick={() => changePage(p)} className={`px-3 py-1 rounded-lg text-xs font-mono transition-all ${currentPage === p ? 'bg-primary text-primary-foreground font-bold' : 'bg-foreground/5 text-foreground/50 hover:bg-foreground/10'}`}>
                       {p}{' '}
                       {rects.filter(r => r.page === p).length > 0 && <span className="text-red-400">•</span>}
                       {suggestions.filter(s => s.page === p).length > 0 && <span className="text-amber-400">•</span>}
@@ -362,13 +362,13 @@ export function RedactTool() {
               </Button>
             ) : downloadUrl ? (
               <div className="space-y-2">
-                <Button onClick={() => { const a = document.createElement('a'); a.href = downloadUrl; a.download = `redacted-${file?.name}`; a.click(); }} className="w-full bg-emerald-600 hover:bg-emerald-700 text-foreground font-medium py-6 rounded-xl flex items-center justify-center gap-2">
+                <Button onClick={() => { const a = document.createElement('a'); a.href = downloadUrl; a.download = `redacted-${file?.name}`; a.click(); }} className="w-full bg-emerald-600 hover:bg-emerald-700 text-white font-medium py-6 rounded-xl flex items-center justify-center gap-2">
                   <Download className="w-5 h-5" />Download Redacted PDF
                 </Button>
                 <Button variant="ghost" onClick={() => { setFile(null); setRects([]); setSuggestions([]); setDownloadUrl(null); }} className="w-full text-foreground/50 hover:text-foreground text-xs h-8">Redact another file</Button>
               </div>
             ) : (
-              <Button disabled={!file || rects.length === 0} onClick={applyRedactions} className={`w-full font-medium py-6 rounded-xl flex items-center justify-center gap-2 ${file && rects.length > 0 ? 'bg-brand hover:bg-brand/90 text-foreground' : 'bg-foreground/5 text-foreground/30 cursor-not-allowed'}`}>
+              <Button disabled={!file || rects.length === 0} onClick={applyRedactions} className={`w-full font-medium py-6 rounded-xl flex items-center justify-center gap-2 ${file && rects.length > 0 ? 'bg-primary text-primary-foreground hover:bg-primary/90 font-bold' : 'bg-foreground/5 text-muted-foreground/60 cursor-not-allowed'}`}>
                 <EyeOff className="w-4 h-4" />Apply Redactions
               </Button>
             )}

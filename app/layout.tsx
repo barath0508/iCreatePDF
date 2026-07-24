@@ -178,7 +178,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 
         {/* Monetag Ad Tag */}
         <Script
-          src="https://quge5.com/88/tag.min.js"
+          src=""
           data-zone="262948"
           data-cfasync="false"
           strategy="afterInteractive"

@@ -594,7 +594,7 @@ export function BulkCertificatesTool() {
                       type="button"
                       onClick={() => setPreviewMode('sample')}
                       className={`px-2.5 py-1 rounded-md text-[11px] font-medium transition-all ${
-                        previewMode === 'sample' ? 'bg-brand text-foreground shadow-xs' : 'text-foreground/50 hover:text-foreground'
+                        previewMode === 'sample' ? 'bg-primary text-primary-foreground font-bold shadow-xs' : 'text-foreground/50 hover:text-foreground'
                       }`}
                       title="Preview visual rendering using real row data"
                     >
@@ -604,7 +604,7 @@ export function BulkCertificatesTool() {
                       type="button"
                       onClick={() => setPreviewMode('field')}
                       className={`px-2.5 py-1 rounded-md text-[11px] font-medium transition-all ${
-                        previewMode === 'field' ? 'bg-brand text-foreground shadow-xs' : 'text-foreground/50 hover:text-foreground'
+                        previewMode === 'field' ? 'bg-primary text-primary-foreground font-bold shadow-xs' : 'text-foreground/50 hover:text-foreground'
                       }`}
                       title="Show column field tags"
                     >
@@ -649,7 +649,7 @@ export function BulkCertificatesTool() {
                           disabled={isAdded}
                           className={`px-3 py-2 rounded-xl text-xs font-medium text-left border flex items-center justify-between w-full transition-all ${
                             isAdded
-                              ? 'bg-foreground/5 border-foreground/5 text-foreground/30 cursor-not-allowed'
+                              ? 'bg-foreground/5 border-foreground/5 text-muted-foreground/60 cursor-not-allowed'
                               : 'bg-background hover:bg-foreground/[0.02] border-foreground/10 hover:border-brand/40 hover:text-brand text-foreground'
                           }`}
                         >
@@ -1098,7 +1098,7 @@ export function BulkCertificatesTool() {
                       disabled={placeholders.length === 0}
                       onClick={() => handleGenerate('pdf')}
                       className={`w-full font-medium py-5 rounded-xl flex items-center justify-center gap-2 shadow-sm ${
-                        placeholders.length > 0 ? 'bg-brand hover:bg-brand/90 text-foreground' : 'bg-foreground/5 text-foreground/30 cursor-not-allowed'
+                        placeholders.length > 0 ? 'bg-primary text-primary-foreground hover:bg-primary/90 font-bold' : 'bg-foreground/5 text-muted-foreground/60 cursor-not-allowed'
                       }`}
                     >
                       <ArrowRight className="w-4 h-4" />
@@ -1109,7 +1109,7 @@ export function BulkCertificatesTool() {
                       disabled={placeholders.length === 0}
                       onClick={() => handleGenerate('zip')}
                       className={`w-full font-medium py-5 rounded-xl flex items-center justify-center gap-2 border border-foreground/10 ${
-                        placeholders.length > 0 ? 'bg-background hover:bg-foreground/5 text-foreground' : 'bg-foreground/5 text-foreground/30 cursor-not-allowed'
+                        placeholders.length > 0 ? 'bg-background hover:bg-foreground/5 text-foreground' : 'bg-foreground/5 text-muted-foreground/60 cursor-not-allowed'
                       }`}
                     >
                       <Download className="w-4 h-4" />

@@ -216,7 +216,7 @@ export function Base64ToPdfTool() {
               <div className="space-y-3">
                 <Button
                   onClick={handleDownload}
-                  className="w-full bg-emerald-600 hover:bg-emerald-700 text-foreground font-medium py-6 rounded-xl flex items-center justify-center gap-2 transition-all duration-300"
+                  className="w-full bg-emerald-600 hover:bg-emerald-700 text-white font-medium py-6 rounded-xl flex items-center justify-center gap-2 transition-all duration-300"
                 >
                   <Download className="w-4 h-4" />
                   Download PDF File
@@ -225,7 +225,7 @@ export function Base64ToPdfTool() {
             ) : (
               <Button
                 onClick={handleDecode}
-                className="w-full bg-brand hover:bg-brand/90 text-foreground font-medium py-6 rounded-xl flex items-center justify-center gap-2 transition-all duration-300"
+                className="w-full bg-primary text-primary-foreground hover:bg-primary/90 font-bold font-medium py-6 rounded-xl flex items-center justify-center gap-2 transition-all duration-300"
               >
                 <Eye className="w-4 h-4" />
                 Decode to PDF Preview
