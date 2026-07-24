@@ -367,13 +367,13 @@ export function BulkCertificatesTool() {
     return rgb(r / 255, g / 255, b / 255);
   };
 
-  // Fetch / cache custom TTF font bytes
+  // Fetch / cache custom TTF font bytes using jsDelivr CDN (100% open CORS headers)
   const getFontBytes = async (fontOption: FontOption): Promise<ArrayBuffer | null> => {
     if (!fontOption.githubPath) return null;
     if (fontBytesCache.current.has(fontOption.id)) {
       return fontBytesCache.current.get(fontOption.id)!;
     }
-    const url = `https://raw.githubusercontent.com/google/fonts/main/${fontOption.githubPath}`;
+    const url = `https://cdn.jsdelivr.net/gh/google/fonts@main/${fontOption.githubPath}`;
     const res = await fetch(url);
     if (!res.ok) throw new Error(`Failed to download font: ${fontOption.name}`);
     const buf = await res.arrayBuffer();
@@ -389,7 +389,7 @@ export function BulkCertificatesTool() {
     setError(null);
     setDownloadUrl(null);
     setDownloadZipUrl(null);
-    setStatusMessage('Preparing PDF engine...');
+    setStatusMessage('Preparing PDF engine & font assets...');
 
     try {
       const templateBuffer = await templateFile.arrayBuffer();
@@ -463,9 +463,9 @@ export function BulkCertificatesTool() {
           }
 
           // Compute vertical position:
-          // PDF origin is bottom-left. ph.y is percentage from top of page.
-          // Adjust y baseline using font size metrics so visual center matches CSS top translate(-50%)
-          const yPdf = height - (ph.y / 100) * height - ph.fontSize * 0.35;
+          // PDF origin (0,0) is bottom-left. ph.y is percentage from top of page.
+          // Align font baseline so visual center of text matches HTML top: ph.y% translate(-50%) exactly.
+          const yPdf = height - (ph.y / 100) * height - ph.fontSize * 0.275;
 
           page.drawText(textVal, {
             x: xPdf,
@@ -667,7 +667,7 @@ export function BulkCertificatesTool() {
                   {/* Canvas Container */}
                   <div
                     ref={containerRef}
-                    className="relative select-none shadow-lg rounded-lg border border-foreground/10 bg-white"
+                    className="relative select-none shadow-lg rounded-lg border border-foreground/10 bg-white overflow-hidden"
                     style={{
                       margin: '0 auto',
                       width: '100%',
@@ -697,12 +697,14 @@ export function BulkCertificatesTool() {
                         ? (sampleVal && sampleVal.trim() !== '' ? sampleVal : `[${ph.id}]`)
                         : `{{${ph.id}}}`;
 
+                      const calculatedFontSizePx = Math.max(8, ph.fontSize * ratio);
+
                       return (
                         <div
                           key={ph.id}
                           onMouseDown={(e) => handleDragStart(e, ph.id)}
                           onTouchStart={(e) => handleDragStart(e, ph.id)}
-                          className={`absolute cursor-move touch-none select-none ${isActive ? 'z-20' : 'z-10'}`}
+                          className={`absolute cursor-move touch-none select-none flex items-center ${isActive ? 'z-20' : 'z-10'}`}
                           style={{
                             left: `${ph.x}%`,
                             top: `${ph.y}%`,
@@ -711,13 +713,15 @@ export function BulkCertificatesTool() {
                               : ph.alignment === 'right'
                               ? 'translate(-100%, -50%)'
                               : 'translate(0%, -50%)',
+                            height: `${calculatedFontSizePx}px`,
+                            lineHeight: 1,
                           }}
                         >
                           {/* 
-                            Zero-padding pure text container.
-                            Matches exact coordinates of PDF-lib output.
+                            Pure text span container.
+                            Exact font, size, weight, color, alignment.
                           */}
-                          <div
+                          <span
                             className={`relative inline-block leading-none transition-all ${
                               isActive
                                 ? 'outline-2 outline-brand outline-offset-2 bg-brand/5 rounded-xs'
@@ -725,7 +729,7 @@ export function BulkCertificatesTool() {
                             }`}
                             style={{
                               color: ph.color,
-                              fontSize: `${Math.max(8, ph.fontSize * ratio)}px`,
+                              fontSize: `${calculatedFontSizePx}px`,
                               fontFamily: fontOpt.cssFamily,
                               fontWeight: ph.isBold ? 'bold' : 'normal',
                               whiteSpace: 'nowrap',
@@ -754,7 +758,7 @@ export function BulkCertificatesTool() {
                                 </button>
                               </div>
                             )}
-                          </div>
+                          </span>
                         </div>
                       );
                     })}
