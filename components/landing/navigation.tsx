@@ -6,6 +6,7 @@ import { usePathname } from 'next/navigation';
 import { Button } from '@/components/ui/button';
 import { Menu, X, Shield } from 'lucide-react';
 import { CommandMenu } from '@/components/navigation/CommandMenu';
+import { ThemeToggle } from '@/components/ui/theme-toggle';
 
 const navLinks = [
   { name: 'Tools Suite', href: '/#tools' },
@@ -46,7 +47,7 @@ export function Navigation() {
             isScrolled ? 'h-16 sm:h-20' : 'h-20 sm:h-24 lg:h-28'
           }`}
         >
-          {/* Enlarged Logo & Identity */}
+          {/* Logo & Identity */}
           <Link href="/" className="inline-flex items-center gap-3.5 group">
             <div className="relative flex h-10 w-10 sm:h-12 sm:w-12 items-center justify-center rounded-xl border border-border bg-foreground text-background shadow-xs transition-transform group-hover:scale-105">
               <span className="font-mono text-base sm:text-lg font-extrabold tracking-tighter">PDF</span>
@@ -58,7 +59,7 @@ export function Navigation() {
             </div>
           </Link>
 
-          {/* Desktop Navigation Links (Enlarged text-sm to text-base/lg) */}
+          {/* Desktop Navigation Links */}
           <div className="hidden lg:flex items-center gap-8 xl:gap-10">
             {navLinks.map((link) => {
               const isActive = pathname === link.href;
@@ -78,9 +79,11 @@ export function Navigation() {
             })}
           </div>
 
-          {/* Desktop Actions & Command Menu (Enlarged Buttons) */}
-          <div className="hidden md:flex items-center gap-4">
+          {/* Desktop Actions & Command Menu & Theme Toggle */}
+          <div className="hidden md:flex items-center gap-3">
             <CommandMenu />
+
+            <ThemeToggle />
 
             <div className="h-6 w-px bg-border mx-1" />
 
@@ -95,14 +98,15 @@ export function Navigation() {
           </div>
 
           {/* Mobile Actions */}
-          <div className="flex items-center gap-3 md:hidden">
+          <div className="flex items-center gap-2 md:hidden">
             <CommandMenu />
+            <ThemeToggle />
             <button
               onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-              className="p-2.5 text-foreground rounded-xl border border-border bg-card"
+              className="p-2 text-foreground rounded-xl border border-border bg-card"
               aria-label="Toggle menu"
             >
-              {isMobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
+              {isMobileMenuOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
             </button>
           </div>
         </div>

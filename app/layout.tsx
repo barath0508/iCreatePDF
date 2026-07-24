@@ -5,6 +5,7 @@ import { SpeedInsights } from '@vercel/speed-insights/next';
 import Script from 'next/script';
 import { GeistSans } from 'geist/font/sans';
 import { GeistMono } from 'geist/font/mono';
+import { ThemeProvider } from '@/components/theme-provider';
 import './globals.css';
 import { CookieConsentBanner } from '@/components/landing/cookie-consent-banner';
 
@@ -268,10 +269,12 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
           <div className="absolute top-[-15%] left-1/2 -translate-x-1/2 w-[70%] h-[45%] rounded-full bg-brand/10 blur-[140px]" />
           <div className="absolute inset-0 bg-[linear-gradient(to_right,#80808008_1px,transparent_1px),linear-gradient(to_bottom,#80808008_1px,transparent_1px)] bg-[size:24px_24px]" />
         </div>
-        {children}
-        <Analytics />
-        <SpeedInsights />
-        <CookieConsentBanner />
+        <ThemeProvider attribute="class" defaultTheme="dark" enableSystem={false}>
+          {children}
+          <Analytics />
+          <SpeedInsights />
+          <CookieConsentBanner />
+        </ThemeProvider>
       </body>
     </html>
   );
