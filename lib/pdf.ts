@@ -389,7 +389,81 @@ export async function addPageNumbersToPdf(
   return await pdfDoc.save();
 }
 
-// 6. Convert Word (.docx) to PDF (100% Client-Side XML parsing)
+// 6. Parse DOCX Metadata (Word Count, Char Count, Image Count)
+export interface DocxMetadata {
+  pageCount: number;
+  wordCount: number;
+  charCount: number;
+  imageCount: number;
+}
+
+export async function parseDocxMetadata(docxArrayBuffer: ArrayBuffer): Promise<DocxMetadata> {
+  try {
+    const JSZip = (await import('jszip')).default;
+    const zip = await JSZip.loadAsync(docxArrayBuffer);
+    const docXmlText = await zip.file('word/document.xml')?.async('text');
+    
+    if (!docXmlText) {
+      return { pageCount: 1, wordCount: 0, charCount: 0, imageCount: 0 };
+    }
+
+    const parser = new DOMParser();
+    const xmlDoc = parser.parseFromString(docXmlText, 'application/xml');
+    
+    const textElements = xmlDoc.getElementsByTagName('w:t');
+    let totalText = '';
+    for (let i = 0; i < textElements.length; i++) {
+      totalText += (textElements[i].textContent || '') + ' ';
+    }
+
+    const words = totalText.trim().split(/\s+/).filter(Boolean);
+    const drawingElements = xmlDoc.getElementsByTagName('w:drawing');
+    const pictElements = xmlDoc.getElementsByTagName('w:pict');
+
+    return {
+      pageCount: 1,
+      wordCount: words.length,
+      charCount: totalText.replace(/\s+/g, '').length,
+      imageCount: drawingElements.length + pictElements.length,
+    };
+  } catch (err) {
+    console.error('Failed to parse docx metadata:', err);
+    return { pageCount: 1, wordCount: 0, charCount: 0, imageCount: 0 };
+  }
+}
+
+// Helper to parse page range strings e.g. "1-3, 5"
+export function parsePageRange(rangeStr: string, totalPages: number): Set<number> {
+  const pages = new Set<number>();
+  if (!rangeStr || rangeStr.trim().toLowerCase() === 'all') {
+    for (let i = 1; i <= totalPages; i++) pages.add(i);
+    return pages;
+  }
+
+  const parts = rangeStr.split(',');
+  for (const part of parts) {
+    const trimmed = part.trim();
+    if (trimmed.includes('-')) {
+      const [startStr, endStr] = trimmed.split('-');
+      const start = Math.max(1, parseInt(startStr, 10) || 1);
+      const end = Math.min(totalPages, parseInt(endStr, 10) || totalPages);
+      for (let p = start; p <= end; p++) pages.add(p);
+    } else {
+      const pageNum = parseInt(trimmed, 10);
+      if (pageNum >= 1 && pageNum <= totalPages) {
+        pages.add(pageNum);
+      }
+    }
+  }
+
+  if (pages.size === 0) {
+    for (let i = 1; i <= totalPages; i++) pages.add(i);
+  }
+
+  return pages;
+}
+
+// 7. Convert Word (.docx) to PDF (100% Client-Side XML parsing fallback)
 export async function convertDocxToPdf(
   docxArrayBuffer: ArrayBuffer,
   onProgress?: (progress: number) => void
@@ -408,11 +482,12 @@ export async function convertDocxToPdf(
 
   const pdfDoc = await PDFDocument.create();
   const font = await pdfDoc.embedFont(StandardFonts.Helvetica);
+  const fontBold = await pdfDoc.embedFont(StandardFonts.HelveticaBold);
   let page = pdfDoc.addPage();
   const { width, height } = page.getSize();
   let y = height - 50;
   const margin = 50;
-  const fontSize = 11;
+  const defaultFontSize = 11;
   const lineHeight = 15;
 
   const total = paragraphs.length;
@@ -420,6 +495,18 @@ export async function convertDocxToPdf(
   for (let i = 0; i < total; i++) {
     const p = paragraphs[i];
     
+    // Check heading style or bolding
+    const pStyle = p.getElementsByTagName('w:pStyle')[0]?.getAttribute('w:val');
+    let fontSize = defaultFontSize;
+    let currentFont = font;
+    let isHeading = false;
+
+    if (pStyle && (pStyle.startsWith('Heading') || pStyle.startsWith('Title'))) {
+      fontSize = pStyle.includes('1') || pStyle === 'Title' ? 18 : 14;
+      currentFont = fontBold;
+      isHeading = true;
+    }
+
     // Extract text runs inside this paragraph
     const textRuns = p.getElementsByTagName('w:t');
     let paragraphText = '';
@@ -430,7 +517,7 @@ export async function convertDocxToPdf(
     paragraphText = sanitizeTextForPdf(paragraphText);
 
     if (paragraphText.trim() === '') {
-      y -= lineHeight; // line break spacing
+      y -= lineHeight;
       continue;
     }
 
@@ -440,7 +527,7 @@ export async function convertDocxToPdf(
 
     for (const word of words) {
       const testLine = currentLine ? `${currentLine} ${word}` : word;
-      const testWidth = font.widthOfTextAtSize(testLine, fontSize);
+      const testWidth = currentFont.widthOfTextAtSize(testLine, fontSize);
 
       if (testWidth > width - margin * 2) {
         // Draw current line
@@ -448,11 +535,11 @@ export async function convertDocxToPdf(
           x: margin,
           y,
           size: fontSize,
-          font,
-          color: rgb(0.15, 0.15, 0.15),
+          font: currentFont,
+          color: isHeading ? rgb(0.1, 0.2, 0.4) : rgb(0.15, 0.15, 0.15),
         });
 
-        y -= lineHeight;
+        y -= fontSize * 1.3;
         if (y < margin) {
           page = pdfDoc.addPage();
           y = height - 50;
@@ -470,10 +557,10 @@ export async function convertDocxToPdf(
         x: margin,
         y,
         size: fontSize,
-        font,
-        color: rgb(0.15, 0.15, 0.15),
+        font: currentFont,
+        color: isHeading ? rgb(0.1, 0.2, 0.4) : rgb(0.15, 0.15, 0.15),
       });
-      y -= lineHeight * 1.5; // space between paragraphs
+      y -= (fontSize * 1.3) + (isHeading ? 6 : 4);
       if (y < margin) {
         page = pdfDoc.addPage();
         y = height - 50;
