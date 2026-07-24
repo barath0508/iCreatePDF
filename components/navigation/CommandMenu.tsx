@@ -27,7 +27,6 @@ import {
   Zap,
 } from 'lucide-react';
 import { Dialog, DialogContent, DialogTitle } from '@/components/ui/dialog';
-import { VisuallyHidden } from '@radix-ui/react-visually-hidden';
 
 const ALL_TOOLS = [
   { name: 'Merge PDF', path: '/tools/merge-pdf', category: 'Organize', icon: Merge, desc: 'Combine multiple PDFs into a single document' },
@@ -87,9 +86,9 @@ export function CommandMenu() {
     <>
       <button
         onClick={() => setOpen(true)}
-        className="inline-flex items-center gap-2 rounded-xl border border-border bg-card/60 px-3 py-1.5 text-xs text-muted-foreground transition-colors hover:border-foreground/30 hover:bg-card hover:text-foreground"
+        className="inline-flex items-center gap-2.5 rounded-2xl border border-border bg-card/80 px-4 py-2 text-xs sm:text-sm font-semibold text-muted-foreground transition-colors hover:border-foreground/40 hover:bg-card hover:text-foreground h-10"
       >
-        <Search className="h-3.5 w-3.5 stroke-[2]" />
+        <Search className="h-4 w-4 stroke-[2]" />
         <span className="hidden sm:inline">Search tools...</span>
         <kbd className="pointer-events-none hidden rounded border border-border bg-background px-1.5 py-0.5 text-[10px] font-mono text-muted-foreground sm:inline-block">
           ⌘K
@@ -98,9 +97,7 @@ export function CommandMenu() {
 
       <Dialog open={open} onOpenChange={setOpen}>
         <DialogContent className="overflow-hidden p-0 max-w-xl border-border bg-card shadow-2xl">
-          <VisuallyHidden>
-            <DialogTitle>Command Menu PDF Tools Search</DialogTitle>
-          </VisuallyHidden>
+          <DialogTitle className="sr-only">Command Menu PDF Tools Search</DialogTitle>
           <Command className="[&_[cmdk-group-heading]]:px-2 [&_[cmdk-group-heading]]:font-mono [&_[cmdk-group-heading]]:text-[10px] [&_[cmdk-group-heading]]:uppercase [&_[cmdk-group-heading]]:text-muted-foreground [&_[cmdk-input-wrapper]_svg]:h-5 [&_[cmdk-input-wrapper]_svg]:w-5 [&_[cmdk-input]]:h-14 [&_[cmdk-item]]:px-3 [&_[cmdk-item]]:py-3 [&_[cmdk-item]]:rounded-lg">
             <div className="flex items-center border-b border-border px-3">
               <Search className="mr-2 h-4 w-4 shrink-0 opacity-50 text-foreground" />
