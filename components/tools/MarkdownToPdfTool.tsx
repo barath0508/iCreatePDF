@@ -162,6 +162,14 @@ export function MarkdownToPdfTool() {
     setTimeout(() => setCopied(false), 2000);
   };
 
+  const escapeHtml = (text: string): string =>
+    text
+      .replace(/&/g, '&amp;')
+      .replace(/</g, '&lt;')
+      .replace(/>/g, '&gt;')
+      .replace(/"/g, '&quot;')
+      .replace(/'/g, '&#39;');
+
   const parseMarkdownToHtml = (md: string): string => {
     const lines = md.split(/\r?\n/);
     const htmlLines: string[] = [];
@@ -210,7 +218,7 @@ export function MarkdownToPdfTool() {
       if (line.trim().startsWith('```')) {
         flushTable();
         if (inCodeBlock) {
-          htmlLines.push(`<pre><code>${codeBlockContent.join('\n')}</code></pre>`);
+          htmlLines.push(`<pre><code>${escapeHtml(codeBlockContent.join('\n'))}</code></pre>`);
           codeBlockContent = [];
           inCodeBlock = false;
         } else {
@@ -286,18 +294,18 @@ export function MarkdownToPdfTool() {
       if (/^\d+\. (.*?)$/.test(line)) {
         const match = line.match(/^(\d+)\. (.*?)$/);
         if (match) {
-          htmlLines.push(`<li data-ol="${match[1]}">${match[2]}</li>`);
+          htmlLines.push(`<li data-ol="${match[1]}">${escapeHtml(match[2])}</li>`);
         }
         continue;
       }
 
-      htmlLines.push(`<p>${line}</p>`);
+      htmlLines.push(`<p>${escapeHtml(line)}</p>`);
     }
 
     flushTable();
 
     if (inCodeBlock && codeBlockContent.length > 0) {
-      htmlLines.push(`<pre><code>${codeBlockContent.join('\n')}</code></pre>`);
+      htmlLines.push(`<pre><code>${escapeHtml(codeBlockContent.join('\n'))}</code></pre>`);
     }
 
     const themeHeaderColor = theme === 'purple' ? '#8b5cf6' : theme === 'blue' ? '#2563eb' : theme === 'emerald' ? '#059669' : '#38bdf8';
