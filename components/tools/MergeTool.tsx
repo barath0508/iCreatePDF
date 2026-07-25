@@ -4,6 +4,7 @@ import React, { useState, useRef } from 'react';
 import { Upload, Layers, Trash2, Loader2, Download, FileText, ChevronUp, ChevronDown } from 'lucide-react';
 import { mergePdfs } from '@/lib/pdf';
 import { Button } from '@/components/ui/button';
+import { toast } from 'sonner';
 
 interface PdfFile {
   id: string;
@@ -39,12 +40,13 @@ export function MergeTool() {
     for (const file of Array.from(uploadedFiles)) {
       const ext = file.name.split('.').pop()?.toLowerCase();
       if (ext !== 'pdf') {
-        setError('Only PDF files are supported.');
+        const msg = 'Only PDF files are supported.';
+        setError(msg);
+        toast.error(msg);
         return;
       }
 
       try {
-        // Read file to parse pages count using pdf-lib
         const arrayBuffer = await file.arrayBuffer();
         const { PDFDocument } = await import('pdf-lib');
         const pdf = await PDFDocument.load(arrayBuffer);
@@ -56,12 +58,15 @@ export function MergeTool() {
         });
       } catch (err) {
         console.error(err);
-        setError(`Failed to read PDF file: ${file.name}`);
+        const msg = `Failed to read PDF file: ${file.name}`;
+        setError(msg);
+        toast.error(msg);
       }
     }
 
     if (addedFiles.length > 0) {
       setFiles((prev) => [...prev, ...addedFiles]);
+      toast.info(`Added ${addedFiles.length} file(s) to queue`);
     }
   };
 
@@ -123,7 +128,9 @@ export function MergeTool() {
 
   const triggerMerge = async () => {
     if (files.length < 2) {
-      setError('Please add at least 2 PDF files to merge.');
+      const msg = 'Please add at least 2 PDF files to merge.';
+      setError(msg);
+      toast.error(msg);
       return;
     }
     setIsProcessing(true);
@@ -139,6 +146,8 @@ export function MergeTool() {
       setDownloadUrl(url);
       setProgress(100);
 
+      toast.success(`Merged ${files.length} PDFs into 1 file successfully!`);
+
       // Cache reference in IndexedDB
       const { addRecentFile } = require('@/lib/db');
       addRecentFile({
@@ -150,7 +159,9 @@ export function MergeTool() {
       });
     } catch (err: any) {
       console.error(err);
-      setError(err?.message || 'Failed to merge PDF files.');
+      const msg = err?.message || 'Failed to merge PDF files.';
+      setError(msg);
+      toast.error(msg);
     } finally {
       setIsProcessing(false);
     }

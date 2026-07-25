@@ -1,11 +1,12 @@
 import React from 'react';
 import type { Metadata } from 'next';
-import { Analytics } from '@vercel/analytics/next';
+import { Analytics } from '@vercel/analytics/react';
 import { SpeedInsights } from '@vercel/speed-insights/next';
 import Script from 'next/script';
 import { GeistSans } from 'geist/font/sans';
 import { GeistMono } from 'geist/font/mono';
 import { ThemeProvider } from '@/components/theme-provider';
+import { Toaster } from '@/components/ui/sonner';
 import './globals.css';
 import { CookieConsentBanner } from '@/components/landing/cookie-consent-banner';
 
@@ -454,6 +455,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
         </div>
         <ThemeProvider attribute="class" defaultTheme="dark" enableSystem={false}>
           {children}
+          <Toaster position="bottom-right" richColors closeButton duration={4000} />
           <Analytics />
           <SpeedInsights />
           <CookieConsentBanner />

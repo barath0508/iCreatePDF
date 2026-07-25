@@ -1,8 +1,9 @@
 'use client';
 
 import React, { useState, useRef } from 'react';
-import { Upload, Layers, Loader2, Download, FileText } from 'lucide-react';
+import { Upload, Layers, Loader2, Download, FileText, CheckCircle2, TrendingDown } from 'lucide-react';
 import { Button } from '@/components/ui/button';
+import { toast } from 'sonner';
 
 export function CompressTool() {
   const [file, setFile] = useState<File | null>(null);
@@ -32,7 +33,9 @@ export function CompressTool() {
 
     const ext = uploadedFile.name.split('.').pop()?.toLowerCase();
     if (ext !== 'pdf') {
-      setError('Only PDF files are supported.');
+      const msg = 'Only PDF files are supported.';
+      setError(msg);
+      toast.error(msg);
       return;
     }
 
@@ -43,9 +46,12 @@ export function CompressTool() {
       
       setFile(uploadedFile);
       setPagesCount(pdf.getPageCount());
+      toast.info(`Loaded ${uploadedFile.name} (${pdf.getPageCount()} pages)`);
     } catch (err) {
       console.error(err);
-      setError(`Failed to read PDF file: ${uploadedFile.name}`);
+      const msg = `Failed to read PDF file: ${uploadedFile.name}`;
+      setError(msg);
+      toast.error(msg);
     }
   };
 
@@ -80,7 +86,6 @@ export function CompressTool() {
       const pdfDoc = await PDFDocument.load(buffer);
       
       setProgress(60);
-      // Save with compression options enabled (object stream compression compresses streams)
       const compressedBytes = await pdfDoc.save({
         useObjectStreams: true,
       });
@@ -93,6 +98,9 @@ export function CompressTool() {
       setDownloadUrl(url);
       setProgress(100);
 
+      const savings = Math.max(0, Math.round(((file.size - blob.size) / file.size) * 100));
+      toast.success(`PDF Compressed successfully! Saved ${savings}% space.`);
+
       // Cache reference in IndexedDB
       const { addRecentFile } = require('@/lib/db');
       addRecentFile({
@@ -104,7 +112,9 @@ export function CompressTool() {
       });
     } catch (err: any) {
       console.error(err);
-      setError(err?.message || 'Failed to compress PDF.');
+      const msg = err?.message || 'Failed to compress PDF.';
+      setError(msg);
+      toast.error(msg);
     } finally {
       setIsProcessing(false);
     }
@@ -119,6 +129,8 @@ export function CompressTool() {
     link.click();
     document.body.removeChild(link);
   };
+
+  const savingsPercent = file && compressedSize ? Math.max(0, Math.round(((file.size - compressedSize) / file.size) * 100)) : 0;
 
   return (
     <div className="w-full max-w-6xl mx-auto px-6 lg:px-12 py-16">
@@ -156,7 +168,7 @@ export function CompressTool() {
               </p>
             </div>
           ) : (
-            <div className="p-6 bg-card border border-foreground/10 rounded-2xl space-y-4">
+            <div className="p-6 bg-card border border-foreground/10 rounded-2xl space-y-5">
               <div className="flex justify-between items-start">
                 <div>
                   <h4 className="text-lg font-display text-foreground">{file.name}</h4>
@@ -178,11 +190,35 @@ export function CompressTool() {
               </div>
 
               {downloadUrl && (
-                <div className="p-4 rounded-xl bg-emerald-500/10 border border-emerald-500/20 text-emerald-200 text-xs font-mono space-y-1">
-                  <p>✓ Compression Complete</p>
-                  <p>Original Size: {(file.size / (1024 * 1024)).toFixed(2)} MB</p>
-                  <p>Compressed Size: {(compressedSize / (1024 * 1024)).toFixed(2)} MB</p>
-                  <p>Reduction: {Math.max(0, Math.round(((file.size - compressedSize) / file.size) * 100))}%</p>
+                <div className="p-5 rounded-2xl bg-foreground/[0.03] border border-border/80 space-y-4">
+                  <div className="flex items-center justify-between">
+                    <div className="flex items-center gap-2 text-xs font-mono font-semibold text-foreground">
+                      <CheckCircle2 className="w-4 h-4 text-emerald-400" />
+                      <span>Compression Ready</span>
+                    </div>
+                    <span className="inline-flex items-center gap-1 px-2.5 py-1 rounded-full bg-emerald-500/10 text-emerald-400 text-xs font-mono font-bold border border-emerald-500/20">
+                      <TrendingDown className="w-3.5 h-3.5" />
+                      {savingsPercent}% Smaller
+                    </span>
+                  </div>
+
+                  <div className="grid grid-cols-2 gap-4 pt-1">
+                    <div className="p-3 rounded-xl bg-background border border-border/60">
+                      <span className="text-[10px] font-mono text-muted-foreground uppercase block">Original Size</span>
+                      <span className="text-sm font-mono font-bold text-foreground">{(file.size / (1024 * 1024)).toFixed(2)} MB</span>
+                    </div>
+                    <div className="p-3 rounded-xl bg-background border border-border/60">
+                      <span className="text-[10px] font-mono text-muted-foreground uppercase block">Compressed Size</span>
+                      <span className="text-sm font-mono font-bold text-emerald-400">{(compressedSize / (1024 * 1024)).toFixed(2)} MB</span>
+                    </div>
+                  </div>
+
+                  <div className="w-full bg-background rounded-full h-2 border border-border/40 overflow-hidden">
+                    <div
+                      className="bg-emerald-500 h-full rounded-full transition-all duration-500"
+                      style={{ width: `${Math.min(100, Math.max(5, 100 - savingsPercent))}%` }}
+                    />
+                  </div>
                 </div>
               )}
             </div>

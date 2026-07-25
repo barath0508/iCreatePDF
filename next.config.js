@@ -1,5 +1,3 @@
-import type { NextConfig } from "next";
-
 const OLD_TOOLS = [
   'jpg-to-pdf', 'png-to-pdf', 'heic-to-pdf', 'merge-pdf', 'split-pdf', 
   'compress-pdf', 'organize-pdf', 'rotate-pdf', 'watermark-pdf', 
@@ -14,7 +12,8 @@ const OLD_TOOLS = [
   'prevent-copy', 'pdf-ocr', 'bulk-certificates', 'fillable-pdf-builder'
 ];
 
-const nextConfig: NextConfig = {
+/** @type {import('next').NextConfig} */
+const nextConfig = {
   compress: true,
   typescript: {
     ignoreBuildErrors: true,
@@ -115,5 +114,4 @@ const nextConfig: NextConfig = {
   },
 };
 
-export default nextConfig;
-
+module.exports = nextConfig;

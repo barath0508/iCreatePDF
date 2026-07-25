@@ -58,9 +58,9 @@ export async function addRecentFile(file: { name: string; size: number; toolName
     // Sort by timestamp descending
     existing.sort((a, b) => b.timestamp - a.timestamp);
 
-    // Limit database size: if we have 5 or more, delete the oldest
-    if (existing.length >= 5) {
-      for (let i = 4; i < existing.length; i++) {
+    // Limit database size: if we have 10 or more, delete the oldest
+    if (existing.length >= 10) {
+      for (let i = 9; i < existing.length; i++) {
         store.delete(existing[i].id);
       }
     }
@@ -78,6 +78,17 @@ export async function addRecentFile(file: { name: string; size: number; toolName
     store.put(newRecord);
   } catch (err) {
     console.error('Error adding recent file to db:', err);
+  }
+}
+
+export async function deleteRecentFile(id: string) {
+  try {
+    const db = await getDB();
+    const tx = db.transaction(STORE_NAME, 'readwrite');
+    const store = tx.objectStore(STORE_NAME);
+    store.delete(id);
+  } catch (err) {
+    console.error('Error deleting recent file:', err);
   }
 }
 
@@ -111,3 +122,4 @@ export async function clearRecentFiles() {
     console.error('Error clearing recent files:', err);
   }
 }
+

@@ -62,9 +62,21 @@ export function HeroSection() {
     if (ext === 'pdf') {
       setDroppedFiles(fileArray);
       setIsPdfModalOpen(true);
-    } else if (ext === 'docx') {
+    } else if (ext === 'docx' || ext === 'doc') {
       setPreloadedFiles(fileArray);
       router.push('/tools/word-to-pdf');
+    } else if (ext === 'xlsx' || ext === 'xls' || ext === 'csv') {
+      setPreloadedFiles(fileArray);
+      router.push('/tools/excel-to-pdf');
+    } else if (ext === 'html' || ext === 'htm') {
+      setPreloadedFiles(fileArray);
+      router.push('/tools/html-to-pdf');
+    } else if (ext === 'md' || ext === 'markdown') {
+      setPreloadedFiles(fileArray);
+      router.push('/tools/markdown-to-pdf');
+    } else if (ext === 'ris') {
+      setPreloadedFiles(fileArray);
+      router.push('/tools/ris-to-pdf');
     } else if (ext === 'txt') {
       setPreloadedFiles(fileArray);
       router.push('/tools/txt-to-pdf');

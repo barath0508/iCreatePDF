@@ -2,7 +2,7 @@
 
 import React, { useEffect, useState } from 'react';
 import { History, FileText, Trash2, Download, X, ExternalLink } from 'lucide-react';
-import { getRecentFiles, clearRecentFiles, RecentFile } from '@/lib/db';
+import { getRecentFiles, clearRecentFiles, deleteRecentFile, RecentFile } from '@/lib/db';
 
 export function RecentFilesWidget() {
   const [isOpen, setIsOpen] = useState(false);
@@ -22,10 +22,14 @@ export function RecentFilesWidget() {
 
   const handleClear = async (e: React.MouseEvent) => {
     e.stopPropagation();
-    if (confirm('Clear your local history? This will permanently delete references to these files from your browser.')) {
-      await clearRecentFiles();
-      setRecentFiles([]);
-    }
+    await clearRecentFiles();
+    setRecentFiles([]);
+  };
+
+  const handleDelete = async (e: React.MouseEvent, id: string) => {
+    e.stopPropagation();
+    await deleteRecentFile(id);
+    setRecentFiles((prev) => prev.filter((f) => f.id !== id));
   };
 
   const formatSize = (bytes: number) => {
@@ -72,10 +76,10 @@ export function RecentFilesWidget() {
             <div className="flex items-center gap-2">
               <button
                 onClick={handleClear}
-                title="Clear History"
-                className="p-1 hover:bg-foreground/5 rounded text-foreground/40 hover:text-red-500 transition-colors"
+                title="Clear All History"
+                className="p-1 hover:bg-foreground/5 rounded text-foreground/40 hover:text-red-400 transition-colors text-xs"
               >
-                <Trash2 className="w-3.5 h-3.5" />
+                Clear All
               </button>
               <button
                 onClick={() => setIsOpen(false)}
@@ -131,6 +135,13 @@ export function RecentFilesWidget() {
                       <ExternalLink className="w-3.5 h-3.5" />
                     </a>
                   )}
+                  <button
+                    onClick={(e) => handleDelete(e, file.id)}
+                    title="Remove from list"
+                    className="p-1.5 hover:bg-red-500/10 rounded-lg text-foreground/30 hover:text-red-400 transition-colors"
+                  >
+                    <Trash2 className="w-3.5 h-3.5" />
+                  </button>
                 </div>
               </div>
             ))}
