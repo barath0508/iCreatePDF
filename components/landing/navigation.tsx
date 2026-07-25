@@ -7,7 +7,6 @@ import { Button } from '@/components/ui/button';
 import { Menu, X, Shield } from 'lucide-react';
 import { CommandMenu } from '@/components/navigation/CommandMenu';
 import { ThemeToggle } from '@/components/ui/theme-toggle';
-import { motion, useScroll, useTransform, useSpring } from 'framer-motion';
 
 const navLinks = [
   { name: 'Tools Suite', href: '/#tools' },
@@ -27,60 +26,33 @@ export function Navigation() {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
-  const spring = { type: 'spring', stiffness: 320, damping: 32, mass: 0.8 };
-
   return (
-    <motion.header
-      initial={false}
-      animate={isScrolled
-        ? { top: 12, left: 16, right: 16 }
-        : { top: 0, left: 0, right: 0 }
-      }
-      transition={spring}
-      style={{ position: 'fixed', zIndex: 50 }}
+    <header
+      className={`fixed z-50 transition-[top,left,right] duration-300 ease-out ${
+        isScrolled ? 'top-3 left-4 right-4' : 'top-0 left-0 right-0'
+      }`}
     >
-      <motion.nav
-        initial={false}
-        animate={isScrolled
-          ? {
-              borderRadius: 20,
-              backgroundColor: 'hsl(var(--card) / 0.92)',
-              boxShadow: '0 8px 40px 0 rgba(0,0,0,0.22), 0 1px 0 0 rgba(255,255,255,0.06) inset',
-              maxWidth: 1120,
-            }
-          : {
-              borderRadius: 0,
-              backgroundColor: 'hsl(var(--background) / 0.60)',
-              boxShadow: '0 1px 0 0 hsl(var(--border) / 0.4)',
-              maxWidth: 1280,
-            }
-        }
-        transition={spring}
-        style={{
-          marginLeft: 'auto',
-          marginRight: 'auto',
-          backdropFilter: 'blur(24px)',
-          WebkitBackdropFilter: 'blur(24px)',
-        }}
+      <nav
+        className={`mx-auto backdrop-blur-2xl transition-all duration-300 ease-out ${
+          isScrolled
+            ? 'rounded-[20px] max-w-[1120px] bg-card/92 shadow-[0_8px_40px_0_rgba(0,0,0,0.22),0_1px_0_0_rgba(255,255,255,0.06)_inset]'
+            : 'rounded-none max-w-[1280px] bg-background/60 shadow-[0_1px_0_0_hsl(var(--border)/0.4)]'
+        }`}
       >
-        <motion.div
-          initial={false}
-          animate={isScrolled
-            ? { height: 56, paddingLeft: 24, paddingRight: 24 }
-            : { height: 88, paddingLeft: 40, paddingRight: 40 }
-          }
-          transition={spring}
-          className="flex items-center justify-between"
+        <div
+          className={`flex items-center justify-between transition-all duration-300 ease-out ${
+            isScrolled ? 'h-14 px-6' : 'h-[88px] px-10'
+          }`}
         >
           {/* Logo & Identity */}
           <Link href="/" className="inline-flex items-center gap-3.5 group shrink-0">
-            <motion.div
-              animate={isScrolled ? { width: 36, height: 36 } : { width: 44, height: 44 }}
-              transition={spring}
-              className="relative flex items-center justify-center rounded-xl border border-border bg-foreground text-background shadow-xs transition-transform group-hover:scale-105 shrink-0"
+            <div
+              className={`relative flex items-center justify-center rounded-xl border border-border bg-foreground text-background shadow-xs transition-all duration-300 ease-out group-hover:scale-105 shrink-0 ${
+                isScrolled ? 'w-9 h-9' : 'w-11 h-11'
+              }`}
             >
               <span className="font-mono text-sm font-extrabold tracking-tighter">PDF</span>
-            </motion.div>
+            </div>
             <div className="flex items-baseline gap-2">
               <span className="font-display text-sm font-extrabold tracking-tight text-foreground select-none leading-none">
                 iCreate
@@ -138,8 +110,8 @@ export function Navigation() {
               {isMobileMenuOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
             </button>
           </div>
-        </motion.div>
-      </motion.nav>
+        </div>
+      </nav>
 
       {/* Mobile Menu Drawer */}
       {isMobileMenuOpen && (
@@ -168,7 +140,7 @@ export function Navigation() {
           </div>
         </div>
       )}
-    </motion.header>
+    </header>
   );
 }
 

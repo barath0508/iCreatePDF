@@ -1,6 +1,6 @@
 'use client';
 
-import React, { useState, useRef } from 'react';
+import React, { useState, useRef, useEffect } from 'react';
 import { Shield, Loader2, Download, Copy, AlertTriangle } from 'lucide-react';
 import { PDFDocument } from 'pdf-lib';
 import { Button } from '@/components/ui/button';
@@ -14,6 +14,14 @@ export function PreventCopyTool() {
   const [isDraggingOver, setIsDraggingOver] = useState(false);
   const [quality, setQuality] = useState<'standard' | 'high'>('standard');
   const fileInputRef = useRef<HTMLInputElement>(null);
+  // Preload pdfjs-dist on mount so the CDN worker fetch happens before user clicks Process
+  const pdfjsRef = useRef<typeof import('pdfjs-dist') | null>(null);
+  useEffect(() => {
+    import('pdfjs-dist').then((lib) => {
+      lib.GlobalWorkerOptions.workerSrc = `https://cdn.jsdelivr.net/npm/pdfjs-dist@${lib.version}/build/pdf.worker.min.mjs`;
+      pdfjsRef.current = lib;
+    }).catch(() => {/* silently ignore — will lazy-load on demand */});
+  }, []);
 
   const handleFiles = (uploadedFiles: FileList | File[]) => {
     setError(null);
@@ -34,8 +42,12 @@ export function PreventCopyTool() {
 
     try {
       const buffer = await file.arrayBuffer();
-      const pdfjsLib = await import('pdfjs-dist');
-      pdfjsLib.GlobalWorkerOptions.workerSrc = `https://cdn.jsdelivr.net/npm/pdfjs-dist@${pdfjsLib.version}/build/pdf.worker.min.mjs`;
+      // Use preloaded module if available, otherwise lazy-load
+      const pdfjsLib = pdfjsRef.current ?? await import('pdfjs-dist');
+      if (!pdfjsRef.current) {
+        pdfjsLib.GlobalWorkerOptions.workerSrc = `https://cdn.jsdelivr.net/npm/pdfjs-dist@${pdfjsLib.version}/build/pdf.worker.min.mjs`;
+        pdfjsRef.current = pdfjsLib;
+      }
       
       const srcPdf = await pdfjsLib.getDocument({ data: new Uint8Array(buffer) }).promise;
       const outDoc = await PDFDocument.create();

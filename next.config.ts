@@ -76,7 +76,7 @@ const nextConfig: NextConfig = {
             value: 'index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1',
           },
           {
-            // Prevent MIME type sniffing \u2014 improves trust score with Google Safe Browsing
+            // Prevent MIME type sniffing — improves trust score with Google Safe Browsing
             key: 'X-Content-Type-Options',
             value: 'nosniff',
           },
@@ -89,6 +89,16 @@ const nextConfig: NextConfig = {
             // Controls referrer data sent to third parties
             key: 'Referrer-Policy',
             value: 'strict-origin-when-cross-origin',
+          },
+        ],
+      },
+      {
+        // Preconnect to CDN used by pdfjs worker on all tool pages
+        source: '/tools/:path*',
+        headers: [
+          {
+            key: 'Link',
+            value: '<https://cdn.jsdelivr.net>; rel=preconnect; crossorigin, <https://cdn.jsdelivr.net>; rel=dns-prefetch',
           },
         ],
       },

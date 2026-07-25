@@ -1,6 +1,6 @@
 'use client';
 
-import React, { useState, useRef } from 'react';
+import React, { useState, useRef, useEffect } from 'react';
 import { Upload, Layers, Loader2, Download, FileImage } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 
@@ -14,6 +14,14 @@ export function PdfToJpgTool() {
   const [isDraggingOver, setIsDraggingOver] = useState(false);
 
   const fileInputRef = useRef<HTMLInputElement>(null);
+  // Preload pdfjs-dist on mount so worker CDN fetch is done before file selection
+  const pdfjsRef = useRef<typeof import('pdfjs-dist') | null>(null);
+  useEffect(() => {
+    import('pdfjs-dist').then((lib) => {
+      lib.GlobalWorkerOptions.workerSrc = `https://cdn.jsdelivr.net/npm/pdfjs-dist@${lib.version}/build/pdf.worker.min.mjs`;
+      pdfjsRef.current = lib;
+    }).catch(() => {/* silently ignore — will lazy-load on demand */});
+  }, []);
 
   const handleFiles = async (uploadedFiles: FileList | File[]) => {
     setError(null);
@@ -30,8 +38,11 @@ export function PdfToJpgTool() {
 
     try {
       const arrayBuffer = await uploadedFile.arrayBuffer();
-      const pdfjsLib = await import('pdfjs-dist');
-      pdfjsLib.GlobalWorkerOptions.workerSrc = `https://cdn.jsdelivr.net/npm/pdfjs-dist@${pdfjsLib.version}/build/pdf.worker.min.mjs`;
+      const pdfjsLib = pdfjsRef.current ?? await import('pdfjs-dist');
+      if (!pdfjsRef.current) {
+        pdfjsLib.GlobalWorkerOptions.workerSrc = `https://cdn.jsdelivr.net/npm/pdfjs-dist@${pdfjsLib.version}/build/pdf.worker.min.mjs`;
+        pdfjsRef.current = pdfjsLib;
+      }
 
       const loadingTask = pdfjsLib.getDocument({ data: new Uint8Array(arrayBuffer) });
       const pdf = await loadingTask.promise;
@@ -71,8 +82,11 @@ export function PdfToJpgTool() {
       const zip = new JSZip();
 
       const arrayBuffer = await file.arrayBuffer();
-      const pdfjsLib = await import('pdfjs-dist');
-      pdfjsLib.GlobalWorkerOptions.workerSrc = `https://cdn.jsdelivr.net/npm/pdfjs-dist@${pdfjsLib.version}/build/pdf.worker.min.mjs`;
+      const pdfjsLib = pdfjsRef.current ?? await import('pdfjs-dist');
+      if (!pdfjsRef.current) {
+        pdfjsLib.GlobalWorkerOptions.workerSrc = `https://cdn.jsdelivr.net/npm/pdfjs-dist@${pdfjsLib.version}/build/pdf.worker.min.mjs`;
+        pdfjsRef.current = pdfjsLib;
+      }
 
       const loadingTask = pdfjsLib.getDocument({ data: new Uint8Array(arrayBuffer) });
       const pdf = await loadingTask.promise;
