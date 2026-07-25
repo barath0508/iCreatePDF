@@ -51,6 +51,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     '/tools/pdf-accessibility-checker',
     '/tools/prevent-copy',
     '/tools/pdf-ocr',
+    '/tools/bulk-certificates',
     '/tools/fillable-pdf-builder',
     '/tools/base64-to-pdf',
     '/tools/n-up-pdf',
