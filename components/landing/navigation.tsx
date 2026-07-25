@@ -7,6 +7,7 @@ import { Button } from '@/components/ui/button';
 import { Menu, X, Shield } from 'lucide-react';
 import { CommandMenu } from '@/components/navigation/CommandMenu';
 import { ThemeToggle } from '@/components/ui/theme-toggle';
+import { Logo } from '@/components/ui/logo';
 
 const navLinks = [
   { name: 'Tools Suite', href: '/#tools' },
@@ -46,21 +47,7 @@ export function Navigation() {
         >
           {/* Logo & Identity */}
           <Link href="/" className="inline-flex items-center gap-3.5 group shrink-0">
-            <div
-              className={`relative flex items-center justify-center rounded-xl border border-border bg-foreground text-background shadow-xs transition-all duration-300 ease-out group-hover:scale-105 shrink-0 ${
-                isScrolled ? 'w-9 h-9' : 'w-11 h-11'
-              }`}
-            >
-              <span className="font-mono text-sm font-extrabold tracking-tighter">PDF</span>
-            </div>
-            <div className="flex items-baseline gap-2">
-              <span className="font-display text-sm font-extrabold tracking-tight text-foreground select-none leading-none">
-                iCreate
-              </span>
-              <span className="font-mono text-sm font-bold text-muted-foreground uppercase border border-border px-2 py-0.5 rounded-lg bg-muted/60 leading-none">
-                Studio
-              </span>
-            </div>
+            <Logo size={isScrolled ? 34 : 40} />
           </Link>
 
           {/* Desktop Navigation Links */}

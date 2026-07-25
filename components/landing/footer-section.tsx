@@ -2,6 +2,7 @@
 
 import { ArrowUpRight, ShieldCheck, Cpu } from 'lucide-react';
 import Link from 'next/link';
+import { Logo } from '@/components/ui/logo';
 
 const footerLinks = {
   Converters: [
@@ -102,12 +103,7 @@ export function FooterSection() {
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-7 gap-12 lg:gap-8">
             <div className="col-span-1 sm:col-span-2 space-y-4">
               <Link href="/" className="inline-flex items-center gap-3 group">
-                <div className="flex h-9 w-9 items-center justify-center rounded-lg border border-border bg-foreground text-background font-mono text-sm font-bold shadow-xs">
-                  PDF
-                </div>
-                <span className="font-display text-xl font-bold tracking-tight text-foreground select-none">
-                  iCreate<span className="text-muted-foreground font-mono text-xs ml-1 uppercase">Studio</span>
-                </span>
+                <Logo size={38} />
               </Link>
 
               <p className="text-muted-foreground leading-relaxed max-w-xs text-xs">
