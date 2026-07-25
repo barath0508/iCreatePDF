@@ -9,7 +9,11 @@ const OLD_TOOLS = [
   'bates-numbering', 'invert-pdf', 'qr-to-pdf', 'barcode-to-pdf', 
   'delete-pdf-pages', 'txt-to-pdf', 'ris-to-pdf', 'read-aloud-pdf', 
   'certify-pdf', 'pdf-to-excel', 'excel-to-pdf', 'pdf-accessibility-checker', 
-  'prevent-copy', 'pdf-ocr', 'bulk-certificates', 'fillable-pdf-builder'
+  'prevent-copy', 'pdf-ocr', 'bulk-certificates', 'fillable-pdf-builder', 'base64-to-pdf',
+  'n-up-pdf', 'booklet-pdf', 'adjust-pdf-margins', 'equalize-pdf-page-sizes',
+  'pdf-to-word', 'extract-pdf-images', 'export-pdf-form-data', 'pdf-to-audio',
+  'stamp-pdf', 'pdf-reading-themes', 'pdf-security-auditor', 'pdf-toc-builder',
+  'epub-to-pdf', 'svg-to-pdf', 'csv-to-pdf'
 ];
 
 /** @type {import('next').NextConfig} */

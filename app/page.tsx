@@ -73,6 +73,21 @@ const tools: ToolItem[] = [
   { iconName: 'Stamp', title: 'Certify PDF', desc: 'Stamp SHA-256 fingerprint certificate QR code onto PDF.', href: '/tools/certify-pdf', category: 'secure' },
   { iconName: 'FileSpreadsheet', title: 'PDF to Excel', desc: 'Detect PDF tables and export as CSV spreadsheet files.', href: '/tools/pdf-to-excel', category: 'utilities' },
   { iconName: 'Accessibility', title: 'Accessibility Checker', desc: 'Audit PDF for screen-reader WCAG compliance and tagging.', href: '/tools/pdf-accessibility-checker', category: 'utilities' },
+  { iconName: 'LayoutGrid', title: 'N-up PDF', desc: 'Place 2, 4, 6, 8, or 9 PDF pages onto a single sheet.', href: '/tools/n-up-pdf', category: 'organize' },
+  { iconName: 'BookOpen', title: 'Booklet Maker', desc: 'Convert PDF into saddle-stitch booklet for double-sided printing.', href: '/tools/booklet-pdf', category: 'organize' },
+  { iconName: 'Maximize2', title: 'Adjust Margins', desc: 'Add extra border padding for hole punching or margin notes.', href: '/tools/adjust-pdf-margins', category: 'organize' },
+  { iconName: 'Columns', title: 'Equalize Page Sizes', desc: 'Standardize mixed Letter, Legal, and A4 pages into a uniform size.', href: '/tools/equalize-pdf-page-sizes', category: 'organize' },
+  { iconName: 'FileText', title: 'PDF to Word', desc: 'Extract structured text and headings into editable Word (.docx) files.', href: '/tools/pdf-to-word', category: 'convert' },
+  { iconName: 'Image', title: 'Extract Images', desc: 'Extract embedded photos and raster graphics into a ZIP file.', href: '/tools/extract-pdf-images', category: 'utilities' },
+  { iconName: 'FileSpreadsheet', title: 'Export Form Data', desc: 'Extract filled AcroForm fields into CSV spreadsheets.', href: '/tools/export-pdf-form-data', category: 'utilities' },
+  { iconName: 'Volume2', title: 'PDF to Audio', desc: 'Listen to PDF document text using speech synthesis.', href: '/tools/pdf-to-audio', category: 'utilities' },
+  { iconName: 'Stamp', title: 'Batch Rubber Stamp', desc: 'Stamp APPROVED, CONFIDENTIAL, DRAFT, or custom status text.', href: '/tools/stamp-pdf', category: 'secure' },
+  { iconName: 'Moon', title: 'PDF Reading Themes', desc: 'Apply Sepia, Warm Amber, Soft Mint, or Dark filters.', href: '/tools/pdf-reading-themes', category: 'utilities' },
+  { iconName: 'ShieldCheck', title: 'Security Auditor', desc: 'Audit PDF encryption strength (AES-128/256) and permissions.', href: '/tools/pdf-security-auditor', category: 'secure' },
+  { iconName: 'BookMarked', title: 'PDF TOC Builder', desc: 'Add, edit, or reorganize clickable outline bookmarks.', href: '/tools/pdf-toc-builder', category: 'organize' },
+  { iconName: 'BookOpen', title: 'EPUB to PDF', desc: 'Convert EPUB eBook files into clean, printable PDF documents.', href: '/tools/epub-to-pdf', category: 'convert' },
+  { iconName: 'Code', title: 'SVG to PDF', desc: 'Convert Scalable Vector Graphics (.svg) into vector PDFs.', href: '/tools/svg-to-pdf', category: 'convert' },
+  { iconName: 'FileSpreadsheet', title: 'CSV to PDF', desc: 'Convert CSV data sheets directly into formatted PDF tables.', href: '/tools/csv-to-pdf', category: 'convert' },
 ];
 
 export default function Home() {

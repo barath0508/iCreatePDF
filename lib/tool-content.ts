@@ -1234,6 +1234,289 @@ export const toolContent: Record<string, ToolContent> = {
       { question: 'How can I verify if the Base64 string is a valid PDF?', answer: 'Our tool automatically checks the magic bytes of the decoded binary array for the standard "%PDF-" header. If the signature is missing, it alerts you immediately.' },
     ],
   },
+
+  'n-up-pdf': {
+    name: 'N-up PDF (Multiple Pages per Sheet)',
+    url: '/tools/n-up-pdf',
+    overview: 'N-up PDF lets you place 2, 4, 6, 8, or 9 PDF pages onto a single sheet of paper. Ideal for saving paper when printing slide decks, presentation notes, and research papers locally in your browser without uploading files.',
+    steps: [
+      { title: 'Select your PDF', description: 'Drag and drop your document into the local browser engine.' },
+      { title: 'Choose Grid Layout', description: 'Select 2-up (2x1), 4-up (2x2), 6-up, 8-up, or 9-up layout options.' },
+      { title: 'Adjust Border & Spacing', description: 'Optionally toggle cut borders and page spacing.' },
+      { title: 'Download Imposed PDF', description: 'Export your multi-page grid PDF instantly.' },
+    ],
+    useCases: [
+      'Print lecture slides and presentation decks with 2 or 4 slides per page',
+      'Create compact paper reference sheets and study guides',
+      'Save printing costs and paper usage when reviewing draft reports',
+    ],
+    faqs: [
+      { question: 'What page grid options are available?', answer: 'You can choose 2-up, 4-up (2x2), 6-up (2x3), 8-up, or 9-up (3x3) layout grids.' },
+      { question: 'Are my files uploaded to a server?', answer: 'No, page scaling and grid imposition happen 100% locally in browser WebAssembly.' },
+    ],
+  },
+
+  'booklet-pdf': {
+    name: 'PDF Booklet Maker',
+    url: '/tools/booklet-pdf',
+    overview: 'Convert any standard PDF into a print-ready saddle-stitch booklet. Pages are reordered so that when printed double-sided and folded in half, they form a physical booklet.',
+    steps: [
+      { title: 'Upload PDF Document', description: 'Add the PDF file you wish to convert into a booklet.' },
+      { title: 'Set Sheet Size', description: 'Choose target paper sheet size (A4, Letter, A3).' },
+      { title: 'Generate Booklet Layout', description: 'Our local engine reorders and pairs pages into signature spreads.' },
+      { title: 'Download & Print', description: 'Print double-sided on short edge and fold in half.' },
+    ],
+    useCases: [
+      'Print event programs, brochures, and church bulletins',
+      'Create DIY zines, mini-books, and product manuals',
+    ],
+    faqs: [
+      { question: 'How do I print the resulting booklet file?', answer: 'Print double-sided (duplex) with short-edge binding enabled, then fold the stack in half.' },
+      { question: 'What if my page count is not a multiple of 4?', answer: 'The tool automatically appends blank pages at the end to complete the booklet signature.' },
+    ],
+  },
+
+  'adjust-pdf-margins': {
+    name: 'Adjust PDF Margins',
+    url: '/tools/adjust-pdf-margins',
+    overview: 'Add extra padding or shrink white margins around PDF pages. Perfect for preparing documents for hole punching, spiral binding, or trimming printer edges.',
+    steps: [
+      { title: 'Select PDF File', description: 'Open your document inside the browser workspace.' },
+      { title: 'Set Margin Offsets', description: 'Enter Top, Bottom, Left, and Right margin distances in millimeters or inches.' },
+      { title: 'Preview & Apply', description: 'Inspect the updated page box boundaries.' },
+      { title: 'Download PDF', description: 'Save the margin-adjusted PDF file to your device.' },
+    ],
+    useCases: [
+      'Add left gutter padding for binder hole punching or spiral binding',
+      'Add margin space for handwritten teacher/professor notes',
+    ],
+    faqs: [
+      { question: 'Can I set different margins for even and odd pages?', answer: 'Yes, mirror margins are supported for double-sided document printing.' },
+    ],
+  },
+
+  'equalize-pdf-page-sizes': {
+    name: 'Equalize PDF Page Sizes',
+    url: '/tools/equalize-pdf-page-sizes',
+    overview: 'Automatically normalize documents containing mixed page sizes into a single uniform page size (e.g. A4 or Letter).',
+    steps: [
+      { title: 'Load PDF File', description: 'Drag in a PDF containing mixed page dimensions.' },
+      { title: 'Select Standard Size', description: 'Choose target uniform size (A4, Letter, Legal).' },
+      { title: 'Choose Scaling Mode', description: 'Fit content or stretch to fill target bounds.' },
+      { title: 'Download Normalized PDF', description: 'Export your standardized PDF document.' },
+    ],
+    useCases: [
+      'Fix scanned document bundles containing mixed letter and legal receipts',
+      'Standardize merged PDF reports prior to official printing',
+    ],
+    faqs: [
+      { question: 'Does equalizing page sizes alter image quality?', answer: 'No, vector text and raster images are scaled smoothly to fit target page dimensions.' },
+    ],
+  },
+
+  'pdf-to-word': {
+    name: 'PDF to Word Converter',
+    url: '/tools/pdf-to-word',
+    overview: 'Extract structured text, headings, and layout blocks from PDF files into editable Microsoft Word (.docx) documents 100% locally in browser memory.',
+    steps: [
+      { title: 'Select PDF Document', description: 'Load the PDF file you wish to convert to Word.' },
+      { title: 'Parse Document Structure', description: 'Extract text paragraphs, tables, and formatting.' },
+      { title: 'Compile DOCX Payload', description: 'Generate structured Microsoft Word file in memory.' },
+      { title: 'Download .docx File', description: 'Save the editable Word document to your computer.' },
+    ],
+    useCases: [
+      'Edit text content from locked PDF reports in Microsoft Word',
+      'Repurpose PDF document text into company Word templates',
+    ],
+    faqs: [
+      { question: 'Are my files uploaded to a remote server during conversion?', answer: 'Never. PDF parsing and DOCX file generation run entirely client-side on your device CPU.' },
+    ],
+  },
+
+  'extract-pdf-images': {
+    name: 'Extract Images from PDF',
+    url: '/tools/extract-pdf-images',
+    overview: 'Extract all embedded raster images (JPEG, PNG, WebP) from a PDF document and package them into a downloadable ZIP archive.',
+    steps: [
+      { title: 'Upload PDF', description: 'Drag in the PDF containing embedded photos or graphics.' },
+      { title: 'Scan Image Stream', description: 'Our browser engine locates all raster image streams.' },
+      { title: 'Preview Extracted Images', description: 'View thumbnails of extracted images.' },
+      { title: 'Download ZIP Archive', description: 'Export all extracted images in a single ZIP file.' },
+    ],
+    useCases: [
+      'Save photos from PDF brochures and presentation slides',
+      'Extract high-resolution graphics embedded in design documents',
+    ],
+    faqs: [
+      { question: 'What image formats are extracted?', answer: 'Images are saved in their native embedded formats (JPEG, PNG, WEBP).' },
+    ],
+  },
+
+  'export-pdf-form-data': {
+    name: 'Export PDF Form Data',
+    url: '/tools/export-pdf-form-data',
+    overview: 'Extract filled AcroForm input fields, checkboxes, and drop-downs from single or multiple PDF forms into CSV or JSON spreadsheets.',
+    steps: [
+      { title: 'Upload Filled PDF Forms', description: 'Add one or more completed PDF form files.' },
+      { title: 'Inspect Field Mapping', description: 'Review form input names and extracted values.' },
+      { title: 'Choose Export Format', description: 'Select CSV or JSON data output.' },
+      { title: 'Download Spreadsheet', description: 'Export form responses to your computer.' },
+    ],
+    useCases: [
+      'Collect survey responses from completed PDF applications',
+      'Export financial form submissions into Excel spreadsheets',
+    ],
+    faqs: [
+      { question: 'Can I batch extract form data from multiple PDFs at once?', answer: 'Yes! Upload multiple filled form PDFs and get a single consolidated CSV spreadsheet.' },
+    ],
+  },
+
+  'pdf-to-audio': {
+    name: 'PDF to Audio Reader',
+    url: '/tools/pdf-to-audio',
+    overview: 'Listen to PDF document text using browser speech synthesis, or export spoken text as audio clips directly in your browser.',
+    steps: [
+      { title: 'Open PDF File', description: 'Load the document you want to read aloud.' },
+      { title: 'Select Voice & Speed', description: 'Choose natural speech voice, pitch, and playback rate.' },
+      { title: 'Play & Listen', description: 'Highlight text and listen to hands-free speech narration.' },
+    ],
+    useCases: [
+      'Listen to long research articles and textbooks while multitasking',
+      'Proofread written documents by hearing them read aloud',
+    ],
+    faqs: [
+      { question: 'Does speech synthesis work offline?', answer: 'Yes, browser system voices run entirely offline without internet requests.' },
+    ],
+  },
+
+  'stamp-pdf': {
+    name: 'Batch Rubber Stamp PDF',
+    url: '/tools/stamp-pdf',
+    overview: 'Stamp configurable text overlays like APPROVED, CONFIDENTIAL, DRAFT, RECEIVED, or custom logos across all PDF pages.',
+    steps: [
+      { title: 'Upload PDF', description: 'Select the file requiring stamp certification.' },
+      { title: 'Choose Stamp Preset', description: 'Pick APPROVED, CONFIDENTIAL, DRAFT, or type custom text.' },
+      { title: 'Set Color & Opacity', description: 'Customize stamp angle, border, color, and transparency.' },
+      { title: 'Download Stamped PDF', description: 'Apply stamp to all pages and download.' },
+    ],
+    useCases: [
+      'Mark contracts as APPROVED or CONFIDENTIAL before sharing',
+      'Stamp invoice documents with RECEIVED and date markers',
+    ],
+    faqs: [
+      { question: 'Can I position the stamp anywhere on the page?', answer: 'Yes, choose center, top-right, bottom-right, or custom angle placement.' },
+    ],
+  },
+
+  'pdf-reading-themes': {
+    name: 'PDF Reading Themes & Filters',
+    url: '/tools/pdf-reading-themes',
+    overview: 'Apply Sepia, Warm Amber, Soft Green, or Dark High-Contrast color filters to PDF document pages to reduce eye strain during reading.',
+    steps: [
+      { title: 'Load PDF', description: 'Open your textbook or reading document.' },
+      { title: 'Select Color Filter', description: 'Choose Sepia, Warm, Soft Green, or Inverted Dark mode.' },
+      { title: 'Download Tinted PDF', description: 'Export the comfortable reading PDF file.' },
+    ],
+    useCases: [
+      'Reduce blue light and eye fatigue when reading long eBooks at night',
+      'Improve contrast for readers with visual impairment',
+    ],
+    faqs: [
+      { question: 'Does this permanently alter original images?', answer: 'Filters apply smooth canvas color matrices while keeping text fully legible.' },
+    ],
+  },
+
+  'pdf-security-auditor': {
+    name: 'PDF Security & Permissions Auditor',
+    url: '/tools/pdf-security-auditor',
+    overview: 'Inspect PDF security settings: encryption type (AES-128/256), copy/print restrictions, user permissions, and metadata vulnerability report.',
+    steps: [
+      { title: 'Upload PDF', description: 'Select the file you want to audit for security compliance.' },
+      { title: 'Run Security Scan', description: 'Engine inspects PDF encryption headers and permission flags.' },
+      { title: 'View Audit Report', description: 'Check copy, print, edit, and annotation permissions.' },
+    ],
+    useCases: [
+      'Verify if confidential PDFs are restricted against copying or printing',
+      'Audit document security before sharing sensitive files externally',
+    ],
+    faqs: [
+      { question: 'Are my files inspected on a server?', answer: 'No, security header auditing runs 100% in your local browser sandbox.' },
+    ],
+  },
+
+  'pdf-toc-builder': {
+    name: 'PDF Table of Contents & Bookmarks Builder',
+    url: '/tools/pdf-toc-builder',
+    overview: 'Add, edit, or reorganize clickable outline bookmarks and Table of Contents navigation trees in PDF documents.',
+    steps: [
+      { title: 'Open PDF', description: 'Load your eBook or long report.' },
+      { title: 'Add Bookmark Tree', description: 'Create section headings linked to specific page numbers.' },
+      { title: 'Save Outlined PDF', description: 'Download PDF with interactive bookmark sidebar.' },
+    ],
+    useCases: [
+      'Add clickable table of contents to dissertations and eBooks',
+      'Organize long multi-chapter business manuals',
+    ],
+    faqs: [
+      { question: 'Do PDF bookmarks work in standard PDF readers?', answer: 'Yes, bookmarks comply with standard PDF specifications and display in Adobe Reader, Chrome, etc.' },
+    ],
+  },
+
+  'epub-to-pdf': {
+    name: 'EPUB to PDF Converter',
+    url: '/tools/epub-to-pdf',
+    overview: 'Convert EPUB eBook files into clean, printable A4 or Letter PDF documents with formatted chapters.',
+    steps: [
+      { title: 'Upload .epub File', description: 'Drag in the eBook file you want to convert.' },
+      { title: 'Set Page Size & Margins', description: 'Select A4 or Letter page layout.' },
+      { title: 'Convert to PDF', description: 'Render HTML chapter views to PDF pages.' },
+      { title: 'Download PDF', description: 'Save your printable PDF eBook.' },
+    ],
+    useCases: [
+      'Print EPUB eBooks on physical paper',
+      'Read EPUB content on devices that natively support PDF',
+    ],
+    faqs: [
+      { question: 'Does EPUB conversion keep images and formatting?', answer: 'Preserves chapter headings, inline images, and paragraph formatting.' },
+    ],
+  },
+
+  'svg-to-pdf': {
+    name: 'SVG to PDF Converter',
+    url: '/tools/svg-to-pdf',
+    overview: 'Convert Scalable Vector Graphics (.svg) into crisp, high-resolution vector PDF documents without quality loss.',
+    steps: [
+      { title: 'Select SVG File', description: 'Drop your SVG vector file into the workspace.' },
+      { title: 'Choose Page Orientation', description: 'Select Portrait, Landscape, or Auto-fit.' },
+      { title: 'Download Vector PDF', description: 'Export crisp vector PDF document.' },
+    ],
+    useCases: [
+      'Convert graphic logos and vector illustrations into print PDFs',
+      'Submit SVG blueprints and schematics as vector PDF files',
+    ],
+    faqs: [
+      { question: 'Is vector crispness maintained during SVG to PDF conversion?', answer: 'Yes, vector paths are preserved as native PDF vector objects without rasterization.' },
+    ],
+  },
+
+  'csv-to-pdf': {
+    name: 'CSV to PDF Table Converter',
+    url: '/tools/csv-to-pdf',
+    overview: 'Convert raw CSV data sheets directly into formatted, paginated PDF tables with customizable headers and layout themes.',
+    steps: [
+      { title: 'Upload .csv File', description: 'Load your CSV dataset into the browser parser.' },
+      { title: 'Configure Table Layout', description: 'Select orientation, font size, and alternating row colors.' },
+      { title: 'Generate PDF', description: 'Compile CSV rows into paginated PDF data tables.' },
+      { title: 'Download PDF', description: 'Export the finished table PDF.' },
+    ],
+    useCases: [
+      'Format raw CSV export files into executive PDF reports',
+      'Print CSV inventory lists and financial ledgers as clean PDFs',
+    ],
+    faqs: [
+      { question: 'Can I handle wide CSV tables with many columns?', answer: 'Yes, choose Landscape mode or auto-scale column widths.' },
+    ],
+  },
 };
 
 
