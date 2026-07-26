@@ -6,14 +6,14 @@ import { toolContent } from '@/lib/tool-content';
 import { buildAlternates, toolSchema } from '@/lib/seo';
 
 export const metadata: Metadata = {
-  title: 'PDF to Audio Reader � Free, Private, No Upload | iCreatePDF',
-  description: 'Listen to PDF document text using speech synthesis hands-free. 100% private � files process inside browser memory.',
+  title: 'PDF to Audio Reader — Free, Private, No Upload | iCreatePDF',
+  description: 'Listen to PDF document text using speech synthesis hands-free. 100% private — files process inside browser memory.',
   alternates: buildAlternates('/tools/pdf-to-audio'),
   openGraph: {
-    title: 'PDF to Audio Reader � iCreatePDF',
+    title: 'PDF to Audio Reader — iCreatePDF',
     description: 'Listen to PDF document text using speech synthesis hands-free.',
     type: 'website',
-    images: [{ url: 'https://www.icreatepdf.online/opengraph-image', width: 1200, height: 630, alt: 'PDF to Audio Reader � iCreatePDF' }],
+    images: [{ url: 'https://www.icreatepdf.online/opengraph-image', width: 1200, height: 630, alt: 'PDF to Audio Reader — iCreatePDF' }],
   },
 };
 

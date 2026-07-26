@@ -6,14 +6,14 @@ import { toolContent } from '@/lib/tool-content';
 import { buildAlternates, toolSchema } from '@/lib/seo';
 
 export const metadata: Metadata = {
-  title: 'Export PDF Form Data � Free, Private, No Upload | iCreatePDF',
-  description: 'Extract filled AcroForm fields from single or multiple PDFs into CSV spreadsheets. 100% private � files process inside browser memory.',
+  title: 'Export PDF Form Data — Free, Private, No Upload | iCreatePDF',
+  description: 'Extract filled AcroForm fields from single or multiple PDFs into CSV spreadsheets. 100% private — files process inside browser memory.',
   alternates: buildAlternates('/tools/export-pdf-form-data'),
   openGraph: {
-    title: 'Export PDF Form Data � iCreatePDF',
+    title: 'Export PDF Form Data — iCreatePDF',
     description: 'Extract filled AcroForm fields from single or multiple PDFs into CSV spreadsheets.',
     type: 'website',
-    images: [{ url: 'https://www.icreatepdf.online/opengraph-image', width: 1200, height: 630, alt: 'Export PDF Form Data � iCreatePDF' }],
+    images: [{ url: 'https://www.icreatepdf.online/opengraph-image', width: 1200, height: 630, alt: 'Export PDF Form Data — iCreatePDF' }],
   },
 };
 

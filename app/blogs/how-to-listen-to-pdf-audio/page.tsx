@@ -7,11 +7,11 @@ import Link from 'next/link';
 import { Button } from '@/components/ui/button';
 
 export const metadata: Metadata = {
-  title: 'How to Listen to PDF Audio Hands-Free � Text-to-Speech Guide | iCreatePDF',
+  title: 'How to Listen to PDF Audio Hands-Free — Text-to-Speech Guide | iCreatePDF',
   description: 'Listen to PDF textbook text using natural browser speech synthesis voices offline.',
   alternates: buildAlternates('/blogs/how-to-listen-to-pdf-audio'),
   openGraph: {
-    title: 'How to Listen to PDF Audio Hands-Free � Text-to-Speech Guide | iCreatePDF',
+    title: 'How to Listen to PDF Audio Hands-Free — Text-to-Speech Guide | iCreatePDF',
     description: 'Listen to PDF textbook text using natural browser speech synthesis voices offline.',
     type: 'article',
     publishedTime: '2026-07-25T00:00:00Z',
@@ -26,7 +26,7 @@ export default function HowTo_listen_to_pdf_audioPage() {
         dangerouslySetInnerHTML={{
           __html: JSON.stringify([
             ...articleSchema({
-              title: 'How to Listen to PDF Audio Hands-Free � Text-to-Speech Guide',
+              title: 'How to Listen to PDF Audio Hands-Free — Text-to-Speech Guide',
               description: 'Listen to PDF textbook text using natural browser speech synthesis voices offline.',
               url: '/blogs/how-to-listen-to-pdf-audio',
               datePublished: '2026-07-25T00:00:00Z',
@@ -55,7 +55,7 @@ export default function HowTo_listen_to_pdf_audioPage() {
               </span>
             </div>
             <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight font-display text-foreground leading-tight">
-              How to Listen to PDF Audio Hands-Free � Text-to-Speech Guide
+              How to Listen to PDF Audio Hands-Free — Text-to-Speech Guide
             </h1>
             <p className="text-base text-muted-foreground leading-relaxed max-w-3xl font-sans">
               Listen to PDF textbook text using natural browser speech synthesis voices offline.

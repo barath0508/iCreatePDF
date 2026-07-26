@@ -7,11 +7,11 @@ import Link from 'next/link';
 import { Button } from '@/components/ui/button';
 
 export const metadata: Metadata = {
-  title: 'How to Apply Sepia & Dark Reading Themes to PDF � Free Guide | iCreatePDF',
+  title: 'How to Apply Sepia & Dark Reading Themes to PDF — Free Guide | iCreatePDF',
   description: 'Apply Sepia, Soft Amber, and Dark Mode color filters to PDF document pages to reduce eye strain.',
   alternates: buildAlternates('/blogs/how-to-apply-pdf-reading-themes'),
   openGraph: {
-    title: 'How to Apply Sepia & Dark Reading Themes to PDF � Free Guide | iCreatePDF',
+    title: 'How to Apply Sepia & Dark Reading Themes to PDF — Free Guide | iCreatePDF',
     description: 'Apply Sepia, Soft Amber, and Dark Mode color filters to PDF document pages to reduce eye strain.',
     type: 'article',
     publishedTime: '2026-07-25T00:00:00Z',
@@ -26,7 +26,7 @@ export default function HowTo_apply_pdf_reading_themesPage() {
         dangerouslySetInnerHTML={{
           __html: JSON.stringify([
             ...articleSchema({
-              title: 'How to Apply Sepia & Dark Reading Themes to PDF � Free Guide',
+              title: 'How to Apply Sepia & Dark Reading Themes to PDF — Free Guide',
               description: 'Apply Sepia, Soft Amber, and Dark Mode color filters to PDF document pages to reduce eye strain.',
               url: '/blogs/how-to-apply-pdf-reading-themes',
               datePublished: '2026-07-25T00:00:00Z',
@@ -55,7 +55,7 @@ export default function HowTo_apply_pdf_reading_themesPage() {
               </span>
             </div>
             <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight font-display text-foreground leading-tight">
-              How to Apply Sepia & Dark Reading Themes to PDF � Free Guide
+              How to Apply Sepia & Dark Reading Themes to PDF — Free Guide
             </h1>
             <p className="text-base text-muted-foreground leading-relaxed max-w-3xl font-sans">
               Apply Sepia, Soft Amber, and Dark Mode color filters to PDF document pages to reduce eye strain.

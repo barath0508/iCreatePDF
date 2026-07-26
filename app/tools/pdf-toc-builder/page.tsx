@@ -6,14 +6,14 @@ import { toolContent } from '@/lib/tool-content';
 import { buildAlternates, toolSchema } from '@/lib/seo';
 
 export const metadata: Metadata = {
-  title: 'PDF TOC & Bookmarks Builder � Free, Private, No Upload | iCreatePDF',
-  description: 'Add, edit, or reorganize clickable outline bookmarks for PDFs. 100% private � files process inside browser memory.',
+  title: 'PDF TOC & Bookmarks Builder — Free, Private, No Upload | iCreatePDF',
+  description: 'Add, edit, or reorganize clickable outline bookmarks for PDFs. 100% private — files process inside browser memory.',
   alternates: buildAlternates('/tools/pdf-toc-builder'),
   openGraph: {
-    title: 'PDF TOC & Bookmarks Builder � iCreatePDF',
+    title: 'PDF TOC & Bookmarks Builder — iCreatePDF',
     description: 'Add, edit, or reorganize clickable outline bookmarks for PDFs.',
     type: 'website',
-    images: [{ url: 'https://www.icreatepdf.online/opengraph-image', width: 1200, height: 630, alt: 'PDF TOC & Bookmarks Builder � iCreatePDF' }],
+    images: [{ url: 'https://www.icreatepdf.online/opengraph-image', width: 1200, height: 630, alt: 'PDF TOC & Bookmarks Builder — iCreatePDF' }],
   },
 };
 

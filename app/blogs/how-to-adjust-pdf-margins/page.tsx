@@ -7,11 +7,11 @@ import Link from 'next/link';
 import { Button } from '@/components/ui/button';
 
 export const metadata: Metadata = {
-  title: 'How to Adjust PDF Margins Online � Free Layout Padding Guide | iCreatePDF',
+  title: 'How to Adjust PDF Margins Online — Free Layout Padding Guide | iCreatePDF',
   description: 'Add extra border margins for binder hole punching or handwritten notes, processed 100% locally.',
   alternates: buildAlternates('/blogs/how-to-adjust-pdf-margins'),
   openGraph: {
-    title: 'How to Adjust PDF Margins Online � Free Layout Padding Guide | iCreatePDF',
+    title: 'How to Adjust PDF Margins Online — Free Layout Padding Guide | iCreatePDF',
     description: 'Add extra border margins for binder hole punching or handwritten notes, processed 100% locally.',
     type: 'article',
     publishedTime: '2026-07-25T00:00:00Z',
@@ -26,7 +26,7 @@ export default function HowTo_adjust_pdf_marginsPage() {
         dangerouslySetInnerHTML={{
           __html: JSON.stringify([
             ...articleSchema({
-              title: 'How to Adjust PDF Margins Online � Free Layout Padding Guide',
+              title: 'How to Adjust PDF Margins Online — Free Layout Padding Guide',
               description: 'Add extra border margins for binder hole punching or handwritten notes, processed 100% locally.',
               url: '/blogs/how-to-adjust-pdf-margins',
               datePublished: '2026-07-25T00:00:00Z',
@@ -55,7 +55,7 @@ export default function HowTo_adjust_pdf_marginsPage() {
               </span>
             </div>
             <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight font-display text-foreground leading-tight">
-              How to Adjust PDF Margins Online � Free Layout Padding Guide
+              How to Adjust PDF Margins Online — Free Layout Padding Guide
             </h1>
             <p className="text-base text-muted-foreground leading-relaxed max-w-3xl font-sans">
               Add extra border margins for binder hole punching or handwritten notes, processed 100% locally.

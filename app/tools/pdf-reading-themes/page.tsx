@@ -6,14 +6,14 @@ import { toolContent } from '@/lib/tool-content';
 import { buildAlternates, toolSchema } from '@/lib/seo';
 
 export const metadata: Metadata = {
-  title: 'PDF Reading Themes � Free, Private, No Upload | iCreatePDF',
-  description: 'Apply Sepia, Warm Amber, Soft Mint, or Dark filters to reduce eye strain. 100% private � files process inside browser memory.',
+  title: 'PDF Reading Themes — Free, Private, No Upload | iCreatePDF',
+  description: 'Apply Sepia, Warm Amber, Soft Mint, or Dark filters to reduce eye strain. 100% private — files process inside browser memory.',
   alternates: buildAlternates('/tools/pdf-reading-themes'),
   openGraph: {
-    title: 'PDF Reading Themes � iCreatePDF',
+    title: 'PDF Reading Themes — iCreatePDF',
     description: 'Apply Sepia, Warm Amber, Soft Mint, or Dark filters to reduce eye strain.',
     type: 'website',
-    images: [{ url: 'https://www.icreatepdf.online/opengraph-image', width: 1200, height: 630, alt: 'PDF Reading Themes � iCreatePDF' }],
+    images: [{ url: 'https://www.icreatepdf.online/opengraph-image', width: 1200, height: 630, alt: 'PDF Reading Themes — iCreatePDF' }],
   },
 };
 

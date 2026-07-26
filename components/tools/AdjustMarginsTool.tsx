@@ -130,7 +130,7 @@ export function AdjustMarginsTool() {
               <div className="flex justify-between items-start">
                 <div>
                   <h4 className="text-lg font-display text-foreground">{file.name}</h4>
-                  <p className="text-xs text-foreground/40">{pagesCount} pages � {(file.size / (1024 * 1024)).toFixed(2)} MB</p>
+                  <p className="text-xs text-foreground/40">{pagesCount} pages — {(file.size / (1024 * 1024)).toFixed(2)} MB</p>
                 </div>
                 <Button variant="ghost" size="sm" onClick={() => { setFile(null); setDownloadUrl(null); }} className="text-xs text-foreground/40 hover:text-foreground">Change File</Button>
               </div>

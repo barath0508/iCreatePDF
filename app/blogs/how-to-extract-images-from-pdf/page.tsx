@@ -7,11 +7,11 @@ import Link from 'next/link';
 import { Button } from '@/components/ui/button';
 
 export const metadata: Metadata = {
-  title: 'How to Extract Images from PDF � Free ZIP Export Guide | iCreatePDF',
+  title: 'How to Extract Images from PDF — Free ZIP Export Guide | iCreatePDF',
   description: 'Pull embedded JPEG and PNG photos out of PDF files and download them as a ZIP archive.',
   alternates: buildAlternates('/blogs/how-to-extract-images-from-pdf'),
   openGraph: {
-    title: 'How to Extract Images from PDF � Free ZIP Export Guide | iCreatePDF',
+    title: 'How to Extract Images from PDF — Free ZIP Export Guide | iCreatePDF',
     description: 'Pull embedded JPEG and PNG photos out of PDF files and download them as a ZIP archive.',
     type: 'article',
     publishedTime: '2026-07-25T00:00:00Z',
@@ -26,7 +26,7 @@ export default function HowTo_extract_images_from_pdfPage() {
         dangerouslySetInnerHTML={{
           __html: JSON.stringify([
             ...articleSchema({
-              title: 'How to Extract Images from PDF � Free ZIP Export Guide',
+              title: 'How to Extract Images from PDF — Free ZIP Export Guide',
               description: 'Pull embedded JPEG and PNG photos out of PDF files and download them as a ZIP archive.',
               url: '/blogs/how-to-extract-images-from-pdf',
               datePublished: '2026-07-25T00:00:00Z',
@@ -55,7 +55,7 @@ export default function HowTo_extract_images_from_pdfPage() {
               </span>
             </div>
             <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight font-display text-foreground leading-tight">
-              How to Extract Images from PDF � Free ZIP Export Guide
+              How to Extract Images from PDF — Free ZIP Export Guide
             </h1>
             <p className="text-base text-muted-foreground leading-relaxed max-w-3xl font-sans">
               Pull embedded JPEG and PNG photos out of PDF files and download them as a ZIP archive.

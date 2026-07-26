@@ -7,11 +7,11 @@ import Link from 'next/link';
 import { Button } from '@/components/ui/button';
 
 export const metadata: Metadata = {
-  title: 'How to Stamp APPROVED or CONFIDENTIAL on PDF � Free Guide | iCreatePDF',
+  title: 'How to Stamp APPROVED or CONFIDENTIAL on PDF — Free Guide | iCreatePDF',
   description: 'Stamp APPROVED, CONFIDENTIAL, DRAFT, or custom status text across all PDF pages.',
   alternates: buildAlternates('/blogs/how-to-stamp-pdf-pages'),
   openGraph: {
-    title: 'How to Stamp APPROVED or CONFIDENTIAL on PDF � Free Guide | iCreatePDF',
+    title: 'How to Stamp APPROVED or CONFIDENTIAL on PDF — Free Guide | iCreatePDF',
     description: 'Stamp APPROVED, CONFIDENTIAL, DRAFT, or custom status text across all PDF pages.',
     type: 'article',
     publishedTime: '2026-07-25T00:00:00Z',
@@ -26,7 +26,7 @@ export default function HowTo_stamp_pdf_pagesPage() {
         dangerouslySetInnerHTML={{
           __html: JSON.stringify([
             ...articleSchema({
-              title: 'How to Stamp APPROVED or CONFIDENTIAL on PDF � Free Guide',
+              title: 'How to Stamp APPROVED or CONFIDENTIAL on PDF — Free Guide',
               description: 'Stamp APPROVED, CONFIDENTIAL, DRAFT, or custom status text across all PDF pages.',
               url: '/blogs/how-to-stamp-pdf-pages',
               datePublished: '2026-07-25T00:00:00Z',
@@ -55,7 +55,7 @@ export default function HowTo_stamp_pdf_pagesPage() {
               </span>
             </div>
             <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight font-display text-foreground leading-tight">
-              How to Stamp APPROVED or CONFIDENTIAL on PDF � Free Guide
+              How to Stamp APPROVED or CONFIDENTIAL on PDF — Free Guide
             </h1>
             <p className="text-base text-muted-foreground leading-relaxed max-w-3xl font-sans">
               Stamp APPROVED, CONFIDENTIAL, DRAFT, or custom status text across all PDF pages.

@@ -7,11 +7,11 @@ import Link from 'next/link';
 import { Button } from '@/components/ui/button';
 
 export const metadata: Metadata = {
-  title: 'How to Convert CSV Data to PDF Tables � Free Guide | iCreatePDF',
+  title: 'How to Convert CSV Data to PDF Tables — Free Guide | iCreatePDF',
   description: 'Turn raw CSV spreadsheet rows directly into structured, paginated PDF tables with headers.',
   alternates: buildAlternates('/blogs/how-to-convert-csv-to-pdf'),
   openGraph: {
-    title: 'How to Convert CSV Data to PDF Tables � Free Guide | iCreatePDF',
+    title: 'How to Convert CSV Data to PDF Tables — Free Guide | iCreatePDF',
     description: 'Turn raw CSV spreadsheet rows directly into structured, paginated PDF tables with headers.',
     type: 'article',
     publishedTime: '2026-07-25T00:00:00Z',
@@ -26,7 +26,7 @@ export default function HowTo_convert_csv_to_pdfPage() {
         dangerouslySetInnerHTML={{
           __html: JSON.stringify([
             ...articleSchema({
-              title: 'How to Convert CSV Data to PDF Tables � Free Guide',
+              title: 'How to Convert CSV Data to PDF Tables — Free Guide',
               description: 'Turn raw CSV spreadsheet rows directly into structured, paginated PDF tables with headers.',
               url: '/blogs/how-to-convert-csv-to-pdf',
               datePublished: '2026-07-25T00:00:00Z',
@@ -55,7 +55,7 @@ export default function HowTo_convert_csv_to_pdfPage() {
               </span>
             </div>
             <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight font-display text-foreground leading-tight">
-              How to Convert CSV Data to PDF Tables � Free Guide
+              How to Convert CSV Data to PDF Tables — Free Guide
             </h1>
             <p className="text-base text-muted-foreground leading-relaxed max-w-3xl font-sans">
               Turn raw CSV spreadsheet rows directly into structured, paginated PDF tables with headers.

@@ -6,14 +6,14 @@ import { toolContent } from '@/lib/tool-content';
 import { buildAlternates, toolSchema } from '@/lib/seo';
 
 export const metadata: Metadata = {
-  title: 'EPUB to PDF Converter � Free, Private, No Upload | iCreatePDF',
-  description: 'Convert EPUB eBook files into clean, printable A4 or Letter PDF documents. 100% private � files process inside browser memory.',
+  title: 'EPUB to PDF Converter — Free, Private, No Upload | iCreatePDF',
+  description: 'Convert EPUB eBook files into clean, printable A4 or Letter PDF documents. 100% private — files process inside browser memory.',
   alternates: buildAlternates('/tools/epub-to-pdf'),
   openGraph: {
-    title: 'EPUB to PDF Converter � iCreatePDF',
+    title: 'EPUB to PDF Converter — iCreatePDF',
     description: 'Convert EPUB eBook files into clean, printable A4 or Letter PDF documents.',
     type: 'website',
-    images: [{ url: 'https://www.icreatepdf.online/opengraph-image', width: 1200, height: 630, alt: 'EPUB to PDF Converter � iCreatePDF' }],
+    images: [{ url: 'https://www.icreatepdf.online/opengraph-image', width: 1200, height: 630, alt: 'EPUB to PDF Converter — iCreatePDF' }],
   },
 };
 

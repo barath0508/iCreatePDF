@@ -7,11 +7,11 @@ import Link from 'next/link';
 import { Button } from '@/components/ui/button';
 
 export const metadata: Metadata = {
-  title: 'How to Build PDF Bookmarks & Table of Contents � Guide | iCreatePDF',
+  title: 'How to Build PDF Bookmarks & Table of Contents — Guide | iCreatePDF',
   description: 'Create clickable outline bookmarks and interactive Table of Contents trees for eBooks.',
   alternates: buildAlternates('/blogs/how-to-build-pdf-table-of-contents'),
   openGraph: {
-    title: 'How to Build PDF Bookmarks & Table of Contents � Guide | iCreatePDF',
+    title: 'How to Build PDF Bookmarks & Table of Contents — Guide | iCreatePDF',
     description: 'Create clickable outline bookmarks and interactive Table of Contents trees for eBooks.',
     type: 'article',
     publishedTime: '2026-07-25T00:00:00Z',
@@ -26,7 +26,7 @@ export default function HowTo_build_pdf_table_of_contentsPage() {
         dangerouslySetInnerHTML={{
           __html: JSON.stringify([
             ...articleSchema({
-              title: 'How to Build PDF Bookmarks & Table of Contents � Guide',
+              title: 'How to Build PDF Bookmarks & Table of Contents — Guide',
               description: 'Create clickable outline bookmarks and interactive Table of Contents trees for eBooks.',
               url: '/blogs/how-to-build-pdf-table-of-contents',
               datePublished: '2026-07-25T00:00:00Z',
@@ -55,7 +55,7 @@ export default function HowTo_build_pdf_table_of_contentsPage() {
               </span>
             </div>
             <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight font-display text-foreground leading-tight">
-              How to Build PDF Bookmarks & Table of Contents � Guide
+              How to Build PDF Bookmarks & Table of Contents — Guide
             </h1>
             <p className="text-base text-muted-foreground leading-relaxed max-w-3xl font-sans">
               Create clickable outline bookmarks and interactive Table of Contents trees for eBooks.

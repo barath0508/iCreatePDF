@@ -7,11 +7,11 @@ import Link from 'next/link';
 import { Button } from '@/components/ui/button';
 
 export const metadata: Metadata = {
-  title: 'How to Convert SVG Vector Graphics to PDF � Free Guide | iCreatePDF',
+  title: 'How to Convert SVG Vector Graphics to PDF — Free Guide | iCreatePDF',
   description: 'Convert Scalable Vector Graphics (.svg) files into high-resolution vector PDF documents.',
   alternates: buildAlternates('/blogs/how-to-convert-svg-to-pdf'),
   openGraph: {
-    title: 'How to Convert SVG Vector Graphics to PDF � Free Guide | iCreatePDF',
+    title: 'How to Convert SVG Vector Graphics to PDF — Free Guide | iCreatePDF',
     description: 'Convert Scalable Vector Graphics (.svg) files into high-resolution vector PDF documents.',
     type: 'article',
     publishedTime: '2026-07-25T00:00:00Z',
@@ -26,7 +26,7 @@ export default function HowTo_convert_svg_to_pdfPage() {
         dangerouslySetInnerHTML={{
           __html: JSON.stringify([
             ...articleSchema({
-              title: 'How to Convert SVG Vector Graphics to PDF � Free Guide',
+              title: 'How to Convert SVG Vector Graphics to PDF — Free Guide',
               description: 'Convert Scalable Vector Graphics (.svg) files into high-resolution vector PDF documents.',
               url: '/blogs/how-to-convert-svg-to-pdf',
               datePublished: '2026-07-25T00:00:00Z',
@@ -55,7 +55,7 @@ export default function HowTo_convert_svg_to_pdfPage() {
               </span>
             </div>
             <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight font-display text-foreground leading-tight">
-              How to Convert SVG Vector Graphics to PDF � Free Guide
+              How to Convert SVG Vector Graphics to PDF — Free Guide
             </h1>
             <p className="text-base text-muted-foreground leading-relaxed max-w-3xl font-sans">
               Convert Scalable Vector Graphics (.svg) files into high-resolution vector PDF documents.

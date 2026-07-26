@@ -7,11 +7,11 @@ import Link from 'next/link';
 import { Button } from '@/components/ui/button';
 
 export const metadata: Metadata = {
-  title: 'How to Convert EPUB to PDF Online � Free eBook Guide | iCreatePDF',
+  title: 'How to Convert EPUB to PDF Online — Free eBook Guide | iCreatePDF',
   description: 'Convert EPUB eBook files into clean, printable A4 PDF documents with formatted chapters.',
   alternates: buildAlternates('/blogs/how-to-convert-epub-to-pdf'),
   openGraph: {
-    title: 'How to Convert EPUB to PDF Online � Free eBook Guide | iCreatePDF',
+    title: 'How to Convert EPUB to PDF Online — Free eBook Guide | iCreatePDF',
     description: 'Convert EPUB eBook files into clean, printable A4 PDF documents with formatted chapters.',
     type: 'article',
     publishedTime: '2026-07-25T00:00:00Z',
@@ -26,7 +26,7 @@ export default function HowTo_convert_epub_to_pdfPage() {
         dangerouslySetInnerHTML={{
           __html: JSON.stringify([
             ...articleSchema({
-              title: 'How to Convert EPUB to PDF Online � Free eBook Guide',
+              title: 'How to Convert EPUB to PDF Online — Free eBook Guide',
               description: 'Convert EPUB eBook files into clean, printable A4 PDF documents with formatted chapters.',
               url: '/blogs/how-to-convert-epub-to-pdf',
               datePublished: '2026-07-25T00:00:00Z',
@@ -55,7 +55,7 @@ export default function HowTo_convert_epub_to_pdfPage() {
               </span>
             </div>
             <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight font-display text-foreground leading-tight">
-              How to Convert EPUB to PDF Online � Free eBook Guide
+              How to Convert EPUB to PDF Online — Free eBook Guide
             </h1>
             <p className="text-base text-muted-foreground leading-relaxed max-w-3xl font-sans">
               Convert EPUB eBook files into clean, printable A4 PDF documents with formatted chapters.

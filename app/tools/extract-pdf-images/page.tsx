@@ -6,14 +6,14 @@ import { toolContent } from '@/lib/tool-content';
 import { buildAlternates, toolSchema } from '@/lib/seo';
 
 export const metadata: Metadata = {
-  title: 'Extract Images from PDF � Free, Private, No Upload | iCreatePDF',
-  description: 'Extract embedded photos and raster graphics from a PDF into a downloadable ZIP. 100% private � files process inside browser memory.',
+  title: 'Extract Images from PDF — Free, Private, No Upload | iCreatePDF',
+  description: 'Extract embedded photos and raster graphics from a PDF into a downloadable ZIP. 100% private — files process inside browser memory.',
   alternates: buildAlternates('/tools/extract-pdf-images'),
   openGraph: {
-    title: 'Extract Images from PDF � iCreatePDF',
+    title: 'Extract Images from PDF — iCreatePDF',
     description: 'Extract embedded photos and raster graphics from a PDF into a downloadable ZIP.',
     type: 'website',
-    images: [{ url: 'https://www.icreatepdf.online/opengraph-image', width: 1200, height: 630, alt: 'Extract Images from PDF � iCreatePDF' }],
+    images: [{ url: 'https://www.icreatepdf.online/opengraph-image', width: 1200, height: 630, alt: 'Extract Images from PDF — iCreatePDF' }],
   },
 };
 

@@ -7,11 +7,11 @@ import Link from 'next/link';
 import { Button } from '@/components/ui/button';
 
 export const metadata: Metadata = {
-  title: 'How to Audit PDF Security & Permissions � Security Guide | iCreatePDF',
+  title: 'How to Audit PDF Security & Permissions — Security Guide | iCreatePDF',
   description: 'Inspect PDF encryption algorithms (AES-128/256) and copy/print restriction bitmasks.',
   alternates: buildAlternates('/blogs/how-to-audit-pdf-security'),
   openGraph: {
-    title: 'How to Audit PDF Security & Permissions � Security Guide | iCreatePDF',
+    title: 'How to Audit PDF Security & Permissions — Security Guide | iCreatePDF',
     description: 'Inspect PDF encryption algorithms (AES-128/256) and copy/print restriction bitmasks.',
     type: 'article',
     publishedTime: '2026-07-25T00:00:00Z',
@@ -26,7 +26,7 @@ export default function HowTo_audit_pdf_securityPage() {
         dangerouslySetInnerHTML={{
           __html: JSON.stringify([
             ...articleSchema({
-              title: 'How to Audit PDF Security & Permissions � Security Guide',
+              title: 'How to Audit PDF Security & Permissions — Security Guide',
               description: 'Inspect PDF encryption algorithms (AES-128/256) and copy/print restriction bitmasks.',
               url: '/blogs/how-to-audit-pdf-security',
               datePublished: '2026-07-25T00:00:00Z',
@@ -55,7 +55,7 @@ export default function HowTo_audit_pdf_securityPage() {
               </span>
             </div>
             <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight font-display text-foreground leading-tight">
-              How to Audit PDF Security & Permissions � Security Guide
+              How to Audit PDF Security & Permissions — Security Guide
             </h1>
             <p className="text-base text-muted-foreground leading-relaxed max-w-3xl font-sans">
               Inspect PDF encryption algorithms (AES-128/256) and copy/print restriction bitmasks.

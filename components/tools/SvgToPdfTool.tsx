@@ -149,7 +149,7 @@ export function SvgToPdfTool() {
               <div className="flex justify-between items-start">
                 <div>
                   <h4 className="text-lg font-display text-foreground">{file.name}</h4>
-                  <p className="text-xs text-foreground/40">{(file.size / 1024).toFixed(1)} KB � Scalable Vector Graphic</p>
+                  <p className="text-xs text-foreground/40">{(file.size / 1024).toFixed(1)} KB — Scalable Vector Graphic</p>
                 </div>
                 <Button variant="ghost" size="sm" onClick={() => { setFile(null); setDownloadUrl(null); }} className="text-xs text-foreground/40 hover:text-foreground">Change File</Button>
               </div>

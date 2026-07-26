@@ -6,14 +6,14 @@ import { toolContent } from '@/lib/tool-content';
 import { buildAlternates, toolSchema } from '@/lib/seo';
 
 export const metadata: Metadata = {
-  title: 'Equalize Page Sizes � Free, Private, No Upload | iCreatePDF',
-  description: 'Standardize mixed Letter, Legal, and A4 pages into a uniform PDF page size. 100% private � files process inside browser memory.',
+  title: 'Equalize Page Sizes — Free, Private, No Upload | iCreatePDF',
+  description: 'Standardize mixed Letter, Legal, and A4 pages into a uniform PDF page size. 100% private — files process inside browser memory.',
   alternates: buildAlternates('/tools/equalize-pdf-page-sizes'),
   openGraph: {
-    title: 'Equalize Page Sizes � iCreatePDF',
+    title: 'Equalize Page Sizes — iCreatePDF',
     description: 'Standardize mixed Letter, Legal, and A4 pages into a uniform PDF page size.',
     type: 'website',
-    images: [{ url: 'https://www.icreatepdf.online/opengraph-image', width: 1200, height: 630, alt: 'Equalize Page Sizes � iCreatePDF' }],
+    images: [{ url: 'https://www.icreatepdf.online/opengraph-image', width: 1200, height: 630, alt: 'Equalize Page Sizes — iCreatePDF' }],
   },
 };
 

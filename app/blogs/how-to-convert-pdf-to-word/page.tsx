@@ -7,11 +7,11 @@ import Link from 'next/link';
 import { Button } from '@/components/ui/button';
 
 export const metadata: Metadata = {
-  title: 'How to Convert PDF to Word (.docx) Online � Free Guide | iCreatePDF',
+  title: 'How to Convert PDF to Word (.docx) Online — Free Guide | iCreatePDF',
   description: 'Extract text, headings, and paragraphs from PDF files into editable Microsoft Word (.docx) documents.',
   alternates: buildAlternates('/blogs/how-to-convert-pdf-to-word'),
   openGraph: {
-    title: 'How to Convert PDF to Word (.docx) Online � Free Guide | iCreatePDF',
+    title: 'How to Convert PDF to Word (.docx) Online — Free Guide | iCreatePDF',
     description: 'Extract text, headings, and paragraphs from PDF files into editable Microsoft Word (.docx) documents.',
     type: 'article',
     publishedTime: '2026-07-25T00:00:00Z',
@@ -26,7 +26,7 @@ export default function HowTo_convert_pdf_to_wordPage() {
         dangerouslySetInnerHTML={{
           __html: JSON.stringify([
             ...articleSchema({
-              title: 'How to Convert PDF to Word (.docx) Online � Free Guide',
+              title: 'How to Convert PDF to Word (.docx) Online — Free Guide',
               description: 'Extract text, headings, and paragraphs from PDF files into editable Microsoft Word (.docx) documents.',
               url: '/blogs/how-to-convert-pdf-to-word',
               datePublished: '2026-07-25T00:00:00Z',
@@ -55,7 +55,7 @@ export default function HowTo_convert_pdf_to_wordPage() {
               </span>
             </div>
             <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight font-display text-foreground leading-tight">
-              How to Convert PDF to Word (.docx) Online � Free Guide
+              How to Convert PDF to Word (.docx) Online — Free Guide
             </h1>
             <p className="text-base text-muted-foreground leading-relaxed max-w-3xl font-sans">
               Extract text, headings, and paragraphs from PDF files into editable Microsoft Word (.docx) documents.

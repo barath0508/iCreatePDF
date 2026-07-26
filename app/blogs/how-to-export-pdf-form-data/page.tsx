@@ -7,11 +7,11 @@ import Link from 'next/link';
 import { Button } from '@/components/ui/button';
 
 export const metadata: Metadata = {
-  title: 'How to Export PDF Form Data to CSV � Free Survey Guide | iCreatePDF',
+  title: 'How to Export PDF Form Data to CSV — Free Survey Guide | iCreatePDF',
   description: 'Extract filled AcroForm input fields from single or multiple PDFs into a consolidated CSV spreadsheet.',
   alternates: buildAlternates('/blogs/how-to-export-pdf-form-data'),
   openGraph: {
-    title: 'How to Export PDF Form Data to CSV � Free Survey Guide | iCreatePDF',
+    title: 'How to Export PDF Form Data to CSV — Free Survey Guide | iCreatePDF',
     description: 'Extract filled AcroForm input fields from single or multiple PDFs into a consolidated CSV spreadsheet.',
     type: 'article',
     publishedTime: '2026-07-25T00:00:00Z',
@@ -26,7 +26,7 @@ export default function HowTo_export_pdf_form_dataPage() {
         dangerouslySetInnerHTML={{
           __html: JSON.stringify([
             ...articleSchema({
-              title: 'How to Export PDF Form Data to CSV � Free Survey Guide',
+              title: 'How to Export PDF Form Data to CSV — Free Survey Guide',
               description: 'Extract filled AcroForm input fields from single or multiple PDFs into a consolidated CSV spreadsheet.',
               url: '/blogs/how-to-export-pdf-form-data',
               datePublished: '2026-07-25T00:00:00Z',
@@ -55,7 +55,7 @@ export default function HowTo_export_pdf_form_dataPage() {
               </span>
             </div>
             <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight font-display text-foreground leading-tight">
-              How to Export PDF Form Data to CSV � Free Survey Guide
+              How to Export PDF Form Data to CSV — Free Survey Guide
             </h1>
             <p className="text-base text-muted-foreground leading-relaxed max-w-3xl font-sans">
               Extract filled AcroForm input fields from single or multiple PDFs into a consolidated CSV spreadsheet.

@@ -7,11 +7,11 @@ import Link from 'next/link';
 import { Button } from '@/components/ui/button';
 
 export const metadata: Metadata = {
-  title: 'How to Create N-up PDF Pages � Free Multi-Page Grid Guide | iCreatePDF',
+  title: 'How to Create N-up PDF Pages — Free Multi-Page Grid Guide | iCreatePDF',
   description: 'Learn how to place 2, 4, 6, or 9 PDF pages onto a single sheet of paper for handouts and paper-saving printing.',
   alternates: buildAlternates('/blogs/how-to-create-n-up-pdf'),
   openGraph: {
-    title: 'How to Create N-up PDF Pages � Free Multi-Page Grid Guide | iCreatePDF',
+    title: 'How to Create N-up PDF Pages — Free Multi-Page Grid Guide | iCreatePDF',
     description: 'Learn how to place 2, 4, 6, or 9 PDF pages onto a single sheet of paper for handouts and paper-saving printing.',
     type: 'article',
     publishedTime: '2026-07-25T00:00:00Z',
@@ -26,7 +26,7 @@ export default function HowTo_create_n_up_pdfPage() {
         dangerouslySetInnerHTML={{
           __html: JSON.stringify([
             ...articleSchema({
-              title: 'How to Create N-up PDF Pages � Free Multi-Page Grid Guide',
+              title: 'How to Create N-up PDF Pages — Free Multi-Page Grid Guide',
               description: 'Learn how to place 2, 4, 6, or 9 PDF pages onto a single sheet of paper for handouts and paper-saving printing.',
               url: '/blogs/how-to-create-n-up-pdf',
               datePublished: '2026-07-25T00:00:00Z',
@@ -55,7 +55,7 @@ export default function HowTo_create_n_up_pdfPage() {
               </span>
             </div>
             <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight font-display text-foreground leading-tight">
-              How to Create N-up PDF Pages � Free Multi-Page Grid Guide
+              How to Create N-up PDF Pages — Free Multi-Page Grid Guide
             </h1>
             <p className="text-base text-muted-foreground leading-relaxed max-w-3xl font-sans">
               Learn how to place 2, 4, 6, or 9 PDF pages onto a single sheet of paper for handouts and paper-saving printing.

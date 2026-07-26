@@ -6,14 +6,14 @@ import { toolContent } from '@/lib/tool-content';
 import { buildAlternates, toolSchema } from '@/lib/seo';
 
 export const metadata: Metadata = {
-  title: 'Batch Rubber Stamp PDF � Free, Private, No Upload | iCreatePDF',
-  description: 'Stamp APPROVED, CONFIDENTIAL, DRAFT, or custom status text across all pages. 100% private � files process inside browser memory.',
+  title: 'Batch Rubber Stamp PDF — Free, Private, No Upload | iCreatePDF',
+  description: 'Stamp APPROVED, CONFIDENTIAL, DRAFT, or custom status text across all pages. 100% private — files process inside browser memory.',
   alternates: buildAlternates('/tools/stamp-pdf'),
   openGraph: {
-    title: 'Batch Rubber Stamp PDF � iCreatePDF',
+    title: 'Batch Rubber Stamp PDF — iCreatePDF',
     description: 'Stamp APPROVED, CONFIDENTIAL, DRAFT, or custom status text across all pages.',
     type: 'website',
-    images: [{ url: 'https://www.icreatepdf.online/opengraph-image', width: 1200, height: 630, alt: 'Batch Rubber Stamp PDF � iCreatePDF' }],
+    images: [{ url: 'https://www.icreatepdf.online/opengraph-image', width: 1200, height: 630, alt: 'Batch Rubber Stamp PDF — iCreatePDF' }],
   },
 };
 

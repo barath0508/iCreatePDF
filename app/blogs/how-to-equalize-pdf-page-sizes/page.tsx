@@ -7,11 +7,11 @@ import Link from 'next/link';
 import { Button } from '@/components/ui/button';
 
 export const metadata: Metadata = {
-  title: 'How to Equalize PDF Page Sizes � Free Normalization Guide | iCreatePDF',
+  title: 'How to Equalize PDF Page Sizes — Free Normalization Guide | iCreatePDF',
   description: 'Standardize mixed Letter, Legal, and A4 pages into a uniform PDF layout for clean printing.',
   alternates: buildAlternates('/blogs/how-to-equalize-pdf-page-sizes'),
   openGraph: {
-    title: 'How to Equalize PDF Page Sizes � Free Normalization Guide | iCreatePDF',
+    title: 'How to Equalize PDF Page Sizes — Free Normalization Guide | iCreatePDF',
     description: 'Standardize mixed Letter, Legal, and A4 pages into a uniform PDF layout for clean printing.',
     type: 'article',
     publishedTime: '2026-07-25T00:00:00Z',
@@ -26,7 +26,7 @@ export default function HowTo_equalize_pdf_page_sizesPage() {
         dangerouslySetInnerHTML={{
           __html: JSON.stringify([
             ...articleSchema({
-              title: 'How to Equalize PDF Page Sizes � Free Normalization Guide',
+              title: 'How to Equalize PDF Page Sizes — Free Normalization Guide',
               description: 'Standardize mixed Letter, Legal, and A4 pages into a uniform PDF layout for clean printing.',
               url: '/blogs/how-to-equalize-pdf-page-sizes',
               datePublished: '2026-07-25T00:00:00Z',
@@ -55,7 +55,7 @@ export default function HowTo_equalize_pdf_page_sizesPage() {
               </span>
             </div>
             <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight font-display text-foreground leading-tight">
-              How to Equalize PDF Page Sizes � Free Normalization Guide
+              How to Equalize PDF Page Sizes — Free Normalization Guide
             </h1>
             <p className="text-base text-muted-foreground leading-relaxed max-w-3xl font-sans">
               Standardize mixed Letter, Legal, and A4 pages into a uniform PDF layout for clean printing.
