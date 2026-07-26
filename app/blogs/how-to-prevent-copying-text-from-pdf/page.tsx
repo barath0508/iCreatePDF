@@ -9,12 +9,12 @@ import { Button } from '@/components/ui/button';
 import { RelatedPosts } from '@/components/blog/RelatedPosts';
 
 export const metadata: Metadata = {
-  title: 'How to Prevent Copying Text from PDF Online Free | iCreatePDF',
-  description: 'Learn the absolute safest way to disable text highlighting, selection, and copy-pasting from your PDF documents client-side using local page rasterization.',
-  keywords: 'prevent pdf copy, make pdf non-copyable, disable text selection pdf, protect pdf from copying, rasterize pdf online free',
+  title: 'How to Make PDF Non-Copyable & Prevent PDF Copying (No Copy PDF) | iCreatePDF',
+  description: 'Learn how to make PDF non-copyable for free online. Disable text selection, highlighting, and copy-pasting by converting pages to flat image layers.',
+  keywords: 'make pdf not copyable, no copy pdf, prevent pdf copy, make pdf non-copyable, disable text selection pdf, protect pdf from copying, rasterize pdf online free',
   alternates: buildAlternates('/blogs/how-to-prevent-copying-text-from-pdf'),
   openGraph: {
-    title: 'How to Prevent Copying Text from PDF Online Free',
+    title: 'How to Make PDF Non-Copyable & Prevent PDF Copying',
     description: 'Learn how to render your PDF document pages as static, non-selectable images to protect text content from direct copying and scraping.',
     type: 'article',
     publishedTime: '2026-05-28T00:00:00Z',

@@ -9,13 +9,13 @@ import { Button } from '@/components/ui/button';
 import { RelatedPosts } from '@/components/blog/RelatedPosts';
 
 export const metadata: Metadata = {
-  title: 'How to Convert DOCX to PDF Free Without Layout Shifts | iCreatePDF',
-  description: 'Learn how to convert DOCX to PDF for free. Easily change from DOCX to PDF without formatting shifts entirely client-side, preserving text, tables, and images.',
-  keywords: 'convert docx to pdf, change from docx to pdf, docx to pdf, change docx to pdf, convert word to pdf free, docx to pdf online, word to pdf layout preserved, docx converter free, local docx to pdf',
+  title: 'How to Convert DOCX Files to PDF Online Free (Step-by-Step) | iCreatePDF',
+  description: 'Learn how to convert DOCX files to PDF for free online. Step-by-step guide to change from DOCX to PDF without formatting shifts or file uploads.',
+  keywords: 'convert docx to pdf, docx files to pdf, how to convert docx to pdf, change from docx to pdf, docx to pdf, change docx to pdf, convert word to pdf free, docx to pdf online, word to pdf layout preserved',
   alternates: buildAlternates('/blogs/how-to-convert-word-docx-to-pdf-free'),
   openGraph: {
-    title: 'How to Convert DOCX to PDF Free Without Layout Shifts',
-    description: 'Learn how to convert DOCX to PDF for free. Easily change from DOCX to PDF without formatting shifts entirely client-side, preserving text, tables, and images.',
+    title: 'How to Convert DOCX Files to PDF Online Free (Step-by-Step)',
+    description: 'Learn how to convert DOCX files to PDF for free. Convert DOCX to PDF without formatting shifts entirely client-side, preserving text, tables, and images.',
     type: 'article',
     publishedTime: '2026-05-29T00:00:00Z',
   },
