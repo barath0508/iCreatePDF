@@ -8,6 +8,7 @@ import { buildAlternates, toolSchema } from '@/lib/seo';
 export const metadata: Metadata = {
   title: 'PDF Reading Themes — Free, Private, No Upload | iCreatePDF',
   description: 'Apply Sepia, Warm Amber, Soft Mint, or Dark filters to reduce eye strain. 100% private — files process inside browser memory.',
+  keywords: 'pdf reading themes, sepia pdf reader, warm amber filter pdf, eye comfort pdf reader, soft mint green pdf, change pdf background color for reading, reader mode pdf online',
   alternates: buildAlternates('/tools/pdf-reading-themes'),
   openGraph: {
     title: 'PDF Reading Themes — iCreatePDF',

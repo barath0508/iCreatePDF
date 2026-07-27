@@ -11,7 +11,7 @@ import { RelatedPosts } from '@/components/blog/RelatedPosts';
 export const metadata: Metadata = {
   title: 'How to Compare Two PDF Files Side-by-Side — Free Guide | iCreatePDF',
   description: 'Compare two PDF document versions side-by-side with synchronized scrolling to spot content differences instantly. 100% browser-based, no uploads.',
-  keywords: 'compare pdf files, pdf diff tool, compare pdf versions online, pdf comparison free 2026',
+  keywords: 'compare pdf files, pdf diff tool, compare pdf versions online, pdf comparison free 2026, how to compare pdf files, side by side pdf comparison, local pdf comparison free',
   alternates: buildAlternates('/blogs/how-to-compare-two-pdf-files'),
   openGraph: {
     title: 'How to Compare Two PDF Files Side-by-Side — Free Guide',

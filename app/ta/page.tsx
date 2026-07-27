@@ -19,7 +19,7 @@ import { buildAlternates } from '@/lib/seo';
 export const metadata: Metadata = {
   title: 'iCreatePDF - விரைவான, இலவச மற்றும் பாதுகாப்பான பட PDF மாற்றி',
   description: 'உங்கள் உலாவியில் 100% உள்நாட்டிலேயே JPG, PNG, WEBP, HEIC மற்றும் BMP கோப்புகளை PDF ஆக மாற்றவும். பதிவு இல்லை, கோப்பு பதிவேற்றங்கள் இல்லை.',
-  keywords: 'படத்தை PDF ஆக மாற்றுதல், PDF மாற்றி, தமிழ் PDF கன்வெர்ட்டர், icreatepdf',
+  keywords: 'படத்தை PDF ஆக மாற்றுதல், PDF மாற்றி, தமிழ் PDF கன்வெர்ட்டர், icreatepdf, இலவச பிடிஎப் கன்வெர்ட்டர், ஆன்லைன் பிடிஎப் டூல்ஸ், படங்களை பிடிஎப் ஆக மாற்ற',
   alternates: buildAlternates('/ta'),
 };
 

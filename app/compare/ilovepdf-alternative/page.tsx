@@ -8,7 +8,7 @@ import Link from 'next/link';
 export const metadata: Metadata = {
   title: 'iLovePDF Alternative: Free, No Upload Limit, No File Cap | iCreatePDF',
   description: 'Looking for an iLovePDF alternative? iCreatePDF is free, has no 25MB file cap, and never uploads your files — everything runs locally in your browser.',
-  keywords: 'ilovepdf alternative, ilovepdf vs icreatepdf, free pdf tool no file limit, ilovepdf free alternative',
+  keywords: 'ilovepdf alternative, ilovepdf vs icreatepdf, free pdf tool no file limit, ilovepdf free alternative, best ilovepdf alternative, private ilovepdf alternative, client side alternative to ilovepdf',
   alternates: buildAlternates('/compare/ilovepdf-alternative'),
   openGraph: {
     title: 'iLovePDF Alternative: Free, No Upload Limit, No File Cap | iCreatePDF',

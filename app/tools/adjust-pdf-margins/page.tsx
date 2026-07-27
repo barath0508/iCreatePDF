@@ -8,6 +8,7 @@ import { buildAlternates, toolSchema } from '@/lib/seo';
 export const metadata: Metadata = {
   title: 'Adjust PDF Margins — Free, Private, No Upload | iCreatePDF',
   description: 'Add extra border padding for hole-punching, binder binding, or margin notes. 100% private — files process inside browser memory.',
+  keywords: 'adjust pdf margins, add margin to pdf, increase pdf margins, adjust margins pdf online, margins for hole punching pdf, binder margins pdf, print margins pdf, change pdf margins free, crop-free margins pdf',
   alternates: buildAlternates('/tools/adjust-pdf-margins'),
   openGraph: {
     title: 'Adjust PDF Margins — iCreatePDF',

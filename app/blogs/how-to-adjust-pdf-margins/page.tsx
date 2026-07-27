@@ -9,6 +9,7 @@ import { Button } from '@/components/ui/button';
 export const metadata: Metadata = {
   title: 'How to Adjust PDF Margins Online — Free Layout Padding Guide | iCreatePDF',
   description: 'Add extra border margins for binder hole punching or handwritten notes, processed 100% locally.',
+  keywords: 'adjust pdf margins, add margin to pdf, increase pdf margins, adjust margins pdf online, margins for hole punching pdf, binder margins pdf, print margins pdf, change pdf margins free, crop-free margins pdf',
   alternates: buildAlternates('/blogs/how-to-adjust-pdf-margins'),
   openGraph: {
     title: 'How to Adjust PDF Margins Online — Free Layout Padding Guide | iCreatePDF',

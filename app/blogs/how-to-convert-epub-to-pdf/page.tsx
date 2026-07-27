@@ -9,6 +9,7 @@ import { Button } from '@/components/ui/button';
 export const metadata: Metadata = {
   title: 'How to Convert EPUB to PDF Online — Free eBook Guide | iCreatePDF',
   description: 'Convert EPUB eBook files into clean, printable A4 PDF documents with formatted chapters.',
+  keywords: 'epub to pdf converter, convert epub to pdf, ebook to pdf free, read epub as pdf, convert epub file online, private epub pdf converter',
   alternates: buildAlternates('/blogs/how-to-convert-epub-to-pdf'),
   openGraph: {
     title: 'How to Convert EPUB to PDF Online — Free eBook Guide | iCreatePDF',

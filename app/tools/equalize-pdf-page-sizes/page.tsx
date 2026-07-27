@@ -8,6 +8,7 @@ import { buildAlternates, toolSchema } from '@/lib/seo';
 export const metadata: Metadata = {
   title: 'Equalize Page Sizes — Free, Private, No Upload | iCreatePDF',
   description: 'Standardize mixed Letter, Legal, and A4 pages into a uniform PDF page size. 100% private — files process inside browser memory.',
+  keywords: 'equalize pdf page sizes, standardize pdf page size, make pdf pages same size, make all pages a4 pdf, uniform page size pdf online, resize mixed size pdf pages',
   alternates: buildAlternates('/tools/equalize-pdf-page-sizes'),
   openGraph: {
     title: 'Equalize Page Sizes — iCreatePDF',

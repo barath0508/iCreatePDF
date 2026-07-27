@@ -8,6 +8,7 @@ import { buildAlternates, toolSchema } from '@/lib/seo';
 export const metadata: Metadata = {
   title: 'Export PDF Form Data — Free, Private, No Upload | iCreatePDF',
   description: 'Extract filled AcroForm fields from single or multiple PDFs into CSV spreadsheets. 100% private — files process inside browser memory.',
+  keywords: 'export pdf form data, extract data from pdf form, convert acroform to csv, export fillable pdf fields, extract fdf xml to spreadsheet, pdf form data extractor free',
   alternates: buildAlternates('/tools/export-pdf-form-data'),
   openGraph: {
     title: 'Export PDF Form Data — iCreatePDF',

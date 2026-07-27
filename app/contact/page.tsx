@@ -8,6 +8,7 @@ import { buildAlternates, breadcrumbSchema } from '@/lib/seo';
 export const metadata: Metadata = {
   title: 'Contact Us - iCreatePDF Publisher & Support',
   description: 'Contact the iCreatePDF development team. Have questions, feedback, or custom feature requests for our local PDF suite? Reach out directly.',
+  keywords: 'contact icreatepdf, pdf tool support, bug report pdf editor, customer support pdf converter, icreatepdf contact',
   alternates: buildAlternates('/contact'),
   openGraph: {
     title: 'Contact Us - iCreatePDF Publisher & Support',

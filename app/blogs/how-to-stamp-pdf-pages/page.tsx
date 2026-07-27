@@ -9,6 +9,7 @@ import { Button } from '@/components/ui/button';
 export const metadata: Metadata = {
   title: 'How to Stamp APPROVED or CONFIDENTIAL on PDF — Free Guide | iCreatePDF',
   description: 'Stamp APPROVED, CONFIDENTIAL, DRAFT, or custom status text across all PDF pages.',
+  keywords: 'stamp pdf pages, add rubber stamp to pdf, stamp approved confidential draft pdf, batch stamp pdf documents, online pdf stamping tool free',
   alternates: buildAlternates('/blogs/how-to-stamp-pdf-pages'),
   openGraph: {
     title: 'How to Stamp APPROVED or CONFIDENTIAL on PDF — Free Guide | iCreatePDF',

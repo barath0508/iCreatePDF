@@ -8,6 +8,7 @@ import { buildAlternates, toolSchema } from '@/lib/seo';
 export const metadata: Metadata = {
   title: 'PDF Booklet Maker — Free, Private, No Upload | iCreatePDF',
   description: 'Convert any PDF into a saddle-stitch booklet for double-sided printing. 100% private — files process inside browser memory.',
+  keywords: 'pdf booklet maker, convert pdf to booklet, booklet printing format, saddle stitch pdf, booklet layout generator, print pdf as booklet, booklet pdf creator free, make booklet from pdf online',
   alternates: buildAlternates('/tools/booklet-pdf'),
   openGraph: {
     title: 'PDF Booklet Maker — iCreatePDF',

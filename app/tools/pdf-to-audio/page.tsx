@@ -8,6 +8,7 @@ import { buildAlternates, toolSchema } from '@/lib/seo';
 export const metadata: Metadata = {
   title: 'PDF to Audio Reader — Free, Private, No Upload | iCreatePDF',
   description: 'Listen to PDF document text using speech synthesis hands-free. 100% private — files process inside browser memory.',
+  keywords: 'pdf to audio, convert pdf to speech mp3, listen to pdf text, read pdf aloud audio file, text to speech pdf reader, free pdf audio converter',
   alternates: buildAlternates('/tools/pdf-to-audio'),
   openGraph: {
     title: 'PDF to Audio Reader — iCreatePDF',

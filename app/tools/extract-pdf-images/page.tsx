@@ -8,6 +8,7 @@ import { buildAlternates, toolSchema } from '@/lib/seo';
 export const metadata: Metadata = {
   title: 'Extract Images from PDF — Free, Private, No Upload | iCreatePDF',
   description: 'Extract embedded photos and raster graphics from a PDF into a downloadable ZIP. 100% private — files process inside browser memory.',
+  keywords: 'extract images from pdf, save images from pdf, pdf to image extractor, extract all photos from pdf, pdf image downloader zip, get high res images from pdf free',
   alternates: buildAlternates('/tools/extract-pdf-images'),
   openGraph: {
     title: 'Extract Images from PDF — iCreatePDF',

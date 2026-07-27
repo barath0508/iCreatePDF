@@ -8,6 +8,7 @@ import { buildAlternates, toolSchema } from '@/lib/seo';
 export const metadata: Metadata = {
   title: 'SVG to PDF Converter — Free, Private, No Upload | iCreatePDF',
   description: 'Convert Scalable Vector Graphics (.svg) into crisp vector PDF documents. 100% private — files process inside browser memory.',
+  keywords: 'svg to pdf converter, convert svg to pdf online, scalable vector graphics to pdf, high quality svg pdf, free vector converter',
   alternates: buildAlternates('/tools/svg-to-pdf'),
   openGraph: {
     title: 'SVG to PDF Converter — iCreatePDF',

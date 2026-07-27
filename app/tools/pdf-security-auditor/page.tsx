@@ -8,6 +8,7 @@ import { buildAlternates, toolSchema } from '@/lib/seo';
 export const metadata: Metadata = {
   title: 'PDF Security Auditor — Free, Private, No Upload | iCreatePDF',
   description: 'Audit PDF encryption strength (AES-128/256) and user permission flags. 100% private — files process inside browser memory.',
+  keywords: 'pdf security auditor, check pdf encryption strength, audit pdf permissions, verify pdf aes-256, secure pdf scanner, test pdf copy print restrictions free',
   alternates: buildAlternates('/tools/pdf-security-auditor'),
   openGraph: {
     title: 'PDF Security Auditor — iCreatePDF',

@@ -11,7 +11,7 @@ import { RelatedPosts } from '@/components/blog/RelatedPosts';
 export const metadata: Metadata = {
   title: 'How to Verify a PDF Digital Signature Online — Free Guide | iCreatePDF',
   description: 'Validate cryptographic signatures on a PDF and inspect signer identity and byte-range integrity. 100% browser-based verification, no uploads.',
-  keywords: 'verify pdf signature, validate pdf certificate, check pdf digital signature, pdf signature checker free 2026',
+  keywords: 'verify pdf signature, validate pdf certificate, check pdf digital signature, pdf signature checker free 2026, how to verify digital signature in pdf, validate pdf signatures local',
   alternates: buildAlternates('/blogs/how-to-verify-pdf-signature'),
   openGraph: {
     title: 'How to Verify a PDF Digital Signature Online — Free Guide',

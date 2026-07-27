@@ -9,6 +9,7 @@ import { Button } from '@/components/ui/button';
 export const metadata: Metadata = {
   title: 'How to Build PDF Bookmarks & Table of Contents — Guide | iCreatePDF',
   description: 'Create clickable outline bookmarks and interactive Table of Contents trees for eBooks.',
+  keywords: 'pdf toc builder, create pdf table of contents, add clickable bookmark outline to pdf, build index outline pdf, table of contents generator pdf online free',
   alternates: buildAlternates('/blogs/how-to-build-pdf-table-of-contents'),
   openGraph: {
     title: 'How to Build PDF Bookmarks & Table of Contents — Guide | iCreatePDF',

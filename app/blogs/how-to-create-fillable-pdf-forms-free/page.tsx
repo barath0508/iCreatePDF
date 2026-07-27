@@ -11,7 +11,7 @@ import { RelatedPosts } from '@/components/blog/RelatedPosts';
 export const metadata: Metadata = {
   title: 'How to Create Fillable PDF Forms Free Online | iCreatePDF Blog',
   description: 'Learn how to easily create interactive fillable PDF forms client-side for free. Add text inputs, checkboxes, dropdown lists, and radio selectors in the browser sandbox.',
-  keywords: 'how to create fillable pdf online free, create interactive form pdf, make pdf form builder offline, client side pdf fields',
+  keywords: 'how to create fillable pdf online free, create interactive form pdf, make pdf form builder offline, client side pdf fields, free fillable pdf form creator, build pdf form offline',
   alternates: buildAlternates('/blogs/how-to-create-fillable-pdf-forms-free'),
   openGraph: {
     title: 'How to Create Fillable PDF Forms Free Online | iCreatePDF Blog',

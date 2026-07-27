@@ -8,6 +8,7 @@ import Link from 'next/link';
 export const metadata: Metadata = {
   title: 'About iCreatePDF — Publisher Information, Privacy Mission & Web Suite',
   description: 'Learn about iCreatePDF, our engineering principles, zero-upload architecture, and publisher team. 46+ free, browser-native PDF tools built for complete privacy.',
+  keywords: 'about icreatepdf, pdf tools company, client side pdf editor team, free pdf tool publisher, private pdf tool history',
   alternates: buildAlternates('/about'),
   openGraph: {
     title: 'About iCreatePDF — Publisher Information & Privacy-First Tools',

@@ -11,7 +11,7 @@ import { RelatedPosts } from '@/components/blog/RelatedPosts';
 export const metadata: Metadata = {
   title: 'How to Convert HEIC Photos to PDF | iCreatePDF Blog',
   description: 'Learn the easiest ways to convert HEIC photos from your mobile device into a single PDF document. Browser methods, offline methods, and step-by-step guides.',
-  keywords: 'how to convert heic photo to pdf, heic to pdf online, convert multiple heic to pdf, browser heic converter',
+  keywords: 'how to convert heic photo to pdf, heic to pdf online, convert multiple heic to pdf, browser heic converter, iphone heic to pdf converter, convert heic to pdf iphone, client side heic converter',
   alternates: buildAlternates('/blogs/how-to-convert-iphone-photos-to-pdf'),
   openGraph: {
     title: 'How to Convert HEIC Photos to PDF | iCreatePDF Blog',

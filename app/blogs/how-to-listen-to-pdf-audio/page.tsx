@@ -9,6 +9,7 @@ import { Button } from '@/components/ui/button';
 export const metadata: Metadata = {
   title: 'How to Listen to PDF Audio Hands-Free — Text-to-Speech Guide | iCreatePDF',
   description: 'Listen to PDF textbook text using natural browser speech synthesis voices offline.',
+  keywords: 'pdf to audio, convert pdf to speech mp3, listen to pdf text, read pdf aloud audio file, text to speech pdf reader, free pdf audio converter',
   alternates: buildAlternates('/blogs/how-to-listen-to-pdf-audio'),
   openGraph: {
     title: 'How to Listen to PDF Audio Hands-Free — Text-to-Speech Guide | iCreatePDF',

@@ -8,7 +8,7 @@ import { buildAlternates, toolSchema } from '@/lib/seo';
 export const metadata: Metadata = {
   title: 'Grayscale PDF Online: Convert PDF to Black & White | iCreatePDF',
   description: 'Convert color PDF documents to black and white (grayscale) locally. Optimize your layouts for ink-saving printing client-side.',
-  keywords: 'grayscale pdf online, grayscale pdf, convert pdf to black and white, ink saving pdf converter',
+  keywords: 'grayscale pdf online, grayscale pdf, convert pdf to black and white, ink saving pdf converter, black and white pdf online free, local pdf grayscale converter, color to black and white pdf',
   alternates: buildAlternates('/tools/grayscale-pdf'),
   openGraph: {
     title: 'Grayscale PDF Online: Convert PDF to Black & White | iCreatePDF',

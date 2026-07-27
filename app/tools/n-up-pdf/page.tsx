@@ -8,6 +8,7 @@ import { buildAlternates, toolSchema } from '@/lib/seo';
 export const metadata: Metadata = {
   title: 'N-up PDF Converter — Free, Private, No Upload | iCreatePDF',
   description: 'Place 2, 4, 6, 8, or 9 PDF pages onto a single sheet of paper. 100% private — files process inside browser memory.',
+  keywords: 'n-up pdf, multiple pages per sheet pdf, print multiple pages on one page pdf, 2-up pdf maker, 4-up pdf layout, print grid pages pdf free, n-up page layout generator',
   alternates: buildAlternates('/tools/n-up-pdf'),
   openGraph: {
     title: 'N-up PDF Converter — iCreatePDF',

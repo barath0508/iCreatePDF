@@ -8,6 +8,7 @@ import { FileText, ShieldCheck, Scale, Ban, AlertTriangle, Globe, Mail } from 'l
 export const metadata: Metadata = {
   title: 'Terms of Service - iCreatePDF',
   description: 'Read the terms and conditions for using iCreatePDF, a free browser-based PDF converter and editor. All processing is done locally on your device.',
+  keywords: 'terms of service icreatepdf, terms of use pdf converter, free pdf tool licensing, client side processing warranty, user agreement pdf tools',
   alternates: buildAlternates('/terms'),
 };
 

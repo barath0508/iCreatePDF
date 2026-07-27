@@ -8,6 +8,7 @@ import { buildAlternates, toolSchema } from '@/lib/seo';
 export const metadata: Metadata = {
   title: 'CSV to PDF Table Converter — Free, Private, No Upload | iCreatePDF',
   description: 'Convert CSV data sheets directly into formatted PDF tables with headers. 100% private — files process inside browser memory.',
+  keywords: 'csv to pdf converter, convert csv to pdf online, csv to pdf table, format csv as pdf free, csv file to pdf generator, private csv pdf converter',
   alternates: buildAlternates('/tools/csv-to-pdf'),
   openGraph: {
     title: 'CSV to PDF Table Converter — iCreatePDF',

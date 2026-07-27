@@ -11,7 +11,7 @@ import { RelatedPosts } from '@/components/blog/RelatedPosts';
 export const metadata: Metadata = {
   title: 'How to Add a Header and Footer to a PDF — Free Guide | iCreatePDF',
   description: 'Add custom headers and footers to every page of a PDF — company name, date, page numbers, or any text. 100% browser-based, no uploads.',
-  keywords: 'add header footer pdf, pdf header footer online free, add page numbers and footer pdf, pdf running header 2026',
+  keywords: 'add header footer pdf, pdf header footer online free, add page numbers and footer pdf, pdf running header 2026, stamp header footer pdf, custom header footer pdf, local pdf header footer editor',
   alternates: buildAlternates('/blogs/how-to-add-header-footer-to-pdf'),
   openGraph: {
     title: 'How to Add a Header and Footer to a PDF — Free Guide',

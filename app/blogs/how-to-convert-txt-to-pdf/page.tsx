@@ -11,7 +11,7 @@ import { RelatedPosts } from '@/components/blog/RelatedPosts';
 export const metadata: Metadata = {
   title: 'How to Convert TXT to PDF Online — Free Guide | iCreatePDF',
   description: 'Convert plain text (.txt) files or pasted text into styled PDF documents. Customize margins, page size, and fonts, entirely in your browser.',
-  keywords: 'txt to pdf, convert text to pdf online, text file to pdf free, txt to pdf converter 2026',
+  keywords: 'txt to pdf, convert text to pdf online, text file to pdf free, txt to pdf converter 2026, text to pdf converter, client side text to pdf',
   alternates: buildAlternates('/blogs/how-to-convert-txt-to-pdf'),
   openGraph: {
     title: 'How to Convert TXT to PDF Online — Free Guide',

@@ -11,7 +11,7 @@ import { RelatedPosts } from '@/components/blog/RelatedPosts';
 export const metadata: Metadata = {
   title: 'How to Convert Markdown to PDF Online — Free Guide | iCreatePDF',
   description: 'Convert styled Markdown (.md) files to formatted PDF documents. 100% browser-based, no uploads, preserves headings, lists, code blocks, and links.',
-  keywords: 'markdown to pdf, md to pdf, convert markdown to pdf online free, markdown pdf converter 2026',
+  keywords: 'markdown to pdf, md to pdf, convert markdown to pdf online free, markdown pdf converter 2026, convert md to pdf online, local markdown to pdf compiler',
   alternates: buildAlternates('/blogs/how-to-convert-markdown-to-pdf'),
   openGraph: {
     title: 'How to Convert Markdown to PDF Online — Free Guide',

@@ -11,7 +11,7 @@ import { RelatedPosts } from '@/components/blog/RelatedPosts';
 export const metadata: Metadata = {
   title: 'How to Check PDF Accessibility (WCAG & Screen Reader Audit) — Free Guide | iCreatePDF',
   description: 'Audit any PDF for screen-reader accessibility: tagging, declared language, real text layers, and labeled form fields. Free, instant, fully private.',
-  keywords: 'pdf accessibility checker, wcag pdf audit, pdf screen reader test, accessible pdf checker free 2026',
+  keywords: 'pdf accessibility checker, wcag pdf audit, pdf screen reader test, accessible pdf checker free 2026, how to check pdf accessibility, pdf accessibility checker online free',
   alternates: buildAlternates('/blogs/pdf-accessibility-checker-guide'),
   openGraph: {
     title: 'How to Check PDF Accessibility (WCAG & Screen Reader Audit) — Free Guide',

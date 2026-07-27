@@ -9,6 +9,7 @@ import { Button } from '@/components/ui/button';
 export const metadata: Metadata = {
   title: 'How to Convert SVG Vector Graphics to PDF — Free Guide | iCreatePDF',
   description: 'Convert Scalable Vector Graphics (.svg) files into high-resolution vector PDF documents.',
+  keywords: 'svg to pdf converter, convert svg to pdf online, scalable vector graphics to pdf, high quality svg pdf, free vector converter',
   alternates: buildAlternates('/blogs/how-to-convert-svg-to-pdf'),
   openGraph: {
     title: 'How to Convert SVG Vector Graphics to PDF — Free Guide | iCreatePDF',

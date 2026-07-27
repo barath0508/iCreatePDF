@@ -8,7 +8,7 @@ import { buildAlternates, toolSchema } from '@/lib/seo';
 export const metadata: Metadata = {
   title: 'Add PDF Page Numbers Online - Free & Private | iCreatePDF',
   description: 'Stamp page numbers onto a PDF document. Customize positioning, number label formatting, and fonts locally in-browser.',
-  keywords: 'add page numbers to pdf, number pdf pages, pdf page numbers online, private pdf numbering',
+  keywords: 'add page numbers to pdf, number pdf pages, pdf page numbers online, private pdf numbering, stamp page numbers pdf, insert pdf page numbers, custom pdf page numbering free',
   alternates: buildAlternates('/tools/add-page-numbers'),
   openGraph: {
     title: 'Add PDF Page Numbers Online - Free & Private | iCreatePDF',
