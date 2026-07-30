@@ -156,7 +156,7 @@ export default function OrganizePdfBlogPost() {
 
 <h2 id="step-by-step-organize-a-pdf-using-icreatepdf" className="text-xl font-bold text-foreground pt-4 font-display">Step-by-Step: Organize a PDF Using iCreatePDF</h2>
           <ol className="list-decimal list-inside space-y-3 pl-4 text-sm">
-            <li>Open <Link href="/tools/organize-pdf" className="text-brand hover:underline">iCreatePDF Organize PDF</Link>.</li>
+            <li>Open <Link href="/organize-pdf" className="text-brand hover:underline">iCreatePDF Organize PDF</Link>.</li>
             <li>Upload your PDF — every page appears as a draggable thumbnail.</li>
             <li>Drag pages into the correct order, rotate any sideways pages, and delete ones you don't need.</li>
             <li>Save and download the reorganized PDF.</li>
@@ -181,7 +181,7 @@ export default function OrganizePdfBlogPost() {
 
           <h2 id="organize-vs-single-purpose-tools" className="text-xl font-bold text-foreground pt-4 font-display">Organize vs. Single-Purpose Tools</h2>
           <p>
-            If you only need one type of change, iCreatePDF's dedicated tools work fine on their own: <Link href="/tools/rotate-pdf" className="text-brand hover:underline">Rotate PDF</Link> for orientation fixes, <Link href="/tools/delete-pdf-pages" className="text-brand hover:underline">Delete PDF Pages</Link> for removals, or <Link href="/tools/merge-pdf" className="text-brand hover:underline">Merge PDF</Link> to combine multiple files first. Organize PDF is for when you need several of these changes at once and want to review the whole document visually before saving.
+            If you only need one type of change, iCreatePDF's dedicated tools work fine on their own: <Link href="/rotate-pdf" className="text-brand hover:underline">Rotate PDF</Link> for orientation fixes, <Link href="/delete-pdf-pages" className="text-brand hover:underline">Delete PDF Pages</Link> for removals, or <Link href="/merge-pdf" className="text-brand hover:underline">Merge PDF</Link> to combine multiple files first. Organize PDF is for when you need several of these changes at once and want to review the whole document visually before saving.
           </p>
 
           <h2 id="icreatepdf-vs-other-page-organizers" className="text-xl font-bold text-foreground pt-4 font-display">iCreatePDF vs Other Page Organizers</h2>
@@ -230,7 +230,7 @@ export default function OrganizePdfBlogPost() {
         <div className="p-6 rounded-2xl bg-gradient-to-r from-purple-950/20 to-pink-950/20 border border-brand/20 text-center space-y-4">
           <h3 className="text-lg font-bold text-foreground font-display">Organize your PDF now — free &amp; private</h3>
           <p className="text-xs text-foreground/60 max-w-md mx-auto">No sign-up. No uploads. Your files stay on your device.</p>
-          <Link href="/tools/organize-pdf">
+          <Link href="/organize-pdf">
             <Button className="bg-brand hover:bg-brand/90 text-foreground font-medium text-xs px-6 rounded-full group">
               Organize PDF Free
               <ArrowRight className="w-3.5 h-3.5 ml-1 transition-transform group-hover:translate-x-1" />

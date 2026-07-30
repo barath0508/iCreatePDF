@@ -134,7 +134,7 @@ export default function WatermarkPageNumbersPdfBlog() {
             Watermarking superimposes text overlay (e.g. "DRAFT") diagonally across each page with transparent alpha values so it doesn't block read-ability. Here is how:
           </p>
           <ol className="list-decimal list-inside space-y-2 pl-4 text-sm">
-            <li>Go to the <Link href="/tools/watermark-pdf" className="text-brand hover:underline">Watermark PDF</Link> tool page.</li>
+            <li>Go to the <Link href="/watermark-pdf" className="text-brand hover:underline">Watermark PDF</Link> tool page.</li>
             <li>Upload your PDF file.</li>
             <li>Choose Text Watermark: type your phrase (e.g. "CONFIDENTIAL"), configure opacity percentage, font size, and color.</li>
             <li>Click <strong>Add Watermark</strong> and download the output.</li>
@@ -148,7 +148,7 @@ export default function WatermarkPageNumbersPdfBlog() {
             Stamping page numbers keeps documents organized and legally compliant. To add pagination headers or footers:
           </p>
           <ol className="list-decimal list-inside space-y-2 pl-4 text-sm">
-            <li>Go to the <Link href="/tools/add-page-numbers" className="text-brand hover:underline">Add Page Numbers</Link> page.</li>
+            <li>Go to the <Link href="/add-page-numbers" className="text-brand hover:underline">Add Page Numbers</Link> page.</li>
             <li>Drag and drop your document file.</li>
             <li>Select your layout parameters:
               <ul className="list-disc list-inside pl-6 pt-1 space-y-1">
@@ -166,7 +166,7 @@ export default function WatermarkPageNumbersPdfBlog() {
             <Stamp className="w-8 h-8 text-brand mx-auto" />
             <h4 className="font-bold font-display text-foreground text-sm">Watermark PDF</h4>
             <p className="text-xs text-foreground/50">Add copyright or confidentiality stamps across pages.</p>
-            <Link href="/tools/watermark-pdf" className="inline-block pt-2">
+            <Link href="/watermark-pdf" className="inline-block pt-2">
               <Button className="bg-brand hover:bg-brand/90 text-foreground font-medium text-xs px-4 rounded-full">
                 Watermark PDF
               </Button>
@@ -177,7 +177,7 @@ export default function WatermarkPageNumbersPdfBlog() {
             <Hash className="w-8 h-8 text-brand mx-auto" />
             <h4 className="font-bold font-display text-foreground text-sm">Page Numbers</h4>
             <p className="text-xs text-foreground/50">Stamp custom header or footer numbers sequentially.</p>
-            <Link href="/tools/add-page-numbers" className="inline-block pt-2">
+            <Link href="/add-page-numbers" className="inline-block pt-2">
               <Button className="bg-foreground/5 hover:bg-foreground/10 text-foreground border border-foreground/10 font-medium text-xs px-4 rounded-full">
                 Add Page Numbers
               </Button>

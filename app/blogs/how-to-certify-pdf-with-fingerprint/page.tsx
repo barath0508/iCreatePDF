@@ -172,7 +172,7 @@ export default function CertifyPdfBlogPost() {
 
           <h2 id="step-by-step-how-do-you-certify-a-pdf-locally" className="text-xl font-bold text-foreground pt-4 font-display">Step-by-Step: How Do You Certify a PDF locally?</h2>
           <ol className="list-decimal list-inside space-y-3 pl-4 text-sm">
-            <li>Open <Link href="/tools/certify-pdf" className="text-brand hover:underline">iCreatePDF Certify PDF</Link>.</li>
+            <li>Open <Link href="/certify-pdf" className="text-brand hover:underline">iCreatePDF Certify PDF</Link>.</li>
             <li>Upload the PDF you want to certify.</li>
             <li>iCreatePDF calculates its SHA-256 fingerprint and stamps a QR code onto the document.</li>
             <li>Download the certified PDF, and keep a record of the fingerprint for future verification.</li>
@@ -197,7 +197,7 @@ export default function CertifyPdfBlogPost() {
 
           <h2 id="what-is-the-difference-between-certifying-and-digitally-signing" className="text-xl font-bold text-foreground pt-4 font-display">What is the Difference Between Certifying and Digitally Signing?</h2>
           <p>
-            Certifying with a fingerprint is a lightweight integrity check anyone can generate and verify without a formal certificate authority. A digital signature, by contrast, cryptographically ties a document to a specific signer's identity and is the standard for legally binding approvals. If you need to check whether an already-signed document is authentic, use <Link href="/tools/verify-signature" className="text-brand hover:underline">Verify Signature</Link> instead.
+            Certifying with a fingerprint is a lightweight integrity check anyone can generate and verify without a formal certificate authority. A digital signature, by contrast, cryptographically ties a document to a specific signer's identity and is the standard for legally binding approvals. If you need to check whether an already-signed document is authentic, use <Link href="/verify-signature" className="text-brand hover:underline">Verify Signature</Link> instead.
           </p>
 
           <h2 id="how-does-icreatepdf-compare-to-other-pdf-certification-tools" className="text-xl font-bold text-foreground pt-4 font-display">How Does iCreatePDF Compare to Other PDF Certification Tools?</h2>
@@ -250,7 +250,7 @@ export default function CertifyPdfBlogPost() {
         <div className="p-6 rounded-2xl bg-gradient-to-r from-purple-950/20 to-pink-950/20 border border-brand/20 text-center space-y-4">
           <h3 className="text-lg font-bold text-foreground font-display">Certify your PDF now — free &amp; private</h3>
           <p className="text-xs text-foreground/60 max-w-md mx-auto">No sign-up. No uploads. Your files stay on your device.</p>
-          <Link href="/tools/certify-pdf">
+          <Link href="/certify-pdf">
             <Button className="bg-brand hover:bg-brand/90 text-foreground font-medium text-xs px-6 rounded-full group">
               Certify PDF Free
               <ArrowRight className="w-3.5 h-3.5 ml-1 transition-transform group-hover:translate-x-1" />

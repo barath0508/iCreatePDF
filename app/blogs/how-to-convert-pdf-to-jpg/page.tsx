@@ -168,7 +168,7 @@ export default function PdfToJpgBlogPost() {
 
           <h2 id="step-by-step-how-do-you-convert-pdf-pages-to-jpg-images" className="text-xl font-bold text-foreground pt-4 font-display">Step-by-Step: How Do You Convert PDF Pages to JPG Images?</h2>
           <ol className="list-decimal list-inside space-y-3 pl-4 text-sm">
-            <li>Open <Link href="/tools/pdf-to-jpg" className="text-brand hover:underline">iCreatePDF PDF to JPG</Link>.</li>
+            <li>Open <Link href="/pdf-to-jpg" className="text-brand hover:underline">iCreatePDF PDF to JPG</Link>.</li>
             <li>Drag and drop your PDF file, or click to browse and select it.</li>
             <li>iCreatePDF renders every page as a high-resolution JPG directly in your browser.</li>
             <li>Download a single page or click <strong className="text-foreground">Download All</strong> to get a ZIP with every page as its own JPG.</li>
@@ -193,7 +193,7 @@ export default function PdfToJpgBlogPost() {
 
           <h2 id="does-converting-a-pdf-to-jpg-reduce-image-and-text-quality" className="text-xl font-bold text-foreground pt-4 font-display">Does Converting a PDF to JPG Reduce Image and Text Quality?</h2>
           <p>
-            JPG is a lossy format, so extremely fine text can look slightly softer than in the original vector PDF, especially at low resolution. iCreatePDF renders pages at a high pixel density by default, which keeps most documents sharp and readable. If you need to preserve exact text fidelity — for example, to keep text selectable — convert to <Link href="/tools/pdf-to-text" className="text-brand hover:underline">plain text</Link> instead, or keep the file as a PDF.
+            JPG is a lossy format, so extremely fine text can look slightly softer than in the original vector PDF, especially at low resolution. iCreatePDF renders pages at a high pixel density by default, which keeps most documents sharp and readable. If you need to preserve exact text fidelity — for example, to keep text selectable — convert to <Link href="/pdf-to-text" className="text-brand hover:underline">plain text</Link> instead, or keep the file as a PDF.
           </p>
 
           <h2 id="how-does-icreatepdf-compare-to-other-pdf-to-jpg-converters" className="text-xl font-bold text-foreground pt-4 font-display">How Does iCreatePDF Compare to Other PDF-to-JPG Converters?</h2>
@@ -243,7 +243,7 @@ export default function PdfToJpgBlogPost() {
         <div className="p-6 rounded-2xl bg-gradient-to-r from-purple-950/20 to-pink-950/20 border border-brand/20 text-center space-y-4">
           <h3 className="text-lg font-bold text-foreground font-display">Convert your PDF to JPG now — free &amp; private</h3>
           <p className="text-xs text-foreground/60 max-w-md mx-auto">No sign-up. No uploads. Your files stay on your device.</p>
-          <Link href="/tools/pdf-to-jpg">
+          <Link href="/pdf-to-jpg">
             <Button className="bg-brand hover:bg-brand/90 text-foreground font-medium text-xs px-6 rounded-full group">
               Convert PDF to JPG Free
               <ArrowRight className="w-3.5 h-3.5 ml-1 transition-transform group-hover:translate-x-1" />

@@ -156,7 +156,7 @@ export default function AccessibilityCheckerBlogPost() {
 
 <h2 id="step-by-step-check-accessibility-using-icreatepdf" className="text-xl font-bold text-foreground pt-4 font-display">Step-by-Step: Check Accessibility Using iCreatePDF</h2>
           <ol className="list-decimal list-inside space-y-3 pl-4 text-sm">
-            <li>Open <Link href="/tools/pdf-accessibility-checker" className="text-brand hover:underline">iCreatePDF Accessibility Checker</Link>.</li>
+            <li>Open <Link href="/pdf-accessibility-checker" className="text-brand hover:underline">iCreatePDF Accessibility Checker</Link>.</li>
             <li>Upload the PDF you want to audit.</li>
             <li>Review the results: tagging structure, declared language, real vs. image-only text, and form field labels.</li>
             <li>Fix flagged issues using the appropriate iCreatePDF tool, then re-check.</li>
@@ -181,7 +181,7 @@ export default function AccessibilityCheckerBlogPost() {
 
           <h2 id="common-accessibility-issues-and-how-to-fix-them" className="text-xl font-bold text-foreground pt-4 font-display">Common Accessibility Issues and How to Fix Them</h2>
           <p>
-            An <strong className="text-foreground">image-only text layer</strong> (a scan with no real text) means a screen reader has nothing to read — fix it by running the document through <Link href="/tools/pdf-ocr" className="text-brand hover:underline">PDF OCR</Link> to add real, selectable text. <strong className="text-foreground">Unlabeled form fields</strong> leave screen reader users guessing what to type — rebuild the form with proper labels using <Link href="/tools/fillable-pdf-builder" className="text-brand hover:underline">Fillable PDF Builder</Link>. A missing declared document language can cause a screen reader to mispronounce content entirely.
+            An <strong className="text-foreground">image-only text layer</strong> (a scan with no real text) means a screen reader has nothing to read — fix it by running the document through <Link href="/pdf-ocr" className="text-brand hover:underline">PDF OCR</Link> to add real, selectable text. <strong className="text-foreground">Unlabeled form fields</strong> leave screen reader users guessing what to type — rebuild the form with proper labels using <Link href="/fillable-pdf-builder" className="text-brand hover:underline">Fillable PDF Builder</Link>. A missing declared document language can cause a screen reader to mispronounce content entirely.
           </p>
 
           <h2 id="icreatepdf-vs-other-accessibility-checkers" className="text-xl font-bold text-foreground pt-4 font-display">iCreatePDF vs Other Accessibility Checkers</h2>
@@ -230,7 +230,7 @@ export default function AccessibilityCheckerBlogPost() {
         <div className="p-6 rounded-2xl bg-gradient-to-r from-purple-950/20 to-pink-950/20 border border-brand/20 text-center space-y-4">
           <h3 className="text-lg font-bold text-foreground font-display">Check your PDF's accessibility now — free &amp; private</h3>
           <p className="text-xs text-foreground/60 max-w-md mx-auto">No sign-up. No uploads. Your files stay on your device.</p>
-          <Link href="/tools/pdf-accessibility-checker">
+          <Link href="/pdf-accessibility-checker">
             <Button className="bg-brand hover:bg-brand/90 text-foreground font-medium text-xs px-6 rounded-full group">
               Check Accessibility Free
               <ArrowRight className="w-3.5 h-3.5 ml-1 transition-transform group-hover:translate-x-1" />

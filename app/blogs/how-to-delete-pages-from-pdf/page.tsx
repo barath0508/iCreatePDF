@@ -168,7 +168,7 @@ export default function DeletePagesBlogPost() {
 
           <h2 id="step-by-step-how-do-you-delete-pages-from-a-pdf-offline" className="text-xl font-bold text-foreground pt-4 font-display">Step-by-Step: How Do You Delete Pages from a PDF Offline?</h2>
           <ol className="list-decimal list-inside space-y-3 pl-4 text-sm">
-            <li>Open <Link href="/tools/delete-pdf-pages" className="text-brand hover:underline">iCreatePDF Delete PDF Pages</Link>.</li>
+            <li>Open <Link href="/delete-pdf-pages" className="text-brand hover:underline">iCreatePDF Delete PDF Pages</Link>.</li>
             <li>Upload your PDF — every page appears as a thumbnail.</li>
             <li>Click each page you want to remove; they're marked for deletion.</li>
             <li>Click <strong className="text-foreground">Save</strong> and download the trimmed PDF.</li>
@@ -193,7 +193,7 @@ export default function DeletePagesBlogPost() {
 
           <h2 id="what-is-the-difference-between-deleting-and-extracting-pdf-pages" className="text-xl font-bold text-foreground pt-4 font-display">What is the Difference Between Deleting and Extracting PDF Pages?</h2>
           <p>
-            Deleting removes selected pages and keeps everything else — useful when most of the document is correct and only a few pages need to go. If you want the opposite — pulling out just a handful of pages into a new, smaller PDF — use <Link href="/tools/extract-pages" className="text-brand hover:underline">Extract Pages</Link> instead. For more advanced reordering alongside deletion, see <Link href="/tools/organize-pdf" className="text-brand hover:underline">Organize PDF</Link>.
+            Deleting removes selected pages and keeps everything else — useful when most of the document is correct and only a few pages need to go. If you want the opposite — pulling out just a handful of pages into a new, smaller PDF — use <Link href="/extract-pages" className="text-brand hover:underline">Extract Pages</Link> instead. For more advanced reordering alongside deletion, see <Link href="/organize-pdf" className="text-brand hover:underline">Organize PDF</Link>.
           </p>
 
           <h2 id="how-does-icreatepdf-compare-to-other-pdf-page-removal-tools" className="text-xl font-bold text-foreground pt-4 font-display">How Does iCreatePDF Compare to Other PDF Page Removal Tools?</h2>
@@ -242,7 +242,7 @@ export default function DeletePagesBlogPost() {
         <div className="p-6 rounded-2xl bg-gradient-to-r from-purple-950/20 to-pink-950/20 border border-brand/20 text-center space-y-4">
           <h3 className="text-lg font-bold text-foreground font-display">Delete PDF pages now — free &amp; private</h3>
           <p className="text-xs text-foreground/60 max-w-md mx-auto">No sign-up. No uploads. Your files stay on your device.</p>
-          <Link href="/tools/delete-pdf-pages">
+          <Link href="/delete-pdf-pages">
             <Button className="bg-brand hover:bg-brand/90 text-foreground font-medium text-xs px-6 rounded-full group">
               Delete PDF Pages Free
               <ArrowRight className="w-3.5 h-3.5 ml-1 transition-transform group-hover:translate-x-1" />

@@ -156,7 +156,7 @@ export default function ReadAloudBlogPost() {
 
 <h2 id="step-by-step-listen-to-a-pdf-using-icreatepdf" className="text-xl font-bold text-foreground pt-4 font-display">Step-by-Step: Listen to a PDF Using iCreatePDF</h2>
           <ol className="list-decimal list-inside space-y-3 pl-4 text-sm">
-            <li>Open <Link href="/tools/read-aloud-pdf" className="text-brand hover:underline">iCreatePDF Read Aloud</Link>.</li>
+            <li>Open <Link href="/read-aloud-pdf" className="text-brand hover:underline">iCreatePDF Read Aloud</Link>.</li>
             <li>Upload the PDF you want to listen to.</li>
             <li>Choose a voice and adjust the reading speed to your preference.</li>
             <li>Press play and follow along with live word highlighting as it reads.</li>
@@ -181,7 +181,7 @@ export default function ReadAloudBlogPost() {
 
           <h2 id="what-if-the-pdf-is-a-scanned-document" className="text-xl font-bold text-foreground pt-4 font-display">What If the PDF Is a Scanned Document?</h2>
           <p>
-            Text-to-speech reads the underlying text layer of a PDF, so it works immediately on digitally created documents. If your PDF is a scan or photo with no text layer, run it through <Link href="/tools/pdf-ocr" className="text-brand hover:underline">PDF OCR</Link> first to generate readable text, then use Read Aloud on the result.
+            Text-to-speech reads the underlying text layer of a PDF, so it works immediately on digitally created documents. If your PDF is a scan or photo with no text layer, run it through <Link href="/pdf-ocr" className="text-brand hover:underline">PDF OCR</Link> first to generate readable text, then use Read Aloud on the result.
           </p>
 
           <h2 id="icreatepdf-vs-other-read-aloud-tools" className="text-xl font-bold text-foreground pt-4 font-display">iCreatePDF vs Other Read-Aloud Tools</h2>
@@ -230,7 +230,7 @@ export default function ReadAloudBlogPost() {
         <div className="p-6 rounded-2xl bg-gradient-to-r from-purple-950/20 to-pink-950/20 border border-brand/20 text-center space-y-4">
           <h3 className="text-lg font-bold text-foreground font-display">Listen to your PDF now — free &amp; private</h3>
           <p className="text-xs text-foreground/60 max-w-md mx-auto">No sign-up. No uploads. Your files stay on your device.</p>
-          <Link href="/tools/read-aloud-pdf">
+          <Link href="/read-aloud-pdf">
             <Button className="bg-brand hover:bg-brand/90 text-foreground font-medium text-xs px-6 rounded-full group">
               Read Aloud Free
               <ArrowRight className="w-3.5 h-3.5 ml-1 transition-transform group-hover:translate-x-1" />

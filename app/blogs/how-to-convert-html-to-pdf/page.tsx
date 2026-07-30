@@ -168,7 +168,7 @@ export default function HtmlToPdfBlogPost() {
 
           <h2 id="step-by-step-how-do-you-convert-html-to-pdf-offline" className="text-xl font-bold text-foreground pt-4 font-display">Step-by-Step: How Do You Convert HTML to PDF Offline?</h2>
           <ol className="list-decimal list-inside space-y-3 pl-4 text-sm">
-            <li>Open <Link href="/tools/html-to-pdf" className="text-brand hover:underline">iCreatePDF HTML to PDF</Link>.</li>
+            <li>Open <Link href="/html-to-pdf" className="text-brand hover:underline">iCreatePDF HTML to PDF</Link>.</li>
             <li>Paste your HTML/CSS content, or upload an .html file.</li>
             <li>Preview the rendered layout directly in the browser.</li>
             <li>Click <strong className="text-foreground">Generate PDF</strong> and download the finished document.</li>
@@ -242,7 +242,7 @@ export default function HtmlToPdfBlogPost() {
         <div className="p-6 rounded-2xl bg-gradient-to-r from-purple-950/20 to-pink-950/20 border border-brand/20 text-center space-y-4">
           <h3 className="text-lg font-bold text-foreground font-display">Convert HTML to PDF now — free &amp; private</h3>
           <p className="text-xs text-foreground/60 max-w-md mx-auto">No sign-up. No uploads. Your template stays on your device.</p>
-          <Link href="/tools/html-to-pdf">
+          <Link href="/html-to-pdf">
             <Button className="bg-brand hover:bg-brand/90 text-foreground font-medium text-xs px-6 rounded-full group">
               Convert HTML to PDF Free
               <ArrowRight className="w-3.5 h-3.5 ml-1 transition-transform group-hover:translate-x-1" />

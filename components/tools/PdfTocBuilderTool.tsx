@@ -81,7 +81,7 @@ export function PdfTocBuilderTool() {
         name: `toc-${file.name}`,
         size: blob.size,
         toolName: 'PDF TOC Builder',
-        href: '/tools/pdf-toc-builder',
+        href: '/pdf-toc-builder',
         downloadUrl: url,
       });
     } catch (err: any) {

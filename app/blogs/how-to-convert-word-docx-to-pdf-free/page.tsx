@@ -155,7 +155,7 @@ export default function WordToPdfBlog() {
             Steps to Convert Documents to PDF
           </h2>
           <ol className="list-decimal list-inside space-y-2 pl-4 text-sm">
-            <li>Open the <Link href="/tools/word-to-pdf" className="text-brand hover:underline">convert DOCX to PDF</Link> tool page.</li>
+            <li>Open the <Link href="/word-to-pdf" className="text-brand hover:underline">convert DOCX to PDF</Link> tool page.</li>
             <li>Upload your <code>.docx</code> file. The file is processed client-side.</li>
             <li>Review the structural layout and preview generated page outlines.</li>
             <li>Click <strong>Download PDF</strong>.</li>
@@ -189,7 +189,7 @@ export default function WordToPdfBlog() {
             Convert Documents Offline
           </h3>
           <p className="text-xs text-foreground/60 max-w-md mx-auto">Export Word (.docx) files to standard PDF documents client-side in the browser sandbox.</p>
-          <Link href="/tools/word-to-pdf">
+          <Link href="/word-to-pdf">
             <Button className="bg-brand hover:bg-brand/90 text-foreground font-medium text-xs px-6 rounded-full group">
               Convert DOCX to PDF
               <ArrowRight className="w-3.5 h-3.5 ml-1 transition-transform group-hover:translate-x-1" />

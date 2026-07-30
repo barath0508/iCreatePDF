@@ -130,7 +130,7 @@ export default function PreventCopyBlog() {
             Steps to Make a PDF Non-Copyable
           </h2>
           <ol className="list-decimal list-inside space-y-2 pl-4 text-sm">
-            <li>Open the <Link href="/tools/prevent-copy" className="text-brand hover:underline">Prevent PDF Copy</Link> tool page.</li>
+            <li>Open the <Link href="/prevent-copy" className="text-brand hover:underline">Prevent PDF Copy</Link> tool page.</li>
             <li>Drag and drop the document you want to secure.</li>
             <li>Choose a Quality Mode:
               <ul className="list-disc list-inside pl-6 pt-1 space-y-1">
@@ -175,7 +175,7 @@ export default function PreventCopyBlog() {
             Make Your Documents Copy-Proof
           </h3>
           <p className="text-xs text-foreground/60 max-w-md mx-auto">Disable highlighting and scraping on price sheets, ebooks, or proposals locally in your browser sandbox.</p>
-          <Link href="/tools/prevent-copy">
+          <Link href="/prevent-copy">
             <Button className="bg-brand hover:bg-brand/90 text-foreground font-medium text-xs px-6 rounded-full group">
               Prevent PDF Copy
               <ArrowRight className="w-3.5 h-3.5 ml-1 transition-transform group-hover:translate-x-1" />

@@ -107,7 +107,7 @@ export function CompressTool() {
         name: `compressed-${file?.name || 'document.pdf'}`,
         size: blob.size,
         toolName: 'Compress PDF',
-        href: '/tools/compress-pdf',
+        href: '/compress-pdf',
         downloadUrl: url,
       });
     } catch (err: any) {

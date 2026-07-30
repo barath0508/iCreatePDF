@@ -165,7 +165,7 @@ export default function BulkCertificatesBlog() {
             Start Bulk Generation Now
           </h3>
           <p className="text-xs text-foreground/60 max-w-md mx-auto">Generate hundreds of personalized PDF certificates or invites 100% locally from your Excel list.</p>
-          <Link href="/tools/bulk-certificates">
+          <Link href="/bulk-certificates">
             <Button className="bg-brand hover:bg-brand/90 text-foreground font-medium text-xs px-6 rounded-full group">
               Bulk Certificate Generator
               <ArrowRight className="w-3.5 h-3.5 ml-1 transition-transform group-hover:translate-x-1" />

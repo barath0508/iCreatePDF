@@ -114,7 +114,7 @@ export function CsvToPdfTool() {
         name: file.name.replace(/\.csv$/i, '.pdf'),
         size: blob.size,
         toolName: 'CSV to PDF',
-        href: '/tools/csv-to-pdf',
+        href: '/csv-to-pdf',
         downloadUrl: url,
       });
     } catch (err: any) {

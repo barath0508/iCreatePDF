@@ -168,7 +168,7 @@ export default function PdfToExcelBlogPost() {
 
           <h2 id="step-by-step-how-do-you-convert-pdf-to-excel-without-uploading" className="text-xl font-bold text-foreground pt-4 font-display">Step-by-Step: How Do You Convert PDF to Excel Without Uploading?</h2>
           <ol className="list-decimal list-inside space-y-3 pl-4 text-sm">
-            <li>Open <Link href="/tools/pdf-to-excel" className="text-brand hover:underline">iCreatePDF PDF to Excel</Link>.</li>
+            <li>Open <Link href="/pdf-to-excel" className="text-brand hover:underline">iCreatePDF PDF to Excel</Link>.</li>
             <li>Upload the PDF containing the table you want to extract.</li>
             <li>iCreatePDF automatically detects table structure from the text layout.</li>
             <li>Review the detected rows and columns, then download as a CSV file.</li>
@@ -193,7 +193,7 @@ export default function PdfToExcelBlogPost() {
 
           <h2 id="why-does-table-extraction-work-better-on-native-than-scanned-pdfs" className="text-xl font-bold text-foreground pt-4 font-display">Why Does Table Extraction Work Better on Native Than Scanned PDFs?</h2>
           <p>
-            Table detection relies on analyzing the spacing and alignment of the underlying text layer, so it works best on digitally generated PDFs (exported from accounting software, spreadsheets, or word processors) where columns are consistently spaced. Scanned tables — photos or image-based PDFs — need to go through <Link href="/tools/pdf-ocr" className="text-brand hover:underline">PDF OCR</Link> first to create a text layer before table detection can find rows and columns.
+            Table detection relies on analyzing the spacing and alignment of the underlying text layer, so it works best on digitally generated PDFs (exported from accounting software, spreadsheets, or word processors) where columns are consistently spaced. Scanned tables — photos or image-based PDFs — need to go through <Link href="/pdf-ocr" className="text-brand hover:underline">PDF OCR</Link> first to create a text layer before table detection can find rows and columns.
           </p>
 
           <h2 id="how-does-icreatepdf-compare-to-other-pdf-to-excel-converters" className="text-xl font-bold text-foreground pt-4 font-display">How Does iCreatePDF Compare to Other PDF to Excel Converters?</h2>
@@ -246,7 +246,7 @@ export default function PdfToExcelBlogPost() {
         <div className="p-6 rounded-2xl bg-gradient-to-r from-purple-950/20 to-pink-950/20 border border-brand/20 text-center space-y-4">
           <h3 className="text-lg font-bold text-foreground font-display">Convert your PDF to Excel now — free &amp; private</h3>
           <p className="text-xs text-foreground/60 max-w-md mx-auto">No sign-up. No uploads. Your files stay on your device.</p>
-          <Link href="/tools/pdf-to-excel">
+          <Link href="/pdf-to-excel">
             <Button className="bg-brand hover:bg-brand/90 text-foreground font-medium text-xs px-6 rounded-full group">
               Convert PDF to Excel Free
               <ArrowRight className="w-3.5 h-3.5 ml-1 transition-transform group-hover:translate-x-1" />

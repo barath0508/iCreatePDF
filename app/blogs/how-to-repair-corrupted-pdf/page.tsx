@@ -156,7 +156,7 @@ export default function RepairPdfBlogPost() {
 
 <h2 id="step-by-step-repair-a-pdf-using-icreatepdf" className="text-xl font-bold text-foreground pt-4 font-display">Step-by-Step: Repair a PDF Using iCreatePDF</h2>
           <ol className="list-decimal list-inside space-y-3 pl-4 text-sm">
-            <li>Open <Link href="/tools/repair-pdf" className="text-brand hover:underline">iCreatePDF Repair PDF</Link>.</li>
+            <li>Open <Link href="/repair-pdf" className="text-brand hover:underline">iCreatePDF Repair PDF</Link>.</li>
             <li>Upload the damaged or corrupted PDF file.</li>
             <li>iCreatePDF scans and rebuilds the cross-reference table and object streams locally.</li>
             <li>Download the recovered PDF and verify it opens correctly.</li>
@@ -230,7 +230,7 @@ export default function RepairPdfBlogPost() {
         <div className="p-6 rounded-2xl bg-gradient-to-r from-purple-950/20 to-pink-950/20 border border-brand/20 text-center space-y-4">
           <h3 className="text-lg font-bold text-foreground font-display">Repair your PDF now — free &amp; private</h3>
           <p className="text-xs text-foreground/60 max-w-md mx-auto">No sign-up. No uploads. Your files stay on your device.</p>
-          <Link href="/tools/repair-pdf">
+          <Link href="/repair-pdf">
             <Button className="bg-brand hover:bg-brand/90 text-foreground font-medium text-xs px-6 rounded-full group">
               Repair PDF Free
               <ArrowRight className="w-3.5 h-3.5 ml-1 transition-transform group-hover:translate-x-1" />

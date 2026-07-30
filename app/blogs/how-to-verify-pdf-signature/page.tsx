@@ -156,7 +156,7 @@ export default function VerifySignatureBlogPost() {
 
 <h2 id="step-by-step-verify-a-signature-using-icreatepdf" className="text-xl font-bold text-foreground pt-4 font-display">Step-by-Step: Verify a Signature Using iCreatePDF</h2>
           <ol className="list-decimal list-inside space-y-3 pl-4 text-sm">
-            <li>Open <Link href="/tools/verify-signature" className="text-brand hover:underline">iCreatePDF Verify Signature</Link>.</li>
+            <li>Open <Link href="/verify-signature" className="text-brand hover:underline">iCreatePDF Verify Signature</Link>.</li>
             <li>Upload the signed PDF you want to check.</li>
             <li>iCreatePDF validates the cryptographic signature and byte-range integrity.</li>
             <li>Review the signer identity details and validity status shown in the result.</li>
@@ -181,7 +181,7 @@ export default function VerifySignatureBlogPost() {
 
           <h2 id="digital-signatures-vs-sha-256-fingerprints" className="text-xl font-bold text-foreground pt-4 font-display">Digital Signatures vs. SHA-256 Fingerprints</h2>
           <p>
-            A digital signature (checked here) uses a signer's certificate and is the standard for formally signed documents like contracts. A simpler alternative — a SHA-256 fingerprint — lets you certify and later verify that a document hasn't changed, without requiring a formal certificate. If you want to add tamper-evidence to a PDF you're creating rather than verify one you received, see <Link href="/tools/certify-pdf" className="text-brand hover:underline">Certify PDF</Link>.
+            A digital signature (checked here) uses a signer's certificate and is the standard for formally signed documents like contracts. A simpler alternative — a SHA-256 fingerprint — lets you certify and later verify that a document hasn't changed, without requiring a formal certificate. If you want to add tamper-evidence to a PDF you're creating rather than verify one you received, see <Link href="/certify-pdf" className="text-brand hover:underline">Certify PDF</Link>.
           </p>
 
           <h2 id="icreatepdf-vs-other-signature-verification-tools" className="text-xl font-bold text-foreground pt-4 font-display">iCreatePDF vs Other Signature Verification Tools</h2>
@@ -230,7 +230,7 @@ export default function VerifySignatureBlogPost() {
         <div className="p-6 rounded-2xl bg-gradient-to-r from-purple-950/20 to-pink-950/20 border border-brand/20 text-center space-y-4">
           <h3 className="text-lg font-bold text-foreground font-display">Verify your PDF signature now — free &amp; private</h3>
           <p className="text-xs text-foreground/60 max-w-md mx-auto">No sign-up. No uploads. Your files stay on your device.</p>
-          <Link href="/tools/verify-signature">
+          <Link href="/verify-signature">
             <Button className="bg-brand hover:bg-brand/90 text-foreground font-medium text-xs px-6 rounded-full group">
               Verify Signature Free
               <ArrowRight className="w-3.5 h-3.5 ml-1 transition-transform group-hover:translate-x-1" />

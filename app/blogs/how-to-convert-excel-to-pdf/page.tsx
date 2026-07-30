@@ -192,7 +192,7 @@ export default function ExcelToPdfBlogPost() {
 
           <h2 id="how-can-you-convert-excel-to-pdf-online-with-icreatepdf" className="text-xl font-bold text-foreground pt-4 font-display">How Can You Convert Excel to PDF Online with iCreatePDF?</h2>
           <ol className="list-decimal list-inside space-y-3 pl-4 text-sm">
-            <li>Navigate to the <Link href="/tools/excel-to-pdf" className="text-brand hover:underline font-semibold">Excel to PDF Converter</Link>.</li>
+            <li>Navigate to the <Link href="/excel-to-pdf" className="text-brand hover:underline font-semibold">Excel to PDF Converter</Link>.</li>
             <li>Drag and drop your spreadsheet (.xlsx, .xls, or .csv) into the local upload box.</li>
             <li>Select the sheet and choose which columns to display or hide using the sidebar column checklist.</li>
             <li>Configure page parameters (Orientation, Paper Size, Margin, Font Size, and table Grid Theme).</li>
@@ -285,7 +285,7 @@ export default function ExcelToPdfBlogPost() {
         <div className="p-6 rounded-2xl bg-gradient-to-r from-purple-950/20 to-pink-950/20 border border-brand/20 text-center space-y-4">
           <h3 className="text-lg font-bold text-foreground font-display">Convert Excel to PDF now — free &amp; private</h3>
           <p className="text-xs text-foreground/60 max-w-md mx-auto">No registration, no file uploads. Keep your sheet data secure.</p>
-          <Link href="/tools/excel-to-pdf">
+          <Link href="/excel-to-pdf">
             <Button className="bg-brand hover:bg-brand/90 text-white font-medium text-xs px-6 rounded-full group">
               Convert Excel to PDF Free
               <ArrowRight className="w-3.5 h-3.5 ml-1 transition-transform group-hover:translate-x-1" />

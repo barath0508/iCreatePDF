@@ -132,7 +132,7 @@ export default function SplitPdfBlog() {
             How to Split a PDF
           </h2>
           <ol className="list-decimal list-inside space-y-2 pl-4 text-sm">
-            <li>Go to the <Link href="/tools/split-pdf" className="text-brand hover:underline">Split PDF</Link> tool page.</li>
+            <li>Go to the <Link href="/split-pdf" className="text-brand hover:underline">Split PDF</Link> tool page.</li>
             <li>Drag and drop your multi-page document.</li>
             <li>Use the split configurations:
               <ul className="list-disc list-inside pl-6 pt-1 space-y-1">
@@ -151,7 +151,7 @@ export default function SplitPdfBlog() {
             If you simply want to strip blank sheets, disclaimer pages, or cover pages:
           </p>
           <ol className="list-decimal list-inside space-y-2 pl-4 text-sm">
-            <li>Go to the <Link href="/tools/delete-pdf-pages" className="text-brand hover:underline">Delete PDF Pages</Link> tool.</li>
+            <li>Go to the <Link href="/delete-pdf-pages" className="text-brand hover:underline">Delete PDF Pages</Link> tool.</li>
             <li>Upload your file. Previews of all pages will populate.</li>
             <li>Hover over any page thumbnail and click the Trash icon to queue it for deletion.</li>
             <li>Click <strong>Remove Pages</strong>.</li>
@@ -164,7 +164,7 @@ export default function SplitPdfBlog() {
             <Columns className="w-8 h-8 text-brand mx-auto" />
             <h4 className="font-bold font-display text-foreground text-sm">Split Large PDFs</h4>
             <p className="text-xs text-foreground/50">Slice files by ranges or extract individual pages.</p>
-            <Link href="/tools/split-pdf" className="inline-block pt-2">
+            <Link href="/split-pdf" className="inline-block pt-2">
               <Button className="bg-brand hover:bg-brand/90 text-foreground font-medium text-xs px-4 rounded-full">
                 Split PDF
               </Button>
@@ -175,7 +175,7 @@ export default function SplitPdfBlog() {
             <Trash2 className="w-8 h-8 text-brand mx-auto" />
             <h4 className="font-bold font-display text-foreground text-sm">Delete Junk Pages</h4>
             <p className="text-xs text-foreground/50">Visually prune pages with live previews.</p>
-            <Link href="/tools/delete-pdf-pages" className="inline-block pt-2">
+            <Link href="/delete-pdf-pages" className="inline-block pt-2">
               <Button className="bg-foreground/5 hover:bg-foreground/10 text-foreground border border-foreground/10 font-medium text-xs px-4 rounded-full">
                 Delete Pages
               </Button>

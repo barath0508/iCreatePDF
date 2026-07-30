@@ -191,7 +191,7 @@ export default function SignPdfBlogPost() {
 
           <h2 id="step-by-step-sign-a-pdf-with-icreatepdf" className="text-xl font-bold text-foreground pt-4 font-display">Step-by-Step: Sign a PDF With iCreatePDF</h2>
           <ol className="list-decimal list-inside space-y-3 pl-4 text-sm">
-            <li>Go to <Link href="/tools/sign-pdf" className="text-brand hover:underline">iCreatePDF Sign PDF</Link>.</li>
+            <li>Go to <Link href="/sign-pdf" className="text-brand hover:underline">iCreatePDF Sign PDF</Link>.</li>
             <li>Upload the PDF you need to sign.</li>
             <li>Click <strong className="text-foreground">Add Signature</strong> — choose to draw, type, or upload an image of your signature.</li>
             <li>Drag and resize the signature overlay to position it on the correct signature line.</li>
@@ -216,7 +216,7 @@ export default function SignPdfBlogPost() {
 
           <h2 id="how-to-verify-a-signed-pdf" className="text-xl font-bold text-foreground pt-4 font-display">How to Verify a Signed PDF</h2>
           <p>
-            Once a document has been signed with a cryptographic certificate, you can verify its authenticity using iCreatePDF's <Link href="/tools/verify-signature" className="text-brand hover:underline">Verify Signature</Link> tool. It reads the embedded PKCS#7 signature block, extracts the signer identity and timestamp, and performs a byte-range integrity check — all locally in your browser.
+            Once a document has been signed with a cryptographic certificate, you can verify its authenticity using iCreatePDF's <Link href="/verify-signature" className="text-brand hover:underline">Verify Signature</Link> tool. It reads the embedded PKCS#7 signature block, extracts the signer identity and timestamp, and performs a byte-range integrity check — all locally in your browser.
           </p>
 
           <h2 id="frequently-asked-questions" className="text-xl font-bold text-foreground pt-4 font-display">Frequently Asked Questions</h2>
@@ -238,7 +238,7 @@ export default function SignPdfBlogPost() {
         <div className="p-6 rounded-2xl bg-gradient-to-r from-purple-950/20 to-pink-950/20 border border-brand/20 text-center space-y-4">
           <h3 className="text-lg font-bold text-foreground font-display">Sign your PDF now — free &amp; private</h3>
           <p className="text-xs text-foreground/60 max-w-md mx-auto">Draw, type, or upload your signature. Files never leave your browser.</p>
-          <Link href="/tools/sign-pdf">
+          <Link href="/sign-pdf">
             <Button className="bg-brand hover:bg-brand/90 text-foreground font-medium text-xs px-6 rounded-full group">
               Sign PDF Free
               <ArrowRight className="w-3.5 h-3.5 ml-1 transition-transform group-hover:translate-x-1" />

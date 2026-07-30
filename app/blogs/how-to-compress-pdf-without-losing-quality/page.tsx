@@ -181,7 +181,7 @@ export default function CompressPdfBlogPost() {
 
           <h2 id="how-do-you-compress-a-pdf-offline-with-icreatepdf" className="text-xl font-bold text-foreground pt-4 font-display">How Do You Compress a PDF Offline with iCreatePDF?</h2>
           <ol className="list-decimal list-inside space-y-3 pl-4 text-sm">
-            <li>Go to <Link href="/tools/compress-pdf" className="text-brand hover:underline">/compress-pdf</Link> — no sign-up needed.</li>
+            <li>Go to <Link href="/compress-pdf" className="text-brand hover:underline">/compress-pdf</Link> — no sign-up needed.</li>
             <li>Drop your PDF onto the upload zone.</li>
             <li>Choose a compression level: <strong className="text-foreground">High</strong> (best for text-heavy docs), <strong className="text-foreground">Medium</strong> (balanced), or <strong className="text-foreground">Low</strong> (preserves print-quality images).</li>
             <li>Click <em>Compress PDF</em> and download your smaller file instantly.</li>
@@ -239,7 +239,7 @@ export default function CompressPdfBlogPost() {
         <div className="p-6 rounded-2xl bg-gradient-to-r from-purple-950/20 to-pink-950/20 border border-brand/20 text-center space-y-4">
           <h3 className="text-lg font-bold text-foreground font-display">Ready to shrink your PDF?</h3>
           <p className="text-xs text-foreground/60 max-w-md mx-auto">100% client-side compression — your files never leave your browser.</p>
-          <Link href="/tools/compress-pdf">
+          <Link href="/compress-pdf">
             <Button className="bg-brand hover:bg-brand/90 text-foreground font-medium text-xs px-6 rounded-full group">
               Compress PDF Free
               <ArrowRight className="w-3.5 h-3.5 ml-1 transition-transform group-hover:translate-x-1" />

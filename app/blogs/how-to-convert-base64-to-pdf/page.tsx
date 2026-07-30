@@ -236,7 +236,7 @@ print("PDF file successfully created!")`}
           <p className="text-xs text-foreground/60 max-w-md mx-auto">
             100% browser-based. Zero tracking. Your files never touch a server. Paste your Base64 payload and download the PDF instantly.
           </p>
-          <Link href="/tools/base64-to-pdf">
+          <Link href="/base64-to-pdf">
             <Button className="bg-brand hover:bg-brand/90 text-foreground font-medium text-xs px-6 rounded-full group">
               Open Base64 to PDF Decoder
               <ArrowRight className="w-3.5 h-3.5 ml-1 transition-transform group-hover:translate-x-1" />

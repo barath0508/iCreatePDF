@@ -168,7 +168,7 @@ export default function EditPdfBlogPost() {
 
           <h2 id="step-by-step-how-do-you-add-text-overlays-to-a-pdf-online" className="text-xl font-bold text-foreground pt-4 font-display">Step-by-Step: How Do You Add Text Overlays to a PDF Online?</h2>
           <ol className="list-decimal list-inside space-y-3 pl-4 text-sm">
-            <li>Open <Link href="/tools/edit-pdf" className="text-brand hover:underline">iCreatePDF Edit PDF</Link>.</li>
+            <li>Open <Link href="/edit-pdf" className="text-brand hover:underline">iCreatePDF Edit PDF</Link>.</li>
             <li>Upload your PDF — it renders page-by-page in the editor.</li>
             <li>Click anywhere on the page to place a text box; type your content and pick a color.</li>
             <li>Repeat across as many pages as needed, then click <strong className="text-foreground">Save</strong> to write the overlays permanently into the PDF and download it.</li>
@@ -193,7 +193,7 @@ export default function EditPdfBlogPost() {
 
           <h2 id="what-is-the-difference-between-text-overlays-and-reflowable-text-editing" className="text-xl font-bold text-foreground pt-4 font-display">What is the Difference Between Text Overlays and Reflowable Text Editing?</h2>
           <p>
-            There's an important distinction: iCreatePDF adds new text <em>on top of</em> a page (an overlay), which is exactly what you want for annotations, approvals, and fill-ins. It does not rewrite or reflow existing paragraph text that's already baked into the PDF's original layout — that requires a much heavier server-side conversion process most privacy-conscious users want to avoid anyway. If you need to change existing body text in a Word-style way, you'll need a desktop editor; for adding to a document, overlay editing is faster and keeps your file private. If you just need to fill out form fields rather than freehand text, try <Link href="/tools/fillable-pdf-builder" className="text-brand hover:underline">Fillable PDF Builder</Link> instead.
+            There's an important distinction: iCreatePDF adds new text <em>on top of</em> a page (an overlay), which is exactly what you want for annotations, approvals, and fill-ins. It does not rewrite or reflow existing paragraph text that's already baked into the PDF's original layout — that requires a much heavier server-side conversion process most privacy-conscious users want to avoid anyway. If you need to change existing body text in a Word-style way, you'll need a desktop editor; for adding to a document, overlay editing is faster and keeps your file private. If you just need to fill out form fields rather than freehand text, try <Link href="/fillable-pdf-builder" className="text-brand hover:underline">Fillable PDF Builder</Link> instead.
           </p>
 
           <h2 id="how-does-icreatepdf-compare-to-traditional-pdf-editors" className="text-xl font-bold text-foreground pt-4 font-display">How Does iCreatePDF Compare to Traditional PDF Editors?</h2>
@@ -243,7 +243,7 @@ export default function EditPdfBlogPost() {
         <div className="p-6 rounded-2xl bg-gradient-to-r from-purple-950/20 to-pink-950/20 border border-brand/20 text-center space-y-4">
           <h3 className="text-lg font-bold text-foreground font-display">Edit your PDF now — free &amp; private</h3>
           <p className="text-xs text-foreground/60 max-w-md mx-auto">No sign-up. No uploads. Your files stay on your device.</p>
-          <Link href="/tools/edit-pdf">
+          <Link href="/edit-pdf">
             <Button className="bg-brand hover:bg-brand/90 text-foreground font-medium text-xs px-6 rounded-full group">
               Edit PDF Free
               <ArrowRight className="w-3.5 h-3.5 ml-1 transition-transform group-hover:translate-x-1" />

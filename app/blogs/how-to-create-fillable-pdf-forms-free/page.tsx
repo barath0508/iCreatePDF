@@ -187,7 +187,7 @@ export default function BlogPostFillablePdf() {
           <p className="text-xs text-foreground/60 max-w-md mx-auto">
             Design text fields, checkboxes, and select menus visually on top of your PDF template. 100% free, private, and instant.
           </p>
-          <Link href="/tools/fillable-pdf-builder">
+          <Link href="/fillable-pdf-builder">
             <Button
               className="bg-brand hover:bg-brand/90 text-foreground font-medium text-xs px-4 rounded-full group"
             >

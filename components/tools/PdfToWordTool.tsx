@@ -91,7 +91,7 @@ export function PdfToWordTool() {
         name: file.name.replace(/\.pdf$/i, '.doc'),
         size: blob.size,
         toolName: 'PDF to Word',
-        href: '/tools/pdf-to-word',
+        href: '/pdf-to-word',
         downloadUrl: url,
       });
     } catch (err: any) {

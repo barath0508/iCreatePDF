@@ -132,7 +132,7 @@ export default function ProtectUnlockPdfBlog() {
             How to Password Protect a PDF
           </h2>
           <ol className="list-decimal list-inside space-y-2 pl-4 text-sm">
-            <li>Go to the <Link href="/tools/protect-pdf" className="text-brand hover:underline">Protect PDF</Link> tool page.</li>
+            <li>Go to the <Link href="/protect-pdf" className="text-brand hover:underline">Protect PDF</Link> tool page.</li>
             <li>Drag in the document you want encrypted.</li>
             <li>Enter a strong password and confirm it in the validation box.</li>
             <li>Click <strong>Encrypt PDF</strong>.</li>
@@ -147,7 +147,7 @@ export default function ProtectUnlockPdfBlog() {
             If you need to strip encryption from a PDF file so it can be opened easily without typing the password every time:
           </p>
           <ol className="list-decimal list-inside space-y-2 pl-4 text-sm">
-            <li>Go to the <Link href="/tools/unlock-pdf" className="text-brand hover:underline">Unlock PDF</Link> page.</li>
+            <li>Go to the <Link href="/unlock-pdf" className="text-brand hover:underline">Unlock PDF</Link> page.</li>
             <li>Upload the protected PDF file.</li>
             <li>Type the current password when prompted.</li>
             <li>Click <strong>Unlock PDF</strong>. The tool strips the password encryption block.</li>
@@ -160,7 +160,7 @@ export default function ProtectUnlockPdfBlog() {
             <Shield className="w-8 h-8 text-brand mx-auto" />
             <h4 className="font-bold font-display text-foreground text-sm">Secure Your Files</h4>
             <p className="text-xs text-foreground/50">Add 128-bit password locks to documents locally.</p>
-            <Link href="/tools/protect-pdf" className="inline-block pt-2">
+            <Link href="/protect-pdf" className="inline-block pt-2">
               <Button className="bg-brand hover:bg-brand/90 text-foreground font-medium text-xs px-4 rounded-full">
                 Protect PDF
               </Button>
@@ -171,7 +171,7 @@ export default function ProtectUnlockPdfBlog() {
             <Unlock className="w-8 h-8 text-brand mx-auto" />
             <h4 className="font-bold font-display text-foreground text-sm">Decrypt Your Files</h4>
             <p className="text-xs text-foreground/50">Strip password encryption locks client-side.</p>
-            <Link href="/tools/unlock-pdf" className="inline-block pt-2">
+            <Link href="/unlock-pdf" className="inline-block pt-2">
               <Button className="bg-foreground/5 hover:bg-foreground/10 text-foreground border border-foreground/10 font-medium text-xs px-4 rounded-full">
                 Unlock PDF
               </Button>

@@ -74,7 +74,7 @@ export default function HowTo_create_n_up_pdfPage() {
               </div>
             </div>
             <Button asChild className="bg-primary text-primary-foreground hover:bg-primary/90 font-bold text-xs shrink-0">
-              <Link href="/tools/n-up-pdf">
+              <Link href="/n-up-pdf">
                 Launch Studio Tool <ArrowRight className="w-3.5 h-3.5 ml-1" />
               </Link>
             </Button>
@@ -86,7 +86,7 @@ export default function HowTo_create_n_up_pdfPage() {
 
             <h3 className="text-lg font-bold text-foreground font-display">Step-by-Step Instructions</h3>
             <ol className="space-y-2 list-decimal list-inside font-sans text-muted-foreground">
-              <li>Open the <Link href="/tools/n-up-pdf" className="text-brand underline font-semibold">Dedicated Tool Workspace</Link> in your web browser.</li>
+              <li>Open the <Link href="/n-up-pdf" className="text-brand underline font-semibold">Dedicated Tool Workspace</Link> in your web browser.</li>
               <li>Drag and drop your target file into the secure dropzone.</li>
               <li>Adjust your preferred output configuration settings.</li>
               <li>Click process and download your instant file result without server delays.</li>

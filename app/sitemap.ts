@@ -167,12 +167,17 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 1.0,
     },
     // Tool pages — core content
-    ...toolRoutes.map((route) => ({
-      url: `${baseUrl}${route}`,
-      lastModified: TODAY,
-      changeFrequency: 'weekly' as const,
-      priority: 0.9,
-    })),
+    ...toolRoutes.map((route) => {
+      const cleanRoute = route.startsWith('/tools/') && route !== '/tools/no-upload-pdf-tools'
+        ? route.replace('/tools/', '/')
+        : route;
+      return {
+        url: `${baseUrl}${cleanRoute}`,
+        lastModified: TODAY,
+        changeFrequency: 'weekly' as const,
+        priority: 0.9,
+      };
+    }),
     // Blog pages
     ...blogRoutes.map((route) => ({
       url: `${baseUrl}${route}`,
@@ -188,12 +193,17 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 0.5,
     })),
     // Comparison / alternative pages — commercial intent
-    ...comparisonRoutes.map((route) => ({
-      url: `${baseUrl}${route}`,
-      lastModified: TODAY,
-      changeFrequency: 'monthly' as const,
-      priority: 0.7,
-    })),
+    ...comparisonRoutes.map((route) => {
+      const cleanRoute = route.startsWith('/tools/') && route !== '/tools/no-upload-pdf-tools'
+        ? route.replace('/tools/', '/')
+        : route;
+      return {
+        url: `${baseUrl}${cleanRoute}`,
+        lastModified: TODAY,
+        changeFrequency: 'monthly' as const,
+        priority: 0.7,
+      };
+    }),
     // Localised landing pages
     ...langRoutes.map((route) => ({
       url: `${baseUrl}${route}`,

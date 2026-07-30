@@ -156,7 +156,7 @@ export default function BarcodeToPdfBlogPost() {
 
 <h2 id="step-by-step-generate-a-barcode-pdf-using-icreatepdf" className="text-xl font-bold text-foreground pt-4 font-display">Step-by-Step: Generate a Barcode PDF Using iCreatePDF</h2>
           <ol className="list-decimal list-inside space-y-3 pl-4 text-sm">
-            <li>Open <Link href="/tools/barcode-to-pdf" className="text-brand hover:underline">iCreatePDF Barcode to PDF</Link>.</li>
+            <li>Open <Link href="/barcode-to-pdf" className="text-brand hover:underline">iCreatePDF Barcode to PDF</Link>.</li>
             <li>Choose a barcode format: Code 128, EAN-13, UPC-A, Code 39, Data Matrix, or PDF417.</li>
             <li>Enter the value to encode (product code, SKU, or tracking number).</li>
             <li>Download the generated barcode as a clean A4 PDF, ready to print.</li>
@@ -230,7 +230,7 @@ export default function BarcodeToPdfBlogPost() {
         <div className="p-6 rounded-2xl bg-gradient-to-r from-purple-950/20 to-pink-950/20 border border-brand/20 text-center space-y-4">
           <h3 className="text-lg font-bold text-foreground font-display">Generate your barcode PDF now — free &amp; private</h3>
           <p className="text-xs text-foreground/60 max-w-md mx-auto">No sign-up. No uploads. Your data stays on your device.</p>
-          <Link href="/tools/barcode-to-pdf">
+          <Link href="/barcode-to-pdf">
             <Button className="bg-brand hover:bg-brand/90 text-foreground font-medium text-xs px-6 rounded-full group">
               Generate Barcode PDF Free
               <ArrowRight className="w-3.5 h-3.5 ml-1 transition-transform group-hover:translate-x-1" />

@@ -99,7 +99,7 @@ export function SvgToPdfTool() {
         name: file.name.replace(/\.svg$/i, '.pdf'),
         size: blob.size,
         toolName: 'SVG to PDF',
-        href: '/tools/svg-to-pdf',
+        href: '/svg-to-pdf',
         downloadUrl: url,
       });
     } catch (err: any) {

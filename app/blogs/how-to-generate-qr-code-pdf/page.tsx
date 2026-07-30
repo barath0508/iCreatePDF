@@ -146,7 +146,7 @@ export default function QrToPdfBlogPost() {
 
 <h2 id="step-by-step-generate-a-qr-code-pdf-using-icreatepdf" className="text-xl font-bold text-foreground pt-4 font-display">Step-by-Step: Generate a QR Code PDF Using iCreatePDF</h2>
           <ol className="list-decimal list-inside space-y-3 pl-4 text-sm">
-            <li>Open our <Link href="/tools/qr-to-pdf" className="text-brand hover:underline">QR code to PDF converter</Link>.</li>
+            <li>Open our <Link href="/qr-to-pdf" className="text-brand hover:underline">QR code to PDF converter</Link>.</li>
             <li>Enter the URL or text you want the QR code to link to.</li>
             <li>Customize the label text and QR code size.</li>
             <li>Download the generated code as a clean A4 PDF, ready to print.</li>
@@ -171,7 +171,7 @@ export default function QrToPdfBlogPost() {
 
           <h2 id="tips-for-a-scannable-qr-code" className="text-xl font-bold text-foreground pt-4 font-display">Tips for a Scannable QR Code</h2>
           <p>
-            Keep enough white space (quiet zone) around the code, avoid printing it smaller than about 2cm x 2cm for typical scanning distances, and test your printed code with a phone camera before mass printing. If you need machine-readable product codes (Code 128, EAN-13, UPC-A) instead of a scannable link, use <Link href="/tools/barcode-to-pdf" className="text-brand hover:underline">Barcode to PDF</Link> instead.
+            Keep enough white space (quiet zone) around the code, avoid printing it smaller than about 2cm x 2cm for typical scanning distances, and test your printed code with a phone camera before mass printing. If you need machine-readable product codes (Code 128, EAN-13, UPC-A) instead of a scannable link, use <Link href="/barcode-to-pdf" className="text-brand hover:underline">Barcode to PDF</Link> instead.
           </p>
 
           <h2 id="icreatepdf-vs-other-qr-code-generators" className="text-xl font-bold text-foreground pt-4 font-display">iCreatePDF vs Other QR Code Generators</h2>
@@ -222,7 +222,7 @@ export default function QrToPdfBlogPost() {
         <div className="p-6 rounded-2xl bg-gradient-to-r from-purple-950/20 to-pink-950/20 border border-brand/20 text-center space-y-4">
           <h3 className="text-lg font-bold text-foreground font-display">Generate your QR code PDF now — free &amp; private</h3>
           <p className="text-xs text-foreground/60 max-w-md mx-auto">No sign-up. No uploads. Your data stays on your device.</p>
-          <Link href="/tools/qr-to-pdf">
+          <Link href="/qr-to-pdf">
             <Button className="bg-brand hover:bg-brand/90 text-foreground font-medium text-xs px-6 rounded-full group">
               Generate QR Code PDF Free
               <ArrowRight className="w-3.5 h-3.5 ml-1 transition-transform group-hover:translate-x-1" />

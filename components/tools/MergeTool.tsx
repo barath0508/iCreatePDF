@@ -154,7 +154,7 @@ export function MergeTool() {
         name: `merged-icreatepdf-${Date.now()}.pdf`,
         size: blob.size,
         toolName: 'Merge PDF',
-        href: '/tools/merge-pdf',
+        href: '/merge-pdf',
         downloadUrl: url,
       });
     } catch (err: any) {

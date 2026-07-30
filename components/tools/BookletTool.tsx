@@ -103,7 +103,7 @@ export function BookletTool() {
         name: `booklet-${file.name}`,
         size: blob.size,
         toolName: 'Booklet Maker',
-        href: '/tools/booklet-pdf',
+        href: '/booklet-pdf',
         downloadUrl: url,
       });
     } catch (err: any) {

@@ -170,7 +170,7 @@ export default function BatesNumberingBlog() {
 
           <h2 id="how-can-you-add-bates-stamps-to-a-pdf-with-icreatepdf" className="text-xl font-bold text-foreground pt-4 font-display">How Can You Add Bates Stamps to a PDF with iCreatePDF?</h2>
           <ol className="list-decimal list-inside space-y-2 pl-4 text-sm">
-            <li>Navigate to the <Link href="/tools/bates-numbering" className="text-brand hover:underline">/bates-numbering</Link> tool page.</li>
+            <li>Navigate to the <Link href="/bates-numbering" className="text-brand hover:underline">/bates-numbering</Link> tool page.</li>
             <li>Select the document.</li>
             <li>Enter your custom Prefix, starting number, and number of padded digits (e.g., 6).</li>
             <li>Select the stamping position (e.g., Bottom Right corner).</li>
@@ -188,7 +188,7 @@ export default function BatesNumberingBlog() {
             Apply Legal Bates Stamps Instantly
           </h3>
           <p className="text-xs text-foreground/60 max-w-md mx-auto">Completely client-side. Keep sensitive legal files out of third-party cloud portals.</p>
-          <Link href="/tools/bates-numbering">
+          <Link href="/bates-numbering">
             <Button className="bg-brand hover:bg-brand/90 text-foreground font-medium text-xs px-6 rounded-full group">
               Start Bates Numbering
               <ArrowRight className="w-3.5 h-3.5 ml-1 transition-transform group-hover:translate-x-1" />

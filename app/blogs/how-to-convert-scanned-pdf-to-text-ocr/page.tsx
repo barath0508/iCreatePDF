@@ -147,7 +147,7 @@ export default function ScannedPdfToTextBlog() {
             Steps to Extract Text from Scanned PDF
           </h2>
           <ol className="list-decimal list-inside space-y-2 pl-4 text-sm">
-            <li>Visit the <Link href="/tools/pdf-ocr" className="text-brand hover:underline">PDF OCR (Scan to Text)</Link> tool page.</li>
+            <li>Visit the <Link href="/pdf-ocr" className="text-brand hover:underline">PDF OCR (Scan to Text)</Link> tool page.</li>
             <li>Select and upload your scanned, non-copyable PDF file.</li>
             <li>Choose your Document Language. We support:
               <ul className="list-disc list-inside pl-6 pt-1 space-y-1 font-mono text-xs">
@@ -178,7 +178,7 @@ export default function ScannedPdfToTextBlog() {
             Extract Text from Scanned Documents
           </h3>
           <p className="text-xs text-foreground/60 max-w-md mx-auto">Digitize paper scans, faxes, or copy-protected documents into editable plain text locally in your browser sandbox.</p>
-          <Link href="/tools/pdf-ocr">
+          <Link href="/pdf-ocr">
             <Button className="bg-brand hover:bg-brand/90 text-foreground font-medium text-xs px-6 rounded-full group">
               Start PDF OCR
               <ArrowRight className="w-3.5 h-3.5 ml-1 transition-transform group-hover:translate-x-1" />

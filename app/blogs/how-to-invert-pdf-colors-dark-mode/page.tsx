@@ -126,7 +126,7 @@ export default function InvertPdfBlog() {
 
           <h2 id="how-to-invert-pdf-colors" className="text-xl font-bold text-foreground pt-4 font-display">How to Invert PDF Colors</h2>
           <ol className="list-decimal list-inside space-y-2 pl-4 text-sm">
-            <li>Visit the <Link href="/tools/invert-pdf" className="text-brand hover:underline">/invert-pdf</Link> page.</li>
+            <li>Visit the <Link href="/invert-pdf" className="text-brand hover:underline">/invert-pdf</Link> page.</li>
             <li>Upload your document. The application reads each page, rendering it onto a canvas.</li>
             <li>The script runs pixel-level color transformations, inverting all light and dark tones.</li>
             <li>Download the dark mode PDF.</li>
@@ -164,7 +164,7 @@ export default function InvertPdfBlog() {
             Comfortable Reading Starts Here
           </h3>
           <p className="text-xs text-foreground/60 max-w-md mx-auto">Convert bright sheets to night-friendly dark documents 100% locally in your browser.</p>
-          <Link href="/tools/invert-pdf">
+          <Link href="/invert-pdf">
             <Button className="bg-brand hover:bg-brand/90 text-foreground font-medium text-xs px-6 rounded-full group">
               Invert PDF Colors
               <ArrowRight className="w-3.5 h-3.5 ml-1 transition-transform group-hover:translate-x-1" />

@@ -81,7 +81,7 @@ export function EqualizePageSizesTool() {
         name: `equalized-${file.name}`,
         size: blob.size,
         toolName: 'Equalize Page Sizes',
-        href: '/tools/equalize-pdf-page-sizes',
+        href: '/equalize-pdf-page-sizes',
         downloadUrl: url,
       });
     } catch (err: any) {

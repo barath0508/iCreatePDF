@@ -37,11 +37,16 @@ const nextConfig = {
         destination: '/blogs/:slug*',
         permanent: true,
       },
-      ...OLD_TOOLS.map((tool) => ({
-        source: `/${tool}`,
-        destination: `/tools/${tool}`,
+      {
+        source: '/tools/:slug*',
+        destination: '/:slug*',
         permanent: true,
-      })),
+      },
+      {
+        source: '/tools',
+        destination: '/#tools',
+        permanent: true,
+      },
       {
         source: '/ilovepdf-alternative',
         destination: '/compare/ilovepdf-alternative',
@@ -57,10 +62,17 @@ const nextConfig = {
         destination: '/compare/pdf24-alternative',
         permanent: true,
       },
+    ];
+  },
+  async rewrites() {
+    return [
+      ...OLD_TOOLS.map((tool) => ({
+        source: `/${tool}`,
+        destination: `/tools/${tool}`,
+      })),
       {
         source: '/no-upload-pdf-tools',
         destination: '/tools/no-upload-pdf-tools',
-        permanent: true,
       },
     ];
   },

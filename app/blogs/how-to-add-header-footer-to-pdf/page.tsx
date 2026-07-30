@@ -172,7 +172,7 @@ export default function HeaderFooterBlogPost() {
 
           <h2 id="step-by-step-how-do-you-add-a-header-or-footer-to-a-pdf" className="text-xl font-bold text-foreground pt-4 font-display">Step-by-Step: How Do You Add a Header or Footer to a PDF?</h2>
           <ol className="list-decimal list-inside space-y-3 pl-4 text-sm">
-            <li>Open <Link href="/tools/header-footer" className="text-brand hover:underline">iCreatePDF Header &amp; Footer</Link>.</li>
+            <li>Open <Link href="/header-footer" className="text-brand hover:underline">iCreatePDF Header &amp; Footer</Link>.</li>
             <li>Upload the PDF you want to stamp.</li>
             <li>Enter your header and/or footer text, and choose the alignment.</li>
             <li>Apply to all pages and download the finished PDF.</li>
@@ -197,7 +197,7 @@ export default function HeaderFooterBlogPost() {
 
           <h2 id="how-do-headers-and-footers-compare-to-page-numbers-and-bates-numbering" className="text-xl font-bold text-foreground pt-4 font-display">How Do Headers and Footers Compare to Page Numbers and Bates Numbering?</h2>
           <p>
-            If all you need is sequential page numbers, use the dedicated <Link href="/tools/add-page-numbers" className="text-brand hover:underline">Add Page Numbers</Link> tool for a simpler workflow. If you need legal-style sequential document identifiers (common in litigation), use <Link href="/tools/bates-numbering" className="text-brand hover:underline">Bates Numbering</Link> instead. Header &amp; Footer is best for custom text — names, dates, notices — that isn't a simple counter.
+            If all you need is sequential page numbers, use the dedicated <Link href="/add-page-numbers" className="text-brand hover:underline">Add Page Numbers</Link> tool for a simpler workflow. If you need legal-style sequential document identifiers (common in litigation), use <Link href="/bates-numbering" className="text-brand hover:underline">Bates Numbering</Link> instead. Header &amp; Footer is best for custom text — names, dates, notices — that isn't a simple counter.
           </p>
 
           <h2 id="how-does-icreatepdf-compare-to-other-header-and-footer-tools" className="text-xl font-bold text-foreground pt-4 font-display">How Does iCreatePDF Compare to Other Header and Footer Tools?</h2>
@@ -250,7 +250,7 @@ export default function HeaderFooterBlogPost() {
         <div className="p-6 rounded-2xl bg-gradient-to-r from-purple-950/20 to-pink-950/20 border border-brand/20 text-center space-y-4">
           <h3 className="text-lg font-bold text-foreground font-display">Add a header or footer now — free &amp; private</h3>
           <p className="text-xs text-foreground/60 max-w-md mx-auto">No sign-up. No uploads. Your files stay on your device.</p>
-          <Link href="/tools/header-footer">
+          <Link href="/header-footer">
             <Button className="bg-brand hover:bg-brand/90 text-foreground font-medium text-xs px-6 rounded-full group">
               Add Header &amp; Footer Free
               <ArrowRight className="w-3.5 h-3.5 ml-1 transition-transform group-hover:translate-x-1" />

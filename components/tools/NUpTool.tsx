@@ -97,7 +97,7 @@ export function NUpTool() {
         name: `${nUp}up-${file.name}`,
         size: blob.size,
         toolName: 'N-up PDF',
-        href: '/tools/n-up-pdf',
+        href: '/n-up-pdf',
         downloadUrl: url,
       });
     } catch (err: any) {

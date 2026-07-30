@@ -179,7 +179,7 @@ export default function JpgToPdfBlogPost() {
 
           <h2 id="step-by-step-convert-jpg-to-pdf" className="text-xl font-bold text-foreground pt-4 font-display">Step-by-Step: Convert JPG to PDF</h2>
           <ol className="list-decimal list-inside space-y-3 pl-4 text-sm">
-            <li>Open <Link href="/tools/jpg-to-pdf" className="text-brand hover:underline">iCreatePDF — JPG to PDF</Link>.</li>
+            <li>Open <Link href="/jpg-to-pdf" className="text-brand hover:underline">iCreatePDF — JPG to PDF</Link>.</li>
             <li>Drag and drop your images into the upload zone, or click to browse. Add as many as you need.</li>
             <li>Reorder the images by dragging thumbnails to set the page sequence.</li>
             <li>Configure your <strong className="text-foreground">PDF settings</strong> in the panel on the right (page size, orientation, quality, margins).</li>
@@ -250,18 +250,18 @@ export default function JpgToPdfBlogPost() {
           <h3 className="text-lg font-bold text-foreground font-display">Convert your images to PDF now</h3>
           <p className="text-xs text-foreground/60 max-w-md mx-auto">JPG, PNG, HEIC, WEBP — any format, any device, always free.</p>
           <div className="flex items-center justify-center gap-3 flex-wrap">
-            <Link href="/tools/jpg-to-pdf">
+            <Link href="/jpg-to-pdf">
               <Button className="bg-orange-600 hover:bg-orange-700 text-foreground font-medium text-xs px-5 rounded-full group">
                 JPG to PDF
                 <ArrowRight className="w-3.5 h-3.5 ml-1 transition-transform group-hover:translate-x-1" />
               </Button>
             </Link>
-            <Link href="/tools/png-to-pdf">
+            <Link href="/png-to-pdf">
               <Button variant="outline" className="border-foreground/20 text-foreground hover:bg-foreground/5 font-medium text-xs px-5 rounded-full">
                 PNG to PDF
               </Button>
             </Link>
-            <Link href="/tools/heic-to-pdf">
+            <Link href="/heic-to-pdf">
               <Button variant="outline" className="border-foreground/20 text-foreground hover:bg-foreground/5 font-medium text-xs px-5 rounded-full">
                 HEIC to PDF
               </Button>

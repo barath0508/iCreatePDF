@@ -122,7 +122,7 @@ export default function GrayscaleFlattenPdfBlog() {
             Converting to grayscale strips all saturation levels, converting color coordinates (R,G,B) to their respective luminance values. Here is how to do it:
           </p>
           <ol className="list-decimal list-inside space-y-2 pl-4 text-sm">
-            <li>Go to the <Link href="/tools/grayscale-pdf" className="text-brand hover:underline">Grayscale PDF</Link> tool page.</li>
+            <li>Go to the <Link href="/grayscale-pdf" className="text-brand hover:underline">Grayscale PDF</Link> tool page.</li>
             <li>Drag and drop your color document.</li>
             <li>Click <strong>Convert to Grayscale</strong>. The script transforms the color profile of all text, images, and backgrounds locally.</li>
             <li>Download the monochrome PDF.</li>
@@ -136,7 +136,7 @@ export default function GrayscaleFlattenPdfBlog() {
             Standard PDFs support interactive annotation layers (comments, shapes, checkmarks, text field values). Anyone can click these layers to alter their values. Flattening embeds these interactive elements permanently into the page canvas.
           </p>
           <ol className="list-decimal list-inside space-y-2 pl-4 text-sm">
-            <li>Go to the <Link href="/tools/flatten-pdf" className="text-brand hover:underline">Flatten PDF</Link> page.</li>
+            <li>Go to the <Link href="/flatten-pdf" className="text-brand hover:underline">Flatten PDF</Link> page.</li>
             <li>Upload your completed PDF forms or signed agreements.</li>
             <li>Click <strong>Flatten PDF</strong>. The tool merges form fields and annotations.</li>
             <li>Download the flattened document.</li>
@@ -148,7 +148,7 @@ export default function GrayscaleFlattenPdfBlog() {
             <Printer className="w-8 h-8 text-brand mx-auto" />
             <h4 className="font-bold font-display text-foreground text-sm">Grayscale PDF</h4>
             <p className="text-xs text-foreground/50">Convert color pages to black &amp; white to save ink.</p>
-            <Link href="/tools/grayscale-pdf" className="inline-block pt-2">
+            <Link href="/grayscale-pdf" className="inline-block pt-2">
               <Button className="bg-brand hover:bg-brand/90 text-foreground font-medium text-xs px-4 rounded-full">
                 Grayscale PDF
               </Button>
@@ -159,7 +159,7 @@ export default function GrayscaleFlattenPdfBlog() {
             <Layers className="w-8 h-8 text-brand mx-auto" />
             <h4 className="font-bold font-display text-foreground text-sm">Flatten PDF</h4>
             <p className="text-xs text-foreground/50">Lock interactive form fields and signatures permanently.</p>
-            <Link href="/tools/flatten-pdf" className="inline-block pt-2">
+            <Link href="/flatten-pdf" className="inline-block pt-2">
               <Button className="bg-foreground/5 hover:bg-foreground/10 text-foreground border border-foreground/10 font-medium text-xs px-4 rounded-full">
                 Flatten PDF
               </Button>

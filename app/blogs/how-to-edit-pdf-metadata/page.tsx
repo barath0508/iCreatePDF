@@ -151,7 +151,7 @@ export default function EditMetadataBlog() {
 
           <h2 id="how-do-you-modify-pdf-metadata-fields-in-your-browser" className="text-xl font-bold text-foreground pt-4 font-display">How Do You Modify PDF Metadata Fields in Your Browser?</h2>
           <ol className="list-decimal list-inside space-y-2 pl-4 text-sm">
-            <li>Open the <Link href="/tools/pdf-metadata" className="text-brand hover:underline">/pdf-metadata</Link> tool.</li>
+            <li>Open the <Link href="/pdf-metadata" className="text-brand hover:underline">/pdf-metadata</Link> tool.</li>
             <li>Drag your file in. The tool will parse and display existing properties.</li>
             <li>Change the Author, Title, Subject, or Keywords text fields.</li>
             <li>Click <em>Apply Changes</em> and download the updated PDF file.</li>
@@ -174,7 +174,7 @@ export default function EditMetadataBlog() {
             Edit Document Properties Securely
           </h3>
           <p className="text-xs text-foreground/60 max-w-md mx-auto">Update metadata entirely inside your browser. No files are uploaded to any external server.</p>
-          <Link href="/tools/pdf-metadata">
+          <Link href="/pdf-metadata">
             <Button className="bg-brand hover:bg-brand/90 text-foreground font-medium text-xs px-6 rounded-full group">
               Open Metadata Editor
               <ArrowRight className="w-3.5 h-3.5 ml-1 transition-transform group-hover:translate-x-1" />

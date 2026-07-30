@@ -82,7 +82,7 @@ export function StampPdfTool() {
         name: `stamped-${file.name}`,
         size: blob.size,
         toolName: 'Batch Rubber Stamp',
-        href: '/tools/stamp-pdf',
+        href: '/stamp-pdf',
         downloadUrl: url,
       });
     } catch (err: any) {

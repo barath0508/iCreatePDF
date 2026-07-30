@@ -168,7 +168,7 @@ export default function TxtToPdfBlogPost() {
 
           <h2 id="step-by-step-how-do-you-convert-plain-text-to-pdf-locally" className="text-xl font-bold text-foreground pt-4 font-display">Step-by-Step: How Do You Convert Plain Text to PDF Locally?</h2>
           <ol className="list-decimal list-inside space-y-3 pl-4 text-sm">
-            <li>Open <Link href="/tools/txt-to-pdf" className="text-brand hover:underline">iCreatePDF Text to PDF</Link>.</li>
+            <li>Open <Link href="/txt-to-pdf" className="text-brand hover:underline">iCreatePDF Text to PDF</Link>.</li>
             <li>Upload a .txt file, or paste text directly.</li>
             <li>Customize page margins, size, and font as needed.</li>
             <li>Generate and download the formatted PDF.</li>
@@ -193,7 +193,7 @@ export default function TxtToPdfBlogPost() {
 
           <h2 id="what-is-the-difference-between-plain-text-and-markdown-pdf-rendering" className="text-xl font-bold text-foreground pt-4 font-display">What is the Difference Between Plain Text and Markdown PDF Rendering?</h2>
           <p>
-            If your text uses Markdown syntax (#, **, -, etc.) and you want that syntax actually rendered as formatted headings and lists rather than shown literally, use <Link href="/tools/markdown-to-pdf" className="text-brand hover:underline">Markdown to PDF</Link> instead. Text to PDF preserves your content exactly as typed, line by line, with no syntax interpretation.
+            If your text uses Markdown syntax (#, **, -, etc.) and you want that syntax actually rendered as formatted headings and lists rather than shown literally, use <Link href="/markdown-to-pdf" className="text-brand hover:underline">Markdown to PDF</Link> instead. Text to PDF preserves your content exactly as typed, line by line, with no syntax interpretation.
           </p>
 
           <h2 id="how-does-icreatepdf-compare-to-other-text-to-pdf-web-converters" className="text-xl font-bold text-foreground pt-4 font-display">How Does iCreatePDF Compare to Other Text to PDF Web Converters?</h2>
@@ -242,7 +242,7 @@ export default function TxtToPdfBlogPost() {
         <div className="p-6 rounded-2xl bg-gradient-to-r from-purple-950/20 to-pink-950/20 border border-brand/20 text-center space-y-4">
           <h3 className="text-lg font-bold text-foreground font-display">Convert text to PDF now — free &amp; private</h3>
           <p className="text-xs text-foreground/60 max-w-md mx-auto">No sign-up. No uploads. Your content stays on your device.</p>
-          <Link href="/tools/txt-to-pdf">
+          <Link href="/txt-to-pdf">
             <Button className="bg-brand hover:bg-brand/90 text-foreground font-medium text-xs px-6 rounded-full group">
               Convert Text to PDF Free
               <ArrowRight className="w-3.5 h-3.5 ml-1 transition-transform group-hover:translate-x-1" />

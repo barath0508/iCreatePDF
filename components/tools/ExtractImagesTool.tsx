@@ -87,7 +87,7 @@ export function ExtractImagesTool() {
         name: `extracted-images-${file.name}.zip`,
         size: zipBlob.size,
         toolName: 'Extract PDF Images',
-        href: '/tools/extract-pdf-images',
+        href: '/extract-pdf-images',
         downloadUrl: url,
       });
     } catch (err: any) {

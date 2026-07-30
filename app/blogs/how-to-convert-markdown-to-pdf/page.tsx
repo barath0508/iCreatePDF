@@ -168,7 +168,7 @@ export default function MarkdownToPdfBlogPost() {
 
           <h2 id="step-by-step-how-do-you-convert-markdown-to-pdf-offline" className="text-xl font-bold text-foreground pt-4 font-display">Step-by-Step: How Do You Convert Markdown to PDF Offline?</h2>
           <ol className="list-decimal list-inside space-y-3 pl-4 text-sm">
-            <li>Open <Link href="/tools/markdown-to-pdf" className="text-brand hover:underline">iCreatePDF Markdown to PDF</Link>.</li>
+            <li>Open <Link href="/markdown-to-pdf" className="text-brand hover:underline">iCreatePDF Markdown to PDF</Link>.</li>
             <li>Paste your Markdown content, or upload a .md file.</li>
             <li>Preview the rendered formatting — headings, bullet lists, tables, and code blocks.</li>
             <li>Click <strong className="text-foreground">Generate PDF</strong> and download the result.</li>
@@ -193,7 +193,7 @@ export default function MarkdownToPdfBlogPost() {
 
           <h2 id="what-markdown-syntax-elements-are-supported-by-the-parser" className="text-xl font-bold text-foreground pt-4 font-display">What Markdown Syntax Elements are Supported by the Parser?</h2>
           <p>
-            Standard Markdown syntax renders cleanly, including headings (#), bold/italic text, ordered and unordered lists, tables, blockquotes, links, and fenced code blocks with monospace formatting. If you need to also add fillable form fields to your resulting document, or plain-text formatting without Markdown syntax, see <Link href="/tools/txt-to-pdf" className="text-brand hover:underline">Text to PDF</Link>.
+            Standard Markdown syntax renders cleanly, including headings (#), bold/italic text, ordered and unordered lists, tables, blockquotes, links, and fenced code blocks with monospace formatting. If you need to also add fillable form fields to your resulting document, or plain-text formatting without Markdown syntax, see <Link href="/txt-to-pdf" className="text-brand hover:underline">Text to PDF</Link>.
           </p>
 
           <h2 id="how-does-icreatepdf-compare-to-other-markdown-to-pdf-tools" className="text-xl font-bold text-foreground pt-4 font-display">How Does iCreatePDF Compare to Other Markdown-to-PDF Tools?</h2>
@@ -242,7 +242,7 @@ export default function MarkdownToPdfBlogPost() {
         <div className="p-6 rounded-2xl bg-gradient-to-r from-purple-950/20 to-pink-950/20 border border-brand/20 text-center space-y-4">
           <h3 className="text-lg font-bold text-foreground font-display">Convert Markdown to PDF now — free &amp; private</h3>
           <p className="text-xs text-foreground/60 max-w-md mx-auto">No sign-up. No uploads. Your content stays on your device.</p>
-          <Link href="/tools/markdown-to-pdf">
+          <Link href="/markdown-to-pdf">
             <Button className="bg-brand hover:bg-brand/90 text-foreground font-medium text-xs px-6 rounded-full group">
               Convert Markdown to PDF Free
               <ArrowRight className="w-3.5 h-3.5 ml-1 transition-transform group-hover:translate-x-1" />

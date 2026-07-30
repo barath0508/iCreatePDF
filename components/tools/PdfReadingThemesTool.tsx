@@ -119,7 +119,7 @@ export function PdfReadingThemesTool() {
         name: `themed-${theme}-${file.name}`,
         size: blob.size,
         toolName: 'PDF Reading Themes',
-        href: '/tools/pdf-reading-themes',
+        href: '/pdf-reading-themes',
         downloadUrl: url,
       });
     } catch (err: any) {

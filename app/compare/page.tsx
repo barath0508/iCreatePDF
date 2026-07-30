@@ -199,7 +199,7 @@ export default function ComparePage() {
               {' · '}
               <Link href="/compare/pdf24-alternative" className="text-brand hover:underline underline-offset-2">PDF24 alternative</Link>
               {' · '}
-              <Link href="/tools/no-upload-pdf-tools" className="text-brand hover:underline underline-offset-2">Full no-upload tool list</Link>
+              <Link href="/no-upload-pdf-tools" className="text-brand hover:underline underline-offset-2">Full no-upload tool list</Link>
             </p>
           </div>
 

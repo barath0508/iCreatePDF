@@ -156,7 +156,7 @@ export default function ScanToPdfBlogPost() {
 
 <h2 id="step-by-step-scan-a-document-using-icreatepdf" className="text-xl font-bold text-foreground pt-4 font-display">Step-by-Step: Scan a Document Using iCreatePDF</h2>
           <ol className="list-decimal list-inside space-y-3 pl-4 text-sm">
-            <li>Open <Link href="/tools/scan-to-pdf" className="text-brand hover:underline">iCreatePDF Scan to PDF</Link> on your phone or laptop.</li>
+            <li>Open <Link href="/scan-to-pdf" className="text-brand hover:underline">iCreatePDF Scan to PDF</Link> on your phone or laptop.</li>
             <li>Allow camera access and capture each page, or upload existing photos.</li>
             <li>Crop each capture to the document edges and adjust order if needed.</li>
             <li>Compile all pages into a single PDF and download.</li>
@@ -181,7 +181,7 @@ export default function ScanToPdfBlogPost() {
 
           <h2 id="tips-for-cleaner-camera-scans" className="text-xl font-bold text-foreground pt-4 font-display">Tips for Cleaner Camera Scans</h2>
           <p>
-            Use even, indirect lighting to avoid glare and shadows, place the document on a plain contrasting surface to make edge detection easier, and hold the camera directly overhead rather than at an angle to minimize perspective distortion. If a page still looks a little crooked afterward, fix it with <Link href="/tools/rotate-pdf" className="text-brand hover:underline">Rotate PDF</Link> before finalizing.
+            Use even, indirect lighting to avoid glare and shadows, place the document on a plain contrasting surface to make edge detection easier, and hold the camera directly overhead rather than at an angle to minimize perspective distortion. If a page still looks a little crooked afterward, fix it with <Link href="/rotate-pdf" className="text-brand hover:underline">Rotate PDF</Link> before finalizing.
           </p>
 
           <h2 id="icreatepdf-vs-other-scanning-apps" className="text-xl font-bold text-foreground pt-4 font-display">iCreatePDF vs Other Scanning Apps</h2>
@@ -230,7 +230,7 @@ export default function ScanToPdfBlogPost() {
         <div className="p-6 rounded-2xl bg-gradient-to-r from-purple-950/20 to-pink-950/20 border border-brand/20 text-center space-y-4">
           <h3 className="text-lg font-bold text-foreground font-display">Scan your documents now — free &amp; private</h3>
           <p className="text-xs text-foreground/60 max-w-md mx-auto">No sign-up. No uploads. Your scans stay on your device.</p>
-          <Link href="/tools/scan-to-pdf">
+          <Link href="/scan-to-pdf">
             <Button className="bg-brand hover:bg-brand/90 text-foreground font-medium text-xs px-6 rounded-full group">
               Scan to PDF Free
               <ArrowRight className="w-3.5 h-3.5 ml-1 transition-transform group-hover:translate-x-1" />

@@ -168,7 +168,7 @@ export default function RisToPdfBlogPost() {
 
           <h2 id="step-by-step-how-do-you-compile-ris-bibliographies-to-pdf" className="text-xl font-bold text-foreground pt-4 font-display">Step-by-Step: How Do You Compile RIS Bibliographies to PDF?</h2>
           <ol className="list-decimal list-inside space-y-3 pl-4 text-sm">
-            <li>Open <Link href="/tools/ris-to-pdf" className="text-brand hover:underline">iCreatePDF RIS to PDF</Link>.</li>
+            <li>Open <Link href="/ris-to-pdf" className="text-brand hover:underline">iCreatePDF RIS to PDF</Link>.</li>
             <li>Upload your exported .ris citation file.</li>
             <li>Choose a citation style: APA, MLA, Chicago, or Harvard.</li>
             <li>Generate and download the formatted bibliography PDF.</li>
@@ -246,7 +246,7 @@ export default function RisToPdfBlogPost() {
         <div className="p-6 rounded-2xl bg-gradient-to-r from-purple-950/20 to-pink-950/20 border border-brand/20 text-center space-y-4">
           <h3 className="text-lg font-bold text-foreground font-display">Convert your RIS file now — free &amp; private</h3>
           <p className="text-xs text-foreground/60 max-w-md mx-auto">No sign-up. No uploads. Your library stays on your device.</p>
-          <Link href="/tools/ris-to-pdf">
+          <Link href="/ris-to-pdf">
             <Button className="bg-brand hover:bg-brand/90 text-foreground font-medium text-xs px-6 rounded-full group">
               Convert RIS to PDF Free
               <ArrowRight className="w-3.5 h-3.5 ml-1 transition-transform group-hover:translate-x-1" />

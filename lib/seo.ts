@@ -10,16 +10,20 @@ const SITE_URL = 'https://www.icreatepdf.online';
  * layout's `alternates.languages`. This helper always includes both.
  */
 export function buildAlternates(canonicalPath: string): Metadata['alternates'] {
+  const cleanPath = canonicalPath.startsWith('/tools/') && canonicalPath !== '/tools/no-upload-pdf-tools'
+    ? canonicalPath.replace('/tools/', '/')
+    : canonicalPath;
+
   const isHomepage =
-    canonicalPath === '/' ||
-    canonicalPath === '/es' ||
-    canonicalPath === '/hi' ||
-    canonicalPath === '/ta' ||
-    canonicalPath === '';
+    cleanPath === '/' ||
+    cleanPath === '/es' ||
+    cleanPath === '/hi' ||
+    cleanPath === '/ta' ||
+    cleanPath === '';
 
   if (isHomepage) {
     return {
-      canonical: canonicalPath,
+      canonical: cleanPath,
       languages: {
         'en': '/',
         'es': '/es',
@@ -31,10 +35,10 @@ export function buildAlternates(canonicalPath: string): Metadata['alternates'] {
   }
 
   return {
-    canonical: canonicalPath,
+    canonical: cleanPath,
     languages: {
-      'en': canonicalPath,
-      'x-default': canonicalPath,
+      'en': cleanPath,
+      'x-default': cleanPath,
     },
   };
 }
@@ -82,12 +86,16 @@ export function toolSchema({
   const ratingValue = (4.7 + (charCodeSum % 3) * 0.1).toFixed(1); // 4.7, 4.8, or 4.9
   const ratingCount = (120 + (charCodeSum % 140)).toString(); // 120 to 259
 
+  const cleanUrl = url.startsWith('/tools/') && url !== '/tools/no-upload-pdf-tools'
+    ? url.replace('/tools/', '/')
+    : url;
+
   return [
     {
       '@context': 'https://schema.org',
       '@type': 'SoftwareApplication',
       name,
-      url: `${SITE_URL}${url}`,
+      url: `${SITE_URL}${cleanUrl}`,
       description,
       image: `${SITE_URL}/logo.png`,
       applicationCategory: 'UtilityApplication',
@@ -251,13 +259,18 @@ export function itemListSchema(items: { name: string; url: string; description?:
     name: 'iCreatePDF Online PDF Tools',
     description: '46+ free browser-based PDF tools — merge, compress, convert, edit, sign, OCR, and protect PDFs without server uploads.',
     numberOfItems: items.length,
-    itemListElement: items.map((item, index) => ({
-      '@type': 'ListItem',
-      position: index + 1,
-      name: item.name,
-      url: item.url.startsWith('http') ? item.url : `${SITE_URL}${item.url}`,
-      ...(item.description ? { description: item.description } : {}),
-    })),
+    itemListElement: items.map((item, index) => {
+      const cleanItemUrl = item.url.startsWith('/tools/') && item.url !== '/tools/no-upload-pdf-tools'
+        ? item.url.replace('/tools/', '/')
+        : item.url;
+      return {
+        '@type': 'ListItem',
+        position: index + 1,
+        name: item.name,
+        url: item.url.startsWith('http') ? item.url : `${SITE_URL}${cleanItemUrl}`,
+        ...(item.description ? { description: item.description } : {}),
+      };
+    }),
   };
 }
 

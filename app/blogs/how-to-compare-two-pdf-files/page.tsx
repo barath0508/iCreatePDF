@@ -172,7 +172,7 @@ export default function ComparePdfBlogPost() {
 
           <h2 id="step-by-step-how-do-you-compare-two-pdf-files-side-by-side" className="text-xl font-bold text-foreground pt-4 font-display">Step-by-Step: How Do You Compare Two PDF Files Side-by-Side?</h2>
           <ol className="list-decimal list-inside space-y-3 pl-4 text-sm">
-            <li>Open <Link href="/tools/compare-pdf" className="text-brand hover:underline">iCreatePDF Compare PDF</Link>.</li>
+            <li>Open <Link href="/compare-pdf" className="text-brand hover:underline">iCreatePDF Compare PDF</Link>.</li>
             <li>Upload the original version and the revised version.</li>
             <li>Both documents open side-by-side with synchronized scrolling.</li>
             <li>Scroll through and visually review differences page by page.</li>
@@ -197,7 +197,7 @@ export default function ComparePdfBlogPost() {
 
           <h2 id="what-is-the-difference-between-visual-comparison-and-text-diffing" className="text-xl font-bold text-foreground pt-4 font-display">What is the Difference Between Visual Comparison and Text Diffing?</h2>
           <p>
-            iCreatePDF's comparison is a visual, side-by-side view — ideal for catching layout changes, added/removed images, and reformatted sections that a pure text-diff tool would miss. If you specifically need to compare the raw text content word-for-word, extract text from both versions first using <Link href="/tools/pdf-to-text" className="text-brand hover:underline">PDF to Text</Link> and diff the results in a text comparison tool.
+            iCreatePDF's comparison is a visual, side-by-side view — ideal for catching layout changes, added/removed images, and reformatted sections that a pure text-diff tool would miss. If you specifically need to compare the raw text content word-for-word, extract text from both versions first using <Link href="/pdf-to-text" className="text-brand hover:underline">PDF to Text</Link> and diff the results in a text comparison tool.
           </p>
 
           <h2 id="how-does-icreatepdf-compare-to-other-pdf-comparison-software" className="text-xl font-bold text-foreground pt-4 font-display">How Does iCreatePDF Compare to Other PDF Comparison Software?</h2>
@@ -246,7 +246,7 @@ export default function ComparePdfBlogPost() {
         <div className="p-6 rounded-2xl bg-gradient-to-r from-purple-950/20 to-pink-950/20 border border-brand/20 text-center space-y-4">
           <h3 className="text-lg font-bold text-foreground font-display">Compare your PDFs now — free &amp; private</h3>
           <p className="text-xs text-foreground/60 max-w-md mx-auto">No sign-up. No uploads. Your files stay on your device.</p>
-          <Link href="/tools/compare-pdf">
+          <Link href="/compare-pdf">
             <Button className="bg-brand hover:bg-brand/90 text-foreground font-medium text-xs px-6 rounded-full group">
               Compare PDF Files Free
               <ArrowRight className="w-3.5 h-3.5 ml-1 transition-transform group-hover:translate-x-1" />

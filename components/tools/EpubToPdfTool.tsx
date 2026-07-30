@@ -71,7 +71,7 @@ export function EpubToPdfTool() {
         name: file.name.replace(/\.epub$/i, '.pdf'),
         size: blob.size,
         toolName: 'EPUB to PDF',
-        href: '/tools/epub-to-pdf',
+        href: '/epub-to-pdf',
         downloadUrl: url,
       });
     } catch (err: any) {

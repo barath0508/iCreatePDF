@@ -80,7 +80,7 @@ export function AdjustMarginsTool() {
         name: `margins-${file.name}`,
         size: blob.size,
         toolName: 'Adjust Margins',
-        href: '/tools/adjust-pdf-margins',
+        href: '/adjust-pdf-margins',
         downloadUrl: url,
       });
     } catch (err: any) {

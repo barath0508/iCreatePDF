@@ -136,7 +136,7 @@ export default function RedactPdfBlog() {
 
           <h2 id="step-by-step-how-to-redact-a-pdf" className="text-xl font-bold text-foreground pt-4 font-display">Step-by-Step: How to Redact a PDF</h2>
           <p className="text-sm">
-            To start, navigate to the <Link href="/tools/redact-pdf" className="text-brand hover:underline">Redact PDF</Link> tool page. Then, follow these simple steps:
+            To start, navigate to the <Link href="/redact-pdf" className="text-brand hover:underline">Redact PDF</Link> tool page. Then, follow these simple steps:
           </p>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4 my-4">
             {steps.map((s, i) => (
@@ -192,7 +192,7 @@ export default function RedactPdfBlog() {
             100% Offline &amp; Safe PDF Redaction
           </h3>
           <p className="text-xs text-foreground/60 max-w-md mx-auto">Black out private information without sending documents across the internet.</p>
-          <Link href="/tools/redact-pdf">
+          <Link href="/redact-pdf">
             <Button className="bg-brand hover:bg-brand/90 text-foreground font-medium text-xs px-6 rounded-full group">
               Redact PDF Free
               <ArrowRight className="w-3.5 h-3.5 ml-1 transition-transform group-hover:translate-x-1" />

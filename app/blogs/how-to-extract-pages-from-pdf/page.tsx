@@ -158,7 +158,7 @@ export default function ExtractPagesBlog() {
             Using iCreatePDF\'s page extractor, you can input a page range (e.g., <code className="text-brand font-mono">1, 3-5, 10</code>) and generate a new PDF containing only those selected pages.
           </p>
           <ol className="list-decimal list-inside space-y-2 pl-4 text-sm">
-            <li>Go to <Link href="/tools/extract-pages" className="text-brand hover:underline">/extract-pages</Link></li>
+            <li>Go to <Link href="/extract-pages" className="text-brand hover:underline">/extract-pages</Link></li>
             <li>Drag &amp; drop your source PDF document.</li>
             <li>Type in your desired page numbers or ranges (e.g., 2-4, 7).</li>
             <li>Click <em>Extract Pages</em> and download your split document.</li>
@@ -192,7 +192,7 @@ export default function ExtractPagesBlog() {
             Extract Specific Pages Now
           </h3>
           <p className="text-xs text-foreground/60 max-w-md mx-auto">100% browser-based. Zero uploads. Complete page control.</p>
-          <Link href="/tools/extract-pages">
+          <Link href="/extract-pages">
             <Button className="bg-brand hover:bg-brand/90 text-foreground font-medium text-xs px-6 rounded-full group">
               Extract PDF Pages
               <ArrowRight className="w-3.5 h-3.5 ml-1 transition-transform group-hover:translate-x-1" />

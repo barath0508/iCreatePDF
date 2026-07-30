@@ -79,7 +79,7 @@ export function FormDataExtractorTool() {
           name: 'extracted-form-data.csv',
           size: blob.size,
           toolName: 'Export Form Data',
-          href: '/tools/export-pdf-form-data',
+          href: '/export-pdf-form-data',
           downloadUrl: url,
         });
       }

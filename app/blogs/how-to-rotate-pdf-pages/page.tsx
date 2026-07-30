@@ -156,7 +156,7 @@ export default function RotatePdfBlogPost() {
 
 <h2 id="step-by-step-rotate-pdf-pages-using-icreatepdf" className="text-xl font-bold text-foreground pt-4 font-display">Step-by-Step: Rotate PDF Pages Using iCreatePDF</h2>
           <ol className="list-decimal list-inside space-y-3 pl-4 text-sm">
-            <li>Open <Link href="/tools/rotate-pdf" className="text-brand hover:underline">iCreatePDF Rotate PDF</Link>.</li>
+            <li>Open <Link href="/rotate-pdf" className="text-brand hover:underline">iCreatePDF Rotate PDF</Link>.</li>
             <li>Upload your PDF — every page appears as a thumbnail.</li>
             <li>Select the pages you want to fix, or apply rotation to the entire document.</li>
             <li>Choose the rotation angle (90°, 180°, or 270°) and download the corrected file.</li>
@@ -181,7 +181,7 @@ export default function RotatePdfBlogPost() {
 
           <h2 id="rotating-one-page-vs-the-whole-document" className="text-xl font-bold text-foreground pt-4 font-display">Rotating One Page vs the Whole Document</h2>
           <p>
-            Most rotation tools only let you flip every page at once, which is a problem if just one scanned page is sideways. iCreatePDF lets you select individual pages from the thumbnail grid, so a report with 40 correct pages and 2 sideways ones doesn't need to be processed page-by-page in a separate tool. If you also need to reorder pages or remove blank ones, pair this with <Link href="/tools/organize-pdf" className="text-brand hover:underline">Organize PDF</Link>.
+            Most rotation tools only let you flip every page at once, which is a problem if just one scanned page is sideways. iCreatePDF lets you select individual pages from the thumbnail grid, so a report with 40 correct pages and 2 sideways ones doesn't need to be processed page-by-page in a separate tool. If you also need to reorder pages or remove blank ones, pair this with <Link href="/organize-pdf" className="text-brand hover:underline">Organize PDF</Link>.
           </p>
 
           <h2 id="icreatepdf-vs-other-rotate-tools" className="text-xl font-bold text-foreground pt-4 font-display">iCreatePDF vs Other Rotate Tools</h2>
@@ -231,7 +231,7 @@ export default function RotatePdfBlogPost() {
         <div className="p-6 rounded-2xl bg-gradient-to-r from-purple-950/20 to-pink-950/20 border border-brand/20 text-center space-y-4">
           <h3 className="text-lg font-bold text-foreground font-display">Rotate your PDF now — free &amp; private</h3>
           <p className="text-xs text-foreground/60 max-w-md mx-auto">No sign-up. No uploads. Your files stay on your device.</p>
-          <Link href="/tools/rotate-pdf">
+          <Link href="/rotate-pdf">
             <Button className="bg-brand hover:bg-brand/90 text-foreground font-medium text-xs px-6 rounded-full group">
               Rotate PDF Free
               <ArrowRight className="w-3.5 h-3.5 ml-1 transition-transform group-hover:translate-x-1" />
