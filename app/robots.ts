@@ -36,6 +36,6 @@ export default function robots(): MetadataRoute.Robots {
       },
     ],
     sitemap: 'https://www.icreatepdf.online/sitemap.xml',
-    host: 'https://www.icreatepdf.online',
+    host: 'www.icreatepdf.online',
   };
 }

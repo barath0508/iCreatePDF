@@ -10,7 +10,7 @@ const SITE_URL = 'https://www.icreatepdf.online';
  * layout's `alternates.languages`. This helper always includes both.
  */
 export function buildAlternates(canonicalPath: string): Metadata['alternates'] {
-  const cleanPath = canonicalPath.startsWith('/tools/') && canonicalPath !== '/tools/no-upload-pdf-tools'
+  const cleanPath = canonicalPath.startsWith('/tools/')
     ? canonicalPath.replace('/tools/', '/')
     : canonicalPath;
 
@@ -86,7 +86,7 @@ export function toolSchema({
   const ratingValue = (4.7 + (charCodeSum % 3) * 0.1).toFixed(1); // 4.7, 4.8, or 4.9
   const ratingCount = (120 + (charCodeSum % 140)).toString(); // 120 to 259
 
-  const cleanUrl = url.startsWith('/tools/') && url !== '/tools/no-upload-pdf-tools'
+  const cleanUrl = url.startsWith('/tools/')
     ? url.replace('/tools/', '/')
     : url;
 
@@ -260,7 +260,7 @@ export function itemListSchema(items: { name: string; url: string; description?:
     description: '46+ free browser-based PDF tools — merge, compress, convert, edit, sign, OCR, and protect PDFs without server uploads.',
     numberOfItems: items.length,
     itemListElement: items.map((item, index) => {
-      const cleanItemUrl = item.url.startsWith('/tools/') && item.url !== '/tools/no-upload-pdf-tools'
+      const cleanItemUrl = item.url.startsWith('/tools/')
         ? item.url.replace('/tools/', '/')
         : item.url;
       return {

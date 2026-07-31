@@ -10,6 +10,12 @@ export function middleware(request: NextRequest) {
       const url = new URL(request.nextUrl.pathname + request.nextUrl.search, 'https://www.icreatepdf.online');
       return NextResponse.redirect(url, 301);
     }
+
+    // 2. Non-www to www redirect (Canonical domain redirection)
+    if (hostname === 'icreatepdf.online') {
+      const url = new URL(request.nextUrl.pathname + request.nextUrl.search, 'https://www.icreatepdf.online');
+      return NextResponse.redirect(url, 301);
+    }
   } catch (error) {
     console.error('Middleware execution error:', error);
   }

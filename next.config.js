@@ -126,6 +126,26 @@ const nextConfig = {
           },
         ],
       },
+      {
+        // Prevent sitemap.xml from being cached indefinitely (recommendation by Bing to refresh daily)
+        source: '/sitemap.xml',
+        headers: [
+          {
+            key: 'Cache-Control',
+            value: 'public, max-age=0, s-maxage=86400, must-revalidate',
+          },
+        ],
+      },
+      {
+        // Prevent robots.txt from being cached indefinitely
+        source: '/robots.txt',
+        headers: [
+          {
+            key: 'Cache-Control',
+            value: 'public, max-age=0, s-maxage=86400, must-revalidate',
+          },
+        ],
+      },
     ];
   },
 };

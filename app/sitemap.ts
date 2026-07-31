@@ -161,14 +161,14 @@ export default function sitemap(): MetadataRoute.Sitemap {
   return [
     // Homepage — highest priority
     {
-      url: baseUrl,
+      url: `${baseUrl}/`,
       lastModified: TODAY,
       changeFrequency: 'daily',
       priority: 1.0,
     },
     // Tool pages — core content
     ...toolRoutes.map((route) => {
-      const cleanRoute = route.startsWith('/tools/') && route !== '/tools/no-upload-pdf-tools'
+      const cleanRoute = route.startsWith('/tools/')
         ? route.replace('/tools/', '/')
         : route;
       return {
@@ -194,7 +194,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     })),
     // Comparison / alternative pages — commercial intent
     ...comparisonRoutes.map((route) => {
-      const cleanRoute = route.startsWith('/tools/') && route !== '/tools/no-upload-pdf-tools'
+      const cleanRoute = route.startsWith('/tools/')
         ? route.replace('/tools/', '/')
         : route;
       return {
