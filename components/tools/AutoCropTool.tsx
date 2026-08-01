@@ -49,7 +49,7 @@ export function AutoCropTool() {
       const ctx = canvas.getContext('2d');
 
       if (ctx) {
-        await page.render({ canvasContext: ctx, viewport }).promise;
+        await page.render({ canvasContext: ctx, viewport, canvas }).promise;
         const imgData = ctx.getImageData(0, 0, canvas.width, canvas.height);
         const data = imgData.data;
 
@@ -114,7 +114,7 @@ export function AutoCropTool() {
       });
 
       const pdfBytes = await pdfDoc.save();
-      const blob = new Blob([pdfBytes], { type: 'application/pdf' });
+      const blob = new Blob([pdfBytes as any], { type: 'application/pdf' });
       setDownloadUrl(URL.createObjectURL(blob));
     } catch (err) {
       console.error('Crop export failed:', err);

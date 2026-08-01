@@ -48,7 +48,7 @@ export function FormDataExtractorTool() {
         fields.forEach((field) => {
           const name = field.getName();
           try {
-            row[name] = field.getText() || '';
+            row[name] = (field as any).getText?.() || '';
           } catch {
             row[name] = 'Checked / Active';
           }

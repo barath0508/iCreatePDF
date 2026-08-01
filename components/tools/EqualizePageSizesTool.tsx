@@ -8,7 +8,7 @@ import { toast } from 'sonner';
 export function EqualizePageSizesTool() {
   const [file, setFile] = useState<File | null>(null);
   const [pagesCount, setPagesCount] = useState(0);
-  const [targetSize, setTargetSize] = useState<'A4' | 'LETTER' | 'LEGAL'>('A4');
+  const [targetSize, setTargetSize] = useState<'A4' | 'Letter' | 'Legal'>('A4');
   const [isProcessing, setIsProcessing] = useState(false);
   const [progress, setProgress] = useState(0);
   const [downloadUrl, setDownloadUrl] = useState<string | null>(null);
@@ -155,7 +155,7 @@ export function EqualizePageSizesTool() {
           <div className="space-y-3">
             <label className="text-xs font-mono text-foreground/60 block">Uniform Page Standard:</label>
             <div className="grid grid-cols-3 gap-2">
-              {(['A4', 'LETTER', 'LEGAL'] as const).map((sz) => (
+              {(['A4', 'Letter', 'Legal'] as const).map((sz) => (
                 <button
                   key={sz}
                   type="button"

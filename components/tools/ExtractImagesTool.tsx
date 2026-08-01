@@ -67,7 +67,7 @@ export function ExtractImagesTool() {
         const ctx = canvas.getContext('2d');
 
         if (ctx) {
-          await page.render({ canvasContext: ctx, viewport }).promise;
+          await page.render({ canvasContext: ctx, viewport, canvas }).promise;
           const dataUrl = canvas.toDataURL('image/png');
           const base64Data = dataUrl.replace(/^data:image\/png;base64,/, '');
           zip.file(`page-${i}-image-${imgIndex}.png`, base64Data, { base64: true });

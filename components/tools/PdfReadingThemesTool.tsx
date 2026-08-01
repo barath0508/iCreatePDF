@@ -66,7 +66,7 @@ export function PdfReadingThemesTool() {
         const ctx = canvas.getContext('2d');
 
         if (ctx) {
-          await page.render({ canvasContext: ctx, viewport }).promise;
+          await page.render({ canvasContext: ctx, viewport, canvas }).promise;
 
           // Apply color filter matrix on pixels
           const imgData = ctx.getImageData(0, 0, canvas.width, canvas.height);

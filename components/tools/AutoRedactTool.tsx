@@ -144,7 +144,7 @@ export function AutoRedactTool() {
       });
 
       const pdfBytes = await pdfDoc.save();
-      const blob = new Blob([pdfBytes], { type: 'application/pdf' });
+      const blob = new Blob([pdfBytes as any], { type: 'application/pdf' });
       setRedactedPdfUrl(URL.createObjectURL(blob));
     } catch (error) {
       console.error('Redaction failed:', error);

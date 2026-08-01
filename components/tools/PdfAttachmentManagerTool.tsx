@@ -66,7 +66,7 @@ export function PdfAttachmentManagerTool() {
   };
 
   const downloadAttachment = (item: AttachmentItem) => {
-    const blob = new Blob([item.content]);
+    const blob = new Blob([item.content as any]);
     const url = URL.createObjectURL(blob);
     const a = document.createElement('a');
     a.href = url;
@@ -94,7 +94,7 @@ export function PdfAttachmentManagerTool() {
       }
 
       const pdfBytes = await pdfDoc.save();
-      const blob = new Blob([pdfBytes], { type: 'application/pdf' });
+      const blob = new Blob([pdfBytes as any], { type: 'application/pdf' });
       setDownloadUrl(URL.createObjectURL(blob));
     } catch (err) {
       console.error('Failed to attach files:', err);
