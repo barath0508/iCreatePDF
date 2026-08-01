@@ -57,6 +57,7 @@
     "framer-motion": "^12.42.2",
     "geist": "^1.7.2",
     "heic2any": "^0.0.4",
+    "html2canvas": "^1.4.1",
     "html2pdf.js": "^0.14.0",
     "input-otp": "1.4.1",
     "jszip": "^3.10.1",

@@ -152,6 +152,9 @@ importers:
       heic2any:
         specifier: ^0.0.4
         version: 0.0.4
+      html2canvas:
+        specifier: ^1.4.1
+        version: 1.4.1
       html2pdf.js:
         specifier: ^0.14.0
         version: 0.14.0
