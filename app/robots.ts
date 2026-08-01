@@ -4,8 +4,23 @@ export default function robots(): MetadataRoute.Robots {
   return {
     rules: [
       {
-        // Googlebot gets full unrestricted access for maximum indexing
-        userAgent: 'Googlebot',
+        // Search Engine Crawlers
+        userAgent: ['Googlebot', 'Bingbot', 'Slurp', 'DuckDuckBot'],
+        allow: '/',
+        disallow: ['/api/', '/checkout', '/admin'],
+      },
+      {
+        // AI Search & Generative Crawlers (ChatGPT, Perplexity, Claude, Gemini)
+        userAgent: [
+          'GPTBot',
+          'ChatGPT-User',
+          'PerplexityBot',
+          'ClaudeBot',
+          'Claude-Web',
+          'Google-Extended',
+          'Amazonbot',
+          'ByteSpider',
+        ],
         allow: '/',
         disallow: ['/api/', '/checkout', '/admin'],
       },
@@ -15,13 +30,7 @@ export default function robots(): MetadataRoute.Robots {
         allow: '/',
       },
       {
-        // Bingbot — full access
-        userAgent: 'Bingbot',
-        allow: '/',
-        disallow: ['/api/', '/checkout', '/admin'],
-      },
-      {
-        // All other bots — allow full asset rendering
+        // Default rule for all other web crawlers
         userAgent: '*',
         allow: '/',
         disallow: [
@@ -37,4 +46,5 @@ export default function robots(): MetadataRoute.Robots {
     host: 'www.icreatepdf.online',
   };
 }
+
 

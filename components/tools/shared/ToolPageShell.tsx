@@ -57,6 +57,10 @@ export function ToolPageShell({
     ],
   };
 
+  const hasBreadcrumbInJsonLd = Array.isArray(jsonLd)
+    ? jsonLd.some((item) => item && item['@type'] === 'BreadcrumbList')
+    : jsonLd && (jsonLd as Record<string, any>)['@type'] === 'BreadcrumbList';
+
   const activeJsonLd = jsonLd || defaultJsonLd;
 
   return (
@@ -65,10 +69,12 @@ export function ToolPageShell({
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(activeJsonLd) }}
       />
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbLd) }}
-      />
+      {!hasBreadcrumbInJsonLd && (
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbLd) }}
+        />
+      )}
 
       <Navigation />
 
