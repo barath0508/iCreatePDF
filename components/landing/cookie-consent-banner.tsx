@@ -4,6 +4,8 @@ import { useState, useEffect } from 'react';
 import { ShieldCheck, Settings, Lock, Check } from 'lucide-react';
 import Link from 'next/link';
 
+import Clarity from '@microsoft/clarity';
+
 export function CookieConsentBanner() {
   const [isVisible, setIsVisible] = useState(false);
   const [showPreferences, setShowPreferences] = useState(false);
@@ -31,6 +33,15 @@ export function CookieConsentBanner() {
 
     if (typeof window !== 'undefined' && (window as any).gtag) {
       (window as any).gtag('consent', 'update', preferences);
+    }
+
+    try {
+      Clarity.consentV2({
+        ad_Storage: preferences.ad_storage,
+        analytics_Storage: preferences.analytics_storage,
+      });
+    } catch {
+      // Clarity not initialized yet or SSR
     }
 
     setIsVisible(false);
