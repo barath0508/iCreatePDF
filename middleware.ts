@@ -3,10 +3,10 @@ import type { NextRequest } from 'next/server';
 
 export function middleware(request: NextRequest) {
   try {
-    const hostname = request.headers.get('host') || '';
+    const hostname = request.nextUrl.hostname;
     
     // 1. Staging/Vercel default domain redirect
-    if (hostname.includes('vercel.app')) {
+    if (hostname.endsWith('.vercel.app')) {
       const url = new URL(request.nextUrl.pathname + request.nextUrl.search, 'https://www.icreatepdf.online');
       return NextResponse.redirect(url, 301);
     }

@@ -129,7 +129,7 @@ export function toolSchema({
     },
     breadcrumbSchema([
       { name: 'iCreatePDF', url: '/' },
-      { name: 'PDF Tools', url: '/tools' },
+      { name: 'PDF Tools', url: '/#tools' },
       { name },
     ]),
   ];

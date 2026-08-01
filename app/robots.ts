@@ -10,18 +10,18 @@ export default function robots(): MetadataRoute.Robots {
         disallow: ['/api/', '/checkout', '/admin'],
       },
       {
-        // Google image bot \u2014 allow all for image SEO
+        // Google image bot — allow all for image SEO
         userAgent: 'Googlebot-Image',
         allow: '/',
       },
       {
-        // Bingbot \u2014 full access
+        // Bingbot — full access
         userAgent: 'Bingbot',
         allow: '/',
         disallow: ['/api/', '/checkout', '/admin'],
       },
       {
-        // All other bots \u2014 allow with disallow list
+        // All other bots — allow full asset rendering
         userAgent: '*',
         allow: '/',
         disallow: [
@@ -30,12 +30,11 @@ export default function robots(): MetadataRoute.Robots {
           '/admin',
           '/test.html',
           '/*-draft.html',
-          '/_next/static/',
         ],
-        crawlDelay: 1,
       },
     ],
     sitemap: 'https://www.icreatepdf.online/sitemap.xml',
     host: 'www.icreatepdf.online',
   };
 }
+
