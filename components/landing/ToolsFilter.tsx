@@ -9,7 +9,7 @@ import {
   Code, Layers, Printer, Columns, EyeOff, Crop, BookOpen, Wrench, Info,
   AlignCenter, Maximize2, Moon, QrCode, BookMarked, Trash2,
   Volume2, Stamp, FileSpreadsheet, Accessibility, Copy, FileSearch, Award,
-  Heart, Search, ArrowRight,
+  Heart, Search, ArrowRight, ShieldAlert, Paperclip, SplitSquareVertical, Monitor,
   LucideIcon,
 } from 'lucide-react';
 import { getFavorites, toggleFavorite } from '@/lib/favorites';
@@ -21,6 +21,7 @@ const ICON_MAP: Record<string, LucideIcon> = {
   Code, Layers, Printer, Columns, EyeOff, Crop, BookOpen, Wrench, Info,
   AlignCenter, Maximize2, Moon, QrCode, BookMarked, Trash2,
   Volume2, Stamp, FileSpreadsheet, Accessibility, Copy, FileSearch, Award,
+  ShieldAlert, Paperclip, SplitSquareVertical, Monitor,
 };
 
 const POPULAR_TOOLS = new Set([

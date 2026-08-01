@@ -13,7 +13,9 @@ const OLD_TOOLS = [
   'n-up-pdf', 'booklet-pdf', 'adjust-pdf-margins', 'equalize-pdf-page-sizes',
   'pdf-to-word', 'extract-pdf-images', 'export-pdf-form-data', 'pdf-to-audio',
   'stamp-pdf', 'pdf-reading-themes', 'pdf-security-auditor', 'pdf-toc-builder',
-  'epub-to-pdf', 'svg-to-pdf', 'csv-to-pdf'
+  'epub-to-pdf', 'svg-to-pdf', 'csv-to-pdf',
+  'auto-redact-pdf', 'pdf-attachment-manager', 'pdf-visual-diff',
+  'pdf-3d-flipbook', 'pdf-presentation-mode', 'auto-crop-pdf'
 ];
 
 /** @type {import('next').NextConfig} */

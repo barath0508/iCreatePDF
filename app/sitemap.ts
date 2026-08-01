@@ -69,10 +69,22 @@ export default function sitemap(): MetadataRoute.Sitemap {
     '/tools/epub-to-pdf',
     '/tools/svg-to-pdf',
     '/tools/csv-to-pdf',
+    '/tools/auto-redact-pdf',
+    '/tools/pdf-attachment-manager',
+    '/tools/pdf-visual-diff',
+    '/tools/pdf-3d-flipbook',
+    '/tools/pdf-presentation-mode',
+    '/tools/auto-crop-pdf',
   ];
 
   const blogRoutes = [
     '/blogs',
+    '/blogs/how-to-auto-redact-pdf-sensitive-data',
+    '/blogs/how-to-manage-and-embed-pdf-attachments',
+    '/blogs/how-to-compare-pdf-visual-diff',
+    '/blogs/how-to-create-interactive-3d-pdf-flipbook',
+    '/blogs/how-to-present-pdf-slideshow-laser-pointer',
+    '/blogs/how-to-auto-crop-pdf-margins',
     '/blogs/how-to-create-n-up-pdf',
     '/blogs/how-to-make-pdf-booklet',
     '/blogs/how-to-adjust-pdf-margins',

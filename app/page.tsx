@@ -88,6 +88,12 @@ const tools: ToolItem[] = [
   { iconName: 'BookOpen', title: 'EPUB to PDF', desc: 'Convert EPUB eBook files into clean, printable PDF documents.', href: '/epub-to-pdf', category: 'convert' },
   { iconName: 'Code', title: 'SVG to PDF', desc: 'Convert Scalable Vector Graphics (.svg) into vector PDFs.', href: '/svg-to-pdf', category: 'convert' },
   { iconName: 'FileSpreadsheet', title: 'CSV to PDF', desc: 'Convert CSV data sheets directly into formatted PDF tables.', href: '/csv-to-pdf', category: 'convert' },
+  { iconName: 'ShieldAlert', title: 'Auto-Redact PDF', desc: 'Scan & redact sensitive PII (SSNs, emails, credit cards) automatically.', href: '/auto-redact-pdf', category: 'secure' },
+  { iconName: 'Paperclip', title: 'PDF Attachment Manager', desc: 'Extract ZUGFeRD e-invoices or embed files inside PDF containers.', href: '/pdf-attachment-manager', category: 'utilities' },
+  { iconName: 'SplitSquareVertical', title: 'PDF Visual Diff', desc: 'Audit document revisions with visual pixel diff curtain sliders.', href: '/pdf-visual-diff', category: 'utilities' },
+  { iconName: 'BookOpen', title: '3D PDF Flipbook', desc: 'Turn PDF e-books and brochures into 3D double-page flipbooks.', href: '/pdf-3d-flipbook', category: 'utilities' },
+  { iconName: 'Monitor', title: 'PDF Presentation Mode', desc: 'Present slides with digital laser pointer, pen annotations & timer.', href: '/pdf-presentation-mode', category: 'utilities' },
+  { iconName: 'Crop', title: 'Auto-Crop PDF', desc: 'Detect and trim blank margins and scanner borders automatically.', href: '/auto-crop-pdf', category: 'organize' },
 ];
 
 export default function Home() {
