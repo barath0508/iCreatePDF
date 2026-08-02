@@ -263,14 +263,6 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
           strategy="lazyOnload"
         />
 
-        {/* Monetag Ad Tag */}
-        <Script
-          src=""
-          data-zone="262948"
-          data-cfasync="false"
-          strategy="afterInteractive"
-        />
-
 
         <Script
           id="register-sw"

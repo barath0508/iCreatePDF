@@ -21,6 +21,25 @@ const OLD_TOOLS = [
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   compress: true,
+  experimental: {
+    optimizePackageImports: [
+      'lucide-react',
+      'framer-motion',
+      '@radix-ui/react-accordion',
+      '@radix-ui/react-alert-dialog',
+      '@radix-ui/react-dialog',
+      '@radix-ui/react-dropdown-menu',
+      '@radix-ui/react-popover',
+      '@radix-ui/react-tooltip',
+      '@radix-ui/react-select',
+      '@radix-ui/react-avatar',
+      '@radix-ui/react-checkbox',
+      '@radix-ui/react-tabs',
+      'cmdk',
+      'date-fns',
+      'recharts',
+    ],
+  },
   typescript: {
     ignoreBuildErrors: true,
   },
@@ -88,6 +107,10 @@ const nextConfig = {
             value: 'public, max-age=3600, s-maxage=31536000, stale-while-revalidate=86400',
           },
           {
+            key: 'Link',
+            value: '<https://www.googletagmanager.com>; rel=preconnect, <https://pagead2.googlesyndication.com>; rel=preconnect, <https://cdn.jsdelivr.net>; rel=preconnect; crossorigin',
+          },
+          {
             // Tell Google to index all pages and follow links (belt-and-suspenders alongside meta robots)
             key: 'X-Robots-Tag',
             value: 'index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1',
@@ -106,6 +129,16 @@ const nextConfig = {
             // Controls referrer data sent to third parties
             key: 'Referrer-Policy',
             value: 'strict-origin-when-cross-origin',
+          },
+        ],
+      },
+      {
+        // Long-term immutable caching for static assets & branding images
+        source: '/:path*.(png|jpg|jpeg|svg|webp|ico|woff2|woff|ttf)',
+        headers: [
+          {
+            key: 'Cache-Control',
+            value: 'public, max-age=31536000, immutable',
           },
         ],
       },

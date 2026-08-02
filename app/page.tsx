@@ -4,21 +4,27 @@ import Script from 'next/script';
 import { Navigation } from '@/components/landing/navigation';
 import { HeroSection } from '@/components/landing/hero-section';
 import { FeaturesSection } from '@/components/landing/features-section';
-import { HowItWorksSection } from '@/components/landing/how-it-works-section';
-import { CtaSection } from '@/components/landing/cta-section';
 import { FooterSection } from '@/components/landing/footer-section';
-import { FaqSection } from '@/components/landing/faq-section';
 import { SectionEyebrow } from '@/components/landing/shared/section-eyebrow';
 import { SectionHeading } from '@/components/landing/shared/section-heading';
 import { ToolsFilter, ToolItem } from '@/components/landing/ToolsFilter';
 import dynamic from 'next/dynamic';
 
-// Heavy below-fold sections: dynamic import for code splitting (still SSR'd — correct pattern for Server Components)
+// Heavy below-fold sections: dynamic import for code splitting
+const HowItWorksSection = dynamic(
+  () => import('@/components/landing/how-it-works-section').then((m) => m.HowItWorksSection)
+);
 const InfrastructureSection = dynamic(
   () => import('@/components/landing/infrastructure-section').then((m) => m.InfrastructureSection)
 );
 const SecuritySection = dynamic(
   () => import('@/components/landing/security-section').then((m) => m.SecuritySection)
+);
+const FaqSection = dynamic(
+  () => import('@/components/landing/faq-section').then((m) => m.FaqSection)
+);
+const CtaSection = dynamic(
+  () => import('@/components/landing/cta-section').then((m) => m.CtaSection)
 );
 // RecentFilesWidget is client-only (uses localStorage), wrapped in a client boundary
 const RecentFilesWidget = dynamic(
