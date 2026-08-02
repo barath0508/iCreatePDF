@@ -5,7 +5,7 @@ import ToolPageShell from '@/components/tools/shared/ToolPageShell';
 import { Pdf3DFlipbookTool } from '@/components/tools/Pdf3DFlipbookTool';
 
 export const metadata: Metadata = {
-  title: 'Interactive 3D PDF Flipbook Reader — Free Online Viewer | iCreatePDF',
+  title: 'Interactive 3D PDF Flipbook Reader | iCreatePDF',
   description: 'Convert PDF catalogs, e-books, magazines, and brochures into an interactive 3D double-page flipbook reader directly in your web browser.',
   keywords: '3d pdf flipbook, interactive pdf reader, 3d book page flip pdf, online ebook flipbook viewer, double page spread pdf viewer',
   alternates: buildAlternates('/tools/pdf-3d-flipbook'),

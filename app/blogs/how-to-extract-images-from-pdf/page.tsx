@@ -7,12 +7,12 @@ import Link from 'next/link';
 import { Button } from '@/components/ui/button';
 
 export const metadata: Metadata = {
-  title: 'How to Extract Images from PDF — Free ZIP Export Guide | iCreatePDF',
+  title: 'How to Extract Images from PDF (Free) | iCreatePDF',
   description: 'Pull embedded JPEG and PNG photos out of PDF files and download them as a ZIP archive.',
   keywords: 'extract images from pdf, save images from pdf, pdf to image extractor, extract all photos from pdf, pdf image downloader zip, get high res images from pdf free',
   alternates: buildAlternates('/blogs/how-to-extract-images-from-pdf'),
   openGraph: {
-    title: 'How to Extract Images from PDF — Free ZIP Export Guide | iCreatePDF',
+    title: 'How to Extract Images from PDF — ZIP Export Guide | iCr...',
     description: 'Pull embedded JPEG and PNG photos out of PDF files and download them as a ZIP archive.',
     type: 'article',
     publishedTime: '2026-07-25T00:00:00Z',

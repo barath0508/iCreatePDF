@@ -6,12 +6,12 @@ import { toolContent } from '@/lib/tool-content';
 import { buildAlternates, toolSchema, faqSchema, howToSchema } from '@/lib/seo';
 
 export const metadata: Metadata = {
-  title: 'Organize PDF Pages Free Online — Reorder & Delete (No Upload) | iCreatePDF',
+  title: 'Organize PDF Pages Free Online — Reorder Pages | iCreatePDF',
   description: 'Reorder, delete, and organize PDF pages visually free online. Drag and drop thumbnails to rearrange layout. 100% private in browser memory.',
   keywords: 'organize pdf, reorder pdf pages, rotate pdf pages, delete pages pdf, private pdf organizer',
   alternates: buildAlternates('/tools/organize-pdf'),
   openGraph: {
-    title: 'Organize PDF Pages Free Online — Reorder & Delete | iCreatePDF',
+    title: 'Organize PDF Pages Online — Reorder & Delete | iCreatePDF',
     description: 'Reorder, delete, and organize PDF pages visually online free. Processed 100% locally in your browser tab with zero server uploads for complete privacy.',
     type: 'website',
   }

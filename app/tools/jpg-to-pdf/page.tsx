@@ -6,7 +6,7 @@ import { toolContent } from '@/lib/tool-content';
 import { buildAlternates, toolSchema, faqSchema, howToSchema } from '@/lib/seo';
 
 export const metadata: Metadata = {
-  title: 'Convert JPG to PDF Free Online — 100% Private (No Upload) | iCreatePDF',
+  title: 'Convert JPG to PDF Free Online (100% Private) | iCreatePDF',
   description: 'Convert JPG/JPEG images to a high-quality PDF document online free. ⚡ Fast, secure, and 100% local — drag & drop to reorder pages and save instantly.',
   keywords: 'jpg to pdf, jpeg to pdf, convert jpg to pdf, image to pdf, png to pdf, webp to pdf, heic to pdf, jpg to pdf free, convert image to pdf online, multiple jpg to pdf, jpg to pdf no upload, iphone photos to pdf, combine images to pdf, photo to pdf converter, jpg to pdf converter free, convert jpeg to pdf online, image to pdf converter online free, how to convert jpg to pdf, make pdf from image, jpg to pdf without quality loss, compress jpg to pdf, jpg to pdf iphone, jpg to pdf android',
   alternates: buildAlternates('/tools/jpg-to-pdf'),

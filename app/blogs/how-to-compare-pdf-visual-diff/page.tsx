@@ -8,7 +8,7 @@ import { Calendar, Clock, ChevronLeft, ArrowRight } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 
 export const metadata: Metadata = {
-  title: 'How to Compare PDF Revisions with Visual Pixel Diff | iCreatePDF',
+  title: 'How to Compare PDF Revisions with Visual Pixel Diff | i...',
   description: 'Learn how to detect visual layout shifts, graphic changes, and text updates between two PDF document revisions using an interactive curtain slider.',
   keywords: 'how to compare pdf visual diff, compare pdf pixel diff, pdf visual regression tool, compare pdf online free',
   alternates: buildAlternates('/blogs/how-to-compare-pdf-visual-diff'),

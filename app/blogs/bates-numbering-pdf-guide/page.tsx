@@ -9,7 +9,7 @@ import { Button } from '@/components/ui/button';
 import { RelatedPosts } from '@/components/blog/RelatedPosts';
 
 export const metadata: Metadata = {
-  title: 'What is Bates Numbering & How to Add Stamps to PDF | iCreatePDF',
+  title: 'What is Bates Numbering & How to Stamp PDFs | iCreatePDF',
   description: 'Learn the purpose of Bates numbering in legal discovery and how to apply sequential stamps to PDF pages. 100% free and secure offline stamp tool.',
   keywords: 'bates numbering pdf, bates stamp legal, add bates numbers to pdf, legal pdf stamping, sequential page numbering pdf',
   alternates: buildAlternates('/blogs/bates-numbering-pdf-guide'),
@@ -29,7 +29,7 @@ export default function BatesNumberingBlog() {
         dangerouslySetInnerHTML={{
           __html: JSON.stringify([
             ...articleSchema({
-          title: 'What is Bates Numbering & How to Add Stamps to PDF | iCreatePDF',
+          title: 'What is Bates Numbering & How to Add Stamps to PDF | iC...',
           description: 'Learn the purpose of Bates numbering in legal discovery and how to apply sequential stamps to PDF pages. 100% free and secure offline stamp tool.',
           url: '/blogs/bates-numbering-pdf-guide',
           datePublished: '2026-05-26T00:00:00Z'

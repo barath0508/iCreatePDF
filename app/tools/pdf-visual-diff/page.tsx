@@ -5,7 +5,7 @@ import ToolPageShell from '@/components/tools/shared/ToolPageShell';
 import { PdfVisualDiffTool } from '@/components/tools/PdfVisualDiffTool';
 
 export const metadata: Metadata = {
-  title: 'PDF Visual Pixel & Text Diff Engine — Compare Revisions | iCreatePDF',
+  title: 'PDF Visual Pixel & Text Diff Engine | iCreatePDF',
   description: 'Automated visual regression and text comparison tool for PDF files. Compare two PDF revisions side-by-side or using a visual pixel diff curtain slider 100% locally.',
   keywords: 'pdf visual diff, compare pdf pixel diff, pdf revision compare, visual pdf diff slider, text diff pdf tool, zero server pdf comparison',
   alternates: buildAlternates('/tools/pdf-visual-diff'),

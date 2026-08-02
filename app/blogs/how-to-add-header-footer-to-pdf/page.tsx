@@ -9,7 +9,7 @@ import { Button } from '@/components/ui/button';
 import { RelatedPosts } from '@/components/blog/RelatedPosts';
 
 export const metadata: Metadata = {
-  title: 'How to Add a Header and Footer to a PDF — Free Guide | iCreatePDF',
+  title: 'How to Add Header & Footer to PDF (Free) | iCreatePDF',
   description: 'Add custom headers and footers to every page of a PDF — company name, date, page numbers, or any text. 100% browser-based, no uploads.',
   keywords: 'add header footer pdf, pdf header footer online free, add page numbers and footer pdf, pdf running header 2026, stamp header footer pdf, custom header footer pdf, local pdf header footer editor',
   alternates: buildAlternates('/blogs/how-to-add-header-footer-to-pdf'),
@@ -38,7 +38,7 @@ export default function HeaderFooterBlogPost() {
         dangerouslySetInnerHTML={{
           __html: JSON.stringify([
             ...articleSchema({
-          title: 'How to Add a Header and Footer to a PDF — Free Guide | iCreatePDF',
+          title: 'How to Add a Header and Footer to a PDF| iCreatePDF',
           description: 'Add custom headers and footers to every page of a PDF — company name, date, page numbers, or any text. 100% browser-based, no uploads.',
           url: '/blogs/how-to-add-header-footer-to-pdf',
           datePublished: '2026-07-18T00:00:00Z'

@@ -9,12 +9,12 @@ import { Button } from '@/components/ui/button';
 import { RelatedPosts } from '@/components/blog/RelatedPosts';
 
 export const metadata: Metadata = {
-  title: 'Best Free Image to PDF Online Tools (2026 Review) | iCreatePDF Blog',
+  title: 'Best Free Image to PDF Tools (2026) | iCreatePDF',
   description: 'Looking for the best way to convert images to PDF? We compare top free online image-to-PDF tools in 2026 for speed, pricing, and privacy.',
   keywords: 'best image to pdf converter 2026, free online pdf tool, safe pdf converter, client side pdf generator, top image to pdf tool, free image to pdf converter, convert image to pdf, pdf creator from images, offline image to pdf',
   alternates: buildAlternates('/blogs/best-free-image-to-pdf-tools-2026'),
   openGraph: {
-    title: 'Best Free Image to PDF Online Tools (2026 Review) | iCreatePDF Blog',
+    title: 'Best Image to PDF Online Tools (2026 Review) | iCreateP...',
     description: 'Looking for the best way to convert images to PDF? We compare top free online image-to-PDF tools in 2026 for speed, pricing, and privacy.',
     type: 'article',
     publishedTime: '2026-05-15T00:00:00Z',
@@ -53,7 +53,7 @@ export default function BlogPostTwo() {
         dangerouslySetInnerHTML={{
           __html: JSON.stringify([
             ...articleSchema({
-          title: 'Best Free Image to PDF Online Tools (2026 Review) | iCreatePDF Blog',
+          title: 'Best Image to PDF Online Tools (2026 Review) | iCreateP...',
           description: 'Looking for the best way to convert images to PDF? We compare top free online image-to-PDF tools in 2026 for speed, pricing, and privacy.',
           url: '/blogs/best-free-image-to-pdf-tools-2026',
           datePublished: '2026-05-15T00:00:00Z'

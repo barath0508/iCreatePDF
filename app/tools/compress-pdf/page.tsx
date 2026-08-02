@@ -6,7 +6,7 @@ import { toolContent } from '@/lib/tool-content';
 import { buildAlternates, toolSchema, faqSchema, howToSchema } from '@/lib/seo';
 
 export const metadata: Metadata = {
-  title: 'Compress PDF Free Online — Reduce PDF File Size (No Upload) | iCreatePDF',
+  title: 'Compress PDF Free Online — Reduce File Size | iCreatePDF',
   description: 'Compress and shrink PDF files free online. Reduce PDF size without losing quality — 100% private local processing, no server uploads.',
   keywords: 'compress pdf, compress pdf online free, reduce pdf file size, shrink pdf, compress pdf without losing quality, pdf compressor, reduce pdf size online free, compress pdf file, make pdf smaller, pdf size reducer, compress pdf locally, compress pdf no upload, pdf file size reducer free, how to compress pdf, compress pdf for email, compress pdf to 1mb, compress pdf to 200kb, compress large pdf',
   alternates: buildAlternates('/tools/compress-pdf'),

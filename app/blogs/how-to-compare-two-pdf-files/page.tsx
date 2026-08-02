@@ -9,7 +9,7 @@ import { Button } from '@/components/ui/button';
 import { RelatedPosts } from '@/components/blog/RelatedPosts';
 
 export const metadata: Metadata = {
-  title: 'How to Compare Two PDF Files Side-by-Side — Free Guide | iCreatePDF',
+  title: 'How to Compare Two PDF Side-by-Side| iCreatePDF',
   description: 'Compare two PDF document versions side-by-side with synchronized scrolling to spot content differences instantly. 100% browser-based, no uploads.',
   keywords: 'compare pdf files, pdf diff tool, compare pdf versions online, pdf comparison free 2026, how to compare pdf files, side by side pdf comparison, local pdf comparison free',
   alternates: buildAlternates('/blogs/how-to-compare-two-pdf-files'),
@@ -38,7 +38,7 @@ export default function ComparePdfBlogPost() {
         dangerouslySetInnerHTML={{
           __html: JSON.stringify([
             ...articleSchema({
-          title: 'How to Compare Two PDF Files Side-by-Side — Free Guide | iCreatePDF',
+          title: 'How to Compare Two PDF Side-by-Side| iCreatePDF',
           description: 'Compare two PDF document versions side-by-side with synchronized scrolling to spot content differences instantly. 100% browser-based, no uploads.',
           url: '/blogs/how-to-compare-two-pdf-files',
           datePublished: '2026-07-18T00:00:00Z'

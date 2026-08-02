@@ -9,12 +9,12 @@ import { Button } from '@/components/ui/button';
 import { RelatedPosts } from '@/components/blog/RelatedPosts';
 
 export const metadata: Metadata = {
-  title: 'How to Scan Documents to PDF with Your Phone or Webcam — Free Guide | iCreatePDF',
+  title: 'How to Scan Documents to PDF Online | iCreatePDF',
   description: 'Turn your phone or webcam camera into a document scanner. Crop, compile, and convert captured photos into a single PDF, entirely in your browser.',
   keywords: 'scan to pdf, document scanner online, phone scanner pdf, webcam document scan, scan to pdf free 2026',
   alternates: buildAlternates('/blogs/how-to-scan-documents-to-pdf'),
   openGraph: {
-    title: 'How to Scan Documents to PDF with Your Phone or Webcam — Free Guide',
+    title: 'How to Scan s to PDF with Your Phone or Webcam',
     description: 'Turn your phone or webcam camera into a document scanner, entirely in your browser.',
     type: 'article',
     publishedTime: '2026-07-18T00:00:00Z',
@@ -38,7 +38,7 @@ export default function ScanToPdfBlogPost() {
         dangerouslySetInnerHTML={{
           __html: JSON.stringify([
             ...articleSchema({
-          title: 'How to Scan Documents to PDF with Your Phone or Webcam — Free Guide | iCreatePDF',
+          title: 'How to Scan s to PDF with Your Phone or Webcam| iCreatePDF',
           description: 'Turn your phone or webcam camera into a document scanner. Crop, compile, and convert captured photos into a single PDF, entirely in your browser.',
           url: '/blogs/how-to-scan-documents-to-pdf',
           datePublished: '2026-07-18T00:00:00Z'

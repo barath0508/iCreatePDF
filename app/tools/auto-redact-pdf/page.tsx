@@ -5,7 +5,7 @@ import ToolPageShell from '@/components/tools/shared/ToolPageShell';
 import { AutoRedactTool } from '@/components/tools/AutoRedactTool';
 
 export const metadata: Metadata = {
-  title: 'Smart Auto-Redact PDF Online — Free PII & Sensitive Data Masking | iCreatePDF',
+  title: 'Auto-Redact PDF Online — Hide PII & Data | iCreatePDF',
   description: 'Automatically scan and redact sensitive information from PDF files locally in your browser. Sanitize Emails, Phone Numbers, SSNs, Credit Cards, and custom keywords 100% offline.',
   keywords: 'auto redact pdf, automatic pdf redaction, sanitize sensitive pdf data, redact ssn from pdf, email redactor pdf, free client-side pdf redactor',
   alternates: buildAlternates('/tools/auto-redact-pdf'),

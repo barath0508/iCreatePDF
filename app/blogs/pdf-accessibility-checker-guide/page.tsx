@@ -9,12 +9,12 @@ import { Button } from '@/components/ui/button';
 import { RelatedPosts } from '@/components/blog/RelatedPosts';
 
 export const metadata: Metadata = {
-  title: 'How to Check PDF Accessibility (WCAG & Screen Reader Audit) — Free Guide | iCreatePDF',
+  title: 'How to Check PDF Accessibility (WCAG) | iCreatePDF',
   description: 'Audit any PDF for screen-reader accessibility: tagging, declared language, real text layers, and labeled form fields. Free, instant, fully private.',
   keywords: 'pdf accessibility checker, wcag pdf audit, pdf screen reader test, accessible pdf checker free 2026, how to check pdf accessibility, pdf accessibility checker online free',
   alternates: buildAlternates('/blogs/pdf-accessibility-checker-guide'),
   openGraph: {
-    title: 'How to Check PDF Accessibility (WCAG & Screen Reader Audit) — Free Guide',
+    title: 'How to Check PDF Accessibility (WCAG & Screen Reader Au...',
     description: 'Audit any PDF for screen-reader accessibility, entirely in your browser.',
     type: 'article',
     publishedTime: '2026-07-18T00:00:00Z',
@@ -38,7 +38,7 @@ export default function AccessibilityCheckerBlogPost() {
         dangerouslySetInnerHTML={{
           __html: JSON.stringify([
             ...articleSchema({
-          title: 'How to Check PDF Accessibility (WCAG & Screen Reader Audit) — Free Guide | iCreatePDF',
+          title: 'How to Check PDF Accessibility (WCAG & Screen Reader Au...',
           description: 'Audit any PDF for screen-reader accessibility: tagging, declared language, real text layers, and labeled form fields. Free, instant, fully private.',
           url: '/blogs/pdf-accessibility-checker-guide',
           datePublished: '2026-07-18T00:00:00Z'

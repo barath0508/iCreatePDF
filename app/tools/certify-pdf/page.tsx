@@ -6,12 +6,12 @@ import { toolContent } from '@/lib/tool-content';
 import { buildAlternates, toolSchema } from '@/lib/seo';
 
 export const metadata: Metadata = {
-  title: 'Certify PDF — SHA-256 Fingerprint & Tamper-Proof Stamp | iCreatePDF',
+  title: 'Certify PDF — SHA-256 Fingerprint Stamp | iCreatePDF',
   description: 'Certify any PDF with a cryptographic SHA-256 fingerprint and a scannable QR code, then verify a file against its fingerprint later. 100% private, browser-based integrity checking.',
   keywords: 'certify pdf, pdf fingerprint, pdf hash checker, sha256 pdf, tamper proof pdf, verify pdf integrity, pdf notarize online',
   alternates: buildAlternates('/tools/certify-pdf'),
   openGraph: {
-    title: 'Certify PDF — SHA-256 Fingerprint & Tamper-Proof Stamp | iCreatePDF',
+    title: 'Certify PDF — SHA-256 Fingerprint & Tamper-Proof Stamp ...',
     description: 'Certify any PDF with a cryptographic SHA-256 fingerprint and a scannable QR code, then verify a file against its fingerprint later. 100% private, browser-based integrity checking.',
     type: 'website',
   }

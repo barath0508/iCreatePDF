@@ -9,12 +9,12 @@ import { Button } from '@/components/ui/button';
 import { RelatedPosts } from '@/components/blog/RelatedPosts';
 
 export const metadata: Metadata = {
-  title: 'How to Convert Scanned PDF Documents to Text Free (Online OCR) | iCreatePDF',
+  title: 'How to Convert Scanned PDF Documents to Text (Online OC...',
   description: 'Learn how to convert scanned PDF documents to text for free online. Extract copyable text from scanned paper scans and image PDFs 100% locally.',
   keywords: 'convert scanned pdf documents to text, scanned pdf to text, convert scanned pdf to text, pdf ocr online, extract text from pdf, copy-proof pdf to text ocr, local pdf ocr',
   alternates: buildAlternates('/blogs/how-to-convert-scanned-pdf-to-text-ocr'),
   openGraph: {
-    title: 'How to Convert Scanned PDF Documents to Text Free (Online OCR)',
+    title: 'How to Convert Scanned PDF s to Text Free (Online OCR)',
     description: 'Digitize paper scans, faxes, or copy-protected documents into editable plain text locally in your browser sandbox using WebAssembly neural recognition.',
     type: 'article',
     publishedTime: '2026-05-28T00:00:00Z',
@@ -29,7 +29,7 @@ export default function ScannedPdfToTextBlog() {
         dangerouslySetInnerHTML={{
           __html: JSON.stringify([
             ...articleSchema({
-          title: 'How to Convert Scanned PDF to Text (Free Online OCR) | iCreatePDF',
+          title: 'How to Convert Scanned PDF to Text (Free) | iCreatePDF',
           description: 'Learn how to extract copyable text from scanned documents and image-only PDF files using client-side OCR character recognition in English, Spanish, Tamil, and Hindi.',
           url: '/blogs/how-to-convert-scanned-pdf-to-text-ocr',
           datePublished: '2026-05-28T00:00:00Z'

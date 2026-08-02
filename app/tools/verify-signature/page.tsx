@@ -6,12 +6,12 @@ import { toolContent } from '@/lib/tool-content';
 import { buildAlternates, toolSchema } from '@/lib/seo';
 
 export const metadata: Metadata = {
-  title: 'Verify PDF Signature - Validate Certificates Online | iCreatePDF',
+  title: 'Verify PDF Signature — Validate Certificates | iCreatePDF',
   description: 'Validate cryptographic signatures on PDF files locally. Inspect signer identity details and document byte-range integrity.',
   keywords: 'verify pdf signature, validate digital signature pdf, check pdf certificate, verify signed pdf online, pdf signature validator, verify pdf signature online free, local pdf signature check',
   alternates: buildAlternates('/tools/verify-signature'),
   openGraph: {
-    title: 'Verify PDF Signature - Validate Certificates Online | iCreatePDF',
+    title: 'Verify PDF Signature - Validate Certificates Online | i...',
     description: 'Validate cryptographic signatures on PDF files locally. Inspect signer identity details and document byte-range integrity.',
     type: 'website',
   }

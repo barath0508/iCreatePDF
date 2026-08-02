@@ -9,12 +9,12 @@ import { Button } from '@/components/ui/button';
 import { RelatedPosts } from '@/components/blog/RelatedPosts';
 
 export const metadata: Metadata = {
-  title: 'How to Resize PDF Pages to A4, Letter or Custom Size — Free Guide | iCreatePDF',
+  title: 'How to Resize PDF Pages to A4 or Letter | iCreatePDF',
   description: 'Normalize every page of a PDF to A4, Letter, A3, Legal, or a custom size without losing content quality. 100% browser-based, no uploads.',
   keywords: 'resize pdf, resize pdf to a4, resize pdf pages, change pdf page size, resize pdf free 2026',
   alternates: buildAlternates('/blogs/how-to-resize-pdf-pages'),
   openGraph: {
-    title: 'How to Resize PDF Pages to A4, Letter or Custom Size — Free Guide',
+    title: 'How to Resize PDF Pages to A4, Letter or Custom Size',
     description: 'Normalize every page of a PDF to a consistent size without losing content quality.',
     type: 'article',
     publishedTime: '2026-07-18T00:00:00Z',
@@ -38,7 +38,7 @@ export default function ResizePdfBlogPost() {
         dangerouslySetInnerHTML={{
           __html: JSON.stringify([
             ...articleSchema({
-          title: 'How to Resize PDF Pages to A4, Letter or Custom Size — Free Guide | iCreatePDF',
+          title: 'How to Resize PDF Pages to A4, Letter or Custom Size | ...',
           description: 'Normalize every page of a PDF to A4, Letter, A3, Legal, or a custom size without losing content quality. 100% browser-based, no uploads.',
           url: '/blogs/how-to-resize-pdf-pages',
           datePublished: '2026-07-18T00:00:00Z'

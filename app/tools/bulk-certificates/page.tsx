@@ -6,12 +6,12 @@ import { toolContent } from '@/lib/tool-content';
 import { buildAlternates, toolSchema } from '@/lib/seo';
 
 export const metadata: Metadata = {
-  title: 'Generate Certificates from CSV Online Free in Bulk | iCreatePDF',
+  title: 'Bulk Certificate Generator from CSV | iCreatePDF',
   description: 'Generate certificates, badges, and tickets in bulk from spreadsheet data. Processed 100% locally in-browser with zero server uploads for complete privacy.',
   keywords: 'bulk certificate generator, generate certificates from csv, bulk certificate generator from csv, create certificates from csv, generate certificates in bulk, pdf excel certificate maker, mail merge certificates, bulk award letter generator online free, client-side bulk certificate generator',
   alternates: buildAlternates('/tools/bulk-certificates'),
   openGraph: {
-    title: 'Generate Certificates from CSV Online Free in Bulk | iCreatePDF',
+    title: 'Generate Certificates from CSV Free in Bulk | iCreatePDF',
     description: 'Generate certificates, badges, and tickets in bulk from spreadsheet data. Processed 100% locally in-browser with zero server uploads for complete privacy.',
     type: 'website',
   }

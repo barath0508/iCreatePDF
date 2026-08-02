@@ -5,7 +5,7 @@ import ToolPageShell from '@/components/tools/shared/ToolPageShell';
 import { AutoCropTool } from '@/components/tools/AutoCropTool';
 
 export const metadata: Metadata = {
-  title: 'Smart Auto-Crop PDF — Detect & Trim Blank Margins | iCreatePDF',
+  title: 'Smart Auto-Crop PDF — Trim Blank Margins | iCreatePDF',
   description: 'Automatically scan and crop blank margins, scanner borders, and excess white space from PDF pages. Optimize documents for Kindle, mobile, and tablets 100% locally.',
   keywords: 'auto crop pdf, automatic pdf margin cropper, trim pdf whitespace, remove scanner black borders pdf, optimize pdf for kindle',
   alternates: buildAlternates('/tools/auto-crop-pdf'),

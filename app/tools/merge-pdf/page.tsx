@@ -6,19 +6,19 @@ import { toolContent } from '@/lib/tool-content';
 import { buildAlternates, toolSchema, faqSchema, howToSchema } from '@/lib/seo';
 
 export const metadata: Metadata = {
-  title: 'Merge PDF Free Online — Combine PDF Files Instantly (No Upload) | iCreatePDF',
+  title: 'Merge PDF Free Online — Combine PDF Files | iCreatePDF',
   description: 'Combine multiple PDF files into one document free online. ⚡ Fast, secure, and 100% local — files stay in your browser, no upload required.',
   keywords: 'merge pdf free, combine pdf files, merge pdf online, join pdf files, merge multiple pdf, combine pdf files online free, merge pdf without uploading, pdf merger free, how to merge pdf files, merge pdf files into one, combine pdf pages, join pdf online free, merge pdf files locally, pdf combiner free, merge pdf on iphone, merge pdf android, merge 2 pdfs together free, merge pdf secure, combine pdf no upload',
   alternates: buildAlternates('/tools/merge-pdf'),
   openGraph: {
-    title: 'Merge PDF Free Online — Combine PDF Files Instantly | iCreatePDF',
+    title: 'Merge PDF Free Online — Combine PDF Instantly | iCreatePDF',
     description: 'Combine multiple PDF files into one document free online. ⚡ Fast, secure, and 100% local. No uploads required.',
     type: 'website',
     images: [{ url: 'https://www.icreatepdf.online/opengraph-image', width: 1200, height: 630, alt: 'Merge PDF — iCreatePDF' }],
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Merge PDF Free Online — Combine PDF Files Instantly | iCreatePDF',
+    title: 'Merge PDF Free Online — Combine PDF Instantly | iCreatePDF',
     description: 'Combine multiple PDF files into one document free online. 100% private.',
     images: ['https://www.icreatepdf.online/opengraph-image'],
   },

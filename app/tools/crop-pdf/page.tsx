@@ -6,7 +6,7 @@ import { toolContent } from '@/lib/tool-content';
 import { buildAlternates, toolSchema, faqSchema, howToSchema } from '@/lib/seo';
 
 export const metadata: Metadata = {
-  title: 'Crop PDF Pages Free Online — Trim PDF Margins (No Upload) | iCreatePDF',
+  title: 'Crop PDF Pages Free Online — Trim Margins | iCreatePDF',
   description: 'Crop PDF pages free online by trimming margins. Remove scan borders, whitespace, and adjust canvas sizes locally in browser memory. 100% private.',
   keywords: 'i2pdf crop, pdf cut pages, crop pdf, trim pdf margins, remove pdf borders, crop pdf pages online free, pdf margin trimmer, cut pages in pdf, crop pdf online i2pdf',
   alternates: buildAlternates('/tools/crop-pdf'),

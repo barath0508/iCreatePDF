@@ -7,12 +7,12 @@ import Link from 'next/link';
 import { Button } from '@/components/ui/button';
 
 export const metadata: Metadata = {
-  title: 'How to Equalize PDF Page Sizes — Free Normalization Guide | iCreatePDF',
+  title: 'How to Equalize PDF Page Sizes — Normalization Guide | ...',
   description: 'Standardize mixed Letter, Legal, and A4 pages into a uniform PDF layout for clean printing.',
   keywords: 'equalize pdf page sizes, standardize pdf page size, make pdf pages same size, make all pages a4 pdf, uniform page size pdf online, resize mixed size pdf pages',
   alternates: buildAlternates('/blogs/how-to-equalize-pdf-page-sizes'),
   openGraph: {
-    title: 'How to Equalize PDF Page Sizes — Free Normalization Guide | iCreatePDF',
+    title: 'How to Equalize PDF Page Sizes — Normalization Guide | ...',
     description: 'Standardize mixed Letter, Legal, and A4 pages into a uniform PDF layout for clean printing.',
     type: 'article',
     publishedTime: '2026-07-25T00:00:00Z',

@@ -5,7 +5,7 @@ import ToolPageShell from '@/components/tools/shared/ToolPageShell';
 import { PdfAttachmentManagerTool } from '@/components/tools/PdfAttachmentManagerTool';
 
 export const metadata: Metadata = {
-  title: 'PDF Attachment Manager — Extract & Embed File Packages | iCreatePDF',
+  title: 'PDF Attachment Manager — Extract & Embed Files | iCreatePDF',
   description: 'Inspect, extract, or embed file attachments inside PDF documents. Supports ZUGFeRD / Factur-X XML e-invoices, spreadsheets, and source docs 100% locally.',
   keywords: 'pdf attachment manager, extract xml from pdf, zugferd pdf extractor, factur-x e-invoice attachment, embed files in pdf, pdf portfolio builder',
   alternates: buildAlternates('/tools/pdf-attachment-manager'),

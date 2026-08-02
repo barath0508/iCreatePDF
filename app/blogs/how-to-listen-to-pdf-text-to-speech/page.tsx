@@ -9,12 +9,12 @@ import { Button } from '@/components/ui/button';
 import { RelatedPosts } from '@/components/blog/RelatedPosts';
 
 export const metadata: Metadata = {
-  title: 'How to Listen to a PDF Read Aloud (Text-to-Speech) — Free Guide | iCreatePDF',
+  title: 'How to Listen to a PDF Read Aloud (Text-to-Speech) | iC...',
   description: 'Listen to any PDF read aloud in your browser with adjustable voice and speed, plus live word highlighting. 100% private, no upload required.',
   keywords: 'pdf read aloud, pdf text to speech, listen to pdf online, pdf audio reader free, pdf tts 2026',
   alternates: buildAlternates('/blogs/how-to-listen-to-pdf-text-to-speech'),
   openGraph: {
-    title: 'How to Listen to a PDF Read Aloud (Text-to-Speech) — Free Guide',
+    title: 'How to Listen to a PDF Read Aloud (Text-to-Speech)',
     description: 'Listen to any PDF read aloud in your browser with adjustable voice and speed.',
     type: 'article',
     publishedTime: '2026-07-18T00:00:00Z',
@@ -38,7 +38,7 @@ export default function ReadAloudBlogPost() {
         dangerouslySetInnerHTML={{
           __html: JSON.stringify([
             ...articleSchema({
-          title: 'How to Listen to a PDF Read Aloud (Text-to-Speech) — Free Guide | iCreatePDF',
+          title: 'How to Listen to a PDF Read Aloud (Text-to-Speech) | iC...',
           description: 'Listen to any PDF read aloud in your browser with adjustable voice and speed, plus live word highlighting. 100% private, no upload required.',
           url: '/blogs/how-to-listen-to-pdf-text-to-speech',
           datePublished: '2026-07-18T00:00:00Z'

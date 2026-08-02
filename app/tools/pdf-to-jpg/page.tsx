@@ -6,12 +6,12 @@ import { toolContent } from '@/lib/tool-content';
 import { buildAlternates, toolSchema, faqSchema, howToSchema } from '@/lib/seo';
 
 export const metadata: Metadata = {
-  title: 'Convert PDF to JPG Free Online — Extract PDF Pages (No Upload) | iCreatePDF',
+  title: 'Convert PDF to JPG Free Online (Extract Pages) | iCreatePDF',
   description: 'Convert PDF pages to high-quality JPG images free online. Processed 100% locally in browser memory with zero server uploads for absolute privacy.',
   keywords: 'convert pdf to jpg, pdf to jpg, pdf to image, extract pdf pages to jpg, private pdf to jpg, no upload pdf to jpg',
   alternates: buildAlternates('/tools/pdf-to-jpg'),
   openGraph: {
-    title: 'Convert PDF to JPG Free Online — Extract PDF Pages | iCreatePDF',
+    title: 'Convert PDF to JPG Online — Extract PDF Pages | iCreatePDF',
     description: 'Convert PDF pages to high-quality JPG images free online. 100% private local browser processing.',
     type: 'website',
   }

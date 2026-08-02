@@ -9,7 +9,7 @@ import { Button } from '@/components/ui/button';
 import { RelatedPosts } from '@/components/blog/RelatedPosts';
 
 export const metadata: Metadata = {
-  title: 'How to Generate Certificates in Bulk from Excel List | iCreatePDF',
+  title: 'How to Generate Bulk Certificates from Excel | iCreatePDF',
   description: 'Need to create certificates, invitation cards, or tickets for hundreds of recipients? Learn how to generate personalized certificates client-side in bulk using a template and Excel.',
   keywords: 'bulk certificate generator, generate certificates in bulk, pdf excel certificate maker, mail merge certificates, bulk award letter generator online free',
   alternates: buildAlternates('/blogs/how-to-generate-certificates-in-bulk'),
@@ -29,7 +29,7 @@ export default function BulkCertificatesBlog() {
         dangerouslySetInnerHTML={{
           __html: JSON.stringify([
             ...articleSchema({
-          title: 'How to Generate Certificates in Bulk from Excel List | iCreatePDF',
+          title: 'How to Generate Certificates in Bulk from Excel List | ...',
           description: 'Need to create certificates, invitation cards, or tickets for hundreds of recipients? Learn how to generate personalized certificates client-side in bulk using a template and Excel.',
           url: '/blogs/how-to-generate-certificates-in-bulk',
           datePublished: '2026-05-29T00:00:00Z'

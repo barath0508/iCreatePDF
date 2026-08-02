@@ -6,12 +6,12 @@ import { toolContent } from '@/lib/tool-content';
 import { buildAlternates, toolSchema } from '@/lib/seo';
 
 export const metadata: Metadata = {
-  title: 'PDF Accessibility Checker — WCAG & Screen Reader Audit | iCreatePDF',
+  title: 'PDF Accessibility Checker (WCAG Audit) | iCreatePDF',
   description: 'Audit any PDF for screen-reader accessibility: tagging, declared language, real text layers, and labeled form fields. Free, instant, and fully private in your browser.',
   keywords: 'pdf accessibility checker, pdf a11y, wcag pdf, screen reader pdf, pdf tagged check, pdf accessibility audit online free',
   alternates: buildAlternates('/tools/pdf-accessibility-checker'),
   openGraph: {
-    title: 'PDF Accessibility Checker — WCAG & Screen Reader Audit | iCreatePDF',
+    title: 'PDF Accessibility Checker — WCAG & Screen Reader Audit ...',
     description: 'Audit any PDF for screen-reader accessibility: tagging, declared language, real text layers, and labeled form fields. Free, instant, and fully private in your browser.',
     type: 'website',
   }

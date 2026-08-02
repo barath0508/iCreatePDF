@@ -6,12 +6,12 @@ import { toolContent } from '@/lib/tool-content';
 import { buildAlternates, toolSchema } from '@/lib/seo';
 
 export const metadata: Metadata = {
-  title: 'Repair PDF Online Free - Fix Corrupted PDF Files | iCreatePDF',
+  title: 'Repair PDF Online Free — Fix Corrupted PDFs | iCreatePDF',
   description: 'Fix corrupted, damaged, or broken PDF files online. Rebuilds cross-reference tables and object streams to recover readable documents locally.',
   keywords: 'repair pdf, fix corrupted pdf, recover damaged pdf, pdf repair tool online free, fix broken pdf',
   alternates: buildAlternates('/tools/repair-pdf'),
   openGraph: {
-    title: 'Repair PDF Online Free - Fix Corrupted PDF Files | iCreatePDF',
+    title: 'Repair PDF Free - Fix Corrupted PDF | iCreatePDF',
     description: 'Fix corrupted, damaged, or broken PDF files online. Rebuilds cross-reference tables and object streams to recover readable documents locally.',
     type: 'website',
   }

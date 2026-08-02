@@ -8,7 +8,7 @@ import { Calendar, Clock, ChevronLeft, ArrowRight } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 
 export const metadata: Metadata = {
-  title: 'How to Turn PDFs into Interactive 3D Flipbooks Free | iCreatePDF',
+  title: 'How to Turn PDFs into Interactive 3D Flipbooks | iCreat...',
   description: 'Guide to creating interactive 3D double-page flipbooks from PDF e-books, brochures, and catalogs 100% in your browser.',
   keywords: 'how to create 3d pdf flipbook, convert pdf to flipbook free, online 3d ebook page flipper, double page spread pdf flipbook',
   alternates: buildAlternates('/blogs/how-to-create-interactive-3d-pdf-flipbook'),

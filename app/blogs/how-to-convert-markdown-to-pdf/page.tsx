@@ -9,7 +9,7 @@ import { Button } from '@/components/ui/button';
 import { RelatedPosts } from '@/components/blog/RelatedPosts';
 
 export const metadata: Metadata = {
-  title: 'How to Convert Markdown to PDF Online — Free Guide | iCreatePDF',
+  title: 'How to Convert Markdown to PDF Online| iCreatePDF',
   description: 'Convert styled Markdown (.md) files to formatted PDF documents. 100% browser-based, no uploads, preserves headings, lists, code blocks, and links.',
   keywords: 'markdown to pdf, md to pdf, convert markdown to pdf online free, markdown pdf converter 2026, convert md to pdf online, local markdown to pdf compiler',
   alternates: buildAlternates('/blogs/how-to-convert-markdown-to-pdf'),
@@ -38,7 +38,7 @@ export default function MarkdownToPdfBlogPost() {
         dangerouslySetInnerHTML={{
           __html: JSON.stringify([
             ...articleSchema({
-          title: 'How to Convert Markdown to PDF Online — Free Guide | iCreatePDF',
+          title: 'How to Convert Markdown to PDF Online| iCreatePDF',
           description: 'Convert styled Markdown (.md) files to formatted PDF documents. 100% browser-based, no uploads, preserves headings, lists, code blocks, and links.',
           url: '/blogs/how-to-convert-markdown-to-pdf',
           datePublished: '2026-07-18T00:00:00Z'

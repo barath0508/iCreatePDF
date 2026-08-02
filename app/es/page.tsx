@@ -17,7 +17,7 @@ import {
 import { buildAlternates } from '@/lib/seo';
 
 export const metadata: Metadata = {
-  title: 'iCreatePDF - Convertidor de Imagen a PDF Rápido, Gratuito y Privado',
+  title: 'iCreatePDF - Convertidor de PDF Rápido y Privado',
   description: 'Convierta JPG, PNG, WEBP, HEIC y BMP a PDF 100% localmente en su navegador. Sin registros, sin cargas a servidores, privacidad total.',
   keywords: 'convertir jpg a pdf, png a pdf, heic a pdf, convertidor de pdf privado, icreatepdf',
   alternates: buildAlternates('/es'),

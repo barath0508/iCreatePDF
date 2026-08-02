@@ -9,12 +9,12 @@ import { Button } from '@/components/ui/button';
 import { RelatedPosts } from '@/components/blog/RelatedPosts';
 
 export const metadata: Metadata = {
-  title: 'How to Convert RIS to PDF (Bibliography & Citations) — Free Guide | iCreatePDF',
+  title: 'How to Convert RIS to PDF (Bibliography & Citations) | ...',
   description: 'Parse RIS bibliographic citation files and compile them into a formatted PDF in APA, MLA, Chicago, or Harvard style. 100% browser-based, no uploads.',
   keywords: 'ris to pdf, convert ris file, ris bibliography converter, citation file to pdf, ris to pdf free 2026',
   alternates: buildAlternates('/blogs/how-to-convert-ris-to-pdf-bibliography'),
   openGraph: {
-    title: 'How to Convert RIS to PDF (Bibliography & Citations) — Free Guide',
+    title: 'How to Convert RIS to PDF (Bibliography & Citations)',
     description: 'Parse RIS bibliographic citation files and compile them into a formatted PDF.',
     type: 'article',
     publishedTime: '2026-07-18T00:00:00Z',
@@ -38,7 +38,7 @@ export default function RisToPdfBlogPost() {
         dangerouslySetInnerHTML={{
           __html: JSON.stringify([
             ...articleSchema({
-          title: 'How to Convert RIS to PDF (Bibliography & Citations) — Free Guide | iCreatePDF',
+          title: 'How to Convert RIS to PDF (Bibliography & Citations) | ...',
           description: 'Parse RIS bibliographic citation files and compile them into a formatted PDF in APA, MLA, Chicago, or Harvard style. 100% browser-based, no uploads.',
           url: '/blogs/how-to-convert-ris-to-pdf-bibliography',
           datePublished: '2026-07-18T00:00:00Z'

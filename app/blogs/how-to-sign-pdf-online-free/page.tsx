@@ -9,7 +9,7 @@ import { Button } from '@/components/ui/button';
 import { RelatedPosts } from '@/components/blog/RelatedPosts';
 
 export const metadata: Metadata = {
-  title: 'How to Add a Digital Signature to a PDF Online (Free) | iCreatePDF',
+  title: 'How to Add Digital Signature to PDF | iCreatePDF',
   description: 'Sign PDF documents online for free without uploading them to a server. Draw, type, or import your signature and save a signed copy locally.',
   keywords: 'how to sign pdf online free, add signature to pdf, digital signature pdf browser, sign pdf without uploading, e-sign pdf free 2026',
   alternates: buildAlternates('/blogs/how-to-sign-pdf-online-free'),
@@ -50,7 +50,7 @@ export default function SignPdfBlogPost() {
         dangerouslySetInnerHTML={{
           __html: JSON.stringify([
             ...articleSchema({
-          title: 'How to Add a Digital Signature to a PDF Online (Free) | iCreatePDF',
+          title: 'How to Add a Digital Signature to a PDF Online (Free) |...',
           description: 'Sign PDF documents online for free without uploading them to a server. Draw, type, or import your signature and save a signed copy locally.',
           url: '/blogs/how-to-sign-pdf-online-free',
           datePublished: '2026-05-20T00:00:00Z'

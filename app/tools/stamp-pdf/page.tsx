@@ -6,7 +6,7 @@ import { toolContent } from '@/lib/tool-content';
 import { buildAlternates, toolSchema } from '@/lib/seo';
 
 export const metadata: Metadata = {
-  title: 'Batch Rubber Stamp PDF — Free, Private, No Upload | iCreatePDF',
+  title: 'Batch Rubber Stamp PDF Free Online | iCreatePDF',
   description: 'Stamp APPROVED, CONFIDENTIAL, DRAFT, or custom status text across all pages. 100% private — files process inside browser memory.',
   keywords: 'stamp pdf pages, add rubber stamp to pdf, stamp approved confidential draft pdf, batch stamp pdf documents, online pdf stamping tool free',
   alternates: buildAlternates('/tools/stamp-pdf'),

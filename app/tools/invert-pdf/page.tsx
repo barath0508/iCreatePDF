@@ -6,12 +6,12 @@ import { toolContent } from '@/lib/tool-content';
 import { buildAlternates, toolSchema } from '@/lib/seo';
 
 export const metadata: Metadata = {
-  title: 'PDF Color Inverter: Invert PDF Colors Online Free | iCreatePDF',
+  title: 'Invert PDF Colors Online Free (Dark Mode) | iCreatePDF',
   description: 'Free online PDF color inverter. Create a dark mode version of any PDF for night reading, reverse document colors online to reduce eye strain. 100% private.',
   keywords: 'invert pdf colors, how to invert pdf colors, invert color in pdf, pdf color inverter, invert pdf online, invert pdf, pdf dark mode converter, pdf reverse color, dark mode pdf, night mode pdf, invert pdf online free',
   alternates: buildAlternates('/tools/invert-pdf'),
   openGraph: {
-    title: 'PDF Color Inverter: Invert PDF Colors Online Free | iCreatePDF',
+    title: 'PDF Color Inverter: Invert PDF Colors Free | iCreatePDF',
     description: 'Free online PDF color inverter. Create a dark mode version of any PDF for night reading, reverse document colors online to reduce eye strain. 100% private.',
     type: 'website',
   }

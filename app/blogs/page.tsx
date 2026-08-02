@@ -39,7 +39,7 @@ const blogPosts = [
   },
   {
     slug: 'how-to-make-pdf-booklet',
-    title: 'How to Make a PDF Booklet — Free Saddle-Stitch Printing Guide',
+    title: 'How to Make a PDF Booklet — Free Saddle-Stitch Printing...',
     excerpt: 'Reorder PDF pages into 2-page landscape booklet spreads ready for double-sided duplex printing and folding.',
     date: 'July 25, 2026',
     readTime: '4 min read',
@@ -201,7 +201,7 @@ const blogPosts = [
   },
   {
     slug: 'how-to-convert-ris-to-pdf-bibliography',
-    title: 'How to Convert RIS to PDF (Bibliography & Citations) — Free Guide',
+    title: 'How to Convert RIS to PDF (Bibliography & Citations)',
     excerpt: 'Parse RIS bibliographic citation files and compile them into a formatted PDF bibliography.',
     date: 'July 18, 2026',
     readTime: '4 min read',
@@ -210,7 +210,7 @@ const blogPosts = [
   },
   {
     slug: 'how-to-listen-to-pdf-text-to-speech',
-    title: 'How to Listen to a PDF Read Aloud (Text-to-Speech) — Free Guide',
+    title: 'How to Listen to a PDF Read Aloud (Text-to-Speech)',
     excerpt: 'Listen to any PDF read aloud in your browser with adjustable voice and speed.',
     date: 'July 18, 2026',
     readTime: '3 min read',
@@ -219,7 +219,7 @@ const blogPosts = [
   },
   {
     slug: 'pdf-accessibility-checker-guide',
-    title: 'How to Check PDF Accessibility (WCAG & Screen Reader Audit) — Free Guide',
+    title: 'How to Check PDF Accessibility (WCAG & Screen Reader Au...',
     excerpt: 'Audit any PDF for screen-reader accessibility: tagging, declared language, and labeled form fields.',
     date: 'July 18, 2026',
     readTime: '4 min read',
@@ -273,7 +273,7 @@ const blogPosts = [
   },
   {
     slug: 'how-to-scan-documents-to-pdf',
-    title: 'How to Scan Documents to PDF with Your Phone or Webcam — Free Guide',
+    title: 'How to Scan s to PDF with Your Phone or Webcam',
     excerpt: 'Turn your phone or webcam camera into a document scanner, entirely in your browser.',
     date: 'July 18, 2026',
     readTime: '4 min read',
@@ -318,7 +318,7 @@ const blogPosts = [
   },
   {
     slug: 'how-to-resize-pdf-pages',
-    title: 'How to Resize PDF Pages to A4, Letter, or Custom Size — Free Guide',
+    title: 'How to Resize PDF Pages to A4, Letter, or Custom Size',
     excerpt: 'Normalize every page of a PDF to a consistent size without losing content quality.',
     date: 'July 18, 2026',
     readTime: '3 min read',
@@ -363,7 +363,7 @@ const blogPosts = [
   },
   {
     slug: 'how-to-edit-pdf-online-free',
-    title: 'How to Edit a PDF Online for Free — Text Overlays & Annotations',
+    title: 'How to Edit a PDF Online for Free — Text Overlays & Ann...',
     excerpt: 'Add text, annotations, and overlays to any PDF directly in your browser. No account, no upload — download instantly.',
     date: 'July 18, 2026',
     readTime: '4 min read',
@@ -372,7 +372,7 @@ const blogPosts = [
   },
   {
     slug: 'proof-zero-server-uploads-how-to-verify-offline-pdf-converter',
-    title: 'Proof: How to Verify iCreatePDF is 100% Server-Free (Convert Offline)',
+    title: 'Proof: How to Verify iCreatePDF is 100% Server-Free (Co...',
     excerpt: 'Wondering if your private documents are safe on online PDF tools? Here is a step-by-step guide to verify iCreatePDF is 100% server-free by running it completely offline.',
     date: 'July 16, 2026',
     readTime: '4 min read',
@@ -462,7 +462,7 @@ const blogPosts = [
   },
   {
     slug: 'jpg-to-pdf-complete-guide',
-    title: 'JPG to PDF: The Complete Guide to Converting Images to PDF Free',
+    title: 'JPG to PDF: The Complete Guide to Converting Images to ...',
     excerpt: 'Everything about converting JPG, PNG, HEIC, and WEBP images to PDF — supported formats, quality settings, expert tips for best output, and FAQs.',
     date: 'May 18, 2026',
     readTime: '6 min read',
@@ -507,7 +507,7 @@ const blogPosts = [
   },
   {
     slug: 'how-to-generate-certificates-in-bulk',
-    title: 'How to Generate Certificates in Bulk from Excel List (2026 Guide)',
+    title: 'How to Generate Certificates in Bulk from Excel List (2...',
     excerpt: 'Need to create certificates, invitation cards, or tickets for hundreds of recipients? Learn how to generate personalized certificates client-side in bulk using a template and Excel.',
     date: 'May 29, 2026',
     readTime: '5 min read',
@@ -534,7 +534,7 @@ const blogPosts = [
   },
   {
     slug: 'how-to-split-pdf-pages-free',
-    title: 'How to Split, Delete, and Extract PDF Pages Free (2026 Guide)',
+    title: 'How to Split, Delete, and Extract PDF Pages Free (2026 ...',
     excerpt: 'Learn how to extract pages, split files, or delete specific pages visually with previews. Done entirely in the browser with no server uploads.',
     date: 'May 29, 2026',
     readTime: '4 min read',

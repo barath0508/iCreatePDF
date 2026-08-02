@@ -8,7 +8,7 @@ import { Calendar, Clock, ChevronLeft, ArrowRight } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 
 export const metadata: Metadata = {
-  title: 'How to Auto-Crop Blank PDF Margins for Kindle & Tablets | iCreatePDF',
+  title: 'How to Auto-Crop Blank PDF Margins | iCreatePDF',
   description: 'Learn how to automatically detect and trim blank margins, scanner borders, and excess whitespace from PDF pages 100% locally.',
   keywords: 'how to auto crop pdf, trim pdf margins automatically, remove scanner borders pdf, optimize pdf for kindle mobile',
   alternates: buildAlternates('/blogs/how-to-auto-crop-pdf-margins'),

@@ -6,7 +6,7 @@ import { toolContent } from '@/lib/tool-content';
 import { buildAlternates, toolSchema, faqSchema, howToSchema } from '@/lib/seo';
 
 export const metadata: Metadata = {
-  title: 'Watermark PDF Free Online — Add Text Watermarks (No Upload) | iCreatePDF',
+  title: 'Watermark PDF Free Online — Add Watermarks | iCreatePDF',
   description: 'Add configurable text watermarks to all PDF pages free online. Customize position, opacity, font size, and color locally in browser memory.',
   keywords: 'watermark pdf, add watermark to pdf, watermark pdf online, free watermark pdf, private pdf watermark',
   alternates: buildAlternates('/tools/watermark-pdf'),

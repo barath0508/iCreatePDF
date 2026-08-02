@@ -8,7 +8,7 @@ import { Calendar, Clock, ChevronLeft, ArrowRight } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 
 export const metadata: Metadata = {
-  title: 'How to Present PDFs with Laser Pointer & Ink Tools | iCreatePDF',
+  title: 'How to Present PDFs with Laser Pointer | iCreatePDF',
   description: 'Guide to presenting PDF slides in browser with glowing digital laser pointer, live pen annotation, yellow highlighter, and fullscreen presenter mode.',
   keywords: 'how to present pdf slides, digital laser pointer pdf, present pdf online fullscreen, live draw on pdf presentation',
   alternates: buildAlternates('/blogs/how-to-present-pdf-slideshow-laser-pointer'),

@@ -9,7 +9,7 @@ import { Button } from '@/components/ui/button';
 import { RelatedPosts } from '@/components/blog/RelatedPosts';
 
 export const metadata: Metadata = {
-  title: 'How to Verify a PDF Digital Signature Online — Free Guide | iCreatePDF',
+  title: 'How to Verify PDF Digital Signatures | iCreatePDF',
   description: 'Validate cryptographic signatures on a PDF and inspect signer identity and byte-range integrity. 100% browser-based verification, no uploads.',
   keywords: 'verify pdf signature, validate pdf certificate, check pdf digital signature, pdf signature checker free 2026, how to verify digital signature in pdf, validate pdf signatures local',
   alternates: buildAlternates('/blogs/how-to-verify-pdf-signature'),
@@ -38,7 +38,7 @@ export default function VerifySignatureBlogPost() {
         dangerouslySetInnerHTML={{
           __html: JSON.stringify([
             ...articleSchema({
-          title: 'How to Verify a PDF Digital Signature Online — Free Guide | iCreatePDF',
+          title: 'How to Verify a PDF Digital Signature Online| iCreatePDF',
           description: 'Validate cryptographic signatures on a PDF and inspect signer identity and byte-range integrity. 100% browser-based verification, no uploads.',
           url: '/blogs/how-to-verify-pdf-signature',
           datePublished: '2026-07-18T00:00:00Z'

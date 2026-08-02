@@ -6,12 +6,12 @@ import { ShieldCheck, ShieldAlert, Zap, Coins, Globe, Heart, Check, X, Sparkles 
 import Link from 'next/link';
 
 export const metadata: Metadata = {
-  title: 'iCreatePDF vs. iLovePDF, Smallpdf & PDF24 | Compare PDF Tools',
+  title: 'iCreatePDF vs. iLovePDF, Smallpdf & PDF24 | Compare',
   description: 'Compare iCreatePDF to iLovePDF, Smallpdf, and PDF24 on privacy, file limits, task caps, and pricing — plus why client-side processing beats server-based cloud converters.',
   keywords: 'icreatepdf vs ilovepdf, icreatepdf vs smallpdf, client side pdf converter, secure pdf tools, local pdf editor, free private pdf tools',
   alternates: buildAlternates('/compare'),
   openGraph: {
-    title: 'iCreatePDF vs. iLovePDF, Smallpdf & PDF24 | Compare PDF Tools',
+    title: 'iCreatePDF vs. iLovePDF, Smallpdf & PDF24 | Compare PDF...',
     description: 'Compare iCreatePDF to iLovePDF, Smallpdf, and PDF24 on privacy, file limits, task caps, and pricing.',
     type: 'website',
   }

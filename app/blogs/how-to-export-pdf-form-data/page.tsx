@@ -7,12 +7,12 @@ import Link from 'next/link';
 import { Button } from '@/components/ui/button';
 
 export const metadata: Metadata = {
-  title: 'How to Export PDF Form Data to CSV — Free Survey Guide | iCreatePDF',
+  title: 'How to Export PDF Form Data to CSV — Survey Guide | iCr...',
   description: 'Extract filled AcroForm input fields from single or multiple PDFs into a consolidated CSV spreadsheet.',
   keywords: 'export pdf form data, extract data from pdf form, convert acroform to csv, export fillable pdf fields, extract fdf xml to spreadsheet, pdf form data extractor free',
   alternates: buildAlternates('/blogs/how-to-export-pdf-form-data'),
   openGraph: {
-    title: 'How to Export PDF Form Data to CSV — Free Survey Guide | iCreatePDF',
+    title: 'How to Export PDF Form Data to CSV — Survey Guide | iCr...',
     description: 'Extract filled AcroForm input fields from single or multiple PDFs into a consolidated CSV spreadsheet.',
     type: 'article',
     publishedTime: '2026-07-25T00:00:00Z',

@@ -9,12 +9,12 @@ import { Button } from '@/components/ui/button';
 import { RelatedPosts } from '@/components/blog/RelatedPosts';
 
 export const metadata: Metadata = {
-  title: 'How to Edit a PDF Online for Free — Text Overlays & Annotations | iCreatePDF',
+  title: 'How to Edit a PDF Online for — | iCreatePDF',
   description: 'Add text, annotations, and overlays to any PDF directly in your browser. No account, no upload — write directly into the document and download instantly.',
   keywords: 'edit pdf online free, add text to pdf, pdf annotation tool, pdf text overlay, how to edit pdf 2026',
   alternates: buildAlternates('/blogs/how-to-edit-pdf-online-free'),
   openGraph: {
-    title: 'How to Edit a PDF Online for Free — Text Overlays & Annotations',
+    title: 'How to Edit a PDF Online for Free — Text Overlays & Ann...',
     description: 'Add text, annotations, and overlays to any PDF directly in your browser.',
     type: 'article',
     publishedTime: '2026-07-18T00:00:00Z',
@@ -38,7 +38,7 @@ export default function EditPdfBlogPost() {
         dangerouslySetInnerHTML={{
           __html: JSON.stringify([
             ...articleSchema({
-          title: 'How to Edit a PDF Online for Free — Text Overlays & Annotations | iCreatePDF',
+          title: 'How to Edit a PDF Online for — | iCreatePDF',
           description: 'Add text, annotations, and overlays to any PDF directly in your browser. No account, no upload — write directly into the document and download instantly.',
           url: '/blogs/how-to-edit-pdf-online-free',
           datePublished: '2026-07-18T00:00:00Z'

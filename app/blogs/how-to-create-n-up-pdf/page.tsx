@@ -7,12 +7,12 @@ import Link from 'next/link';
 import { Button } from '@/components/ui/button';
 
 export const metadata: Metadata = {
-  title: 'How to Create N-up PDF Pages — Free Multi-Page Grid Guide | iCreatePDF',
+  title: 'How to Create N-up PDF Pages — Multi-Page Grid Guide | ...',
   description: 'Learn how to place 2, 4, 6, or 9 PDF pages onto a single sheet of paper for handouts and paper-saving printing.',
   keywords: 'n-up pdf, multiple pages per sheet pdf, print multiple pages on one page pdf, 2-up pdf maker, 4-up pdf layout, print grid pages pdf free, n-up page layout generator',
   alternates: buildAlternates('/blogs/how-to-create-n-up-pdf'),
   openGraph: {
-    title: 'How to Create N-up PDF Pages — Free Multi-Page Grid Guide | iCreatePDF',
+    title: 'How to Create N-up PDF Pages — Multi-Page Grid Guide | ...',
     description: 'Learn how to place 2, 4, 6, or 9 PDF pages onto a single sheet of paper for handouts and paper-saving printing.',
     type: 'article',
     publishedTime: '2026-07-25T00:00:00Z',

@@ -6,7 +6,7 @@ import { toolContent } from '@/lib/tool-content';
 import { buildAlternates, toolSchema } from '@/lib/seo';
 
 export const metadata: Metadata = {
-  title: 'PDF TOC & Bookmarks Builder — Free, Private, No Upload | iCreatePDF',
+  title: 'PDF TOC & Bookmarks Builder Free Online | iCreatePDF',
   description: 'Add, edit, or reorganize clickable outline bookmarks for PDFs. 100% private — files process inside browser memory.',
   keywords: 'pdf toc builder, create pdf table of contents, add clickable bookmark outline to pdf, build index outline pdf, table of contents generator pdf online free',
   alternates: buildAlternates('/tools/pdf-toc-builder'),

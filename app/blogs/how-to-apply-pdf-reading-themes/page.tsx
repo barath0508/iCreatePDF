@@ -7,12 +7,12 @@ import Link from 'next/link';
 import { Button } from '@/components/ui/button';
 
 export const metadata: Metadata = {
-  title: 'How to Apply Sepia & Dark Reading Themes to PDF — Free Guide | iCreatePDF',
+  title: 'How to Apply Sepia & Dark Themes to PDF | iCreatePDF',
   description: 'Apply Sepia, Soft Amber, and Dark Mode color filters to PDF document pages to reduce eye strain.',
   keywords: 'pdf reading themes, sepia pdf reader, warm amber filter pdf, eye comfort pdf reader, soft mint green pdf, change pdf background color for reading, reader mode pdf online',
   alternates: buildAlternates('/blogs/how-to-apply-pdf-reading-themes'),
   openGraph: {
-    title: 'How to Apply Sepia & Dark Reading Themes to PDF — Free Guide | iCreatePDF',
+    title: 'How to Apply Sepia & Dark Reading Themes to PDF | iCrea...',
     description: 'Apply Sepia, Soft Amber, and Dark Mode color filters to PDF document pages to reduce eye strain.',
     type: 'article',
     publishedTime: '2026-07-25T00:00:00Z',

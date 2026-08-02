@@ -7,12 +7,12 @@ import Link from 'next/link';
 import { Button } from '@/components/ui/button';
 
 export const metadata: Metadata = {
-  title: 'How to Make a PDF Booklet — Free Saddle-Stitch Printing Guide | iCreatePDF',
+  title: 'How to Make a Printable PDF Booklet | iCreatePDF',
   description: 'Reorder PDF pages into 2-page landscape booklet spreads ready for double-sided duplex printing and folding.',
   keywords: 'pdf booklet maker, convert pdf to booklet, booklet printing format, saddle stitch pdf, booklet layout generator, print pdf as booklet, booklet pdf creator free, make booklet from pdf online',
   alternates: buildAlternates('/blogs/how-to-make-pdf-booklet'),
   openGraph: {
-    title: 'How to Make a PDF Booklet — Free Saddle-Stitch Printing Guide | iCreatePDF',
+    title: 'How to Make a PDF Booklet — Saddle-Stitch Printing Guid...',
     description: 'Reorder PDF pages into 2-page landscape booklet spreads ready for double-sided duplex printing and folding.',
     type: 'article',
     publishedTime: '2026-07-25T00:00:00Z',
@@ -27,7 +27,7 @@ export default function HowTo_make_pdf_bookletPage() {
         dangerouslySetInnerHTML={{
           __html: JSON.stringify([
             ...articleSchema({
-              title: 'How to Make a PDF Booklet — Free Saddle-Stitch Printing Guide',
+              title: 'How to Make a PDF Booklet — Free Saddle-Stitch Printing...',
               description: 'Reorder PDF pages into 2-page landscape booklet spreads ready for double-sided duplex printing and folding.',
               url: '/blogs/how-to-make-pdf-booklet',
               datePublished: '2026-07-25T00:00:00Z',

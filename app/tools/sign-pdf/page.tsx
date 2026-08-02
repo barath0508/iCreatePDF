@@ -6,7 +6,7 @@ import { toolContent } from '@/lib/tool-content';
 import { buildAlternates, toolSchema, faqSchema, howToSchema } from '@/lib/seo';
 
 export const metadata: Metadata = {
-  title: 'Sign PDF Free Online — Add E-Signature to PDF (100% Private) | iCreatePDF',
+  title: 'Sign PDF Free Online — Add E-Signature | iCreatePDF',
   description: 'Sign PDF documents free online. Draw, type, or upload your signature to sign contracts & agreements locally in your browser. No file uploads.',
   keywords: 'digital signature online on pdf, insert signature in pdf online, virtual signature on pdf, electronically sign pdf online, sign documents online pdf, online signature on pdf, online sign on document, e signature on pdf online, sign electronically online, digitally sign pdf online, e sign document online, online pdf signature, esign online pdf, esign pdf online free, electronic signature pdf free online, sign pdf locally, sign pdf online free, add signature to pdf, secure e-signature free',
   alternates: buildAlternates('/tools/sign-pdf'),

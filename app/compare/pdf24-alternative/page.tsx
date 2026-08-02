@@ -6,12 +6,12 @@ import { Lock, Zap, Globe } from 'lucide-react';
 import Link from 'next/link';
 
 export const metadata: Metadata = {
-  title: 'PDF24 Alternative: No Install, Browser-Based Privacy | iCreatePDF',
+  title: 'PDF24 Alternative: Free Browser PDF Tools | iCreatePDF',
   description: 'Looking for a PDF24 alternative? iCreatePDF is free, requires no desktop install, and processes files entirely in your browser tab — every tool, not just some.',
   keywords: 'pdf24 alternative, pdf24 vs icreatepdf, pdf24 tools alternative, browser-based pdf tool no install, best pdf24 alternative, private pdf24 alternative, local pdf24 alternative online',
   alternates: buildAlternates('/compare/pdf24-alternative'),
   openGraph: {
-    title: 'PDF24 Alternative: No Install, Browser-Based Privacy | iCreatePDF',
+    title: 'PDF24 Alternative: No Install, Browser-Based Privacy | ...',
     description: 'iCreatePDF is a free PDF24 alternative that never requires a desktop install and never uploads your files.',
     type: 'website',
   },

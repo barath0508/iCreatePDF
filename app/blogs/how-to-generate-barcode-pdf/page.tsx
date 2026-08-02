@@ -9,7 +9,7 @@ import { Button } from '@/components/ui/button';
 import { RelatedPosts } from '@/components/blog/RelatedPosts';
 
 export const metadata: Metadata = {
-  title: 'How to Generate a Barcode PDF Online — Free Guide | iCreatePDF',
+  title: 'How to Generate a Barcode PDF Online| iCreatePDF',
   description: 'Generate Code 128, EAN-13, UPC-A, Code 39, Data Matrix, or PDF417 barcodes and download as a print-ready PDF. 100% browser-based, no uploads.',
   keywords: 'barcode pdf, generate barcode online, code 128 generator, ean-13 generator, upc-a barcode free 2026',
   alternates: buildAlternates('/blogs/how-to-generate-barcode-pdf'),
@@ -38,7 +38,7 @@ export default function BarcodeToPdfBlogPost() {
         dangerouslySetInnerHTML={{
           __html: JSON.stringify([
             ...articleSchema({
-          title: 'How to Generate a Barcode PDF Online — Free Guide | iCreatePDF',
+          title: 'How to Generate a Barcode PDF Online| iCreatePDF',
           description: 'Generate Code 128, EAN-13, UPC-A, Code 39, Data Matrix, or PDF417 barcodes and download as a print-ready PDF. 100% browser-based, no uploads.',
           url: '/blogs/how-to-generate-barcode-pdf',
           datePublished: '2026-07-18T00:00:00Z'

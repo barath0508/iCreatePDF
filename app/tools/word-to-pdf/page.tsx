@@ -6,7 +6,7 @@ import { toolContent } from '@/lib/tool-content';
 import { buildAlternates, toolSchema } from '@/lib/seo';
 
 export const metadata: Metadata = {
-  title: 'Convert DOCX to PDF Free Online — 100% Private (No Upload) | iCreatePDF',
+  title: 'Convert DOCX to PDF Free Online (100% Private) | iCreatePDF',
   description: 'Convert DOCX files to PDF online free. ⚡ Fast, no formatting loss & zero server uploads. Convert your DOCX files to PDF instantly in browser memory.',
   keywords: 'convert docx to pdf, docx files to pdf, how to convert docx to pdf, word to pdf, convert word to pdf, word to pdf free, word document to pdf, doc to pdf, microsoft word to pdf, word to pdf online free, convert word to pdf without losing formatting, docx to pdf converter, word to pdf locally, word to pdf no upload, save word as pdf, word file to pdf',
   alternates: buildAlternates('/tools/word-to-pdf'),

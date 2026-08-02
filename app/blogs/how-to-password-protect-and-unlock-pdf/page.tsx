@@ -9,7 +9,7 @@ import { Button } from '@/components/ui/button';
 import { RelatedPosts } from '@/components/blog/RelatedPosts';
 
 export const metadata: Metadata = {
-  title: 'How to Password Protect and Unlock PDF Files Securely | iCreatePDF',
+  title: 'How to Password Protect and Unlock PDF Files Securely |...',
   description: 'Learn how to encrypt your PDF files with owner/user passwords and strip passwords from encrypted files 100% locally in your browser sandbox.',
   keywords: 'password protect pdf, protect pdf with password free, decrypt pdf online, unlock password protected pdf, local pdf encryption',
   alternates: buildAlternates('/blogs/how-to-password-protect-and-unlock-pdf'),
@@ -29,7 +29,7 @@ export default function ProtectUnlockPdfBlog() {
         dangerouslySetInnerHTML={{
           __html: JSON.stringify([
             ...articleSchema({
-          title: 'How to Password Protect and Unlock PDF Files Securely | iCreatePDF',
+          title: 'How to Password Protect and Unlock PDF Files Securely |...',
           description: 'Learn how to encrypt your PDF files with owner/user passwords and strip passwords from encrypted files 100% locally in your browser sandbox.',
           url: '/blogs/how-to-password-protect-and-unlock-pdf',
           datePublished: '2026-05-29T00:00:00Z'

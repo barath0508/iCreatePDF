@@ -6,12 +6,12 @@ import { toolContent } from '@/lib/tool-content';
 import { buildAlternates, toolSchema } from '@/lib/seo';
 
 export const metadata: Metadata = {
-  title: 'QR Code to PDF Generator Free Online (Instant & Printable A4) | iCreatePDF',
+  title: 'QR Code to PDF Generator Free Online | iCreatePDF',
   description: 'Convert & generate QR code to PDF free online. Create custom vector QR codes from any URL or text into a print-ready A4 PDF. 100% private client-side processing.',
   keywords: 'qr code to pdf, qr code to pdf generator, qr code to pdf converter, how to convert qr code to pdf, convert qr code to pdf, qr code to pdf free, qr to pdf converter, generate qr code pdf, create pdf with qr code, qr code generator pdf, embed qr code pdf free',
   alternates: buildAlternates('/tools/qr-to-pdf'),
   openGraph: {
-    title: 'QR Code to PDF Generator Free Online (Instant & Printable A4) | iCreatePDF',
+    title: 'QR Code to PDF Generator Online (Instant & Printable A4...',
     description: 'Convert & generate QR code to PDF free online. Create custom vector QR codes from any URL or text into a print-ready A4 PDF. 100% private client-side processing.',
     type: 'website',
   }

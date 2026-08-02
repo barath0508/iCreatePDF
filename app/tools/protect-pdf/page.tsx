@@ -6,7 +6,7 @@ import { toolContent } from '@/lib/tool-content';
 import { buildAlternates, toolSchema, faqSchema, howToSchema } from '@/lib/seo';
 
 export const metadata: Metadata = {
-  title: 'Password Protect PDF Free Online — Encrypt PDF (100% Private) | iCreatePDF',
+  title: 'Password Protect PDF Free Online (Encrypt PDF) | iCreatePDF',
   description: 'Password protect and encrypt PDF files free online. Add strong AES encryption and owner/user passwords locally in your browser without uploads.',
   keywords: 'password protect pdf, encrypt pdf, protect pdf with password, lock pdf, pdf password protection, add password to pdf free, encrypt pdf file, secure pdf online free, pdf encryption free, password protect pdf locally, how to lock a pdf, pdf password lock, protect pdf document, add password to pdf online free, password protect pdf no upload, secure pdf file, pdf security online free, AES pdf encryption, protect confidential pdf',
   alternates: buildAlternates('/tools/protect-pdf'),

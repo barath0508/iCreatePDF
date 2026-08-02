@@ -9,7 +9,7 @@ import { Button } from '@/components/ui/button';
 import { RelatedPosts } from '@/components/blog/RelatedPosts';
 
 export const metadata: Metadata = {
-  title: 'How to Repair a Corrupted PDF Online — Free Guide | iCreatePDF',
+  title: 'How to Repair Corrupted PDF Files Online | iCreatePDF',
   description: 'Fix corrupted, damaged, or broken PDF files by rebuilding cross-reference tables and object streams. 100% browser-based recovery, no uploads.',
   keywords: 'repair pdf, fix corrupted pdf, broken pdf file, pdf wont open fix, repair pdf online free 2026',
   alternates: buildAlternates('/blogs/how-to-repair-corrupted-pdf'),
@@ -38,7 +38,7 @@ export default function RepairPdfBlogPost() {
         dangerouslySetInnerHTML={{
           __html: JSON.stringify([
             ...articleSchema({
-          title: 'How to Repair a Corrupted PDF Online — Free Guide | iCreatePDF',
+          title: 'How to Repair a Corrupted PDF Online| iCreatePDF',
           description: 'Fix corrupted, damaged, or broken PDF files by rebuilding cross-reference tables and object streams. 100% browser-based recovery, no uploads.',
           url: '/blogs/how-to-repair-corrupted-pdf',
           datePublished: '2026-07-18T00:00:00Z'

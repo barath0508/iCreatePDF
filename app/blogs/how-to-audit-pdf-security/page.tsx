@@ -7,12 +7,12 @@ import Link from 'next/link';
 import { Button } from '@/components/ui/button';
 
 export const metadata: Metadata = {
-  title: 'How to Audit PDF Security & Permissions — Security Guide | iCreatePDF',
+  title: 'How to Audit PDF Security & Permissions | iCreatePDF',
   description: 'Inspect PDF encryption algorithms (AES-128/256) and copy/print restriction bitmasks.',
   keywords: 'pdf security auditor, check pdf encryption strength, audit pdf permissions, verify pdf aes-256, secure pdf scanner, test pdf copy print restrictions free',
   alternates: buildAlternates('/blogs/how-to-audit-pdf-security'),
   openGraph: {
-    title: 'How to Audit PDF Security & Permissions — Security Guide | iCreatePDF',
+    title: 'How to Audit PDF Security & Permissions — Security Guid...',
     description: 'Inspect PDF encryption algorithms (AES-128/256) and copy/print restriction bitmasks.',
     type: 'article',
     publishedTime: '2026-07-25T00:00:00Z',

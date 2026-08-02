@@ -7,12 +7,12 @@ import Link from 'next/link';
 import { Button } from '@/components/ui/button';
 
 export const metadata: Metadata = {
-  title: 'How to Convert CSV Data to PDF Tables — Free Guide | iCreatePDF',
+  title: 'How to Convert CSV Data to PDF Tables| iCreatePDF',
   description: 'Turn raw CSV spreadsheet rows directly into structured, paginated PDF tables with headers.',
   keywords: 'csv to pdf converter, convert csv to pdf online, csv to pdf table, format csv as pdf free, csv file to pdf generator, private csv pdf converter',
   alternates: buildAlternates('/blogs/how-to-convert-csv-to-pdf'),
   openGraph: {
-    title: 'How to Convert CSV Data to PDF Tables — Free Guide | iCreatePDF',
+    title: 'How to Convert CSV Data to PDF Tables| iCreatePDF',
     description: 'Turn raw CSV spreadsheet rows directly into structured, paginated PDF tables with headers.',
     type: 'article',
     publishedTime: '2026-07-25T00:00:00Z',

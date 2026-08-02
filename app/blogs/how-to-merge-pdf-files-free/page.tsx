@@ -9,7 +9,7 @@ import { Button } from '@/components/ui/button';
 import { RelatedPosts } from '@/components/blog/RelatedPosts';
 
 export const metadata: Metadata = {
-  title: 'How to Merge Multiple PDFs Into One File — Free Guide | iCreatePDF',
+  title: 'How to Merge Multiple PDFs into One File | iCreatePDF',
   description: 'Combine multiple PDF files into a single document in seconds using your browser. No software installation, no file uploads, completely free.',
   keywords: 'merge pdf files, combine pdf into one, join pdf online free, merge multiple pdf free, how to merge pdf 2026',
   alternates: buildAlternates('/blogs/how-to-merge-pdf-files-free'),
@@ -38,7 +38,7 @@ export default function MergePdfBlogPost() {
         dangerouslySetInnerHTML={{
           __html: JSON.stringify([
             ...articleSchema({
-          title: 'How to Merge Multiple PDFs Into One File — Free Guide | iCreatePDF',
+          title: 'How to Merge Multiple PDFs Into One File| iCreatePDF',
           description: 'Combine multiple PDF files into a single document in seconds using your browser. No software installation, no file uploads, completely free.',
           url: '/blogs/how-to-merge-pdf-files-free',
           datePublished: '2026-05-22T00:00:00Z'

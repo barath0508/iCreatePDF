@@ -6,7 +6,7 @@ import { toolContent } from '@/lib/tool-content';
 import { buildAlternates, toolSchema, faqSchema, howToSchema } from '@/lib/seo';
 
 export const metadata: Metadata = {
-  title: 'Convert PDF to Word Free Online — 100% Private (No Upload) | iCreatePDF',
+  title: 'Convert PDF to Word Free Online (100% Private) | iCreatePDF',
   description: 'Convert PDF files to editable Word DOCX documents online free. ⚡ Fast text & formatting preservation, processed entirely local in browser memory.',
   keywords: 'pdf to word converter, convert pdf to word, pdf to docx, convert pdf to docx online free, private pdf to word, no upload pdf to word',
   alternates: buildAlternates('/tools/pdf-to-word'),

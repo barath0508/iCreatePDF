@@ -6,12 +6,12 @@ import { toolContent } from '@/lib/tool-content';
 import { buildAlternates, toolSchema } from '@/lib/seo';
 
 export const metadata: Metadata = {
-  title: 'Convert RIS to PDF Online Free: Bibliography & Citations | iCreatePDF',
+  title: 'Convert RIS to PDF Online Free (Citations) | iCreatePDF',
   description: 'Wondering how to convert RIS to PDF? Parse RIS bibliographic citation files and compile them into beautifully formatted PDFs (APA, MLA, Chicago, Harvard). 100% private, local browser conversion.',
   keywords: 'how to convert ris to pdf, ris to pdf, convert ris to pdf, ris file to pdf, bibliography compiler, formatted citation pdf, citation converter free',
   alternates: buildAlternates('/tools/ris-to-pdf'),
   openGraph: {
-    title: 'Convert RIS to PDF Online Free: Bibliography & Citations | iCreatePDF',
+    title: 'Convert RIS to PDF Online: | iCreatePDF',
     description: 'Wondering how to convert RIS to PDF? Parse RIS bibliographic citation files and compile them into beautifully formatted PDFs (APA, MLA, Chicago, Harvard). 100% private, local browser conversion.',
     type: 'website',
   }

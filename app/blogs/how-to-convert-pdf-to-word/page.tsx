@@ -7,12 +7,12 @@ import Link from 'next/link';
 import { Button } from '@/components/ui/button';
 
 export const metadata: Metadata = {
-  title: 'How to Convert PDF to Word (.docx) Online — Free Guide | iCreatePDF',
+  title: 'How to Convert PDF to Word (.docx) Online| iCreatePDF',
   description: 'Extract text, headings, and paragraphs from PDF files into editable Microsoft Word (.docx) documents.',
   keywords: 'pdf to word converter, convert pdf to word, pdf to docx, convert pdf to docx online free, private pdf to word, no upload pdf to word',
   alternates: buildAlternates('/blogs/how-to-convert-pdf-to-word'),
   openGraph: {
-    title: 'How to Convert PDF to Word (.docx) Online — Free Guide | iCreatePDF',
+    title: 'How to Convert PDF to Word (.docx) Online| iCreatePDF',
     description: 'Extract text, headings, and paragraphs from PDF files into editable Microsoft Word (.docx) documents.',
     type: 'article',
     publishedTime: '2026-07-25T00:00:00Z',

@@ -9,7 +9,7 @@ import { Button } from '@/components/ui/button';
 import { RelatedPosts } from '@/components/blog/RelatedPosts';
 
 export const metadata: Metadata = {
-  title: 'How to Compress a PDF Without Losing Quality (2026 Guide) | iCreatePDF',
+  title: 'How to Compress a PDF Without Losing Quality (2026 Guid...',
   description: 'Learn the best methods to reduce PDF file size while keeping images and text sharp. No quality loss, no uploads, all done in your browser for free.',
   keywords: 'compress pdf without losing quality, reduce pdf file size, shrink pdf free, pdf compression guide 2026, compress pdf online free',
   alternates: buildAlternates('/blogs/how-to-compress-pdf-without-losing-quality'),
@@ -42,7 +42,7 @@ export default function CompressPdfBlogPost() {
         dangerouslySetInnerHTML={{
           __html: JSON.stringify([
             ...articleSchema({
-          title: 'How to Compress a PDF Without Losing Quality (2026 Guide) | iCreatePDF',
+          title: 'How to Compress a PDF Without Losing Quality (2026 Guid...',
           description: 'Learn the best methods to reduce PDF file size while keeping images and text sharp. No quality loss, no uploads, all done in your browser for free.',
           url: '/blogs/how-to-compress-pdf-without-losing-quality',
           datePublished: '2026-05-25T00:00:00Z'

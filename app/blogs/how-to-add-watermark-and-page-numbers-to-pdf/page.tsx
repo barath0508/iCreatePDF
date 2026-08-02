@@ -9,7 +9,7 @@ import { Button } from '@/components/ui/button';
 import { RelatedPosts } from '@/components/blog/RelatedPosts';
 
 export const metadata: Metadata = {
-  title: 'How to Add Custom Watermark and Page Numbers to PDF | iCreatePDF',
+  title: 'How to Add Watermarks & Page Numbers to PDF | iCreatePDF',
   description: 'Learn how to stamp configurable watermarks and sequential page numbers on all pages of your PDF document securely in your browser.',
   keywords: 'add watermark to pdf, stamp watermark online, add page numbers to pdf free, insert pdf page numbers, custom header footer pdf',
   alternates: buildAlternates('/blogs/how-to-add-watermark-and-page-numbers-to-pdf'),
@@ -29,7 +29,7 @@ export default function WatermarkPageNumbersPdfBlog() {
         dangerouslySetInnerHTML={{
           __html: JSON.stringify([
             ...articleSchema({
-          title: 'How to Add Custom Watermark and Page Numbers to PDF | iCreatePDF',
+          title: 'How to Add Custom Watermark and Page Numbers to PDF | i...',
           description: 'Learn how to stamp configurable watermarks and sequential page numbers on all pages of your PDF document securely in your browser.',
           url: '/blogs/how-to-add-watermark-and-page-numbers-to-pdf',
           datePublished: '2026-05-29T00:00:00Z'

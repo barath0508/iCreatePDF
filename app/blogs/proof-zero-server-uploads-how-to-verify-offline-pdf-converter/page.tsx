@@ -9,12 +9,12 @@ import { Button } from '@/components/ui/button';
 import { RelatedPosts } from '@/components/blog/RelatedPosts';
 
 export const metadata: Metadata = {
-  title: 'Proof: Verify iCreatePDF is 100% Server-Free (Convert Offline) | iCreatePDF',
+  title: 'Proof: Verify iCreatePDF is 100% Server-Free | iCreatePDF',
   description: 'Wondering if your private documents are safe? Learn how to verify that iCreatePDF runs 100% locally by converting and editing PDFs completely offline.',
   keywords: 'zero server uploads, offline pdf converter, private pdf editor, client side pdf tool, how to verify pdf safety, secure pdf tools',
   alternates: buildAlternates('/blogs/proof-zero-server-uploads-how-to-verify-offline-pdf-converter'),
   openGraph: {
-    title: 'Proof: Verify iCreatePDF is 100% Server-Free (Convert Offline)',
+    title: 'Proof: Verify iCreatePDF is 100% Server-Free (Convert O...',
     description: 'Verify document privacy yourself. Load the site, turn off your WiFi and mobile data, convert any PDF, and download it — all completely offline.',
     type: 'article',
     publishedTime: '2026-07-16T00:00:00Z',
@@ -52,7 +52,7 @@ export default function ProofZeroServerUploadsBlogPost() {
         dangerouslySetInnerHTML={{
           __html: JSON.stringify([
             ...articleSchema({
-          title: 'Proof: Verify iCreatePDF is 100% Server-Free (Convert Offline) | iCreatePDF',
+          title: 'Proof: Verify iCreatePDF is 100% Server-Free (Convert O...',
           description: 'Wondering if your private documents are safe? Learn how to verify that iCreatePDF runs 100% locally by converting and editing PDFs completely offline.',
           url: '/blogs/proof-zero-server-uploads-how-to-verify-offline-pdf-converter',
           datePublished: '2026-07-16T00:00:00Z'

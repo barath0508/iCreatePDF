@@ -6,12 +6,12 @@ import { toolContent } from '@/lib/tool-content';
 import { buildAlternates, toolSchema, faqSchema, howToSchema } from '@/lib/seo';
 
 export const metadata: Metadata = {
-  title: 'Edit PDF Free Online — Add Text, Annotate & Draw (No Upload) | iCreatePDF',
+  title: 'Edit PDF Free Online — Add Text & Annotate | iCreatePDF',
   description: 'Edit PDF documents free online. Add text overlays, drawings, shapes, and annotations locally in browser memory. 100% secure, no uploads.',
   keywords: 'edit pdf, annotate pdf, add text to pdf, overlay text on pdf, edit pdf free online, write on pdf online, private pdf editor',
   alternates: buildAlternates('/tools/edit-pdf'),
   openGraph: {
-    title: 'Edit PDF Free Online — Add Text, Annotate & Draw | iCreatePDF',
+    title: 'Edit PDF Online — Add Text, Annotate & Draw | iCreatePDF',
     description: 'Edit PDF documents free online. Add text overlays, drawings, and annotations locally in browser memory. 100% private.',
     type: 'website',
   }

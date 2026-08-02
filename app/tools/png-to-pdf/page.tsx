@@ -6,7 +6,7 @@ import { toolContent } from '@/lib/tool-content';
 import { buildAlternates, toolSchema, faqSchema, howToSchema } from '@/lib/seo';
 
 export const metadata: Metadata = {
-  title: 'Convert PNG to PDF Free Online — 100% Private (No Upload) | iCreatePDF',
+  title: 'Convert PNG to PDF Free Online (100% Private) | iCreatePDF',
   description: 'Convert PNG images to PDF online free. ⚡ Preserve image transparency and quality. 100% secure client-side browser processing.',
   keywords: 'convert png to pdf, png to pdf, convert image to pdf, free online png to pdf, private pdf converter',
   alternates: buildAlternates('/tools/png-to-pdf'),

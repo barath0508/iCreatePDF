@@ -6,7 +6,7 @@ import { toolContent } from '@/lib/tool-content';
 import { buildAlternates, toolSchema, faqSchema, howToSchema } from '@/lib/seo';
 
 export const metadata: Metadata = {
-  title: 'Convert HEIC to PDF Free Online — iPhone Photos (No Upload) | iCreatePDF',
+  title: 'Convert HEIC to PDF Free Online (iPhone Photos) | iCreatePDF',
   description: 'Convert iPhone HEIC photos to PDF free online. ⚡ 100% private client-side converter — combine multiple HEIC files into one PDF without uploads.',
   keywords: 'how to convert heic to pdf on iphone, heic to pdf iphone, convert heic to pdf iphone, iphone heic to pdf converter, heic to pdf, convert heic to pdf, convert iphone heic to pdf, heic to pdf converter, convert heic to pdf offline, offline heic to pdf converter, convert heic to pdf locally, iphone heic to pdf private, local image converter',
   alternates: buildAlternates('/tools/heic-to-pdf'),

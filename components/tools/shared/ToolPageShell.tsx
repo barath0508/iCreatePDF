@@ -25,7 +25,7 @@ export function ToolPageShell({
 }: ToolPageShellProps) {
   const defaultJsonLd = {
     '@context': 'https://schema.org',
-    '@type': 'SoftwareApplication',
+    '@type': 'WebApplication',
     name: title,
     description: description,
     operatingSystem: 'Web Browser',
@@ -108,6 +108,16 @@ export function ToolPageShell({
         <div className="w-full">
           {children}
         </div>
+
+        <noscript>
+          <div className="p-6 rounded-2xl bg-card border border-border space-y-3 text-sm text-muted-foreground my-8">
+            <h2 className="text-lg font-bold text-foreground">{title} — Browser-Based Private PDF Tool</h2>
+            <p>{description}</p>
+            <p>
+              iCreatePDF runs {title} 100% locally in your web browser using client-side WebAssembly technology. Your PDF documents and converted files are processed entirely in your device memory and are never uploaded to any remote server or cloud storage. Works offline, fast, and completely free.
+            </p>
+          </div>
+        </noscript>
 
         {/* Extra Educational / SEO Content Sections */}
         {extraSections && (

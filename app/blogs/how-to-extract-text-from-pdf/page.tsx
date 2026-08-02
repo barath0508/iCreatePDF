@@ -9,7 +9,7 @@ import { Button } from '@/components/ui/button';
 import { RelatedPosts } from '@/components/blog/RelatedPosts';
 
 export const metadata: Metadata = {
-  title: 'How to Extract Text from a PDF Online — Free Guide | iCreatePDF',
+  title: 'How to Extract Text from a PDF Online| iCreatePDF',
   description: 'Pull the raw text out of any PDF, page by page, entirely in your browser. No uploads, no software, copy or download as .txt instantly.',
   keywords: 'extract text from pdf, pdf to text online, pdf text extraction free, get text out of pdf, pdf to txt 2026',
   alternates: buildAlternates('/blogs/how-to-extract-text-from-pdf'),
@@ -38,7 +38,7 @@ export default function PdfToTextBlogPost() {
         dangerouslySetInnerHTML={{
           __html: JSON.stringify([
             ...articleSchema({
-          title: 'How to Extract Text from a PDF Online — Free Guide | iCreatePDF',
+          title: 'How to Extract Text from a PDF Online| iCreatePDF',
           description: 'Pull the raw text out of any PDF, page by page, entirely in your browser. No uploads, no software, copy or download as .txt instantly.',
           url: '/blogs/how-to-extract-text-from-pdf',
           datePublished: '2026-07-18T00:00:00Z'

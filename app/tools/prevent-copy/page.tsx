@@ -6,12 +6,12 @@ import { toolContent } from '@/lib/tool-content';
 import { buildAlternates, toolSchema } from '@/lib/seo';
 
 export const metadata: Metadata = {
-  title: 'Make PDF Non-Copyable Online Free — Prevent PDF Copy (No Copy PDF) | iCreatePDF',
+  title: 'Make PDF Non-Copyable Online Free | iCreatePDF',
   description: 'Make PDF non-copyable free online. Disable text selection, highlighting, and copying by rasterizing PDF pages locally. 100% private in-browser tool.',
   keywords: 'make pdf not copyable, no copy pdf, prevent pdf copy, make pdf non-copyable, disable text selection pdf, protect pdf from copying, rasterize pdf online free, copy proof pdf, make pdf text non selectable',
   alternates: buildAlternates('/tools/prevent-copy'),
   openGraph: {
-    title: 'Make PDF Non-Copyable Online Free — Prevent PDF Copy | iCreatePDF',
+    title: 'Make PDF Non-Copyable Free — Prevent PDF Copy | iCreatePDF',
     description: 'Make PDF non-copyable free online. Disable text selection, highlighting, and copying by rasterizing PDF pages locally. 100% private.',
     type: 'website',
   }

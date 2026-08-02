@@ -13,7 +13,7 @@ import { ClarityAnalytics } from '@/components/clarity-analytics';
 
 export const metadata: Metadata = {
   metadataBase: new URL('https://www.icreatepdf.online'),
-  title: 'iCreatePDF — Free Online PDF Tools: Merge, Compress, Convert, Edit & Sign Privately',
+  title: 'iCreatePDF — Free Online PDF Tools (100% Private)',
   description: 'Free browser-based PDF tools — merge, split, compress, convert, edit, sign, protect & OCR PDFs. 46+ tools. Files never leave your device. No uploads, no sign-up, no limits.',
   keywords: [
     // Core high-volume queries

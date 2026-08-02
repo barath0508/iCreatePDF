@@ -6,12 +6,12 @@ import { toolContent } from '@/lib/tool-content';
 import { buildAlternates, toolSchema, faqSchema, howToSchema } from '@/lib/seo';
 
 export const metadata: Metadata = {
-  title: 'Rotate PDF Pages Free Online — Permanently Spin PDF (No Upload) | iCreatePDF',
+  title: 'Rotate PDF Pages Online Free (No Upload) | iCreatePDF',
   description: 'Rotate individual PDF pages or the entire document online free. ⚡ Fast client-side page rotation, 100% secure and private in browser memory.',
   keywords: 'rotate pdf, rotate pdf pages, rotate pdf online, free rotate pdf, private pdf rotation, spin pdf online',
   alternates: buildAlternates('/tools/rotate-pdf'),
   openGraph: {
-    title: 'Rotate PDF Pages Free Online — Permanently Spin PDF | iCreatePDF',
+    title: 'Rotate PDF Pages Online — Permanently Spin PDF | iCreat...',
     description: 'Rotate individual PDF pages or the entire document online free. 100% private local browser processing.',
     type: 'website',
   }

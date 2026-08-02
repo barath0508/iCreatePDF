@@ -68,7 +68,7 @@ export function breadcrumbSchema(crumbs: { name: string; url?: string }[]) {
 }
 
 /**
- * Generate SoftwareApplication + BreadcrumbList JSON-LD for a tool page.
+ * Generate WebApplication + BreadcrumbList JSON-LD for a tool page.
  */
 export function toolSchema({
   name,
@@ -93,7 +93,7 @@ export function toolSchema({
   return [
     {
       '@context': 'https://schema.org',
-      '@type': 'SoftwareApplication',
+      '@type': 'WebApplication',
       name,
       url: `${SITE_URL}${cleanUrl}`,
       description,
@@ -232,7 +232,7 @@ export function howToSchema({
 
 /**
  * Generate FAQPage JSON-LD for a tool or page.
- * Pair with toolSchema to get both SoftwareApplication and FAQ rich results.
+ * Pair with toolSchema to get both WebApplication and FAQ rich results.
  */
 export function faqSchema(faqs: { question: string; answer: string }[]) {
   return {

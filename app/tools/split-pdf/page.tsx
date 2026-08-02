@@ -6,7 +6,7 @@ import { toolContent } from '@/lib/tool-content';
 import { buildAlternates, toolSchema, faqSchema, howToSchema } from '@/lib/seo';
 
 export const metadata: Metadata = {
-  title: 'Split PDF Free Online — Extract Pages from PDF Instantly | iCreatePDF',
+  title: 'Split PDF Free Online — Extract PDF Pages | iCreatePDF',
   description: 'Extract page ranges or separate all pages in a PDF document free online. ⚡ 100% private browser processing — no uploads or sign-up needed.',
   keywords: 'pdf cut pages, how to separate a page from a pdf, separate a page from pdf, how to split pdf pages free, split pdf pages free, split pdf, extract pages pdf, split pdf online, split pdf free, private pdf splitter, cut pages from pdf, cut pages out of pdf',
   alternates: buildAlternates('/tools/split-pdf'),

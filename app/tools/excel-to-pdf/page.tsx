@@ -6,7 +6,7 @@ import { toolContent } from '@/lib/tool-content';
 import { buildAlternates, toolSchema, faqSchema, howToSchema } from '@/lib/seo';
 
 export const metadata: Metadata = {
-  title: 'Convert Excel to PDF Free Online — XLS/XLSX (No Upload) | iCreatePDF',
+  title: 'Convert Excel to PDF Free Online (XLS/XLSX) | iCreatePDF',
   description: 'Convert Excel spreadsheets (.xlsx, .xls) and CSV to PDF tables free online. Customize column widths, orientation, and margins. 100% private.',
   keywords: 'excel to pdf, csv to pdf, convert excel to pdf free, spreadsheet to pdf, convert xlsx to pdf online local, private excel pdf converter',
   alternates: buildAlternates('/tools/excel-to-pdf'),

@@ -6,7 +6,7 @@ import { toolContent } from '@/lib/tool-content';
 import { buildAlternates, toolSchema, faqSchema, howToSchema } from '@/lib/seo';
 
 export const metadata: Metadata = {
-  title: 'Convert HTML to PDF Free Online — HTML Compiler (No Upload) | iCreatePDF',
+  title: 'Convert HTML to PDF Free Online | iCreatePDF',
   description: 'Compile custom HTML/CSS code templates into formatted PDF documents online free. 100% private client-side renderer — files never leave your device.',
   keywords: 'pdfcrowd html to pdf, html to pdf, convert html to pdf, online html pdf compiler, css to pdf client side',
   alternates: buildAlternates('/tools/html-to-pdf'),

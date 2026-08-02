@@ -6,7 +6,7 @@ import { toolContent } from '@/lib/tool-content';
 import { buildAlternates, toolSchema, faqSchema, howToSchema } from '@/lib/seo';
 
 export const metadata: Metadata = {
-  title: 'Unlock PDF Free Online — Remove PDF Password (No Upload) | iCreatePDF',
+  title: 'Unlock PDF Free Online — Remove Password | iCreatePDF',
   description: 'Remove password encryption and copy/print restrictions from PDF files free online. ⚡ 100% private local browser decryption — no uploads.',
   keywords: 'local pdf password remover, decrypt pdf client-side, remove pdf security password private, offline pdf unlocker, strip pdf permissions local, unlock pdf owner password, bypass pdf print restriction, remove copy restriction pdf',
   alternates: buildAlternates('/tools/unlock-pdf'),

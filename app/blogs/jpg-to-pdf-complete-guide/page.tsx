@@ -9,7 +9,7 @@ import { Button } from '@/components/ui/button';
 import { RelatedPosts } from '@/components/blog/RelatedPosts';
 
 export const metadata: Metadata = {
-  title: 'JPG to PDF: How to Convert Images to PDF Online Free | iCreatePDF',
+  title: 'JPG to PDF: Convert Images to PDF Free | iCreatePDF',
   description: 'Convert JPG, PNG, WEBP, and HEIC images to PDF instantly in your browser. No signup, no upload, no file size limits. Step-by-step guide.',
   keywords: 'jpg to pdf, convert image to pdf free, png to pdf online, jpeg to pdf converter, convert photo to pdf 2026',
   alternates: buildAlternates('/blogs/jpg-to-pdf-complete-guide'),
@@ -46,7 +46,7 @@ export default function JpgToPdfBlogPost() {
         dangerouslySetInnerHTML={{
           __html: JSON.stringify([
             ...articleSchema({
-          title: 'JPG to PDF: How to Convert Images to PDF Online Free | iCreatePDF',
+          title: 'JPG to PDF: How to Convert Images to PDF Free | iCreatePDF',
           description: 'Convert JPG, PNG, WEBP, and HEIC images to PDF instantly in your browser. No signup, no upload, no file size limits. Step-by-step guide.',
           url: '/blogs/jpg-to-pdf-complete-guide',
           datePublished: '2026-05-18T00:00:00Z'

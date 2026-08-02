@@ -6,12 +6,12 @@ import { toolContent } from '@/lib/tool-content';
 import { buildAlternates, toolSchema } from '@/lib/seo';
 
 export const metadata: Metadata = {
-  title: 'PDF Read Aloud — Text-to-Speech Reader Online Free | iCreatePDF',
+  title: 'PDF Read Aloud — Text-to-Speech Reader | iCreatePDF',
   description: 'Listen to any PDF read aloud in your browser. Choose a voice, adjust reading speed, and follow along with live word highlighting. 100% private, no upload required.',
   keywords: 'pdf read aloud, pdf text to speech, listen to pdf, pdf voice reader, pdf audio reader online free',
   alternates: buildAlternates('/tools/read-aloud-pdf'),
   openGraph: {
-    title: 'PDF Read Aloud — Text-to-Speech Reader Online Free | iCreatePDF',
+    title: 'PDF Read Aloud — Text-to-Speech Reader Free | iCreatePDF',
     description: 'Listen to any PDF read aloud in your browser. Choose a voice, adjust reading speed, and follow along with live word highlighting. 100% private, no upload required.',
     type: 'website',
   }

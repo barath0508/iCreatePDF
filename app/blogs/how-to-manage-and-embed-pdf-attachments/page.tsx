@@ -8,7 +8,7 @@ import { Calendar, Clock, ChevronLeft, ArrowRight } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 
 export const metadata: Metadata = {
-  title: 'How to Manage & Embed File Attachments in PDF (ZUGFeRD & E-Invoices) | iCreatePDF',
+  title: 'How to Manage & Embed File Attachments in PDF (ZUGFeRD ...',
   description: 'Guide to extracting and embedding XML e-invoices, spreadsheets, and source files into PDF containers 100% client-side.',
   keywords: 'how to extract zugferd xml from pdf, embed file in pdf, pdf portfolio builder, factur-x attachment extractor',
   alternates: buildAlternates('/blogs/how-to-manage-and-embed-pdf-attachments'),

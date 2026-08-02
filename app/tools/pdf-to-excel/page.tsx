@@ -6,12 +6,12 @@ import { toolContent } from '@/lib/tool-content';
 import { buildAlternates, toolSchema, faqSchema, howToSchema } from '@/lib/seo';
 
 export const metadata: Metadata = {
-  title: 'Convert PDF to Excel Free Online — Extract Tables (No Upload) | iCreatePDF',
+  title: 'Convert PDF to Excel Online (Extract Tables) | iCreatePDF',
   description: 'Extract tables from any PDF into Excel-ready CSV files free online. ⚡ Instantly detect rows and columns locally in browser memory — no sign-up.',
   keywords: 'pdf to excel, pdf table extractor, extract table from pdf, pdf to csv, convert pdf table to spreadsheet online free',
   alternates: buildAlternates('/tools/pdf-to-excel'),
   openGraph: {
-    title: 'Convert PDF to Excel Free Online — Extract Tables | iCreatePDF',
+    title: 'Convert PDF to Excel Online — | iCreatePDF',
     description: 'Extract tables from any PDF into Excel-ready CSV files free online. Detects rows and columns from text layout automatically, right in your browser — no upload, no sign-up.',
     type: 'website',
   }

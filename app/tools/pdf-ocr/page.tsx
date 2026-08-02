@@ -6,12 +6,12 @@ import { toolContent } from '@/lib/tool-content';
 import { buildAlternates, toolSchema } from '@/lib/seo';
 
 export const metadata: Metadata = {
-  title: 'Convert Scanned PDF to Text Free Online (OCR PDF to Text) | iCreatePDF',
+  title: 'Convert Scanned PDF to Text Free (OCR) | iCreatePDF',
   description: 'Convert scanned PDF documents to text free online with client-side OCR. Extract editable, searchable text from scanned or copy-protected PDFs. 100% private.',
   keywords: 'convert scanned pdf documents to text, convert scanned pdf to text, ocr pdf to text, pdf ocr to text, online ocr pdf, scan to pdf text, free ocr online pdf, pdf text scanner, convert a pdf image to text, scanned text, scanned pdf to text, ocr conversion pdf, pdf to text scanner, scan text from pdf, free ocr pdf to text, turn scanned document into text, convert scanned pdf to editable text, convert scanned pdf to text online free, pdf scan ocr, pdf scan to text, scanned pdf ocr to text, extract text from pdf, local pdf ocr',
   alternates: buildAlternates('/tools/pdf-ocr'),
   openGraph: {
-    title: 'Convert Scanned PDF to Text Free Online (OCR PDF) | iCreatePDF',
+    title: 'Convert Scanned PDF to Text Online (OCR PDF) | iCreatePDF',
     description: 'Convert scanned PDF documents to text free online with local OCR. Extract editable text from scanned or copy-protected PDFs. 100% private.',
     type: 'website',
   }

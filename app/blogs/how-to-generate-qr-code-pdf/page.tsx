@@ -9,7 +9,7 @@ import { Button } from '@/components/ui/button';
 import { RelatedPosts } from '@/components/blog/RelatedPosts';
 
 export const metadata: Metadata = {
-  title: 'How to Generate a QR Code PDF Online — Free Guide | iCreatePDF',
+  title: 'How to Generate a QR Code PDF Online| iCreatePDF',
   description: 'Wondering how to get a QR code to PDF? Learn how to generate a custom QR code from any URL or text and download it as a print-ready PDF for free.',
   keywords: 'qr code to pdf, convert qr code to pdf, qr code to pdf free, qr to pdf converter, qr code pdf, generate qr code pdf, qr code generator free, printable qr code, qr to pdf 2026',
   alternates: buildAlternates('/blogs/how-to-generate-qr-code-pdf'),
@@ -37,7 +37,7 @@ export default function QrToPdfBlogPost() {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify([
           ...articleSchema({
-            title: 'How to Generate a QR Code PDF Online — Free Guide | iCreatePDF',
+            title: 'How to Generate a QR Code PDF Online| iCreatePDF',
             description: 'Wondering how to get a QR code to PDF? Learn how to generate a custom QR code from any URL or text and download it as a print-ready PDF for free.',
             url: '/blogs/how-to-generate-qr-code-pdf',
             datePublished: '2026-07-18T00:00:00Z'

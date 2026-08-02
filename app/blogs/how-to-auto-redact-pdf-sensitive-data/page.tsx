@@ -8,7 +8,7 @@ import { Calendar, Clock, ChevronLeft, ArrowRight, ShieldCheck } from 'lucide-re
 import { Button } from '@/components/ui/button';
 
 export const metadata: Metadata = {
-  title: 'How to Auto-Redact Sensitive PII from PDF Files — Guide | iCreatePDF',
+  title: 'How to Auto-Redact Sensitive PII from PDFs | iCreatePDF',
   description: 'Learn how to automatically scan and sanitize Emails, SSNs, Credit Cards, and PII from PDF documents 100% locally in your browser with zero server uploads.',
   keywords: 'how to auto redact pdf, sanitize pii in pdf, automatic pdf redaction guide, redact ssn email pdf',
   alternates: buildAlternates('/blogs/how-to-auto-redact-pdf-sensitive-data'),

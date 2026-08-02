@@ -6,12 +6,12 @@ import { toolContent } from '@/lib/tool-content';
 import { buildAlternates, toolSchema, faqSchema, howToSchema } from '@/lib/seo';
 
 export const metadata: Metadata = {
-  title: 'Convert PDF to Text Free Online — Extract PDF Text (No Upload) | iCreatePDF',
+  title: 'Convert PDF to Text Free Online (Extract Text) | iCreatePDF',
   description: 'Extract editable text from any PDF document free online. ⚡ Fast and 100% private browser-based text extraction — no server uploads needed.',
   keywords: 'convert pdf to readable text, pdf to readable text, scan text from pdf, convert pdf image to text, convert pdf to machine readable format, pdf scan to text converter, pdf scan to text, image pdf to text, pdf text scanner, pdf to text, extract text from pdf, pdf text reader, read pdf text online',
   alternates: buildAlternates('/tools/pdf-to-text'),
   openGraph: {
-    title: 'Convert PDF to Text Free Online — Extract PDF Text | iCreatePDF',
+    title: 'Convert PDF to Text Online — Extract PDF Text | iCreatePDF',
     description: 'Extract editable text from any PDF document free online. 100% private browser-based text extraction.',
     type: 'website',
   }

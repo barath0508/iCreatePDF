@@ -9,7 +9,7 @@ import { Button } from '@/components/ui/button';
 import { RelatedPosts } from '@/components/blog/RelatedPosts';
 
 export const metadata: Metadata = {
-  title: 'How to Delete Pages from a PDF Online — Free Guide | iCreatePDF',
+  title: 'How to Delete Pages from a PDF Online| iCreatePDF',
   description: 'Cut, delete, or remove unwanted pages from a PDF document. 100% browser-based, no uploads, remove one page or several at once.',
   keywords: 'delete pdf pages, cut page from pdf, remove pages from pdf, delete pdf page online free, cut pdf pages 2026',
   alternates: buildAlternates('/blogs/how-to-delete-pages-from-pdf'),
@@ -38,7 +38,7 @@ export default function DeletePagesBlogPost() {
         dangerouslySetInnerHTML={{
           __html: JSON.stringify([
             ...articleSchema({
-          title: 'How to Delete Pages from a PDF Online — Free Guide | iCreatePDF',
+          title: 'How to Delete Pages from a PDF Online| iCreatePDF',
           description: 'Cut, delete, or remove unwanted pages from a PDF document. 100% browser-based, no uploads, remove one page or several at once.',
           url: '/blogs/how-to-delete-pages-from-pdf',
           datePublished: '2026-07-18T00:00:00Z'

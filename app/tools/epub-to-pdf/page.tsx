@@ -6,7 +6,7 @@ import { toolContent } from '@/lib/tool-content';
 import { buildAlternates, toolSchema } from '@/lib/seo';
 
 export const metadata: Metadata = {
-  title: 'EPUB to PDF Converter — Free, Private, No Upload | iCreatePDF',
+  title: 'EPUB to PDF Converter Free Online | iCreatePDF',
   description: 'Convert EPUB eBook files into clean, printable A4 or Letter PDF documents. 100% private — files process inside browser memory.',
   keywords: 'epub to pdf converter, convert epub to pdf, ebook to pdf free, read epub as pdf, convert epub file online, private epub pdf converter',
   alternates: buildAlternates('/tools/epub-to-pdf'),

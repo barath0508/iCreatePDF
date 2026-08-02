@@ -9,7 +9,7 @@ import { Button } from '@/components/ui/button';
 import { RelatedPosts } from '@/components/blog/RelatedPosts';
 
 export const metadata: Metadata = {
-  title: 'How to Certify a PDF with a SHA-256 Fingerprint — Free Guide | iCreatePDF',
+  title: 'How to Certify PDF with SHA-256 Stamp | iCreatePDF',
   description: 'Stamp a PDF with a cryptographic SHA-256 fingerprint and scannable QR code, then verify it later to prove it hasn\'t been altered. 100% browser-based.',
   keywords: 'certify pdf, pdf fingerprint, sha-256 pdf, tamper-proof pdf, pdf integrity check free 2026',
   alternates: buildAlternates('/blogs/how-to-certify-pdf-with-fingerprint'),
@@ -38,7 +38,7 @@ export default function CertifyPdfBlogPost() {
         dangerouslySetInnerHTML={{
           __html: JSON.stringify([
             ...articleSchema({
-          title: 'How to Certify a PDF with a SHA-256 Fingerprint — Free Guide | iCreatePDF',
+          title: 'How to Certify a PDF with a SHA-256 Fingerprint | iCrea...',
           description: 'Stamp a PDF with a cryptographic SHA-256 fingerprint and scannable QR code, then verify it later to prove it hasn\'t been altered. 100% browser-based.',
           url: '/blogs/how-to-certify-pdf-with-fingerprint',
           datePublished: '2026-07-18T00:00:00Z'
