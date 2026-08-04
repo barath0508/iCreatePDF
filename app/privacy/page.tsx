@@ -33,26 +33,27 @@ We do NOT collect: names, email addresses (except when you voluntarily contact u
   },
   {
     icon: ShieldCheck,
-    title: '3. Cookies and Local Storage',
-    content: `We use cookies to improve your browsing experience and serve relevant advertisements. Specifically:
+    title: '3. Cookies and Advertising Disclosures (Google AdSense)',
+    content: `We use cookies, local storage, and third-party advertising services to operate our website and serve relevant advertisements. Specifically:
 
-• Google, as a third-party vendor, uses cookies to serve ads on iCreatePDF based on your visits to this site and other websites on the internet.
-• Google's use of advertising cookies enables it and its partners to serve ads to you based on your visits to our site and/or other sites.
-• You may opt out of personalized advertising by visiting Google's Ads Settings (https://www.google.com/settings/ads) or by visiting www.aboutads.info.
+• Third-Party Vendor Cookies: Google, as a third-party vendor, uses cookies (including the DoubleClick DART cookie) to serve advertisements on iCreatePDF based on your previous visits to our website or other sites on the Internet.
+• Personalized Advertising: Google's use of advertising cookies enables it and its partners to serve ads to users based on their visit to iCreatePDF and/or other websites across the web.
+• User Opt-Out Options: Users may opt out of personalized advertising by visiting Google Ads Settings at https://www.google.com/settings/ads or by visiting Network Advertising Initiative opt-out portal at http://www.aboutads.info/choices/.
+• Non-Personalized Ads Fallback: If you opt out or reside in a jurisdiction requiring explicit consent, Google AdSense is configured to serve contextual, non-personalized advertisements that do not track user interest profiles.
 
 Additionally, we use browser localStorage or sessionStorage solely to remember your UI preferences (such as tool settings, dark mode preference). This preference data remains strictly local on your device and is never transmitted.`,
   },
   {
     icon: Globe,
-    title: '4. Third-Party Services',
-    content: `Our website may load resources from, or share anonymous data with, the following third-party providers:
+    title: '4. Third-Party Services & Analytics',
+    content: `Our website loads static web assets and functional libraries from reputable content delivery networks (CDNs) and integrates third-party services:
 
-• Google AdSense — to serve contextual and personalized advertisements. Google sets cookies to track ad performance and customize user experience.
-• Google Fonts — to serve typography assets (font files).
-• Vercel — our hosting platform. Vercel collects anonymous network server logs for security, DDOS protection, and performance optimization.
-• Google Search Console — utilized strictly for search index validation and web console verification.
+• Google AdSense — to serve contextual and personalized advertisements. Google sets advertising cookies to measure ad performance, prevent fraud, and customize user experience.
+• Google Fonts & CDNs — to serve web typography assets and WebAssembly binary modules.
+• Vercel Edge Network — our web hosting infrastructure provider. Vercel collects anonymous network request logs (IP addresses, user-agent strings) strictly for security auditing, DDoS mitigation, and performance monitoring.
+• Google Search Console — utilized strictly for search index validation and webmaster console verification.
 
-None of these third parties ever have access to the document files you process, which remain 100% sandboxed in your browser.`,
+None of these third-party services ever have access to your PDF documents or converted files, which remain strictly sandboxed inside your local web browser tab.`,
   },
   {
     icon: ShieldCheck,
