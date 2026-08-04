@@ -374,14 +374,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
                     "availability": "https://schema.org/InStock"
                   },
                   "publisher": { "@id": "https://www.icreatepdf.online/#organization" },
-                  "screenshot": "https://www.icreatepdf.online/opengraph-image",
-                  "aggregateRating": {
-                    "@type": "AggregateRating",
-                    "ratingValue": "4.9",
-                    "bestRating": "5",
-                    "ratingCount": "2847",
-                    "reviewCount": "2847"
-                  }
+                  "screenshot": "https://www.icreatepdf.online/opengraph-image"
                 },
                 {
                   "@type": "FAQPage",
