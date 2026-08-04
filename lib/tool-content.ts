@@ -1517,6 +1517,158 @@ export const toolContent: Record<string, ToolContent> = {
       { question: 'Can I handle wide CSV tables with many columns?', answer: 'Yes, choose Landscape mode or auto-scale column widths.' },
     ],
   },
+
+  'auto-crop-pdf': {
+    name: 'Smart Auto-Crop & Margin Optimizer',
+    url: '/tools/auto-crop-pdf',
+    overview:
+      'Manually eyeballing crop margins on a scanned document or an old PDF export means re-measuring whitespace on every page. iCreatePDF\'s auto-crop renders your PDF to canvas and scans the pixels to find where real content actually starts and ends, then proposes tight margins automatically — trimming scanner borders, blank edges, and excess whitespace so pages sit better on a phone, tablet, or e-reader screen.',
+    steps: [
+      { title: 'Upload your PDF', description: 'Add the document you want trimmed. It renders locally in your browser.' },
+      { title: 'Run margin detection', description: 'The tool scans page pixels for non-white content boundaries and proposes tight crop values.' },
+      { title: 'Fine-tune the margins', description: 'Adjust the top, bottom, left, and right offsets manually if you want extra padding.' },
+      { title: 'Export the cropped PDF', description: 'Download the optimized file — only the CropBox changes, so text and vector graphics stay crisp.' },
+    ],
+    useCases: [
+      'Trim wide scanner borders from a digitized paper document',
+      'Optimize a PDF for comfortable reading on a Kindle or phone',
+      'Remove inconsistent blank margins before merging pages from different sources',
+      'Tighten a PDF for print without a desktop editor',
+    ],
+    faqs: [
+      { question: 'How does smart auto-crop detect margins?', answer: 'It analyzes page pixels to identify non-white content boundaries, automatically calculating tight CropBox offsets.' },
+      { question: 'Does auto-cropping affect PDF text quality?', answer: 'No — auto-cropping adjusts page CropBox dimensions without re-encoding text or vector art, so fonts stay crisp.' },
+      { question: 'Can I crop only some pages, or does it apply to the whole document?', answer: 'Margins are detected from the analyzed page and applied uniformly, which works well for documents with consistent page sizes like scans or exports.' },
+      { question: 'Is the cropped PDF processed on a server?', answer: 'No. Page rendering, pixel analysis, and CropBox adjustment all run locally using WebAssembly, so the file never uploads anywhere.' },
+    ],
+  },
+
+  'auto-redact-pdf': {
+    name: 'Smart Auto-Redact PDF',
+    url: '/tools/auto-redact-pdf',
+    overview:
+      'Manually drawing redaction boxes over every email address, phone number, or SSN in a long document is slow and easy to get wrong. iCreatePDF\'s auto-redact scans the PDF\'s text stream directly in your browser for common PII patterns — emails, phone numbers, credit card numbers, IP addresses, and custom keywords you define — then lets you burn permanent black boxes over every match in one pass.',
+    steps: [
+      { title: 'Upload your PDF', description: 'Add the document containing sensitive information.' },
+      { title: 'Choose detection categories', description: 'Toggle Email, Phone, Credit Card, or IP Address, and add custom keywords or terms to search for.' },
+      { title: 'Scan for sensitive data', description: 'The tool highlights every match it finds in the text layer.' },
+      { title: 'Burn and export', description: 'Apply opaque redaction boxes and download — the underlying text is permanently stripped, not just visually hidden.' },
+    ],
+    useCases: [
+      'Redact client PII before sharing a legal file externally',
+      'Scrub SSNs and account numbers from financial statements',
+      'Remove contact details from a document before public release',
+      'Sanitize support tickets or logs before sharing with a vendor',
+    ],
+    faqs: [
+      { question: 'How does automatic PDF redaction work?', answer: 'It scans the PDF text stream directly inside your browser for PII patterns like emails, phone numbers, and credit card numbers, letting you burn opaque black boxes over sensitive items in one click.' },
+      { question: 'Are my confidential documents uploaded to any server?', answer: 'No. All scanning, pattern matching, and redaction box rendering happen 100% client-side in your browser memory.' },
+      { question: 'Can redacted text be unmasked or selected?', answer: 'No. The underlying text content stream is permanently stripped and covered with solid vector black rectangles on export.' },
+      { question: 'Can I redact custom terms that aren\'t emails or numbers?', answer: 'Yes. Add any custom keyword or phrase and the scanner matches it alongside the built-in Email, Phone, Credit Card, and IP Address categories.' },
+      { question: 'Does auto-redact catch every occurrence in a long document?', answer: 'It scans the full text stream of every page for matches, so it works well for consistent patterns — always review the highlighted matches before exporting to confirm nothing was missed.' },
+    ],
+  },
+
+  'pdf-attachment-manager': {
+    name: 'PDF Attachment Manager',
+    url: '/tools/pdf-attachment-manager',
+    overview:
+      'PDFs can carry embedded files you never see just by opening them — e-invoice standards like ZUGFeRD and Factur-X store a structured XML copy inside the PDF, and "PDF portfolios" bundle spreadsheets or source documents the same way. iCreatePDF\'s attachment manager reads a PDF\'s EmbeddedFiles tree, lists what\'s inside, lets you download any attachment individually, and lets you embed new files into the document — no desktop PDF editor required.',
+    steps: [
+      { title: 'Upload your PDF', description: 'The tool parses the file and lists any embedded attachments it finds.' },
+      { title: 'Inspect existing attachments', description: 'View filenames and download individual files, including invoice XML or bundled documents.' },
+      { title: 'Add new attachments', description: 'Select any file — XML, CSV, XLSX, DOCX, image, or ZIP — to embed into the PDF.' },
+      { title: 'Export the updated PDF', description: 'Download the file with attachments extracted or newly embedded.' },
+    ],
+    useCases: [
+      'Extract the XML invoice data from a ZUGFeRD or Factur-X e-invoice',
+      'Check what files are bundled inside a "PDF portfolio" before opening it elsewhere',
+      'Attach supporting spreadsheets or source documents to a report PDF',
+      'Verify an e-invoice PDF contains the expected structured data before submission',
+    ],
+    faqs: [
+      { question: 'Can I extract XML e-invoices from PDF files?', answer: 'Yes. ZUGFeRD and Factur-X electronic invoices store structured XML attachments inside the PDF, and this tool extracts them instantly.' },
+      { question: 'What file formats can I embed into a PDF?', answer: 'You can attach any file type, including XML, CSV, XLSX, DOCX, PNG, and ZIP, directly into the PDF\'s EmbeddedFiles tree.' },
+      { question: 'Is processing private and offline?', answer: 'Yes, attachment parsing and embedding are executed entirely within browser WebAssembly and local JavaScript memory.' },
+      { question: 'What is a PDF portfolio and why would a PDF contain other files?', answer: 'A PDF can embed any file inside its EmbeddedFiles tree — invoicing standards like ZUGFeRD use this to pair a human-readable PDF with a machine-readable XML copy of the same invoice.' },
+      { question: 'Will embedding a file change how the PDF looks when opened normally?', answer: 'No. Attachments are stored inside the PDF structure and don\'t alter the visible pages; most PDF readers show them in a separate attachments panel.' },
+    ],
+  },
+
+  'pdf-presentation-mode': {
+    name: 'PDF Presentation & Laser Pointer Mode',
+    url: '/tools/pdf-presentation-mode',
+    overview:
+      'Presenting a PDF slide deck usually means exporting to PowerPoint first, or juggling a separate screen-annotation app just to point at something. iCreatePDF\'s presentation mode turns any PDF into a fullscreen slideshow with a live session timer and three on-canvas tools — a glowing laser pointer, a digital pen, and a highlighter — so you can present and annotate directly in the browser with nothing to install.',
+    steps: [
+      { title: 'Upload your PDF', description: 'Load the slide deck you want to present.' },
+      { title: 'Enter fullscreen', description: 'Switch to a distraction-free fullscreen view for your audience.' },
+      { title: 'Pick a pointer tool', description: 'Choose the laser pointer to guide attention, or switch to pen or highlighter to annotate live.' },
+      { title: 'Navigate and present', description: 'Move between slides with the on-screen controls while the session timer tracks your elapsed time.' },
+    ],
+    useCases: [
+      'Present a PDF deck in a video call without exporting to PowerPoint first',
+      'Annotate a diagram live during a lecture or training session',
+      'Highlight key figures on a slide during a client walkthrough',
+      'Track how long a presentation or rehearsal runs using the built-in timer',
+    ],
+    faqs: [
+      { question: 'How does the laser pointer work?', answer: 'The laser pointer creates a glowing red cursor trail over the slide canvas so audience members can easily follow your presentation.' },
+      { question: 'Can I annotate on slides while presenting?', answer: 'Yes — switch between the digital pen and yellow highlighter to write or highlight points live during your presentation.' },
+      { question: 'Do I need to convert my PDF to PowerPoint first?', answer: 'No. The tool renders your PDF pages directly as slides, so there is no conversion step or format loss.' },
+      { question: 'Is there a way to time my presentation?', answer: 'Yes, a session timer starts automatically once you load a file and counts your elapsed presenting time.' },
+    ],
+  },
+
+  'pdf-visual-diff': {
+    name: 'PDF Visual Pixel & Text Diff Engine',
+    url: '/tools/pdf-visual-diff',
+    overview:
+      'Text-only diff tools miss layout shifts — a moved logo, a resized table, or a shifted paragraph won\'t register as a text change but can still break a document. iCreatePDF\'s visual diff renders two PDF revisions to canvas and compares them three ways: an overlay curtain slider you drag to reveal differences, a synced side-by-side view, and a pixel-level diff that highlights every changed region — alongside a basic text diff of added and removed lines.',
+    steps: [
+      { title: 'Upload Revision A', description: 'Add the original or baseline PDF.' },
+      { title: 'Upload Revision B', description: 'Add the updated version you want to compare against it.' },
+      { title: 'Choose a diff mode', description: 'Switch between overlay curtain, side-by-side, or pixel diff highlighting.' },
+      { title: 'Review the differences', description: 'Drag the curtain slider or scan the highlighted regions and text diff to confirm what changed.' },
+    ],
+    useCases: [
+      'Catch layout regressions after regenerating a PDF from a template',
+      'Verify a signed contract matches the previously agreed draft',
+      'Audit design or print-file revisions for unintended changes',
+      'Confirm an invoice or report export didn\'t shift after a code change',
+    ],
+    faqs: [
+      { question: 'How does visual pixel diff work?', answer: 'The engine renders both documents to canvas buffers and compares pixel luminance values, highlighting added or changed elements in bright red.' },
+      { question: 'What is the curtain slider view?', answer: 'The curtain slider lets you drag a divider back and forth across the page to inspect micro-changes between Revision A and Revision B.' },
+      { question: 'Does it also compare the text content, or only pixels?', answer: 'Both — alongside the visual pixel comparison, the tool extracts and diffs the text layer so you can see added and removed lines as well as visual changes.' },
+      { question: 'Can the two PDFs have a different number of pages?', answer: 'Yes, the tool compares up to the higher page count of the two files and lets you step through each page individually.' },
+    ],
+  },
+
+  'pdf-3d-flipbook': {
+    name: 'Interactive 3D PDF Flipbook Reader',
+    url: '/tools/pdf-3d-flipbook',
+    overview:
+      'Sharing a PDF catalog or e-book as a flat list of pages doesn\'t feel like a real publication. iCreatePDF\'s 3D flipbook renders your document as a double-page spread with a subtle 3D perspective, so readers see two facing pages at once like an open book, and can step through manually or start an auto-flip slideshow to browse hands-free.',
+    steps: [
+      { title: 'Upload your PDF', description: 'Add the catalog, e-book, brochure, or magazine you want to present.' },
+      { title: 'View the double-page spread', description: 'Pages render side-by-side in a book-like layout with a 3D perspective.' },
+      { title: 'Flip through pages', description: 'Use the navigation controls to move forward and backward through the spread.' },
+      { title: 'Start auto-flip', description: 'Click Auto Flip to let the flipbook advance on its own, or Pause to browse manually again.' },
+    ],
+    useCases: [
+      'Turn a product catalog PDF into a browsable digital flipbook',
+      'Share an e-book or lookbook in a more engaging format than a flat PDF link',
+      'Preview a magazine or brochure layout as double-page spreads',
+      'Let visitors browse a portfolio PDF without downloading it',
+    ],
+    faqs: [
+      { question: 'How does the 3D flipbook viewer work?', answer: 'It renders your PDF pages into high-resolution canvas textures displayed in a double-page spread with a 3D perspective transform.' },
+      { question: 'Can I auto-flip through pages like a presentation?', answer: 'Yes — click the Auto Flip button to start an automatic slideshow loop, and Pause to take back manual control.' },
+      { question: 'Does the flipbook work with an odd number of pages?', answer: 'Yes, the last spread simply shows a single page if the document has an odd page count.' },
+      { question: 'Is the flipbook viewable on mobile devices?', answer: 'Yes, the spread and controls are responsive and work on touch devices, though a wider screen shows the two-page layout best.' },
+    ],
+  },
 };
 
 
