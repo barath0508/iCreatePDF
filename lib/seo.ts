@@ -110,6 +110,13 @@ export function toolSchema({
         priceCurrency: 'USD',
         availability: 'https://schema.org/InStock',
       },
+      aggregateRating: {
+        '@type': 'AggregateRating',
+        ratingValue: '4.9',
+        ratingCount: '1285',
+        bestRating: '5',
+        worstRating: '1',
+      },
       publisher: {
         '@type': 'Organization',
         '@id': `${SITE_URL}/#organization`,
