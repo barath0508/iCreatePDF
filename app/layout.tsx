@@ -13,8 +13,8 @@ import { ClarityAnalytics } from '@/components/clarity-analytics';
 
 export const metadata: Metadata = {
   metadataBase: new URL('https://www.icreatepdf.online'),
-  title: 'iCreatePDF — Free Online PDF Tools (100% Private)',
-  description: 'Free browser-based PDF tools — merge, split, compress, convert, edit, sign, protect & OCR PDFs. 46+ tools. Files never leave your device. No uploads, no sign-up, no limits.',
+  title: 'iCreatePDF — 70+ Free Online PDF Tools (100% Private)',
+  description: 'Free browser-based PDF tools — merge, split, compress, convert, edit, sign, protect & OCR PDFs. 70+ tools. Files never leave your device. No uploads, no sign-up, no limits.',
   keywords: [
     // Core high-volume queries
     'free online PDF tools',
@@ -135,7 +135,7 @@ export const metadata: Metadata = {
     },
   },
   openGraph: {
-    title: 'iCreatePDF — 46+ Free PDF Tools That Keep Your Files Private',
+    title: 'iCreatePDF — 70+ Free PDF Tools That Keep Your Files Private',
     description: 'Merge, compress, convert, edit, sign, OCR, and protect PDFs directly in your browser. Zero uploads. No sign-up. No limits. 100% private.',
     type: 'website',
     locale: 'en_US',
@@ -153,7 +153,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'iCreatePDF — 46+ Free PDF Tools That Keep Your Files Private',
+    title: 'iCreatePDF — 70+ Free PDF Tools That Keep Your Files Private',
     description: 'Merge, compress, convert, edit, sign, OCR, and protect PDFs in your browser. No uploads. No sign-up. 100% private.',
     images: ['https://www.icreatepdf.online/opengraph-image'],
     creator: '@iCreatePDF',

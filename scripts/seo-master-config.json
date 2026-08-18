@@ -1,0 +1,492 @@
+{
+  "add-page-numbers": {
+    "title": "Add Page Numbers to PDF Free Online (Custom Pagination) | iCreatePDF",
+    "description": "Stamp sequential page numbers or \"Page X of Y\" onto PDF pages. Choose positions, styling, and fonts. 100% private in-browser pagination, no uploads.",
+    "keywords": "add page numbers to pdf, number pdf pages, pdf page numbers online, paginate pdf online, insert page numbers in pdf, page x of y numbering pdf, stamp page numbers pdf, number pdf pages free, how to add page numbers to pdf, pdf page number generator, custom pdf page numbering free, number pages in pdf without acrobat, bates page numbering pdf, legal page numbering pdf, private pdf numbering, add page numbering to pdf on mac, online pdf pagination tool",
+    "badge": "PDF Numbering",
+    "heading": "Add Page Numbers to PDF"
+  },
+  "adjust-pdf-margins": {
+    "title": "Adjust PDF Margins Online Free — Add Border Padding | iCreatePDF",
+    "description": "Add margin padding to PDF documents for hole-punching, binder binding, or notes. 100% private client-side processing without server uploads.",
+    "keywords": "adjust pdf margins, add margin to pdf, increase pdf margins, adjust margins pdf online, margins for hole punching pdf, binder margins pdf, print margins pdf, change pdf margins free, crop-free margins pdf, expand pdf margins online, pdf page border padding, resize pdf margins for printing, wide margin pdf creator, pdf margin expander free, add white border to pdf, gutter margin pdf creator",
+    "badge": "Page Formatting",
+    "heading": "Adjust PDF Margins"
+  },
+  "auto-crop-pdf": {
+    "title": "Auto-Crop PDF Online — Smart Margin & Whitespace Trimmer | iCreatePDF",
+    "description": "Automatically detect and crop blank margins, scanner borders, and excess white space from PDF pages. Optimize documents for Kindle, tablet, and mobile locally.",
+    "keywords": "auto crop pdf, automatic pdf margin cropper, trim pdf whitespace, remove scanner black borders pdf, optimize pdf for kindle, auto crop pdf pages online, smart pdf cropper, remove white borders from pdf, batch crop pdf automatically, trim scanned pdf margins, automatic margin detector pdf, crop scanned book pdf, kindle pdf optimizer, trim whitespace from pdf free, crop pdf for ipad",
+    "badge": "Smart Automation",
+    "heading": "Smart Auto-Crop PDF"
+  },
+  "auto-redact-pdf": {
+    "title": "Auto-Redact PDF Online — Sanitize PII & Confidential Data | iCreatePDF",
+    "description": "Automatically scan and black out sensitive data (Emails, SSNs, Credit Cards, Phones) from PDFs. 100% private browser redaction with zero server uploads.",
+    "keywords": "auto redact pdf, automatic pdf redaction, sanitize sensitive pdf data, redact ssn from pdf, email redactor pdf, free client-side pdf redactor, auto blackout text in pdf, redact pii from pdf online, hide confidential information pdf, automated pdf text redactor, mask credit card numbers pdf, remove personal data from pdf, secure pdf sanitization, redact pdf without upload, anonymize pdf document",
+    "badge": "Security & Privacy",
+    "heading": "Auto-Redact PDF"
+  },
+  "barcode-to-pdf": {
+    "title": "Barcode to PDF Generator — Code 128, EAN, UPC & QR Labels | iCreatePDF",
+    "description": "Generate Code 128, EAN-13, UPC-A, Code 39, Data Matrix, or PDF417 barcode sheets as printable PDFs. 100% private client-side label generator.",
+    "keywords": "barcode to pdf, barcode generator pdf, code 128 generator, ean-13 barcode generator, upc-a barcode generator, code 39 generator, data matrix generator, pdf417 generator, free barcode to pdf, product label generator, printable barcode sheet pdf, generate barcode labels a4, barcode batch generator pdf, qr and barcode pdf maker, retail barcode labels pdf, inventory barcode sheet generator",
+    "badge": "Utility",
+    "heading": "Barcode to PDF Generator"
+  },
+  "base64-to-pdf": {
+    "title": "Decode Base64 to PDF Online — Free & Instant Viewer | iCreatePDF",
+    "description": "Decode and convert Base64 strings back into downloadable PDF documents instantly. 100% secure client-side decoding — your data never leaves your browser.",
+    "keywords": "base64 to pdf, decode base64 to pdf, convert base64 string to pdf, base64 pdf decoder, base64 to pdf online, data uri to pdf converter, decode base64 binary to pdf, base64 pdf viewer, developer tools base64 pdf, convert base64 text file to pdf, client side base64 to pdf decoder, base64 string to download pdf, base64 stream to pdf",
+    "badge": "Developer Tools",
+    "heading": "Decode Base64 to PDF"
+  },
+  "bates-numbering": {
+    "title": "Bates Numbering PDF — Free Legal Stamping (EasyBates Alternative) | iCreatePDF",
+    "description": "Apply sequential Bates stamps with custom prefixes and padding to legal discovery documents. The best free, 100% private EasyBates online alternative.",
+    "keywords": "easybates, easybates online, easybates alternative, easybates free, bates numbering pdf, bates numbering, add bates stamps pdf, bates numbering tool, legal document numbering, secure bates numbering pdf tool, legal page numbering private, local bates stamp generator, legal discovery document numbering, client-side bates numbering, medical records sequential numbering, compliance page stamps, litigation bates stamp online, confidential discovery numbering, legal exhibit numbering pdf",
+    "badge": "Legal Tool",
+    "heading": "Bates Numbering for Legal Documents"
+  },
+  "booklet-pdf": {
+    "title": "PDF Booklet Maker — Convert PDF to Saddle-Stitch Booklet | iCreatePDF",
+    "description": "Convert any PDF into a ready-to-print saddle-stitch booklet for double-sided printing. 100% private client-side imposition layout generator.",
+    "keywords": "pdf booklet maker, convert pdf to booklet, booklet printing format, saddle stitch pdf, booklet layout generator, print pdf as booklet, booklet pdf creator free, make booklet from pdf online, fold and staple pdf booklet, imposition pdf creator, duplex booklet print layout, 2-up booklet pdf converter, booklet maker without acrobat, mini book pdf generator, zine pdf printer layout",
+    "badge": "Print Imposition",
+    "heading": "PDF Booklet Maker"
+  },
+  "bulk-certificates": {
+    "title": "Bulk Certificate Generator from CSV/Excel Data | iCreatePDF",
+    "description": "Generate customized certificates, awards, and badges in bulk from spreadsheet data. 100% private client-side mail-merge certificate creator.",
+    "keywords": "bulk certificate generator, generate certificates from csv, bulk certificate generator from csv, create certificates from csv, generate certificates in bulk, pdf excel certificate maker, mail merge certificates, bulk award letter generator online free, client-side bulk certificate generator, automated certificate printing pdf, batch certificate maker with names, custom diploma generator csv, bulk tickets generator pdf, student certificates from excel",
+    "badge": "Document Automation",
+    "heading": "Bulk Certificate Generator from CSV"
+  },
+  "certify-pdf": {
+    "title": "Certify PDF — SHA-256 Digital Fingerprint & Integrity Check | iCreatePDF",
+    "description": "Certify PDF files with a cryptographic SHA-256 fingerprint stamp and scannable verification QR code. 100% private browser-based document integrity audit.",
+    "keywords": "certify pdf, pdf fingerprint, pdf hash checker, sha256 pdf, tamper proof pdf, verify pdf integrity, pdf notarize online, cryptographic pdf verification, document authenticity checker pdf, verify pdf hash online, sha256 checksum pdf, client side pdf certifier, timestamp pdf document, prove pdf integrity, immutable pdf seal",
+    "badge": "Security & Verification",
+    "heading": "Certify PDF with SHA-256"
+  },
+  "compare-pdf": {
+    "title": "Compare PDF Documents Side-by-Side Online Free | iCreatePDF",
+    "description": "Compare two PDF files side-by-side with synchronized scrolling. Spot contract revisions, redlines, and edits 100% locally with zero server uploads.",
+    "keywords": "compare pdf documents, compare pdf files, compare pdf, compare two pdfs online, side by side pdf compare, sync scroll pdf, visual pdf diff, contract comparison tool online, spot differences in pdf, audit pdf redlines, compare revised pdf with original, pdf diff viewer online free, visual contract audit, compare signed pdf vs draft, legal document comparison free",
+    "badge": "Document Review",
+    "heading": "Compare PDF Documents Side-by-Side"
+  },
+  "compress-pdf": {
+    "title": "Compress PDF Free Online — Reduce File Size Without Quality Loss | iCreatePDF",
+    "description": "Shrink and compress PDF file size online free. Optimize documents for email and web portals. 100% private local WebAssembly compression, no uploads.",
+    "keywords": "compress pdf, compress pdf online free, reduce pdf file size, shrink pdf, compress pdf without losing quality, pdf compressor, reduce pdf size online free, compress pdf file, make pdf smaller, pdf size reducer, compress pdf locally, compress pdf no upload, pdf file size reducer free, how to compress pdf, compress pdf for email, compress pdf to 1mb, compress pdf to 200kb, compress pdf to 100kb, compress large pdf, best pdf compressor free",
+    "badge": "Optimization",
+    "heading": "Compress PDF File Size"
+  },
+  "crop-pdf": {
+    "title": "Crop PDF Pages Free Online — Trim Margins & Borders | iCreatePDF",
+    "description": "Crop PDF pages online free. Trim whitespace margins, scanner borders, and resize page areas 100% locally in browser memory. No watermark.",
+    "keywords": "crop pdf, trim pdf margins, remove pdf borders, crop pdf pages online free, pdf margin trimmer, cut pages in pdf, crop pdf online, resize pdf canvas, crop white space from pdf, crop pdf page area, trim pdf for mobile reading, i2pdf crop, crop pdf without acrobat, free online pdf page trimmer, crop pdf document on mac",
+    "badge": "Page Trimming",
+    "heading": "Crop PDF Pages"
+  },
+  "csv-to-pdf": {
+    "title": "CSV to PDF Table Converter Online Free | iCreatePDF",
+    "description": "Convert CSV spreadsheet files into clean, formatted, printable PDF tables with custom styling. 100% private client-side processing without server uploads.",
+    "keywords": "csv to pdf converter, convert csv to pdf online, csv to pdf table, format csv as pdf free, csv file to pdf generator, private csv pdf converter, spreadsheet data to pdf report, csv to printable pdf, tabular data to pdf converter, auto fit csv to pdf, convert excel csv to pdf free, export csv table as pdf",
+    "badge": "Data Converter",
+    "heading": "CSV to PDF Table Converter"
+  },
+  "delete-pdf-pages": {
+    "title": "Delete PDF Pages Online Free — Remove & Cut Unwanted Pages | iCreatePDF",
+    "description": "Easily cut, delete, or remove pages from any PDF document online for free. 100% private client-side page removal with instant download and no uploads.",
+    "keywords": "delete pdf pages, remove pages from pdf, discard pdf pages online, free pdf page deleter, client side page deletion, how to cut pages from a pdf, how do i cut pages from a pdf, cut pdf pages, pdf cut pages, separate a page from pdf, cut pages out of pdf, remove blank pages from pdf, delete unwanted pages in pdf, delete pages from pdf free without acrobat, delete specific page from pdf online",
+    "badge": "Page Removal",
+    "heading": "Cut & Delete PDF Pages"
+  },
+  "edit-pdf": {
+    "title": "Edit PDF Free Online — Add Text, Annotations & Shapes | iCreatePDF",
+    "description": "Edit PDF documents online free. Add text overlays, comments, highlights, drawings, and shapes locally in browser memory. 100% secure, zero uploads.",
+    "keywords": "edit pdf, annotate pdf, add text to pdf, overlay text on pdf, edit pdf free online, write on pdf online, private pdf editor, pdf markup tool online, insert text into pdf document, free browser pdf editor, highlight and draw on pdf, edit pdf without adobe acrobat, add comments to pdf online, client side pdf editor, best free online pdf editor",
+    "badge": "PDF Editor",
+    "heading": "Edit PDF & Add Annotations"
+  },
+  "epub-to-pdf": {
+    "title": "EPUB to PDF Converter Free Online (eBook to PDF) | iCreatePDF",
+    "description": "Convert EPUB eBooks into formatted, printable A4 or Letter PDF documents online. 100% private client-side conversion without file uploads.",
+    "keywords": "epub to pdf converter, convert epub to pdf, ebook to pdf free, read epub as pdf, convert epub file online, private epub pdf converter, epub to printable pdf a4, batch epub to pdf, convert electronic publication to pdf, format epub ebook as pdf document, kindle epub to pdf",
+    "badge": "eBook Converter",
+    "heading": "EPUB to PDF Converter"
+  },
+  "equalize-pdf-page-sizes": {
+    "title": "Equalize PDF Page Sizes — Make All Pages Uniform Dimensions | iCreatePDF",
+    "description": "Standardize mixed Letter, Legal, and A4 pages into a uniform PDF page size. 100% private client-side document dimension normalizer.",
+    "keywords": "equalize pdf page sizes, standardize pdf page size, make pdf pages same size, make all pages a4 pdf, uniform page size pdf online, resize mixed size pdf pages, normalize pdf dimensions, fit all pdf pages to letter size, fix uneven pdf pages, batch standardize pdf canvas, uniform pdf layout converter",
+    "badge": "Page Standardization",
+    "heading": "Equalize PDF Page Sizes"
+  },
+  "excel-to-pdf": {
+    "title": "Excel to PDF Converter Free Online (XLS/XLSX to PDF) | iCreatePDF",
+    "description": "Convert Excel spreadsheets (.xlsx, .xls) and CSV into clean, printable PDF documents. Auto-fit table margins and orientation. 100% private.",
+    "keywords": "excel to pdf, convert excel to pdf free, spreadsheet to pdf, convert xlsx to pdf online, convert xls to pdf, private excel pdf converter, fit excel sheet to pdf page, excel workbook to pdf document, convert excel tables to pdf, export xlsx as pdf free, excel to pdf high resolution, best excel to pdf converter",
+    "badge": "Office Converter",
+    "heading": "Convert Excel to PDF"
+  },
+  "export-pdf-form-data": {
+    "title": "Export PDF Form Data to CSV — Extract AcroForm Fields | iCreatePDF",
+    "description": "Extract filled AcroForm fields from single or batch PDFs directly into CSV spreadsheets. 100% private client-side data extraction without uploads.",
+    "keywords": "export pdf form data, extract data from pdf form, convert acroform to csv, export fillable pdf fields, extract fdf xml to spreadsheet, pdf form data extractor free, scrape pdf form inputs, export filled pdf questionnaire, convert pdf responses to excel, acroform parser online, batch extract pdf form answers",
+    "badge": "Data Extraction",
+    "heading": "Export PDF Form Data to CSV"
+  },
+  "extract-pages": {
+    "title": "Extract Pages from PDF Free Online — Separate Custom Pages | iCreatePDF",
+    "description": "Extract individual pages or custom page ranges from a PDF into a new document. 100% private client-side processing with zero server uploads.",
+    "keywords": "extract pages from pdf, pdf page extractor, pull pages from pdf, pdf page picker online free, extract specific pages from pdf, save selected pages from pdf, separate a page from pdf, how to separate pages from pdf, extract pages into separate files, extract page range from pdf free, save one page from pdf as new file",
+    "badge": "Page Extraction",
+    "heading": "Extract Pages from PDF"
+  },
+  "extract-pdf-images": {
+    "title": "Extract Images from PDF Free Online (Download All Photos) | iCreatePDF",
+    "description": "Extract embedded photos, raster graphics, and illustrations from any PDF into a high-resolution ZIP file. 100% private local extraction.",
+    "keywords": "extract images from pdf, save images from pdf, pdf to image extractor, extract all photos from pdf, pdf image downloader zip, get high res images from pdf free, rip pictures from pdf, extract embedded graphics from pdf, download pictures from pdf document, export raster images pdf, pull photos out of pdf document",
+    "badge": "Image Extraction",
+    "heading": "Extract Images from PDF"
+  },
+  "fillable-pdf-builder": {
+    "title": "Free Fillable PDF Form Creator Online — Design Interactive Forms | iCreatePDF",
+    "description": "Create interactive fillable PDF forms with text fields, checkboxes, and radio buttons online for free. 100% private browser-based form builder.",
+    "keywords": "create pdf form, best free fillable pdf form creator, pdf fillable form free, free pdf fillable forms, free fillable pdf form creator, fillable pdf free, free fill forms, create fillable pdf form, pdf form generator, create fillable pdf free, fillable pdf builder, interactive form builder, create fillable pdf online free, pdf form creator offline, add text fields to pdf, form builder without adobe",
+    "badge": "Form Builder",
+    "heading": "Free Fillable PDF Form Creator"
+  },
+  "flatten-pdf": {
+    "title": "Flatten PDF Forms & Annotations — Make PDF Read-Only | iCreatePDF",
+    "description": "Flatten interactive form fields, signatures, and annotation layers into fixed graphics. Prevent further editing and lock PDF content 100% privately.",
+    "keywords": "flatten pdf form, flatten pdf, flat pdf, flatten form fields, make pdf non editable, secure pdf forms online, convert fillable pdf to read only, flatten annotations on pdf, lock pdf form inputs, flatten layers in pdf, make pdf unfillable, permanent pdf stamping, lock signed pdf from editing",
+    "badge": "Form Security",
+    "heading": "Flatten PDF Form Fields"
+  },
+  "grayscale-pdf": {
+    "title": "Grayscale PDF — Convert PDF to Black & White (Save Ink) | iCreatePDF",
+    "description": "Convert color PDF documents to black and white (grayscale) online free. Save printer ink and optimize contrast 100% privately in browser memory.",
+    "keywords": "grayscale pdf online, grayscale pdf, convert pdf to black and white, ink saving pdf converter, black and white pdf online free, local pdf grayscale converter, color to black and white pdf, reduce printer ink pdf, monochrome pdf creator, convert color document to b&w pdf, change pdf from color to monochrome",
+    "badge": "Color Converter",
+    "heading": "Grayscale PDF: Convert to Black & White"
+  },
+  "header-footer": {
+    "title": "Add Header and Footer to PDF Online Free | iCreatePDF",
+    "description": "Add custom headers and footers to every page of your PDF. Include titles, dates, page numbers, or custom branding. 100% browser-based.",
+    "keywords": "add header footer pdf, pdf header footer online, stamp header pdf, pdf footer text, add header to pdf free, insert running head on pdf, add footer to pdf pages, stamp date and title on pdf, page header generator pdf, custom headers and footers pdf, add company footer to pdf",
+    "badge": "Page Stamping",
+    "heading": "Add Header & Footer to PDF"
+  },
+  "heic-to-pdf": {
+    "title": "Convert HEIC to PDF Free Online (iPhone Photos to PDF) | iCreatePDF",
+    "description": "Convert Apple iPhone HEIC photos into high-quality PDF documents online free. 100% private client-side converter with zero server uploads.",
+    "keywords": "heic to pdf, convert heic to pdf, convert heic to pdf on iphone, how to convert heic to pdf on iphone, iphone heic to pdf converter, convert iphone photos to pdf, apple live photo to pdf, heic image to pdf free, batch heic to pdf converter, convert heic without upload, private heic to pdf, best heic to pdf tool",
+    "badge": "Photo Converter",
+    "heading": "Convert HEIC (iPhone Photos) to PDF"
+  },
+  "html-to-pdf": {
+    "title": "HTML to PDF Converter Online Free — Save Web Code as PDF | iCreatePDF",
+    "description": "Convert HTML code snippets and web pages into clean, printable PDF documents. 100% private in-browser rendering with zero server uploads.",
+    "keywords": "html to pdf, convert html to pdf, web page to pdf converter, html code to pdf document, save html as pdf free, render html to pdf online, html table to pdf, convert html file to pdf, html to printable pdf, browser html to pdf converter, html to pdf free no limit",
+    "badge": "Code Converter",
+    "heading": "HTML to PDF Converter"
+  },
+  "invert-pdf": {
+    "title": "Invert PDF Colors Online — Dark Mode & High Contrast PDF | iCreatePDF",
+    "description": "Invert PDF colors to enable dark mode for night reading and reduce eye strain. Invert black and white scans 100% locally in your browser.",
+    "keywords": "invert pdf, invert pdf colors, dark mode pdf, pdf night mode converter, invert black and white pdf, high contrast pdf reader, read pdf in dark mode, invert scanned document colors, reverse pdf colors online, eye friendly pdf inverter, negative pdf reader online",
+    "badge": "Visual Accessibility",
+    "heading": "Invert PDF Colors & Dark Mode"
+  },
+  "jpg-to-pdf": {
+    "title": "JPG to PDF Converter Free Online (Convert Images to PDF) | iCreatePDF",
+    "description": "Convert JPG, PNG, WEBP, and BMP images into a single polished PDF document. Reorder photos and adjust margins 100% privately in-browser.",
+    "keywords": "jpg to pdf, image to pdf, convert jpg to pdf, photo to pdf converter, picture to pdf online free, combine jpg to pdf, convert images into one pdf, jpeg to pdf converter, convert screenshot to pdf, multiple photos to one pdf, best jpg to pdf converter, jpg to pdf high quality, turn images into pdf free",
+    "badge": "Image Converter",
+    "heading": "Convert JPG Images to PDF"
+  },
+  "markdown-to-pdf": {
+    "title": "Markdown to PDF Converter Online Free — Format MD to PDF | iCreatePDF",
+    "description": "Convert Markdown (.md) documents, notes, and READMEs into beautifully formatted PDF files with code syntax highlighting. 100% private.",
+    "keywords": "markdown to pdf, convert md to pdf, markdown editor to pdf, md file to pdf document, format markdown as pdf report, styled markdown to pdf, markdown resume to pdf, github markdown to pdf, code blocks markdown to pdf, markdown to printable pdf, export markdown as styled pdf",
+    "badge": "Document Formatter",
+    "heading": "Markdown to PDF Converter"
+  },
+  "merge-pdf": {
+    "title": "Merge PDF Free Online — Combine Multiple PDF Files | iCreatePDF",
+    "description": "Combine multiple PDF files into one document free online. ⚡ Fast, secure, and 100% local — files stay in your browser, no upload required.",
+    "keywords": "merge pdf, combine pdf, merge pdf online free, combine pdf files, pdf joiner, merge multiple pdfs into one, how to combine pdf files, pdf merger free, merge pdf without uploading, join pdf online free, merge pdf files locally, pdf combiner free, merge pdf on mac, merge pdf on iphone, merge 2 pdfs together free, combine pdf pages online",
+    "badge": "PDF Organization",
+    "heading": "Merge PDF Files Online"
+  },
+  "n-up-pdf": {
+    "title": "N-Up PDF Maker — Print Multiple Pages per Sheet (2-Up, 4-Up) | iCreatePDF",
+    "description": "Arrange multiple PDF pages onto a single sheet (2-up, 4-up, 8-up) for handouts and paper-saving printing. 100% private client-side imposition.",
+    "keywords": "n-up pdf, multiple pages per sheet pdf, 2 up pdf, 4 up pdf printer layout, print multiple pages on one page pdf, n-up imposition pdf, handouts pdf maker, print 2 pages on 1 sheet pdf, compact pdf page layout, grid layout pdf printer, 4 pages on 1 page pdf converter",
+    "badge": "Print Layout",
+    "heading": "N-Up PDF: Multiple Pages per Sheet"
+  },
+  "no-upload-pdf-tools": {
+    "title": "No-Upload PDF Tools — 100% Private Offline Browser PDF Suite | iCreatePDF",
+    "description": "Explore 70+ completely private, browser-based PDF tools that run locally via WebAssembly. Zero file uploads, zero tracking, total security.",
+    "keywords": "no upload pdf tools, private pdf converter, offline pdf editor, browser based pdf utilities, client side pdf tools, zero server upload pdf, secure pdf tools online, local webassembly pdf editor, privacy focused pdf tools, confidential pdf converter, client side pdf suite, hipaa compliant pdf editor",
+    "badge": "Privacy Suite",
+    "heading": "No-Upload PDF Suite"
+  },
+  "organize-pdf": {
+    "title": "Organize PDF Pages Free Online — Reorder, Rotate & Delete | iCreatePDF",
+    "description": "Visually rearrange, sort, reorder, rotate, and delete PDF pages with drag-and-drop ease. 100% private in-browser document organizer.",
+    "keywords": "organize pdf, reorder pdf pages, delete pdf pages, rearrange pdf pages, remove pages from pdf, sort pdf pages online, visual pdf page organizer, organize pdf pages free, drag and drop pdf organizer, rearrange pdf pages in browser, rotate and organize pdf, arrange pdf pages order",
+    "badge": "Visual Organizer",
+    "heading": "Organize PDF Pages Visually"
+  },
+  "pdf-3d-flipbook": {
+    "title": "PDF 3D Flipbook Viewer — Interactive Page Turn Experience | iCreatePDF",
+    "description": "Convert flat PDF documents into interactive 3D virtual flipbooks with realistic page-turning animations and sounds. 100% browser-based.",
+    "keywords": "pdf 3d flipbook, 3d flipbook viewer, interactive pdf flipbook, convert pdf to flipbook free, online flipbook maker, realistic page turn pdf, digital flipbook reader, 3d book presentation pdf, interactive magazine pdf viewer, embed 3d flipbook, free online 3d flipbook generator",
+    "badge": "Interactive Viewer",
+    "heading": "3D PDF Flipbook Viewer"
+  },
+  "pdf-accessibility-checker": {
+    "title": "PDF Accessibility Checker — WCAG & Section 508 Validator | iCreatePDF",
+    "description": "Audit PDF documents for WCAG 2.1, Section 508, and PDF/UA accessibility compliance. Inspect tags, headings, alt-text, and color contrast locally.",
+    "keywords": "pdf accessibility checker, check pdf accessibility, wcag pdf compliance, section 508 pdf checker, pdf ua accessibility audit, pdf screen reader test, accessible pdf validator, check pdf alt text, pdf reading order test, accessibility compliance report pdf, audit pdf for disabled users",
+    "badge": "Compliance & Audit",
+    "heading": "PDF Accessibility Checker (WCAG)"
+  },
+  "pdf-attachment-manager": {
+    "title": "PDF Attachment Manager — View, Extract & Embed Files | iCreatePDF",
+    "description": "Inspect, extract, or embed file attachments inside PDF documents. Manage embedded media and datasets 100% privately in your browser.",
+    "keywords": "pdf attachment manager, extract pdf attachments, embed files in pdf, add attachments to pdf, view embedded pdf files, remove attachments from pdf, pdf portfolio extractor, download attachments from pdf, manage embedded documents pdf, attach files to pdf document online free",
+    "badge": "Portfolio Manager",
+    "heading": "PDF Attachment Manager"
+  },
+  "pdf-metadata": {
+    "title": "PDF Metadata Editor — View, Edit & Remove Properties | iCreatePDF",
+    "description": "View, edit, or wipe author, title, subject, keywords, and creation dates from PDF properties. 100% private client-side metadata editor.",
+    "keywords": "pdf metadata editor, edit pdf metadata, view pdf properties, change pdf author title, remove pdf metadata, sanitize pdf properties, edit pdf creation date, inspect pdf metadata online, clean metadata from pdf, pdf exif viewer, strip metadata from pdf free",
+    "badge": "Privacy & Metadata",
+    "heading": "PDF Metadata Editor & Sanitizer"
+  },
+  "pdf-ocr": {
+    "title": "PDF OCR — Convert Scanned PDF to Searchable Text Online | iCreatePDF",
+    "description": "Apply Optical Character Recognition (OCR) to scanned PDFs. Make unsearchable scanned documents selectable and copyable 100% in-browser.",
+    "keywords": "pdf ocr, ocr pdf online, convert scanned pdf to searchable text, extract text from scanned pdf, searchable pdf converter, free online pdf ocr, optical character recognition pdf, copy text from scanned pdf, tesseract pdf ocr online, scanned image to text pdf, best free pdf ocr tool",
+    "badge": "Text Recognition",
+    "heading": "OCR PDF: Make Scanned PDFs Searchable"
+  },
+  "pdf-presentation-mode": {
+    "title": "PDF Presentation Mode — Present PDF Slides with Laser Pointer | iCreatePDF",
+    "description": "Present PDF documents like a PowerPoint slideshow with full-screen view, speaker notes, and virtual laser pointer. 100% private in-browser.",
+    "keywords": "pdf presentation mode, present pdf like powerpoint, full screen pdf presentation, pdf slideshow with laser pointer, present pdf slides online, presentation viewer for pdf, keynote presentation pdf, present pdf without adobe acrobat, pdf presenter tool, slideshow mode for pdf document",
+    "badge": "Presenter Tool",
+    "heading": "PDF Presentation Mode & Slideshow"
+  },
+  "pdf-reading-themes": {
+    "title": "PDF Reading Themes — Sepia, Dark Mode & Solarized Reader | iCreatePDF",
+    "description": "Read PDF documents comfortably with custom color themes (Dark Mode, Sepia, Solarized, High Contrast) to reduce eye fatigue.",
+    "keywords": "pdf reading themes, sepia pdf reader, dark mode pdf viewer, solarized theme pdf, reading view for pdf, eye strain relief pdf, comfortable reading pdf online, custom theme pdf viewer, high contrast pdf reading, read pdf online with themes, night mode reading pdf viewer",
+    "badge": "Reader Mode",
+    "heading": "PDF Reading Themes & Viewer"
+  },
+  "pdf-security-auditor": {
+    "title": "PDF Security Auditor — Check Encryption & Permission Vulnerabilities | iCreatePDF",
+    "description": "Inspect PDF security settings, encryption algorithms, certificate permissions, and hidden scripts. 100% private client-side security audit.",
+    "keywords": "pdf security auditor, audit pdf security, check pdf permissions, inspect pdf encryption, pdf vulnerability scanner, test pdf password strength, verify pdf certificate security, audit confidential pdf, pdf security check online, scan pdf for malicious scripts",
+    "badge": "Security Audit",
+    "heading": "PDF Security Auditor"
+  },
+  "pdf-to-audio": {
+    "title": "PDF to Audio — Listen to PDF Text with Text-to-Speech (TTS) | iCreatePDF",
+    "description": "Convert PDF text into natural-sounding speech. Listen to PDF books, papers, and contracts read aloud directly in your browser.",
+    "keywords": "pdf to audio, read pdf aloud, listen to pdf text, text to speech pdf, pdf audio generator, convert pdf to mp3 audio, listen to books pdf, speech synthesis pdf, audio reader for pdf, pdf voice reader online, text to speech pdf reader online free",
+    "badge": "Text-to-Speech",
+    "heading": "PDF to Audio & Speech Reader"
+  },
+  "pdf-to-excel": {
+    "title": "PDF to Excel Converter Free Online (Extract Tables to XLSX) | iCreatePDF",
+    "description": "Convert PDF tables and bank statements into editable Microsoft Excel (XLSX) spreadsheets online for free. 100% private client-side extraction.",
+    "keywords": "pdf to excel, convert pdf to excel, pdf to xlsx converter, extract tables from pdf to excel, pdf bank statement to excel, pdf to excel converter free, convert pdf table to spreadsheet, scanned pdf to excel table, turn pdf into excel spreadsheet, pdf to xlsx free online no limit",
+    "badge": "Spreadsheet Converter",
+    "heading": "Convert PDF to Excel (XLSX)"
+  },
+  "pdf-to-jpg": {
+    "title": "PDF to JPG Converter Free Online (Convert PDF to Images) | iCreatePDF",
+    "description": "Convert PDF pages into high-resolution JPG or PNG images online for free. Download individual pages or a batch ZIP archive 100% privately.",
+    "keywords": "pdf to jpg, convert pdf to image, pdf to png converter, extract images from pdf, pdf to jpg 300 dpi, turn pdf into photo, convert pdf pages to jpeg, high resolution pdf to jpg, batch pdf to jpg converter, pdf to image online free, save pdf pages as jpg files",
+    "badge": "Image Converter",
+    "heading": "Convert PDF Pages to JPG Images"
+  },
+  "pdf-to-text": {
+    "title": "PDF to Text Extractor Online Free — Convert PDF to TXT | iCreatePDF",
+    "description": "Extract raw and structured text from PDF documents into clean .txt files online free. 100% private client-side text extractor without uploads.",
+    "keywords": "pdf to text, extract text from pdf, convert pdf to txt, copy text from pdf, pdf to text converter online, plain text from pdf, batch pdf to text, extract words from pdf, parse text in pdf document, client side pdf text extractor, copy unselectable text from pdf",
+    "badge": "Text Extractor",
+    "heading": "Extract Text from PDF"
+  },
+  "pdf-to-word": {
+    "title": "Convert PDF to Word Free Online (Editable DOCX) | iCreatePDF",
+    "description": "Convert PDF files to editable Word (DOCX) documents online free. Preserve text, headers, and table formatting accurately in browser memory.",
+    "keywords": "pdf to word, convert pdf to word, pdf to docx converter, convert pdf to editable word, pdf to word free online, turn pdf into word document, convert scanned pdf to word editable, best pdf to word converter, export pdf to docx, pdf to word without email, convert pdf to docx document free",
+    "badge": "Document Converter",
+    "heading": "Convert PDF to Editable Word (DOCX)"
+  },
+  "pdf-toc-builder": {
+    "title": "PDF Table of Contents Builder — Create Bookmarks & Outline | iCreatePDF",
+    "description": "Build interactive tables of contents and hierarchical navigation bookmarks for PDF documents. 100% private browser-based TOC generator.",
+    "keywords": "pdf toc builder, add table of contents to pdf, create pdf bookmarks, generate pdf outline, table of contents generator pdf, clickable table of contents pdf, add navigation bookmarks pdf, build pdf index, custom pdf toc creator, create bookmark hierarchy in pdf",
+    "badge": "Outline Builder",
+    "heading": "Build PDF Table of Contents"
+  },
+  "pdf-visual-diff": {
+    "title": "PDF Visual Diff — Pixel-by-Pixel Document Comparison | iCreatePDF",
+    "description": "Compare two versions of architectural plans, diagrams, or documents with pixel-level visual difference overlays. 100% private.",
+    "keywords": "pdf visual diff, compare pdf versions visually, visual diff tool pdf, compare drawings pdf, architectural drawings pdf compare, pixel by pixel pdf diff, highlight differences between two pdfs, visual comparison for pdf blueprints, compare cad pdf drawings, architectural visual diff online, compare two pdf revisions, visual overlay pdf comparator, compare pdf blueprint changes, spot visual differences between pdfs",
+    "badge": "Visual Comparison",
+    "heading": "PDF Visual Diff & Blueprint Compare"
+  },
+  "png-to-pdf": {
+    "title": "PNG to PDF Converter Free Online (Transparent Images to PDF) | iCreatePDF",
+    "description": "Convert PNG images (including transparent PNGs) into high-quality PDF files online free. 100% private client-side converter without uploads.",
+    "keywords": "png to pdf, convert png to pdf, transparent png to pdf, png images into one pdf, high quality png to pdf converter, combine png files to pdf, convert photos to pdf online free, transparent background png to pdf, turn png screenshots into pdf document, png to pdf converter free, convert png image to pdf document, transparent png into pdf, high res png to pdf, batch convert png to pdf, save png photos as pdf, png to pdf no watermark",
+    "badge": "Image Converter",
+    "heading": "Convert PNG Images to PDF"
+  },
+  "prevent-copy": {
+    "title": "Prevent Copy PDF — Rasterize Text & Disable Copy-Paste | iCreatePDF",
+    "description": "Rasterize PDF pages into unselectable vector-image hybrids to prevent text copying, scraping, and highlighting. 100% private security tool.",
+    "keywords": "prevent copy pdf, disable text selection pdf, rasterize pdf to prevent copying, protect pdf from being copied, lock pdf content, disable copy paste pdf, make pdf uncopyable, flatten pdf text to image, anti copying pdf security, secure pdf against copying, disable text extraction from pdf, lock pdf text selection",
+    "badge": "Copy Protection",
+    "heading": "Prevent PDF Text Copying"
+  },
+  "protect-pdf": {
+    "title": "Protect PDF — Password Protect & AES Encrypt PDF Online | iCreatePDF",
+    "description": "Encrypt PDF documents with military-grade AES password protection. Restrict unauthorized opening, copying, and printing 100% privately.",
+    "keywords": "protect pdf, password protect pdf, encrypt pdf online, add password to pdf, lock pdf file, secure pdf document, aes 256 bit pdf encryption, set password on pdf free, restrict pdf access, protect confidential pdf file, how to password protect a pdf file free, secure pdf with password",
+    "badge": "Security",
+    "heading": "Password Protect & Encrypt PDF"
+  },
+  "qr-to-pdf": {
+    "title": "QR Code to PDF Generator — Printable QR Code Sheets | iCreatePDF",
+    "description": "Generate high-resolution QR codes and export printable A4/Letter PDF sheets for URLs, WiFi, contact cards, and text. 100% private.",
+    "keywords": "qr to pdf, qr code generator pdf, create qr code sheet pdf, printable qr code pdf, batch qr code to pdf, generate qr codes on a4 pdf, custom url qr code pdf, vcard qr code generator pdf, high res qr code pdf, print qr codes on label sheet pdf, printable qr code stickers pdf",
+    "badge": "QR Generator",
+    "heading": "QR Code to PDF Sheet Generator"
+  },
+  "read-aloud-pdf": {
+    "title": "Read Aloud PDF Online — Free Text-to-Speech PDF Reader | iCreatePDF",
+    "description": "Listen to any PDF document read out loud with natural voice synthesis. Adjust pitch, rate, and volume. 100% private in-browser TTS.",
+    "keywords": "read aloud pdf, pdf voice reader, text to speech pdf reader, listen to pdf online, audiobook from pdf, read my pdf out loud, narration for pdf documents, browser text to speech pdf, accessible voice reader pdf, speak pdf text online free, listen to pdf book read aloud",
+    "badge": "Text-to-Speech",
+    "heading": "Read Aloud PDF Reader"
+  },
+  "redact-pdf": {
+    "title": "Redact PDF Online Free — Black Out & Sanitize Confidential Text | iCreatePDF",
+    "description": "Permanently black out sensitive text and images from PDF files. Irreversible client-side redaction ensures data privacy with zero uploads.",
+    "keywords": "redact pdf, blackout text in pdf, permanently remove sensitive data pdf, redact pdf free online, censor pdf text, whiteout pdf online, black box on pdf text, remove confidential info pdf, sanitize pdf document, how to blackout text on pdf free, permanent pdf redaction tool",
+    "badge": "Sanitization",
+    "heading": "Redact PDF & Black Out Text"
+  },
+  "repair-pdf": {
+    "title": "Repair PDF Online Free — Fix Corrupted & Damaged PDF Files | iCreatePDF",
+    "description": "Recover and repair corrupted, damaged, or unreadable PDF files online free. Rebuild cross-reference tables 100% privately in your browser.",
+    "keywords": "repair pdf, fix corrupted pdf, recover damaged pdf, repair broken pdf file, pdf recovery online, uncorrupt pdf free, restore unreadable pdf, fix damaged pdf headers, repair truncated pdf document, salvage unopenable pdf file, fix corrupt pdf file free",
+    "badge": "File Recovery",
+    "heading": "Repair Corrupted PDF Files"
+  },
+  "resize-pdf": {
+    "title": "Resize PDF Pages — Change Page Size to A4, Letter, Legal | iCreatePDF",
+    "description": "Scale and resize PDF document pages to standard sizes (A4, Letter, Legal, A3) with custom scaling. 100% private in-browser page resizer.",
+    "keywords": "resize pdf, change pdf page size, scale pdf pages, resize pdf to a4, resize pdf to letter size, resize pdf dimensions, scale down pdf page area, fit pdf to page size, change pdf canvas size online, modify pdf page width and height, rescale pdf pages to letter size",
+    "badge": "Page Dimensions",
+    "heading": "Resize PDF Page Dimensions"
+  },
+  "ris-to-pdf": {
+    "title": "RIS to PDF Converter — Format Academic Citations to PDF | iCreatePDF",
+    "description": "Convert RIS citation files into beautifully formatted reference bibliographies in PDF format. 100% private academic formatting tool.",
+    "keywords": "ris to pdf, convert ris citation to pdf, bibliography to pdf converter, ris file to formatted reference pdf, endnote ris to pdf, zotero citation to pdf, academic references to pdf, export ris bibliography pdf, citation list to printable pdf, convert ris citation list to pdf, format ris bibliography online, ris reference file to pdf, academic citation list to pdf, export ris citations to printable pdf",
+    "badge": "Academic Tool",
+    "heading": "RIS to PDF Citation Converter"
+  },
+  "rotate-pdf": {
+    "title": "Rotate PDF Free Online — Rotate PDF Pages and Save Permanently | iCreatePDF",
+    "description": "Rotate PDF pages 90, 180, or 270 degrees and save permanently. Fix sideways or upside-down scans 100% locally in browser memory.",
+    "keywords": "rotate pdf, rotate pdf pages, turn pdf upside down fix, rotate and save pdf, pdf orientation changer, how to rotate one page in pdf, rotate landscape to portrait pdf, flip pdf pages, rotate all pages in pdf free, rotate pdf sideways to normal, permanently rotate pdf online",
+    "badge": "Page Orientation",
+    "heading": "Rotate PDF Pages & Save"
+  },
+  "scan-to-pdf": {
+    "title": "Scan to PDF Free Online — Camera Document Scanner | iCreatePDF",
+    "description": "Scan physical paper documents using your mobile or webcam camera and compile into clean PDF files with automatic contrast enhancement. 100% private.",
+    "keywords": "scan to pdf, document scanner online, camera to pdf, scan paper to pdf, photo to scanned document pdf, mobile scanner to pdf, high contrast document scan pdf, convert photo to black and white scan pdf, online webcam document scanner, scan documents to pdf with webcam, mobile camera to pdf scanner, scan receipts to pdf free, take picture and convert to pdf, high quality document scanner online",
+    "badge": "Camera Scanner",
+    "heading": "Scan to PDF Document Scanner"
+  },
+  "sign-pdf": {
+    "title": "Sign PDF Free Online — Create Electronic Signature | iCreatePDF",
+    "description": "Sign PDF documents online free with a legally recognized electronic signature. Draw, type, or upload your signature without uploading files.",
+    "keywords": "sign pdf, electronic signature pdf, sign pdf online free, digital signature pdf, e-sign pdf document, how to sign pdf without printing, draw signature on pdf, sign contract online free, legal electronic signature pdf, sign pdf on iphone without acrobat, free electronic signature tool for pdf",
+    "badge": "E-Signature",
+    "heading": "Sign PDF Documents Online"
+  },
+  "split-pdf": {
+    "title": "Split PDF Free Online — Separate & Extract PDF Pages | iCreatePDF",
+    "description": "Split PDF documents into individual files or extract custom page ranges online free. 100% private client-side PDF splitter with zero uploads.",
+    "keywords": "split pdf, separate pdf pages, extract pdf pages, split pdf online free, pdf page separator, how to split pdf into multiple files, split pdf by range, extract pages from pdf document, split large pdf file, separate pdf pages into individual documents, cut pdf into separate files free",
+    "badge": "Page Splitter",
+    "heading": "Split PDF Pages Online"
+  },
+  "stamp-pdf": {
+    "title": "Stamp PDF Online Free — Add Approved, Confidential & Custom Stamps | iCreatePDF",
+    "description": "Add visual stamps (APPROVED, CONFIDENTIAL, DRAFT, FINAL) or custom text seals to PDF pages. 100% private in-browser document stamper.",
+    "keywords": "stamp pdf, add stamp to pdf, approved stamp pdf, confidential stamp pdf, draft stamp on pdf, custom text stamp pdf, rubber stamp pdf generator, stamp date and signature on pdf, official stamp pdf online, mark document with stamp free, stamp pdf page online free",
+    "badge": "Document Stamping",
+    "heading": "Stamp PDF Documents"
+  },
+  "svg-to-pdf": {
+    "title": "SVG to PDF Converter Free Online — Scalable Vector to PDF | iCreatePDF",
+    "description": "Convert SVG vector graphics and illustrations into high-resolution, vector-accurate PDF files online free. 100% private client-side converter.",
+    "keywords": "svg to pdf, convert svg to pdf, vector graphic to pdf converter, scalable vector graphics to pdf, high resolution svg to pdf, export svg as printable pdf, convert vector artwork to pdf document, preserve vector sharpness svg to pdf, convert svg vector to pdf free, vector svg to pdf converter, preserve vector quality svg to pdf, export svg graphic as pdf, batch svg to pdf converter, turn svg logo into pdf",
+    "badge": "Vector Converter",
+    "heading": "Convert SVG to PDF"
+  },
+  "txt-to-pdf": {
+    "title": "TXT to PDF Converter Free Online — Plain Text to Formatted PDF | iCreatePDF",
+    "description": "Convert plain text (.txt) files and notes into formatted, printable PDF documents with custom typography and margins. 100% private.",
+    "keywords": "txt to pdf, convert text file to pdf, convert notepad txt to pdf, txt to formatted pdf, plain text to pdf converter online, text to printable pdf a4, text document to pdf free, turn txt into formatted pdf document, convert notepad text to pdf, convert txt file to pdf document, text to pdf converter free online, plain text to printable pdf, batch txt to pdf converter, convert text notes to pdf",
+    "badge": "Text Converter",
+    "heading": "Convert TXT to PDF"
+  },
+  "unlock-pdf": {
+    "title": "Unlock PDF Online Free — Remove Password & Restrictions | iCreatePDF",
+    "description": "Remove passwords and permissions security from PDF documents online free. Unlock editing, copying, and printing restrictions 100% privately in-browser.",
+    "keywords": "unlock pdf, remove pdf password, pdf password remover, decrypt pdf online, remove restrictions from pdf, unlock secured pdf, remove print permission password pdf, decrypt protected pdf file, open password protected pdf online free, unlock password protected pdf, remove pdf open password free, decrypt locked pdf file, remove pdf restrictions online, unlock secured pdf without software",
+    "badge": "Decryption",
+    "heading": "Unlock PDF & Remove Password"
+  },
+  "verify-signature": {
+    "title": "Verify PDF Signature Online — Check Digital Certificate Authenticity | iCreatePDF",
+    "description": "Verify digital signatures and cryptographic certificates in signed PDF documents. Inspect signer identity and document integrity 100% privately.",
+    "keywords": "verify signature pdf, check digital signature pdf, pdf signature validator, verify cryptographic signature pdf, validate certificate in pdf, inspect digital sign in pdf, check if pdf is signed, verify pdf signature authenticity online, verify pdf signature validity, check digital certificate in pdf, validate pdf e-signature online, check if pdf is digitally signed, verify signed contract pdf, authentic pdf signature checker",
+    "badge": "Signature Verification",
+    "heading": "Verify PDF Digital Signatures"
+  },
+  "watermark-pdf": {
+    "title": "Watermark PDF Free Online — Add Text or Logo Stamp to PDF | iCreatePDF",
+    "description": "Add custom text watermarks or image logos to PDF pages. Adjust opacity, rotation, font, and placement. 100% private in-browser watermark creator.",
+    "keywords": "watermark pdf, add watermark to pdf, pdf watermark creator, confidential stamp pdf, insert logo in pdf, how to put watermark on pdf pages, custom text watermark pdf, transparent watermark on pdf, draft watermark pdf, watermark pdf online without acrobat",
+    "badge": "Watermarking",
+    "heading": "Add Watermark to PDF"
+  },
+  "word-to-pdf": {
+    "title": "Word to PDF Converter Free Online (Convert DOCX to PDF) | iCreatePDF",
+    "description": "Convert Microsoft Word documents (.docx, .doc) into high-quality PDF files online free. Preserve layouts, fonts, and tables. 100% private.",
+    "keywords": "word to pdf, convert word to pdf, docx to pdf converter, save word document as pdf, doc to pdf online free, word to pdf converter, convert doc to pdf without acrobat, export docx to pdf, ms word to pdf free, convert word file to high resolution pdf",
+    "badge": "Office Converter",
+    "heading": "Convert Word (DOCX) to PDF"
+  }
+}

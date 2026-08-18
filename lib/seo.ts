@@ -1,4 +1,5 @@
 import type { Metadata } from 'next';
+import { toolContent } from '@/lib/tool-content';
 
 const SITE_URL = 'https://www.icreatepdf.online';
 
@@ -110,13 +111,6 @@ export function toolSchema({
         priceCurrency: 'USD',
         availability: 'https://schema.org/InStock',
       },
-      aggregateRating: {
-        '@type': 'AggregateRating',
-        ratingValue: '4.9',
-        ratingCount: '1285',
-        bestRating: '5',
-        worstRating: '1',
-      },
       publisher: {
         '@type': 'Organization',
         '@id': `${SITE_URL}/#organization`,
@@ -131,6 +125,57 @@ export function toolSchema({
     ]),
   ];
 }
+
+/**
+ * Generate complete JSON-LD structured data (WebApplication, Breadcrumbs, FAQPage, HowTo)
+ * automatically synchronized with toolContent for maximum Google rich snippet visibility.
+ */
+export function getToolFullJsonLd(
+  slug: string,
+  custom?: { name?: string; description?: string; featureList?: string[] }
+) {
+  const content = toolContent[slug];
+  const name =
+    custom?.name ||
+    content?.name ||
+    slug
+      .split('-')
+      .map((s) => s.charAt(0).toUpperCase() + s.slice(1))
+      .join(' ');
+  const description =
+    custom?.description ||
+    content?.overview ||
+    `Free online ${name} tool with 100% private in-browser processing.`;
+  const url = `/tools/${slug}`;
+
+  const schemas: any[] = [
+    ...toolSchema({
+      name,
+      description,
+      url,
+      featureList: custom?.featureList,
+    }),
+  ];
+
+  if (content?.faqs && content.faqs.length > 0) {
+    schemas.push(faqSchema(content.faqs));
+  }
+
+  if (content?.steps && content.steps.length > 0) {
+    schemas.push(
+      howToSchema({
+        name,
+        description: content.overview || description,
+        url,
+        steps: content.steps,
+      })
+    );
+  }
+
+  return schemas;
+}
+
+
 
 /**
  * Generate BlogPosting + BreadcrumbList JSON-LD for a blog post.

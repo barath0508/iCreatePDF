@@ -158,11 +158,15 @@ export function AdjustMarginsTool() {
             </div>
             <input
               type="range"
+              name="margin_offset_mm"
               min="5"
               max="50"
               step="5"
               value={marginMm}
               onChange={(e) => { setMarginMm(Number(e.target.value)); setDownloadUrl(null); }}
+              toolname="adjust_pdf_margins"
+              tooldescription="Add or expand margin padding around PDF page content"
+              toolparamdescription="Margin offset size in millimeters (5mm to 50mm)"
               className="w-full h-2 bg-background rounded-lg appearance-none cursor-pointer accent-foreground"
             />
             <div className="grid grid-cols-4 gap-1.5 pt-1">

@@ -3,37 +3,32 @@ import { ToolPageShell } from '@/components/tools/shared/ToolPageShell';
 import { ScanToPdfTool } from '@/components/tools/ScanToPdfTool';
 import { ToolSeoContent } from '@/components/tools/shared/ToolSeoContent';
 import { toolContent } from '@/lib/tool-content';
-import { buildAlternates, toolSchema, faqSchema, howToSchema } from '@/lib/seo';
+import { buildAlternates, getToolFullJsonLd } from '@/lib/seo';
 
 export const metadata: Metadata = {
   title: 'Scan to PDF Free Online — Camera Document Scanner | iCreatePDF',
   description: 'Scan physical paper documents using your mobile or webcam camera and compile into clean PDF files with automatic contrast enhancement. 100% private.',
-  keywords: 'scan to pdf, document scanner online, camera to pdf, scan paper to pdf, photo to scanned document pdf, mobile scanner to pdf, high contrast document scan pdf, convert photo to black and white scan pdf',
+  keywords: 'scan to pdf, document scanner online, camera to pdf, scan paper to pdf, photo to scanned document pdf, mobile scanner to pdf, high contrast document scan pdf, convert photo to black and white scan pdf, online webcam document scanner, scan documents to pdf with webcam, mobile camera to pdf scanner, scan receipts to pdf free, take picture and convert to pdf, high quality document scanner online',
   alternates: buildAlternates('/tools/scan-to-pdf'),
   openGraph: {
-    title: 'Scan to PDF Online - Free Document Scanner | iCreatePDF',
-    description: 'Scan document pages with your mobile or webcam camera. Crop, compile, and convert captured photos into a single PDF locally. 100% private.',
+    title: 'Scan to PDF Free Online — Camera Document Scanner | iCreatePDF',
+    description: 'Scan physical paper documents using your mobile or webcam camera and compile into clean PDF files with automatic contrast enhancement. 100% private.',
     type: 'website',
-  }
+    images: [{ url: 'https://www.icreatepdf.online/opengraph-image', width: 1200, height: 630, alt: 'Scan to PDF Document Scanner — iCreatePDF' }],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Scan to PDF Free Online — Camera Document Scanner | iCreatePDF',
+    description: 'Scan physical paper documents using your mobile or webcam camera and compile into clean PDF files with automatic contrast enhancement. 100% private.',
+    images: ['https://www.icreatepdf.online/opengraph-image'],
+  },
 };
 
 export default function ScanToPdfPage() {
   return (
     <ToolPageShell
-      jsonLd={[
-        ...toolSchema({
-          name: 'Scan to PDF Document Scanner',
-          description: 'Scan physical paper documents using your mobile or webcam camera and compile into clean PDF files with automatic contrast enhancement. 100% private.',
-          url: '/tools/scan-to-pdf',
-        }),
-        faqSchema(toolContent['scan-to-pdf'].faqs),
-        howToSchema({
-          name: 'Scan to PDF Document Scanner',
-          description: toolContent['scan-to-pdf'].overview,
-          url: '/tools/scan-to-pdf',
-          steps: toolContent['scan-to-pdf'].steps,
-        }),
-      ]}badge="Device Scanner"
+      jsonLd={getToolFullJsonLd('scan-to-pdf')}
+      badge="Device Scanner"
       title="Scan to PDF"
       description="Scan multiple pages and compile them into a high-quality PDF in seconds. Processed entirely inside your browser sandbox."
       extraSections={<ToolSeoContent content={toolContent['scan-to-pdf']} />}

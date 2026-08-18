@@ -105,6 +105,9 @@ export function CommandMenu() {
               <Search className="mr-2 h-4 w-4 shrink-0 opacity-50 text-foreground" />
               <Command.Input
                 placeholder="Type a tool name or action (e.g. Merge, Compress, OCR)..."
+                toolname="quick_search_pdf_tools"
+                tooldescription="Quick search across all PDF conversion, editing, and security tools"
+                toolparamdescription="PDF tool name or action to execute (e.g. merge, compress, protect, ocr, split)"
                 className="flex h-12 w-full rounded-md bg-transparent text-sm outline-none placeholder:text-muted-foreground text-foreground"
               />
             </div>

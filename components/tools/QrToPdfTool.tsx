@@ -114,24 +114,50 @@ export function QrToPdfTool() {
       <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-stretch">
         <div className="lg:col-span-8 space-y-6 flex flex-col">
           <div className="p-6 bg-card border border-foreground/10 rounded-2xl space-y-5">
-            <div className="space-y-1.5">
-              <label className="text-[10px] font-mono text-foreground/40 uppercase">QR Code Content (URL or Text) *</label>
-              <textarea
-                value={content}
-                onChange={e => setContent(e.target.value)}
-                placeholder="https://example.com or any text..."
-                rows={3}
-                className="w-full bg-background/40 border border-foreground/10 rounded-xl px-4 py-3 text-sm text-foreground placeholder:text-foreground/20 focus:outline-none focus:border-brand resize-none"
-              />
-            </div>
-            <div className="space-y-1.5">
-              <label className="text-[10px] font-mono text-foreground/40 uppercase">Title (optional)</label>
-              <input type="text" value={title} onChange={e => setTitle(e.target.value)} placeholder="e.g. Scan to visit our website" className="w-full bg-background/40 border border-foreground/10 rounded-xl px-4 py-2.5 text-sm text-foreground placeholder:text-foreground/20 focus:outline-none focus:border-brand" />
-            </div>
-            <div className="space-y-1.5">
-              <label className="text-[10px] font-mono text-foreground/40 uppercase">Description (optional)</label>
-              <input type="text" value={description} onChange={e => setDescription(e.target.value)} placeholder="A short description below the title" className="w-full bg-background/40 border border-foreground/10 rounded-xl px-4 py-2.5 text-sm text-foreground placeholder:text-foreground/20 focus:outline-none focus:border-brand" />
-            </div>
+            <form
+              onSubmit={(e) => e.preventDefault()}
+              toolname="generate_qr_pdf"
+              tooldescription="Generate a printable PDF containing a scannable QR code"
+              toolautosubmit="false"
+              className="space-y-4"
+            >
+              <div className="space-y-1.5">
+                <label className="text-[10px] font-mono text-foreground/40 uppercase">QR Code Content (URL or Text) *</label>
+                <textarea
+                  name="qr_content"
+                  value={content}
+                  onChange={e => setContent(e.target.value)}
+                  placeholder="https://example.com or any text..."
+                  rows={3}
+                  toolparamdescription="URL, contact information, or text payload to encode into the QR code"
+                  className="w-full bg-background/40 border border-foreground/10 rounded-xl px-4 py-3 text-sm text-foreground placeholder:text-foreground/20 focus:outline-none focus:border-brand resize-none"
+                />
+              </div>
+              <div className="space-y-1.5">
+                <label className="text-[10px] font-mono text-foreground/40 uppercase">Title (optional)</label>
+                <input
+                  type="text"
+                  name="qr_title"
+                  value={title}
+                  onChange={e => setTitle(e.target.value)}
+                  placeholder="e.g. Scan to visit our website"
+                  toolparamdescription="Title printed above the QR code in the generated PDF"
+                  className="w-full bg-background/40 border border-foreground/10 rounded-xl px-4 py-2.5 text-sm text-foreground placeholder:text-foreground/20 focus:outline-none focus:border-brand"
+                />
+              </div>
+              <div className="space-y-1.5">
+                <label className="text-[10px] font-mono text-foreground/40 uppercase">Description (optional)</label>
+                <input
+                  type="text"
+                  name="qr_description"
+                  value={description}
+                  onChange={e => setDescription(e.target.value)}
+                  placeholder="A short description below the title"
+                  toolparamdescription="Subtitle or instruction text printed below the title in the PDF"
+                  className="w-full bg-background/40 border border-foreground/10 rounded-xl px-4 py-2.5 text-sm text-foreground placeholder:text-foreground/20 focus:outline-none focus:border-brand"
+                />
+              </div>
+            </form>
             <div className="space-y-2">
               <label className="text-[10px] font-mono text-foreground/40 uppercase">QR Code Size</label>
               <div className="flex gap-2">

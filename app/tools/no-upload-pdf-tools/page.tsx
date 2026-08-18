@@ -1,5 +1,5 @@
 import type { Metadata } from 'next';
-import { buildAlternates, breadcrumbSchema, toolSchema, faqSchema, howToSchema } from '@/lib/seo';
+import { buildAlternates, getToolFullJsonLd, breadcrumbSchema, toolSchema, faqSchema, howToSchema } from '@/lib/seo';
 import { Navigation } from '@/components/landing/navigation';
 import { FooterSection } from '@/components/landing/footer-section';
 import { ShieldCheck, Lock, WifiOff, Eye } from 'lucide-react';
@@ -8,13 +8,19 @@ import Link from 'next/link';
 export const metadata: Metadata = {
   title: 'No-Upload PDF Tools — 100% Private Offline Browser PDF Suite | iCreatePDF',
   description: 'Explore 70+ completely private, browser-based PDF tools that run locally via WebAssembly. Zero file uploads, zero tracking, total security.',
-  keywords: 'no upload pdf tools, private pdf converter, offline pdf editor, browser based pdf utilities, client side pdf tools, zero server upload pdf, secure pdf tools online, local webassembly pdf editor, privacy focused pdf tools, confidential pdf converter',
+  keywords: 'no upload pdf tools, private pdf converter, offline pdf editor, browser based pdf utilities, client side pdf tools, zero server upload pdf, secure pdf tools online, local webassembly pdf editor, privacy focused pdf tools, confidential pdf converter, client side pdf suite, hipaa compliant pdf editor',
   alternates: buildAlternates('/tools/no-upload-pdf-tools'),
   openGraph: {
     title: 'No-Upload PDF Tools — 100% Private Offline Browser PDF Suite | iCreatePDF',
     description: 'Explore 70+ completely private, browser-based PDF tools that run locally via WebAssembly. Zero file uploads, zero tracking, total security.',
     type: 'website',
     images: [{ url: 'https://www.icreatepdf.online/opengraph-image', width: 1200, height: 630, alt: 'No-Upload PDF Suite — iCreatePDF' }],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'No-Upload PDF Tools — 100% Private Offline Browser PDF Suite | iCreatePDF',
+    description: 'Explore 70+ completely private, browser-based PDF tools that run locally via WebAssembly. Zero file uploads, zero tracking, total security.',
+    images: ['https://www.icreatepdf.online/opengraph-image'],
   },
 };
 

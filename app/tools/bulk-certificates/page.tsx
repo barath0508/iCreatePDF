@@ -3,37 +3,32 @@ import { ToolPageShell } from '@/components/tools/shared/ToolPageShell';
 import { BulkCertificatesTool } from '@/components/tools/BulkCertificatesTool';
 import { ToolSeoContent } from '@/components/tools/shared/ToolSeoContent';
 import { toolContent } from '@/lib/tool-content';
-import { buildAlternates, toolSchema, faqSchema, howToSchema } from '@/lib/seo';
+import { buildAlternates, getToolFullJsonLd } from '@/lib/seo';
 
 export const metadata: Metadata = {
   title: 'Bulk Certificate Generator from CSV/Excel Data | iCreatePDF',
   description: 'Generate customized certificates, awards, and badges in bulk from spreadsheet data. 100% private client-side mail-merge certificate creator.',
-  keywords: 'bulk certificate generator, generate certificates from csv, bulk certificate generator from csv, create certificates from csv, generate certificates in bulk, pdf excel certificate maker, mail merge certificates, bulk award letter generator online free, client-side bulk certificate generator, automated certificate printing pdf, batch certificate maker with names, custom diploma generator csv, bulk tickets generator pdf',
+  keywords: 'bulk certificate generator, generate certificates from csv, bulk certificate generator from csv, create certificates from csv, generate certificates in bulk, pdf excel certificate maker, mail merge certificates, bulk award letter generator online free, client-side bulk certificate generator, automated certificate printing pdf, batch certificate maker with names, custom diploma generator csv, bulk tickets generator pdf, student certificates from excel',
   alternates: buildAlternates('/tools/bulk-certificates'),
   openGraph: {
-    title: 'Generate Certificates from CSV Free in Bulk | iCreatePDF',
-    description: 'Generate certificates, badges, and tickets in bulk from spreadsheet data. Processed 100% locally in-browser with zero server uploads for complete privacy.',
+    title: 'Bulk Certificate Generator from CSV/Excel Data | iCreatePDF',
+    description: 'Generate customized certificates, awards, and badges in bulk from spreadsheet data. 100% private client-side mail-merge certificate creator.',
     type: 'website',
-  }
+    images: [{ url: 'https://www.icreatepdf.online/opengraph-image', width: 1200, height: 630, alt: 'Bulk Certificate Generator from CSV — iCreatePDF' }],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Bulk Certificate Generator from CSV/Excel Data | iCreatePDF',
+    description: 'Generate customized certificates, awards, and badges in bulk from spreadsheet data. 100% private client-side mail-merge certificate creator.',
+    images: ['https://www.icreatepdf.online/opengraph-image'],
+  },
 };
 
 export default function BulkCertificatesPage() {
   return (
     <ToolPageShell
-      jsonLd={[
-        ...toolSchema({
-          name: 'Bulk Certificate Generator from CSV',
-          description: 'Generate customized certificates, awards, and badges in bulk from spreadsheet data. 100% private client-side mail-merge certificate creator.',
-          url: '/tools/bulk-certificates',
-        }),
-        faqSchema(toolContent['bulk-certificates'].faqs),
-        howToSchema({
-          name: 'Bulk Certificate Generator from CSV',
-          description: toolContent['bulk-certificates'].overview,
-          url: '/tools/bulk-certificates',
-          steps: toolContent['bulk-certificates'].steps,
-        }),
-      ]}badge="Generation"
+      jsonLd={getToolFullJsonLd('bulk-certificates')}
+      badge="Generation"
       title="Bulk Certificate Generator"
       description="Create hundreds of customized PDF certificates or award letters dynamically from an Excel list."
       extraSections={
