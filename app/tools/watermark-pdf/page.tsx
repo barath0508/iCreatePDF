@@ -6,31 +6,16 @@ import { toolContent } from '@/lib/tool-content';
 import { buildAlternates, toolSchema, faqSchema, howToSchema } from '@/lib/seo';
 
 export const metadata: Metadata = {
-  title: 'Watermark PDF Free Online — Add Watermarks | iCreatePDF',
-  description: 'Add configurable text watermarks to all PDF pages free online. Customize position, opacity, font size, and color locally in browser memory.',
-  keywords: 'watermark pdf, add watermark to pdf, watermark pdf online, free watermark pdf, private pdf watermark',
+  title: 'Watermark PDF Free Online — Add Text or Logo Stamp to PDF | iCreatePDF',
+  description: 'Add custom text watermarks or image logos to PDF pages. Adjust opacity, rotation, font, and placement. 100% private in-browser watermark creator.',
+  keywords: 'watermark pdf, add watermark to pdf, pdf watermark creator, confidential stamp pdf, insert logo in pdf, how to put watermark on pdf pages, custom text watermark pdf, transparent watermark on pdf, draft watermark pdf',
   alternates: buildAlternates('/tools/watermark-pdf'),
   openGraph: {
-    title: 'Watermark PDF Free Online — Add Text Watermarks | iCreatePDF',
-    description: 'Stamp configurable text overlays on all pages of a PDF document. Customize text, font, and position. Processed 100% locally in-browser.',
+    title: 'Watermark PDF Free Online — Add Text or Logo Stamp to PDF | iCreatePDF',
+    description: 'Add custom text watermarks or image logos to PDF pages. Adjust opacity, rotation, font, and placement. 100% private in-browser watermark creator.',
     type: 'website',
-  }
-};
-
-export default function WatermarkPdfPage() {
-  return (
-    <ToolPageShell
-      jsonLd={[
-        ...toolSchema({
-          name: 'Watermark PDF File',
-          description: 'Add custom text watermarks to all pages of a PDF file. 100% client-side with positioning, size, and opacity adjustments.',
-          url: '/tools/watermark-pdf',
-        }),
-        faqSchema([
-          {
-            question: 'How do I add a watermark to a PDF online for free?',
-            answer: 'Upload your PDF, type your custom watermark text, select its placement coordinates, font size, color, rotation angle, and transparency, then click Watermark PDF.',
-          },
+    images: [{ url: 'https://www.icreatepdf.online/opengraph-image', width: 1200, height: 630, alt: 'Add Watermark to PDF — iCreatePDF' }],
+  },
           {
             question: 'Is my watermark processed securely?',
             answer: 'Yes. iCreatePDF overlays the watermark text layers locally on your device. Your file contents are never sent to external servers.',

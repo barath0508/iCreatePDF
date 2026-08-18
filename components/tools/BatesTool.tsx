@@ -109,24 +109,64 @@ export function BatesTool() {
                 <Button variant="ghost" size="sm" onClick={() => { setFile(null); setDownloadUrl(null); }} className="text-xs text-foreground/40 hover:text-foreground">Change</Button>
               </div>
 
-              <div className="grid grid-cols-2 gap-4">
+              <form
+                onSubmit={(e) => e.preventDefault()}
+                toolname="bates_numbering"
+                tooldescription="Add sequential Bates numbering and prefixes/suffixes to legal and business PDF documents"
+                toolautosubmit="false"
+                className="grid grid-cols-2 gap-4"
+              >
                 <div className="space-y-1.5">
                   <label className="text-[10px] font-mono text-foreground/40 uppercase">Prefix</label>
-                  <input type="text" value={prefix} onChange={e => setPrefix(e.target.value)} placeholder="e.g. DOC-" className="w-full bg-background/40 border border-foreground/10 rounded-lg px-3 py-2 text-sm text-foreground placeholder:text-foreground/20 focus:outline-none focus:border-brand" />
+                  <input
+                    type="text"
+                    name="bates_prefix"
+                    value={prefix}
+                    onChange={e => setPrefix(e.target.value)}
+                    placeholder="e.g. DOC-"
+                    toolparamdescription="Prefix text string before sequential Bates number (e.g. DOC-, CONF-)"
+                    className="w-full bg-background/40 border border-foreground/10 rounded-lg px-3 py-2 text-sm text-foreground placeholder:text-foreground/20 focus:outline-none focus:border-brand"
+                  />
                 </div>
                 <div className="space-y-1.5">
                   <label className="text-[10px] font-mono text-foreground/40 uppercase">Suffix</label>
-                  <input type="text" value={suffix} onChange={e => setSuffix(e.target.value)} placeholder="e.g. -EX" className="w-full bg-background/40 border border-foreground/10 rounded-lg px-3 py-2 text-sm text-foreground placeholder:text-foreground/20 focus:outline-none focus:border-brand" />
+                  <input
+                    type="text"
+                    name="bates_suffix"
+                    value={suffix}
+                    onChange={e => setSuffix(e.target.value)}
+                    placeholder="e.g. -EX"
+                    toolparamdescription="Suffix text string after sequential Bates number (e.g. -EX, -01)"
+                    className="w-full bg-background/40 border border-foreground/10 rounded-lg px-3 py-2 text-sm text-foreground placeholder:text-foreground/20 focus:outline-none focus:border-brand"
+                  />
                 </div>
                 <div className="space-y-1.5">
                   <label className="text-[10px] font-mono text-foreground/40 uppercase">Start Number</label>
-                  <input type="number" min={1} max={9999} value={startNum} onChange={e => setStartNum(Number(e.target.value))} className="w-full bg-background/40 border border-foreground/10 rounded-lg px-3 py-2 text-sm text-foreground focus:outline-none focus:border-brand" />
+                  <input
+                    type="number"
+                    name="bates_start_num"
+                    min={1}
+                    max={9999}
+                    value={startNum}
+                    onChange={e => setStartNum(Number(e.target.value))}
+                    toolparamdescription="Starting integer for sequential Bates numbering (e.g. 1)"
+                    className="w-full bg-background/40 border border-foreground/10 rounded-lg px-3 py-2 text-sm text-foreground focus:outline-none focus:border-brand"
+                  />
                 </div>
                 <div className="space-y-1.5">
                   <label className="text-[10px] font-mono text-foreground/40 uppercase">Digit Padding</label>
-                  <input type="number" min={1} max={9999} value={digits} onChange={e => setDigits(Number(e.target.value))} className="w-full bg-background/40 border border-foreground/10 rounded-lg px-3 py-2 text-sm text-foreground focus:outline-none focus:border-brand" />
+                  <input
+                    type="number"
+                    name="bates_digits"
+                    min={1}
+                    max={9999}
+                    value={digits}
+                    onChange={e => setDigits(Number(e.target.value))}
+                    toolparamdescription="Minimum digit padding count for zero padding (e.g. 4 for 0001)"
+                    className="w-full bg-background/40 border border-foreground/10 rounded-lg px-3 py-2 text-sm text-foreground focus:outline-none focus:border-brand"
+                  />
                 </div>
-              </div>
+              </form>
 
               <div className="space-y-2">
                 <label className="text-[10px] font-mono text-foreground/40 uppercase">Position</label>

@@ -6,31 +6,16 @@ import { toolContent } from '@/lib/tool-content';
 import { buildAlternates, toolSchema, faqSchema, howToSchema } from '@/lib/seo';
 
 export const metadata: Metadata = {
-  title: 'Crop PDF Pages Free Online — Trim Margins | iCreatePDF',
-  description: 'Crop PDF pages free online by trimming margins. Remove scan borders, whitespace, and adjust canvas sizes locally in browser memory. 100% private.',
-  keywords: 'i2pdf crop, pdf cut pages, crop pdf, trim pdf margins, remove pdf borders, crop pdf pages online free, pdf margin trimmer, cut pages in pdf, crop pdf online i2pdf',
+  title: 'Crop PDF Pages Free Online — Trim Margins & Borders | iCreatePDF',
+  description: 'Crop PDF pages online free. Trim whitespace margins, scanner borders, and resize page areas 100% locally in browser memory. No watermark.',
+  keywords: 'crop pdf, trim pdf margins, remove pdf borders, crop pdf pages online free, pdf margin trimmer, cut pages in pdf, crop pdf online, resize pdf canvas, crop white space from pdf, crop pdf page area, trim pdf for mobile reading, i2pdf crop, crop pdf without acrobat, free online pdf page trimmer',
   alternates: buildAlternates('/tools/crop-pdf'),
   openGraph: {
-    title: 'Crop PDF Pages Free Online — Trim PDF Margins | iCreatePDF',
-    description: 'Crop PDF pages by trimming margins from any side. Remove scanner borders, white space, and unwanted margins from all pages locally.',
+    title: 'Crop PDF Pages Free Online — Trim Margins & Borders | iCreatePDF',
+    description: 'Crop PDF pages online free. Trim whitespace margins, scanner borders, and resize page areas 100% locally in browser memory. No watermark.',
     type: 'website',
-  }
-};
-
-export default function CropPdfPage() {
-  return (
-    <ToolPageShell
-      jsonLd={[
-        ...toolSchema({
-          name: 'Crop PDF Pages',
-          description: 'Crop PDF pages by trimming margins from any side. Remove scanner borders, white space, and unwanted margins from all pages locally.',
-          url: '/tools/crop-pdf',
-        }),
-        faqSchema([
-          {
-            question: 'How do I crop PDF pages online for free?',
-            answer: 'Upload your PDF file. Adjust the crop margins visually on the page preview canvas, apply changes to individual pages or all pages, and download the cropped PDF document.',
-          },
+    images: [{ url: 'https://www.icreatepdf.online/opengraph-image', width: 1200, height: 630, alt: 'Crop PDF Pages — iCreatePDF' }],
+  },
           {
             question: 'Will cropping my PDF upload my document to any servers?',
             answer: 'No. iCreatePDF executes the page box translations locally in your browser sandbox using Javascript. Your confidential documents are 100% secure.',

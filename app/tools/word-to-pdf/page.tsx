@@ -3,18 +3,18 @@ import { ToolPageShell } from '@/components/tools/shared/ToolPageShell';
 import { WordToPdfTool } from '@/components/tools/WordToPdfTool';
 import { ToolSeoContent } from '@/components/tools/shared/ToolSeoContent';
 import { toolContent } from '@/lib/tool-content';
-import { buildAlternates, toolSchema } from '@/lib/seo';
+import { buildAlternates, toolSchema, faqSchema, howToSchema } from '@/lib/seo';
 
 export const metadata: Metadata = {
-  title: 'Convert DOCX to PDF Free Online (100% Private) | iCreatePDF',
-  description: 'Convert DOCX files to PDF online free. ⚡ Fast, no formatting loss & zero server uploads. Convert your DOCX files to PDF instantly in browser memory.',
-  keywords: 'convert docx to pdf, docx files to pdf, how to convert docx to pdf, word to pdf, convert word to pdf, word to pdf free, word document to pdf, doc to pdf, microsoft word to pdf, word to pdf online free, convert word to pdf without losing formatting, docx to pdf converter, word to pdf locally, word to pdf no upload, save word as pdf, word file to pdf',
+  title: 'Word to PDF Converter Free Online (Convert DOCX to PDF) | iCreatePDF',
+  description: 'Convert Microsoft Word documents (.docx, .doc) into high-quality PDF files online free. Preserve layouts, fonts, and tables. 100% private.',
+  keywords: 'word to pdf, convert word to pdf, docx to pdf converter, save word document as pdf, doc to pdf online free, word to pdf converter, convert doc to pdf without acrobat, export docx to pdf, ms word to pdf free',
   alternates: buildAlternates('/tools/word-to-pdf'),
   openGraph: {
-    title: 'Convert DOCX to PDF Free Online — 100% Private | iCreatePDF',
-    description: 'Convert DOCX files to PDF free online. No uploads, no formatting loss. 100% private browser processing.',
+    title: 'Word to PDF Converter Free Online (Convert DOCX to PDF) | iCreatePDF',
+    description: 'Convert Microsoft Word documents (.docx, .doc) into high-quality PDF files online free. Preserve layouts, fonts, and tables. 100% private.',
     type: 'website',
-    images: [{ url: 'https://www.icreatepdf.online/opengraph-image', width: 1200, height: 630, alt: 'Convert DOCX to PDF — iCreatePDF' }],
+    images: [{ url: 'https://www.icreatepdf.online/opengraph-image', width: 1200, height: 630, alt: 'Convert Word (DOCX) to PDF — iCreatePDF' }],
   },
   twitter: {
     card: 'summary_large_image',
@@ -29,39 +29,18 @@ export default function WordToPdfPage() {
     <ToolPageShell
       jsonLd={[
         ...toolSchema({
-          name: 'Convert DOCX to PDF',
-          description: 'Convert DOCX files to PDF documents free online without formatting shifts. Processed 100% client-side inside browser sandbox.',
+          name: 'Convert Word (DOCX) to PDF',
+          description: 'Convert Microsoft Word documents (.docx, .doc) into high-quality PDF files online free. Preserve layouts, fonts, and tables. 100% private.',
           url: '/tools/word-to-pdf',
         }),
-        {
-          '@context': 'https://schema.org',
-          '@type': 'FAQPage',
-          mainEntity: [
-            {
-              '@type': 'Question',
-              name: 'How do I convert DOCX to PDF for free?',
-              acceptedAnswer: {
-                '@type': 'Answer',
-                text: 'Select or drag your .docx Word document into the dropzone. The converter instantly compiles it to a clean PDF in browser memory. Click Download PDF to save.',
-              },
-            },
-            {
-              '@type': 'Question',
-              name: 'Will converting DOCX to PDF change my formatting?',
-              acceptedAnswer: {
-                '@type': 'Answer',
-                text: 'No. iCreatePDF processes your DOCX file layout locally, preserving font styles, margins, tables, and images without layout distortion.',
-              },
-            },
-            {
-              '@type': 'Question',
-              name: 'Is it safe to convert private DOCX files here?',
-              acceptedAnswer: {
-                '@type': 'Answer',
-                text: 'Yes, 100% safe. Your DOCX document never leaves your device and is never uploaded to any remote cloud server.',
-              },
-            },
-          ],
+        faqSchema(toolContent['word-to-pdf'].faqs),
+        howToSchema({
+          name: 'Convert Word (DOCX) to PDF',
+          description: toolContent['word-to-pdf'].overview,
+          url: '/tools/word-to-pdf',
+          steps: toolContent['word-to-pdf'].steps,
+        }),
+      ]},
         },
         {
           '@context': 'https://schema.org',

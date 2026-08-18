@@ -6,31 +6,16 @@ import { toolContent } from '@/lib/tool-content';
 import { buildAlternates, toolSchema, faqSchema, howToSchema } from '@/lib/seo';
 
 export const metadata: Metadata = {
-  title: 'Rotate PDF Pages Online Free (No Upload) | iCreatePDF',
-  description: 'Rotate individual PDF pages or the entire document online free. ⚡ Fast client-side page rotation, 100% secure and private in browser memory.',
-  keywords: 'rotate pdf, rotate pdf pages, rotate pdf online, free rotate pdf, private pdf rotation, spin pdf online',
+  title: 'Rotate PDF Free Online — Rotate PDF Pages and Save Permanently | iCreatePDF',
+  description: 'Rotate PDF pages 90, 180, or 270 degrees and save permanently. Fix sideways or upside-down scans 100% locally in browser memory.',
+  keywords: 'rotate pdf, rotate pdf pages, turn pdf upside down fix, rotate and save pdf, pdf orientation changer, how to rotate one page in pdf, rotate landscape to portrait pdf, flip pdf pages, rotate all pages in pdf free',
   alternates: buildAlternates('/tools/rotate-pdf'),
   openGraph: {
-    title: 'Rotate PDF Pages Online — Permanently Spin PDF | iCreat...',
-    description: 'Rotate individual PDF pages or the entire document online free. 100% private local browser processing.',
+    title: 'Rotate PDF Free Online — Rotate PDF Pages and Save Permanently | iCreatePDF',
+    description: 'Rotate PDF pages 90, 180, or 270 degrees and save permanently. Fix sideways or upside-down scans 100% locally in browser memory.',
     type: 'website',
-  }
-};
-
-export default function RotatePdfPage() {
-  return (
-    <ToolPageShell
-      jsonLd={[
-        ...toolSchema({
-          name: 'Rotate PDF Pages',
-          description: 'Rotate PDF pages in seconds. 100% client-side, drag & drop files, select rotation angles visually, and download instantly.',
-          url: '/tools/rotate-pdf',
-        }),
-        faqSchema([
-          {
-            question: 'How do I rotate PDF pages online for free?',
-            answer: 'Upload your PDF, click the rotation buttons on individual page thumbnails to rotate them 90, 180, or 270 degrees, or click bulk rotation buttons to rotate all pages at once, then click Rotate PDF.',
-          },
+    images: [{ url: 'https://www.icreatepdf.online/opengraph-image', width: 1200, height: 630, alt: 'Rotate PDF Pages & Save — iCreatePDF' }],
+  },
           {
             question: 'Will rotating my PDF make it permanently rotated?',
             answer: 'Yes. When you download the rotated PDF, the new rotation angles are compiled directly into the PDF page dictionary structures so they will render rotated in all PDF readers.',

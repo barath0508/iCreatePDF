@@ -86,7 +86,7 @@ export function CookieConsentBanner() {
             <ShieldCheck className="w-5 h-5 stroke-[1.5]" />
           </div>
           <div>
-            <h4 className="text-sm font-semibold text-foreground font-display">Cookie Preferences</h4>
+            <h2 className="text-sm font-semibold text-foreground font-display">Cookie Preferences</h2>
             <p className="text-[10px] text-muted-foreground font-mono">Google Consent Mode v2 Compliant</p>
           </div>
         </div>

@@ -6,31 +6,16 @@ import { toolContent } from '@/lib/tool-content';
 import { buildAlternates, toolSchema, faqSchema, howToSchema } from '@/lib/seo';
 
 export const metadata: Metadata = {
-  title: 'Split PDF Free Online — Extract PDF Pages | iCreatePDF',
-  description: 'Extract page ranges or separate all pages in a PDF document free online. ⚡ 100% private browser processing — no uploads or sign-up needed.',
-  keywords: 'pdf cut pages, how to separate a page from a pdf, separate a page from pdf, how to split pdf pages free, split pdf pages free, split pdf, extract pages pdf, split pdf online, split pdf free, private pdf splitter, cut pages from pdf, cut pages out of pdf',
+  title: 'Split PDF Free Online — Separate & Extract PDF Pages | iCreatePDF',
+  description: 'Split PDF documents into individual files or extract custom page ranges online free. 100% private client-side PDF splitter with zero uploads.',
+  keywords: 'split pdf, separate pdf pages, extract pdf pages, split pdf online free, pdf page separator, how to split pdf into multiple files, split pdf by range, extract pages from pdf document, split large pdf file',
   alternates: buildAlternates('/tools/split-pdf'),
   openGraph: {
-    title: 'Split PDF Free Online — Extract Pages from PDF | iCreatePDF',
-    description: 'Extract page ranges or separate all pages in a PDF document free online. 100% private browser processing.',
+    title: 'Split PDF Free Online — Separate & Extract PDF Pages | iCreatePDF',
+    description: 'Split PDF documents into individual files or extract custom page ranges online free. 100% private client-side PDF splitter with zero uploads.',
     type: 'website',
-  }
-};
-
-export default function SplitPdfPage() {
-  return (
-    <ToolPageShell
-      jsonLd={[
-        ...toolSchema({
-          name: 'Split PDF Files',
-          description: 'Extract page ranges or separate all pages in a PDF. 100% client-side, drag & drop files, and download split parts instantly.',
-          url: '/tools/split-pdf',
-        }),
-        faqSchema([
-          {
-            question: 'How do I split PDF pages for free?',
-            answer: 'Upload your PDF, choose to extract specific page ranges or split the document into individual single-page files, then click Split PDF.',
-          },
+    images: [{ url: 'https://www.icreatepdf.online/opengraph-image', width: 1200, height: 630, alt: 'Split PDF Pages Online — iCreatePDF' }],
+  },
           {
             question: 'Is my data secure when splitting PDFs here?',
             answer: 'Yes. iCreatePDF processes your PDF document entirely on your local device using WebAssembly. Your files are never uploaded to any remote server.',

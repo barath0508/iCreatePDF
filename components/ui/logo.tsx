@@ -19,6 +19,7 @@ export function Logo({ className = '', size = 36, showText = true }: LogoProps) 
           alt="iCreatePDF Logo"
           width={size * 2}
           height={size * 2}
+          sizes={`${size * 2}px`}
           className="w-full h-full object-contain dark:block hidden"
           priority
         />
@@ -28,6 +29,7 @@ export function Logo({ className = '', size = 36, showText = true }: LogoProps) 
           alt="iCreatePDF Logo"
           width={size * 2}
           height={size * 2}
+          sizes={`${size * 2}px`}
           className="w-full h-full object-contain dark:hidden block"
           priority
         />

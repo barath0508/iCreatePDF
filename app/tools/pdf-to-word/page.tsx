@@ -6,15 +6,15 @@ import { toolContent } from '@/lib/tool-content';
 import { buildAlternates, toolSchema, faqSchema, howToSchema } from '@/lib/seo';
 
 export const metadata: Metadata = {
-  title: 'Convert PDF to Word Free Online (100% Private) | iCreatePDF',
-  description: 'Convert PDF files to editable Word DOCX documents online free. ⚡ Fast text & formatting preservation, processed entirely local in browser memory.',
-  keywords: 'pdf to word converter, convert pdf to word, pdf to docx, convert pdf to docx online free, private pdf to word, no upload pdf to word',
+  title: 'Convert PDF to Word Free Online (Editable DOCX) | iCreatePDF',
+  description: 'Convert PDF files to editable Word (DOCX) documents online free. Preserve text, headers, and table formatting accurately in browser memory.',
+  keywords: 'pdf to word, convert pdf to word, pdf to docx converter, convert pdf to editable word, pdf to word free online, turn pdf into word document, convert scanned pdf to word editable, best pdf to word converter, export pdf to docx, pdf to word without email',
   alternates: buildAlternates('/tools/pdf-to-word'),
   openGraph: {
-    title: 'Convert PDF to Word Free Online — 100% Private | iCreatePDF',
-    description: 'Convert PDF files to editable Word DOCX documents online free. Fast formatting preservation, local browser processing.',
+    title: 'Convert PDF to Word Free Online (Editable DOCX) | iCreatePDF',
+    description: 'Convert PDF files to editable Word (DOCX) documents online free. Preserve text, headers, and table formatting accurately in browser memory.',
     type: 'website',
-    images: [{ url: 'https://www.icreatepdf.online/opengraph-image', width: 1200, height: 630, alt: 'PDF to Word Converter — iCreatePDF' }],
+    images: [{ url: 'https://www.icreatepdf.online/opengraph-image', width: 1200, height: 630, alt: 'Convert PDF to Editable Word (DOCX) — iCreatePDF' }],
   },
 };
 
@@ -23,24 +23,18 @@ export default function PdfToWordToolPage() {
     <ToolPageShell
       jsonLd={[
         ...toolSchema({
-          name: 'PDF to Word Converter',
-          description: 'Extract structured text and headings into editable Word (.docx) documents.',
+          name: 'Convert PDF to Editable Word (DOCX)',
+          description: 'Convert PDF files to editable Word (DOCX) documents online free. Preserve text, headers, and table formatting accurately in browser memory.',
           url: '/tools/pdf-to-word',
         }),
-        faqSchema([
-          {
-            question: 'How do I convert a PDF to Word for free?',
-            answer: 'Upload or drop your PDF document, wait a second for the local browser engine to process and extract text structure, and download your editable Word file (.docx).',
-          },
-          {
-            question: 'Will my Word document keep the original PDF formatting?',
-            answer: 'Yes, our local conversion layout engine extracts headers, tables, columns, and text styles to reconstruct formatting as closely as possible.',
-          },
-          {
-            question: 'Is it secure to convert sensitive PDFs here?',
-            answer: 'Yes. iCreatePDF processes your files locally using WebAssembly. Your files never leave your device and are never sent to external servers.',
-          },
-        ]),
+        faqSchema(toolContent['pdf-to-word'].faqs),
+        howToSchema({
+          name: 'Convert PDF to Editable Word (DOCX)',
+          description: toolContent['pdf-to-word'].overview,
+          url: '/tools/pdf-to-word',
+          steps: toolContent['pdf-to-word'].steps,
+        }),
+      ]}),
         howToSchema({
           name: 'PDF to Word Converter',
           description: 'Convert PDF files into editable Microsoft Word (.docx) documents online.',

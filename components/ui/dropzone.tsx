@@ -129,9 +129,9 @@ export function Dropzone({
               <Shield className="h-3 w-3 stroke-[2]" />
               {badgeText}
             </span>
-            <h3 className="text-xl sm:text-2xl font-bold tracking-tight text-foreground pt-1 font-display leading-snug">
+            <h2 className="text-xl sm:text-2xl font-bold tracking-tight text-foreground pt-1 font-display leading-snug">
               {title}
-            </h3>
+            </h2>
             <p className="text-xs text-muted-foreground leading-relaxed font-normal">
               {description}
             </p>

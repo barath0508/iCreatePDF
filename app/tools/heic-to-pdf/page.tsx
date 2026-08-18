@@ -6,31 +6,16 @@ import { toolContent } from '@/lib/tool-content';
 import { buildAlternates, toolSchema, faqSchema, howToSchema } from '@/lib/seo';
 
 export const metadata: Metadata = {
-  title: 'Convert HEIC to PDF Free Online (iPhone Photos) | iCreatePDF',
-  description: 'Convert iPhone HEIC photos to PDF free online. ⚡ 100% private client-side converter — combine multiple HEIC files into one PDF without uploads.',
-  keywords: 'how to convert heic to pdf on iphone, heic to pdf iphone, convert heic to pdf iphone, iphone heic to pdf converter, heic to pdf, convert heic to pdf, convert iphone heic to pdf, heic to pdf converter, convert heic to pdf offline, offline heic to pdf converter, convert heic to pdf locally, iphone heic to pdf private, local image converter',
+  title: 'Convert HEIC to PDF Free Online (iPhone Photos to PDF) | iCreatePDF',
+  description: 'Convert Apple iPhone HEIC photos into high-quality PDF documents online free. 100% private client-side converter with zero server uploads.',
+  keywords: 'heic to pdf, convert heic to pdf, convert heic to pdf on iphone, how to convert heic to pdf on iphone, iphone heic to pdf converter, convert iphone photos to pdf, apple live photo to pdf, heic image to pdf free, batch heic to pdf converter, convert heic without upload, private heic to pdf',
   alternates: buildAlternates('/tools/heic-to-pdf'),
   openGraph: {
-    title: 'Convert HEIC to PDF Free Online — iPhone Photos | iCreatePDF',
-    description: 'Convert iPhone HEIC photos to PDF online. 100% local and private client-side converter, no file uploads. Reorder and save HEIC images to PDF instantly.',
+    title: 'Convert HEIC to PDF Free Online (iPhone Photos to PDF) | iCreatePDF',
+    description: 'Convert Apple iPhone HEIC photos into high-quality PDF documents online free. 100% private client-side converter with zero server uploads.',
     type: 'website',
-  }
-};
-
-export default function HeicToPdfPage() {
-  return (
-    <ToolPageShell
-      jsonLd={[
-        ...toolSchema({
-          name: 'HEIC to PDF',
-          description: 'Convert iPhone HEIC photos to PDF directly in your browser. 100% local client-side conversion, zero server uploads, safe for sensitive photos.',
-          url: '/tools/heic-to-pdf',
-        }),
-        faqSchema([
-          {
-            question: 'How do I convert HEIC photos to PDF on iPhone?',
-            answer: 'Drop your HEIC files into the upload zone. The local conversion engine converts the HEIC image format to PDF pages client-side. Click Convert to PDF to save.',
-          },
+    images: [{ url: 'https://www.icreatepdf.online/opengraph-image', width: 1200, height: 630, alt: 'Convert HEIC (iPhone Photos) to PDF — iCreatePDF' }],
+  },
           {
             question: 'Is my data private when converting HEIC files?',
             answer: 'Yes, 100% private. The HEIC conversion runs locally using WebAssembly and client libraries. No image file is sent to external servers.',

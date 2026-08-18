@@ -116,31 +116,40 @@ export function ToolsFilter({ tools }: ToolsFilterProps) {
 
         {/* Search Input */}
         {activeCategory !== 'favorites' && (
-          <div className="relative w-full lg:w-80 shrink-0">
+          <form
+            onSubmit={(e) => e.preventDefault()}
+            toolname="search_pdf_tools"
+            tooldescription="Filter and search across all PDF editing, conversion, and security tools"
+            toolautosubmit="true"
+            className="relative w-full lg:w-80 shrink-0"
+          >
             <Search className="absolute left-3.5 top-1/2 -translate-y-1/2 w-4 h-4 text-muted-foreground pointer-events-none z-10" />
             <input
               type="text"
+              name="search"
               placeholder="Search tools..."
               value={searchQuery}
               onChange={(e) => setSearchQuery(e.target.value)}
               onKeyDown={(e) => e.key === 'Escape' && setSearchQuery('')}
+              toolparamdescription="Search keyword or tool name to filter PDF utilities (e.g., merge, compress, protect, ocr, split, watermark)"
               className="w-full pl-10 pr-10 py-2.5 h-11 text-xs sm:text-sm bg-background border border-border rounded-xl focus:outline-none focus:ring-2 focus:ring-foreground/30 transition-all text-foreground placeholder:text-muted-foreground font-sans shadow-2xs"
             />
             {searchQuery && (
               <button
+                type="button"
                 onClick={() => setSearchQuery('')}
                 className="absolute right-3.5 top-1/2 -translate-y-1/2 text-xs font-mono font-bold text-muted-foreground hover:text-foreground z-10"
               >
                 Clear
               </button>
             )}
-          </div>
+          </form>
         )}
       </div>
 
       {/* Tools Grid */}
       {filteredTools.length > 0 ? (
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-5">
+        <div className="tools-grid grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-5">
           {filteredTools.map((tool, idx) => {
             const IconComponent = ICON_MAP[tool.iconName];
             const isFav = favorites.has(tool.href);

@@ -44,7 +44,7 @@ const nextConfig = {
     ignoreBuildErrors: true,
   },
   images: {
-    unoptimized: true,
+    formats: ['image/avif', 'image/webp'],
   },
   async redirects() {
     return [
@@ -129,6 +129,11 @@ const nextConfig = {
             // Controls referrer data sent to third parties
             key: 'Referrer-Policy',
             value: 'strict-origin-when-cross-origin',
+          },
+          {
+            // HSTS policy with includeSubDomains and preload for Best Practices audit
+            key: 'Strict-Transport-Security',
+            value: 'max-age=63072000; includeSubDomains; preload',
           },
         ],
       },

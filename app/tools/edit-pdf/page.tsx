@@ -6,31 +6,16 @@ import { toolContent } from '@/lib/tool-content';
 import { buildAlternates, toolSchema, faqSchema, howToSchema } from '@/lib/seo';
 
 export const metadata: Metadata = {
-  title: 'Edit PDF Free Online — Add Text & Annotate | iCreatePDF',
-  description: 'Edit PDF documents free online. Add text overlays, drawings, shapes, and annotations locally in browser memory. 100% secure, no uploads.',
-  keywords: 'edit pdf, annotate pdf, add text to pdf, overlay text on pdf, edit pdf free online, write on pdf online, private pdf editor',
+  title: 'Edit PDF Free Online — Add Text, Annotations & Shapes | iCreatePDF',
+  description: 'Edit PDF documents online free. Add text overlays, comments, highlights, drawings, and shapes locally in browser memory. 100% secure, zero uploads.',
+  keywords: 'edit pdf, annotate pdf, add text to pdf, overlay text on pdf, edit pdf free online, write on pdf online, private pdf editor, pdf markup tool online, insert text into pdf document, free browser pdf editor, highlight and draw on pdf, edit pdf without adobe acrobat, add comments to pdf online, client side pdf editor',
   alternates: buildAlternates('/tools/edit-pdf'),
   openGraph: {
-    title: 'Edit PDF Online — Add Text, Annotate & Draw | iCreatePDF',
-    description: 'Edit PDF documents free online. Add text overlays, drawings, and annotations locally in browser memory. 100% private.',
+    title: 'Edit PDF Free Online — Add Text, Annotations & Shapes | iCreatePDF',
+    description: 'Edit PDF documents online free. Add text overlays, comments, highlights, drawings, and shapes locally in browser memory. 100% secure, zero uploads.',
     type: 'website',
-  }
-};
-
-export default function EditPdfPage() {
-  return (
-    <ToolPageShell
-      jsonLd={[
-        ...toolSchema({
-          name: 'Edit PDF Annotations',
-          description: 'Edit PDF files directly in your web browser. Place text overlay annotations, customize colors, and write them back into the PDF.',
-          url: '/tools/edit-pdf',
-        }),
-        faqSchema([
-          {
-            question: 'How do I edit a PDF file for free online?',
-            answer: 'Upload your PDF document, select the text tool or drawing options, place overlay elements directly on the document pages, and click Save PDF to download.',
-          },
+    images: [{ url: 'https://www.icreatepdf.online/opengraph-image', width: 1200, height: 630, alt: 'Edit PDF & Add Annotations — iCreatePDF' }],
+  },
           {
             question: 'Does this editor upload my document to any servers?',
             answer: 'No. iCreatePDF is a local utility. All editing, rendering, and rendering modifications are performed client-side using JavaScript and WebAssembly.',

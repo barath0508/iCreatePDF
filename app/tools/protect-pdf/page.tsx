@@ -6,15 +6,15 @@ import { toolContent } from '@/lib/tool-content';
 import { buildAlternates, toolSchema, faqSchema, howToSchema } from '@/lib/seo';
 
 export const metadata: Metadata = {
-  title: 'Password Protect PDF Free Online (Encrypt PDF) | iCreatePDF',
-  description: 'Password protect and encrypt PDF files free online. Add strong AES encryption and owner/user passwords locally in your browser without uploads.',
-  keywords: 'password protect pdf, encrypt pdf, protect pdf with password, lock pdf, pdf password protection, add password to pdf free, encrypt pdf file, secure pdf online free, pdf encryption free, password protect pdf locally, how to lock a pdf, pdf password lock, protect pdf document, add password to pdf online free, password protect pdf no upload, secure pdf file, pdf security online free, AES pdf encryption, protect confidential pdf',
+  title: 'Protect PDF — Password Protect & AES Encrypt PDF Online | iCreatePDF',
+  description: 'Encrypt PDF documents with military-grade AES password protection. Restrict unauthorized opening, copying, and printing 100% privately.',
+  keywords: 'protect pdf, password protect pdf, encrypt pdf online, add password to pdf, lock pdf file, secure pdf document, aes 256 bit pdf encryption, set password on pdf free, restrict pdf access, protect confidential pdf file',
   alternates: buildAlternates('/tools/protect-pdf'),
   openGraph: {
-    title: 'Password Protect PDF Free Online — Encrypt PDF | iCreatePDF',
-    description: 'Password protect and encrypt PDF files free online. Strong AES encryption, 100% private local processing.',
+    title: 'Protect PDF — Password Protect & AES Encrypt PDF Online | iCreatePDF',
+    description: 'Encrypt PDF documents with military-grade AES password protection. Restrict unauthorized opening, copying, and printing 100% privately.',
     type: 'website',
-    images: [{ url: 'https://www.icreatepdf.online/opengraph-image', width: 1200, height: 630, alt: 'Protect PDF — iCreatePDF' }],
+    images: [{ url: 'https://www.icreatepdf.online/opengraph-image', width: 1200, height: 630, alt: 'Password Protect & Encrypt PDF — iCreatePDF' }],
   },
   twitter: {
     card: 'summary_large_image',
@@ -29,24 +29,18 @@ export default function ProtectPdfPage() {
     <ToolPageShell
       jsonLd={[
         ...toolSchema({
-          name: 'Protect PDF Files',
-          description: 'Encrypt and password protect your PDF files client-side. Set secure owner and user passwords locally in your browser memory space.',
+          name: 'Password Protect & Encrypt PDF',
+          description: 'Encrypt PDF documents with military-grade AES password protection. Restrict unauthorized opening, copying, and printing 100% privately.',
           url: '/tools/protect-pdf',
         }),
-        faqSchema([
-          {
-            question: 'How do I password protect a PDF file?',
-            answer: 'Upload your PDF, enter a secure password in the password fields, choose user/owner permissions if needed, and click Encrypt PDF to download.',
-          },
-          {
-            question: 'Is my password secure when locking a PDF here?',
-            answer: 'Yes. The encryption process runs entirely inside your browser using WebAssembly. Your password and file content are never uploaded to any server.',
-          },
-          {
-            question: 'What level of encryption is used?',
-            answer: 'We use industry-standard AES encryption to lock and password protect your PDF files, preventing unauthorized opening, printing, or copying.',
-          },
-        ]),
+        faqSchema(toolContent['protect-pdf'].faqs),
+        howToSchema({
+          name: 'Password Protect & Encrypt PDF',
+          description: toolContent['protect-pdf'].overview,
+          url: '/tools/protect-pdf',
+          steps: toolContent['protect-pdf'].steps,
+        }),
+      ]}),
         howToSchema({
           name: 'Protect PDF Files',
           description: 'Secure and encrypt your PDF files with a password locally in your browser.',

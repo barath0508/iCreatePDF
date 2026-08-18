@@ -6,31 +6,16 @@ import { toolContent } from '@/lib/tool-content';
 import { buildAlternates, toolSchema, faqSchema, howToSchema } from '@/lib/seo';
 
 export const metadata: Metadata = {
-  title: 'Convert PNG to PDF Free Online (100% Private) | iCreatePDF',
-  description: 'Convert PNG images to PDF online free. ⚡ Preserve image transparency and quality. 100% secure client-side browser processing.',
-  keywords: 'convert png to pdf, png to pdf, convert image to pdf, free online png to pdf, private pdf converter',
+  title: 'PNG to PDF Converter Free Online (Transparent Images to PDF) | iCreatePDF',
+  description: 'Convert PNG images (including transparent PNGs) into high-quality PDF files online free. 100% private client-side converter without uploads.',
+  keywords: 'png to pdf, convert png to pdf, transparent png to pdf, png images into one pdf, high quality png to pdf converter, combine png files to pdf, convert photos to pdf online free, transparent background png to pdf',
   alternates: buildAlternates('/tools/png-to-pdf'),
   openGraph: {
-    title: 'Convert PNG to PDF Free Online — 100% Private | iCreatePDF',
-    description: 'Convert PNG images into a high-quality PDF document online free. Drag and drop, reorder pages. Processed 100% locally.',
+    title: 'PNG to PDF Converter Free Online (Transparent Images to PDF) | iCreatePDF',
+    description: 'Convert PNG images (including transparent PNGs) into high-quality PDF files online free. 100% private client-side converter without uploads.',
     type: 'website',
-  }
-};
-
-export default function PngToPdfPage() {
-  return (
-    <ToolPageShell
-      jsonLd={[
-        ...toolSchema({
-          name: 'PNG to PDF',
-          description: 'Convert PNG images to high-quality PDF files. Completely client-side, drag & drop multiple PNGs, reorder, adjust sizes, and download instantly.',
-          url: '/tools/png-to-pdf',
-        }),
-        faqSchema([
-          {
-            question: 'How do I convert a PNG image to PDF for free?',
-            answer: 'Drop your PNG files into the area, set page order and margins, and click Convert to PDF to process and download locally.',
-          },
+    images: [{ url: 'https://www.icreatepdf.online/opengraph-image', width: 1200, height: 630, alt: 'Convert PNG Images to PDF — iCreatePDF' }],
+  },
           {
             question: 'Does this tool preserve PNG image transparency?',
             answer: 'Yes, transparency is preserved. The PDF generation engine places PNG image data directly into the PDF streams.',

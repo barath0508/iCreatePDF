@@ -6,31 +6,16 @@ import { toolContent } from '@/lib/tool-content';
 import { buildAlternates, toolSchema, faqSchema, howToSchema } from '@/lib/seo';
 
 export const metadata: Metadata = {
-  title: 'Convert PDF to Text Free Online (Extract Text) | iCreatePDF',
-  description: 'Extract editable text from any PDF document free online. ⚡ Fast and 100% private browser-based text extraction — no server uploads needed.',
-  keywords: 'convert pdf to readable text, pdf to readable text, scan text from pdf, convert pdf image to text, convert pdf to machine readable format, pdf scan to text converter, pdf scan to text, image pdf to text, pdf text scanner, pdf to text, extract text from pdf, pdf text reader, read pdf text online',
+  title: 'PDF to Text Extractor Online Free — Convert PDF to TXT | iCreatePDF',
+  description: 'Extract raw and structured text from PDF documents into clean .txt files online free. 100% private client-side text extractor without uploads.',
+  keywords: 'pdf to text, extract text from pdf, convert pdf to txt, copy text from pdf, pdf to text converter online, plain text from pdf, batch pdf to text, extract words from pdf, parse text in pdf document, client side pdf text extractor',
   alternates: buildAlternates('/tools/pdf-to-text'),
   openGraph: {
-    title: 'Convert PDF to Text Online — Extract PDF Text | iCreatePDF',
-    description: 'Extract editable text from any PDF document free online. 100% private browser-based text extraction.',
+    title: 'PDF to Text Extractor Online Free — Convert PDF to TXT | iCreatePDF',
+    description: 'Extract raw and structured text from PDF documents into clean .txt files online free. 100% private client-side text extractor without uploads.',
     type: 'website',
-  }
-};
-
-export default function PdfToTextPage() {
-  return (
-    <ToolPageShell
-      jsonLd={[
-        ...toolSchema({
-          name: 'PDF to Text Extractor',
-          description: 'Extract raw text layouts from PDF documents page-by-page. 100% browser-based text extraction utility.',
-          url: '/tools/pdf-to-text',
-        }),
-        faqSchema([
-          {
-            question: 'How do I convert a PDF to a text file online?',
-            answer: 'Upload your PDF file. The extractor parses the character streams from the PDF structure page-by-page and displays editable plain text for copy-pasting or downloading as a .txt file.',
-          },
+    images: [{ url: 'https://www.icreatepdf.online/opengraph-image', width: 1200, height: 630, alt: 'Extract Text from PDF — iCreatePDF' }],
+  },
           {
             question: 'Does PDF to text extraction upload my documents?',
             answer: 'No. The text parser operates entirely inside your local browser tab. No file data is sent to external servers.',

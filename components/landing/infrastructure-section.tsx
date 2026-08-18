@@ -46,17 +46,18 @@ export function InfrastructureSection() {
                 <defs>
                   <style>{`
                     @keyframes drawLine {
-                      0%   { stroke-dashoffset: 1000; opacity: 0; }
-                      15%  { opacity: 1; }
-                      70%  { opacity: 0.7; }
-                      100% { stroke-dashoffset: 0; opacity: 0; }
+                      0%   { opacity: 0; stroke-dashoffset: 600; }
+                      20%  { opacity: 0.8; }
+                      70%  { opacity: 0.6; }
+                      100% { opacity: 0; stroke-dashoffset: 0; }
                     }
                     .connecting-line {
                       stroke: var(--brand);
                       stroke-width: 1.2;
                       fill: none;
-                      stroke-dasharray: 1000;
-                      animation: drawLine 3s ease-in-out infinite;
+                      stroke-dasharray: 300;
+                      will-change: opacity, stroke-dashoffset;
+                      animation: drawLine 3.5s ease-in-out infinite;
                     }
                   `}</style>
                 </defs>
@@ -121,7 +122,7 @@ export function InfrastructureSection() {
           {regions.map((region, index) => (
             <div
               key={region.name}
-              className={`p-6 border rounded-xl transition-all duration-300 cursor-default ${
+              className={`p-6 border rounded-xl transition-colors duration-300 cursor-default ${
                 activeRegion === index ? 'border-brand/40 bg-brand/[0.05]' : 'border-border'
               }`}
             >

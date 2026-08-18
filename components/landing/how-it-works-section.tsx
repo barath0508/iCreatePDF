@@ -49,7 +49,7 @@ export function HowItWorksSection() {
               key={step.number}
               type="button"
               onClick={() => setActiveStep(index)}
-              className={`relative text-left p-8 lg:p-12 border transition-all duration-500 rounded-2xl ${
+              className={`relative text-left p-8 lg:p-12 border transition-colors duration-500 rounded-2xl ${
                 activeStep === index
                   ? 'bg-background border-brand/40'
                   : 'bg-background/40 border-border hover:border-foreground/20'

@@ -65,16 +65,24 @@ export function ContactForm() {
           </Button>
         </div>
       ) : (
-        <form onSubmit={handleSubmit} className="space-y-6">
+        <form
+          onSubmit={handleSubmit}
+          className="space-y-6"
+          toolname="contact_support"
+          tooldescription="Submit feedback, inquiries, or bug reports to the iCreatePDF team"
+          toolautosubmit="true"
+        >
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
             <div className="space-y-2">
               <label className="text-[10px] font-mono uppercase tracking-wider text-foreground/40">Full Name</label>
               <input
                 type="text"
+                name="name"
                 required
                 value={formData.name}
                 onChange={(e) => setFormData(prev => ({ ...prev, name: e.target.value }))}
                 placeholder="e.g. John Doe"
+                toolparamdescription="Full name of the person submitting the contact form"
                 className="w-full h-11 px-4 bg-card/70 border border-foreground/10 text-foreground rounded-xl text-sm focus:border-brand/30 focus:outline-none transition-colors"
               />
             </div>
@@ -82,10 +90,12 @@ export function ContactForm() {
               <label className="text-[10px] font-mono uppercase tracking-wider text-foreground/40">Email Address</label>
               <input
                 type="email"
+                name="email"
                 required
                 value={formData.email}
                 onChange={(e) => setFormData(prev => ({ ...prev, email: e.target.value }))}
                 placeholder="e.g. john@example.com"
+                toolparamdescription="Contact email address for replies"
                 className="w-full h-11 px-4 bg-card/70 border border-foreground/10 text-foreground rounded-xl text-sm focus:border-brand/30 focus:outline-none transition-colors"
               />
             </div>
@@ -94,11 +104,13 @@ export function ContactForm() {
           <div className="space-y-2">
             <label className="text-[10px] font-mono uppercase tracking-wider text-foreground/40">Message Description</label>
             <textarea
+              name="message"
               required
               rows={5}
               value={formData.message}
               onChange={(e) => setFormData(prev => ({ ...prev, message: e.target.value }))}
               placeholder="Describe how we can help you..."
+              toolparamdescription="Detailed inquiry, feedback, or bug report message"
               className="w-full px-4 py-3 bg-card/70 border border-foreground/10 text-foreground rounded-xl text-sm focus:border-brand/30 focus:outline-none transition-colors resize-none"
             />
           </div>

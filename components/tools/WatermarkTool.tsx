@@ -243,14 +243,22 @@ export function WatermarkTool() {
             <h3 className="font-mono text-sm uppercase tracking-wider text-foreground">Watermark options</h3>
           </div>
 
-          <div className="space-y-4">
+          <form
+            onSubmit={(e) => { e.preventDefault(); triggerWatermark(); }}
+            toolname="watermark_pdf"
+            tooldescription="Add text watermark stamp to PDF document"
+            toolautosubmit="false"
+            className="space-y-4"
+          >
             {/* Watermark text */}
             <div className="space-y-2">
               <label className="text-[10px] font-mono uppercase tracking-wider text-foreground/40">Text</label>
               <input
                 type="text"
+                name="watermark_text"
                 value={options.text}
                 onChange={(e) => setOptions((prev) => ({ ...prev, text: e.target.value }))}
+                toolparamdescription="Text string to stamp across PDF pages (e.g., CONFIDENTIAL, DRAFT, COPY)"
                 className="w-full h-10 px-3 bg-card/80 border border-foreground/10 text-foreground rounded-lg text-sm"
               />
             </div>
@@ -260,11 +268,13 @@ export function WatermarkTool() {
               <label className="text-[10px] font-mono uppercase tracking-wider text-foreground/40">Size ({options.size}pt)</label>
               <input
                 type="range"
+                name="watermark_size"
                 min="10"
                 max="120"
                 step="5"
                 value={options.size}
                 onChange={(e) => setOptions((prev) => ({ ...prev, size: parseInt(e.target.value) }))}
+                toolparamdescription="Watermark font size in points"
                 className="w-full h-1 bg-zinc-800 rounded-lg appearance-none cursor-pointer accent-brand"
               />
             </div>
@@ -274,11 +284,13 @@ export function WatermarkTool() {
               <label className="text-[10px] font-mono uppercase tracking-wider text-foreground/40">Opacity ({Math.round(options.opacity * 100)}%)</label>
               <input
                 type="range"
+                name="watermark_opacity"
                 min="0.05"
                 max="1.0"
                 step="0.05"
                 value={options.opacity}
                 onChange={(e) => setOptions((prev) => ({ ...prev, opacity: parseFloat(e.target.value) }))}
+                toolparamdescription="Watermark opacity from 0.05 (light) to 1.0 (solid)"
                 className="w-full h-1 bg-zinc-800 rounded-lg appearance-none cursor-pointer accent-brand"
               />
             </div>
@@ -295,13 +307,15 @@ export function WatermarkTool() {
                 />
                 <input
                   type="text"
+                  name="watermark_color"
                   value={options.colorHex}
                   onChange={(e) => setOptions((prev) => ({ ...prev, colorHex: e.target.value }))}
+                  toolparamdescription="Watermark hex color code"
                   className="flex-1 h-10 px-3 bg-card/80 border border-foreground/10 text-foreground rounded-lg text-sm uppercase font-mono"
                 />
               </div>
             </div>
-          </div>
+          </form>
 
           <div className="pt-4 border-t border-foreground/5">
             {isProcessing ? (

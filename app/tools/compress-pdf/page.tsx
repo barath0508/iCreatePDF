@@ -6,15 +6,15 @@ import { toolContent } from '@/lib/tool-content';
 import { buildAlternates, toolSchema, faqSchema, howToSchema } from '@/lib/seo';
 
 export const metadata: Metadata = {
-  title: 'Compress PDF Free Online — Reduce File Size | iCreatePDF',
-  description: 'Compress and shrink PDF files free online. Reduce PDF size without losing quality — 100% private local processing, no server uploads.',
-  keywords: 'compress pdf, compress pdf online free, reduce pdf file size, shrink pdf, compress pdf without losing quality, pdf compressor, reduce pdf size online free, compress pdf file, make pdf smaller, pdf size reducer, compress pdf locally, compress pdf no upload, pdf file size reducer free, how to compress pdf, compress pdf for email, compress pdf to 1mb, compress pdf to 200kb, compress large pdf',
+  title: 'Compress PDF Free Online — Reduce File Size Without Quality Loss | iCreatePDF',
+  description: 'Shrink and compress PDF file size online free. Optimize documents for email and web portals. 100% private local WebAssembly compression, no uploads.',
+  keywords: 'compress pdf, compress pdf online free, reduce pdf file size, shrink pdf, compress pdf without losing quality, pdf compressor, reduce pdf size online free, compress pdf file, make pdf smaller, pdf size reducer, compress pdf locally, compress pdf no upload, pdf file size reducer free, how to compress pdf, compress pdf for email, compress pdf to 1mb, compress pdf to 200kb, compress pdf to 100kb, compress large pdf',
   alternates: buildAlternates('/tools/compress-pdf'),
   openGraph: {
-    title: 'Compress PDF Free Online — Reduce PDF File Size | iCreatePDF',
-    description: 'Compress and shrink PDF files free online. Reduce PDF size without losing quality. 100% private.',
+    title: 'Compress PDF Free Online — Reduce File Size Without Quality Loss | iCreatePDF',
+    description: 'Shrink and compress PDF file size online free. Optimize documents for email and web portals. 100% private local WebAssembly compression, no uploads.',
     type: 'website',
-    images: [{ url: 'https://www.icreatepdf.online/opengraph-image', width: 1200, height: 630, alt: 'Compress PDF — iCreatePDF' }],
+    images: [{ url: 'https://www.icreatepdf.online/opengraph-image', width: 1200, height: 630, alt: 'Compress PDF File Size — iCreatePDF' }],
   },
   twitter: {
     card: 'summary_large_image',
@@ -29,24 +29,18 @@ export default function CompressPdfPage() {
     <ToolPageShell
       jsonLd={[
         ...toolSchema({
-          name: 'Compress PDF File',
-          description: 'Compress and shrink PDF files locally on your device. 100% private client-side optimization with no file uploads or data logging.',
+          name: 'Compress PDF File Size',
+          description: 'Shrink and compress PDF file size online free. Optimize documents for email and web portals. 100% private local WebAssembly compression, no uploads.',
           url: '/tools/compress-pdf',
         }),
-        faqSchema([
-          {
-            question: 'How do I compress a PDF online for free?',
-            answer: 'Drag and drop your PDF file into the compress tool, choose the compression level (Low, Medium, High), and download the compressed PDF instantly.',
-          },
-          {
-            question: 'Will compressing my PDF reduce its visual quality?',
-            answer: 'No. iCreatePDF optimizes internal resources like redundant fonts and scales down image DPI without losing overall visual readability and structure.',
-          },
-          {
-            question: 'Is there a file size limit for PDF compression?',
-            answer: 'No. Since the compression runs entirely inside your browser sandbox locally, there are no file size limits other than what your device browser can handle.',
-          },
-        ]),
+        faqSchema(toolContent['compress-pdf'].faqs),
+        howToSchema({
+          name: 'Compress PDF File Size',
+          description: toolContent['compress-pdf'].overview,
+          url: '/tools/compress-pdf',
+          steps: toolContent['compress-pdf'].steps,
+        }),
+      ]}),
         howToSchema({
           name: 'Compress PDF File',
           description: 'Reduce the file size of your PDF files by optimizing internal streams client-side.',

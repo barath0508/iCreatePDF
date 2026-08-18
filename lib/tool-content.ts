@@ -1669,6 +1669,30 @@ export const toolContent: Record<string, ToolContent> = {
       { question: 'Is the flipbook viewable on mobile devices?', answer: 'Yes, the spread and controls are responsive and work on touch devices, though a wider screen shows the two-page layout best.' },
     ],
   },
+
+  'no-upload-pdf-tools': {
+    name: 'No-Upload PDF Tools Suite',
+    url: '/tools/no-upload-pdf-tools',
+    overview:
+      'Most online PDF converters upload your private documents to remote cloud servers, creating security risks for legal, financial, and personal records. iCreatePDF is built differently: all 70+ PDF tools run 100% locally in your browser memory via WebAssembly. Your files never touch external servers or cloud storage.',
+    steps: [
+      { title: 'Choose Any PDF Tool', description: 'Select any tool from our suite of 70+ free browser-based PDF utilities.' },
+      { title: 'Process In-Browser', description: 'Files are processed client-side via WebAssembly sandbox without server uploads.' },
+      { title: 'Instant Download', description: 'Download your processed document immediately with zero file storage or tracking.' },
+    ],
+    useCases: [
+      'Process confidential NDA and legal documents safely',
+      'Edit financial and tax records without third-party exposure',
+      'Work offline or in low-connectivity environments',
+      'Comply with strict HIPAA and GDPR data privacy standards',
+    ],
+    faqs: [
+      { question: 'What does "no-upload" PDF processing mean?', answer: 'It means our PDF conversion and editing algorithms execute entirely on your device using WebAssembly. Your PDF files are never sent over the internet or saved to remote databases.' },
+      { question: 'Can I use iCreatePDF offline?', answer: 'Yes! Once the webpage is loaded in your browser cache, core tools operate without an active internet connection.' },
+      { question: 'Are there file size or usage limits?', answer: 'No artificial caps exist. You can process documents of any page count supported by your device memory.' },
+    ],
+  },
 };
+
 
 

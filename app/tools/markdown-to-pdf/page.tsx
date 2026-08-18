@@ -3,12 +3,12 @@ import { ToolPageShell } from '@/components/tools/shared/ToolPageShell';
 import { MarkdownToPdfTool } from '@/components/tools/MarkdownToPdfTool';
 import { ToolSeoContent } from '@/components/tools/shared/ToolSeoContent';
 import { toolContent } from '@/lib/tool-content';
-import { buildAlternates, toolSchema } from '@/lib/seo';
+import { buildAlternates, toolSchema, faqSchema, howToSchema } from '@/lib/seo';
 
 export const metadata: Metadata = {
-  title: 'Convert Markdown to PDF Online Free - MD to PDF | iCreatePDF',
-  description: 'Convert styled Markdown to PDF online free. Compile MD to PDF locally in your browser with complete privacy. No uploads, fast and secure.',
-  keywords: 'online markdown to pdf, markdown to pdf free, md to pdf online free, markdown online pdf, markdow to pdf, convert md to pdf, markdown to pdf, markdown editor pdf converter',
+  title: 'Markdown to PDF Converter Online Free — Format MD to PDF | iCreatePDF',
+  description: 'Convert Markdown (.md) documents, notes, and READMEs into beautifully formatted PDF files with code syntax highlighting. 100% private.',
+  keywords: 'markdown to pdf, convert md to pdf, markdown editor to pdf, md file to pdf document, format markdown as pdf report, styled markdown to pdf, markdown resume to pdf, github markdown to pdf, code blocks markdown to pdf, markdown to printable pdf',
   alternates: buildAlternates('/tools/markdown-to-pdf'),
   openGraph: {
     title: 'Convert Markdown to PDF Online Free - MD to PDF | iCreatePDF',
@@ -20,12 +20,20 @@ export const metadata: Metadata = {
 export default function MarkdownToPdfPage() {
   return (
     <ToolPageShell
-      jsonLd={toolSchema({
-        name: 'Markdown to PDF Converter',
-        description: 'Convert styled Markdown text files into standard PDF page layouts locally. Completely private, browser-based Markdown-to-PDF utility.',
-        url: '/tools/markdown-to-pdf',
-      })}
-      badge="Markdown Engine"
+      jsonLd={[
+        ...toolSchema({
+          name: 'Markdown to PDF Converter',
+          description: 'Convert Markdown (.md) documents, notes, and READMEs into beautifully formatted PDF files with code syntax highlighting. 100% private.',
+          url: '/tools/markdown-to-pdf',
+        }),
+        faqSchema(toolContent['markdown-to-pdf'].faqs),
+        howToSchema({
+          name: 'Markdown to PDF Converter',
+          description: toolContent['markdown-to-pdf'].overview,
+          url: '/tools/markdown-to-pdf',
+          steps: toolContent['markdown-to-pdf'].steps,
+        }),
+      ]}badge="Markdown Engine"
       title="Markdown to PDF Converter"
       description="Write syntax-styled Markdown documents and compile them to clean A4 PDFs locally."
       extraSections={<ToolSeoContent content={toolContent['markdown-to-pdf']} />}

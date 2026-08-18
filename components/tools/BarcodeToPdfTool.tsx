@@ -159,24 +159,50 @@ export function BarcodeToPdfTool() {
               </div>
               <p className="text-[11px] text-foreground/35 pt-1">{activeSymbology.helper}</p>
             </div>
-            <div className="space-y-1.5">
-              <label className="text-[10px] font-mono text-foreground/40 uppercase">Barcode Content *</label>
-              <textarea
-                value={content}
-                onChange={e => { setContent(e.target.value); setDownloadUrl(null); }}
-                placeholder={activeSymbology.placeholder}
-                rows={2}
-                className="w-full bg-background/40 border border-foreground/10 rounded-xl px-4 py-3 text-sm text-foreground placeholder:text-foreground/20 focus:outline-none focus:border-brand resize-none"
-              />
-            </div>
-            <div className="space-y-1.5">
-              <label className="text-[10px] font-mono text-foreground/40 uppercase">Title (optional)</label>
-              <input type="text" value={title} onChange={e => setTitle(e.target.value)} placeholder="e.g. Product SKU Label" className="w-full bg-background/40 border border-foreground/10 rounded-xl px-4 py-2.5 text-sm text-foreground placeholder:text-foreground/20 focus:outline-none focus:border-brand" />
-            </div>
-            <div className="space-y-1.5">
-              <label className="text-[10px] font-mono text-foreground/40 uppercase">Description (optional)</label>
-              <input type="text" value={description} onChange={e => setDescription(e.target.value)} placeholder="A short description below the title" className="w-full bg-background/40 border border-foreground/10 rounded-xl px-4 py-2.5 text-sm text-foreground placeholder:text-foreground/20 focus:outline-none focus:border-brand" />
-            </div>
+            <form
+              onSubmit={(e) => e.preventDefault()}
+              toolname="generate_barcode_pdf"
+              tooldescription="Generate printable barcode labels and sheets in PDF format"
+              toolautosubmit="false"
+              className="space-y-4"
+            >
+              <div className="space-y-1.5">
+                <label className="text-[10px] font-mono text-foreground/40 uppercase">Barcode Content *</label>
+                <textarea
+                  name="barcode_content"
+                  value={content}
+                  onChange={e => { setContent(e.target.value); setDownloadUrl(null); }}
+                  placeholder={activeSymbology.placeholder}
+                  rows={2}
+                  toolparamdescription="Data, numbers, or text payload to encode into the barcode"
+                  className="w-full bg-background/40 border border-foreground/10 rounded-xl px-4 py-3 text-sm text-foreground placeholder:text-foreground/20 focus:outline-none focus:border-brand resize-none"
+                />
+              </div>
+              <div className="space-y-1.5">
+                <label className="text-[10px] font-mono text-foreground/40 uppercase">Title (optional)</label>
+                <input
+                  type="text"
+                  name="barcode_title"
+                  value={title}
+                  onChange={e => setTitle(e.target.value)}
+                  placeholder="e.g. Product SKU Label"
+                  toolparamdescription="Header title printed above the barcode in the PDF"
+                  className="w-full bg-background/40 border border-foreground/10 rounded-xl px-4 py-2.5 text-sm text-foreground placeholder:text-foreground/20 focus:outline-none focus:border-brand"
+                />
+              </div>
+              <div className="space-y-1.5">
+                <label className="text-[10px] font-mono text-foreground/40 uppercase">Description (optional)</label>
+                <input
+                  type="text"
+                  name="barcode_description"
+                  value={description}
+                  onChange={e => setDescription(e.target.value)}
+                  placeholder="A short description below the title"
+                  toolparamdescription="Optional subtitle or description printed below the title"
+                  className="w-full bg-background/40 border border-foreground/10 rounded-xl px-4 py-2.5 text-sm text-foreground placeholder:text-foreground/20 focus:outline-none focus:border-brand"
+                />
+              </div>
+            </form>
             <div className="space-y-2">
               <label className="text-[10px] font-mono text-foreground/40 uppercase">Barcode Size</label>
               <div className="flex gap-2">

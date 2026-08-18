@@ -6,31 +6,16 @@ import { toolContent } from '@/lib/tool-content';
 import { buildAlternates, toolSchema, faqSchema, howToSchema } from '@/lib/seo';
 
 export const metadata: Metadata = {
-  title: 'Convert PDF to JPG Free Online (Extract Pages) | iCreatePDF',
-  description: 'Convert PDF pages to high-quality JPG images free online. Processed 100% locally in browser memory with zero server uploads for absolute privacy.',
-  keywords: 'convert pdf to jpg, pdf to jpg, pdf to image, extract pdf pages to jpg, private pdf to jpg, no upload pdf to jpg',
+  title: 'PDF to JPG Converter Free Online (Convert PDF to Images) | iCreatePDF',
+  description: 'Convert PDF pages into high-resolution JPG or PNG images online for free. Download individual pages or a batch ZIP archive 100% privately.',
+  keywords: 'pdf to jpg, convert pdf to image, pdf to png converter, extract images from pdf, pdf to jpg 300 dpi, turn pdf into photo, convert pdf pages to jpeg, high resolution pdf to jpg, batch pdf to jpg converter, pdf to image online free',
   alternates: buildAlternates('/tools/pdf-to-jpg'),
   openGraph: {
-    title: 'Convert PDF to JPG Online — Extract PDF Pages | iCreatePDF',
-    description: 'Convert PDF pages to high-quality JPG images free online. 100% private local browser processing.',
+    title: 'PDF to JPG Converter Free Online (Convert PDF to Images) | iCreatePDF',
+    description: 'Convert PDF pages into high-resolution JPG or PNG images online for free. Download individual pages or a batch ZIP archive 100% privately.',
     type: 'website',
-  }
-};
-
-export default function PdfToJpgPage() {
-  return (
-    <ToolPageShell
-      jsonLd={[
-        ...toolSchema({
-          name: 'Convert PDF to JPG',
-          description: 'Convert PDF pages to JPG images in seconds. 100% client-side, drag & drop files, and download image ZIP instantly.',
-          url: '/tools/pdf-to-jpg',
-        }),
-        faqSchema([
-          {
-            question: 'How do I convert PDF pages to JPG images?',
-            answer: 'Upload your PDF file. The browser engine renders each page into a high-fidelity image canvas. You can select specific pages to convert and download them as a ZIP archive.',
-          },
+    images: [{ url: 'https://www.icreatepdf.online/opengraph-image', width: 1200, height: 630, alt: 'Convert PDF Pages to JPG Images — iCreatePDF' }],
+  },
           {
             question: 'Does this tool upload my PDF to a server?',
             answer: 'No. The conversion is completed entirely inside your browser memory using PDFJS. Your files are never uploaded to any external server.',

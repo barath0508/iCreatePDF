@@ -6,31 +6,16 @@ import { toolContent } from '@/lib/tool-content';
 import { buildAlternates, toolSchema, faqSchema, howToSchema } from '@/lib/seo';
 
 export const metadata: Metadata = {
-  title: 'Unlock PDF Free Online — Remove Password | iCreatePDF',
-  description: 'Remove password encryption and copy/print restrictions from PDF files free online. ⚡ 100% private local browser decryption — no uploads.',
-  keywords: 'local pdf password remover, decrypt pdf client-side, remove pdf security password private, offline pdf unlocker, strip pdf permissions local, unlock pdf owner password, bypass pdf print restriction, remove copy restriction pdf',
+  title: 'Unlock PDF Online Free — Remove Password & Restrictions | iCreatePDF',
+  description: 'Remove passwords and permissions security from PDF documents online free. Unlock editing, copying, and printing restrictions 100% privately in-browser.',
+  keywords: 'unlock pdf, remove pdf password, pdf password remover, decrypt pdf online, remove restrictions from pdf, unlock secured pdf, remove print permission password pdf, decrypt protected pdf file',
   alternates: buildAlternates('/tools/unlock-pdf'),
   openGraph: {
-    title: 'Unlock PDF Free Online — Remove PDF Password | iCreatePDF',
-    description: 'Strip password encryption locks from PDF files online for free. Processed 100% locally inside your browser sandbox with zero uploads for absolute privacy.',
+    title: 'Unlock PDF Online Free — Remove Password & Restrictions | iCreatePDF',
+    description: 'Remove passwords and permissions security from PDF documents online free. Unlock editing, copying, and printing restrictions 100% privately in-browser.',
     type: 'website',
-  }
-};
-
-export default function UnlockPdfPage() {
-  return (
-    <ToolPageShell
-      jsonLd={[
-        ...toolSchema({
-          name: 'Unlock Protected PDF',
-          description: 'Remove passwords and decryption locks from PDF files client-side. Your files and passwords are never uploaded to any remote server.',
-          url: '/tools/unlock-pdf',
-        }),
-        faqSchema([
-          {
-            question: 'How do I remove a password from a PDF file?',
-            answer: 'Upload your password-locked PDF. Type in the document password to authenticate the decryption permission locally, and download your unlocked PDF file.',
-          },
+    images: [{ url: 'https://www.icreatepdf.online/opengraph-image', width: 1200, height: 630, alt: 'Unlock PDF & Remove Password — iCreatePDF' }],
+  },
           {
             question: 'Is my PDF password uploaded to any servers?',
             answer: 'No. The decryption and password verification occur completely within your local browser memory using PDF libraries. Your passwords are never transmitted.',

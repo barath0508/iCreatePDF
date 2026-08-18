@@ -159,16 +159,24 @@ export function UnlockTool() {
               </div>
 
               {isEncrypted && !downloadUrl && (
-                <div className="space-y-2 pt-4 border-t border-foreground/5">
+                <form
+                  onSubmit={(e) => { e.preventDefault(); triggerUnlock(); }}
+                  toolname="unlock_pdf"
+                  tooldescription="Decrypt a password-protected PDF document"
+                  toolautosubmit="false"
+                  className="space-y-2 pt-4 border-t border-foreground/5"
+                >
                   <label className="text-[10px] font-mono uppercase tracking-wider text-foreground/40">Enter Password</label>
                   <input
                     type="password"
+                    name="unlock_password"
                     value={password}
                     onChange={(e) => setPassword(e.target.value)}
                     placeholder="Document Password"
+                    toolparamdescription="Password to decrypt and unlock the protected PDF"
                     className="w-full h-10 px-3 bg-card/80 border border-foreground/10 text-foreground rounded-lg text-sm"
                   />
-                </div>
+                </form>
               )}
             </div>
           )}

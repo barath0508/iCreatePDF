@@ -3,40 +3,19 @@ import { ToolPageShell } from '@/components/tools/shared/ToolPageShell';
 import { PreventCopyTool } from '@/components/tools/PreventCopyTool';
 import { ToolSeoContent } from '@/components/tools/shared/ToolSeoContent';
 import { toolContent } from '@/lib/tool-content';
-import { buildAlternates, toolSchema } from '@/lib/seo';
+import { buildAlternates, toolSchema, faqSchema, howToSchema } from '@/lib/seo';
 
 export const metadata: Metadata = {
-  title: 'Make PDF Non-Copyable Online Free | iCreatePDF',
-  description: 'Make PDF non-copyable free online. Disable text selection, highlighting, and copying by rasterizing PDF pages locally. 100% private in-browser tool.',
-  keywords: 'make pdf not copyable, no copy pdf, prevent pdf copy, make pdf non-copyable, disable text selection pdf, protect pdf from copying, rasterize pdf online free, copy proof pdf, make pdf text non selectable',
+  title: 'Prevent Copy PDF — Rasterize Text & Disable Copy-Paste | iCreatePDF',
+  description: 'Rasterize PDF pages into unselectable vector-image hybrids to prevent text copying, scraping, and highlighting. 100% private security tool.',
+  keywords: 'prevent copy pdf, disable text selection pdf, rasterize pdf to prevent copying, protect pdf from being copied, lock pdf content, disable copy paste pdf, make pdf uncopyable, flatten pdf text to image, anti copying pdf security',
   alternates: buildAlternates('/tools/prevent-copy'),
   openGraph: {
-    title: 'Make PDF Non-Copyable Free — Prevent PDF Copy | iCreatePDF',
-    description: 'Make PDF non-copyable free online. Disable text selection, highlighting, and copying by rasterizing PDF pages locally. 100% private.',
+    title: 'Prevent Copy PDF — Rasterize Text & Disable Copy-Paste | iCreatePDF',
+    description: 'Rasterize PDF pages into unselectable vector-image hybrids to prevent text copying, scraping, and highlighting. 100% private security tool.',
     type: 'website',
-  }
-};
-
-export default function PreventCopyPage() {
-  return (
-    <ToolPageShell
-      jsonLd={[
-        ...toolSchema({
-          name: 'Make PDF Non-Copyable (Prevent Copy)',
-          description: 'Make PDF non-copyable free online. Prevent text copying, text selection, and extraction from your PDF files by rasterizing pages client-side.',
-          url: '/tools/prevent-copy',
-        }),
-        {
-          '@context': 'https://schema.org',
-          '@type': 'FAQPage',
-          mainEntity: [
-            {
-              '@type': 'Question',
-              name: 'How do I make a PDF non-copyable for free?',
-              acceptedAnswer: {
-                '@type': 'Answer',
-                text: 'Select or drag your PDF into the tool. It flattens all text layers into rasterized high-resolution images, disabling text highlighting and copy-pasting.',
-              },
+    images: [{ url: 'https://www.icreatepdf.online/opengraph-image', width: 1200, height: 630, alt: 'Prevent PDF Text Copying — iCreatePDF' }],
+  },
             },
             {
               '@type': 'Question',

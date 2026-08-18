@@ -6,31 +6,16 @@ import { toolContent } from '@/lib/tool-content';
 import { buildAlternates, toolSchema, faqSchema, howToSchema } from '@/lib/seo';
 
 export const metadata: Metadata = {
-  title: 'Organize PDF Pages Free Online — Reorder Pages | iCreatePDF',
-  description: 'Reorder, delete, and organize PDF pages visually free online. Drag and drop thumbnails to rearrange layout. 100% private in browser memory.',
-  keywords: 'organize pdf, reorder pdf pages, rotate pdf pages, delete pages pdf, private pdf organizer',
+  title: 'Organize PDF Pages Free Online — Reorder, Rotate & Delete | iCreatePDF',
+  description: 'Visually rearrange, sort, reorder, rotate, and delete PDF pages with drag-and-drop ease. 100% private in-browser document organizer.',
+  keywords: 'organize pdf, reorder pdf pages, delete pdf pages, rearrange pdf pages, remove pages from pdf, sort pdf pages online, visual pdf page organizer, organize pdf pages free, drag and drop pdf organizer, rearrange pdf pages in browser, rotate and organize pdf',
   alternates: buildAlternates('/tools/organize-pdf'),
   openGraph: {
-    title: 'Organize PDF Pages Online — Reorder & Delete | iCreatePDF',
-    description: 'Reorder, delete, and organize PDF pages visually online free. Processed 100% locally in your browser tab with zero server uploads for complete privacy.',
+    title: 'Organize PDF Pages Free Online — Reorder, Rotate & Delete | iCreatePDF',
+    description: 'Visually rearrange, sort, reorder, rotate, and delete PDF pages with drag-and-drop ease. 100% private in-browser document organizer.',
     type: 'website',
-  }
-};
-
-export default function OrganizePdfPage() {
-  return (
-    <ToolPageShell
-      jsonLd={[
-        ...toolSchema({
-          name: 'Organize & Rotate PDF',
-          description: 'Rearrange, rotate, or delete specific pages in a PDF. 100% client-side with visual page preview thumbnails.',
-          url: '/tools/organize-pdf',
-        }),
-        faqSchema([
-          {
-            question: 'How do I organize and reorder PDF pages?',
-            answer: 'Upload your PDF document. Use the drag-and-drop thumbnail grid to rearrange page sequences, delete individual pages, or rotate page layouts, then click Save changes.',
-          },
+    images: [{ url: 'https://www.icreatepdf.online/opengraph-image', width: 1200, height: 630, alt: 'Organize PDF Pages Visually — iCreatePDF' }],
+  },
           {
             question: 'Is my data secure when organizing PDF pages?',
             answer: 'Yes. The entire organizing process is performed on your local computer via client libraries. Your PDF pages are never uploaded to any remote server.',

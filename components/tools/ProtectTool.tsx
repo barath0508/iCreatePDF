@@ -130,14 +130,22 @@ export function ProtectTool() {
               </div>
 
               {!downloadUrl && (
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-4 pt-4 border-t border-foreground/5">
+                <form
+                  onSubmit={(e) => { e.preventDefault(); triggerProtect(); }}
+                  toolname="protect_pdf"
+                  tooldescription="Encrypt a PDF document with password security"
+                  toolautosubmit="false"
+                  className="grid grid-cols-1 md:grid-cols-2 gap-4 pt-4 border-t border-foreground/5"
+                >
                   <div className="space-y-2">
                     <label className="text-xs font-mono text-foreground/60">Set Password</label>
                     <input
                       type="password"
+                      name="password"
                       value={password}
                       onChange={(e) => setPassword(e.target.value)}
                       placeholder="Enter strong password"
+                      toolparamdescription="Password used to encrypt the PDF document"
                       className="w-full bg-background border border-foreground/10 rounded-xl px-4 py-3 text-sm text-foreground focus:outline-none focus:border-brand"
                     />
                   </div>
@@ -145,13 +153,15 @@ export function ProtectTool() {
                     <label className="text-xs font-mono text-foreground/60">Confirm Password</label>
                     <input
                       type="password"
+                      name="confirm_password"
                       value={confirmPassword}
                       onChange={(e) => setConfirmPassword(e.target.value)}
                       placeholder="Repeat password"
+                      toolparamdescription="Confirmation matching the encryption password"
                       className="w-full bg-background border border-foreground/10 rounded-xl px-4 py-3 text-sm text-foreground focus:outline-none focus:border-brand"
                     />
                   </div>
-                </div>
+                </form>
               )}
             </div>
           )}

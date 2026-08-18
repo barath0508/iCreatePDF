@@ -6,31 +6,16 @@ import { toolContent } from '@/lib/tool-content';
 import { buildAlternates, toolSchema, faqSchema, howToSchema } from '@/lib/seo';
 
 export const metadata: Metadata = {
-  title: 'Convert HTML to PDF Free Online | iCreatePDF',
-  description: 'Compile custom HTML/CSS code templates into formatted PDF documents online free. 100% private client-side renderer — files never leave your device.',
-  keywords: 'pdfcrowd html to pdf, html to pdf, convert html to pdf, online html pdf compiler, css to pdf client side',
+  title: 'HTML to PDF Converter Online Free — Save Web Code as PDF | iCreatePDF',
+  description: 'Convert HTML code snippets and web pages into clean, printable PDF documents. 100% private in-browser rendering with zero server uploads.',
+  keywords: 'html to pdf, convert html to pdf, web page to pdf converter, html code to pdf document, save html as pdf free, render html to pdf online, html table to pdf, convert html file to pdf, html to printable pdf, browser html to pdf converter',
   alternates: buildAlternates('/tools/html-to-pdf'),
   openGraph: {
-    title: 'Convert HTML to PDF Free Online — HTML Compiler | iCreatePDF',
-    description: 'Compile custom HTML and CSS templates into formatted PDF documents locally. Completely private, client-side HTML-to-PDF utility.',
+    title: 'HTML to PDF Converter Online Free — Save Web Code as PDF | iCreatePDF',
+    description: 'Convert HTML code snippets and web pages into clean, printable PDF documents. 100% private in-browser rendering with zero server uploads.',
     type: 'website',
-  }
-};
-
-export default function HtmlToPdfPage() {
-  return (
-    <ToolPageShell
-      jsonLd={[
-        ...toolSchema({
-          name: 'HTML to PDF Converter',
-          description: 'Compile custom HTML and CSS templates into formatted PDF documents locally. Completely private, client-side HTML-to-PDF utility.',
-          url: '/tools/html-to-pdf',
-        }),
-        faqSchema([
-          {
-            question: 'How do I convert HTML code to PDF for free?',
-            answer: 'Paste your raw HTML and CSS markup into the code editor fields, customize paper margins and orientation parameters, and download the compiled PDF layout instantly.',
-          },
+    images: [{ url: 'https://www.icreatepdf.online/opengraph-image', width: 1200, height: 630, alt: 'HTML to PDF Converter — iCreatePDF' }],
+  },
           {
             question: 'Is my custom HTML code sent to a server?',
             answer: 'No. The HTML compiler uses client-side rendering engines (like canvas or iframe streams) to generate PDFs entirely inside your browser memory. Zero file uploads.',
