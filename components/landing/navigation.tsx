@@ -11,8 +11,9 @@ import { Logo } from '@/components/ui/logo';
 
 const navLinks = [
   { name: 'Tools Suite', href: '/#tools' },
-  { name: 'Privacy Benchmark', href: '/compare' },
-  { name: 'Blog', href: '/blogs' },
+  { name: 'Guides & Tutorials', href: '/blogs' },
+  { name: 'Why iCreatePDF', href: '/compare' },
+  { name: 'About Us', href: '/about' },
   { name: 'Contact', href: '/contact' },
 ];
 
