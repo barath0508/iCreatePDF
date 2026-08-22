@@ -3,6 +3,9 @@ const path = require('path');
 
 const htmlFiles = [
   { file: 'es.html', lang: 'es' },
+  { file: 'pt.html', lang: 'pt' },
+  { file: 'id.html', lang: 'id' },
+  { file: 'de.html', lang: 'de' },
   { file: 'hi.html', lang: 'hi' },
   { file: 'ta.html', lang: 'ta' }
 ];

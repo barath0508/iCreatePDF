@@ -79,6 +79,9 @@ export default function sitemap(): MetadataRoute.Sitemap {
 
   const blogRoutes = [
     '/blogs',
+    '/blogs/how-to-edit-pdf-on-mac-free',
+    '/blogs/how-to-save-pdf-as-jpg',
+    '/blogs/how-to-split-pdf-files',
     '/blogs/how-to-auto-redact-pdf-sensitive-data',
     '/blogs/how-to-manage-and-embed-pdf-attachments',
     '/blogs/how-to-compare-pdf-visual-diff',
@@ -166,6 +169,9 @@ export default function sitemap(): MetadataRoute.Sitemap {
 
   const langRoutes = [
     '/es',
+    '/pt',
+    '/id',
+    '/de',
     '/hi',
     '/ta',
   ];

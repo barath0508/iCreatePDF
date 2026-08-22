@@ -20,6 +20,33 @@ export const metadata: Metadata = {
 
 const blogPosts = [
   {
+    slug: 'how-to-edit-pdf-on-mac-free',
+    title: 'How to Edit PDF on Mac Free (No Watermark or Adobe Subscription)',
+    excerpt: 'Learn how to edit PDF files on macOS for free without Adobe Acrobat. Add text, signatures, and annotations with zero watermarks.',
+    date: 'August 22, 2026',
+    readTime: '5 min read',
+    category: 'macOS Tutorials',
+    color: 'emerald',
+  },
+  {
+    slug: 'how-to-save-pdf-as-jpg',
+    title: 'How to Save PDF as JPG (Free, Online & High Resolution)',
+    excerpt: 'Convert any PDF file into sharp JPG images in seconds. Download individual pages or the entire document as a ZIP.',
+    date: 'August 22, 2026',
+    readTime: '4 min read',
+    category: 'Image Conversion',
+    color: 'blue',
+  },
+  {
+    slug: 'how-to-split-pdf-files',
+    title: 'How to Split PDF Files Online for Free (Separate & Extract Pages)',
+    excerpt: 'Separate large PDF documents by custom page ranges, extract single chapters, or split all pages into individual files.',
+    date: 'August 22, 2026',
+    readTime: '4 min read',
+    category: 'Document Management',
+    color: 'purple',
+  },
+  {
     slug: 'how-to-convert-pdf-to-word',
     title: 'How to Convert PDF to Word (.docx) Online — Free Guide',
     excerpt: 'Extract text, headings, and paragraphs from PDF files into editable Microsoft Word (.docx) documents.',
