@@ -1,0 +1,41 @@
+{
+  "manifest_version": 3,
+  "name": "iCreatePDF - Private PDF Tools & Converter",
+  "short_name": "iCreatePDF",
+  "version": "1.0.0",
+  "description": "70+ free, private PDF utilities in your browser toolbar. Merge, compress, convert, edit, sign & OCR PDFs with zero server uploads.",
+  "homepage_url": "https://icreatepdf.online",
+  "icons": {
+    "16": "icons/icon16.png",
+    "32": "icons/icon32.png",
+    "48": "icons/icon48.png",
+    "128": "icons/icon128.png"
+  },
+  "action": {
+    "default_popup": "popup.html",
+    "default_title": "iCreatePDF Suite",
+    "default_icon": {
+      "16": "icons/icon16.png",
+      "32": "icons/icon32.png",
+      "48": "icons/icon48.png",
+      "128": "icons/icon128.png"
+    }
+  },
+  "background": {
+    "service_worker": "background.js"
+  },
+  "omnibox": {
+    "keyword": "pdf"
+  },
+  "permissions": [
+    "contextMenus",
+    "storage"
+  ],
+  "host_permissions": [
+    "https://icreatepdf.online/*",
+    "https://www.icreatepdf.online/*"
+  ],
+  "content_security_policy": {
+    "extension_pages": "script-src 'self'; object-src 'self';"
+  }
+}

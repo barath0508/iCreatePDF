@@ -7,7 +7,8 @@
     "build": "next build && node post-build.js",
     "start": "next start",
     "lint": "eslint .",
-    "submit-urls": "node scripts/submit-indexnow.js"
+    "submit-urls": "node scripts/submit-indexnow.js",
+    "package-extension": "node scripts/package-extension.js"
   },
   "dependencies": {
     "@hookform/resolvers": "^3.10.0",
