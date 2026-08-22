@@ -23,6 +23,8 @@ export function buildAlternates(canonicalPath: string): Metadata['alternates'] {
     cleanPath === '/pt' ||
     cleanPath === '/id' ||
     cleanPath === '/de' ||
+    cleanPath === '/ja' ||
+    cleanPath === '/fr' ||
     cleanPath === '';
 
   if (isHomepage) {
@@ -34,6 +36,8 @@ export function buildAlternates(canonicalPath: string): Metadata['alternates'] {
         'pt': '/pt',
         'id': '/id',
         'de': '/de',
+        'ja': '/ja',
+        'fr': '/fr',
         'hi': '/hi',
         'ta': '/ta',
         'x-default': '/',

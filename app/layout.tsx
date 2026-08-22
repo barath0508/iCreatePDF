@@ -121,6 +121,8 @@ export const metadata: Metadata = {
       'pt': '/pt',
       'id': '/id',
       'de': '/de',
+      'ja': '/ja',
+      'fr': '/fr',
       'hi': '/hi',
       'ta': '/ta',
       'x-default': '/',

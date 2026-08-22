@@ -79,6 +79,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
 
   const blogRoutes = [
     '/blogs',
+    '/blogs/how-to-compress-pdf-to-200kb-online',
     '/blogs/how-to-edit-pdf-on-mac-free',
     '/blogs/how-to-save-pdf-as-jpg',
     '/blogs/how-to-split-pdf-files',
@@ -162,6 +163,8 @@ export default function sitemap(): MetadataRoute.Sitemap {
 
   const comparisonRoutes = [
     '/compare',
+    '/compare/adobe-acrobat-alternative',
+    '/compare/sejda-alternative',
     '/compare/ilovepdf-alternative',
     '/compare/smallpdf-alternative',
     '/compare/pdf24-alternative',
@@ -173,6 +176,8 @@ export default function sitemap(): MetadataRoute.Sitemap {
     '/pt',
     '/id',
     '/de',
+    '/ja',
+    '/fr',
     '/hi',
     '/ta',
   ];

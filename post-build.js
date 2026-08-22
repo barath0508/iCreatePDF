@@ -6,6 +6,8 @@ const htmlFiles = [
   { file: 'pt.html', lang: 'pt' },
   { file: 'id.html', lang: 'id' },
   { file: 'de.html', lang: 'de' },
+  { file: 'ja.html', lang: 'ja' },
+  { file: 'fr.html', lang: 'fr' },
   { file: 'hi.html', lang: 'hi' },
   { file: 'ta.html', lang: 'ta' }
 ];

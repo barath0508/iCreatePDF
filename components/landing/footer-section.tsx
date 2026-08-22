@@ -73,6 +73,8 @@ const footerLinks = {
   Resources: [
     { name: 'Blog', href: '/blogs' },
     { name: 'Why iCreatePDF', href: '/compare' },
+    { name: 'Adobe Acrobat Alternative', href: '/compare/adobe-acrobat-alternative' },
+    { name: 'Sejda Alternative', href: '/compare/sejda-alternative' },
     { name: 'iLovePDF Alternative', href: '/compare/ilovepdf-alternative' },
     { name: 'Smallpdf Alternative', href: '/compare/smallpdf-alternative' },
     { name: 'PDF24 Alternative', href: '/compare/pdf24-alternative' },
@@ -92,6 +94,8 @@ const footerLinks = {
     { name: 'Português (Portuguese)', href: '/pt' },
     { name: 'Bahasa Indonesia', href: '/id' },
     { name: 'Deutsch (German)', href: '/de' },
+    { name: '日本語 (Japanese)', href: '/ja' },
+    { name: 'Français (French)', href: '/fr' },
     { name: 'हिन्दी (Hindi)', href: '/hi' },
     { name: 'தமிழ் (Tamil)', href: '/ta' },
   ],

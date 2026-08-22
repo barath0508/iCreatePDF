@@ -20,6 +20,15 @@ export const metadata: Metadata = {
 
 const blogPosts = [
   {
+    slug: 'how-to-compress-pdf-to-200kb-online',
+    title: 'How to Compress PDF to 200KB Online Free (For Government & Job Portals)',
+    excerpt: 'Reduce PDF file size to 200KB, 100KB, or 50KB online for free. Ideal for government exam portals, job applications, and passport submissions.',
+    date: 'August 22, 2026',
+    readTime: '4 min read',
+    category: 'Document Optimization',
+    color: 'emerald',
+  },
+  {
     slug: 'how-to-edit-pdf-on-mac-free',
     title: 'How to Edit PDF on Mac Free (No Watermark or Adobe Subscription)',
     excerpt: 'Learn how to edit PDF files on macOS for free without Adobe Acrobat. Add text, signatures, and annotations with zero watermarks.',
