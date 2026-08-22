@@ -4,6 +4,12 @@ const path = require('path');
 const seoConfig = require('./seo-master-config.json');
 const toolsDir = path.join(process.cwd(), 'app', 'tools');
 
+function escapeForSingleQuotedTsString(value) {
+  return String(value)
+    .replace(/\\/g, '\\\\')
+    .replace(/'/g, "\\'");
+}
+
 function updateToolPage(slug) {
   const filePath = path.join(toolsDir, slug, 'page.tsx');
   if (!fs.existsSync(filePath)) {
@@ -22,20 +28,20 @@ function updateToolPage(slug) {
 
   // 2. Build the new metadata block
   const newMetadata = `export const metadata: Metadata = {
-  title: '${conf.title.replace(/'/g, "\\'")}',
-  description: '${conf.description.replace(/'/g, "\\'")}',
-  keywords: '${conf.keywords.replace(/'/g, "\\'")}',
+  title: '${escapeForSingleQuotedTsString(conf.title)}',
+  description: '${escapeForSingleQuotedTsString(conf.description)}',
+  keywords: '${escapeForSingleQuotedTsString(conf.keywords)}',
   alternates: buildAlternates('/tools/${slug}'),
   openGraph: {
-    title: '${conf.title.replace(/'/g, "\\'")}',
-    description: '${conf.description.replace(/'/g, "\\'")}',
+    title: '${escapeForSingleQuotedTsString(conf.title)}',
+    description: '${escapeForSingleQuotedTsString(conf.description)}',
     type: 'website',
-    images: [{ url: 'https://www.icreatepdf.online/opengraph-image', width: 1200, height: 630, alt: '${conf.heading.replace(/'/g, "\\'")} — iCreatePDF' }],
+    images: [{ url: 'https://www.icreatepdf.online/opengraph-image', width: 1200, height: 630, alt: '${escapeForSingleQuotedTsString(conf.heading)} — iCreatePDF' }],
   },
   twitter: {
     card: 'summary_large_image',
-    title: '${conf.title.replace(/'/g, "\\'")}',
-    description: '${conf.description.replace(/'/g, "\\'")}',
+    title: '${escapeForSingleQuotedTsString(conf.title)}',
+    description: '${escapeForSingleQuotedTsString(conf.description)}',
     images: ['https://www.icreatepdf.online/opengraph-image'],
   },
 };`;
