@@ -118,6 +118,9 @@ export const metadata: Metadata = {
     languages: {
       'en': '/',
       'es': '/es',
+      'pt': '/pt',
+      'id': '/id',
+      'de': '/de',
       'hi': '/hi',
       'ta': '/ta',
       'x-default': '/',
