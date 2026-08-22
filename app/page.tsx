@@ -8,6 +8,7 @@ import { FooterSection } from '@/components/landing/footer-section';
 import { SectionEyebrow } from '@/components/landing/shared/section-eyebrow';
 import { SectionHeading } from '@/components/landing/shared/section-heading';
 import { ToolsFilter, ToolItem } from '@/components/landing/ToolsFilter';
+import { FeaturedArticlesSection } from '@/components/landing/FeaturedArticlesSection';
 import dynamic from 'next/dynamic';
 
 // Heavy below-fold sections: dynamic import for code splitting
@@ -147,6 +148,7 @@ export default function Home() {
       </section>
 
       <FeaturesSection />
+      <FeaturedArticlesSection />
       <HowItWorksSection />
       <InfrastructureSection />
       <SecuritySection />
