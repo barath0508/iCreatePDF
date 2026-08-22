@@ -78,6 +78,7 @@ const footerLinks = {
     { name: 'PDF24 Alternative', href: '/compare/pdf24-alternative' },
     { name: 'No-Upload PDF Tools', href: '/no-upload-pdf-tools' },
     { name: 'Verify Offline Proof', href: '/blogs/proof-zero-server-uploads-how-to-verify-offline-pdf-converter' },
+    { name: 'Embed Tools & Widgets', href: '/embed' },
     { name: 'LLM Agents (llms.txt)', href: '/llms.txt' },
   ],
   'Legal & Languages': [

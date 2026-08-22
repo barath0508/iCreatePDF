@@ -1,0 +1,37 @@
+{
+  "name": "icreatepdf-core",
+  "version": "1.0.0",
+  "description": "Lightweight, zero-dependency client-side PDF utility functions. Merge, split, compress, and organize PDFs entirely in-browser.",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "scripts": {
+    "build": "tsc"
+  },
+  "keywords": [
+    "pdf",
+    "client-side",
+    "pdf-merger",
+    "pdf-compressor",
+    "pdf-tools",
+    "pdf-lib",
+    "icreatepdf",
+    "zero-upload"
+  ],
+  "author": "Barath R <support@icreatepdf.online>",
+  "license": "MIT",
+  "homepage": "https://icreatepdf.online",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/barath0508/iCreatePDF.git",
+    "directory": "packages/icreatepdf-core"
+  },
+  "bugs": {
+    "url": "https://github.com/barath0508/iCreatePDF/issues"
+  },
+  "dependencies": {
+    "pdf-lib": "^1.17.9"
+  },
+  "devDependencies": {
+    "typescript": "^5.0.0"
+  }
+}
