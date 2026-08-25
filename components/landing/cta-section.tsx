@@ -37,22 +37,22 @@ export function CtaSection() {
           <div className="relative z-10 px-8 lg:px-16 py-16 lg:py-24">
             <div className="flex-1">
               <h2 className="text-5xl md:text-6xl lg:text-[64px] font-display font-medium tracking-tight mb-8 leading-[0.98] text-foreground">
-                Ready to convert
+                Ready to get your
                 <br />
-                your files?
+                documents sorted?
               </h2>
 
               <p className="text-xl text-muted-foreground mb-12 leading-relaxed max-w-xl">
-                Combine and convert your JPG, PNG, WEBP, HEIC, or BMP images into a clean PDF document completely locally.
+                Merge, compress, convert, or edit your PDFs in seconds — 100% free with no sign-ups, queues, or limits.
               </p>
 
               <CTAButtonGroup
-                primary={{ label: 'Start Converting Now', href: '#convert' }}
-                secondary={{ label: 'Privacy Details', href: '/privacy' }}
+                primary={{ label: 'Explore All Free Tools', href: '/#tools' }}
+                secondary={{ label: 'How We Protect Privacy', href: '/privacy' }}
               />
 
               <p className="text-sm text-muted-foreground mt-8 font-mono">
-                100% Free &amp; no sign-up required
+                100% Free &bull; No sign-up &bull; No watermarks
               </p>
             </div>
           </div>

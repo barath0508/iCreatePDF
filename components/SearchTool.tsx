@@ -63,7 +63,7 @@ export default function SearchTool() {
           value={query}
           onFocus={() => setIsOpen(true)}
           onChange={(e) => setQuery(e.target.value)}
-          placeholder="Search all tools (e.g. merge, compress, word to pdf, sign)..."
+          placeholder="Search any tool (e.g. merge, compress, word to pdf, sign)..."
           className="w-full pl-12 pr-20 py-3 rounded-xl border border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-800 text-gray-900 dark:text-white shadow-sm focus:ring-2 focus:ring-blue-500 focus:outline-none transition-all"
         />
         {query ? (
@@ -90,7 +90,7 @@ export default function SearchTool() {
           <div className="p-2.5 text-xs font-semibold uppercase tracking-wider text-gray-400 flex justify-between items-center">
             <span>
               {results.length > 0
-                ? `${results.length} Tool${results.length === 1 ? '' : 's'} Available`
+                ? `${results.length} tool${results.length === 1 ? '' : 's'} found`
                 : 'No matching tools'}
             </span>
           </div>
@@ -127,9 +127,9 @@ export default function SearchTool() {
             ))
           ) : (
             <div className="p-6 text-center text-sm text-gray-500">
-              No tool found for &quot;<span className="font-semibold">{query}</span>&quot;.
+              We couldn&apos;t find any tool matching &quot;<span className="font-semibold">{query}</span>&quot;.
               <div className="mt-2 text-xs text-gray-400">
-                Try searching for <em>merge</em>, <em>compress</em>, <em>convert</em>, or <em>sign</em>.
+                Try searching for common tasks like <em>merge</em>, <em>compress</em>, <em>convert</em>, or <em>sign</em>.
               </div>
             </div>
           )}

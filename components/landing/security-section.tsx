@@ -8,23 +8,23 @@ import { Reveal } from './shared/reveal';
 const securityFeatures = [
   {
     icon: Shield,
-    title: 'No Cloud Sync',
-    description: 'Zero bytes of your files are sent to remote servers or third-party storage.',
+    title: 'Zero Server Uploads',
+    description: 'Not a single byte of your documents is ever sent to remote servers or cloud storage.',
   },
   {
     icon: Lock,
-    title: 'Local Sandbox',
-    description: 'Conversions execute strictly within isolated browser memory space.',
+    title: 'Runs Inside Your Browser',
+    description: 'All document editing and conversions happen strictly on your own device.',
   },
   {
     icon: Eye,
-    title: 'Memory Purge',
-    description: 'Object URLs are immediately revoked from RAM after compilation.',
+    title: 'Automatic Memory Cleanup',
+    description: 'Your files are instantly erased from browser memory as soon as you finish.',
   },
   {
     icon: FileCheck,
-    title: 'Zero Logins Needed',
-    description: 'No email forms, logins, or tracking credentials required to convert.',
+    title: 'No Accounts or Spam',
+    description: 'No email forms, signups, or tracking credentials required to use any tool.',
   },
 ];
 
@@ -38,19 +38,19 @@ export function SecuritySection() {
       <div className="max-w-[1400px] mx-auto px-6 lg:px-12">
         {/* Header */}
         <div className="mb-16 lg:mb-20">
-          <SectionEyebrow className="mb-8">Security &amp; Compliance</SectionEyebrow>
+          <SectionEyebrow className="mb-8">Privacy &amp; Peace of Mind</SectionEyebrow>
 
           <Reveal>
             <h2 className="text-5xl md:text-6xl lg:text-[80px] font-display font-medium tracking-tight leading-[0.95] mb-12">
-              Private by design,
+              Your documents stay yours.
               <br />
-              <span className="text-muted-foreground">not compromised.</span>
+              <span className="text-muted-foreground">Always.</span>
             </h2>
           </Reveal>
 
           <Reveal delay={100}>
             <p className="text-xl text-muted-foreground leading-relaxed max-w-2xl">
-              iCreatePDF offers total protection for confidential document conversions. All file manipulation occurs on your CPU, never in the cloud.
+              Whether you are working with contracts, medical forms, or financial statements, iCreatePDF protects your privacy by processing everything right on your own machine.
             </p>
           </Reveal>
         </div>

@@ -136,9 +136,9 @@ export default function Home() {
       <section id="tools" aria-label="PDF Tools Suite" className="py-20 lg:py-28 bg-background relative z-10 border-t border-border/60">
         <div className="max-w-7xl mx-auto px-6 lg:px-8">
           <div className="text-center mb-12 space-y-4">
-            <SectionEyebrow className="justify-center">STUDIO TOOLKIT SUITE</SectionEyebrow>
+            <SectionEyebrow className="justify-center">ALL-IN-ONE TOOLBOX</SectionEyebrow>
             <SectionHeading className="text-center">
-              High-performance PDF micro-tools.
+              Every tool you need to work with PDFs.
             </SectionHeading>
           </div>
 

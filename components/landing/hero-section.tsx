@@ -109,20 +109,20 @@ export function HeroSection() {
       </div>
 
       <div className="relative z-10 w-full max-w-7xl mx-auto px-6 lg:px-8 grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-12 items-center">
-        {/* Left Column: Reference Image Styled Headline (7 of 12 cols) */}
+        {/* Left Column: Headline and Search */}
         <div className="lg:col-span-7 w-full min-w-0 space-y-6 text-left">
           <div className="inline-flex items-center gap-2.5 rounded-full border border-border bg-card px-4 py-1.5 text-xs sm:text-sm font-mono font-bold text-foreground uppercase tracking-wider whitespace-nowrap shadow-2xs">
-            <ShieldCheck className="h-4 w-4 text-foreground stroke-[2] shrink-0" />
-            <span>100% PRIVATE CLIENT-SIDE ENGINE</span>
+            <ShieldCheck className="h-4 w-4 text-emerald-500 stroke-[2] shrink-0" />
+            <span>100% Private — Files stay on your device</span>
           </div>
 
           <div className="space-y-3">
             <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-normal tracking-tight font-display leading-[1.1] text-foreground">
               <span className="block font-medium">Everything you need.</span>
-              <span className="block text-muted-foreground/75 font-normal">Nothing you don't.</span>
+              <span className="block text-muted-foreground/75 font-normal">Without the hassle.</span>
             </h1>
             <p className="text-base sm:text-lg lg:text-xl text-muted-foreground font-normal leading-relaxed max-w-xl pt-1">
-              Enterprise-grade PDF tools built with WebAssembly. All files stay securely in your browser memory — 100% private, instant, and unlimited.
+              Fast, friendly, and completely private PDF tools. Everything happens right here in your browser — no uploads, no sign-ups, and no limits.
             </p>
           </div>
 
@@ -134,7 +134,7 @@ export function HeroSection() {
           {/* Quick Metrics */}
           <div className="pt-5 grid grid-cols-3 gap-4 border-t border-border/60 max-w-xl">
             <div>
-              <p className="text-xs font-mono font-semibold text-muted-foreground uppercase">PROCESSED</p>
+              <p className="text-xs font-mono font-semibold text-muted-foreground uppercase">DOCUMENTS PROCESSED</p>
               <p className="text-base sm:text-lg lg:text-xl font-bold text-foreground font-mono">{processedCount.toLocaleString('en-US')}</p>
             </div>
             <div>
@@ -142,7 +142,7 @@ export function HeroSection() {
               <p className="text-base sm:text-lg lg:text-xl font-bold text-foreground font-mono">0.0 MB</p>
             </div>
             <div>
-              <p className="text-xs font-mono font-semibold text-muted-foreground uppercase">LATENCY</p>
+              <p className="text-xs font-mono font-semibold text-muted-foreground uppercase">PROCESSING SPEED</p>
               <p className="text-base sm:text-lg lg:text-xl font-bold text-foreground font-mono">&lt; 10ms</p>
             </div>
           </div>
@@ -152,9 +152,9 @@ export function HeroSection() {
         <div className="lg:col-span-5 w-full min-w-0 relative">
           <Dropzone
             onFilesSelected={handleFiles}
-            title="Drop files or click to launch Studio"
-            description="Supports PDF, DOCX, TXT, HEIC, PNG, JPG. Processed locally."
-            badgeText="INSTANT WEBASSEMBLY ENGINE"
+            title="Drop your files here or click to browse"
+            description="Supports PDF, Word, Excel, images, and text. Processed safely in your browser."
+            badgeText="PRIVATE IN-BROWSER PROCESSING"
             files={droppedFiles}
             onRemoveFile={(idx) => setDroppedFiles((prev) => prev.filter((_, i) => i !== idx))}
           />
@@ -171,7 +171,7 @@ export function HeroSection() {
                 <div className="space-y-4">
                   <div className="flex items-center justify-between border-b border-border pb-3">
                     <span className="text-sm font-mono text-foreground font-bold uppercase flex items-center gap-2">
-                      <FileCheck className="h-4 w-4 text-foreground stroke-[2]" /> PDF Detected
+                      <FileCheck className="h-4 w-4 text-emerald-500 stroke-[2]" /> PDF Selected
                     </span>
                     <button
                       onClick={() => setIsPdfModalOpen(false)}
@@ -181,18 +181,18 @@ export function HeroSection() {
                     </button>
                   </div>
 
-                  <p className="text-base font-bold text-foreground">Select PDF Operation:</p>
+                  <p className="text-base font-bold text-foreground">What would you like to do with your PDF?</p>
 
                   <div className="grid grid-cols-2 gap-2.5">
                     {[
-                      { label: 'Merge & Combine', path: '/tools/merge-pdf' },
+                      { label: 'Merge Multiple PDFs', path: '/tools/merge-pdf' },
                       { label: 'Compress & Shrink', path: '/tools/compress-pdf' },
-                      { label: 'Sign Document', path: '/tools/sign-pdf' },
-                      { label: 'Organize Pages', path: '/tools/organize-pdf' },
-                      { label: 'Convert to JPG', path: '/tools/pdf-to-jpg' },
-                      { label: 'Encrypt & Protect', path: '/tools/protect-pdf' },
-                      { label: 'Unlock & Decrypt', path: '/tools/unlock-pdf' },
-                      { label: 'PDF OCR Text', path: '/tools/pdf-ocr' },
+                      { label: 'Sign or Draw Signature', path: '/tools/sign-pdf' },
+                      { label: 'Reorder or Delete Pages', path: '/tools/organize-pdf' },
+                      { label: 'Convert to JPG Images', path: '/tools/pdf-to-jpg' },
+                      { label: 'Lock with Password', path: '/tools/protect-pdf' },
+                      { label: 'Unlock / Remove Password', path: '/tools/unlock-pdf' },
+                      { label: 'Extract Text (OCR)', path: '/tools/pdf-ocr' },
                     ].map((opt) => (
                       <button
                         key={opt.label}

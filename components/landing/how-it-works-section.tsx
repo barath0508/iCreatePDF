@@ -7,21 +7,21 @@ import { useAutoRotate } from './shared/use-auto-rotate';
 const steps = [
   {
     number: '01',
-    title: 'Select Tool',
-    subtitle: 'choose utility',
-    description: 'Pick from over 35+ document tools on the dashboard, including converters, page organizers, and file size optimizers.',
+    title: 'Choose Your Tool',
+    subtitle: 'pick what you need',
+    description: 'Select any tool from our collection — whether you want to merge reports, shrink a heavy PDF, or convert photos.',
   },
   {
     number: '02',
-    title: 'Import Files',
+    title: 'Add Your Files',
     subtitle: 'drag & drop',
-    description: 'Select or drag your PDFs, images, or documents into the tool panel. Your files are loaded into browser memory sandbox locally.',
+    description: 'Drop your files or choose them from your device. Everything stays safely in your browser and never touches the cloud.',
   },
   {
     number: '03',
-    title: 'Process & Save',
-    subtitle: 'instant download',
-    description: 'Adjust your settings and click the action button. The modification compiles instantly on your hardware. Download immediately.',
+    title: 'Download & Done',
+    subtitle: 'ready in seconds',
+    description: 'Make any quick tweaks and save your new file. Your completed document is ready to download instantly with no watermarks.',
   },
 ];
 

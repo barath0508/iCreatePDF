@@ -6,28 +6,28 @@ import { Reveal } from './shared/reveal';
 
 const faqs = [
   {
-    question: "Is iCreatePDF completely free?",
-    answer: "Yes, iCreatePDF is 100% free with no page limits, file size restrictions, or registration requirements. All conversion and document editing features are fully unlocked for everyone."
+    question: "Is iCreatePDF really 100% free?",
+    answer: "Yes, truly! There are no hidden paywalls, daily limits, file size caps, or signup requirements. Every single tool is completely free for everyone to use."
   },
   {
-    question: "Are my documents secure on iCreatePDF?",
-    answer: "Absolutely. iCreatePDF works entirely client-side. Your files are processed locally in your browser sandbox using WebAssembly and Javascript. They are never uploaded to any external server, ensuring absolute privacy."
+    question: "Are my documents kept private and secure?",
+    answer: "Absolutely. Unlike other online PDF converters that send your files to remote cloud servers, iCreatePDF runs entirely in your web browser. Your files never leave your computer or phone, ensuring 100% confidentiality."
   },
   {
-    question: "Can I use iCreatePDF offline?",
-    answer: "Yes. Since all processing runs locally within your browser sandbox, once the page is loaded, the tools do not need an active internet connection to modify, merge, compress, or convert your PDF files."
+    question: "Can I use the tools when I'm offline?",
+    answer: "Yes. Because all the processing happens on your own device, once the webpage is loaded, you can merge, compress, convert, and sign documents even without an active internet connection."
   },
   {
-    question: "Do you upload my files to any remote server?",
-    answer: "No, never. Unlike conventional PDF tools that upload your sensitive documents to cloud servers, iCreatePDF compiles everything directly on your CPU. Your data never leaves your local device."
+    question: "Do you store or see my files?",
+    answer: "No, never. We have zero servers holding your files. Once you download your modified PDF or close the tab, the data is immediately cleared from your browser's memory."
   },
   {
-    question: "What file formats are supported by iCreatePDF?",
-    answer: "We support converting JPG, PNG, WEBP, HEIC, BMP, Word (.docx), TXT, HTML, and Markdown to PDF. You can also merge, split, rotate, compress, protect, unlock, sign, grayscale, flatten, and edit existing PDFs."
+    question: "What types of files can I work with?",
+    answer: "You can convert images (JPG, PNG, WEBP, HEIC), Word docs (.docx), Excel spreadsheets (.xlsx), plain text (.txt), and Markdown into PDFs. You can also merge, split, compress, protect, e-sign, redact, and edit existing PDF documents."
   },
   {
-    question: "How does local browser-based PDF processing work?",
-    answer: "We leverage cutting-edge browser technologies like WebAssembly (Wasm) compiles of C/C++ library engines, Javascript binary arrays, and HTML5 canvas APIs to perform heavy-duty document computations directly in your browser memory space."
+    question: "How does in-browser PDF processing work?",
+    answer: "Modern browsers are powerful enough to do the heavy lifting themselves. By using fast browser technology (WebAssembly), your own computer handles the conversion and editing directly. It is much faster and guarantees your files remain completely in your hands."
   }
 ];
 

@@ -10,10 +10,10 @@ import { ThemeToggle } from '@/components/ui/theme-toggle';
 import { Logo } from '@/components/ui/logo';
 
 const navLinks = [
-  { name: 'Tools Suite', href: '/#tools' },
-  { name: 'Guides & Tutorials', href: '/blogs' },
-  { name: 'Why iCreatePDF', href: '/compare' },
-  { name: 'About Us', href: '/about' },
+  { name: 'All Tools', href: '/#tools' },
+  { name: 'Guides', href: '/blogs' },
+  { name: 'Why Us', href: '/compare' },
+  { name: 'About', href: '/about' },
   { name: 'Contact', href: '/contact' },
 ];
 
@@ -81,7 +81,7 @@ export function Navigation() {
                 size="lg"
                 className="rounded-2xl border border-border bg-foreground text-background hover:bg-foreground/90 font-bold text-sm px-6 h-10 shadow-sm"
               >
-                Launch Studio
+                Explore Tools
               </Button>
             </Link>
           </div>

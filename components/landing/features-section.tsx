@@ -8,27 +8,27 @@ import { Reveal } from './shared/reveal';
 const features = [
   {
     number: '01',
-    title: 'Instant Processing',
-    description: 'Execute document transformations in seconds. Our WebAssembly engine converts, merges, and edits PDFs locally inside your browser memory anywhere in the world.',
-    stats: { value: '< 10ms', label: 'Local Latency' },
+    title: 'Lightning-Fast Results',
+    description: 'No waiting in long upload queues. Your computer processes documents directly in your browser, finishing tasks in the blink of an eye.',
+    stats: { value: '< 10ms', label: 'Processing Speed' },
   },
   {
     number: '02',
-    title: 'Zero Server Uploads',
-    description: 'Keep your documents strictly confidential. No bytes leave your device—all processing occurs entirely within your local browser sandbox.',
-    stats: { value: '0.0 MB', label: 'Cloud Uploads' },
+    title: 'Complete Privacy, Guaranteed',
+    description: 'Your confidential contracts, invoices, and personal files stay on your machine. We never see, store, or transmit your data.',
+    stats: { value: '0.0 MB', label: 'Sent to Cloud' },
   },
   {
     number: '03',
-    title: 'Complete Toolset Engine',
-    description: 'Access 49+ browser-native micro-tools for converting, compressing, organizing, protecting, and annotating PDFs without paywalls.',
-    stats: { value: '49+', label: 'Local Utilities' },
+    title: 'Everything in One Place',
+    description: 'Access over 49 free tools to convert, compress, organize, sign, and protect your PDFs whenever you need them — zero paywalls.',
+    stats: { value: '49+', label: 'Free Tools' },
   },
   {
     number: '04',
-    title: 'Universal Air-Gapped Operation',
-    description: 'Full offline compatibility. Convert JPG, PNG, DOCX, TXT, HEIC, and Markdown to PDF without requiring an active internet connection.',
-    stats: { value: '100%', label: 'Offline Capable' },
+    title: 'Works Even Offline',
+    description: 'Spotty Wi-Fi or traveling? Once the page is loaded, our tools work seamlessly without an active internet connection.',
+    stats: { value: '100%', label: 'Offline Ready' },
   },
 ];
 
@@ -130,18 +130,18 @@ export function FeaturesSection() {
         <div className="relative mb-20 lg:mb-24">
           <div className="grid lg:grid-cols-12 gap-8 items-start">
             <div className="lg:col-span-8 space-y-4">
-              <SectionEyebrow>ARCHITECTURE & CAPABILITIES</SectionEyebrow>
+              <SectionEyebrow>WHY CHOOSE ICREATEPDF</SectionEyebrow>
               <Reveal>
                 <SectionHeading>
-                  <span className="block font-medium">Everything you need.</span>
-                  <span className="block text-muted-foreground/75 font-normal">Nothing you don't.</span>
+                  <span className="block font-medium">Built for privacy.</span>
+                  <span className="block text-muted-foreground/75 font-normal">Designed for speed.</span>
                 </SectionHeading>
               </Reveal>
             </div>
             <div className="lg:col-span-4 lg:pt-14">
               <Reveal delay={150}>
                 <p className="text-base sm:text-xl text-muted-foreground leading-relaxed font-normal">
-                  Traditional web PDF converters upload sensitive documents to remote servers. iCreatePDF compiles document processing into your local browser sandbox.
+                  Most online converters upload your private files to remote servers. iCreatePDF works entirely inside your browser — keeping your data 100% yours.
                 </p>
               </Reveal>
             </div>
