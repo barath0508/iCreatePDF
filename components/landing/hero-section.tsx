@@ -6,6 +6,7 @@ import { setPreloadedFiles } from '@/lib/preloader';
 import { ShieldCheck, FileCheck } from 'lucide-react';
 import { Dropzone } from '@/components/ui/dropzone';
 import { motion, AnimatePresence } from 'framer-motion';
+import SearchTool from '@/components/SearchTool';
 
 const words = ['Convert', 'Combine', 'Compress', 'Organize', 'Protect'];
 
@@ -123,6 +124,11 @@ export function HeroSection() {
             <p className="text-base sm:text-lg lg:text-xl text-muted-foreground font-normal leading-relaxed max-w-xl pt-1">
               Enterprise-grade PDF tools built with WebAssembly. All files stay securely in your browser memory — 100% private, instant, and unlimited.
             </p>
+          </div>
+
+          {/* Instant Search Bar */}
+          <div className="pt-2 max-w-xl">
+            <SearchTool />
           </div>
 
           {/* Quick Metrics */}

@@ -92,6 +92,18 @@ const nextConfig = {
         destination: `/tools/${tool}`,
       })),
       {
+        source: '/remove-pages',
+        destination: '/tools/delete-pdf-pages',
+      },
+      {
+        source: '/page-numbers',
+        destination: '/tools/add-page-numbers',
+      },
+      {
+        source: '/ocr-pdf',
+        destination: '/tools/pdf-ocr',
+      },
+      {
         source: '/no-upload-pdf-tools',
         destination: '/tools/no-upload-pdf-tools',
       },
