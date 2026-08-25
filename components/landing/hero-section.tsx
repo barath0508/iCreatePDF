@@ -132,18 +132,18 @@ export function HeroSection() {
           </div>
 
           {/* Quick Metrics */}
-          <div className="pt-5 grid grid-cols-3 gap-4 border-t border-border/60 max-w-xl">
-            <div>
-              <p className="text-xs font-mono font-semibold text-muted-foreground uppercase">DOCUMENTS PROCESSED</p>
-              <p className="text-base sm:text-lg lg:text-xl font-bold text-foreground font-mono">{processedCount.toLocaleString('en-US')}</p>
+          <div className="pt-5 grid grid-cols-3 gap-2 sm:gap-4 border-t border-border/60 max-w-xl">
+            <div className="min-w-0">
+              <p className="text-[10px] sm:text-xs font-mono font-semibold text-muted-foreground uppercase truncate">PROCESSED</p>
+              <p className="text-sm sm:text-lg lg:text-xl font-bold text-foreground font-mono truncate">{processedCount.toLocaleString('en-US')}</p>
             </div>
-            <div>
-              <p className="text-xs font-mono font-semibold text-muted-foreground uppercase">SERVER UPLOADS</p>
-              <p className="text-base sm:text-lg lg:text-xl font-bold text-foreground font-mono">0.0 MB</p>
+            <div className="min-w-0">
+              <p className="text-[10px] sm:text-xs font-mono font-semibold text-muted-foreground uppercase truncate">UPLOADS</p>
+              <p className="text-sm sm:text-lg lg:text-xl font-bold text-foreground font-mono truncate">0.0 MB</p>
             </div>
-            <div>
-              <p className="text-xs font-mono font-semibold text-muted-foreground uppercase">PROCESSING SPEED</p>
-              <p className="text-base sm:text-lg lg:text-xl font-bold text-foreground font-mono">&lt; 10ms</p>
+            <div className="min-w-0">
+              <p className="text-[10px] sm:text-xs font-mono font-semibold text-muted-foreground uppercase truncate">SPEED</p>
+              <p className="text-sm sm:text-lg lg:text-xl font-bold text-foreground font-mono truncate">&lt; 10ms</p>
             </div>
           </div>
         </div>
@@ -166,24 +166,24 @@ export function HeroSection() {
                 initial={{ opacity: 0, scale: 0.96 }}
                 animate={{ opacity: 1, scale: 1 }}
                 exit={{ opacity: 0, scale: 0.96 }}
-                className="absolute inset-0 z-20 bg-card/98 backdrop-blur-xl rounded-2xl p-6 border border-border shadow-2xl flex flex-col justify-between"
+                className="absolute inset-0 z-20 bg-card/98 backdrop-blur-xl rounded-2xl p-4 sm:p-6 border border-border shadow-2xl flex flex-col justify-between overflow-y-auto"
               >
-                <div className="space-y-4">
-                  <div className="flex items-center justify-between border-b border-border pb-3">
-                    <span className="text-sm font-mono text-foreground font-bold uppercase flex items-center gap-2">
-                      <FileCheck className="h-4 w-4 text-emerald-500 stroke-[2]" /> PDF Selected
+                <div className="space-y-3 sm:space-y-4">
+                  <div className="flex items-center justify-between border-b border-border pb-2 sm:pb-3">
+                    <span className="text-xs sm:text-sm font-mono text-foreground font-bold uppercase flex items-center gap-1.5 sm:gap-2">
+                      <FileCheck className="h-3.5 sm:h-4 w-3.5 sm:w-4 text-emerald-500 stroke-[2]" /> PDF Selected
                     </span>
                     <button
                       onClick={() => setIsPdfModalOpen(false)}
-                      className="text-xs font-mono text-muted-foreground hover:text-foreground font-bold"
+                      className="text-xs font-mono text-muted-foreground hover:text-foreground font-bold p-1"
                     >
                       Close [Esc]
                     </button>
                   </div>
 
-                  <p className="text-base font-bold text-foreground">What would you like to do with your PDF?</p>
+                  <p className="text-xs sm:text-base font-bold text-foreground">What would you like to do with your PDF?</p>
 
-                  <div className="grid grid-cols-2 gap-2.5">
+                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-2 sm:gap-2.5">
                     {[
                       { label: 'Merge Multiple PDFs', path: '/tools/merge-pdf' },
                       { label: 'Compress & Shrink', path: '/tools/compress-pdf' },
@@ -197,7 +197,7 @@ export function HeroSection() {
                       <button
                         key={opt.label}
                         onClick={() => handlePdfAction(opt.path)}
-                        className="px-3.5 py-2.5 text-left text-sm bg-background border border-border hover:border-foreground/50 rounded-xl transition-all font-semibold text-foreground hover:bg-accent"
+                        className="px-3 sm:px-3.5 py-2 sm:py-2.5 text-left text-xs sm:text-sm bg-background border border-border hover:border-foreground/50 rounded-xl transition-all font-semibold text-foreground hover:bg-accent min-h-[42px] flex items-center"
                       >
                         {opt.label}
                       </button>
@@ -205,8 +205,8 @@ export function HeroSection() {
                   </div>
                 </div>
 
-                <div className="border-t border-border pt-3 flex justify-between text-xs font-mono text-muted-foreground font-medium">
-                  <span className="truncate max-w-[200px]">{droppedFiles[0]?.name}</span>
+                <div className="border-t border-border pt-2 sm:pt-3 mt-3 flex justify-between text-[11px] sm:text-xs font-mono text-muted-foreground font-medium">
+                  <span className="truncate max-w-[150px] sm:max-w-[200px]">{droppedFiles[0]?.name}</span>
                   <span>{((droppedFiles[0]?.size || 0) / 1024 / 1024).toFixed(2)} MB</span>
                 </div>
               </motion.div>

@@ -93,7 +93,7 @@ export function ToolsFilter({ tools }: ToolsFilterProps) {
       {/* Filtering and Search Controls */}
       <div className="flex flex-col lg:flex-row items-stretch lg:items-center justify-between gap-4 mb-12 bg-card/80 border border-border rounded-2xl p-4 max-w-7xl mx-auto backdrop-blur-md shadow-sm">
         {/* Category Tabs */}
-        <div className="flex flex-wrap items-center gap-2">
+        <div className="flex items-center gap-2 overflow-x-auto pb-1 lg:pb-0 scrollbar-none flex-nowrap sm:flex-wrap">
           {TABS.map((tab) => {
             const isActive = activeCategory === tab.id;
             const isFavTab = tab.id === 'favorites';
@@ -101,7 +101,7 @@ export function ToolsFilter({ tools }: ToolsFilterProps) {
               <button
                 key={tab.id}
                 onClick={() => setActiveCategory(tab.id)}
-                className={`inline-flex items-center gap-1.5 px-4 py-2 rounded-xl text-xs sm:text-sm font-semibold tracking-wide transition-all ${
+                className={`inline-flex items-center gap-1.5 px-3.5 sm:px-4 py-2 rounded-xl text-xs sm:text-sm font-semibold tracking-wide whitespace-nowrap shrink-0 transition-all ${
                   isActive
                     ? 'bg-foreground text-background shadow-xs font-bold'
                     : 'bg-background border border-border text-muted-foreground hover:text-foreground hover:border-foreground/30'
@@ -185,10 +185,10 @@ export function ToolsFilter({ tools }: ToolsFilterProps) {
                         <button
                           onClick={(e) => handleToggleFavorite(e, tool.href)}
                           title={isFav ? 'Remove from favorites' : 'Pin to favorites'}
-                          className={`p-1.5 rounded-lg transition-all ${
+                          className={`p-2 sm:p-1.5 rounded-lg transition-all min-h-[36px] min-w-[36px] flex items-center justify-center ${
                             isFav
                               ? 'text-foreground opacity-100'
-                              : 'text-muted-foreground/30 opacity-0 group-hover:opacity-100 hover:text-muted-foreground'
+                              : 'text-muted-foreground/50 opacity-100 sm:opacity-0 sm:group-hover:opacity-100 hover:text-muted-foreground'
                           }`}
                           aria-label={isFav ? 'Remove from favorites' : 'Add to favorites'}
                         >
