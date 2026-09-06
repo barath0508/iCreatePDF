@@ -309,7 +309,7 @@ export function itemListSchema(items: { name: string; url: string; description?:
     '@context': 'https://schema.org',
     '@type': 'ItemList',
     name: 'iCreatePDF Online PDF Tools',
-    description: '46+ free browser-based PDF tools — merge, compress, convert, edit, sign, OCR, and protect PDFs without server uploads.',
+    description: '70+ free browser-based PDF tools — merge, compress, convert, edit, sign, OCR, and protect PDFs without server uploads.',
     numberOfItems: items.length,
     itemListElement: items.map((item, index) => {
       const cleanItemUrl = item.url.startsWith('/tools/')
@@ -325,4 +325,3 @@ export function itemListSchema(items: { name: string; url: string; description?:
     }),
   };
 }
-

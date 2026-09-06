@@ -38,7 +38,7 @@ const faqs = [
     a: 'Because your file never leaves your device, there is no upload step where it could be intercepted, logged, or exposed by a server-side breach — which is exactly the exposure point most online PDF tools carry.',
   },
   {
-    q: 'Do all 46+ tools work the same way, or just some?',
+    q: 'Do all 70+ tools work the same way, or just some?',
     a: 'All of them. Every tool listed on this page — from basic merging and splitting to OCR and digital signatures — uses the same 100% local, no-upload architecture.',
   },
 ];
@@ -157,7 +157,7 @@ export default function NoUploadPdfToolsPage() {
               Privacy First
             </span>
             <h1 className="text-4xl sm:text-5xl font-extrabold tracking-tight text-foreground font-display">
-              46+ PDF Tools That Never Upload Your Files
+              70+ PDF Tools That Never Upload Your Files
             </h1>
             <p className="text-foreground/40 text-sm sm:text-base leading-relaxed">
               Every tool below runs 100% locally in your browser tab. No file is ever transmitted to iCreatePDF or any third party — no account, no server, no exceptions.

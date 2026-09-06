@@ -14,7 +14,7 @@ import { ClarityAnalytics } from '@/components/clarity-analytics';
 export const metadata: Metadata = {
   metadataBase: new URL('https://www.icreatepdf.online'),
   title: 'iCreatePDF — 70+ Free Online PDF Tools (100% Private)',
-  description: 'Free browser-based PDF tools — merge, split, compress, convert, edit, sign, protect & OCR PDFs. 70+ tools. Files never leave your device. No uploads, no sign-up, no limits.',
+  description: 'Use 70+ free online PDF tools to merge, split, compress, convert, edit, sign, protect, and OCR documents. Private browser processing with no uploads or sign-up.',
   keywords: [
     // Core high-volume queries
     'free online PDF tools',
@@ -22,6 +22,12 @@ export const metadata: Metadata = {
     'browser based PDF editor',
     'private PDF editor online',
     'offline PDF tools',
+    'free PDF editor no signup',
+    'PDF converter no upload',
+    'secure PDF tools online',
+    'private PDF converter',
+    'PDF tools for students',
+    'online PDF editor free',
     // Merge
     'merge PDF online free',
     'combine PDF files',
@@ -319,7 +325,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
                   "name": "iCreatePDF",
                   "url": "https://www.icreatepdf.online",
                   "publisher": { "@id": "https://www.icreatepdf.online/#organization" },
-                  "description": "46+ free browser-based PDF tools for merging, converting, compressing, editing, signing, OCR, and protecting PDF documents without server uploads.",
+                  "description": "70+ free browser-based PDF tools for merging, converting, compressing, editing, signing, OCR, and protecting PDF documents without server uploads.",
                   "potentialAction": {
                     "@type": "SearchAction",
                     "target": {
@@ -340,7 +346,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
                   "operatingSystem": "Web Browser",
                   "browserRequirements": "Requires JavaScript and WebAssembly support",
                   "isAccessibleForFree": true,
-                  "description": "46+ free, browser-based PDF tools for merging, converting, compressing, editing, signing, OCR, and protecting documents. Files are processed 100% locally — never uploaded to a server.",
+                  "description": "70+ free, browser-based PDF tools for merging, converting, compressing, editing, signing, OCR, and protecting documents. Files are processed 100% locally — never uploaded to a server.",
                   "featureList": [
                     "Merge PDF files online without uploading",
                     "Split PDF pages into separate files",
@@ -390,7 +396,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
                       "name": "Is iCreatePDF completely free to use?",
                       "acceptedAnswer": {
                         "@type": "Answer",
-                        "text": "Yes. All 46+ PDF tools on iCreatePDF are 100% free with no page limits, file size restrictions, subscription fees, or account registration required."
+                        "text": "Yes. All 70+ PDF tools on iCreatePDF are 100% free with no page limits, file size restrictions, subscription fees, or account registration required."
                       }
                     },
                     {
@@ -414,7 +420,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
                       "name": "What PDF tools does iCreatePDF offer?",
                       "acceptedAnswer": {
                         "@type": "Answer",
-                        "text": "iCreatePDF offers 46+ tools including: merge PDF, split PDF, compress PDF, convert JPG to PDF, Word to PDF, PDF to JPG, edit PDF, sign PDF, protect PDF, OCR PDF, watermark PDF, and many more — all free with no uploads."
+                        "text": "iCreatePDF offers 70+ tools including merge PDF, split PDF, compress PDF, convert JPG to PDF, Word to PDF, PDF to JPG, edit PDF, sign PDF, protect PDF, OCR PDF, watermark PDF, and many more — all free with no uploads."
                       }
                     },
                     {

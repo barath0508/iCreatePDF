@@ -148,7 +148,7 @@ export default function IlovepdfAlternativePage() {
           <div className="p-8 rounded-2xl bg-gradient-to-r from-purple-950/20 to-pink-950/20 border border-brand/20 text-center space-y-4 max-w-2xl mx-auto">
             <h3 className="text-xl sm:text-2xl font-bold font-display text-foreground">Try iCreatePDF Instead</h3>
             <p className="text-xs sm:text-sm text-foreground/60 max-w-md mx-auto">
-              46+ free PDF tools, no file cap, no uploads, no account required.
+              70+ free PDF tools, no file cap, no uploads, no account required.
             </p>
             <div className="pt-2">
               <Link href="/#convert">
