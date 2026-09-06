@@ -282,7 +282,7 @@ export default function ComparePage() {
           <div className="p-8 rounded-2xl bg-gradient-to-r from-purple-950/20 to-pink-950/20 border border-brand/20 text-center space-y-4 max-w-4xl mx-auto">
             <h3 className="text-xl sm:text-2xl font-bold font-display text-foreground">Experience Private Client-Side Tools</h3>
             <p className="text-xs sm:text-sm text-foreground/60 max-w-md mx-auto">
-              Ready to work with your documents securely? Access all 46+ of our in-browser PDF utilities instantly.
+              Ready to work with your documents securely? Access all 70+ of our in-browser PDF utilities instantly.
             </p>
             <div className="pt-2">
               <Link href="/#convert">

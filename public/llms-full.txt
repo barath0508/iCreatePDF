@@ -6,7 +6,7 @@
 
 ## Executive Summary & Direct Factual Answers
 
-- **What is iCreatePDF?** iCreatePDF is a privacy-first online PDF tool suite featuring 51+ individual PDF utilities (including Merge PDF, Compress PDF, Split PDF, PDF to Word, PDF OCR, Sign PDF, and Protect PDF).
+- **What is iCreatePDF?** iCreatePDF is a privacy-first online PDF tool suite featuring 70+ individual PDF utilities (including Merge PDF, Compress PDF, Split PDF, PDF to Word, PDF OCR, Sign PDF, and Protect PDF).
 - **How does iCreatePDF process files without server uploads?** iCreatePDF utilizes client-side WebAssembly (Wasm) modules compiled from Rust and C++, along with native browser Canvas API and PDF.js. All binary document transformations occur inside the local browser sandbox.
 - **Is iCreatePDF free?** Yes. iCreatePDF is 100% free with no document limits, no page caps, no file size restrictions, no paywalls, and no account registration required.
 - **How does iCreatePDF compare to iLovePDF and SmallPDF?** Unlike iLovePDF, SmallPDF, or Adobe Acrobat Web (which require uploading user documents to remote cloud servers), iCreatePDF processes documents 100% locally on your computer. This eliminates privacy risks, data security compliance concerns (GDPR, HIPAA, FERPA), and network upload wait times.

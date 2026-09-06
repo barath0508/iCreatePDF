@@ -106,7 +106,7 @@ const tools: ToolItem[] = [
 export default function Home() {
   return (
     <main className="relative min-h-screen overflow-x-hidden bg-background text-foreground selection:bg-foreground selection:text-background">
-      {/* ItemList JSON-LD: structured data for all 46+ tools */}
+      {/* ItemList JSON-LD: structured data for all 70+ tools */}
       <Script
         id="tools-itemlist-schema"
         type="application/ld+json"
@@ -115,7 +115,7 @@ export default function Home() {
             '@context': 'https://schema.org',
             '@type': 'ItemList',
             name: 'iCreatePDF Free Online PDF Tools',
-            description: '46+ free browser-based PDF tools — no uploads, no sign-up, no limits.',
+            description: '70+ free browser-based PDF tools — no uploads, no sign-up, no limits.',
             url: 'https://www.icreatepdf.online',
             numberOfItems: tools.length,
             itemListElement: tools.map((tool, index) => ({

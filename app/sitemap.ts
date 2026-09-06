@@ -189,6 +189,20 @@ export default function sitemap(): MetadataRoute.Sitemap {
       lastModified: TODAY,
       changeFrequency: 'daily',
       priority: 1.0,
+      alternates: {
+        languages: {
+          en: `${baseUrl}/`,
+          es: `${baseUrl}/es`,
+          pt: `${baseUrl}/pt`,
+          id: `${baseUrl}/id`,
+          de: `${baseUrl}/de`,
+          ja: `${baseUrl}/ja`,
+          fr: `${baseUrl}/fr`,
+          hi: `${baseUrl}/hi`,
+          ta: `${baseUrl}/ta`,
+          'x-default': `${baseUrl}/`,
+        },
+      },
     },
     // Tool pages — core content
     ...toolRoutes.map((route) => {

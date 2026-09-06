@@ -7,7 +7,7 @@ import Link from 'next/link';
 
 export const metadata: Metadata = {
   title: 'About iCreatePDF — Publisher & Privacy Information',
-  description: 'Learn about iCreatePDF, our engineering principles, zero-upload architecture, and publisher team. 46+ free, browser-native PDF tools built for complete privacy.',
+  description: 'Learn about iCreatePDF, our engineering principles, zero-upload architecture, and publisher team. 70+ free, browser-native PDF tools built for complete privacy.',
   keywords: 'about icreatepdf, pdf tools company, client side pdf editor team, free pdf tool publisher, private pdf tool history',
   alternates: buildAlternates('/about'),
   openGraph: {
@@ -75,7 +75,7 @@ export default function AboutPage() {
             Private PDF utilities, engineered for the modern web
           </h1>
           <p className="text-foreground/50 text-sm sm:text-base leading-relaxed max-w-2xl mx-auto">
-            iCreatePDF is an independent digital productivity suite offering 46+ free, browser-native PDF tools. Our software is designed around one unyielding rule: <strong className="text-foreground/80">your files never leave your device</strong>.
+            iCreatePDF is an independent digital productivity suite offering 70+ free, browser-native PDF tools. Our software is designed around one unyielding rule: <strong className="text-foreground/80">your files never leave your device</strong>.
           </p>
         </div>
 
@@ -139,7 +139,7 @@ export default function AboutPage() {
             Because document processing runs on your own device CPU rather than remote cloud servers, iCreatePDF does not incur heavy per-file server compute bills. We sustain our platform development, domain maintenance, and tool expanding efforts through privacy-conscious advertising (Google AdSense) rather than subscription paywalls or file size limits.
           </p>
           <p className="text-sm text-foreground/60 leading-relaxed">
-            We are committed to delivering 100% free access to all 46+ tools without hidden charges, mandatory account sign-ups, or watermarked outputs. Read our complete <Link href="/privacy" className="text-brand hover:underline underline-offset-2">Privacy Policy</Link> and <Link href="/terms" className="text-brand hover:underline underline-offset-2">Terms of Service</Link>.
+            We are committed to delivering 100% free access to all 70+ tools without hidden charges, mandatory account sign-ups, or watermarked outputs. Read our complete <Link href="/privacy" className="text-brand hover:underline underline-offset-2">Privacy Policy</Link> and <Link href="/terms" className="text-brand hover:underline underline-offset-2">Terms of Service</Link>.
           </p>
         </section>
 
@@ -171,4 +171,3 @@ export default function AboutPage() {
     </main>
   );
 }
-

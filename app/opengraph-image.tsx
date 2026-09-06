@@ -1,6 +1,6 @@
 import { ImageResponse } from 'next/og';
 
-export const alt = 'iCreatePDF \u2014 46+ Free PDF Tools. Private by Design. No Uploads.';
+export const alt = 'iCreatePDF \u2014 70+ Free PDF Tools. Private by Design. No Uploads.';
 export const size = { width: 1200, height: 630 };
 export const contentType = 'image/png';
 
@@ -35,7 +35,7 @@ export default function OpenGraphImage() {
           borderRadius: 40,
           padding: '8px 20px',
         }}>
-          iCreatePDF \u2022 46+ Free Tools
+          iCreatePDF \u2022 70+ Free Tools
         </div>
 
         {/* Main headline */}
