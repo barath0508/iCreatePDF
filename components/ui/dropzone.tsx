@@ -20,7 +20,7 @@ interface DropzoneProps {
 
 export function Dropzone({
   onFilesSelected,
-  accept = '.pdf,application/pdf',
+  accept = 'application/pdf,.pdf',
   multiple = true,
   maxFiles,
   title = 'Drop files here or click to upload',
@@ -100,7 +100,7 @@ export function Dropzone({
         }}
         transition={{ duration: 0.2 }}
         className={cn(
-          'relative cursor-pointer overflow-hidden rounded-2xl border-2 border-dashed p-6 sm:p-8 lg:p-10 text-center transition-shadow duration-200 hover:border-foreground/50 hover:shadow-xl focus:outline-none focus:ring-2 focus:ring-foreground/50'
+          'relative cursor-pointer touch-manipulation overflow-hidden rounded-2xl border-2 border-dashed p-6 sm:p-8 lg:p-10 text-center transition-shadow duration-200 hover:border-foreground/50 hover:shadow-xl focus:outline-none focus:ring-2 focus:ring-foreground/50'
         )}
       >
         <input
@@ -109,6 +109,10 @@ export function Dropzone({
           accept={accept}
           multiple={multiple}
           onChange={handleFileChange}
+          onClick={(e) => {
+            e.stopPropagation();
+            (e.target as HTMLInputElement).value = '';
+          }}
           className="hidden"
         />
 

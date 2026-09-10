@@ -316,6 +316,10 @@ export function FillableFormBuilderTool() {
               ref={fileInputRef}
               onChange={(e) => e.target.files && handleFiles(e.target.files)}
               accept="application/pdf"
+              onClick={(e) => {
+                e.stopPropagation();
+                (e.target as HTMLInputElement).value = '';
+              }}
               className="hidden"
             />
             <Upload className="w-12 h-12 mx-auto text-foreground/30 mb-4" />

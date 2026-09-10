@@ -10,6 +10,7 @@ import {
   AlignCenter, Maximize2, Moon, QrCode, BookMarked, Trash2,
   Volume2, Stamp, FileSpreadsheet, Accessibility, Copy, FileSearch, Award,
   Heart, Search, ArrowRight, ShieldAlert, Paperclip, SplitSquareVertical, Monitor,
+  FileDigit, FileCode,
   LucideIcon,
 } from 'lucide-react';
 import { getFavorites, toggleFavorite } from '@/lib/favorites';
@@ -22,6 +23,7 @@ const ICON_MAP: Record<string, LucideIcon> = {
   AlignCenter, Maximize2, Moon, QrCode, BookMarked, Trash2,
   Volume2, Stamp, FileSpreadsheet, Accessibility, Copy, FileSearch, Award,
   ShieldAlert, Paperclip, SplitSquareVertical, Monitor,
+  FileDigit, FileCode,
 };
 
 const POPULAR_TOOLS = new Set([
@@ -36,6 +38,32 @@ const NEW_TOOLS = new Set([
   '/tools/pdf-accessibility-checker',
   '/tools/bulk-certificates',
   '/tools/ris-to-pdf',
+]);
+
+const SEARCH_STEMS: Record<string, string> = {
+  converter: 'convert',
+  convertor: 'convert',
+  merger: 'merge',
+  splitter: 'split',
+  compressor: 'compress',
+  rotator: 'rotate',
+  editor: 'edit',
+  signer: 'sign',
+  scanner: 'scan',
+  maker: 'make',
+  builder: 'build',
+  creator: 'create',
+  generator: 'generate',
+  auditor: 'audit',
+  checker: 'check',
+  reader: 'read',
+  printer: 'print',
+};
+
+const SEARCH_FILLERS = new Set([
+  'a', 'an', 'the', 'to', 'for', 'in', 'on', 'with', 'from', 'into',
+  'pdf', 'pdfs', 'tool', 'tools', 'online', 'free', 'file', 'files',
+  'document', 'documents'
 ]);
 
 export interface ToolItem {
@@ -71,10 +99,22 @@ export function ToolsFilter({ tools }: ToolsFilterProps) {
   const filteredTools = tools.filter((tool) => {
     if (activeCategory === 'favorites') return favorites.has(tool.href);
     const matchesCategory = activeCategory === 'all' || tool.category === activeCategory;
-    const matchesSearch =
-      tool.title.toLowerCase().includes(searchQuery.toLowerCase()) ||
-      tool.desc.toLowerCase().includes(searchQuery.toLowerCase());
-    return matchesCategory && matchesSearch;
+    if (!matchesCategory) return false;
+
+    if (!searchQuery.trim()) return true;
+
+    const rawTerms = searchQuery.trim().toLowerCase().split(/\s+/).filter(Boolean);
+    const significantTerms = rawTerms.filter(t => !SEARCH_FILLERS.has(t));
+    const activeTerms = significantTerms.length > 0 ? significantTerms : rawTerms;
+
+    const fullText = `${tool.title} ${tool.desc} ${tool.category}`.toLowerCase();
+    const isConverter = fullText.includes(' to ') || tool.category.toLowerCase().includes('convert');
+    const enrichedText = isConverter ? `${fullText} converter conversion` : fullText;
+
+    return activeTerms.every(term => {
+      const stem = SEARCH_STEMS[term] || term;
+      return enrichedText.includes(term) || enrichedText.includes(stem);
+    });
   });
 
   const favCount = tools.filter((t) => favorites.has(t.href)).length;

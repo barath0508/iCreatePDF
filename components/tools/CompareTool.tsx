@@ -125,14 +125,18 @@ export function CompareTool() {
           {!fileA ? (
             <div
               onClick={() => fileInputRefA.current?.click()}
-              className="relative cursor-pointer border border-dashed rounded-2xl p-8 text-center flex flex-col items-center justify-center min-h-[140px] border-foreground/10 bg-card/40 hover:border-foreground/20 transition-all duration-300"
+              className="relative cursor-pointer touch-manipulation border border-dashed rounded-2xl p-8 text-center flex flex-col items-center justify-center min-h-[140px] border-foreground/10 bg-card/40 hover:border-foreground/20 transition-all duration-300"
             >
               <input
                 type="file"
                 ref={fileInputRefA.current ? undefined : fileInputRefA}
                 onChange={(e) => e.target.files && setFileA(e.target.files[0])}
-                accept=".pdf"
-                className="hidden"
+                accept="application/pdf,.pdf"
+                onClick={(e) => {
+                e.stopPropagation();
+                (e.target as HTMLInputElement).value = '';
+              }}
+              className="hidden"
               />
               <Upload className="w-5 h-5 text-brand mb-2" />
               <p className="text-xs text-foreground/80">Select Document A</p>
@@ -151,14 +155,18 @@ export function CompareTool() {
           {!fileB ? (
             <div
               onClick={() => fileInputRefB.current?.click()}
-              className="relative cursor-pointer border border-dashed rounded-2xl p-8 text-center flex flex-col items-center justify-center min-h-[140px] border-foreground/10 bg-card/40 hover:border-foreground/20 transition-all duration-300"
+              className="relative cursor-pointer touch-manipulation border border-dashed rounded-2xl p-8 text-center flex flex-col items-center justify-center min-h-[140px] border-foreground/10 bg-card/40 hover:border-foreground/20 transition-all duration-300"
             >
               <input
                 type="file"
                 ref={fileInputRefB.current ? undefined : fileInputRefB}
                 onChange={(e) => e.target.files && setFileB(e.target.files[0])}
-                accept=".pdf"
-                className="hidden"
+                accept="application/pdf,.pdf"
+                onClick={(e) => {
+                e.stopPropagation();
+                (e.target as HTMLInputElement).value = '';
+              }}
+              className="hidden"
               />
               <Upload className="w-5 h-5 text-brand mb-2" />
               <p className="text-xs text-foreground/80">Select Document B</p>

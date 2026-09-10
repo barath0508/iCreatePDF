@@ -266,7 +266,7 @@ export function ConverterSection({ initialFormatFilter }: ConverterSectionProps)
               onDragLeave={onDragLeave}
               onDrop={onDrop}
               onClick={() => fileInputRef.current?.click()}
-              className={`relative cursor-pointer border border-dashed rounded-2xl p-12 transition-all duration-300 text-center flex flex-col items-center justify-center min-h-[260px] ${
+              className={`relative cursor-pointer touch-manipulation border border-dashed rounded-2xl p-12 transition-all duration-300 text-center flex flex-col items-center justify-center min-h-[260px] ${
                 isDraggingOver
                   ? 'border-brand bg-brand/5 shadow-[0_0_30px_rgba(168,85,247,0.1)]'
                   : 'border-foreground/10 bg-card/40 hover:border-foreground/20 hover:bg-card/50'
@@ -277,7 +277,11 @@ export function ConverterSection({ initialFormatFilter }: ConverterSectionProps)
                 ref={fileInputRef}
                 onChange={handleSelectFiles}
                 multiple
-                accept=".jpg,.jpeg,.png,.webp,.heic,.heif,.bmp"
+                accept="image/jpeg,image/png,image/webp,image/heic,image/heif,image/bmp,.jpg,.jpeg,.png,.webp,.heic,.heif,.bmp"
+                onClick={(e) => {
+                  e.stopPropagation();
+                  (e.target as HTMLInputElement).value = '';
+                }}
                 className="hidden"
               />
               

@@ -159,14 +159,18 @@ export function AutoRedactTool() {
       {!file ? (
         <div
           onClick={() => fileInputRef.current?.click()}
-          className="relative cursor-pointer border-2 border-dashed rounded-3xl p-12 text-center flex flex-col items-center justify-center min-h-[260px] border-border bg-card hover:border-brand/50 transition-all duration-300 shadow-sm"
+          className="relative cursor-pointer touch-manipulation border-2 border-dashed rounded-3xl p-12 text-center flex flex-col items-center justify-center min-h-[260px] border-border bg-card hover:border-brand/50 transition-all duration-300 shadow-sm"
         >
           <input
             type="file"
             ref={fileInputRef}
             onChange={handleFileUpload}
-            accept=".pdf"
-            className="hidden"
+            accept="application/pdf,.pdf"
+            onClick={(e) => {
+                e.stopPropagation();
+                (e.target as HTMLInputElement).value = '';
+              }}
+              className="hidden"
           />
           <div className="w-16 h-16 rounded-2xl bg-brand/10 text-brand flex items-center justify-center mb-4">
             <ShieldAlert className="w-8 h-8" />

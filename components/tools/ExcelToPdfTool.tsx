@@ -436,7 +436,11 @@ export function ExcelToPdfTool() {
               type="file"
               ref={fileInputRef}
               onChange={handleFileChange}
-              accept=".xlsx,.xls,.csv"
+              accept="application/vnd.openxmlformats-officedocument.spreadsheetml.sheet,application/vnd.ms-excel,text/csv,.xlsx,.xls,.csv"
+              onClick={(e) => {
+                e.stopPropagation();
+                (e.target as HTMLInputElement).value = '';
+              }}
               className="hidden"
             />
             <div className="p-5 rounded-2xl bg-brand/5 group-hover:bg-brand/10 text-brand mb-6 transition-all duration-300 scale-100 group-hover:scale-105">

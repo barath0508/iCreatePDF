@@ -229,14 +229,18 @@ export function EditPdfTool() {
               onDragLeave={() => setIsDraggingOver(false)}
               onDrop={(e) => { e.preventDefault(); setIsDraggingOver(false); e.dataTransfer.files && handleFiles(e.dataTransfer.files); }}
               onClick={() => fileInputRef.current?.click()}
-              className="relative cursor-pointer border border-dashed rounded-2xl p-12 transition-all duration-300 text-center flex-1 flex flex-col items-center justify-center min-h-[220px] border-foreground/10 bg-card/40 hover:border-foreground/20"
+              className="relative cursor-pointer touch-manipulation border border-dashed rounded-2xl p-12 transition-all duration-300 text-center flex-1 flex flex-col items-center justify-center min-h-[220px] border-foreground/10 bg-card/40 hover:border-foreground/20"
             >
               <input
                 type="file"
                 ref={fileInputRef}
                 onChange={(e) => e.target.files && handleFiles(e.target.files)}
-                accept=".pdf"
-                className="hidden"
+                accept="application/pdf,.pdf"
+                onClick={(e) => {
+                e.stopPropagation();
+                (e.target as HTMLInputElement).value = '';
+              }}
+              className="hidden"
               />
               <Plus className="w-6 h-6 text-brand mb-4" />
               <h3 className="text-xl font-display text-foreground mb-2">Select a PDF file to edit</h3>

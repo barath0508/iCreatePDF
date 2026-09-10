@@ -690,8 +690,12 @@ export function MarkdownToPdfTool() {
             type="file"
             ref={fileInputRef}
             onChange={handleFileUpload}
-            accept=".md,.txt"
-            className="hidden"
+            accept="text/markdown,text/plain,.md,.txt"
+            onClick={(e) => {
+                e.stopPropagation();
+                (e.target as HTMLInputElement).value = '';
+              }}
+              className="hidden"
           />
           <Button
             variant="outline"

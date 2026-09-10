@@ -188,7 +188,7 @@ export function MergeTool() {
             onDragLeave={onDragLeave}
             onDrop={onDrop}
             onClick={() => fileInputRef.current?.click()}
-            className={`relative cursor-pointer border border-dashed rounded-2xl p-12 transition-all duration-300 text-center flex-1 flex flex-col items-center justify-center min-h-[220px] ${
+            className={`relative cursor-pointer touch-manipulation border border-dashed rounded-2xl p-12 transition-all duration-300 text-center flex-1 flex flex-col items-center justify-center min-h-[220px] ${
               isDraggingOver
                 ? 'border-brand bg-brand/5'
                 : 'border-foreground/10 bg-card/40 hover:border-foreground/20'
@@ -199,7 +199,11 @@ export function MergeTool() {
               ref={fileInputRef}
               onChange={(e) => e.target.files && handleFiles(e.target.files)}
               multiple
-              accept=".pdf"
+              accept="application/pdf,.pdf"
+              onClick={(e) => {
+                e.stopPropagation();
+                (e.target as HTMLInputElement).value = '';
+              }}
               className="hidden"
             />
             <div className="p-4 rounded-full bg-foreground/5 mb-4 border border-foreground/10">

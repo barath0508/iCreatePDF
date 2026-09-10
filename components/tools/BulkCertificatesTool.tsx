@@ -531,11 +531,15 @@ export function BulkCertificatesTool() {
                 onDragLeave={() => setIsDraggingOverTemplate(false)}
                 onDrop={(e) => { e.preventDefault(); setIsDraggingOverTemplate(false); e.dataTransfer.files && handleTemplateFiles(e.dataTransfer.files); }}
                 onClick={() => templateInputRef.current?.click()}
-                className={`cursor-pointer border border-dashed rounded-2xl p-8 text-center flex-1 flex flex-col items-center justify-center min-h-[220px] transition-all duration-300 ${
+                className={`cursor-pointer touch-manipulation border border-dashed rounded-2xl p-8 text-center flex-1 flex flex-col items-center justify-center min-h-[220px] transition-all duration-300 ${
                   isDraggingOverTemplate ? 'border-brand bg-brand/5' : 'border-foreground/10 bg-card/40 hover:border-foreground/20'
                 }`}
               >
-                <input type="file" ref={templateInputRef} onChange={(e) => e.target.files && handleTemplateFiles(e.target.files)} accept=".pdf" className="hidden" />
+                <input type="file" ref={templateInputRef} onChange={(e) => e.target.files && handleTemplateFiles(e.target.files)} accept="application/pdf,.pdf" onClick={(e) => {
+                e.stopPropagation();
+                (e.target as HTMLInputElement).value = '';
+              }}
+              className="hidden" />
                 <div className="p-4 rounded-full bg-foreground/5 mb-4 border border-foreground/10">
                   <FileText className="w-6 h-6 text-brand" />
                 </div>
@@ -553,11 +557,15 @@ export function BulkCertificatesTool() {
                 onDragLeave={() => setIsDraggingOverData(false)}
                 onDrop={(e) => { e.preventDefault(); setIsDraggingOverData(false); e.dataTransfer.files && handleDataFiles(e.dataTransfer.files); }}
                 onClick={() => dataInputRef.current?.click()}
-                className={`cursor-pointer border border-dashed rounded-2xl p-8 text-center flex-1 flex flex-col items-center justify-center min-h-[220px] transition-all duration-300 ${
+                className={`cursor-pointer touch-manipulation border border-dashed rounded-2xl p-8 text-center flex-1 flex flex-col items-center justify-center min-h-[220px] transition-all duration-300 ${
                   isDraggingOverData ? 'border-brand bg-brand/5' : 'border-foreground/10 bg-card/40 hover:border-foreground/20'
                 }`}
               >
-                <input type="file" ref={dataInputRef} onChange={(e) => e.target.files && handleDataFiles(e.target.files)} accept=".xlsx,.xls,.csv" className="hidden" />
+                <input type="file" ref={dataInputRef} onChange={(e) => e.target.files && handleDataFiles(e.target.files)} accept="application/vnd.openxmlformats-officedocument.spreadsheetml.sheet,application/vnd.ms-excel,text/csv,.xlsx,.xls,.csv" onClick={(e) => {
+                e.stopPropagation();
+                (e.target as HTMLInputElement).value = '';
+              }}
+              className="hidden" />
                 <div className="p-4 rounded-full bg-foreground/5 mb-4 border border-foreground/10">
                   <Table className="w-6 h-6 text-brand" />
                 </div>

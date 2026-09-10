@@ -539,8 +539,12 @@ ER  - `);
                 ref={fileInputRef}
                 type="file"
                 onChange={(e) => handleFiles(e.target.files || [])}
-                accept=".ris,.txt"
-                className="hidden"
+                accept=".ris,.txt,text/plain"
+                onClick={(e) => {
+                e.stopPropagation();
+                (e.target as HTMLInputElement).value = '';
+              }}
+              className="hidden"
               />
             </div>
             

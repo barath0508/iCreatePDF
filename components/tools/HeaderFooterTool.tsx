@@ -105,9 +105,13 @@ export function HeaderFooterTool() {
               onDragLeave={() => setIsDraggingOver(false)}
               onDrop={(e) => { e.preventDefault(); setIsDraggingOver(false); e.dataTransfer.files && handleFiles(e.dataTransfer.files); }}
               onClick={() => fileInputRef.current?.click()}
-              className={`cursor-pointer border border-dashed rounded-2xl p-12 transition-all text-center flex-1 flex flex-col items-center justify-center min-h-[220px] ${isDraggingOver ? 'border-brand bg-brand/5' : 'border-foreground/10 bg-card/40 hover:border-foreground/20'}`}
+              className={`cursor-pointer touch-manipulation border border-dashed rounded-2xl p-12 transition-all text-center flex-1 flex flex-col items-center justify-center min-h-[220px] ${isDraggingOver ? 'border-brand bg-brand/5' : 'border-foreground/10 bg-card/40 hover:border-foreground/20'}`}
             >
-              <input type="file" ref={fileInputRef} onChange={(e) => e.target.files && handleFiles(e.target.files)} accept=".pdf" className="hidden" />
+              <input type="file" ref={fileInputRef} onChange={(e) => e.target.files && handleFiles(e.target.files)} accept="application/pdf,.pdf" onClick={(e) => {
+                e.stopPropagation();
+                (e.target as HTMLInputElement).value = '';
+              }}
+              className="hidden" />
               <div className="p-4 rounded-full bg-foreground/5 mb-4 border border-foreground/10"><AlignCenter className="w-6 h-6 text-brand" /></div>
               <h3 className="text-xl font-display text-foreground mb-2">Upload PDF</h3>
               <p className="text-xs text-foreground/40">Add custom headers and footers to every page.</p>

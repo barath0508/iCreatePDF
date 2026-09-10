@@ -309,7 +309,7 @@ export function WordToPdfTool() {
               onDragLeave={onDragLeave}
               onDrop={onDrop}
               onClick={() => fileInputRef.current?.click()}
-              className={`relative cursor-pointer border-2 border-dashed rounded-3xl p-12 transition-all duration-300 text-center flex flex-col items-center justify-center min-h-[320px] ${
+              className={`relative cursor-pointer touch-manipulation border-2 border-dashed rounded-3xl p-12 transition-all duration-300 text-center flex flex-col items-center justify-center min-h-[320px] ${
                 isDraggingOver
                   ? 'border-brand bg-brand/10 shadow-lg shadow-brand/10'
                   : 'border-foreground/15 bg-card/60 hover:border-foreground/30 hover:bg-card/80'
@@ -319,8 +319,12 @@ export function WordToPdfTool() {
                 type="file"
                 ref={fileInputRef}
                 onChange={(e) => e.target.files && handleFiles(e.target.files)}
-                accept=".docx"
-                className="hidden"
+                accept="application/vnd.openxmlformats-officedocument.wordprocessingml.document,application/msword,.docx,.doc"
+                onClick={(e) => {
+                e.stopPropagation();
+                (e.target as HTMLInputElement).value = '';
+              }}
+              className="hidden"
               />
               <div className="p-5 rounded-2xl bg-brand/10 border border-brand/20 mb-5 text-brand shadow-inner">
                 <Upload className="w-8 h-8" />

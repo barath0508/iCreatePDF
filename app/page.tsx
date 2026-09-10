@@ -75,6 +75,8 @@ const tools: ToolItem[] = [
   { iconName: 'BookMarked', title: 'Bates Numbering', desc: 'Sequential legal stamping with custom prefix and zero-padding.', href: '/bates-numbering', category: 'organize' },
   { iconName: 'Moon', title: 'Invert PDF', desc: 'Pixel-invert every page for eye strain reduction in dark mode.', href: '/invert-pdf', category: 'utilities' },
   { iconName: 'QrCode', title: 'QR to PDF', desc: 'Generate an A4 PDF with embedded QR code for URLs or text.', href: '/qr-to-pdf', category: 'convert' },
+  { iconName: 'FileDigit', title: 'Barcode to PDF', desc: 'Generate printable A4 PDFs with Code 128, EAN, and UPC barcodes.', href: '/barcode-to-pdf', category: 'convert' },
+  { iconName: 'FileCode', title: 'Base64 to PDF', desc: 'Decode Base64 strings back to clean, downloadable PDF documents.', href: '/base64-to-pdf', category: 'convert' },
   { iconName: 'Trash2', title: 'Delete Pages', desc: 'Remove individual pages or ranges from your PDF file.', href: '/delete-pdf-pages', category: 'organize' },
   { iconName: 'Volume2', title: 'Read Aloud', desc: 'Listen to PDF text using browser speech synthesis.', href: '/read-aloud-pdf', category: 'utilities' },
   { iconName: 'Stamp', title: 'Certify PDF', desc: 'Stamp SHA-256 fingerprint certificate QR code onto PDF.', href: '/certify-pdf', category: 'secure' },

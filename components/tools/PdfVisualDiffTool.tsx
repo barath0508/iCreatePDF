@@ -149,9 +149,13 @@ export function PdfVisualDiffTool() {
           {!fileA ? (
             <div
               onClick={() => fileInputRefA.current?.click()}
-              className="relative cursor-pointer border-2 border-dashed rounded-2xl p-6 text-center flex flex-col items-center justify-center min-h-[140px] border-border bg-card hover:border-brand/50 transition-all"
+              className="relative cursor-pointer touch-manipulation border-2 border-dashed rounded-2xl p-6 text-center flex flex-col items-center justify-center min-h-[140px] border-border bg-card hover:border-brand/50 transition-all"
             >
-              <input type="file" ref={fileInputRefA} onChange={(e) => e.target.files && setFileA(e.target.files[0])} accept=".pdf" className="hidden" />
+              <input type="file" ref={fileInputRefA} onChange={(e) => e.target.files && setFileA(e.target.files[0])} accept="application/pdf,.pdf" onClick={(e) => {
+                e.stopPropagation();
+                (e.target as HTMLInputElement).value = '';
+              }}
+              className="hidden" />
               <Upload className="w-6 h-6 text-brand mb-2" />
               <p className="text-xs font-semibold text-foreground">Upload Document A</p>
             </div>
@@ -168,9 +172,13 @@ export function PdfVisualDiffTool() {
           {!fileB ? (
             <div
               onClick={() => fileInputRefB.current?.click()}
-              className="relative cursor-pointer border-2 border-dashed rounded-2xl p-6 text-center flex flex-col items-center justify-center min-h-[140px] border-border bg-card hover:border-brand/50 transition-all"
+              className="relative cursor-pointer touch-manipulation border-2 border-dashed rounded-2xl p-6 text-center flex flex-col items-center justify-center min-h-[140px] border-border bg-card hover:border-brand/50 transition-all"
             >
-              <input type="file" ref={fileInputRefB} onChange={(e) => e.target.files && setFileB(e.target.files[0])} accept=".pdf" className="hidden" />
+              <input type="file" ref={fileInputRefB} onChange={(e) => e.target.files && setFileB(e.target.files[0])} accept="application/pdf,.pdf" onClick={(e) => {
+                e.stopPropagation();
+                (e.target as HTMLInputElement).value = '';
+              }}
+              className="hidden" />
               <Upload className="w-6 h-6 text-brand mb-2" />
               <p className="text-xs font-semibold text-foreground">Upload Document B</p>
             </div>

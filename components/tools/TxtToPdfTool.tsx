@@ -288,8 +288,12 @@ Date: May 2026`);
                 ref={fileInputRef}
                 type="file"
                 onChange={(e) => handleFiles(e.target.files || [])}
-                accept=".txt"
-                className="hidden"
+                accept="text/plain,.txt"
+                onClick={(e) => {
+                e.stopPropagation();
+                (e.target as HTMLInputElement).value = '';
+              }}
+              className="hidden"
               />
             </div>
             
