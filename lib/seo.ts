@@ -156,7 +156,8 @@ export function getToolFullJsonLd(
     custom?.description ||
     content?.overview ||
     `Free online ${name} tool with 100% private in-browser processing.`;
-  const url = `/tools/${slug}`;
+  const cleanSlug = slug.replace(/^tools\//, '');
+  const url = `/${cleanSlug}`;
 
   const schemas: any[] = [
     ...toolSchema({
@@ -217,7 +218,7 @@ export function articleSchema({
         '@type': 'Person',
         name: 'Barath R',
         jobTitle: 'Founder & Lead Developer',
-        url: SITE_URL,
+        url: `${SITE_URL}/authors/barath-r`,
       },
       publisher: {
         '@type': 'Organization',
@@ -255,6 +256,7 @@ export function howToSchema({
   url: string;
   steps: { title: string; description: string }[];
 }) {
+  const cleanUrl = url.startsWith('/tools/') ? url.replace('/tools/', '/') : url;
   return {
     '@context': 'https://schema.org',
     '@type': 'HowTo',
@@ -277,7 +279,7 @@ export function howToSchema({
       position: index + 1,
       name: s.title,
       text: s.description,
-      url: `${SITE_URL}${url}#step-${index + 1}`,
+      url: `${SITE_URL}${cleanUrl}#step-${index + 1}`,
     })),
   };
 }

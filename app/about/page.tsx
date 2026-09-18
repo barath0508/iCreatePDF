@@ -97,7 +97,10 @@ export default function AboutPage() {
                 <strong>Platform Name:</strong> iCreatePDF (<a href="https://www.icreatepdf.online" className="text-brand hover:underline font-mono">icreatepdf.online</a>)
               </p>
               <p>
-                <strong>Development Team:</strong> Founded and maintained by Barath and the iCreatePDF web software engineering team.
+                <strong>Development Team:</strong> Founded and led by <Link href="/authors/barath-r" className="text-brand hover:underline font-semibold">Barath R</Link> and the iCreatePDF web software engineering team.
+              </p>
+              <p>
+                <strong>Editorial Standards:</strong> Reviewed and verified under our strict <Link href="/editorial-policy" className="text-brand hover:underline font-semibold">Editorial Policy &amp; Testing Methodology</Link>.
               </p>
               <p>
                 <strong>Primary Contact:</strong> <a href="mailto:crop0339@gmail.com" className="text-brand hover:underline">crop0339@gmail.com</a>

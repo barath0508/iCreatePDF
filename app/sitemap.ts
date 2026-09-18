@@ -157,6 +157,8 @@ export default function sitemap(): MetadataRoute.Sitemap {
     '/privacy',
     '/terms',
     '/about',
+    '/authors/barath-r',
+    '/editorial-policy',
     '/embed',
     '/adsense-policy',
   ];
@@ -168,7 +170,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     '/compare/ilovepdf-alternative',
     '/compare/smallpdf-alternative',
     '/compare/pdf24-alternative',
-    '/tools/no-upload-pdf-tools',
+    '/no-upload-pdf-tools',
   ];
 
   const langRoutes = [

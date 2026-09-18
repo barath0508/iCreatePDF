@@ -59,6 +59,11 @@ const nextConfig = {
         permanent: true,
       },
       {
+        source: '/author/:slug*',
+        destination: '/authors/:slug*',
+        permanent: true,
+      },
+      {
         source: '/tools/:slug*',
         destination: '/:slug*',
         permanent: true,

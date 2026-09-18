@@ -85,6 +85,8 @@ const footerLinks = {
   ],
   'Legal & Languages': [
     { name: 'About Us', href: '/about' },
+    { name: 'Author Profile', href: '/authors/barath-r' },
+    { name: 'Editorial Standards', href: '/editorial-policy' },
     { name: 'Contact', href: '/contact' },
     { name: 'Privacy Policy', href: '/privacy' },
     { name: 'Terms of Service', href: '/terms' },

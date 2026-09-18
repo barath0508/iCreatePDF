@@ -220,18 +220,22 @@ export async function splitPdf(
     const range = ranges[i];
     const splitDoc = await PDFDocument.create();
     
-    const pageIndices: number[] = [];
-    const start = Math.max(1, range.start);
-    const end = Math.min(totalPages, range.end);
+    const minP = Math.min(range.start, range.end);
+    const maxP = Math.max(range.start, range.end);
+    const start = Math.max(1, Math.min(totalPages, minP));
+    const end = Math.max(1, Math.min(totalPages, maxP));
 
+    const pageIndices: number[] = [];
     for (let p = start; p <= end; p++) {
       pageIndices.push(p - 1);
     }
 
-    if (pageIndices.length > 0) {
-      const copiedPages = await splitDoc.copyPages(srcDoc, pageIndices);
-      copiedPages.forEach((page) => splitDoc.addPage(page));
+    if (pageIndices.length === 0) {
+      throw new Error(`Range ${i + 1} (pages ${range.start} to ${range.end}) does not contain valid pages in this document.`);
     }
+
+    const copiedPages = await splitDoc.copyPages(srcDoc, pageIndices);
+    copiedPages.forEach((page) => splitDoc.addPage(page));
 
     const docBytes = await splitDoc.save();
     outputs.push(docBytes);
