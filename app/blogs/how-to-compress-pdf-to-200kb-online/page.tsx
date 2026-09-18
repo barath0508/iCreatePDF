@@ -177,7 +177,7 @@ export default function CompressPdfTo200kbPage() {
           <h3 className="text-lg font-bold text-foreground font-display">Compress your PDF to 200KB right now</h3>
           <p className="text-xs text-foreground/60 max-w-md mx-auto">Fast, free, and compliant with all online portals.</p>
           <Link href="/compress-pdf">
-            <Button className="bg-brand hover:bg-brand/90 text-foreground font-medium text-xs px-6 rounded-full group">
+            <Button className="bg-primary text-primary-foreground hover:bg-primary/90 font-bold text-xs px-6 rounded-full group">
               Compress PDF to 200KB Free
               <ArrowRight className="w-3.5 h-3.5 ml-1 transition-transform group-hover:translate-x-1" />
             </Button>

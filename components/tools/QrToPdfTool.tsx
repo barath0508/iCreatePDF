@@ -185,7 +185,7 @@ export function QrToPdfTool() {
           <p className="text-xs text-foreground/50 leading-relaxed">Generate a clean A4 PDF page with a QR code for any URL or text. Add a title and description. Perfect for print materials, posters, menus, and business cards.</p>
           <div className="pt-4 border-t border-foreground/5">
             {isProcessing ? (
-              <Button disabled className="w-full bg-brand/50 text-foreground font-medium py-6 rounded-xl flex items-center justify-center gap-2">
+              <Button disabled className="w-full bg-primary/50 text-primary-foreground font-bold font-medium py-6 rounded-xl flex items-center justify-center gap-2">
                 <Loader2 className="w-4 h-4 animate-spin" />Generating...
               </Button>
             ) : downloadUrl ? (

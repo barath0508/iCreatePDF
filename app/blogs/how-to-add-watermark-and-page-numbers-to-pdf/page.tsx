@@ -167,7 +167,7 @@ export default function WatermarkPageNumbersPdfBlog() {
             <h4 className="font-bold font-display text-foreground text-sm">Watermark PDF</h4>
             <p className="text-xs text-foreground/50">Add copyright or confidentiality stamps across pages.</p>
             <Link href="/watermark-pdf" className="inline-block pt-2">
-              <Button className="bg-brand hover:bg-brand/90 text-foreground font-medium text-xs px-4 rounded-full">
+              <Button className="bg-primary text-primary-foreground hover:bg-primary/90 font-bold text-xs px-4 rounded-full">
                 Watermark PDF
               </Button>
             </Link>

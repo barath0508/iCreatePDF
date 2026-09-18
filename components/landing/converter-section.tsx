@@ -383,7 +383,7 @@ export function ConverterSection({ initialFormatFilter }: ConverterSectionProps)
                     size="sm"
                     onClick={() => setOptions((prev) => ({ ...prev, pageSize: opt.value as any }))}
                     className={`h-8 text-xs rounded-lg px-2 ${
-                      options.pageSize === opt.value ? 'bg-brand hover:bg-brand/90 text-foreground' : 'border-foreground/10 text-foreground/60 hover:text-foreground'
+                      options.pageSize === opt.value ? 'bg-primary text-primary-foreground hover:bg-primary/90 font-bold' : 'border-foreground/10 text-foreground/60 hover:text-foreground'
                     }`}
                   >
                     {opt.label}
@@ -434,7 +434,7 @@ export function ConverterSection({ initialFormatFilter }: ConverterSectionProps)
                     size="sm"
                     onClick={() => setOptions((prev) => ({ ...prev, margin: opt.value as any }))}
                     className={`h-8 text-xs rounded-lg ${
-                      options.margin === opt.value ? 'bg-brand hover:bg-brand/90 text-foreground' : 'border-foreground/10 text-foreground/60 hover:text-foreground'
+                      options.margin === opt.value ? 'bg-primary text-primary-foreground hover:bg-primary/90 font-bold' : 'border-foreground/10 text-foreground/60 hover:text-foreground'
                     }`}
                   >
                     {opt.label}
@@ -458,7 +458,7 @@ export function ConverterSection({ initialFormatFilter }: ConverterSectionProps)
                     disabled={options.pageSize === 'fit'}
                     onClick={() => setOptions((prev) => ({ ...prev, orientation: opt.value as any }))}
                     className={`h-8 text-xs rounded-lg ${
-                      options.orientation === opt.value ? 'bg-brand hover:bg-brand/90 text-foreground' : 'border-foreground/10 text-foreground/60 hover:text-foreground'
+                      options.orientation === opt.value ? 'bg-primary text-primary-foreground hover:bg-primary/90 font-bold' : 'border-foreground/10 text-foreground/60 hover:text-foreground'
                     }`}
                   >
                     {opt.label}
@@ -527,7 +527,7 @@ export function ConverterSection({ initialFormatFilter }: ConverterSectionProps)
                   onClick={triggerConvert}
                   className={`w-full font-medium py-6 rounded-xl flex items-center justify-center gap-2 ${
                     images.length > 0
-                      ? 'bg-brand hover:bg-brand/90 text-foreground'
+                      ? 'bg-primary text-primary-foreground hover:bg-primary/90 font-bold'
                       : 'bg-foreground/5 text-foreground/30 cursor-not-allowed'
                   }`}
                 >

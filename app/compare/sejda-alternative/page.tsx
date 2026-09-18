@@ -149,7 +149,7 @@ export default function SejdaAlternativePage() {
               No account. No credit card. No hourly task limits.
             </p>
             <Link href="/edit-pdf">
-              <Button className="bg-brand hover:bg-brand/90 text-foreground font-semibold px-8 rounded-full">
+              <Button className="bg-primary text-primary-foreground hover:bg-primary/90 font-bold font-semibold px-8 rounded-full">
                 Open Free Online PDF Editor
                 <ArrowRight className="w-4 h-4 ml-1" />
               </Button>

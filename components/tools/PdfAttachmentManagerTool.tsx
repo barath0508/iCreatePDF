@@ -245,7 +245,7 @@ export function PdfAttachmentManagerTool() {
               <Button
                 onClick={saveUpdatedPdf}
                 disabled={isProcessing}
-                className="bg-brand hover:bg-brand/90 text-foreground font-medium px-8 py-3 rounded-xl"
+                className="bg-primary text-primary-foreground hover:bg-primary/90 font-bold font-medium px-8 py-3 rounded-xl"
               >
                 {isProcessing ? <RefreshCw className="w-4 h-4 animate-spin mr-2" /> : <Paperclip className="w-4 h-4 mr-2" />}
                 {isProcessing ? 'Embedding Attachments...' : `Embed ${newFilesToAttach.length} File(s) & Rebuild PDF`}

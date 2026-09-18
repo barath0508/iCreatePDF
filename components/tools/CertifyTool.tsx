@@ -202,7 +202,7 @@ export function CertifyTool() {
             <p className="text-xs text-foreground/50 leading-relaxed">Appends a tamper-evident certificate page containing a SHA-256 fingerprint and a scannable QR code — a self-serve way to prove a document hasn't been altered since it was fingerprinted.</p>
             <div className="pt-4 border-t border-foreground/5">
               {isProcessing ? (
-                <Button disabled className="w-full bg-brand/50 text-foreground font-medium py-6 rounded-xl flex items-center justify-center gap-2"><Loader2 className="w-4 h-4 animate-spin" />Certifying...</Button>
+                <Button disabled className="w-full bg-primary/50 text-primary-foreground font-bold font-medium py-6 rounded-xl flex items-center justify-center gap-2"><Loader2 className="w-4 h-4 animate-spin" />Certifying...</Button>
               ) : downloadUrl ? (
                 <div className="space-y-2">
                   <Button onClick={() => { const a = document.createElement('a'); a.href = downloadUrl; a.download = `certified-${file?.name}`; a.click(); }} className="w-full bg-emerald-600 hover:bg-emerald-700 text-white font-medium py-6 rounded-xl flex items-center justify-center gap-2"><Download className="w-5 h-5" />Download Certified PDF</Button>

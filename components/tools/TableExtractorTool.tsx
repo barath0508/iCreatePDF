@@ -202,7 +202,7 @@ export function TableExtractorTool() {
           <p className="text-xs text-foreground/50 leading-relaxed">Reconstructs rows and columns from a PDF's text layout using position heuristics, then exports Excel-compatible CSV. Works best on clean, well-aligned tables — adjust column sensitivity if columns merge or split incorrectly.</p>
           <div className="pt-4 border-t border-foreground/5">
             {isProcessing ? (
-              <Button disabled className="w-full bg-brand/50 text-foreground font-medium py-6 rounded-xl flex items-center justify-center gap-2"><Loader2 className="w-4 h-4 animate-spin" />Detecting tables...</Button>
+              <Button disabled className="w-full bg-primary/50 text-primary-foreground font-bold font-medium py-6 rounded-xl flex items-center justify-center gap-2"><Loader2 className="w-4 h-4 animate-spin" />Detecting tables...</Button>
             ) : pageRows.length > 0 ? (
               <div className="space-y-2">
                 <Button onClick={handleDownload} className="w-full bg-emerald-600 hover:bg-emerald-700 text-white font-medium py-6 rounded-xl flex items-center justify-center gap-2"><Download className="w-5 h-5" />Download CSV (all pages)</Button>

@@ -149,7 +149,7 @@ export default function AdobeAcrobatAlternativePage() {
               Enjoy complete freedom from monthly software subscriptions. Fast, private, and unlimited.
             </p>
             <Link href="/#tools">
-              <Button className="bg-brand hover:bg-brand/90 text-foreground font-semibold px-8 rounded-full">
+              <Button className="bg-primary text-primary-foreground hover:bg-primary/90 font-bold font-semibold px-8 rounded-full">
                 Explore All 70+ Free PDF Tools
                 <ArrowRight className="w-4 h-4 ml-1" />
               </Button>

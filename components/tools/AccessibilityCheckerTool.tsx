@@ -224,7 +224,7 @@ export function AccessibilityCheckerTool() {
           <p className="text-xs text-foreground/50 leading-relaxed">Audits your PDF against common screen-reader and WCAG-adjacent requirements: tagging, declared language, real text layers, and labeled form fields — all analyzed locally.</p>
           <div className="pt-4 border-t border-foreground/5">
             {isProcessing ? (
-              <Button disabled className="w-full bg-brand/50 text-foreground font-medium py-6 rounded-xl flex items-center justify-center gap-2"><Loader2 className="w-4 h-4 animate-spin" />Analyzing...</Button>
+              <Button disabled className="w-full bg-primary/50 text-primary-foreground font-bold font-medium py-6 rounded-xl flex items-center justify-center gap-2"><Loader2 className="w-4 h-4 animate-spin" />Analyzing...</Button>
             ) : (
               <Button disabled={!file} onClick={runCheck} className={`w-full font-medium py-6 rounded-xl flex items-center justify-center gap-2 ${file ? 'bg-primary text-primary-foreground hover:bg-primary/90 font-bold' : 'bg-foreground/5 text-muted-foreground/60 cursor-not-allowed'}`}><Accessibility className="w-4 h-4" />Run Accessibility Check</Button>
             )}

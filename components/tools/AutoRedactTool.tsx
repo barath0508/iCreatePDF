@@ -220,7 +220,7 @@ export function AutoRedactTool() {
                 <Button
                   onClick={scanDocument}
                   disabled={isScanning}
-                  className="bg-brand hover:bg-brand/90 text-foreground font-medium px-6 py-2.5 rounded-xl"
+                  className="bg-primary text-primary-foreground hover:bg-primary/90 font-bold font-medium px-6 py-2.5 rounded-xl"
                 >
                   {isScanning ? <RefreshCw className="w-4 h-4 animate-spin mr-2" /> : <ShieldAlert className="w-4 h-4 mr-2" />}
                   {isScanning ? 'Scanning Text Stream...' : 'Scan PDF for Sensitive Data'}
@@ -285,7 +285,7 @@ export function AutoRedactTool() {
                 <Button
                   onClick={applyRedaction}
                   disabled={isProcessing || matches.filter((m) => m.selected).length === 0}
-                  className="bg-brand hover:bg-brand/90 text-foreground font-medium px-8 py-3 rounded-xl"
+                  className="bg-primary text-primary-foreground hover:bg-primary/90 font-bold font-medium px-8 py-3 rounded-xl"
                 >
                   {isProcessing ? <RefreshCw className="w-4 h-4 animate-spin mr-2" /> : <ShieldAlert className="w-4 h-4 mr-2" />}
                   {isProcessing ? 'Applying Redactions...' : `Redact ${matches.filter((m) => m.selected).length} Target(s)`}

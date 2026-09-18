@@ -230,7 +230,7 @@ export function BarcodeToPdfTool() {
           <p className="text-xs text-foreground/50 leading-relaxed">Generate a clean A4 PDF with a Code 128, EAN-13, UPC-A, Code 39, Data Matrix, or PDF417 barcode. Perfect for product labels, inventory tags, and shipping documents.</p>
           <div className="pt-4 border-t border-foreground/5">
             {isProcessing ? (
-              <Button disabled className="w-full bg-brand/50 text-foreground font-medium py-6 rounded-xl flex items-center justify-center gap-2">
+              <Button disabled className="w-full bg-primary/50 text-primary-foreground font-bold font-medium py-6 rounded-xl flex items-center justify-center gap-2">
                 <Loader2 className="w-4 h-4 animate-spin" />Generating...
               </Button>
             ) : downloadUrl ? (

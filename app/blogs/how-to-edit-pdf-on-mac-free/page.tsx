@@ -259,7 +259,7 @@ export default function EditPdfOnMacFreePage() {
           <p className="text-xs text-foreground/60 max-w-md mx-auto">No credit card. No software downloads. No watermarks.</p>
           <div className="flex flex-wrap items-center justify-center gap-3">
             <Link href="/edit-pdf">
-              <Button className="bg-brand hover:bg-brand/90 text-foreground font-medium text-xs px-6 rounded-full group">
+              <Button className="bg-primary text-primary-foreground hover:bg-primary/90 font-bold text-xs px-6 rounded-full group">
                 Open Free Mac PDF Editor
                 <ArrowRight className="w-3.5 h-3.5 ml-1 transition-transform group-hover:translate-x-1" />
               </Button>

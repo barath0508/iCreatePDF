@@ -197,7 +197,7 @@ export default function BlogPostTwo() {
           </p>
           <Link href="/jpg-to-pdf">
             <Button
-              className="bg-brand hover:bg-brand/90 text-foreground font-medium text-xs px-4 rounded-full group"
+              className="bg-primary text-primary-foreground hover:bg-primary/90 font-bold text-xs px-4 rounded-full group"
             >
               JPG to PDF Converter
               <ArrowRight className="w-3.5 h-3.5 ml-1 transition-transform group-hover:translate-x-1" />

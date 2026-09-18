@@ -244,7 +244,7 @@ export default function EditPdfBlogPost() {
           <h3 className="text-lg font-bold text-foreground font-display">Edit your PDF now — free &amp; private</h3>
           <p className="text-xs text-foreground/60 max-w-md mx-auto">No sign-up. No uploads. Your files stay on your device.</p>
           <Link href="/edit-pdf">
-            <Button className="bg-brand hover:bg-brand/90 text-foreground font-medium text-xs px-6 rounded-full group">
+            <Button className="bg-primary text-primary-foreground hover:bg-primary/90 font-bold text-xs px-6 rounded-full group">
               Edit PDF Free
               <ArrowRight className="w-3.5 h-3.5 ml-1 transition-transform group-hover:translate-x-1" />
             </Button>

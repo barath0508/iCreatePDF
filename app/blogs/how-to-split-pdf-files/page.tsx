@@ -193,7 +193,7 @@ export default function SplitPdfFilesPage() {
           <p className="text-xs text-foreground/60 max-w-md mx-auto">No account needed. No watermarks. Fast and private separation.</p>
           <div className="flex flex-wrap items-center justify-center gap-3">
             <Link href="/split-pdf">
-              <Button className="bg-brand hover:bg-brand/90 text-foreground font-medium text-xs px-6 rounded-full group">
+              <Button className="bg-primary text-primary-foreground hover:bg-primary/90 font-bold text-xs px-6 rounded-full group">
                 Split PDF Free
                 <ArrowRight className="w-3.5 h-3.5 ml-1 transition-transform group-hover:translate-x-1" />
               </Button>

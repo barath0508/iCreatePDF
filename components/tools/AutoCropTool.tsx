@@ -174,7 +174,7 @@ export function AutoCropTool() {
               <Button
                 onClick={autoDetectMargins}
                 disabled={isAnalyzing}
-                className="bg-brand hover:bg-brand/90 text-foreground font-medium px-6 py-2 rounded-xl"
+                className="bg-primary text-primary-foreground hover:bg-primary/90 font-bold font-medium px-6 py-2 rounded-xl"
               >
                 {isAnalyzing ? <RefreshCw className="w-4 h-4 animate-spin mr-2" /> : <Sparkles className="w-4 h-4 mr-2" />}
                 {isAnalyzing ? 'Analyzing Pixels...' : 'Auto-Detect Whitespace'}
@@ -206,7 +206,7 @@ export function AutoCropTool() {
             <Button
               onClick={applyCrop}
               disabled={isProcessing}
-              className="bg-brand hover:bg-brand/90 text-foreground font-medium px-8 py-3 rounded-xl"
+              className="bg-primary text-primary-foreground hover:bg-primary/90 font-bold font-medium px-8 py-3 rounded-xl"
             >
               {isProcessing ? <RefreshCw className="w-4 h-4 animate-spin mr-2" /> : <Crop className="w-4 h-4 mr-2" />}
               {isProcessing ? 'Trimming Margins...' : 'Apply Crop & Export PDF'}

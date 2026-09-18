@@ -161,7 +161,7 @@ export default function ProtectUnlockPdfBlog() {
             <h4 className="font-bold font-display text-foreground text-sm">Secure Your Files</h4>
             <p className="text-xs text-foreground/50">Add 128-bit password locks to documents locally.</p>
             <Link href="/protect-pdf" className="inline-block pt-2">
-              <Button className="bg-brand hover:bg-brand/90 text-foreground font-medium text-xs px-4 rounded-full">
+              <Button className="bg-primary text-primary-foreground hover:bg-primary/90 font-bold text-xs px-4 rounded-full">
                 Protect PDF
               </Button>
             </Link>

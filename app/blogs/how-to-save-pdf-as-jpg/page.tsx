@@ -223,7 +223,7 @@ export default function SavePdfAsJpgPage() {
           <h3 className="text-lg font-bold text-foreground font-display">Ready to save your PDF as JPG?</h3>
           <p className="text-xs text-foreground/60 max-w-md mx-auto">Instant conversion. No email registration. Download high-resolution JPGs right now.</p>
           <Link href="/pdf-to-jpg">
-            <Button className="bg-brand hover:bg-brand/90 text-foreground font-medium text-xs px-6 rounded-full group">
+            <Button className="bg-primary text-primary-foreground hover:bg-primary/90 font-bold text-xs px-6 rounded-full group">
               Save PDF as JPG Free
               <ArrowRight className="w-3.5 h-3.5 ml-1 transition-transform group-hover:translate-x-1" />
             </Button>

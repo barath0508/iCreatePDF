@@ -152,7 +152,7 @@ export default function SmallpdfAlternativePage() {
             </p>
             <div className="pt-2">
               <Link href="/#convert">
-                <button className="bg-brand hover:bg-brand/90 text-foreground font-semibold text-xs px-6 py-3 rounded-full transition-all hover:scale-105">
+                <button className="bg-primary text-primary-foreground hover:bg-primary/90 font-bold text-xs px-6 py-3 rounded-full transition-all hover:scale-105">
                   Explore Tools Dashboard &rarr;
                 </button>
               </Link>

@@ -143,7 +143,7 @@ export default function EmbedWidgetPage() {
             All 70+ iCreatePDF tools can be embedded seamlessly. Contact our engineering team for specialized enterprise or educational portal styling.
           </p>
           <Link href="/contact">
-            <Button className="bg-brand hover:bg-brand/90 text-foreground text-xs font-semibold px-6 rounded-full mt-2">
+            <Button className="bg-primary text-primary-foreground hover:bg-primary/90 font-bold text-xs px-6 rounded-full mt-2">
               Contact Developer Support
             </Button>
           </Link>
