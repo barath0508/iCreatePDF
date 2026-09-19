@@ -88,7 +88,13 @@ export function WordToPdfTool() {
           breakPages: true,
           useBase64URL: true,
           experimental: true,
-          debug: false
+          debug: false,
+          ignoreLastRenderedPageBreak: false,
+          renderHeaders: true,
+          renderFooters: true,
+          renderFootnotes: true,
+          renderEndnotes: true,
+          renderAltChunks: true
         });
 
         // Count sections/pages generated
@@ -135,13 +141,18 @@ export function WordToPdfTool() {
       const buffer = await file.arrayBuffer();
       setProgress(15);
 
-      // 1. Render docx in an isolated hidden container to extract precise page sections
+      // 1. Render docx in a hidden container at (0, 0) with standard layout viewport
       hiddenContainer = document.createElement('div');
       hiddenContainer.style.position = 'fixed';
-      hiddenContainer.style.left = '-9999px';
-      hiddenContainer.style.top = '-9999px';
+      hiddenContainer.style.left = '0';
+      hiddenContainer.style.top = '0';
+      hiddenContainer.style.width = '100vw';
+      hiddenContainer.style.height = '100vh';
+      hiddenContainer.style.zIndex = '-99999';
       hiddenContainer.style.opacity = '0';
       hiddenContainer.style.pointerEvents = 'none';
+      hiddenContainer.style.overflow = 'hidden';
+      hiddenContainer.style.backgroundColor = '#ffffff';
       document.body.appendChild(hiddenContainer);
 
       const docx = await import('docx-preview');
@@ -153,11 +164,26 @@ export function WordToPdfTool() {
         breakPages: true,
         useBase64URL: true,
         experimental: true,
-        debug: false
+        debug: false,
+        ignoreLastRenderedPageBreak: false,
+        renderHeaders: true,
+        renderFooters: true,
+        renderFootnotes: true,
+        renderEndnotes: true,
+        renderAltChunks: true
       });
 
+      // Ensure all web fonts and document fonts are parsed and ready
+      if (document.fonts) {
+        try {
+          await document.fonts.ready;
+        } catch (_) {}
+      }
       setProgress(30);
-      await new Promise(resolve => setTimeout(resolve, 600));
+      await new Promise((resolve) => setTimeout(resolve, 400));
+
+      // Extract all docx-generated <style> elements for complete CSS fidelity
+      const docxStyles = Array.from(hiddenContainer.querySelectorAll('style'));
 
       // Find section pages
       let sections = Array.from(hiddenContainer.querySelectorAll('section.docx')) as HTMLElement[];
@@ -165,14 +191,14 @@ export function WordToPdfTool() {
         sections = Array.from(hiddenContainer.querySelectorAll('section')) as HTMLElement[];
       }
       if (sections.length === 0) {
-        const wrapper = hiddenContainer.querySelector('.docx-wrapper') as HTMLElement || hiddenContainer;
+        const wrapper = (hiddenContainer.querySelector('.docx-wrapper') as HTMLElement) || hiddenContainer;
         sections = [wrapper];
       }
 
       const totalPages = sections.length;
       const targetPages = parsePageRange(pageRangeMode === 'all' ? 'all' : customPageRange, totalPages);
 
-      // 2. Create high-DPI PDF document using pdf-lib & html2canvas-pro (supports oklch, oklab, color functions)
+      // 2. Create high-DPI PDF document using pdf-lib & html2canvas-pro
       const pdfDoc = await PDFDocument.create();
       const font = enableTextLayer ? await pdfDoc.embedFont(StandardFonts.Helvetica) : null;
 
@@ -187,44 +213,75 @@ export function WordToPdfTool() {
         const section = sections[pageNum - 1];
         if (!section) continue;
 
-        // Default A4 dimensions in PDF points (1mm = 2.83465 pt)
-        let pdfW = 595.28; 
-        let pdfH = 841.89;
+        // Ensure all images within this section are loaded
+        const imgs = Array.from(section.querySelectorAll('img'));
+        await Promise.all(
+          imgs.map((img) => {
+            if (img.complete) return Promise.resolve();
+            return new Promise((res) => {
+              img.onload = res;
+              img.onerror = res;
+            });
+          })
+        );
 
-        if (orientation === 'landscape') {
-          pdfW = 841.89;
-          pdfH = 595.28;
-        } else if (orientation === 'portrait') {
-          pdfW = 595.28;
-          pdfH = 841.89;
-        } else {
-          // Auto orientation: calculate from aspect ratio of section
-          const secW = section.offsetWidth || 794;
-          const secH = section.offsetHeight || 1123;
-          if (secW > secH) {
-            pdfW = 841.89;
-            pdfH = 595.28;
-          }
-        }
-
-        // Render section at high resolution canvas using html2canvas-pro
+        // Render section at high resolution canvas using html2canvas-pro with full style preservation
         const canvas = await html2canvas(section, {
           scale: dpiScale,
           useCORS: true,
           logging: false,
-          backgroundColor: '#ffffff'
+          backgroundColor: '#ffffff',
+          onclone: (clonedDoc, clonedSection) => {
+            // 1. Inject all docx styles into cloned document head so fonts,
+            // margins, tables, list bullet points, headers & borders are preserved
+            docxStyles.forEach((s) => {
+              clonedDoc.head.appendChild(s.cloneNode(true));
+            });
+
+            // 2. Ensure .docx-wrapper ancestor is present so all .docx-wrapper rules match
+            if (!clonedSection.closest('.docx-wrapper')) {
+              const wrapper = clonedDoc.createElement('div');
+              wrapper.className = 'docx-wrapper';
+              clonedSection.parentNode?.insertBefore(wrapper, clonedSection);
+              wrapper.appendChild(clonedSection);
+            }
+
+            // 3. Remove browser-preview box shadows, margins, and borders from page canvas
+            clonedSection.style.boxShadow = 'none';
+            clonedSection.style.margin = '0';
+            clonedSection.style.border = 'none';
+          }
         });
 
-        const imgDataUrl = canvas.toDataURL('image/jpeg', qualityPreset === 'ultra' ? 0.98 : 0.90);
-        const imgBytes = await fetch(imgDataUrl).then(res => res.arrayBuffer());
+        // Calculate exact PDF dimensions in points (1 CSS px = 72 / 96 pt = 0.75 pt)
+        // This guarantees 1:1 aspect ratio with ZERO stretching or squishing
+        const secWidthPx = section.offsetWidth || canvas.width / dpiScale;
+        const secHeightPx = section.offsetHeight || canvas.height / dpiScale;
+
+        let pageW = secWidthPx * 0.75;
+        let pageH = secHeightPx * 0.75;
+
+        // Respect explicit user orientation selection if chosen
+        if (orientation === 'landscape' && pageH > pageW) {
+          const tmp = pageW;
+          pageW = pageH;
+          pageH = tmp;
+        } else if (orientation === 'portrait' && pageW > pageH) {
+          const tmp = pageW;
+          pageW = pageH;
+          pageH = tmp;
+        }
+
+        const imgDataUrl = canvas.toDataURL('image/jpeg', qualityPreset === 'ultra' ? 0.98 : 0.92);
+        const imgBytes = await fetch(imgDataUrl).then((res) => res.arrayBuffer());
         const embeddedImg = await pdfDoc.embedJpg(imgBytes);
 
-        const page = pdfDoc.addPage([pdfW, pdfH]);
+        const page = pdfDoc.addPage([pageW, pageH]);
         page.drawImage(embeddedImg, {
           x: 0,
           y: 0,
-          width: pdfW,
-          height: pdfH
+          width: pageW,
+          height: pageH
         });
 
         // Overlay transparent text layer for text selection & searching
@@ -247,9 +304,9 @@ export function WordToPdfTool() {
             const relX = rect.left - sectionRect.left;
             const relY = rect.top - sectionRect.top;
 
-            const pdfX = Math.max(0, (relX / sectionRect.width) * pdfW);
-            const pdfFontSize = Math.max(6, Math.min(24, (rect.height / sectionRect.height) * pdfH * 0.85));
-            const pdfY = Math.max(0, pdfH - ((relY + rect.height * 0.8) / sectionRect.height) * pdfH);
+            const pdfX = Math.max(0, (relX / sectionRect.width) * pageW);
+            const pdfFontSize = Math.max(6, Math.min(24, (rect.height / sectionRect.height) * pageH * 0.85));
+            const pdfY = Math.max(0, pageH - ((relY + rect.height * 0.8) / sectionRect.height) * pageH);
 
             try {
               page.drawText(text, {
