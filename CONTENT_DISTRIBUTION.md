@@ -59,7 +59,7 @@ export async function mergePdfs(pdfBuffers: ArrayBuffer[]): Promise<Uint8Array> 
 
 Because this runs directly on the device's CPU, merging five 50-page documents takes **under 400 milliseconds**, compared to 8–15 seconds on traditional server-upload sites.
 
-Live demo: **[Try Merge PDF on iCreatePDF](https://icreatepdf.online/tools/merge-pdf)**
+Live demo: **[Try Merge PDF on iCreatePDF](https://icreatepdf.online/merge-pdf)**
 
 ---
 
@@ -79,7 +79,7 @@ export async function compressPage(canvas: HTMLCanvasElement, quality = 0.75): P
 }
 ```
 
-Live demo: **[Try PDF Compressor](https://icreatepdf.online/tools/compress-pdf)**
+Live demo: **[Try PDF Compressor](https://icreatepdf.online/compress-pdf)**
 
 ---
 
@@ -110,10 +110,11 @@ Everything continues working completely offline without a single byte leaving yo
 ## 🚀 Explore the Open Tools
 
 We've compiled 70+ utilities into a single fast, modern web suite:
-- **[PDF to Word Converter](https://icreatepdf.online/tools/pdf-to-word)**
-- **[JPG to PDF Converter](https://icreatepdf.online/tools/jpg-to-pdf)**
-- **[Split PDF Files](https://icreatepdf.online/tools/split-pdf)**
-- **[Sign PDF Online](https://icreatepdf.online/tools/sign-pdf)**
+- **[PDF to Word Converter](https://icreatepdf.online/pdf-to-word)**
+- **[JPG to PDF Converter](https://icreatepdf.online/jpg-to-pdf)**
+- **[Split PDF Files](https://icreatepdf.online/split-pdf)**
+- **[Sign PDF Online](https://icreatepdf.online/sign-pdf)**
+- **[PDF to PNG Converter](https://icreatepdf.online/pdf-to-png)**
 
 Check out the full live application at **[https://icreatepdf.online](https://icreatepdf.online)**.
 
