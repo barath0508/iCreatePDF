@@ -201,6 +201,26 @@ export default function RootLayout({
   return (
     <html lang="en" className={`dark ${GeistSans.variable} ${GeistMono.variable}`}>
       <head>
+        {/* Instant auto-recovery on stale deployment chunk/CSS 404 */}
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `
+              window.addEventListener('error', function(e) {
+                var t = e.target;
+                if (t && ((t.tagName === 'LINK' && t.href) || (t.tagName === 'SCRIPT' && t.src))) {
+                  var url = t.href || t.src;
+                  if (url && url.indexOf('/_next/static/') !== -1) {
+                    var k = 'stale_chunk_' + url;
+                    if (!sessionStorage.getItem(k)) {
+                      sessionStorage.setItem(k, '1');
+                      window.location.reload();
+                    }
+                  }
+                }
+              }, true);
+            `
+          }}
+        />
         {/* Google Consent Mode v2 Default Initialization */}
         <Script
           id="consent-mode"

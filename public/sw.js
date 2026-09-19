@@ -11,7 +11,7 @@ try {
   console.warn('Monetag service worker script blocked or failed to load:', e);
 }
 
-const CACHE_NAME = 'icreatepdf-offline-v3';
+const CACHE_NAME = 'icreatepdf-offline-v4';
 const STATIC_ASSETS = [
   '/',
   '/logo.png',
