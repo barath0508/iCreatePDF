@@ -532,6 +532,33 @@ export const toolContent: Record<string, ToolContent> = {
     ],
   },
 
+  'pdf-to-png': {
+    name: 'PDF to PNG Converter',
+    url: '/pdf-to-png',
+    overview:
+      'When image clarity, crisp typography, and vector sharpness matter, converting PDF to PNG is the superior choice over lossy JPG compression. iCreatePDF transforms every page of your PDF document into a lossless, high-resolution PNG image directly in your browser. Whether you need transparent backgrounds for logos and diagrams, 300 DPI clarity for digital publications, or individual page asset extraction, everything executes 100% locally with zero server uploads.',
+    steps: [
+      { title: 'Select or drag your PDF', description: 'Upload any multi-page or single-page PDF document. Files are processed securely in local memory.' },
+      { title: 'Choose render resolution & pages', description: 'Select standard (1x), high-res (1.5x), or ultra-crisp (2x) scale, and choose all pages or a custom range.' },
+      { title: 'Preview converted PNG pages', description: 'Inspect lossless rendered page previews directly in the interactive workspace.' },
+      { title: 'Download single page or batch ZIP', description: 'Download individual page PNGs instantly or grab the complete archive in one click.' },
+    ],
+    useCases: [
+      'Extract razor-sharp diagrams, charts, and infographics without JPG compression artifacts',
+      'Convert presentation slide decks into high-res PNG images for web embedding or video editing',
+      'Export PDF certificates, diplomas, and vector graphics with crystal-clear edges',
+      'Generate transparent or pure white background page assets for graphic design in Figma or Photoshop',
+      'Save legal filings and multi-page documents as lossless archival images',
+    ],
+    faqs: [
+      { question: 'What is the advantage of PNG over JPG for PDF conversion?', answer: 'PNG uses lossless compression, preserving sharp text borders, thin diagram lines, and exact colors without the fuzzy pixelation or artifacts typical of JPG images.' },
+      { question: 'Can I choose specific pages or convert all pages at once?', answer: 'Yes! You can convert all pages in bulk and download a single ZIP archive, or selectively preview and download individual pages with a single click.' },
+      { question: 'What resolution options are available?', answer: 'You can choose between Standard (1x ~ 72 DPI), High-Res (1.5x ~ 150 DPI), and Ultra HD (2x ~ 300 DPI) for publication-grade sharpness.' },
+      { question: 'Are my PDF files or extracted PNGs stored on any server?', answer: 'Never. iCreatePDF processes documents entirely inside your web browser via client-side WebAssembly rendering. Your files never touch a remote server.' },
+      { question: 'Is there a file size limit or watermark?', answer: 'No. iCreatePDF is completely free, does not add any watermarks to your exported PNGs, and places no artificial file size limitations.' },
+    ],
+  },
+
   'pdf-to-text': {
     name: 'PDF to Text',
     url: '/pdf-to-text',

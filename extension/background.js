@@ -50,7 +50,7 @@ chrome.omnibox.onInputEntered.addListener((text) => {
   const query = text.trim().toLowerCase().replace(/\s+/g, '-');
   const validTools = [
     'merge-pdf', 'compress-pdf', 'pdf-to-word', 'word-to-pdf', 'jpg-to-pdf',
-    'pdf-to-jpg', 'edit-pdf', 'sign-pdf', 'split-pdf', 'protect-pdf', 'unlock-pdf',
+    'pdf-to-jpg', 'pdf-to-png', 'edit-pdf', 'sign-pdf', 'split-pdf', 'protect-pdf', 'unlock-pdf',
     'organize-pdf', 'rotate-pdf', 'crop-pdf', 'flatten-pdf', 'watermark-pdf'
   ];
 

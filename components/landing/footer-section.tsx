@@ -10,6 +10,7 @@ const footerLinks = {
     { name: 'PNG to PDF', href: '/png-to-pdf' },
     { name: 'HEIC to PDF', href: '/heic-to-pdf' },
     { name: 'PDF to JPG', href: '/pdf-to-jpg' },
+    { name: 'PDF to PNG', href: '/pdf-to-png' },
     { name: 'Word to PDF', href: '/word-to-pdf' },
     { name: 'Scan to PDF', href: '/scan-to-pdf' },
     { name: 'TXT to PDF', href: '/txt-to-pdf' },

@@ -244,13 +244,26 @@ export const ALL_TOOLS: PDFTool[] = [
     id: 'pdf-to-jpg',
     name: 'PDF to JPG',
     href: '/pdf-to-jpg',
-    description: 'Extract PDF pages as high-quality JPG or PNG images.',
+    description: 'Extract PDF pages as high-quality JPG images.',
     category: 'Convert from PDF',
     badge: 'Popular',
     iconName: 'Image',
     keywords: [
-      'pdf to jpg', 'pdf to jpeg', 'pdf to png', 'pdf to image', 
+      'pdf to jpg', 'pdf to jpeg', 'pdf to image', 
       'pdf to jpg converter', 'extract images', 'save as photo', 'pdf to picture'
+    ]
+  },
+  {
+    id: 'pdf-to-png',
+    name: 'PDF to PNG',
+    href: '/pdf-to-png',
+    description: 'Convert PDF pages into crisp, lossless PNG images with alpha transparency.',
+    category: 'Convert from PDF',
+    badge: 'Lossless',
+    iconName: 'FileImage',
+    keywords: [
+      'pdf to png', 'convert pdf to png', 'pdf to png converter', 'pdf to transparent image', 
+      'lossless pdf to image', 'high resolution pdf to png', 'pdf page to png', 'extract png from pdf'
     ]
   },
   {

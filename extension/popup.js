@@ -5,6 +5,7 @@ const TOOLS = [
   { name: 'PDF to Word', slug: 'pdf-to-word', icon: '📝', desc: 'Convert to .docx', category: 'convert', popular: true },
   { name: 'JPG to PDF', slug: 'jpg-to-pdf', icon: '🖼️', desc: 'Convert images to PDF', category: 'convert', popular: true },
   { name: 'PDF to JPG', slug: 'pdf-to-jpg', icon: '🌄', desc: 'Extract pages as images', category: 'convert', popular: true },
+  { name: 'PDF to PNG', slug: 'pdf-to-png', icon: '🖼️', desc: 'Lossless PNG images', category: 'convert', popular: true },
   { name: 'Edit PDF', slug: 'edit-pdf', icon: '✏️', desc: 'Add text, forms & shapes', category: 'edit', popular: true },
   { name: 'Sign PDF', slug: 'sign-pdf', icon: '✍️', desc: 'Draw & apply signatures', category: 'edit', popular: true },
   { name: 'Split PDF', slug: 'split-pdf', icon: '✂️', desc: 'Extract page ranges', category: 'organize', popular: true },

@@ -25,6 +25,7 @@ const TOOL_CATEGORIES = [
     tools: [
       { name: 'PDF to Word', href: '/pdf-to-word', desc: 'Editable DOCX files' },
       { name: 'PDF to JPG', href: '/pdf-to-jpg', desc: 'Extract high-res images' },
+      { name: 'PDF to PNG', href: '/pdf-to-png', desc: 'Lossless transparent PNG' },
       { name: 'PDF to Excel', href: '/pdf-to-excel', desc: 'Extract table data' },
       { name: 'PDF to Text', href: '/pdf-to-text', desc: 'Plain text extraction' },
       { name: 'Extract Images', href: '/extract-pdf-images', desc: 'Export embedded photos' },

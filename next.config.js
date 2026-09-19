@@ -1,7 +1,7 @@
 const OLD_TOOLS = [
   'jpg-to-pdf', 'png-to-pdf', 'heic-to-pdf', 'merge-pdf', 'split-pdf', 
   'compress-pdf', 'organize-pdf', 'rotate-pdf', 'watermark-pdf', 
-  'add-page-numbers', 'pdf-to-jpg', 'scan-to-pdf', 'word-to-pdf', 
+  'add-page-numbers', 'pdf-to-jpg', 'pdf-to-png', 'scan-to-pdf', 'word-to-pdf', 
   'protect-pdf', 'sign-pdf', 'pdf-to-text', 'edit-pdf', 'verify-signature', 
   'html-to-pdf', 'markdown-to-pdf', 'flatten-pdf', 'grayscale-pdf', 
   'compare-pdf', 'unlock-pdf', 'redact-pdf', 'crop-pdf', 'extract-pages', 

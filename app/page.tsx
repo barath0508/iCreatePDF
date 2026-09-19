@@ -41,6 +41,7 @@ const tools: ToolItem[] = [
   { iconName: 'FileImage', title: 'PNG to PDF', desc: 'Convert PNG images into high-quality PDF documents.', href: '/png-to-pdf', category: 'convert' },
   { iconName: 'FileImage', title: 'HEIC to PDF', desc: 'Convert high-efficiency HEIC photos without uploading.', href: '/heic-to-pdf', category: 'convert' },
   { iconName: 'FileImage', title: 'PDF to JPG', desc: 'Extract each PDF page as high-fidelity JPEG images.', href: '/pdf-to-jpg', category: 'convert' },
+  { iconName: 'FileImage', title: 'PDF to PNG', desc: 'Extract each PDF page as lossless PNG images with transparency.', href: '/pdf-to-png', category: 'convert' },
   { iconName: 'FileText', title: 'Word to PDF', desc: 'Convert Word (.docx) documents into printable PDFs.', href: '/word-to-pdf', category: 'convert' },
   { iconName: 'FileSpreadsheet', title: 'Excel to PDF', desc: 'Convert Excel spreadsheets (.xlsx, .xls) to PDF tables.', href: '/excel-to-pdf', category: 'convert' },
   { iconName: 'FileText', title: 'TXT to PDF', desc: 'Convert plain text files (.txt) into formatted PDFs.', href: '/txt-to-pdf', category: 'convert' },
