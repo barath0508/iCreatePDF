@@ -9,6 +9,8 @@ import {
 import { Button } from '@/components/ui/button';
 import { PDFDocument, StandardFonts } from 'pdf-lib';
 import { parseDocxMetadata, parsePageRange, sanitizeTextForPdf, DocxMetadata } from '@/lib/pdf';
+import { WorkflowNextActions } from '@/components/tools/shared/WorkflowNextActions';
+import { useClipboardFile } from '@/hooks/use-clipboard-file';
 
 export function WordToPdfTool() {
   const [file, setFile] = useState<File | null>(null);
@@ -17,6 +19,7 @@ export function WordToPdfTool() {
   const [progress, setProgress] = useState(0);
   const [error, setError] = useState<string | null>(null);
   const [downloadUrl, setDownloadUrl] = useState<string | null>(null);
+  const [outputBlob, setOutputBlob] = useState<Blob | null>(null);
   const [isDraggingOver, setIsDraggingOver] = useState(false);
 
   // Advanced Options
@@ -41,9 +44,13 @@ export function WordToPdfTool() {
     }
   }, []);
 
+  // Universal clipboard paste (Ctrl + V)
+  useClipboardFile((pastedFile) => handleFiles([pastedFile]), ['.docx', '.doc']);
+
   const handleFiles = async (uploadedFiles: FileList | File[]) => {
     setError(null);
     setDownloadUrl(null);
+    setOutputBlob(null);
     
     const uploadedFile = uploadedFiles[0];
     if (!uploadedFile) return;
@@ -122,12 +129,14 @@ export function WordToPdfTool() {
     setProgress(5);
     setError(null);
 
+    let hiddenContainer: HTMLDivElement | null = null;
+
     try {
       const buffer = await file.arrayBuffer();
       setProgress(15);
 
-      // 1. Render docx in a isolated hidden container to extract precise page sections
-      const hiddenContainer = document.createElement('div');
+      // 1. Render docx in an isolated hidden container to extract precise page sections
+      hiddenContainer = document.createElement('div');
       hiddenContainer.style.position = 'fixed';
       hiddenContainer.style.left = '-9999px';
       hiddenContainer.style.top = '-9999px';
@@ -163,11 +172,12 @@ export function WordToPdfTool() {
       const totalPages = sections.length;
       const targetPages = parsePageRange(pageRangeMode === 'all' ? 'all' : customPageRange, totalPages);
 
-      // 2. Create high-DPI PDF document using pdf-lib & html2canvas
+      // 2. Create high-DPI PDF document using pdf-lib & html2canvas-pro (supports oklch, oklab, color functions)
       const pdfDoc = await PDFDocument.create();
       const font = enableTextLayer ? await pdfDoc.embedFont(StandardFonts.Helvetica) : null;
 
-      const html2canvas = (await import('html2canvas')).default;
+      const html2canvasModule = await import('html2canvas-pro');
+      const html2canvas = html2canvasModule.default || html2canvasModule;
       const dpiScale = qualityPreset === 'ultra' ? 3.5 : qualityPreset === 'high' ? 2.5 : 1.5;
 
       let processedCount = 0;
@@ -197,7 +207,7 @@ export function WordToPdfTool() {
           }
         }
 
-        // Render section at high resolution canvas
+        // Render section at high resolution canvas using html2canvas-pro
         const canvas = await html2canvas(section, {
           scale: dpiScale,
           useCORS: true,
@@ -260,18 +270,34 @@ export function WordToPdfTool() {
         setProgress(currentProgress);
       }
 
-      document.body.removeChild(hiddenContainer);
-
       const pdfBytes = await pdfDoc.save();
       const blob = new Blob([pdfBytes.buffer as ArrayBuffer], { type: 'application/pdf' });
       const url = URL.createObjectURL(blob);
 
       setDownloadUrl(url);
+      setOutputBlob(blob);
       setProgress(100);
+
+      // Save to IndexedDB recent files cache
+      try {
+        const { saveRecentFile } = await import('@/lib/db');
+        await saveRecentFile({
+          name: `${file?.name.replace('.docx', '')}_converted.pdf`,
+          size: blob.size,
+          type: 'application/pdf',
+          tool: 'Word to PDF',
+          blob: blob,
+        });
+      } catch (e) {
+        console.warn('Recent file cache error:', e);
+      }
     } catch (err) {
-      console.error(err);
+      console.error('Word to PDF conversion failed:', err);
       setError((err as any)?.message || 'Failed to convert Word file. Make sure the file is valid and not password-protected.');
     } finally {
+      if (hiddenContainer && document.body.contains(hiddenContainer)) {
+        document.body.removeChild(hiddenContainer);
+      }
       setIsProcessing(false);
     }
   };
@@ -290,6 +316,7 @@ export function WordToPdfTool() {
     setFile(null);
     setMetadata(null);
     setDownloadUrl(null);
+    setOutputBlob(null);
     setError(null);
     setProgress(0);
     if (previewContainerRef.current) {
@@ -659,6 +686,12 @@ export function WordToPdfTool() {
                     <Download className="w-5 h-5" />
                     Download PDF Document
                   </Button>
+
+                  {outputBlob && (
+                    <div className="pt-2">
+                      <WorkflowNextActions file={outputBlob} currentTool="word-to-pdf" />
+                    </div>
+                  )}
 
                   <Button
                     variant="ghost"

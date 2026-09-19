@@ -43,6 +43,18 @@ const nextConfig = {
   typescript: {
     ignoreBuildErrors: true,
   },
+  turbopack: {
+    resolveAlias: {
+      html2canvas: 'html2canvas-pro',
+    },
+  },
+  webpack: (config) => {
+    config.resolve.alias = {
+      ...config.resolve.alias,
+      html2canvas: 'html2canvas-pro',
+    };
+    return config;
+  },
   images: {
     formats: ['image/avif', 'image/webp'],
   },
