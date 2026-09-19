@@ -1,11 +1,14 @@
 'use client';
 
-// A simple client-side IndexedDB wrapper to track recent operations locally.
-// The database is called 'icreatepdf_db' and the store is 'recent_files'.
+// Client-side IndexedDB wrapper to track recent operations and output files locally.
+// Database: 'icreatepdf_db', Store: 'recent_files'.
+// Files remain strictly local inside the browser sandbox — never uploaded to any server.
 
 const DB_NAME = 'icreatepdf_db';
 const STORE_NAME = 'recent_files';
-const DB_VERSION = 1;
+const DB_VERSION = 2; // Bumped version to support native Blob storage
+const MAX_RECENT_FILES = 8;
+const MAX_AGE_MS = 24 * 60 * 60 * 1000; // 24 hours retention
 
 function getDB(): Promise<IDBDatabase> {
   return new Promise((resolve, reject) => {
@@ -39,28 +42,45 @@ export interface RecentFile {
   toolName: string;
   href: string;
   timestamp: number;
-  downloadUrl?: string; 
+  downloadUrl?: string;
+  blob?: Blob;
 }
 
-export async function addRecentFile(file: { name: string; size: number; toolName: string; href: string; downloadUrl?: string }) {
+export async function addRecentFile(file: {
+  name: string;
+  size: number;
+  toolName: string;
+  href: string;
+  downloadUrl?: string;
+  blob?: Blob;
+}) {
   try {
     const db = await getDB();
     const tx = db.transaction(STORE_NAME, 'readwrite');
     const store = tx.objectStore(STORE_NAME);
 
-    // Get existing files to limit to top 5
+    // Fetch existing files
     const existing = await new Promise<RecentFile[]>((resolve) => {
       const req = store.getAll();
       req.onsuccess = () => resolve(req.result || []);
       req.onerror = () => resolve([]);
     });
 
-    // Sort by timestamp descending
+    const now = Date.now();
+
+    // Prune files older than 24h
+    for (const item of existing) {
+      if (now - item.timestamp > MAX_AGE_MS) {
+        store.delete(item.id);
+      }
+    }
+
+    // Sort descending by timestamp
     existing.sort((a, b) => b.timestamp - a.timestamp);
 
-    // Limit database size: if we have 10 or more, delete the oldest
-    if (existing.length >= 10) {
-      for (let i = 9; i < existing.length; i++) {
+    // Limit database size
+    if (existing.length >= MAX_RECENT_FILES) {
+      for (let i = MAX_RECENT_FILES - 1; i < existing.length; i++) {
         store.delete(existing[i].id);
       }
     }
@@ -71,8 +91,9 @@ export async function addRecentFile(file: { name: string; size: number; toolName
       size: file.size,
       toolName: file.toolName,
       href: file.href,
-      timestamp: Date.now(),
+      timestamp: now,
       downloadUrl: file.downloadUrl,
+      blob: file.blob,
     };
 
     store.put(newRecord);
@@ -101,7 +122,9 @@ export async function getRecentFiles(): Promise<RecentFile[]> {
     return new Promise((resolve) => {
       const req = store.getAll();
       req.onsuccess = () => {
-        const sorted = (req.result || []).sort((a: RecentFile, b: RecentFile) => b.timestamp - a.timestamp);
+        const sorted = (req.result || []).sort(
+          (a: RecentFile, b: RecentFile) => b.timestamp - a.timestamp
+        );
         resolve(sorted);
       };
       req.onerror = () => resolve([]);
@@ -109,6 +132,44 @@ export async function getRecentFiles(): Promise<RecentFile[]> {
   } catch (err) {
     console.error('Error getting recent files:', err);
     return [];
+  }
+}
+
+export async function downloadRecentFile(id: string): Promise<boolean> {
+  try {
+    const db = await getDB();
+    const tx = db.transaction(STORE_NAME, 'readonly');
+    const store = tx.objectStore(STORE_NAME);
+
+    const record = await new Promise<RecentFile | undefined>((resolve) => {
+      const req = store.get(id);
+      req.onsuccess = () => resolve(req.result);
+      req.onerror = () => resolve(undefined);
+    });
+
+    if (record?.blob) {
+      const url = URL.createObjectURL(record.blob);
+      const link = document.createElement('a');
+      link.href = url;
+      link.download = record.name;
+      document.body.appendChild(link);
+      link.click();
+      document.body.removeChild(link);
+      setTimeout(() => URL.revokeObjectURL(url), 2000);
+      return true;
+    } else if (record?.downloadUrl) {
+      const link = document.createElement('a');
+      link.href = record.downloadUrl;
+      link.download = record.name;
+      document.body.appendChild(link);
+      link.click();
+      document.body.removeChild(link);
+      return true;
+    }
+    return false;
+  } catch (err) {
+    console.error('Error downloading recent file:', err);
+    return false;
   }
 }
 
@@ -122,4 +183,3 @@ export async function clearRecentFiles() {
     console.error('Error clearing recent files:', err);
   }
 }
-

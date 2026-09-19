@@ -5,6 +5,8 @@ import { Upload, Layers, Trash2, Loader2, Download, FileText, ChevronUp, Chevron
 import { mergePdfs } from '@/lib/pdf';
 import { Button } from '@/components/ui/button';
 import { toast } from 'sonner';
+import { WorkflowNextActions } from '@/components/tools/shared/WorkflowNextActions';
+import { useClipboardFile } from '@/hooks/use-clipboard-file';
 
 interface PdfFile {
   id: string;
@@ -18,6 +20,7 @@ export function MergeTool() {
   const [progress, setProgress] = useState(0);
   const [error, setError] = useState<string | null>(null);
   const [downloadUrl, setDownloadUrl] = useState<string | null>(null);
+  const [mergedBlob, setMergedBlob] = useState<Blob | null>(null);
   const [isDraggingOver, setIsDraggingOver] = useState(false);
 
   const fileInputRef = useRef<HTMLInputElement>(null);
@@ -30,6 +33,8 @@ export function MergeTool() {
       handleFiles(getPreloadedFiles());
     }
   }, []);
+
+  useClipboardFile({ onFilePasted: (pasted) => handleFiles(pasted) });
 
   const handleFiles = async (uploadedFiles: FileList | File[]) => {
     setError(null);
@@ -142,6 +147,7 @@ export function MergeTool() {
       const mergedBytes = await mergePdfs(buffers, (p) => setProgress(Math.round(p)));
 
       const blob = new Blob([mergedBytes as any], { type: 'application/pdf' });
+      setMergedBlob(blob);
       const url = URL.createObjectURL(blob);
       setDownloadUrl(url);
       setProgress(100);
@@ -156,6 +162,7 @@ export function MergeTool() {
         toolName: 'Merge PDF',
         href: '/merge-pdf',
         downloadUrl: url,
+        blob: blob,
       });
     } catch (err: any) {
       console.error(err);
@@ -349,6 +356,14 @@ export function MergeTool() {
         </div>
 
       </div>
+
+      {downloadUrl && (
+        <WorkflowNextActions
+          currentTool="merge-pdf"
+          fileBlob={mergedBlob}
+          fileName={`merged-icreatepdf-${Date.now()}.pdf`}
+        />
+      )}
     </div>
   );
 }

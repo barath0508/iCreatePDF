@@ -3,6 +3,8 @@
 import React, { useState, useRef } from 'react';
 import { Upload, Shield, Loader2, Download, Key } from 'lucide-react';
 import { Button } from '@/components/ui/button';
+import { WorkflowNextActions } from '@/components/tools/shared/WorkflowNextActions';
+import { useClipboardFile } from '@/hooks/use-clipboard-file';
 
 export function ProtectTool() {
   const [file, setFile] = useState<File | null>(null);
@@ -11,9 +13,19 @@ export function ProtectTool() {
   const [isProcessing, setIsProcessing] = useState(false);
   const [error, setError] = useState<string | null>(null);
   const [downloadUrl, setDownloadUrl] = useState<string | null>(null);
+  const [protectedBlob, setProtectedBlob] = useState<Blob | null>(null);
   const [isDraggingOver, setIsDraggingOver] = useState(false);
 
   const fileInputRef = useRef<HTMLInputElement>(null);
+
+  React.useEffect(() => {
+    const { getPreloadedFiles, hasPreloadedFiles } = require('@/lib/preloader');
+    if (hasPreloadedFiles()) {
+      handleFiles(getPreloadedFiles());
+    }
+  }, []);
+
+  useClipboardFile({ onFilePasted: (files) => handleFiles(files) });
 
   const handleFiles = (uploadedFiles: FileList | File[]) => {
     setError(null);
@@ -45,8 +57,20 @@ export function ProtectTool() {
       const encryptedBytes = await encryptPDF(new Uint8Array(buffer), password);
 
       const blob = new Blob([encryptedBytes as any], { type: 'application/pdf' });
+      setProtectedBlob(blob);
       const url = URL.createObjectURL(blob);
       setDownloadUrl(url);
+
+      // Cache in IndexedDB
+      const { addRecentFile } = require('@/lib/db');
+      addRecentFile({
+        name: `protected-${file?.name || 'document.pdf'}`,
+        size: blob.size,
+        toolName: 'Protect PDF',
+        href: '/protect-pdf',
+        downloadUrl: url,
+        blob: blob,
+      });
     } catch (err: any) {
       console.error(err);
       setError(err?.message || 'Failed to encrypt PDF.');
@@ -234,6 +258,14 @@ export function ProtectTool() {
         </div>
 
       </div>
+
+      {downloadUrl && (
+        <WorkflowNextActions
+          currentTool="protect-pdf"
+          fileBlob={protectedBlob}
+          fileName={`protected-${file?.name || 'document.pdf'}`}
+        />
+      )}
     </div>
   );
 }

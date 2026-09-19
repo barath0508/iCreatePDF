@@ -172,6 +172,10 @@ export const metadata: Metadata = {
   },
   verification: {
     google: '5IL2ygi_5ddVkO4JU80nuaffteIKPWKkjHmHLkfN9Hk',
+    yandex: '06e911d3ce1e386c',
+    other: {
+      'naver-site-verification': 'naver2ffd1e24cebd0a189b42c8b052c89070.html',
+    },
   },
   icons: {
     icon: [
@@ -282,6 +286,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
         <link rel="manifest" href="/manifest.json" />
         <link rel="apple-touch-icon" href="/logo.png" />
         <meta name="google-adsense-account" content="ca-pub-8825674134696584" />
+        <meta name="yandex-verification" content="06e911d3ce1e386c" />
 
         {/* Google AdSense */}
         <Script

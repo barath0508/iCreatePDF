@@ -4,6 +4,8 @@ import React, { useState, useRef } from 'react';
 import { Upload, Layers, Loader2, Download, FileText, CheckCircle2, TrendingDown } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { toast } from 'sonner';
+import { WorkflowNextActions } from '@/components/tools/shared/WorkflowNextActions';
+import { useClipboardFile } from '@/hooks/use-clipboard-file';
 
 export function CompressTool() {
   const [file, setFile] = useState<File | null>(null);
@@ -12,6 +14,7 @@ export function CompressTool() {
   const [progress, setProgress] = useState(0);
   const [error, setError] = useState<string | null>(null);
   const [downloadUrl, setDownloadUrl] = useState<string | null>(null);
+  const [compressedBlob, setCompressedBlob] = useState<Blob | null>(null);
   const [compressedSize, setCompressedSize] = useState(0);
   const [isDraggingOver, setIsDraggingOver] = useState(false);
 
@@ -23,6 +26,8 @@ export function CompressTool() {
       handleFiles(getPreloadedFiles());
     }
   }, []);
+
+  useClipboardFile({ onFilePasted: (files) => handleFiles(files) });
 
   const handleFiles = async (uploadedFiles: FileList | File[]) => {
     setError(null);
@@ -93,6 +98,7 @@ export function CompressTool() {
       setProgress(90);
       const blob = new Blob([compressedBytes as any], { type: 'application/pdf' });
       setCompressedSize(blob.size);
+      setCompressedBlob(blob);
       
       const url = URL.createObjectURL(blob);
       setDownloadUrl(url);
@@ -109,6 +115,7 @@ export function CompressTool() {
         toolName: 'Compress PDF',
         href: '/compress-pdf',
         downloadUrl: url,
+        blob: blob,
       });
     } catch (err: any) {
       console.error(err);
@@ -296,6 +303,14 @@ export function CompressTool() {
         </div>
 
       </div>
+
+      {downloadUrl && (
+        <WorkflowNextActions
+          currentTool="compress-pdf"
+          fileBlob={compressedBlob}
+          fileName={`compressed-${file?.name || 'document.pdf'}`}
+        />
+      )}
     </div>
   );
 }

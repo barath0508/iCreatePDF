@@ -4,12 +4,15 @@ import React, { useState, useRef, useEffect } from 'react';
 import { Upload, PenTool, Type, Loader2, Download, Check, FileSignature } from 'lucide-react';
 import { PDFDocument } from 'pdf-lib';
 import { Button } from '@/components/ui/button';
+import { WorkflowNextActions } from '@/components/tools/shared/WorkflowNextActions';
+import { useClipboardFile } from '@/hooks/use-clipboard-file';
 
 export function SignTool() {
   const [file, setFile] = useState<File | null>(null);
   const [isProcessing, setIsProcessing] = useState(false);
   const [error, setError] = useState<string | null>(null);
   const [downloadUrl, setDownloadUrl] = useState<string | null>(null);
+  const [signedBlob, setSignedBlob] = useState<Blob | null>(null);
   const [isDraggingOver, setIsDraggingOver] = useState(false);
   const [currentPage, setCurrentPage] = useState(1);
 
@@ -22,6 +25,8 @@ export function SignTool() {
       }
     }
   }, []);
+
+  useClipboardFile({ onFilePasted: (files) => files[0] && setFile(files[0]) });
   const [pagesCount, setPagesCount] = useState(0);
   const [isPreviewLoading, setIsPreviewLoading] = useState(false);
 
@@ -260,8 +265,20 @@ export function SignTool() {
 
       const signedBytes = await pdfDoc.save();
       const blob = new Blob([signedBytes as any], { type: 'application/pdf' });
+      setSignedBlob(blob);
       const url = URL.createObjectURL(blob);
       setDownloadUrl(url);
+
+      // Cache in IndexedDB
+      const { addRecentFile } = require('@/lib/db');
+      addRecentFile({
+        name: `signed-${file?.name || 'document.pdf'}`,
+        size: blob.size,
+        toolName: 'Sign PDF',
+        href: '/sign-pdf',
+        downloadUrl: url,
+        blob: blob,
+      });
     } catch (err: any) {
       console.error(err);
       setError(err?.message || 'Failed to apply signature to PDF.');
@@ -518,6 +535,14 @@ export function SignTool() {
         </div>
 
       </div>
+
+      {downloadUrl && (
+        <WorkflowNextActions
+          currentTool="sign-pdf"
+          fileBlob={signedBlob}
+          fileName={`signed-${file?.name || 'document.pdf'}`}
+        />
+      )}
     </div>
   );
 }

@@ -2,7 +2,7 @@
 
 import React, { useEffect, useState } from 'react';
 import { History, FileText, Trash2, Download, X, ExternalLink } from 'lucide-react';
-import { getRecentFiles, clearRecentFiles, deleteRecentFile, RecentFile } from '@/lib/db';
+import { getRecentFiles, clearRecentFiles, deleteRecentFile, downloadRecentFile, RecentFile } from '@/lib/db';
 
 export function RecentFilesWidget() {
   const [isOpen, setIsOpen] = useState(false);
@@ -117,28 +117,24 @@ export function RecentFilesWidget() {
 
                 {/* Actions */}
                 <div className="flex items-center gap-1 opacity-60 group-hover:opacity-100 transition-opacity ml-2">
-                  {file.downloadUrl ? (
-                    <a
-                      href={file.downloadUrl}
-                      download={file.name}
-                      title="Download again"
-                      className="p-1.5 hover:bg-brand/10 rounded-lg text-brand transition-colors"
-                    >
-                      <Download className="w-3.5 h-3.5" />
-                    </a>
-                  ) : (
-                    <a
-                      href={file.href}
-                      title="Re-run tool"
-                      className="p-1.5 hover:bg-brand/10 rounded-lg text-brand transition-colors"
-                    >
-                      <ExternalLink className="w-3.5 h-3.5" />
-                    </a>
-                  )}
+                  <button
+                    onClick={() => downloadRecentFile(file.id)}
+                    title="Download again"
+                    className="p-1.5 hover:bg-brand/10 rounded-lg text-brand transition-colors cursor-pointer"
+                  >
+                    <Download className="w-3.5 h-3.5" />
+                  </button>
+                  <a
+                    href={file.href}
+                    title="Open tool"
+                    className="p-1.5 hover:bg-brand/10 rounded-lg text-muted-foreground hover:text-brand transition-colors"
+                  >
+                    <ExternalLink className="w-3.5 h-3.5" />
+                  </a>
                   <button
                     onClick={(e) => handleDelete(e, file.id)}
                     title="Remove from list"
-                    className="p-1.5 hover:bg-red-500/10 rounded-lg text-foreground/30 hover:text-red-400 transition-colors"
+                    className="p-1.5 hover:bg-red-500/10 rounded-lg text-foreground/30 hover:text-red-400 transition-colors cursor-pointer"
                   >
                     <Trash2 className="w-3.5 h-3.5" />
                   </button>

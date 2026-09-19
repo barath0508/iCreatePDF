@@ -3,6 +3,8 @@
 import React, { useState, useRef, useEffect } from 'react';
 import { Upload, Layers, Loader2, Download, FileImage } from 'lucide-react';
 import { Button } from '@/components/ui/button';
+import { WorkflowNextActions } from '@/components/tools/shared/WorkflowNextActions';
+import { useClipboardFile } from '@/hooks/use-clipboard-file';
 
 export function PdfToJpgTool() {
   const [file, setFile] = useState<File | null>(null);
@@ -22,6 +24,8 @@ export function PdfToJpgTool() {
       pdfjsRef.current = lib;
     }).catch(() => {/* silently ignore — will lazy-load on demand */});
   }, []);
+
+  useClipboardFile({ onFilePasted: (files) => handleFiles(files) });
 
   const handleFiles = async (uploadedFiles: FileList | File[]) => {
     setError(null);
@@ -120,6 +124,17 @@ export function PdfToJpgTool() {
       const zipContent = await zip.generateAsync({ type: 'blob' });
       const url = URL.createObjectURL(zipContent);
       setDownloadUrl(url);
+
+      // Cache reference in IndexedDB
+      const { addRecentFile } = require('@/lib/db');
+      addRecentFile({
+        name: `images-${file?.name.replace('.pdf', '')}.zip`,
+        size: zipContent.size,
+        toolName: 'PDF to JPG',
+        href: '/pdf-to-jpg',
+        downloadUrl: url,
+        blob: zipContent,
+      });
     } catch (err: any) {
       console.error(err);
       setError(err?.message || 'Failed to extract JPG pages.');
@@ -269,6 +284,10 @@ export function PdfToJpgTool() {
         </div>
 
       </div>
+
+      {downloadUrl && (
+        <WorkflowNextActions currentTool="pdf-to-jpg" />
+      )}
     </div>
   );
 }
