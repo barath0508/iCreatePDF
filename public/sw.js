@@ -1,16 +1,3 @@
-// Monetag Service Worker Verification
-self.options = {
-    "domain": "5gvci.com",
-    "zoneId": 11858222
-};
-self.lary = "";
-
-try {
-  importScripts('https://5gvci.com/act/files/service-worker.min.js?r=sw');
-} catch (e) {
-  console.warn('Monetag service worker script blocked or failed to load:', e);
-}
-
 const CACHE_NAME = 'icreatepdf-offline-v4';
 const STATIC_ASSETS = [
   '/',
