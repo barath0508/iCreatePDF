@@ -1,7 +1,7 @@
 // Monetag Service Worker Verification
 self.options = {
     "domain": "5gvci.com",
-    "zoneId": 11378575
+    "zoneId": 11858222
 };
 self.lary = "";
 
