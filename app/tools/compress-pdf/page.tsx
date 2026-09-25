@@ -6,20 +6,20 @@ import { toolContent } from '@/lib/tool-content';
 import { buildAlternates, getToolFullJsonLd } from '@/lib/seo';
 
 export const metadata: Metadata = {
-  title: 'Compress PDF Free Online — Reduce File Size Without Quality Loss | iCreatePDF',
-  description: 'Shrink and compress PDF file size online free. Optimize documents for email and web portals. 100% private local WebAssembly compression, no uploads.',
-  keywords: 'compress pdf, compress pdf online free, reduce pdf file size, shrink pdf, compress pdf without losing quality, pdf compressor, reduce pdf size online free, compress pdf file, make pdf smaller, pdf size reducer, compress pdf locally, compress pdf no upload, pdf file size reducer free, how to compress pdf, compress pdf for email, compress pdf to 1mb, compress pdf to 200kb, compress pdf to 100kb, compress large pdf, best pdf compressor free',
+  title: 'Compress PDF Online (No Upload) — 100% Private Local Reducer | iCreatePDF',
+  description: 'Shrink confidential PDF files locally in your browser with WebAssembly. Zero server uploads, zero logs, zero cloud exposure. Safe for legal & financial documents.',
+  keywords: 'compress pdf no upload, compress confidential pdf, private pdf compressor, compress pdf without uploading, client side pdf compressor, reduce pdf size locally, compress sensitive pdf, shrink pdf without server upload, compress pdf offline, secure pdf compressor free, hipaa compliant pdf compression, reduce pdf file size free, compress pdf, compress pdf online free',
   alternates: buildAlternates('/tools/compress-pdf'),
   openGraph: {
-    title: 'Compress PDF Free Online — Reduce File Size Without Quality Loss | iCreatePDF',
-    description: 'Shrink and compress PDF file size online free. Optimize documents for email and web portals. 100% private local WebAssembly compression, no uploads.',
+    title: 'Compress PDF Online (No Upload) — 100% Private Local Reducer | iCreatePDF',
+    description: 'Shrink confidential PDF files locally in your browser with WebAssembly. Zero server uploads, zero logs, zero cloud exposure. Safe for legal & financial documents.',
     type: 'website',
-    images: [{ url: 'https://www.icreatepdf.online/opengraph-image', width: 1200, height: 630, alt: 'Compress PDF File Size — iCreatePDF' }],
+    images: [{ url: 'https://www.icreatepdf.online/opengraph-image', width: 1200, height: 630, alt: 'Private Client-Side PDF Compressor — iCreatePDF' }],
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Compress PDF Free Online — Reduce File Size Without Quality Loss | iCreatePDF',
-    description: 'Shrink and compress PDF file size online free. Optimize documents for email and web portals. 100% private local WebAssembly compression, no uploads.',
+    title: 'Compress PDF Online (No Upload) — 100% Private Local Reducer | iCreatePDF',
+    description: 'Shrink confidential PDF files locally in your browser with WebAssembly. Zero server uploads, zero logs, zero cloud exposure. Safe for legal & financial documents.',
     images: ['https://www.icreatepdf.online/opengraph-image'],
   },
 };

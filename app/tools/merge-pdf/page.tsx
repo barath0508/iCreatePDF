@@ -6,20 +6,20 @@ import { toolContent } from '@/lib/tool-content';
 import { buildAlternates, getToolFullJsonLd } from '@/lib/seo';
 
 export const metadata: Metadata = {
-  title: 'Merge PDF Free Online — Combine Multiple PDF Files | iCreatePDF',
-  description: 'Combine multiple PDF files into one document free online. ⚡ Fast, secure, and 100% local — files stay in your browser, no upload required.',
-  keywords: 'merge pdf, combine pdf, merge pdf online free, combine pdf files, pdf joiner, merge multiple pdfs into one, how to combine pdf files, pdf merger free, merge pdf without uploading, join pdf online free, merge pdf files locally, pdf combiner free, merge pdf on mac, merge pdf on iphone, merge 2 pdfs together free, combine pdf pages online',
+  title: 'Merge PDF Privately (No Upload) — Combine Sensitive PDFs Locally | iCreatePDF',
+  description: 'Combine multiple confidential PDF files into one document free online. 100% client-side WebAssembly merge — files never leave your browser, zero server uploads.',
+  keywords: 'merge pdf no upload, combine pdf locally, merge confidential pdf, private pdf merger, merge pdf without uploading, combine sensitive pdfs, client side pdf joiner, merge pdf files offline, secure pdf combiner free, merge legal documents pdf, merge pdf, combine pdf, merge pdf online free',
   alternates: buildAlternates('/tools/merge-pdf'),
   openGraph: {
-    title: 'Merge PDF Free Online — Combine Multiple PDF Files | iCreatePDF',
-    description: 'Combine multiple PDF files into one document free online. ⚡ Fast, secure, and 100% local — files stay in your browser, no upload required.',
+    title: 'Merge PDF Privately (No Upload) — Combine Sensitive PDFs Locally | iCreatePDF',
+    description: 'Combine multiple confidential PDF files into one document free online. 100% client-side WebAssembly merge — files never leave your browser, zero server uploads.',
     type: 'website',
-    images: [{ url: 'https://www.icreatepdf.online/opengraph-image', width: 1200, height: 630, alt: 'Merge PDF Files Online — iCreatePDF' }],
+    images: [{ url: 'https://www.icreatepdf.online/opengraph-image', width: 1200, height: 630, alt: 'Private Client-Side PDF Merger — iCreatePDF' }],
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Merge PDF Free Online — Combine Multiple PDF Files | iCreatePDF',
-    description: 'Combine multiple PDF files into one document free online. ⚡ Fast, secure, and 100% local — files stay in your browser, no upload required.',
+    title: 'Merge PDF Privately (No Upload) — Combine Sensitive PDFs Locally | iCreatePDF',
+    description: 'Combine multiple confidential PDF files into one document free online. 100% client-side WebAssembly merge — files never leave your browser, zero server uploads.',
     images: ['https://www.icreatepdf.online/opengraph-image'],
   },
 };

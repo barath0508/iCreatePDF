@@ -6,20 +6,20 @@ import { toolContent } from '@/lib/tool-content';
 import { buildAlternates, getToolFullJsonLd } from '@/lib/seo';
 
 export const metadata: Metadata = {
-  title: 'Edit PDF Free Online — Add Text, Annotations & Shapes | iCreatePDF',
-  description: 'Edit PDF documents online free. Add text overlays, comments, highlights, drawings, and shapes locally in browser memory. 100% secure, zero uploads.',
-  keywords: 'edit pdf, annotate pdf, add text to pdf, overlay text on pdf, edit pdf free online, write on pdf online, private pdf editor, pdf markup tool online, insert text into pdf document, free browser pdf editor, highlight and draw on pdf, edit pdf without adobe acrobat, add comments to pdf online, client side pdf editor, best free online pdf editor',
+  title: 'Client-Side PDF Editor (No Upload) — Edit Sensitive PDFs Privately | iCreatePDF',
+  description: 'Edit and annotate PDF documents locally in your browser memory. Add text, highlights, drawings, and signatures with zero server uploads and 100% privacy.',
+  keywords: 'client side pdf editor, edit pdf no upload, edit confidential pdf online, private browser pdf editor, annotate pdf locally, secure pdf editor free, offline pdf markup, edit pdf without uploading, edit pdf, edit pdf free online, add text to pdf',
   alternates: buildAlternates('/tools/edit-pdf'),
   openGraph: {
-    title: 'Edit PDF Free Online — Add Text, Annotations & Shapes | iCreatePDF',
-    description: 'Edit PDF documents online free. Add text overlays, comments, highlights, drawings, and shapes locally in browser memory. 100% secure, zero uploads.',
+    title: 'Client-Side PDF Editor (No Upload) — Edit Sensitive PDFs Privately | iCreatePDF',
+    description: 'Edit and annotate PDF documents locally in your browser memory. Add text, highlights, drawings, and signatures with zero server uploads and 100% privacy.',
     type: 'website',
-    images: [{ url: 'https://www.icreatepdf.online/opengraph-image', width: 1200, height: 630, alt: 'Edit PDF & Add Annotations — iCreatePDF' }],
+    images: [{ url: 'https://www.icreatepdf.online/opengraph-image', width: 1200, height: 630, alt: 'Private Client-Side PDF Editor — iCreatePDF' }],
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Edit PDF Free Online — Add Text, Annotations & Shapes | iCreatePDF',
-    description: 'Edit PDF documents online free. Add text overlays, comments, highlights, drawings, and shapes locally in browser memory. 100% secure, zero uploads.',
+    title: 'Client-Side PDF Editor (No Upload) — Edit Sensitive PDFs Privately | iCreatePDF',
+    description: 'Edit and annotate PDF documents locally in your browser memory. Add text, highlights, drawings, and signatures with zero server uploads and 100% privacy.',
     images: ['https://www.icreatepdf.online/opengraph-image'],
   },
 };

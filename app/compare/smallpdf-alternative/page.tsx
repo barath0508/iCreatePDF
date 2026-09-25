@@ -6,13 +6,13 @@ import { ShieldCheck, Lock, Zap, Infinity as InfinityIcon } from 'lucide-react';
 import Link from 'next/link';
 
 export const metadata: Metadata = {
-  title: 'Smallpdf Alternative: No 2-Task Daily Limit | iCreatePDF',
-  description: "Smallpdf's free plan caps you at 2 tasks a day. iCreatePDF is unlimited, free, and never uploads your files — everything runs locally in your browser.",
-  keywords: 'smallpdf alternative, smallpdf vs icreatepdf, smallpdf task limit, smallpdf free alternative, smallpdf 2 tasks per day',
+  title: 'Smallpdf Alternative: Free Unlimited Local PDF Tools (No 2-Task Limit) | iCreatePDF',
+  description: "Frustrated by Smallpdf's 2-task daily limit? iCreatePDF gives you 70+ unlimited, free PDF tools with zero server uploads and 100% private in-browser processing.",
+  keywords: 'smallpdf alternative, smallpdf alternative free, smallpdf task limit bypass, smallpdf vs icreatepdf, smallpdf 2 tasks per day free alternative, unlimited smallpdf alternative, smallpdf free alternative',
   alternates: buildAlternates('/compare/smallpdf-alternative'),
   openGraph: {
-    title: 'Smallpdf Alternative: No 2-Task Daily Limit | iCreatePDF',
-    description: "iCreatePDF is an unlimited, free Smallpdf alternative with 100% local, in-browser processing.",
+    title: 'Smallpdf Alternative: Free Unlimited Local PDF Tools (No 2-Task Limit) | iCreatePDF',
+    description: "iCreatePDF is an unlimited, free Smallpdf alternative with zero server uploads and 100% local in-browser processing.",
     type: 'website',
   },
 };

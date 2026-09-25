@@ -45,7 +45,7 @@ export function WordToPdfTool() {
   }, []);
 
   // Universal clipboard paste (Ctrl + V)
-  useClipboardFile((pastedFile) => handleFiles([pastedFile]), ['.docx', '.doc']);
+  useClipboardFile({ onFilePasted: (files) => handleFiles(files) });
 
   const handleFiles = async (uploadedFiles: FileList | File[]) => {
     setError(null);
@@ -337,12 +337,12 @@ export function WordToPdfTool() {
 
       // Save to IndexedDB recent files cache
       try {
-        const { saveRecentFile } = await import('@/lib/db');
-        await saveRecentFile({
+        const { addRecentFile } = await import('@/lib/db');
+        await addRecentFile({
           name: `${file?.name.replace('.docx', '')}_converted.pdf`,
           size: blob.size,
-          type: 'application/pdf',
-          tool: 'Word to PDF',
+          toolName: 'Word to PDF',
+          href: '/word-to-pdf',
           blob: blob,
         });
       } catch (e) {
@@ -746,7 +746,7 @@ export function WordToPdfTool() {
 
                   {outputBlob && (
                     <div className="pt-2">
-                      <WorkflowNextActions file={outputBlob} currentTool="word-to-pdf" />
+                      <WorkflowNextActions fileBlob={outputBlob} currentTool="word-to-pdf" fileName={`${file?.name.replace('.docx', '')}_converted.pdf`} />
                     </div>
                   )}
 

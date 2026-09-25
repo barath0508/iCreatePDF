@@ -6,20 +6,20 @@ import { toolContent } from '@/lib/tool-content';
 import { buildAlternates, getToolFullJsonLd } from '@/lib/seo';
 
 export const metadata: Metadata = {
-  title: 'Bates Numbering PDF — Free Legal Stamping (EasyBates Alternative) | iCreatePDF',
-  description: 'Apply sequential Bates stamps with custom prefixes and padding to legal discovery documents. The best free, 100% private EasyBates online alternative.',
-  keywords: 'easybates, easybates online, easybates alternative, easybates free, bates numbering pdf, bates numbering, add bates stamps pdf, bates numbering tool, legal document numbering, secure bates numbering pdf tool, legal page numbering private, local bates stamp generator, legal discovery document numbering, client-side bates numbering, medical records sequential numbering, compliance page stamps, litigation bates stamp online, confidential discovery numbering, legal exhibit numbering pdf',
+  title: 'Bates Numbering PDF Online Free — Legal Document Stamping (No Upload) | iCreatePDF',
+  description: 'Apply sequential Bates stamps and legal exhibit numbers to discovery documents. 100% private client-side processing with zero server uploads. Free EasyBates alternative.',
+  keywords: 'bates numbering pdf, bates numbering online free, bates stamp pdf no upload, legal document numbering free, easybates online alternative, easybates free, confidential discovery numbering, legal exhibit numbering pdf, client-side bates numbering, medical records sequential numbering, litigation bates stamp online, add bates stamps pdf',
   alternates: buildAlternates('/tools/bates-numbering'),
   openGraph: {
-    title: 'Bates Numbering PDF — Free Legal Stamping (EasyBates Alternative) | iCreatePDF',
-    description: 'Apply sequential Bates stamps with custom prefixes and padding to legal discovery documents. The best free, 100% private EasyBates online alternative.',
+    title: 'Bates Numbering PDF Online Free — Legal Document Stamping (No Upload) | iCreatePDF',
+    description: 'Apply sequential Bates stamps and legal exhibit numbers to discovery documents. 100% private client-side processing with zero server uploads. Free EasyBates alternative.',
     type: 'website',
     images: [{ url: 'https://www.icreatepdf.online/opengraph-image', width: 1200, height: 630, alt: 'Bates Numbering for Legal Documents — iCreatePDF' }],
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Bates Numbering PDF — Free Legal Stamping (EasyBates Alternative) | iCreatePDF',
-    description: 'Apply sequential Bates stamps with custom prefixes and padding to legal discovery documents. The best free, 100% private EasyBates online alternative.',
+    title: 'Bates Numbering PDF Online Free — Legal Document Stamping (No Upload) | iCreatePDF',
+    description: 'Apply sequential Bates stamps and legal exhibit numbers to discovery documents. 100% private client-side processing with zero server uploads. Free EasyBates alternative.',
     images: ['https://www.icreatepdf.online/opengraph-image'],
   },
 };

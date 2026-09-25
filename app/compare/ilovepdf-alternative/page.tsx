@@ -6,13 +6,13 @@ import { ShieldCheck, Lock, Zap, Coins, Check, X } from 'lucide-react';
 import Link from 'next/link';
 
 export const metadata: Metadata = {
-  title: 'iLovePDF Alternative: Free & Private PDF Tools | iCreatePDF',
-  description: 'Looking for an iLovePDF alternative? iCreatePDF is free, has no 25MB file cap, and never uploads your files — everything runs locally in your browser.',
-  keywords: 'ilovepdf alternative, ilovepdf vs icreatepdf, free pdf tool no file limit, ilovepdf free alternative, best ilovepdf alternative, private ilovepdf alternative, client side alternative to ilovepdf',
+  title: 'iLovePDF Alternative: 100% Free, No File Limits & Zero Uploads | iCreatePDF',
+  description: 'Looking for a free iLovePDF alternative? iCreatePDF has no 25MB file size cap, no daily task limits, and never uploads your files — 100% private in-browser tools.',
+  keywords: 'ilovepdf alternative, ilovepdf alternative free no limit, ilovepdf free alternative, best ilovepdf alternative, private ilovepdf alternative, ilovepdf vs icreatepdf, client side alternative to ilovepdf, free pdf tools without upload',
   alternates: buildAlternates('/compare/ilovepdf-alternative'),
   openGraph: {
-    title: 'iLovePDF Alternative:, Limit, No File Cap | iCreatePDF',
-    description: 'iCreatePDF is a free iLovePDF alternative with no file size cap and 100% local, in-browser processing.',
+    title: 'iLovePDF Alternative: 100% Free, No File Limits & Zero Uploads | iCreatePDF',
+    description: 'Looking for a free iLovePDF alternative? iCreatePDF has no 25MB file size cap, no daily task limits, and never uploads your files — 100% private in-browser tools.',
     type: 'website',
   },
 };

@@ -7,19 +7,19 @@ import Link from 'next/link';
 
 export const metadata: Metadata = {
   title: 'No-Upload PDF Tools — 100% Private Offline Browser PDF Suite | iCreatePDF',
-  description: 'Explore 70+ completely private, browser-based PDF tools that run locally via WebAssembly. Zero file uploads, zero tracking, total security.',
-  keywords: 'no upload pdf tools, private pdf converter, offline pdf editor, browser based pdf utilities, client side pdf tools, zero server upload pdf, secure pdf tools online, local webassembly pdf editor, privacy focused pdf tools, confidential pdf converter, client side pdf suite, hipaa compliant pdf editor',
+  description: 'Explore 70+ private browser-based PDF tools that run locally via WebAssembly. Compress confidential PDFs, merge sensitive documents, and edit files with zero server uploads.',
+  keywords: 'no upload pdf tools, compress confidential pdf without uploading, client side pdf editor in browser, how to merge sensitive pdfs locally, private pdf compressor no server upload, free offline pdf converter in browser, private pdf converter, offline pdf editor, browser based pdf utilities, client side pdf tools, zero server upload pdf, secure pdf tools online, local webassembly pdf editor, privacy focused pdf tools, confidential pdf converter, client side pdf suite, hipaa compliant pdf editor',
   alternates: buildAlternates('/tools/no-upload-pdf-tools'),
   openGraph: {
     title: 'No-Upload PDF Tools — 100% Private Offline Browser PDF Suite | iCreatePDF',
-    description: 'Explore 70+ completely private, browser-based PDF tools that run locally via WebAssembly. Zero file uploads, zero tracking, total security.',
+    description: 'Explore 70+ private browser-based PDF tools that run locally via WebAssembly. Compress confidential PDFs, merge sensitive documents, and edit files with zero server uploads.',
     type: 'website',
     images: [{ url: 'https://www.icreatepdf.online/opengraph-image', width: 1200, height: 630, alt: 'No-Upload PDF Suite — iCreatePDF' }],
   },
   twitter: {
     card: 'summary_large_image',
     title: 'No-Upload PDF Tools — 100% Private Offline Browser PDF Suite | iCreatePDF',
-    description: 'Explore 70+ completely private, browser-based PDF tools that run locally via WebAssembly. Zero file uploads, zero tracking, total security.',
+    description: 'Explore 70+ private browser-based PDF tools that run locally via WebAssembly. Compress confidential PDFs, merge sensitive documents, and edit files with zero server uploads.',
     images: ['https://www.icreatepdf.online/opengraph-image'],
   },
 };
@@ -160,7 +160,7 @@ export default function NoUploadPdfToolsPage() {
               70+ PDF Tools That Never Upload Your Files
             </h1>
             <p className="text-foreground/40 text-sm sm:text-base leading-relaxed">
-              Every tool below runs 100% locally in your browser tab. No file is ever transmitted to iCreatePDF or any third party — no account, no server, no exceptions.
+              Every tool below runs 100% locally in your browser tab via WebAssembly. Compress confidential files, merge sensitive legal contracts, or convert documents with zero server uploads — completely private and safe for healthcare, financial, and enterprise workflows.
             </p>
           </div>
 

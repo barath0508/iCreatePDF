@@ -40,15 +40,26 @@ export function PdfAttachmentManagerTool() {
         const parsedList: AttachmentItem[] = [];
 
         if (rawAttachments) {
-          Object.keys(rawAttachments).forEach((key) => {
-            const item = rawAttachments[key];
-            if (item && item.content) {
-              parsedList.push({
-                filename: item.filename || key,
-                content: item.content,
-              });
-            }
-          });
+          if (rawAttachments instanceof Map) {
+            rawAttachments.forEach((item: any, key: string) => {
+              if (item && item.content) {
+                parsedList.push({
+                  filename: item.filename || key,
+                  content: item.content,
+                });
+              }
+            });
+          } else {
+            Object.keys(rawAttachments).forEach((key) => {
+              const item = (rawAttachments as any)[key];
+              if (item && item.content) {
+                parsedList.push({
+                  filename: item.filename || key,
+                  content: item.content,
+                });
+              }
+            });
+          }
         }
         setAttachments(parsedList);
       } catch (err) {

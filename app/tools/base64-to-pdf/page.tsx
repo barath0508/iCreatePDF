@@ -6,20 +6,20 @@ import { toolContent } from '@/lib/tool-content';
 import { buildAlternates, getToolFullJsonLd } from '@/lib/seo';
 
 export const metadata: Metadata = {
-  title: 'Decode Base64 to PDF Online — Free & Instant Viewer | iCreatePDF',
-  description: 'Decode and convert Base64 strings back into downloadable PDF documents instantly. 100% secure client-side decoding — your data never leaves your browser.',
-  keywords: 'base64 to pdf, decode base64 to pdf, convert base64 string to pdf, base64 pdf decoder, base64 to pdf online, data uri to pdf converter, decode base64 binary to pdf, base64 pdf viewer, developer tools base64 pdf, convert base64 text file to pdf, client side base64 to pdf decoder, base64 string to download pdf, base64 stream to pdf',
+  title: 'Base64 to PDF Converter Online Free — Decode Base64 Locally | iCreatePDF',
+  description: 'Decode and convert Base64 strings to downloadable PDF files instantly. 100% private client-side decoding in browser memory — your data never touches a server.',
+  keywords: 'base64 to pdf, decode base64 to pdf, convert base64 string to pdf, base64 pdf decoder, base64 to pdf online, data uri to pdf converter, decode base64 binary to pdf, developer tools base64 pdf, convert base64 text file to pdf, client side base64 to pdf decoder, base64 string to download pdf, base64 stream to pdf',
   alternates: buildAlternates('/tools/base64-to-pdf'),
   openGraph: {
-    title: 'Decode Base64 to PDF Online — Free & Instant Viewer | iCreatePDF',
-    description: 'Decode and convert Base64 strings back into downloadable PDF documents instantly. 100% secure client-side decoding — your data never leaves your browser.',
+    title: 'Base64 to PDF Converter Online Free — Decode Base64 Locally | iCreatePDF',
+    description: 'Decode and convert Base64 strings to downloadable PDF files instantly. 100% private client-side decoding in browser memory — your data never touches a server.',
     type: 'website',
     images: [{ url: 'https://www.icreatepdf.online/opengraph-image', width: 1200, height: 630, alt: 'Decode Base64 to PDF — iCreatePDF' }],
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Decode Base64 to PDF Online — Free & Instant Viewer | iCreatePDF',
-    description: 'Decode and convert Base64 strings back into downloadable PDF documents instantly. 100% secure client-side decoding — your data never leaves your browser.',
+    title: 'Base64 to PDF Converter Online Free — Decode Base64 Locally | iCreatePDF',
+    description: 'Decode and convert Base64 strings to downloadable PDF files instantly. 100% private client-side decoding in browser memory — your data never touches a server.',
     images: ['https://www.icreatepdf.online/opengraph-image'],
   },
 };

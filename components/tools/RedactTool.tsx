@@ -102,7 +102,7 @@ export function RedactTool() {
           let x0 = Infinity, y0 = Infinity, x1 = -Infinity, y1 = -Infinity;
           for (const span of overlapping) {
             const [ex, ey] = [span.transform[4], span.transform[5]];
-            const corners = viewport.convertToViewportRectangle([ex, ey, ex + span.width, ey + span.height]);
+            const corners = (viewport as any).convertToViewportRectangle([ex, ey, ex + span.width, ey + span.height]);
             const rx0 = Math.min(corners[0], corners[2]);
             const ry0 = Math.min(corners[1], corners[3]);
             const rx1 = Math.max(corners[0], corners[2]);
