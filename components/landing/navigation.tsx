@@ -4,10 +4,11 @@ import { useState, useEffect, useRef } from 'react';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import { Button } from '@/components/ui/button';
-import { Menu, X, Shield, ChevronDown, ArrowRight, Sparkles } from 'lucide-react';
+import { Menu, X, Shield, ChevronDown, ArrowRight, Sparkles, Search } from 'lucide-react';
 import { CommandMenu } from '@/components/navigation/CommandMenu';
 import { ThemeToggle } from '@/components/ui/theme-toggle';
 import { Logo } from '@/components/ui/logo';
+import { ALL_TOOLS } from '@/lib/tools-data';
 
 const TOOL_CATEGORIES = [
   {
@@ -64,7 +65,9 @@ export function Navigation() {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [isToolsDropdownOpen, setIsToolsDropdownOpen] = useState(false);
-  const [isMobileToolsOpen, setIsMobileToolsOpen] = useState(false);
+  const [isMobileToolsOpen, setIsMobileToolsOpen] = useState(true);
+  const [mobileSearch, setMobileSearch] = useState('');
+  const [mobileCategory, setMobileCategory] = useState<string>('Popular');
   const toolsDropdownRef = useRef<HTMLDivElement>(null);
   const pathname = usePathname();
 
@@ -89,6 +92,7 @@ export function Navigation() {
   useEffect(() => {
     setIsToolsDropdownOpen(false);
     setIsMobileMenuOpen(false);
+    setMobileSearch('');
   }, [pathname]);
 
   return (
@@ -241,74 +245,121 @@ export function Navigation() {
 
       {/* Mobile Menu Drawer */}
       {isMobileMenuOpen && (
-        <div className="md:hidden fixed inset-x-4 top-24 z-40 rounded-2xl border border-border bg-card p-6 shadow-2xl space-y-5 max-h-[80vh] overflow-y-auto">
-          {/* Mobile Tools Accordion */}
-          <div className="border-b border-border pb-4">
-            <button
-              type="button"
-              onClick={() => setIsMobileToolsOpen(!isMobileToolsOpen)}
-              className="w-full flex items-center justify-between text-lg font-bold text-foreground"
-            >
-              <span>Popular Tools</span>
-              <ChevronDown
-                className={`w-5 h-5 transition-transform duration-200 ${
-                  isMobileToolsOpen ? 'rotate-180' : ''
-                }`}
-              />
-            </button>
+        <div className="md:hidden fixed inset-x-3 top-20 sm:top-24 z-40 rounded-2xl border border-border bg-card/98 backdrop-blur-2xl p-5 shadow-2xl space-y-4 max-h-[82vh] overflow-y-auto">
+          {/* Instant Search Bar */}
+          <div className="relative">
+            <Search className="w-4 h-4 absolute left-3.5 top-1/2 -translate-y-1/2 text-muted-foreground pointer-events-none" />
+            <input
+              type="text"
+              value={mobileSearch}
+              onChange={(e) => setMobileSearch(e.target.value)}
+              placeholder="Search all 70+ PDF tools..."
+              className="w-full bg-background border border-border rounded-xl pl-9 pr-8 py-2.5 text-xs sm:text-sm text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-brand/40 transition-all font-sans"
+            />
+            {mobileSearch && (
+              <button
+                type="button"
+                onClick={() => setMobileSearch('')}
+                className="absolute right-2.5 top-1/2 -translate-y-1/2 text-muted-foreground hover:text-foreground p-1 text-xs"
+                aria-label="Clear search"
+              >
+                <X className="w-3.5 h-3.5" />
+              </button>
+            )}
+          </div>
 
-            {isMobileToolsOpen && (
-              <div className="mt-3 grid grid-cols-2 gap-2 pt-2 border-t border-border/50">
-                {[
-                  { name: 'Word to PDF', href: '/word-to-pdf' },
-                  { name: 'PDF to Word', href: '/pdf-to-word' },
-                  { name: 'Merge PDF', href: '/merge-pdf' },
-                  { name: 'Compress PDF', href: '/compress-pdf' },
-                  { name: 'Split PDF', href: '/split-pdf' },
-                  { name: 'JPG to PDF', href: '/jpg-to-pdf' },
-                  { name: 'PDF to JPG', href: '/pdf-to-jpg' },
-                  { name: 'Sign PDF', href: '/sign-pdf' },
-                  { name: 'Edit PDF', href: '/edit-pdf' },
-                  { name: 'Protect PDF', href: '/protect-pdf' },
-                  { name: 'PDF OCR', href: '/pdf-ocr' },
-                  { name: 'Delete Pages', href: '/delete-pdf-pages' },
-                ].map((t) => (
+          {/* Search Results if user is typing */}
+          {mobileSearch.trim() ? (
+            <div className="space-y-1.5 max-h-[50vh] overflow-y-auto pr-1">
+              {ALL_TOOLS.filter((t) => {
+                const q = mobileSearch.toLowerCase();
+                return (
+                  t.name.toLowerCase().includes(q) ||
+                  t.description.toLowerCase().includes(q) ||
+                  t.keywords.some((k) => k.toLowerCase().includes(q))
+                );
+              }).slice(0, 15).map((tool) => (
+                <Link
+                  key={tool.href}
+                  href={tool.href}
+                  onClick={() => setIsMobileMenuOpen(false)}
+                  className="flex items-center justify-between p-3 rounded-xl bg-background/60 hover:bg-muted border border-border/40 text-foreground transition-colors min-h-[44px]"
+                >
+                  <div className="min-w-0 pr-2">
+                    <p className="text-xs font-bold text-foreground truncate">{tool.name}</p>
+                    <p className="text-[10px] text-muted-foreground truncate">{tool.description}</p>
+                  </div>
+                  <span className="text-[9px] font-mono font-medium text-brand bg-brand/10 px-2 py-0.5 rounded-full shrink-0 border border-brand/20">
+                    {tool.category}
+                  </span>
+                </Link>
+              ))}
+            </div>
+          ) : (
+            <>
+              {/* Category Filter Chips */}
+              <div className="flex items-center gap-1.5 overflow-x-auto pb-1 scrollbar-none">
+                {['Popular', 'Convert to PDF', 'Convert from PDF', 'Organize', 'Edit & Sign', 'Security', 'Utilities'].map((cat) => (
+                  <button
+                    key={cat}
+                    type="button"
+                    onClick={() => setMobileCategory(cat)}
+                    className={`px-3 py-1.5 rounded-lg text-xs font-semibold whitespace-nowrap shrink-0 transition-colors min-h-[36px] flex items-center ${
+                      mobileCategory === cat
+                        ? 'bg-foreground text-background font-bold shadow-xs'
+                        : 'bg-background/80 border border-border text-muted-foreground hover:text-foreground'
+                    }`}
+                  >
+                    {cat}
+                  </button>
+                ))}
+              </div>
+
+              {/* Tools Grid for Selected Category */}
+              <div className="grid grid-cols-2 gap-2 max-h-56 overflow-y-auto pr-1">
+                {(mobileCategory === 'Popular'
+                  ? ALL_TOOLS.filter((t) => t.badge === 'Popular' || ['/merge-pdf', '/compress-pdf', '/word-to-pdf', '/jpg-to-pdf', '/sign-pdf', '/protect-pdf'].includes(t.href))
+                  : ALL_TOOLS.filter((t) => t.category === mobileCategory)
+                ).map((t) => (
                   <Link
                     key={t.href}
                     href={t.href}
                     onClick={() => setIsMobileMenuOpen(false)}
-                    className="p-2 text-xs font-semibold rounded-lg bg-muted/40 hover:bg-muted text-foreground"
+                    className="p-2.5 text-xs font-semibold rounded-xl bg-muted/40 hover:bg-muted text-foreground flex items-center justify-between border border-border/40 min-h-[44px]"
                   >
-                    {t.name}
+                    <span className="truncate">{t.name}</span>
+                    <ArrowRight className="w-3 h-3 text-muted-foreground/60 shrink-0 ml-1" />
                   </Link>
                 ))}
               </div>
-            )}
-          </div>
 
-          <div className="flex flex-col space-y-3">
-            {navLinks.map((link) => (
-              <Link
-                key={link.name}
-                href={link.href}
-                onClick={() => setIsMobileMenuOpen(false)}
-                className="text-lg font-bold text-foreground hover:text-muted-foreground transition-colors"
-              >
-                {link.name}
-              </Link>
-            ))}
-          </div>
+              {/* Standard Nav Links */}
+              <div className="border-t border-border/60 pt-3 flex flex-wrap gap-x-4 gap-y-2">
+                {navLinks.map((link) => (
+                  <Link
+                    key={link.name}
+                    href={link.href}
+                    onClick={() => setIsMobileMenuOpen(false)}
+                    className="text-xs font-bold text-muted-foreground hover:text-foreground transition-colors py-1.5 min-h-[36px] flex items-center"
+                  >
+                    {link.name}
+                  </Link>
+                ))}
+              </div>
 
-          <div className="pt-4 border-t border-border flex items-center justify-between">
-            <span className="text-xs font-mono text-muted-foreground flex items-center gap-1.5">
-              <Shield className="w-4 h-4" /> 100% Client-Side Engine
-            </span>
-            <Link href="/#tools" onClick={() => setIsMobileMenuOpen(false)}>
-              <Button size="lg" className="rounded-xl bg-foreground text-background font-bold text-sm">
-                Open Studio
-              </Button>
-            </Link>
-          </div>
+              {/* Bottom Security & Studio Link */}
+              <div className="pt-3 border-t border-border flex items-center justify-between">
+                <span className="text-[11px] font-mono text-muted-foreground flex items-center gap-1.5">
+                  <Shield className="w-3.5 h-3.5 text-brand" /> 100% In-Browser
+                </span>
+                <Link href="/#tools" onClick={() => setIsMobileMenuOpen(false)}>
+                  <Button size="sm" className="rounded-xl bg-foreground text-background font-bold text-xs h-8 px-4">
+                    All 70+ Tools
+                  </Button>
+                </Link>
+              </div>
+            </>
+          )}
         </div>
       )}
     </header>

@@ -4,6 +4,7 @@ import React, { useState, useRef, useEffect } from 'react';
 import { Camera, RefreshCw, Trash2, Download, Loader2, Play, Square, Image, FileText, CheckCircle2 } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { generatePdf, PdfOptions } from '@/lib/pdf';
+import { MobileActionDock } from '@/components/tools/shared/MobileActionDock';
 
 interface CapturedPhoto {
   id: string;
@@ -232,6 +233,27 @@ export function ScanToPdfTool() {
     setDownloadUrl(null);
   };
 
+  const handleNativePhotoUpload = (uploadedFiles: FileList | null) => {
+    if (!uploadedFiles || uploadedFiles.length === 0) return;
+    Array.from(uploadedFiles).forEach((file) => {
+      const reader = new FileReader();
+      reader.onload = (e) => {
+        const dataUrl = e.target?.result as string;
+        if (dataUrl) {
+          setCapturedPhotos((prev) => [
+            ...prev,
+            {
+              id: Math.random().toString(36).substring(7),
+              dataUrl,
+              file,
+            },
+          ]);
+        }
+      };
+      reader.readAsDataURL(file);
+    });
+  };
+
   const toggleFacingMode = () => {
     setFacingMode(prev => (prev === 'user' ? 'environment' : 'user'));
   };
@@ -273,15 +295,15 @@ export function ScanToPdfTool() {
   };
 
   return (
-    <div className="w-full max-w-6xl mx-auto px-6 lg:px-12 py-16">
-      <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-stretch">
+    <div className="w-full max-w-6xl mx-auto px-3 sm:px-6 lg:px-12 py-6 sm:py-10 pb-24 md:pb-10">
+      <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 lg:gap-8 items-start">
         
         {/* Workspace */}
         <div className="lg:col-span-8 space-y-6 flex flex-col">
           <canvas ref={canvasRef} className="hidden" />
 
           {/* Camera Viewer / Status */}
-          <div className="relative border border-foreground/10 rounded-2xl overflow-hidden bg-card/40 min-h-[350px] flex items-center justify-center">
+          <div className="relative border border-foreground/10 rounded-2xl overflow-hidden bg-card/40 min-h-[300px] sm:min-h-[350px] flex items-center justify-center">
             {isCameraActive ? (
               <div className="relative w-full aspect-video md:aspect-[4/3] bg-background">
                 <video
@@ -323,23 +345,36 @@ export function ScanToPdfTool() {
                 </div>
               </div>
             ) : (
-              <div className="p-12 text-center flex flex-col items-center justify-center gap-4">
+              <div className="p-8 sm:p-12 text-center flex flex-col items-center justify-center gap-4">
                 <div className="p-4 rounded-full bg-foreground/5 border border-foreground/10 text-brand">
                   <Camera className="w-8 h-8" />
                 </div>
-                <h3 className="text-xl font-display text-foreground">Scan documents with camera</h3>
+                <h3 className="text-lg sm:text-xl font-display text-foreground">Scan documents with camera</h3>
                 <p className="text-xs text-foreground/40 max-w-sm">
                   Turn your device camera into a portable document scanner. Capture multiple pages and compile them into a PDF locally.
                 </p>
                 
-                <div className="flex flex-col sm:flex-row gap-4 mt-2">
+                <div className="flex flex-col sm:flex-row items-center justify-center gap-3 mt-2 w-full max-w-md">
                   <Button
                     onClick={startCamera}
-                    className="bg-primary text-primary-foreground hover:bg-primary/90 font-bold rounded-xl px-6 py-5 flex items-center gap-2"
+                    className="w-full sm:w-auto bg-primary text-primary-foreground hover:bg-primary/90 font-bold rounded-xl px-5 py-4 flex items-center justify-center gap-2 min-h-[44px]"
                   >
                     <Play className="w-4 h-4" />
-                    Start Scan Session
+                    <span>Live Scanner</span>
                   </Button>
+
+                  <label className="w-full sm:w-auto cursor-pointer bg-background hover:bg-muted text-foreground border border-border font-bold rounded-xl px-4 py-3 flex items-center justify-center gap-2 text-xs sm:text-sm shadow-xs min-h-[44px]">
+                    <Camera className="w-4 h-4 text-brand" />
+                    <span>Snap / Upload Photo</span>
+                    <input
+                      type="file"
+                      accept="image/*"
+                      capture="environment"
+                      multiple
+                      onChange={(e) => handleNativePhotoUpload(e.target.files)}
+                      className="hidden"
+                    />
+                  </label>
 
                   {devices.length > 1 && (
                     <select
@@ -396,13 +431,14 @@ export function ScanToPdfTool() {
                       </span>
                     </div>
 
-                    <div className="flex border-t border-foreground/5 bg-card/60 p-2 justify-end">
+                    <div className="flex border-t border-foreground/5 bg-card/60 p-1.5 sm:p-2 justify-end">
                       <button
                         type="button"
                         onClick={() => deletePhoto(photo.id)}
-                        className="p-1 hover:bg-red-950/20 text-foreground/40 hover:text-red-400 rounded transition-colors"
+                        className="p-2 sm:p-2.5 min-h-[44px] min-w-[44px] flex items-center justify-center hover:bg-red-950/20 text-foreground/40 hover:text-red-400 rounded-lg transition-colors touch-manipulation"
+                        aria-label="Remove scanned photo"
                       >
-                        <Trash2 className="w-3.5 h-3.5" />
+                        <Trash2 className="w-4 h-4" />
                       </button>
                     </div>
                   </div>
@@ -418,8 +454,8 @@ export function ScanToPdfTool() {
           )}
         </div>
 
-        {/* Action Panel */}
-        <div className="lg:col-span-4 h-full bg-card border border-foreground/10 rounded-2xl p-6 space-y-6">
+        {/* Action Panel - Sticky on Desktop */}
+        <div className="lg:col-span-4 lg:sticky lg:top-28 h-fit bg-card border border-foreground/10 rounded-2xl p-5 sm:p-6 space-y-5 shadow-xs">
           <div className="flex items-center gap-2 border-b border-foreground/5 pb-4">
             <Camera className="w-4 h-4 text-brand" />
             <h3 className="font-mono text-sm uppercase tracking-wider text-foreground">Scan to PDF</h3>
@@ -429,7 +465,7 @@ export function ScanToPdfTool() {
             Snap pages sequentially using your camera. When finished scanning, compile the images into a clean, combined PDF document instantly.
           </p>
 
-          <div className="space-y-3 pt-4 border-t border-foreground/5 text-xs">
+          <div className="space-y-3 pt-3 border-t border-foreground/5 text-xs">
             <h4 className="font-mono uppercase tracking-wider text-brand text-[10px]">Scanning Options</h4>
             
             <div className="flex items-center justify-between p-2.5 rounded-xl bg-foreground/5 border border-foreground/5">
@@ -459,7 +495,7 @@ export function ScanToPdfTool() {
             </div>
           </div>
 
-          <div className="pt-4 border-t border-foreground/5">
+          <div className="pt-3 border-t border-foreground/5">
             {isProcessing ? (
               <div className="space-y-2">
                 <div className="flex justify-between items-center text-xs font-mono text-foreground/60">
@@ -509,6 +545,45 @@ export function ScanToPdfTool() {
         </div>
 
       </div>
+
+      {/* Mobile Sticky Action Dock */}
+      <MobileActionDock
+        visible={capturedPhotos.length > 0}
+        statusText={
+          downloadUrl
+            ? 'Scanned PDF ready!'
+            : isProcessing
+            ? `Compiling... ${progress}%`
+            : `${capturedPhotos.length} page${capturedPhotos.length > 1 ? 's' : ''} captured`
+        }
+        secondaryAction={
+          capturedPhotos.length > 0 && !isProcessing && !downloadUrl
+            ? {
+                label: 'Clear all',
+                onClick: () => {
+                  setCapturedPhotos([]);
+                  setDownloadUrl(null);
+                },
+              }
+            : undefined
+        }
+        primaryAction={
+          downloadUrl
+            ? {
+                label: 'Download Scanned PDF',
+                onClick: handleDownload,
+                icon: <Download className="w-4 h-4" />,
+                className: 'bg-emerald-600 hover:bg-emerald-700 text-white',
+              }
+            : {
+                label: `Compile ${capturedPhotos.length} Page${capturedPhotos.length > 1 ? 's' : ''} to PDF`,
+                onClick: triggerGeneratePdf,
+                disabled: capturedPhotos.length === 0,
+                loading: isProcessing,
+                icon: <FileText className="w-4 h-4" />,
+              }
+        }
+      />
     </div>
   );
 }

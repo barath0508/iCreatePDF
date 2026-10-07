@@ -1,11 +1,12 @@
 'use client';
 
-import React, { useState, useRef } from 'react';
+import React, { useState, useRef, useEffect } from 'react';
 import { Upload, Layers, Trash2, Loader2, Download, FileText, ChevronUp, ChevronDown } from 'lucide-react';
 import { mergePdfs } from '@/lib/pdf';
 import { Button } from '@/components/ui/button';
 import { toast } from 'sonner';
 import { WorkflowNextActions } from '@/components/tools/shared/WorkflowNextActions';
+import { MobileActionDock } from '@/components/tools/shared/MobileActionDock';
 import { useClipboardFile } from '@/hooks/use-clipboard-file';
 
 interface PdfFile {
@@ -27,7 +28,7 @@ export function MergeTool() {
   const dragItemIndex = useRef<number | null>(null);
   const dragOverItemIndex = useRef<number | null>(null);
 
-  React.useEffect(() => {
+  useEffect(() => {
     const { getPreloadedFiles, hasPreloadedFiles } = require('@/lib/preloader');
     if (hasPreloadedFiles()) {
       handleFiles(getPreloadedFiles());
@@ -35,6 +36,20 @@ export function MergeTool() {
   }, []);
 
   useClipboardFile({ onFilePasted: (pasted) => handleFiles(pasted) });
+
+  // Power user shortcut: Ctrl+Enter to trigger merge
+  useEffect(() => {
+    const handleKeyDown = (e: KeyboardEvent) => {
+      if ((e.ctrlKey || e.metaKey) && e.key === 'Enter') {
+        if (files.length >= 2 && !isProcessing && !downloadUrl) {
+          e.preventDefault();
+          triggerMerge();
+        }
+      }
+    };
+    window.addEventListener('keydown', handleKeyDown);
+    return () => window.removeEventListener('keydown', handleKeyDown);
+  }, [files.length, isProcessing, downloadUrl]);
 
   const handleFiles = async (uploadedFiles: FileList | File[]) => {
     setError(null);
@@ -185,8 +200,8 @@ export function MergeTool() {
   };
 
   return (
-    <div className="w-full max-w-6xl mx-auto px-6 lg:px-12 py-16">
-      <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-stretch">
+    <div className="w-full max-w-6xl mx-auto px-3 sm:px-6 lg:px-12 py-6 sm:py-10 pb-24 md:pb-10">
+      <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 lg:gap-8 items-start">
         
         {/* Workspace area */}
         <div className="lg:col-span-8 space-y-6 flex flex-col">
@@ -195,7 +210,7 @@ export function MergeTool() {
             onDragLeave={onDragLeave}
             onDrop={onDrop}
             onClick={() => fileInputRef.current?.click()}
-            className={`relative cursor-pointer touch-manipulation border border-dashed rounded-2xl p-12 transition-all duration-300 text-center flex-1 flex flex-col items-center justify-center min-h-[220px] ${
+            className={`relative cursor-pointer touch-manipulation border border-dashed rounded-2xl p-8 sm:p-12 transition-all duration-300 text-center flex-1 flex flex-col items-center justify-center min-h-[180px] sm:min-h-[220px] ${
               isDraggingOver
                 ? 'border-brand bg-brand/5'
                 : 'border-foreground/10 bg-card/40 hover:border-foreground/20'
@@ -213,10 +228,10 @@ export function MergeTool() {
               }}
               className="hidden"
             />
-            <div className="p-4 rounded-full bg-foreground/5 mb-4 border border-foreground/10">
-              <Upload className="w-6 h-6 text-brand" />
+            <div className="p-3 sm:p-4 rounded-full bg-foreground/5 mb-3 sm:mb-4 border border-foreground/10">
+              <Upload className="w-5 h-5 sm:w-6 sm:h-6 text-brand" />
             </div>
-            <h3 className="text-xl font-display text-foreground mb-2">
+            <h3 className="text-lg sm:text-xl font-display text-foreground mb-1 sm:mb-2">
               Select or drag PDF files
             </h3>
             <p className="text-xs text-foreground/40">
@@ -231,10 +246,15 @@ export function MergeTool() {
           )}
 
           {files.length > 0 && (
-            <div className="space-y-4">
-              <span className="text-xs font-mono text-foreground/50 uppercase tracking-widest">
-                Files Queue ({files.length}) - Drag or use arrows to reorder
-              </span>
+            <div className="space-y-3">
+              <div className="flex items-center justify-between px-1">
+                <span className="text-xs font-mono text-foreground/50 uppercase tracking-widest">
+                  Files Queue ({files.length})
+                </span>
+                <span className="text-[11px] font-mono text-muted-foreground hidden sm:inline">
+                  Drag or use arrows to reorder
+                </span>
+              </div>
 
               <div className="space-y-2">
                 {files.map((item, idx) => (
@@ -245,17 +265,17 @@ export function MergeTool() {
                     onDragEnter={() => handleDragEnter(idx)}
                     onDragEnd={handleDragEnd}
                     onDragOver={(e) => e.preventDefault()}
-                    className="flex items-center justify-between p-4 bg-card border border-foreground/5 rounded-xl cursor-move hover:border-foreground/15 transition-all"
+                    className="flex items-center justify-between p-3 sm:p-4 bg-card border border-foreground/5 rounded-xl cursor-move hover:border-foreground/15 transition-all gap-2"
                   >
-                    <div className="flex items-center gap-3 min-w-0">
-                      <span className="text-xs font-mono text-brand bg-brand/10 px-2 py-0.5 rounded">
+                    <div className="flex items-center gap-3 min-w-0 flex-1">
+                      <span className="text-xs font-mono text-brand bg-brand/10 px-2 py-0.5 rounded shrink-0">
                         {idx + 1}
                       </span>
-                      <div className="truncate">
-                        <p className="text-sm font-medium text-foreground truncate max-w-sm sm:max-w-md">
+                      <div className="truncate min-w-0">
+                        <p className="text-xs sm:text-sm font-medium text-foreground truncate max-w-[180px] sm:max-w-md">
                           {item.file.name}
                         </p>
-                        <p className="text-xs text-foreground/40">
+                        <p className="text-[11px] text-foreground/40">
                           {item.pagesCount} pages • {(item.file.size / (1024 * 1024)).toFixed(2)} MB
                         </p>
                       </div>
@@ -266,7 +286,7 @@ export function MergeTool() {
                         type="button"
                         onClick={() => moveFile(idx, -1)}
                         disabled={idx === 0}
-                        className="p-2 hover:bg-foreground/5 hover:text-brand rounded-lg text-foreground/40 transition-colors disabled:opacity-20 disabled:pointer-events-none"
+                        className="p-2 sm:p-2.5 min-h-[40px] min-w-[40px] sm:min-h-[44px] sm:min-w-[44px] flex items-center justify-center hover:bg-foreground/5 hover:text-brand rounded-lg text-foreground/40 transition-colors disabled:opacity-20 disabled:pointer-events-none touch-manipulation"
                         aria-label="Move file up"
                       >
                         <ChevronUp className="w-4 h-4" />
@@ -275,7 +295,7 @@ export function MergeTool() {
                         type="button"
                         onClick={() => moveFile(idx, 1)}
                         disabled={idx === files.length - 1}
-                        className="p-2 hover:bg-foreground/5 hover:text-brand rounded-lg text-foreground/40 transition-colors disabled:opacity-20 disabled:pointer-events-none"
+                        className="p-2 sm:p-2.5 min-h-[40px] min-w-[40px] sm:min-h-[44px] sm:min-w-[44px] flex items-center justify-center hover:bg-foreground/5 hover:text-brand rounded-lg text-foreground/40 transition-colors disabled:opacity-20 disabled:pointer-events-none touch-manipulation"
                         aria-label="Move file down"
                       >
                         <ChevronDown className="w-4 h-4" />
@@ -283,7 +303,8 @@ export function MergeTool() {
                       <button
                         type="button"
                         onClick={() => removeFile(item.id)}
-                        className="p-2 hover:bg-red-950/20 hover:text-red-400 rounded-lg text-foreground/40 transition-colors"
+                        className="p-2 sm:p-2.5 min-h-[40px] min-w-[40px] sm:min-h-[44px] sm:min-w-[44px] flex items-center justify-center hover:bg-red-950/20 hover:text-red-400 rounded-lg text-foreground/40 transition-colors touch-manipulation"
+                        aria-label="Remove file from queue"
                       >
                         <Trash2 className="w-4 h-4" />
                       </button>
@@ -295,18 +316,18 @@ export function MergeTool() {
           )}
         </div>
 
-        {/* Action Panel */}
-        <div className="lg:col-span-4 h-full bg-card border border-foreground/10 rounded-2xl p-6 space-y-6">
+        {/* Action Panel - Sticky on Desktop */}
+        <div className="lg:col-span-4 lg:sticky lg:top-28 h-fit bg-card border border-foreground/10 rounded-2xl p-5 sm:p-6 space-y-5 shadow-xs">
           <div className="flex items-center gap-2 border-b border-foreground/5 pb-4">
             <Layers className="w-4 h-4 text-brand" />
             <h3 className="font-mono text-sm uppercase tracking-wider text-foreground">Merge PDF</h3>
           </div>
 
           <p className="text-xs text-foreground/50 leading-relaxed">
-            Combine multiple PDF files into a single document. Drag items to adjust the sequence of documents.
+            Combine multiple PDF files into a single document. Drag items or use arrows to adjust sequence.
           </p>
 
-          <div className="pt-4 border-t border-foreground/5">
+          <div className="pt-3 border-t border-foreground/5">
             {isProcessing ? (
               <div className="space-y-2">
                 <div className="flex justify-between items-center text-xs font-mono text-foreground/60">
@@ -349,13 +370,55 @@ export function MergeTool() {
                 }`}
               >
                 <FileText className="w-4 h-4" />
-                Merge PDFs
+                <span>Merge PDFs</span>
+                <kbd className="hidden sm:inline-block ml-1 rounded border border-foreground/20 bg-background/50 px-1 py-0.5 text-[10px] font-mono text-muted-foreground">
+                  ↵
+                </kbd>
               </Button>
             )}
           </div>
         </div>
 
       </div>
+
+      {/* Mobile Sticky Action Dock */}
+      <MobileActionDock
+        visible={files.length > 0}
+        statusText={
+          downloadUrl
+            ? 'Merged PDF ready!'
+            : isProcessing
+            ? `Merging... ${progress}%`
+            : `${files.length} PDFs in queue`
+        }
+        secondaryAction={
+          files.length > 0 && !isProcessing && !downloadUrl
+            ? {
+                label: 'Clear all',
+                onClick: () => {
+                  setFiles([]);
+                  setDownloadUrl(null);
+                },
+              }
+            : undefined
+        }
+        primaryAction={
+          downloadUrl
+            ? {
+                label: 'Download Merged PDF',
+                onClick: handleDownload,
+                icon: <Download className="w-4 h-4" />,
+                className: 'bg-emerald-600 hover:bg-emerald-700 text-white',
+              }
+            : {
+                label: files.length < 2 ? 'Add 1 More PDF to Merge' : `Merge ${files.length} PDFs`,
+                onClick: triggerMerge,
+                disabled: files.length < 2,
+                loading: isProcessing,
+                icon: <FileText className="w-4 h-4" />,
+              }
+        }
+      />
 
       {downloadUrl && (
         <WorkflowNextActions

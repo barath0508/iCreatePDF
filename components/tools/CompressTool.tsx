@@ -1,10 +1,11 @@
 'use client';
 
-import React, { useState, useRef } from 'react';
+import React, { useState, useRef, useEffect } from 'react';
 import { Upload, Layers, Loader2, Download, FileText, CheckCircle2, TrendingDown } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { toast } from 'sonner';
 import { WorkflowNextActions } from '@/components/tools/shared/WorkflowNextActions';
+import { MobileActionDock } from '@/components/tools/shared/MobileActionDock';
 import { useClipboardFile } from '@/hooks/use-clipboard-file';
 
 export function CompressTool() {
@@ -20,7 +21,7 @@ export function CompressTool() {
 
   const fileInputRef = useRef<HTMLInputElement>(null);
 
-  React.useEffect(() => {
+  useEffect(() => {
     const { getPreloadedFiles, hasPreloadedFiles } = require('@/lib/preloader');
     if (hasPreloadedFiles()) {
       handleFiles(getPreloadedFiles());
@@ -28,6 +29,20 @@ export function CompressTool() {
   }, []);
 
   useClipboardFile({ onFilePasted: (files) => handleFiles(files) });
+
+  // Power user shortcut: Ctrl+Enter to trigger compression
+  useEffect(() => {
+    const handleKeyDown = (e: KeyboardEvent) => {
+      if ((e.ctrlKey || e.metaKey) && e.key === 'Enter') {
+        if (file && !isProcessing && !downloadUrl) {
+          e.preventDefault();
+          triggerCompress();
+        }
+      }
+    };
+    window.addEventListener('keydown', handleKeyDown);
+    return () => window.removeEventListener('keydown', handleKeyDown);
+  }, [file, isProcessing, downloadUrl]);
 
   const handleFiles = async (uploadedFiles: FileList | File[]) => {
     setError(null);
@@ -140,8 +155,8 @@ export function CompressTool() {
   const savingsPercent = file && compressedSize ? Math.max(0, Math.round(((file.size - compressedSize) / file.size) * 100)) : 0;
 
   return (
-    <div className="w-full max-w-6xl mx-auto px-6 lg:px-12 py-16">
-      <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-stretch">
+    <div className="w-full max-w-6xl mx-auto px-3 sm:px-6 lg:px-12 py-6 sm:py-10 pb-24 md:pb-10">
+      <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 lg:gap-8 items-start">
         
         {/* Workspace */}
         <div className="lg:col-span-8 space-y-6 flex flex-col">
@@ -242,8 +257,8 @@ export function CompressTool() {
           )}
         </div>
 
-        {/* Action Panel */}
-        <div className="lg:col-span-4 h-full bg-card border border-foreground/10 rounded-2xl p-6 space-y-6">
+        {/* Action Panel - Sticky on Desktop */}
+        <div className="lg:col-span-4 lg:sticky lg:top-28 h-fit bg-card border border-foreground/10 rounded-2xl p-5 sm:p-6 space-y-5 shadow-xs">
           <div className="flex items-center gap-2 border-b border-foreground/5 pb-4">
             <Layers className="w-4 h-4 text-brand" />
             <h3 className="font-mono text-sm uppercase tracking-wider text-foreground">Compress PDF</h3>
@@ -253,7 +268,7 @@ export function CompressTool() {
             Compress your PDF streams and objects locally to decrease the file size for attachments and emails.
           </p>
 
-          <div className="pt-4 border-t border-foreground/5">
+          <div className="pt-3 border-t border-foreground/5">
             {isProcessing ? (
               <div className="space-y-2">
                 <div className="flex justify-between items-center text-xs font-mono text-foreground/60">
@@ -296,13 +311,57 @@ export function CompressTool() {
                 }`}
               >
                 <FileText className="w-4 h-4" />
-                Compress PDF
+                <span>Compress PDF</span>
+                <kbd className="hidden sm:inline-block ml-1 rounded border border-foreground/20 bg-background/50 px-1 py-0.5 text-[10px] font-mono text-muted-foreground">
+                  ↵
+                </kbd>
               </Button>
             )}
           </div>
         </div>
 
       </div>
+
+      {/* Mobile Sticky Action Dock */}
+      <MobileActionDock
+        visible={!!file}
+        statusText={
+          downloadUrl
+            ? `Ready • ${savingsPercent}% smaller`
+            : isProcessing
+            ? `Compressing... ${progress}%`
+            : file
+            ? `${file.name.slice(0, 18)}... (${(file.size / (1024 * 1024)).toFixed(2)} MB)`
+            : undefined
+        }
+        secondaryAction={
+          file && !isProcessing && !downloadUrl
+            ? {
+                label: 'Change',
+                onClick: () => {
+                  setFile(null);
+                  setDownloadUrl(null);
+                },
+              }
+            : undefined
+        }
+        primaryAction={
+          downloadUrl
+            ? {
+                label: 'Download Compressed PDF',
+                onClick: handleDownload,
+                icon: <Download className="w-4 h-4" />,
+                className: 'bg-emerald-600 hover:bg-emerald-700 text-white',
+              }
+            : {
+                label: 'Compress PDF',
+                onClick: triggerCompress,
+                disabled: !file,
+                loading: isProcessing,
+                icon: <FileText className="w-4 h-4" />,
+              }
+        }
+      />
 
       {downloadUrl && (
         <WorkflowNextActions

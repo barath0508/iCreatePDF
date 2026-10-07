@@ -3,6 +3,7 @@ import Navigation from '@/components/landing/navigation';
 import FooterSection from '@/components/landing/footer-section';
 import { ShieldCheck, ChevronRight } from 'lucide-react';
 import Link from 'next/link';
+import { GlobalDragOverlay } from '@/components/tools/shared/GlobalDragOverlay';
 
 interface ToolPageShellProps {
   title: string;
@@ -12,6 +13,8 @@ interface ToolPageShellProps {
   jsonLd?: Record<string, any> | Array<Record<string, any>>;
   extraSections?: React.ReactNode;
   children: React.ReactNode;
+  onFileDrop?: (files: FileList | File[]) => void;
+  dropMessage?: string;
 }
 
 export function ToolPageShell({
@@ -22,6 +25,8 @@ export function ToolPageShell({
   jsonLd,
   extraSections,
   children,
+  onFileDrop,
+  dropMessage,
 }: ToolPageShellProps) {
   const defaultJsonLd = {
     '@context': 'https://schema.org',
@@ -65,6 +70,12 @@ export function ToolPageShell({
 
   return (
     <main className="relative min-h-screen bg-background text-foreground overflow-x-hidden selection:bg-foreground selection:text-background">
+      {onFileDrop && (
+        <GlobalDragOverlay
+          onFileDrop={onFileDrop}
+          message={dropMessage || `Drop PDF here to ${title.toLowerCase()}`}
+        />
+      )}
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(activeJsonLd) }}
@@ -78,28 +89,28 @@ export function ToolPageShell({
 
       <Navigation />
 
-      <div className="pt-40 sm:pt-48 lg:pt-52 pb-24 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto space-y-12">
+      <div className="pt-24 sm:pt-32 lg:pt-40 pb-16 sm:pb-24 px-3 sm:px-6 lg:px-8 max-w-7xl mx-auto space-y-6 sm:space-y-10 lg:space-y-12">
         {/* Breadcrumb Navigation */}
-        <nav className="flex items-center gap-2.5 text-sm font-mono text-muted-foreground pb-2 font-medium">
+        <nav aria-label="Breadcrumb" className="flex items-center gap-2 text-xs sm:text-sm font-mono text-muted-foreground font-medium">
           <Link href="/" className="hover:text-foreground transition-colors">
             Home
           </Link>
-          <ChevronRight className="h-4 w-4 stroke-[1.5]" />
-          <span className="text-foreground font-semibold">{title}</span>
+          <ChevronRight className="h-3.5 w-3.5 stroke-[1.5]" />
+          <span className="text-foreground font-semibold truncate max-w-[200px] sm:max-w-none">{title}</span>
         </nav>
 
         {/* Tool Page Editorial Header */}
-        <div className="text-center max-w-4xl mx-auto space-y-5">
-          <div className="inline-flex items-center gap-2.5 rounded-full border border-border bg-card px-4 py-1.5 text-xs sm:text-sm font-mono font-bold text-foreground tracking-wider uppercase shadow-2xs">
-            <ShieldCheck className="h-4 w-4 text-foreground stroke-[2]" />
+        <div className="text-center max-w-4xl mx-auto space-y-3 sm:space-y-5">
+          <div className="inline-flex items-center gap-2 rounded-full border border-border bg-card px-3 sm:px-4 py-1 text-[11px] sm:text-xs font-mono font-bold text-foreground tracking-wider uppercase shadow-2xs">
+            <ShieldCheck className="h-3.5 w-3.5 text-foreground stroke-[2]" />
             <span>{badge}</span>
           </div>
 
-          <h1 className="text-4xl sm:text-5xl lg:text-6xl xl:text-7xl font-extrabold tracking-tight text-foreground font-display leading-[1.08]">
+          <h1 className="text-2xl sm:text-4xl md:text-5xl lg:text-6xl font-extrabold tracking-tight text-foreground font-display leading-tight sm:leading-[1.08]">
             {title}
           </h1>
 
-          <p className="text-lg sm:text-xl lg:text-2xl text-muted-foreground font-medium leading-relaxed max-w-2xl mx-auto">
+          <p className="text-xs sm:text-base lg:text-xl text-muted-foreground font-medium leading-relaxed max-w-2xl mx-auto px-2">
             {description}
           </p>
         </div>

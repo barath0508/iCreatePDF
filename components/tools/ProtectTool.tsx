@@ -1,9 +1,10 @@
 'use client';
 
-import React, { useState, useRef } from 'react';
+import React, { useState, useRef, useEffect } from 'react';
 import { Upload, Shield, Loader2, Download, Key } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { WorkflowNextActions } from '@/components/tools/shared/WorkflowNextActions';
+import { MobileActionDock } from '@/components/tools/shared/MobileActionDock';
 import { useClipboardFile } from '@/hooks/use-clipboard-file';
 
 export function ProtectTool() {
@@ -18,7 +19,7 @@ export function ProtectTool() {
 
   const fileInputRef = useRef<HTMLInputElement>(null);
 
-  React.useEffect(() => {
+  useEffect(() => {
     const { getPreloadedFiles, hasPreloadedFiles } = require('@/lib/preloader');
     if (hasPreloadedFiles()) {
       handleFiles(getPreloadedFiles());
@@ -26,6 +27,20 @@ export function ProtectTool() {
   }, []);
 
   useClipboardFile({ onFilePasted: (files) => handleFiles(files) });
+
+  // Power user shortcut: Ctrl+Enter to trigger protection
+  useEffect(() => {
+    const handleKeyDown = (e: KeyboardEvent) => {
+      if ((e.ctrlKey || e.metaKey) && e.key === 'Enter') {
+        if (file && password && password === confirmPassword && !isProcessing && !downloadUrl) {
+          e.preventDefault();
+          triggerProtect();
+        }
+      }
+    };
+    window.addEventListener('keydown', handleKeyDown);
+    return () => window.removeEventListener('keydown', handleKeyDown);
+  }, [file, password, confirmPassword, isProcessing, downloadUrl]);
 
   const handleFiles = (uploadedFiles: FileList | File[]) => {
     setError(null);
@@ -90,8 +105,8 @@ export function ProtectTool() {
   };
 
   return (
-    <div className="w-full max-w-6xl mx-auto px-6 lg:px-12 py-16">
-      <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-stretch">
+    <div className="w-full max-w-6xl mx-auto px-3 sm:px-6 lg:px-12 py-6 sm:py-10 pb-24 md:pb-10">
+      <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 lg:gap-8 items-start">
         
         {/* Workspace */}
         <div className="lg:col-span-8 space-y-6 flex flex-col">
@@ -101,7 +116,7 @@ export function ProtectTool() {
               onDragLeave={() => setIsDraggingOver(false)}
               onDrop={(e) => { e.preventDefault(); setIsDraggingOver(false); e.dataTransfer.files && handleFiles(e.dataTransfer.files); }}
               onClick={() => fileInputRef.current?.click()}
-              className={`relative cursor-pointer touch-manipulation border border-dashed rounded-2xl p-12 transition-all duration-300 text-center flex-1 flex flex-col items-center justify-center min-h-[220px] ${
+              className={`relative cursor-pointer touch-manipulation border border-dashed rounded-2xl p-8 sm:p-12 transition-all duration-300 text-center flex-1 flex flex-col items-center justify-center min-h-[180px] sm:min-h-[220px] ${
                 isDraggingOver
                   ? 'border-brand bg-brand/5'
                   : 'border-foreground/10 bg-card/40 hover:border-foreground/20'
@@ -118,10 +133,10 @@ export function ProtectTool() {
               }}
               className="hidden"
               />
-              <div className="p-4 rounded-full bg-foreground/5 mb-4 border border-foreground/10">
-                <Upload className="w-6 h-6 text-brand" />
+              <div className="p-3 sm:p-4 rounded-full bg-foreground/5 mb-3 sm:mb-4 border border-foreground/10">
+                <Upload className="w-5 h-5 sm:w-6 sm:h-6 text-brand" />
               </div>
-              <h3 className="text-xl font-display text-foreground mb-2">
+              <h3 className="text-lg sm:text-xl font-display text-foreground mb-1 sm:mb-2">
                 Select or drag a PDF file
               </h3>
               <p className="text-xs text-foreground/40">
@@ -129,14 +144,14 @@ export function ProtectTool() {
               </p>
             </div>
           ) : (
-            <div className="p-6 bg-card border border-foreground/10 rounded-2xl space-y-4">
+            <div className="p-5 sm:p-6 bg-card border border-foreground/10 rounded-2xl space-y-4">
               <div className="flex justify-between items-start">
-                <div className="flex items-center gap-3">
-                  <div className="p-3 bg-brand/10 border border-brand/20 rounded-xl text-brand">
-                    <Shield className="w-6 h-6" />
+                <div className="flex items-center gap-3 min-w-0">
+                  <div className="p-2.5 sm:p-3 bg-brand/10 border border-brand/20 rounded-xl text-brand shrink-0">
+                    <Shield className="w-5 h-5 sm:w-6 sm:h-6" />
                   </div>
-                  <div>
-                    <h4 className="text-lg font-display text-foreground">{file.name}</h4>
+                  <div className="min-w-0 truncate">
+                    <h4 className="text-base sm:text-lg font-display text-foreground truncate">{file.name}</h4>
                     <p className="text-xs text-foreground/40">
                       PDF Document • {(file.size / (1024 * 1024)).toFixed(2)} MB
                     </p>
@@ -151,7 +166,7 @@ export function ProtectTool() {
                     setPassword('');
                     setConfirmPassword('');
                   }}
-                  className="text-xs text-foreground/40 hover:text-foreground"
+                  className="text-xs text-foreground/40 hover:text-foreground shrink-0"
                 >
                   Change File
                 </Button>
@@ -201,8 +216,8 @@ export function ProtectTool() {
           )}
         </div>
 
-        {/* Action Panel */}
-        <div className="lg:col-span-4 h-full bg-card border border-foreground/10 rounded-2xl p-6 space-y-6">
+        {/* Action Panel - Sticky on Desktop */}
+        <div className="lg:col-span-4 lg:sticky lg:top-28 h-fit bg-card border border-foreground/10 rounded-2xl p-5 sm:p-6 space-y-5 shadow-xs">
           <div className="flex items-center gap-2 border-b border-foreground/5 pb-4">
             <Key className="w-4 h-4 text-brand" />
             <h3 className="font-mono text-sm uppercase tracking-wider text-foreground">Protect PDF</h3>
@@ -212,7 +227,7 @@ export function ProtectTool() {
             Encrypt your PDF files with a secure password to prevent unauthorized viewing, copying, or printing. Done completely in browser memory.
           </p>
 
-          <div className="pt-4 border-t border-foreground/5">
+          <div className="pt-3 border-t border-foreground/5">
             {isProcessing ? (
               <Button disabled className="w-full bg-primary/50 text-primary-foreground font-bold font-medium py-6 rounded-xl flex items-center justify-center gap-2">
                 <Loader2 className="w-4 h-4 animate-spin" />
@@ -251,13 +266,61 @@ export function ProtectTool() {
                 }`}
               >
                 <Shield className="w-4 h-4" />
-                Encrypt PDF
+                <span>Encrypt PDF</span>
+                <kbd className="hidden sm:inline-block ml-1 rounded border border-foreground/20 bg-background/50 px-1 py-0.5 text-[10px] font-mono text-muted-foreground">
+                  ↵
+                </kbd>
               </Button>
             )}
           </div>
         </div>
 
       </div>
+
+      {/* Mobile Sticky Action Dock */}
+      <MobileActionDock
+        visible={!!file}
+        statusText={
+          downloadUrl
+            ? 'Encrypted PDF ready!'
+            : isProcessing
+            ? 'Encrypting PDF...'
+            : !password
+            ? 'Set password to protect'
+            : password !== confirmPassword
+            ? 'Passwords must match'
+            : 'Password ready'
+        }
+        secondaryAction={
+          file && !isProcessing && !downloadUrl
+            ? {
+                label: 'Change',
+                onClick: () => {
+                  setFile(null);
+                  setDownloadUrl(null);
+                  setPassword('');
+                  setConfirmPassword('');
+                },
+              }
+            : undefined
+        }
+        primaryAction={
+          downloadUrl
+            ? {
+                label: 'Download Protected PDF',
+                onClick: handleDownload,
+                icon: <Download className="w-4 h-4" />,
+                className: 'bg-emerald-600 hover:bg-emerald-700 text-white',
+              }
+            : {
+                label: 'Encrypt PDF',
+                onClick: triggerProtect,
+                disabled: !file || !password || password !== confirmPassword,
+                loading: isProcessing,
+                icon: <Shield className="w-4 h-4" />,
+              }
+        }
+      />
 
       {downloadUrl && (
         <WorkflowNextActions
