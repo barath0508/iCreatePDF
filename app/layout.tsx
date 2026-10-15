@@ -5,9 +5,24 @@ import { SpeedInsights } from '@vercel/speed-insights/next';
 import Script from 'next/script';
 import { GeistSans } from 'geist/font/sans';
 import { GeistMono } from 'geist/font/mono';
+import { Noto_Sans_Tamil, Noto_Sans_Devanagari } from 'next/font/google';
 import { ThemeProvider } from '@/components/theme-provider';
 import { Toaster } from '@/components/ui/sonner';
 import './globals.css';
+
+const notoSansTamil = Noto_Sans_Tamil({
+  subsets: ['tamil'],
+  weight: ['400', '500', '600', '700'],
+  variable: '--font-noto-tamil',
+  display: 'swap',
+});
+
+const notoSansDevanagari = Noto_Sans_Devanagari({
+  subsets: ['devanagari'],
+  weight: ['400', '500', '600', '700'],
+  variable: '--font-noto-devanagari',
+  display: 'swap',
+});
 import { CookieConsentBanner } from '@/components/landing/cookie-consent-banner';
 import { ClarityAnalytics } from '@/components/clarity-analytics';
 
@@ -199,7 +214,7 @@ export default function RootLayout({
 }>) {
 
   return (
-    <html lang="en" className={`dark ${GeistSans.variable} ${GeistMono.variable}`}>
+    <html lang="en" className={`dark ${GeistSans.variable} ${GeistMono.variable} ${notoSansTamil.variable} ${notoSansDevanagari.variable}`}>
       <head>
         {/* Instant auto-recovery on stale deployment chunk/CSS 404 */}
         <script
@@ -355,7 +370,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
                   "sameAs": ["https://www.icreatepdf.online"],
                   "contactPoint": {
                     "@type": "ContactPoint",
-                    "email": "crop0339@gmail.com",
+                    "email": "support@icreatepdf.online",
                     "contactType": "customer support",
                     "availableLanguage": ["English", "Spanish", "Hindi", "Tamil"]
                   }

@@ -21,8 +21,8 @@ const features = [
   {
     number: '03',
     title: 'Everything in One Place',
-    description: 'Access over 49 free tools to convert, compress, organize, sign, and protect your PDFs whenever you need them — zero paywalls.',
-    stats: { value: '49+', label: 'Free Tools' },
+    description: 'Access over 70 free tools to convert, compress, organize, sign, and protect your PDFs whenever you need them — zero paywalls.',
+    stats: { value: '70+', label: 'Free Tools' },
   },
   {
     number: '04',

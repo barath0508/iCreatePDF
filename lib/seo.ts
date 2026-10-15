@@ -99,13 +99,13 @@ export function toolSchema({
   return [
     {
       '@context': 'https://schema.org',
-      '@type': 'WebApplication',
+      '@type': ['SoftwareApplication', 'WebApplication'],
       name,
       url: `${SITE_URL}${cleanUrl}`,
       description,
       image: `${SITE_URL}/logo.png`,
-      applicationCategory: 'UtilityApplication',
-      operatingSystem: 'Web Browser',
+      applicationCategory: 'UtilitiesApplication',
+      operatingSystem: 'All (Web Browser)',
       browserRequirements: 'Requires JavaScript and WebAssembly support',
       isAccessibleForFree: true,
       featureList: featureList ?? [
@@ -137,7 +137,7 @@ export function toolSchema({
 }
 
 /**
- * Generate complete JSON-LD structured data (WebApplication, Breadcrumbs, FAQPage, HowTo)
+ * Generate complete JSON-LD structured data (SoftwareApplication, Breadcrumbs, FAQPage, HowTo)
  * automatically synchronized with toolContent for maximum Google rich snippet visibility.
  */
 export function getToolFullJsonLd(
@@ -183,7 +183,16 @@ export function getToolFullJsonLd(
     );
   }
 
-  return schemas;
+  return {
+    '@context': 'https://schema.org',
+    '@graph': schemas.map((s) => {
+      if (s && s['@context']) {
+        const { '@context': _, ...rest } = s;
+        return rest;
+      }
+      return s;
+    }),
+  };
 }
 
 

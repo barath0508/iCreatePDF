@@ -172,8 +172,9 @@ export default function RedactPdfBlog() {
               <tbody className="divide-y divide-foreground/5">
                 {[
                   ['Pixel Burn / Rasterization', 'Highest', 'Passports, SSNs, credit cards, bank statements'],
+                  ['Automated PII Regex Scan', 'Highest', 'Batch redacting tax records, HR archives, clinical charts'],
                   ['Metadata Cleansing', 'High', 'Removing author history, editing timelines, location tags'],
-                  ['Standard Drawing Box', 'None', 'Draft styling, temporary comments, markup reviews'],
+                  ['Standard Drawing Box', 'None (Vulnerable)', 'Draft styling, temporary comments, markup reviews'],
                 ].map(([type, sec, use]) => (
                   <tr key={type}>
                     <td className="px-4 py-3 font-semibold text-foreground">{type}</td>
@@ -184,6 +185,19 @@ export default function RedactPdfBlog() {
               </tbody>
             </table>
           </div>
+
+          <h2 id="auto-redact-pii" className="text-xl font-bold text-foreground pt-4 font-display">
+            Automated PII Scanning: Redact SSNs, Credit Cards &amp; Contact Info
+          </h2>
+          <p>
+            When processing hundreds of pages, manually searching for every Social Security number or credit card is error-prone. With iCreatePDF's <Link href="/auto-redact-pdf" className="text-brand hover:underline">Auto-Redact PDF</Link> tool, intelligent regex patterns automatically flag and highlight confidential candidate strings:
+          </p>
+          <ul className="list-disc list-inside space-y-1.5 text-xs sm:text-sm text-foreground/75 pl-2">
+            <li><strong>Social Security Numbers (SSN):</strong> Identifies standard 9-digit formats (XXX-XX-XXXX).</li>
+            <li><strong>Credit &amp; Debit Card Numbers:</strong> Scans for 16-digit payment card sequences across Visa, Mastercard, and Amex.</li>
+            <li><strong>Email Addresses &amp; Phone Numbers:</strong> Catches personal direct contact lines and email signatures.</li>
+            <li><strong>Custom Keyword Lists:</strong> Enter specific client names, proprietary code numbers, or financial amounts.</li>
+          </ul>
         </div>
 
         <div className="p-6 rounded-2xl bg-gradient-to-r from-purple-950/20 to-pink-950/20 border border-brand/20 text-center space-y-4">

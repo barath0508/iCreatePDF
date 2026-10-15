@@ -162,6 +162,25 @@ export default function SavePdfAsJpgPage() {
             </p>
           </div>
 
+          <h2 id="popular-use-cases" className="text-xl font-bold text-foreground pt-4 font-display">
+            Common Use Cases for Converting PDF to JPG
+          </h2>
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3 my-4">
+            {[
+              { title: 'Social Media Posts', desc: 'Turn PDF flyers or event posters into images you can share directly to LinkedIn, Instagram, or Twitter.' },
+              { title: 'Presentation Slides', desc: 'Convert PDF slide decks into individual high-res JPGs to embed seamlessly in PowerPoint or Keynote.' },
+              { title: 'Website Previews', desc: 'Extract cover pages or sample pages as JPGs for blog post headers and document previews.' },
+              { title: 'Government & Job Portals', desc: 'Many exam and job application portals require photo uploads (.jpg) instead of multi-page PDFs.' },
+              { title: 'Print Shop Proofs', desc: 'Export flattened, high-density JPEG images for quick local proofing without font rendering mismatches.' },
+              { title: 'Chat & Messaging', desc: 'Share single pages in Slack or WhatsApp without requiring recipients to download entire documents.' },
+            ].map((uc, i) => (
+              <div key={i} className="p-3.5 rounded-xl bg-card border border-foreground/5 space-y-1">
+                <h3 className="font-bold text-foreground text-xs">{uc.title}</h3>
+                <p className="text-[11px] text-foreground/60 leading-relaxed">{uc.desc}</p>
+              </div>
+            ))}
+          </div>
+
           <h2 id="how-to-save-on-any-device" className="text-xl font-bold text-foreground pt-4 font-display">
             How to Save PDF as JPG on Any Device (Windows, Mac, iPhone, Android)
           </h2>

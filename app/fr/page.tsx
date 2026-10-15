@@ -1,11 +1,7 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
 import { Navigation } from '@/components/landing/navigation';
-import { FeaturesSection } from '@/components/landing/features-section';
-import { HowItWorksSection } from '@/components/landing/how-it-works-section';
-import { InfrastructureSection } from '@/components/landing/infrastructure-section';
-import { SecuritySection } from '@/components/landing/security-section';
-import { CtaSection } from '@/components/landing/cta-section';
+import { LocalizedLandingSections } from '@/components/landing/LocalizedLandingSections';
 import { FooterSection } from '@/components/landing/footer-section';
 import { SectionEyebrow } from '@/components/landing/shared/section-eyebrow';
 import { SectionHeading } from '@/components/landing/shared/section-heading';
@@ -149,11 +145,7 @@ export default function FrenchHomePage() {
         </div>
       </section>
 
-      <FeaturesSection />
-      <HowItWorksSection />
-      <InfrastructureSection />
-      <SecuritySection />
-      <CtaSection />
+      <LocalizedLandingSections locale="fr" />
       <FooterSection />
     </main>
   );

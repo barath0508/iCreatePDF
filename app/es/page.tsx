@@ -1,11 +1,7 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
 import { Navigation } from '@/components/landing/navigation';
-import { FeaturesSection } from '@/components/landing/features-section';
-import { HowItWorksSection } from '@/components/landing/how-it-works-section';
-import { InfrastructureSection } from '@/components/landing/infrastructure-section';
-import { SecuritySection } from '@/components/landing/security-section';
-import { CtaSection } from '@/components/landing/cta-section';
+import { LocalizedLandingSections } from '@/components/landing/LocalizedLandingSections';
 import { FooterSection } from '@/components/landing/footer-section';
 import { SectionEyebrow } from '@/components/landing/shared/section-eyebrow';
 import { SectionHeading } from '@/components/landing/shared/section-heading';
@@ -17,9 +13,9 @@ import {
 import { buildAlternates } from '@/lib/seo';
 
 export const metadata: Metadata = {
-  title: 'iCreatePDF - Convertidor de PDF Rápido y Privado',
-  description: 'Convierta JPG, PNG, WEBP, HEIC y BMP a PDF 100% localmente en su navegador. Sin registros, sin cargas a servidores, privacidad total.',
-  keywords: 'convertir jpg a pdf, png a pdf, heic a pdf, convertidor de pdf privado, icreatepdf',
+  title: 'iCreatePDF — 70+ Herramientas PDF Online Gratuitas (100% Privadas)',
+  description: 'Más de 70 herramientas PDF gratuitas en su navegador: unir, comprimir, JPG a PDF, firmar y OCR. 100% privado, sin subir archivos a servidores.',
+  keywords: 'herramientas pdf online, unir pdf, comprimir pdf, jpg a pdf, firmar pdf, ocr pdf, convertidor pdf gratis, icreatepdf español',
   alternates: buildAlternates('/es'),
 };
 
@@ -155,11 +151,7 @@ export default function SpanishHomePage() {
         </div>
       </section>
 
-      <FeaturesSection />
-      <HowItWorksSection />
-      <InfrastructureSection />
-      <SecuritySection />
-      <CtaSection />
+      <LocalizedLandingSections locale="es" />
       <FooterSection />
     </main>
   );

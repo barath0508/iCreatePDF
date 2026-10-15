@@ -101,7 +101,7 @@ Since we do not store your files or personal data on our servers, the attack sur
 
 If you have any questions, concerns, or requests regarding this Privacy Policy, please contact us at:
 
-crop0339@gmail.com
+support@icreatepdf.online
 
 We aim to respond to all legitimate privacy requests within 14 business days.`,
   },
@@ -179,10 +179,10 @@ export default function PrivacyPage() {
             <ShieldCheck className="w-8 h-8 text-emerald-400 mx-auto" />
             <p className="text-sm font-semibold text-foreground">Questions about your privacy?</p>
             <a
-              href="mailto:crop0339@gmail.com"
+              href="mailto:support@icreatepdf.online"
               className="text-xs text-emerald-400 hover:text-emerald-300 transition-colors underline underline-offset-2"
             >
-              crop0339@gmail.com
+              support@icreatepdf.online
             </a>
           </div>
         </div>

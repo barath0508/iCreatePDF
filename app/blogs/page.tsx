@@ -309,7 +309,7 @@ const blogPosts = [
   },
   {
     slug: 'how-to-scan-documents-to-pdf',
-    title: 'How to Scan s to PDF with Your Phone or Webcam',
+    title: 'How to Scan Documents to PDF with Your Phone or Webcam',
     excerpt: 'Turn your phone or webcam camera into a document scanner, entirely in your browser.',
     date: 'July 18, 2026',
     readTime: '4 min read',
@@ -369,15 +369,6 @@ const blogPosts = [
     readTime: '4 min read',
     category: 'Document Recovery',
     color: 'orange',
-  },
-  {
-    slug: 'how-to-convert-pdf-to-jpg',
-    title: 'How to Convert PDF to JPG Online — Free Guide',
-    excerpt: 'Turn every page of a PDF into a JPG image in seconds, right in your browser. No uploads, no watermark, download as a ZIP instantly.',
-    date: 'July 18, 2026',
-    readTime: '4 min read',
-    category: 'Image Conversion',
-    color: 'emerald',
   },
   {
     slug: 'how-to-rotate-pdf-pages',
@@ -569,15 +560,6 @@ const blogPosts = [
     color: 'orange',
   },
   {
-    slug: 'how-to-split-pdf-pages-free',
-    title: 'How to Split, Delete, and Extract PDF Pages Free (2026 ...',
-    excerpt: 'Learn how to extract pages, split files, or delete specific pages visually with previews. Done entirely in the browser with no server uploads.',
-    date: 'May 29, 2026',
-    readTime: '4 min read',
-    category: 'PDF Editing',
-    color: 'emerald',
-  },
-  {
     slug: 'how-to-grayscale-and-flatten-pdf',
     title: 'How to Convert PDF to Grayscale and Flatten Form Layers',
     excerpt: 'Learn how to convert color PDFs to black & white for ink-saving printing, and flatten form fields, annotation layers, and signatures locally.',
@@ -603,15 +585,6 @@ const blogPosts = [
     readTime: '4 min read',
     category: 'Document Optimization',
     color: 'emerald',
-  },
-  {
-    slug: 'how-to-auto-redact-pdf-sensitive-data',
-    title: 'How to Auto-Redact Sensitive Data & PII from PDF Documents',
-    excerpt: 'Automatically scan and permanently redact Social Security numbers, credit card numbers, and confidential contact details locally.',
-    date: 'August 1, 2026',
-    readTime: '5 min read',
-    category: 'Security & Privacy',
-    color: 'purple',
   },
   {
     slug: 'how-to-compare-pdf-visual-diff',

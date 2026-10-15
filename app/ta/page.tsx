@@ -1,11 +1,7 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
 import { Navigation } from '@/components/landing/navigation';
-import { FeaturesSection } from '@/components/landing/features-section';
-import { HowItWorksSection } from '@/components/landing/how-it-works-section';
-import { InfrastructureSection } from '@/components/landing/infrastructure-section';
-import { SecuritySection } from '@/components/landing/security-section';
-import { CtaSection } from '@/components/landing/cta-section';
+import { LocalizedLandingSections } from '@/components/landing/LocalizedLandingSections';
 import { FooterSection } from '@/components/landing/footer-section';
 import { SectionEyebrow } from '@/components/landing/shared/section-eyebrow';
 import { SectionHeading } from '@/components/landing/shared/section-heading';
@@ -17,8 +13,8 @@ import {
 import { buildAlternates } from '@/lib/seo';
 
 export const metadata: Metadata = {
-  title: 'iCreatePDF - விரைவான, இலவச மற்றும் பாதுகாப்பான பட PDF மாற்றி',
-  description: 'உங்கள் உலாவியில் 100% உள்நாட்டிலேயே JPG, PNG, WEBP, HEIC மற்றும் BMP கோப்புகளை PDF ஆக மாற்றவும். பதிவு இல்லை, கோப்பு பதிவேற்றங்கள் இல்லை.',
+  title: 'iCreatePDF — 70+ இலவச ஆன்லைன் PDF கருவிகள் (100% தனிப்பட்டது & பாதுகாப்பானது)',
+  description: '70+ இலவச ஆன்லைன் PDF கருவிகள்: ஒன்றிணைக்க, சுருக்க, JPG டு PDF, கையொப்பமிட மற்றும் OCR. உங்கள் உலாவியிலேயே 100% தனிப்பட்ட மற்றும் பாதுகாப்பான செயலாக்கம்.',
   keywords: 'படத்தை PDF ஆக மாற்றுதல், PDF மாற்றி, தமிழ் PDF கன்வெர்ட்டர், icreatepdf, இலவச பிடிஎப் கன்வெர்ட்டர், ஆன்லைன் பிடிஎப் டூல்ஸ், படங்களை பிடிஎப் ஆக மாற்ற',
   alternates: buildAlternates('/ta'),
 };
@@ -155,11 +151,7 @@ export default function TamilHomePage() {
         </div>
       </section>
 
-      <FeaturesSection />
-      <HowItWorksSection />
-      <InfrastructureSection />
-      <SecuritySection />
-      <CtaSection />
+      <LocalizedLandingSections locale="ta" />
       <FooterSection />
     </main>
   );

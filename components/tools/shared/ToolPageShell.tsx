@@ -30,16 +30,17 @@ export function ToolPageShell({
 }: ToolPageShellProps) {
   const defaultJsonLd = {
     '@context': 'https://schema.org',
-    '@type': 'WebApplication',
+    '@type': ['SoftwareApplication', 'WebApplication'],
     name: title,
     description: description,
-    operatingSystem: 'Web Browser',
-    applicationCategory: 'BusinessApplication',
+    operatingSystem: 'All (Web Browser)',
+    applicationCategory: 'UtilitiesApplication',
     url: `https://www.icreatepdf.online${canonicalPath}`,
     offers: {
       '@type': 'Offer',
       price: '0',
       priceCurrency: 'USD',
+      availability: 'https://schema.org/InStock',
     },
   };
 
@@ -64,7 +65,9 @@ export function ToolPageShell({
 
   const hasBreadcrumbInJsonLd = Array.isArray(jsonLd)
     ? jsonLd.some((item) => item && item['@type'] === 'BreadcrumbList')
-    : jsonLd && (jsonLd as Record<string, any>)['@type'] === 'BreadcrumbList';
+    : jsonLd && typeof jsonLd === 'object'
+    ? ((jsonLd as any)['@type'] === 'BreadcrumbList' || (Array.isArray((jsonLd as any)['@graph']) && (jsonLd as any)['@graph'].some((item: any) => item['@type'] === 'BreadcrumbList')))
+    : false;
 
   const activeJsonLd = jsonLd || defaultJsonLd;
 

@@ -53,6 +53,13 @@ const namedComparison = [
     smallpdf: 'No (for basic use)',
     pdf24: 'No',
   },
+  {
+    attribute: 'Optical Character Recognition (OCR)',
+    icreate: 'Included free (Tesseract Wasm, 100% in-browser)',
+    ilovepdf: 'Paywalled / Pro plan required',
+    smallpdf: 'Paywalled / Pro plan required',
+    pdf24: 'Available with server upload',
+  },
 ];
 
 const comparisonMatrix = [
@@ -102,7 +109,7 @@ const detailedFeatures = [
   { category: 'Advanced Processing', feature: 'Repair Broken PDF Cross-References', icreate: true, others: true },
   { category: 'Advanced Processing', feature: 'Compress PDF Object Streams', icreate: true, others: true },
   { category: 'Advanced Processing', feature: 'Reflowable Text Editing (Paragraph edit)', icreate: false, others: true },
-  { category: 'Advanced Processing', feature: 'OCR (Searchable Scans)', icreate: true, others: true },
+  { category: 'Advanced Processing', feature: 'OCR (Searchable Scans via Tesseract Wasm)', icreate: true, others: true },
 ];
 
 export default function ComparePage() {
@@ -270,10 +277,10 @@ export default function ComparePage() {
             <div className="p-6 rounded-xl bg-card border border-foreground/10 max-w-3xl mx-auto text-xs text-foreground/50 leading-relaxed space-y-2">
               <p className="font-semibold text-foreground flex items-center gap-1.5">
                 <Sparkles className="w-4 h-4 text-brand" />
-                Note on Text Reflowing &amp; OCR Limitations
+                Note on Text Reflowing &amp; In-Browser OCR Capabilities
               </p>
               <p>
-                To maintain a completely private local environment, iCreatePDF intentionally excludes complex server-side reflow engines and heavy OCR operations. This means that while you can easily split pages, merge files, draw signatures, compress documents, and stamp page numbers privately, reflowing paragraph text embedded inside existing PDF bodies is not supported. For advanced document editing of non-sensitive files, standard cloud platforms can be used.
+                To maintain a completely private local environment, iCreatePDF intentionally excludes complex server-side reflow engines while providing high-performance client-side OCR via WebAssembly-compiled Tesseract.js. This means you can easily extract text from scans, split pages, merge files, draw signatures, compress documents, and stamp page numbers privately with zero server uploads, whereas reflowing paragraph text embedded inside existing legacy PDF bodies is not supported. For advanced document editing of non-sensitive files, standard cloud platforms can be used.
               </p>
             </div>
           </div>

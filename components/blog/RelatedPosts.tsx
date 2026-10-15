@@ -131,8 +131,8 @@ const allPosts: Post[] = [
     color: 'orange',
   },
   {
-    slug: 'how-to-convert-pdf-to-jpg',
-    title: 'How to Convert PDF to JPG Online — Free Guide',
+    slug: 'how-to-save-pdf-as-jpg',
+    title: 'How to Save PDF as JPG (High Resolution)',
     category: 'Image Conversion',
     color: 'emerald',
   },
@@ -251,8 +251,8 @@ const allPosts: Post[] = [
     color: 'orange',
   },
   {
-    slug: 'how-to-split-pdf-pages-free',
-    title: 'How to Split and Delete PDF Pages Free',
+    slug: 'how-to-split-pdf-files',
+    title: 'How to Split PDF Files Online for Free',
     category: 'PDF Editing',
     color: 'emerald',
   },

@@ -4,6 +4,11 @@ export default function robots(): MetadataRoute.Robots {
   return {
     rules: [
       {
+        // Google AdSense & Ads Review Crawlers (Essential for AdSense Approval)
+        userAgent: ['Mediapartners-Google', 'AdsBot-Google', 'AdsBot-Google-Mobile'],
+        allow: '/',
+      },
+      {
         // Search Engine Crawlers
         userAgent: ['Googlebot', 'Bingbot', 'Slurp', 'DuckDuckBot'],
         allow: '/',

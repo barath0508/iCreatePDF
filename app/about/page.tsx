@@ -36,7 +36,7 @@ const publisherSchema = {
   ],
   contactPoint: {
     '@type': 'ContactPoint',
-    email: 'crop0339@gmail.com',
+    email: 'support@icreatepdf.online',
     contactType: 'customer support',
     availableLanguage: ['English', 'Spanish', 'Hindi', 'Tamil']
   }
@@ -103,7 +103,7 @@ export default function AboutPage() {
                 <strong>Editorial Standards:</strong> Reviewed and verified under our strict <Link href="/editorial-policy" className="text-brand hover:underline font-semibold">Editorial Policy &amp; Testing Methodology</Link>.
               </p>
               <p>
-                <strong>Primary Contact:</strong> <a href="mailto:crop0339@gmail.com" className="text-brand hover:underline">crop0339@gmail.com</a>
+                <strong>Primary Contact:</strong> <a href="mailto:support@icreatepdf.online" className="text-brand hover:underline">support@icreatepdf.online</a>
               </p>
             </div>
             <div className="space-y-3">
@@ -164,7 +164,7 @@ export default function AboutPage() {
             <Mail className="w-4 h-4 text-brand" /> Get in Touch
           </h2>
           <p className="text-sm text-foreground/60 leading-relaxed">
-            Have questions about our technology stack, press inquiries, or feature suggestions? Visit our <Link href="/contact" className="text-brand hover:underline underline-offset-2">contact page</Link> or send an email directly to <a href="mailto:crop0339@gmail.com" className="text-brand hover:underline underline-offset-2">crop0339@gmail.com</a>.
+            Have questions about our technology stack, press inquiries, or feature suggestions? Visit our <Link href="/contact" className="text-brand hover:underline underline-offset-2">contact page</Link> or send an email directly to <a href="mailto:support@icreatepdf.online" className="text-brand hover:underline underline-offset-2">support@icreatepdf.online</a>.
           </p>
         </section>
 

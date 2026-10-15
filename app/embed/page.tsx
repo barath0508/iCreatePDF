@@ -15,14 +15,14 @@ export const metadata: Metadata = {
 };
 
 export default function EmbedWidgetPage() {
-  const embedCode1 = `<iframe src="https://icreatepdf.online/tools/compress-pdf" width="100%" height="520" frameborder="0" style="border-radius:12px;border:1px solid #333;" title="iCreatePDF Compress Tool"></iframe>
+  const embedCode1 = `<iframe src="https://www.icreatepdf.online/compress-pdf" width="100%" height="520" frameborder="0" style="border-radius:12px;border:1px solid #333;" title="iCreatePDF Compress Tool"></iframe>
 <p style="font-size:12px;color:#888;margin-top:6px;font-family:sans-serif;">
-  Free client-side tool provided by <a href="https://icreatepdf.online" target="_blank" style="color:#a855f7;text-decoration:none;font-weight:600;">iCreatePDF (100% Private PDF Tools)</a>
+  Free client-side tool provided by <a href="https://www.icreatepdf.online" target="_blank" style="color:#a855f7;text-decoration:none;font-weight:600;">iCreatePDF (100% Private PDF Tools)</a>
 </p>`;
 
-  const embedCode2 = `<iframe src="https://icreatepdf.online/tools/merge-pdf" width="100%" height="520" frameborder="0" style="border-radius:12px;border:1px solid #333;" title="iCreatePDF Merge Tool"></iframe>
+  const embedCode2 = `<iframe src="https://www.icreatepdf.online/merge-pdf" width="100%" height="520" frameborder="0" style="border-radius:12px;border:1px solid #333;" title="iCreatePDF Merge Tool"></iframe>
 <p style="font-size:12px;color:#888;margin-top:6px;font-family:sans-serif;">
-  Free client-side tool provided by <a href="https://icreatepdf.online" target="_blank" style="color:#a855f7;text-decoration:none;font-weight:600;">iCreatePDF (100% Private PDF Tools)</a>
+  Free client-side tool provided by <a href="https://www.icreatepdf.online" target="_blank" style="color:#a855f7;text-decoration:none;font-weight:600;">iCreatePDF (100% Private PDF Tools)</a>
 </p>`;
 
   const badgeCode1 = `<a href="https://icreatepdf.online" target="_blank" rel="noopener" title="100% Private Client-Side PDF Tools">

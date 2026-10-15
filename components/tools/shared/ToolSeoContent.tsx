@@ -1,24 +1,86 @@
-import { CheckCircle2, HelpCircle, ListOrdered, ShieldCheck, Lock, Cpu, FileText, UserCheck, Globe, ArrowRight } from 'lucide-react';
+import { CheckCircle2, HelpCircle, ListOrdered, ShieldCheck, Lock, Cpu, FileText, UserCheck, Globe, ArrowRight, BookOpen } from 'lucide-react';
 import type { ToolContent } from '@/lib/tool-content';
 import { howToSchema } from '@/lib/seo';
+import { getToolTechSpec, getDynamicRelatedLinks } from '@/lib/tool-tech-specs';
 import Link from 'next/link';
 
-function faqSchema(content: ToolContent) {
+function generateToolJsonLd(content: ToolContent) {
+  const cleanUrl = content.url.startsWith('/tools/') ? content.url.replace('/tools/', '/') : content.url;
+  const fullUrl = `https://www.icreatepdf.online${cleanUrl}`;
+
   return {
     '@context': 'https://schema.org',
-    '@type': 'FAQPage',
-    mainEntity: content.faqs.map((faq) => ({
-      '@type': 'Question',
-      name: faq.question,
-      acceptedAnswer: {
-        '@type': 'Answer',
-        text: faq.answer,
+    '@graph': [
+      {
+        '@type': ['SoftwareApplication', 'WebApplication'],
+        '@id': `${fullUrl}#software`,
+        name: `${content.name} — iCreatePDF`,
+        url: fullUrl,
+        applicationCategory: 'UtilitiesApplication',
+        operatingSystem: 'All (Web Browser)',
+        browserRequirements: 'Requires JavaScript and WebAssembly support',
+        description: content.overview,
+        image: 'https://www.icreatepdf.online/logo.png',
+        isAccessibleForFree: true,
+        offers: {
+          '@type': 'Offer',
+          price: '0',
+          priceCurrency: 'USD',
+          availability: 'https://schema.org/InStock',
+        },
+        publisher: {
+          '@type': 'Organization',
+          '@id': 'https://www.icreatepdf.online/#organization',
+          name: 'iCreatePDF',
+          url: 'https://www.icreatepdf.online',
+        },
       },
-    })),
+      {
+        '@type': 'BreadcrumbList',
+        '@id': `${fullUrl}#breadcrumb`,
+        itemListElement: [
+          {
+            '@type': 'ListItem',
+            position: 1,
+            name: 'Home',
+            item: 'https://www.icreatepdf.online',
+          },
+          {
+            '@type': 'ListItem',
+            position: 2,
+            name: 'PDF Tools',
+            item: 'https://www.icreatepdf.online/#tools',
+          },
+          {
+            '@type': 'ListItem',
+            position: 3,
+            name: content.name,
+            item: fullUrl,
+          },
+        ],
+      },
+      {
+        '@type': 'FAQPage',
+        '@id': `${fullUrl}#faq`,
+        mainEntity: content.faqs.map((faq) => ({
+          '@type': 'Question',
+          name: faq.question,
+          acceptedAnswer: {
+            '@type': 'Answer',
+            text: faq.answer,
+          },
+        })),
+      },
+    ],
   };
 }
 
 export function ToolSeoContent({ content }: { content: ToolContent }) {
+  const cleanSlug = content.url.replace(/^(\/|tools\/)/, '').replace(/\/$/, '');
+  const techSpec = getToolTechSpec(cleanSlug, content.name, 'Utilities');
+  const relatedLinks = getDynamicRelatedLinks(cleanSlug);
+  const toolJsonLd = generateToolJsonLd(content);
+
   const hSchema = howToSchema({
     name: content.name,
     description: content.overview,
@@ -30,7 +92,7 @@ export function ToolSeoContent({ content }: { content: ToolContent }) {
     <section className="border-t border-foreground/10 py-16 relative z-10 bg-background text-foreground">
       <script
         type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema(content)) }}
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(toolJsonLd) }}
       />
       <script
         type="application/ld+json"
@@ -41,7 +103,7 @@ export function ToolSeoContent({ content }: { content: ToolContent }) {
         {/* Overview & Architecture */}
         <div className="space-y-4">
           <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-brand/10 border border-brand/20 text-brand text-xs font-semibold uppercase tracking-wider font-mono">
-            <Cpu className="w-3.5 h-3.5" /> Technical Guide & Operational Scope
+            <Cpu className="w-3.5 h-3.5" /> Technical Guide &amp; Operational Scope
           </div>
           <h2 className="text-2xl sm:text-3xl font-extrabold font-display text-foreground">
             About the {content.name} Engine
@@ -54,7 +116,7 @@ export function ToolSeoContent({ content }: { content: ToolContent }) {
               <Lock className="w-3.5 h-3.5 text-brand" /> Zero-Server Privacy Architecture
             </p>
             <p>
-              Unlike conventional web utilities that transmit your files to cloud processing clusters, iCreatePDF executes {content.name.toLowerCase()} completely client-side. WebAssembly modules and local JavaScript engines handle all parsing, layout calculation, rendering, and file encoding inside your browser sandboxed memory buffer. Your files never cross network boundaries.
+              {techSpec.architectureBlurb}
             </p>
           </div>
         </div>
@@ -84,7 +146,7 @@ export function ToolSeoContent({ content }: { content: ToolContent }) {
         <div className="space-y-4">
           <h2 className="text-2xl font-bold font-display text-foreground flex items-center gap-2">
             <FileText className="w-5 h-5 text-brand" />
-            Technical Specifications & Engine Details
+            Technical Specifications &amp; Engine Details
           </h2>
           <div className="overflow-x-auto rounded-xl border border-border/80 bg-card">
             <table className="w-full text-xs text-left text-muted-foreground">
@@ -96,28 +158,28 @@ export function ToolSeoContent({ content }: { content: ToolContent }) {
               </thead>
               <tbody className="divide-y divide-border/60">
                 <tr>
-                  <td className="px-4 py-2.5 font-medium text-foreground">Processing Environment</td>
-                  <td className="px-4 py-2.5">100% Client-Side WebAssembly (WASM) & HTML5 Canvas</td>
+                  <td className="px-4 py-2.5 font-medium text-foreground">Supported Input Formats</td>
+                  <td className="px-4 py-2.5 font-mono text-[11px] text-foreground/90">{techSpec.inputFormats}</td>
                 </tr>
                 <tr>
-                  <td className="px-4 py-2.5 font-medium text-foreground">Network Security</td>
-                  <td className="px-4 py-2.5">Zero Server Uploads (0 Bytes Transmitted)</td>
+                  <td className="px-4 py-2.5 font-medium text-foreground">Output Format</td>
+                  <td className="px-4 py-2.5 font-mono text-[11px] text-foreground/90">{techSpec.outputFormat}</td>
                 </tr>
                 <tr>
-                  <td className="px-4 py-2.5 font-medium text-foreground">PDF Compliance</td>
-                  <td className="px-4 py-2.5">ISO 32000-1 / ISO 32000-2 Specification Standards</td>
+                  <td className="px-4 py-2.5 font-medium text-foreground">Underlying Client Engine</td>
+                  <td className="px-4 py-2.5">{techSpec.engine}</td>
                 </tr>
                 <tr>
-                  <td className="px-4 py-2.5 font-medium text-foreground">File Size & Page Limits</td>
-                  <td className="px-4 py-2.5">Unlimited (Bounded only by client RAM capacity)</td>
+                  <td className="px-4 py-2.5 font-medium text-foreground">Max Recommended File Size in RAM</td>
+                  <td className="px-4 py-2.5">{techSpec.memoryLimit}</td>
                 </tr>
                 <tr>
-                  <td className="px-4 py-2.5 font-medium text-foreground">Cross-Platform Support</td>
-                  <td className="px-4 py-2.5">Google Chrome, Apple Safari, Mozilla Firefox, Microsoft Edge (Desktop & Mobile)</td>
+                  <td className="px-4 py-2.5 font-medium text-foreground">Network Security Standard</td>
+                  <td className="px-4 py-2.5 font-semibold text-emerald-500">Zero Server Uploads (0 Bytes Transmitted across external networks)</td>
                 </tr>
                 <tr>
-                  <td className="px-4 py-2.5 font-medium text-foreground">Pricing & License</td>
-                  <td className="px-4 py-2.5 font-semibold text-emerald-500">100% Free Forever (No Paywall / No Registration)</td>
+                  <td className="px-4 py-2.5 font-medium text-foreground">Privacy &amp; Compliance</td>
+                  <td className="px-4 py-2.5">100% In-Browser Sandbox (ISO 32000, GDPR &amp; HIPAA Safe)</td>
                 </tr>
               </tbody>
             </table>
@@ -128,7 +190,7 @@ export function ToolSeoContent({ content }: { content: ToolContent }) {
         <div className="space-y-4">
           <h2 className="text-2xl font-bold font-display text-foreground flex items-center gap-2">
             <CheckCircle2 className="w-5 h-5 text-brand" />
-            Practical Use Cases & Workflows
+            Practical Use Cases &amp; Workflows
           </h2>
           <ul className="grid grid-cols-1 sm:grid-cols-2 gap-3">
             {content.useCases.map((useCase) => (
@@ -168,8 +230,8 @@ export function ToolSeoContent({ content }: { content: ToolContent }) {
               <UserCheck className="w-5 h-5" />
             </div>
             <div>
-              <h3 className="text-sm font-bold font-display text-foreground">Editorial Quality & Fact-Checking Standard</h3>
-              <p className="text-[11px] text-muted-foreground font-mono">Verified by Barath R · Lead Software Engineer & iCreatePDF Technical Team</p>
+              <h3 className="text-sm font-bold font-display text-foreground">Editorial Quality &amp; Fact-Checking Standard</h3>
+              <p className="text-[11px] text-muted-foreground font-mono">Verified by Barath R · Lead Software Engineer &amp; iCreatePDF Technical Team</p>
             </div>
           </div>
           <p className="text-xs text-muted-foreground leading-relaxed">
@@ -182,21 +244,22 @@ export function ToolSeoContent({ content }: { content: ToolContent }) {
         {/* Related Tools & Blog Guides Hub */}
         <div className="p-6 rounded-2xl bg-muted/30 border border-border/80 space-y-4">
           <h3 className="text-sm font-bold font-display text-foreground uppercase tracking-wider font-mono">
-            Explore Related PDF Tools & Resources
+            Explore Related PDF Tools &amp; Resources
           </h3>
-          <div className="grid grid-cols-2 sm:grid-cols-4 gap-2.5 text-xs">
-            <Link href="/merge-pdf" className="p-2.5 rounded-lg bg-card border border-border hover:border-brand text-muted-foreground hover:text-foreground font-medium transition-colors inline-flex items-center justify-between">
-              Merge PDF <ArrowRight className="w-3 h-3 text-brand" />
-            </Link>
-            <Link href="/compress-pdf" className="p-2.5 rounded-lg bg-card border border-border hover:border-brand text-muted-foreground hover:text-foreground font-medium transition-colors inline-flex items-center justify-between">
-              Compress PDF <ArrowRight className="w-3 h-3 text-brand" />
-            </Link>
-            <Link href="/jpg-to-pdf" className="p-2.5 rounded-lg bg-card border border-border hover:border-brand text-muted-foreground hover:text-foreground font-medium transition-colors inline-flex items-center justify-between">
-              JPG to PDF <ArrowRight className="w-3 h-3 text-brand" />
-            </Link>
-            <Link href="/blogs" className="p-2.5 rounded-lg bg-card border border-border hover:border-brand text-muted-foreground hover:text-foreground font-medium transition-colors inline-flex items-center justify-between">
-              PDF Tutorials <ArrowRight className="w-3 h-3 text-brand" />
-            </Link>
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-2.5 text-xs">
+            {relatedLinks.map((link) => (
+              <Link
+                key={link.href}
+                href={link.href}
+                className="p-3 rounded-lg bg-card border border-border hover:border-brand text-muted-foreground hover:text-foreground font-medium transition-colors inline-flex items-center justify-between group"
+              >
+                <span className="flex items-center gap-1.5 truncate">
+                  {link.isTutorial && <BookOpen className="w-3.5 h-3.5 text-brand shrink-0" />}
+                  <span className="truncate">{link.name}</span>
+                </span>
+                <ArrowRight className="w-3 h-3 text-brand shrink-0 group-hover:translate-x-0.5 transition-transform" />
+              </Link>
+            ))}
           </div>
         </div>
       </div>

@@ -72,7 +72,7 @@ const sections = [
     
     If you have any questions, feedback, or concerns regarding these Terms, please contact us at:
     
-    crop0339@gmail.com`,
+    support@icreatepdf.online`,
   },
 ];
 
@@ -131,10 +131,10 @@ export default function TermsPage() {
             <ShieldCheck className="w-8 h-8 text-emerald-400 mx-auto" />
             <p className="text-sm font-semibold text-foreground">Have questions about our Terms?</p>
             <a
-              href="mailto:crop0339@gmail.com"
+              href="mailto:support@icreatepdf.online"
               className="text-xs text-emerald-400 hover:text-emerald-300 transition-colors underline underline-offset-2"
             >
-              crop0339@gmail.com
+              support@icreatepdf.online
             </a>
           </div>
         </div>

@@ -157,7 +157,7 @@ export default function Home() {
       <SecuritySection />
       <FaqSection />
       <CtaSection />
-      <FooterSection />
+      <FooterSection showSeoEssay={true} />
       <RecentFilesWidget />
     </main>
   );

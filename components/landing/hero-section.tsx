@@ -13,7 +13,6 @@ const words = ['Convert', 'Combine', 'Compress', 'Organize', 'Protect'];
 export function HeroSection() {
   const router = useRouter();
   const [wordIndex, setWordIndex] = useState(0);
-  const [processedCount, setProcessedCount] = useState(1842910);
   const [droppedFiles, setDroppedFiles] = useState<File[]>([]);
   const [isPdfModalOpen, setIsPdfModalOpen] = useState(false);
 
@@ -21,19 +20,6 @@ export function HeroSection() {
     const interval = setInterval(() => {
       setWordIndex((prev) => (prev + 1) % words.length);
     }, 2800);
-    return () => {};
-  }, []);
-
-  useEffect(() => {
-    const referenceDate = new Date('2026-07-01T00:00:00Z').getTime();
-    const now = Date.now();
-    const elapsedSeconds = Math.floor((now - referenceDate) / 1000);
-    const baseline = 1842910 + Math.floor(elapsedSeconds * 1.4);
-    setProcessedCount(baseline);
-
-    const interval = setInterval(() => {
-      setProcessedCount((prev) => prev + Math.floor(Math.random() * 3) + 1);
-    }, 3000);
     return () => clearInterval(interval);
   }, []);
 
@@ -117,9 +103,11 @@ export function HeroSection() {
           </div>
 
           <div className="space-y-3">
-            <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-normal tracking-tight font-display leading-[1.1] text-foreground">
-              <span className="block font-medium">Everything you need.</span>
-              <span className="block text-muted-foreground/75 font-normal">Without the hassle.</span>
+            <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-extrabold tracking-tight font-display leading-[1.08] text-foreground">
+              <span className="block font-bold">70+ Free Online PDF Tools</span>
+              <span className="block text-muted-foreground/80 font-medium text-2xl sm:text-3xl md:text-4xl lg:text-5xl pt-1">
+                100% Private, Zero Uploads
+              </span>
             </h1>
             <p className="text-base sm:text-lg lg:text-xl text-muted-foreground font-normal leading-relaxed max-w-xl pt-1">
               Fast, friendly, and completely private PDF tools. Everything happens right here in your browser — no uploads, no sign-ups, and no limits.
@@ -134,16 +122,16 @@ export function HeroSection() {
           {/* Quick Metrics */}
           <div className="pt-5 grid grid-cols-3 gap-2 sm:gap-4 border-t border-border/60 max-w-xl">
             <div className="min-w-0">
-              <p className="text-[10px] sm:text-xs font-mono font-semibold text-muted-foreground uppercase truncate">PROCESSED</p>
-              <p className="text-sm sm:text-lg lg:text-xl font-bold text-foreground font-mono truncate">{processedCount.toLocaleString('en-US')}</p>
+              <p className="text-[10px] sm:text-xs font-mono font-semibold text-muted-foreground uppercase truncate">ARCHITECTURE</p>
+              <p className="text-xs sm:text-sm lg:text-base font-bold text-foreground font-mono truncate">Wasm + Local RAM</p>
             </div>
             <div className="min-w-0">
               <p className="text-[10px] sm:text-xs font-mono font-semibold text-muted-foreground uppercase truncate">UPLOADS</p>
-              <p className="text-sm sm:text-lg lg:text-xl font-bold text-foreground font-mono truncate">0.0 MB</p>
+              <p className="text-xs sm:text-sm lg:text-base font-bold text-emerald-500 font-mono truncate">0.0 MB to Cloud</p>
             </div>
             <div className="min-w-0">
-              <p className="text-[10px] sm:text-xs font-mono font-semibold text-muted-foreground uppercase truncate">SPEED</p>
-              <p className="text-sm sm:text-lg lg:text-xl font-bold text-foreground font-mono truncate">&lt; 10ms</p>
+              <p className="text-[10px] sm:text-xs font-mono font-semibold text-muted-foreground uppercase truncate">OFFLINE MODE</p>
+              <p className="text-xs sm:text-sm lg:text-base font-bold text-foreground font-mono truncate">100% Supported</p>
             </div>
           </div>
         </div>

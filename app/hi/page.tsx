@@ -1,11 +1,7 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
 import { Navigation } from '@/components/landing/navigation';
-import { FeaturesSection } from '@/components/landing/features-section';
-import { HowItWorksSection } from '@/components/landing/how-it-works-section';
-import { InfrastructureSection } from '@/components/landing/infrastructure-section';
-import { SecuritySection } from '@/components/landing/security-section';
-import { CtaSection } from '@/components/landing/cta-section';
+import { LocalizedLandingSections } from '@/components/landing/LocalizedLandingSections';
 import { FooterSection } from '@/components/landing/footer-section';
 import { SectionEyebrow } from '@/components/landing/shared/section-eyebrow';
 import { SectionHeading } from '@/components/landing/shared/section-heading';
@@ -17,9 +13,9 @@ import {
 import { buildAlternates } from '@/lib/seo';
 
 export const metadata: Metadata = {
-  title: 'iCreatePDF - तेज़, मुफ़्त और निजी इमेज टू पीडीएफ कनवर्टर',
-  description: 'अपने ब्राउज़र में 100% स्थानीय रूप से JPG, PNG, WEBP, HEIC और BMP को PDF में बदलें। कोई साइन-अप नहीं, कोई सर्वर अपलोड नहीं, पूर्ण गोपनीयता।',
-  keywords: 'इमेज टू पीडीएफ, जेपीजी टू पीडीएफ, पीएनजी टू पीडीएफ, पीडीएफ कनवर्टर, icreatepdf',
+  title: 'iCreatePDF — 70+ मुफ़्त ऑनलाइन पीडीएफ टूल्स (100% प्राइवेट और सुरक्षित)',
+  description: '70+ मुफ़्त ऑनलाइन पीडीएफ टूल्स: मर्ज करें, कंप्रेस करें, जेपीजी टू पीडीएफ, साइन करें, और ओसीआर। बिना किसी सर्वर अपलोड के सीधे अपने ब्राउज़र में 100% प्राइवेट।',
+  keywords: 'पीडीएफ टूल्स, पीडीएफ मर्ज, पीडीएफ कंप्रेस, जेपीजी टू पीडीएफ, वर्ड टू पीडीएफ, सुरक्षित पीडीएफ कनवर्टर, icreatepdf hindi',
   alternates: buildAlternates('/hi'),
 };
 
@@ -155,11 +151,7 @@ export default function HindiHomePage() {
         </div>
       </section>
 
-      <FeaturesSection />
-      <HowItWorksSection />
-      <InfrastructureSection />
-      <SecuritySection />
-      <CtaSection />
+      <LocalizedLandingSections locale="hi" />
       <FooterSection />
     </main>
   );

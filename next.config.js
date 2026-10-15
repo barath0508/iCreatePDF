@@ -100,6 +100,21 @@ const nextConfig = {
         destination: '/compare/pdf24-alternative',
         permanent: true,
       },
+      {
+        source: '/blogs/how-to-convert-pdf-to-jpg',
+        destination: '/blogs/how-to-save-pdf-as-jpg',
+        permanent: true,
+      },
+      {
+        source: '/blogs/how-to-split-pdf-pages-free',
+        destination: '/blogs/how-to-split-pdf-files',
+        permanent: true,
+      },
+      {
+        source: '/blogs/how-to-auto-redact-pdf-sensitive-data',
+        destination: '/blogs/how-to-redact-pdf-online-free',
+        permanent: true,
+      },
     ];
   },
   async rewrites() {

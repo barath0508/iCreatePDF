@@ -8,7 +8,7 @@ iCreatePDF runs entirely in the browser using WebAssembly and JavaScript engines
 
 ## Key Information
 - **Website:** https://www.icreatepdf.online
-- **Contact:** support@icreatepdf.online / crop0339@gmail.com
+- **Contact:** support@icreatepdf.online
 - **Pricing:** 100% Free (no limits, no daily caps, no signup)
 - **Target Audience:** Freelancers, small teams, privacy-conscious professionals, legal/financial advisors, and students
 - **Competitors:** ilovepdf.com, smallpdf.com, pdf24.org, pdf2go.com, sejda.com, pdfcandy.com, pdffiller.com
