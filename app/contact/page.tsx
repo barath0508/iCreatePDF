@@ -32,10 +32,10 @@ export default function ContactPage() {
         }}
       />
       <Navigation />
-      
+
       <div className="pt-32 pb-24 max-w-[1400px] mx-auto px-6 lg:px-12 relative z-10">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
-          
+
           {/* Contact Copy */}
           <div className="lg:col-span-5 space-y-6">
             <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-foreground/5 border border-foreground/10 text-[11px] font-semibold text-brand uppercase font-mono">
@@ -67,7 +67,7 @@ export default function ContactPage() {
               </div>
               <div className="flex items-center gap-3 text-foreground/70">
                 <Mail className="w-5 h-5 text-brand" />
-                <a href="mailto:support@icreatepdf.online" className="text-sm hover:underline hover:text-brand transition-colors">support@icreatepdf.online</a>
+                <a href="mailto:crop0339@gmail.com" className="text-sm hover:underline hover:text-brand transition-colors">crop0339@gmail.com</a>
               </div>
               <div className="flex items-center gap-3 text-foreground/70">
                 <MessageSquare className="w-5 h-5 text-brand" />

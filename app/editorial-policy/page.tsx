@@ -141,7 +141,7 @@ export default function EditorialPolicyPage() {
               Web standards, PDF specifications (ISO 32000-1 and ISO 32000-2), and browser security sandboxes evolve rapidly. If a browser update modifies canvas memory limits or changes WebAssembly threading behaviors, we promptly re-verify and update our affected guides.
             </p>
             <p>
-              If you notice any technical inaccuracy, outdated instruction, or broken link, please contact us at <a href="mailto:support@icreatepdf.online" className="text-brand hover:underline font-mono">support@icreatepdf.online</a> with the subject line <em>&ldquo;Editorial Correction&rdquo;</em>. Our engineering team investigates and issues revisions within 48 hours.
+              If you notice any technical inaccuracy, outdated instruction, or broken link, please contact us at <a href="mailto:crop0339@gmail.com" className="text-brand hover:underline font-mono">crop0339@gmail.com</a> with the subject line <em>&ldquo;Editorial Correction&rdquo;</em>. Our engineering team investigates and issues revisions within 48 hours.
             </p>
           </section>
 

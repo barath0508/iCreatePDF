@@ -44,7 +44,7 @@ const authorSchema = {
   ],
   sameAs: [
     'https://github.com/barath0508',
-    'https://www.linkedin.com/in/barath-r',
+    'https://www.linkedin.com/in/barath0508',
     'https://www.icreatepdf.online/about'
   ]
 };
@@ -100,7 +100,7 @@ export default function AuthorBarathPage() {
       <Navigation />
 
       <div className="pt-32 pb-24 max-w-4xl mx-auto px-6 space-y-16">
-        
+
         {/* Profile Header */}
         <section className="p-8 sm:p-10 rounded-3xl bg-card border border-foreground/10 shadow-sm space-y-6">
           <div className="flex flex-col sm:flex-row sm:items-center gap-6">
@@ -134,8 +134,8 @@ export default function AuthorBarathPage() {
 
           <div className="flex flex-wrap items-center gap-3 pt-2">
             <Button asChild size="sm" variant="outline" className="text-xs font-mono">
-              <a href="mailto:support@icreatepdf.online">
-                <Mail className="w-3.5 h-3.5 mr-1.5 text-brand" /> support@icreatepdf.online
+              <a href="mailto:crop0339@gmail.com">
+                <Mail className="w-3.5 h-3.5 mr-1.5 text-brand" /> crop0339@gmail.com
               </a>
             </Button>
             <Button asChild size="sm" variant="outline" className="text-xs font-mono">
@@ -144,7 +144,7 @@ export default function AuthorBarathPage() {
               </a>
             </Button>
             <Button asChild size="sm" variant="outline" className="text-xs font-mono">
-              <a href="https://www.linkedin.com/in/barath-r" target="_blank" rel="noopener noreferrer">
+              <a href="https://www.linkedin.com/in/barath0508" target="_blank" rel="noopener noreferrer">
                 <ExternalLink className="w-3.5 h-3.5 mr-1.5 text-brand" /> LinkedIn Profile
               </a>
             </Button>

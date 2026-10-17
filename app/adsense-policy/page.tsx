@@ -63,7 +63,7 @@ const policySections = [
     content: `For any questions, feedback, or policy concerns regarding our AdSense compliance or editorial standards, please contact us directly:
 
 • Website Domain: https://www.icreatepdf.online
-• Email Support: support@icreatepdf.online
+• Email Support: crop0339@gmail.com
 • Contact Form: https://www.icreatepdf.online/contact
 
 We investigate all policy inquiries promptly and continuously audit our platform for full compliance.`,
@@ -127,10 +127,10 @@ export default function AdSensePolicyPage() {
             </p>
             <div className="flex items-center justify-center gap-4 pt-2">
               <a
-                href="mailto:support@icreatepdf.online"
+                href="mailto:crop0339@gmail.com"
                 className="inline-flex items-center gap-1.5 px-4 py-2 rounded-xl bg-brand text-brand-foreground text-xs font-semibold hover:opacity-90 transition-opacity"
               >
-                <Mail className="w-3.5 h-3.5" /> Email support@icreatepdf.online
+                <Mail className="w-3.5 h-3.5" /> Email crop0339@gmail.com
               </a>
               <a
                 href="/contact"
