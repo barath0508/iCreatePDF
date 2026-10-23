@@ -27,17 +27,17 @@ const ICON_MAP: Record<string, LucideIcon> = {
 };
 
 const POPULAR_TOOLS = new Set([
-  '/tools/merge-pdf',
-  '/tools/compress-pdf',
-  '/tools/jpg-to-pdf',
-  '/tools/sign-pdf',
-  '/tools/pdf-ocr',
+  '/merge-pdf',
+  '/compress-pdf',
+  '/jpg-to-pdf',
+  '/sign-pdf',
+  '/pdf-ocr',
 ]);
 
 const NEW_TOOLS = new Set([
-  '/tools/pdf-accessibility-checker',
-  '/tools/bulk-certificates',
-  '/tools/ris-to-pdf',
+  '/pdf-accessibility-checker',
+  '/bulk-certificates',
+  '/ris-to-pdf',
 ]);
 
 const SEARCH_STEMS: Record<string, string> = {

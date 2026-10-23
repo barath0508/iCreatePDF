@@ -29,7 +29,7 @@ export function HeroSection() {
     const allPdfs = fileArray.every((f) => f.name.toLowerCase().endsWith('.pdf'));
     if (fileArray.length > 1 && allPdfs) {
       setPreloadedFiles(fileArray);
-      router.push('/tools/merge-pdf');
+      router.push('/merge-pdf');
       return;
     }
 
@@ -39,7 +39,7 @@ export function HeroSection() {
     });
     if (fileArray.length > 1 && allImages) {
       setPreloadedFiles(fileArray);
-      router.push('/tools/jpg-to-pdf');
+      router.push('/jpg-to-pdf');
       return;
     }
 
@@ -51,28 +51,28 @@ export function HeroSection() {
       setIsPdfModalOpen(true);
     } else if (ext === 'docx' || ext === 'doc') {
       setPreloadedFiles(fileArray);
-      router.push('/tools/word-to-pdf');
+      router.push('/word-to-pdf');
     } else if (ext === 'xlsx' || ext === 'xls' || ext === 'csv') {
       setPreloadedFiles(fileArray);
-      router.push('/tools/excel-to-pdf');
+      router.push('/excel-to-pdf');
     } else if (ext === 'html' || ext === 'htm') {
       setPreloadedFiles(fileArray);
-      router.push('/tools/html-to-pdf');
+      router.push('/html-to-pdf');
     } else if (ext === 'md' || ext === 'markdown') {
       setPreloadedFiles(fileArray);
-      router.push('/tools/markdown-to-pdf');
+      router.push('/markdown-to-pdf');
     } else if (ext === 'ris') {
       setPreloadedFiles(fileArray);
-      router.push('/tools/ris-to-pdf');
+      router.push('/ris-to-pdf');
     } else if (ext === 'txt') {
       setPreloadedFiles(fileArray);
-      router.push('/tools/txt-to-pdf');
+      router.push('/txt-to-pdf');
     } else if (ext === 'heic' || ext === 'heif') {
       setPreloadedFiles(fileArray);
-      router.push('/tools/heic-to-pdf');
+      router.push('/heic-to-pdf');
     } else if (['jpg', 'jpeg', 'png', 'webp', 'bmp'].includes(ext || '')) {
       setPreloadedFiles(fileArray);
-      router.push('/tools/jpg-to-pdf');
+      router.push('/jpg-to-pdf');
     } else {
       setPreloadedFiles(fileArray);
       router.push('/#tools');
@@ -173,14 +173,14 @@ export function HeroSection() {
 
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-2 sm:gap-2.5">
                     {[
-                      { label: 'Merge Multiple PDFs', path: '/tools/merge-pdf' },
-                      { label: 'Compress & Shrink', path: '/tools/compress-pdf' },
-                      { label: 'Sign or Draw Signature', path: '/tools/sign-pdf' },
-                      { label: 'Reorder or Delete Pages', path: '/tools/organize-pdf' },
-                      { label: 'Convert to JPG Images', path: '/tools/pdf-to-jpg' },
-                      { label: 'Lock with Password', path: '/tools/protect-pdf' },
-                      { label: 'Unlock / Remove Password', path: '/tools/unlock-pdf' },
-                      { label: 'Extract Text (OCR)', path: '/tools/pdf-ocr' },
+                      { label: 'Merge Multiple PDFs', path: '/merge-pdf' },
+                      { label: 'Compress & Shrink', path: '/compress-pdf' },
+                      { label: 'Sign or Draw Signature', path: '/sign-pdf' },
+                      { label: 'Reorder or Delete Pages', path: '/organize-pdf' },
+                      { label: 'Convert to JPG Images', path: '/pdf-to-jpg' },
+                      { label: 'Lock with Password', path: '/protect-pdf' },
+                      { label: 'Unlock / Remove Password', path: '/unlock-pdf' },
+                      { label: 'Extract Text (OCR)', path: '/pdf-ocr' },
                     ].map((opt) => (
                       <button
                         key={opt.label}
