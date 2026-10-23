@@ -85,7 +85,7 @@ export default function RedactPdfBlog() {
           <div className="flex flex-wrap items-center gap-x-6 gap-y-2 text-xs text-foreground/40 pt-2">
             <span className="flex items-center gap-1.5">
               <span className="w-5 h-5 rounded-full bg-brand/20 flex items-center justify-center text-[10px] font-bold text-brand border border-brand/10">BR</span>
-              Written by <span className="font-semibold text-foreground/60">Barath R</span> (Lead Developer &amp; PDF Expert)
+              Written by <Link href="/authors/barath-r" className="font-semibold text-foreground/70 hover:text-brand underline">Barath R</Link> (Lead Developer &amp; PDF Expert)
             </span>
             <span className="flex items-center gap-1">
               <Calendar className="w-3.5 h-3.5" />
