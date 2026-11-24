@@ -20,6 +20,8 @@ import { toast } from 'sonner';
 import { WorkflowNextActions } from '@/components/tools/shared/WorkflowNextActions';
 import { MobileActionDock } from '@/components/tools/shared/MobileActionDock';
 import { useClipboardFile } from '@/hooks/use-clipboard-file';
+import { detectFileIntent, SmartIntentSuggestion } from '@/lib/file-intent';
+import { SmartIntentModal } from '@/components/tools/shared/SmartIntentModal';
 
 export interface WorkspaceFileItem {
   id: string;
@@ -84,6 +86,7 @@ export function ToolWorkspace({
 }: ToolWorkspaceProps) {
   const [isDraggingOver, setIsDraggingOver] = useState(false);
   const [outputFileName, setOutputFileName] = useState('');
+  const [intentSuggestion, setIntentSuggestion] = useState<SmartIntentSuggestion | null>(null);
   const fileInputRef = useRef<HTMLInputElement>(null);
 
   // Set default output filename when files change or default is passed
@@ -107,8 +110,13 @@ export function ToolWorkspace({
 
     const fileArray = Array.from(uploadedFiles);
     for (const file of fileArray) {
-      // Basic type validation if accept is defined
+      // Check for smart tool suggestions if file does not match accepted format
       if (accept.includes('pdf') && !file.name.toLowerCase().endsWith('.pdf')) {
+        const suggestion = detectFileIntent(file, toolId);
+        if (suggestion) {
+          setIntentSuggestion(suggestion);
+          return;
+        }
         toast.error(`"${file.name}" is not a PDF file.`);
         continue;
       }
@@ -200,6 +208,12 @@ export function ToolWorkspace({
 
   return (
     <div className="w-full max-w-6xl mx-auto px-3 sm:px-6 lg:px-12 py-4 sm:py-8 pb-28 md:pb-12">
+      {/* Smart File Intent Suggestion Modal */}
+      <SmartIntentModal
+        suggestion={intentSuggestion}
+        onDismiss={() => setIntentSuggestion(null)}
+      />
+
       {/* Hidden file input */}
       <input
         type="file"

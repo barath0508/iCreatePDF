@@ -25,6 +25,7 @@ const notoSansDevanagari = Noto_Sans_Devanagari({
 });
 import { CookieConsentBanner } from '@/components/landing/cookie-consent-banner';
 import { ClarityAnalytics } from '@/components/clarity-analytics';
+import { OfflineIndicator } from '@/components/OfflineIndicator';
 
 export const metadata: Metadata = {
   metadataBase: new URL('https://www.icreatepdf.online'),
@@ -472,6 +473,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
           <SpeedInsights />
           <ClarityAnalytics />
           <CookieConsentBanner />
+          <OfflineIndicator />
         </ThemeProvider>
       </body>
     </html>

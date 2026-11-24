@@ -5,6 +5,7 @@ import { FooterSection } from '@/components/landing/footer-section';
 import { ShieldCheck, Lock, Zap, Coins, Check, X, ArrowRight } from 'lucide-react';
 import Link from 'next/link';
 import { Button } from '@/components/ui/button';
+import { CompareToolsCallout } from '@/components/compare/CompareToolsCallout';
 
 export const metadata: Metadata = {
   title: 'Free Adobe Acrobat Alternative Online (No Subscription Required) | iCreatePDF',
@@ -142,19 +143,8 @@ export default function AdobeAcrobatAlternativePage() {
             ))}
           </div>
 
-          {/* Call to Action Banner */}
-          <div className="p-8 rounded-3xl bg-gradient-to-r from-purple-950/20 to-pink-950/20 border border-brand/20 text-center space-y-4">
-            <h3 className="text-2xl font-bold font-display text-foreground">Switch to iCreatePDF Today</h3>
-            <p className="text-xs sm:text-sm text-foreground/60 max-w-md mx-auto">
-              Enjoy complete freedom from monthly software subscriptions. Fast, private, and unlimited.
-            </p>
-            <Link href="/#tools">
-              <Button className="bg-primary text-primary-foreground hover:bg-primary/90 font-bold font-semibold px-8 rounded-full">
-                Explore All 70+ Free PDF Tools
-                <ArrowRight className="w-4 h-4 ml-1" />
-              </Button>
-            </Link>
-          </div>
+          {/* Direct Tools Callout */}
+          <CompareToolsCallout />
         </div>
       </div>
 

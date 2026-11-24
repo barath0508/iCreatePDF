@@ -4,6 +4,7 @@ import { Navigation } from '@/components/landing/navigation';
 import { FooterSection } from '@/components/landing/footer-section';
 import { ShieldCheck, ShieldAlert, Zap, Coins, Globe, Heart, Check, X, Sparkles } from 'lucide-react';
 import Link from 'next/link';
+import { CompareToolsCallout } from '@/components/compare/CompareToolsCallout';
 
 export const metadata: Metadata = {
   title: 'iCreatePDF vs. iLovePDF, Smallpdf & PDF24 | Compare',
@@ -285,21 +286,8 @@ export default function ComparePage() {
             </div>
           </div>
 
-          {/* CTA Banner */}
-          <div className="p-8 rounded-2xl bg-gradient-to-r from-purple-950/20 to-pink-950/20 border border-brand/20 text-center space-y-4 max-w-4xl mx-auto">
-            <h3 className="text-xl sm:text-2xl font-bold font-display text-foreground">Experience Private Client-Side Tools</h3>
-            <p className="text-xs sm:text-sm text-foreground/60 max-w-md mx-auto">
-              Ready to work with your documents securely? Access all 70+ of our in-browser PDF utilities instantly.
-            </p>
-            <div className="pt-2">
-              <Link href="/#convert">
-                <button className="bg-primary text-primary-foreground hover:bg-primary/90 font-bold text-xs px-6 py-3 rounded-full transition-all hover:scale-105">
-                  Explore Tools Dashboard &rarr;
-                </button>
-              </Link>
-            </div>
-          </div>
-
+          {/* Interactive Direct Tools CTA */}
+          <CompareToolsCallout />
         </div>
       </div>
 

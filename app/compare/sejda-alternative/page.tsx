@@ -5,6 +5,7 @@ import { FooterSection } from '@/components/landing/footer-section';
 import { ShieldCheck, Lock, Zap, Coins, Check, X, ArrowRight } from 'lucide-react';
 import Link from 'next/link';
 import { Button } from '@/components/ui/button';
+import { CompareToolsCallout } from '@/components/compare/CompareToolsCallout';
 
 export const metadata: Metadata = {
   title: 'Sejda Alternative: Free Online PDF Editor with No Daily Limits | iCreatePDF',
@@ -142,19 +143,8 @@ export default function SejdaAlternativePage() {
             ))}
           </div>
 
-          {/* Call to Action Banner */}
-          <div className="p-8 rounded-3xl bg-gradient-to-r from-purple-950/20 to-pink-950/20 border border-brand/20 text-center space-y-4">
-            <h3 className="text-2xl font-bold font-display text-foreground">Edit Unlimited PDFs Now</h3>
-            <p className="text-xs sm:text-sm text-foreground/60 max-w-md mx-auto">
-              No account. No credit card. No hourly task limits.
-            </p>
-            <Link href="/edit-pdf">
-              <Button className="bg-primary text-primary-foreground hover:bg-primary/90 font-bold font-semibold px-8 rounded-full">
-                Open Free Online PDF Editor
-                <ArrowRight className="w-4 h-4 ml-1" />
-              </Button>
-            </Link>
-          </div>
+          {/* Direct Tools Callout */}
+          <CompareToolsCallout />
         </div>
       </div>
 

@@ -4,6 +4,7 @@ import { Navigation } from '@/components/landing/navigation';
 import { FooterSection } from '@/components/landing/footer-section';
 import { ShieldCheck, Lock, Zap, Infinity as InfinityIcon } from 'lucide-react';
 import Link from 'next/link';
+import { CompareToolsCallout } from '@/components/compare/CompareToolsCallout';
 
 export const metadata: Metadata = {
   title: 'Smallpdf Alternative: Free Unlimited Local PDF Tools (No 2-Task Limit) | iCreatePDF',
@@ -145,20 +146,8 @@ export default function SmallpdfAlternativePage() {
             </div>
           </div>
 
-          <div className="p-8 rounded-2xl bg-gradient-to-r from-purple-950/20 to-pink-950/20 border border-brand/20 text-center space-y-4 max-w-2xl mx-auto">
-            <h3 className="text-xl sm:text-2xl font-bold font-display text-foreground">Try iCreatePDF Instead</h3>
-            <p className="text-xs sm:text-sm text-foreground/60 max-w-md mx-auto">
-              70+ free PDF tools, no daily limit, no uploads, no account required.
-            </p>
-            <div className="pt-2">
-              <Link href="/#convert">
-                <button className="bg-primary text-primary-foreground hover:bg-primary/90 font-bold text-xs px-6 py-3 rounded-full transition-all hover:scale-105">
-                  Explore Tools Dashboard &rarr;
-                </button>
-              </Link>
-            </div>
-          </div>
-
+          {/* Direct Tools Callout */}
+          <CompareToolsCallout />
         </div>
       </div>
 
