@@ -1,8 +1,9 @@
-const CACHE_NAME = 'icreatepdf-offline-v4';
+const CACHE_NAME = 'icreatepdf-offline-v5';
 const STATIC_ASSETS = [
   '/',
   '/logo.png',
-  '/manifest.json'
+  '/manifest.json',
+  '/workers/pdf.worker.min.mjs'
 ];
 
 // On install, pre-cache the absolute core assets

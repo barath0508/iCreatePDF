@@ -18,7 +18,7 @@ export function PreventCopyTool() {
   const pdfjsRef = useRef<typeof import('pdfjs-dist') | null>(null);
   useEffect(() => {
     import('pdfjs-dist').then((lib) => {
-      lib.GlobalWorkerOptions.workerSrc = `https://cdn.jsdelivr.net/npm/pdfjs-dist@${lib.version}/build/pdf.worker.min.mjs`;
+      lib.GlobalWorkerOptions.workerSrc = `/workers/pdf.worker.min.mjs`;
       pdfjsRef.current = lib;
     }).catch(() => {/* silently ignore — will lazy-load on demand */});
   }, []);
@@ -45,7 +45,7 @@ export function PreventCopyTool() {
       // Use preloaded module if available, otherwise lazy-load
       const pdfjsLib = pdfjsRef.current ?? await import('pdfjs-dist');
       if (!pdfjsRef.current) {
-        pdfjsLib.GlobalWorkerOptions.workerSrc = `https://cdn.jsdelivr.net/npm/pdfjs-dist@${pdfjsLib.version}/build/pdf.worker.min.mjs`;
+        pdfjsLib.GlobalWorkerOptions.workerSrc = `/workers/pdf.worker.min.mjs`;
         pdfjsRef.current = pdfjsLib;
       }
       

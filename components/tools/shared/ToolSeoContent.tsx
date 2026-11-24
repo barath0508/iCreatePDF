@@ -75,29 +75,41 @@ function generateToolJsonLd(content: ToolContent) {
   };
 }
 
-export function ToolSeoContent({ content }: { content: ToolContent }) {
+export function ToolSeoContent({
+  content,
+  includeJsonLd = false,
+}: {
+  content: ToolContent;
+  includeJsonLd?: boolean;
+}) {
   const cleanSlug = content.url.replace(/^(\/|tools\/)/, '').replace(/\/$/, '');
   const techSpec = getToolTechSpec(cleanSlug, content.name, 'Utilities');
   const relatedLinks = getDynamicRelatedLinks(cleanSlug);
-  const toolJsonLd = generateToolJsonLd(content);
+  const toolJsonLd = includeJsonLd ? generateToolJsonLd(content) : null;
 
-  const hSchema = howToSchema({
-    name: content.name,
-    description: content.overview,
-    url: content.url,
-    steps: content.steps,
-  });
+  const hSchema = includeJsonLd
+    ? howToSchema({
+        name: content.name,
+        description: content.overview,
+        url: content.url,
+        steps: content.steps,
+      })
+    : null;
 
   return (
     <section className="border-t border-foreground/10 py-16 relative z-10 bg-background text-foreground">
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(toolJsonLd) }}
-      />
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(hSchema) }}
-      />
+      {includeJsonLd && toolJsonLd && (
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(toolJsonLd) }}
+        />
+      )}
+      {includeJsonLd && hSchema && (
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(hSchema) }}
+        />
+      )}
 
       <div className="max-w-[960px] mx-auto px-6 space-y-16">
         {/* Overview & Architecture */}

@@ -50,7 +50,7 @@ export function PdfToPngTool() {
   useEffect(() => {
     import('pdfjs-dist')
       .then((lib) => {
-        lib.GlobalWorkerOptions.workerSrc = `https://cdn.jsdelivr.net/npm/pdfjs-dist@${lib.version}/build/pdf.worker.min.mjs`;
+        lib.GlobalWorkerOptions.workerSrc = `/workers/pdf.worker.min.mjs`;
         pdfjsRef.current = lib;
       })
       .catch(() => {});
@@ -95,7 +95,7 @@ export function PdfToPngTool() {
       const arrayBuffer = await uploadedFile.arrayBuffer();
       const pdfjsLib = pdfjsRef.current ?? (await import('pdfjs-dist'));
       if (!pdfjsRef.current) {
-        pdfjsLib.GlobalWorkerOptions.workerSrc = `https://cdn.jsdelivr.net/npm/pdfjs-dist@${pdfjsLib.version}/build/pdf.worker.min.mjs`;
+        pdfjsLib.GlobalWorkerOptions.workerSrc = `/workers/pdf.worker.min.mjs`;
         pdfjsRef.current = pdfjsLib;
       }
 
@@ -156,7 +156,7 @@ export function PdfToPngTool() {
       const arrayBuffer = await file.arrayBuffer();
       const pdfjsLib = pdfjsRef.current ?? (await import('pdfjs-dist'));
       if (!pdfjsRef.current) {
-        pdfjsLib.GlobalWorkerOptions.workerSrc = `https://cdn.jsdelivr.net/npm/pdfjs-dist@${pdfjsLib.version}/build/pdf.worker.min.mjs`;
+        pdfjsLib.GlobalWorkerOptions.workerSrc = `/workers/pdf.worker.min.mjs`;
         pdfjsRef.current = pdfjsLib;
       }
 

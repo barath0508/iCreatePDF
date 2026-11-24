@@ -1,16 +1,19 @@
 'use client';
 
 import React, { useState, useRef, useEffect } from 'react';
-import { Upload, Layers, Loader2, Download, FileText, CheckCircle2, TrendingDown } from 'lucide-react';
+import { Upload, Layers, Loader2, Download, FileText, CheckCircle2, TrendingDown, Gauge, Sparkles, ShieldCheck } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { toast } from 'sonner';
 import { WorkflowNextActions } from '@/components/tools/shared/WorkflowNextActions';
 import { MobileActionDock } from '@/components/tools/shared/MobileActionDock';
 import { useClipboardFile } from '@/hooks/use-clipboard-file';
+import { compressPdfFile, CompressionLevel } from '@/lib/pdf';
 
 export function CompressTool() {
   const [file, setFile] = useState<File | null>(null);
   const [pagesCount, setPagesCount] = useState(0);
+  const [compressionLevel, setCompressionLevel] = useState<CompressionLevel>('balanced');
+  const [customFileName, setCustomFileName] = useState('');
   const [isProcessing, setIsProcessing] = useState(false);
   const [progress, setProgress] = useState(0);
   const [error, setError] = useState<string | null>(null);
@@ -66,6 +69,7 @@ export function CompressTool() {
       
       setFile(uploadedFile);
       setPagesCount(pdf.getPageCount());
+      setCustomFileName(`compressed-${uploadedFile.name}`);
       toast.info(`Loaded ${uploadedFile.name} (${pdf.getPageCount()} pages)`);
     } catch (err) {
       console.error(err);
@@ -95,26 +99,14 @@ export function CompressTool() {
   const triggerCompress = async () => {
     if (!file) return;
     setIsProcessing(true);
-    setProgress(0);
+    setProgress(5);
     setError(null);
 
     try {
-      const buffer = await file.arrayBuffer();
-      const { PDFDocument } = await import('pdf-lib');
-      
-      setProgress(30);
-      const pdfDoc = await PDFDocument.load(buffer);
-      
-      setProgress(60);
-      const compressedBytes = await pdfDoc.save({
-        useObjectStreams: true,
-      });
-      
-      setProgress(90);
-      const blob = new Blob([compressedBytes as any], { type: 'application/pdf' });
+      const blob = await compressPdfFile(file, compressionLevel, (p) => setProgress(p));
       setCompressedSize(blob.size);
       setCompressedBlob(blob);
-      
+
       const url = URL.createObjectURL(blob);
       setDownloadUrl(url);
       setProgress(100);
@@ -125,7 +117,7 @@ export function CompressTool() {
       // Cache reference in IndexedDB
       const { addRecentFile } = require('@/lib/db');
       addRecentFile({
-        name: `compressed-${file?.name || 'document.pdf'}`,
+        name: customFileName.trim() || `compressed-${file.name}`,
         size: blob.size,
         toolName: 'Compress PDF',
         href: '/compress-pdf',
@@ -146,7 +138,7 @@ export function CompressTool() {
     if (!downloadUrl) return;
     const link = document.createElement('a');
     link.href = downloadUrl;
-    link.download = `compressed-${file?.name}`;
+    link.download = customFileName.trim() || `compressed-${file?.name || 'document.pdf'}`;
     document.body.appendChild(link);
     link.click();
     document.body.removeChild(link);
@@ -264,9 +256,93 @@ export function CompressTool() {
             <h3 className="font-mono text-sm uppercase tracking-wider text-foreground">Compress PDF</h3>
           </div>
 
-          <p className="text-xs text-foreground/50 leading-relaxed">
-            Compress your PDF streams and objects locally to decrease the file size for attachments and emails.
-          </p>
+          {/* Compression Level Selector */}
+          <div className="space-y-2.5">
+            <label className="text-xs font-mono font-bold uppercase tracking-wider text-muted-foreground block">
+              Compression Level
+            </label>
+            <div className="space-y-2">
+              <button
+                type="button"
+                onClick={() => setCompressionLevel('balanced')}
+                disabled={isProcessing}
+                className={`w-full text-left p-3 rounded-xl border transition-all ${
+                  compressionLevel === 'balanced'
+                    ? 'border-brand bg-brand/5 ring-1 ring-brand/30'
+                    : 'border-border/60 bg-background/50 hover:border-foreground/20'
+                }`}
+              >
+                <div className="flex items-center justify-between">
+                  <span className="text-xs font-bold text-foreground">Recommended</span>
+                  <span className="text-[10px] font-mono font-bold text-emerald-500 bg-emerald-500/10 px-2 py-0.5 rounded-full border border-emerald-500/20">
+                    Balanced
+                  </span>
+                </div>
+                <p className="text-[11px] text-muted-foreground mt-0.5">
+                  Optimizes raster images to 150 DPI. Sharp text and ~60% size reduction.
+                </p>
+              </button>
+
+              <button
+                type="button"
+                onClick={() => setCompressionLevel('extreme')}
+                disabled={isProcessing}
+                className={`w-full text-left p-3 rounded-xl border transition-all ${
+                  compressionLevel === 'extreme'
+                    ? 'border-brand bg-brand/5 ring-1 ring-brand/30'
+                    : 'border-border/60 bg-background/50 hover:border-foreground/20'
+                }`}
+              >
+                <div className="flex items-center justify-between">
+                  <span className="text-xs font-bold text-foreground">Maximum Compression</span>
+                  <span className="text-[10px] font-mono font-bold text-amber-500 bg-amber-500/10 px-2 py-0.5 rounded-full border border-amber-500/20">
+                    ~200KB Target
+                  </span>
+                </div>
+                <p className="text-[11px] text-muted-foreground mt-0.5">
+                  Downsamples to 96 DPI. Best for government exam portals & email caps.
+                </p>
+              </button>
+
+              <button
+                type="button"
+                onClick={() => setCompressionLevel('structural')}
+                disabled={isProcessing}
+                className={`w-full text-left p-3 rounded-xl border transition-all ${
+                  compressionLevel === 'structural'
+                    ? 'border-brand bg-brand/5 ring-1 ring-brand/30'
+                    : 'border-border/60 bg-background/50 hover:border-foreground/20'
+                }`}
+              >
+                <div className="flex items-center justify-between">
+                  <span className="text-xs font-bold text-foreground">Lossless Structural</span>
+                  <span className="text-[10px] font-mono font-bold text-muted-foreground bg-muted/60 px-2 py-0.5 rounded-full">
+                    Fast
+                  </span>
+                </div>
+                <p className="text-[11px] text-muted-foreground mt-0.5">
+                  Compresses PDF object tables only. 100% original image quality kept.
+                </p>
+              </button>
+            </div>
+          </div>
+
+          {/* Editable File Name when ready */}
+          {downloadUrl && (
+            <div className="space-y-1.5 pt-2 border-t border-border/50">
+              <label htmlFor="custom-filename-input" className="text-[11px] font-mono font-semibold text-muted-foreground uppercase tracking-wider block">
+                File Name
+              </label>
+              <input
+                id="custom-filename-input"
+                type="text"
+                value={customFileName}
+                onChange={(e) => setCustomFileName(e.target.value)}
+                className="w-full text-xs font-mono bg-background border border-border rounded-xl px-3 py-2 text-foreground focus:outline-none focus:ring-2 focus:ring-brand"
+                placeholder="compressed-document.pdf"
+              />
+            </div>
+          )}
 
           <div className="pt-3 border-t border-foreground/5">
             {isProcessing ? (

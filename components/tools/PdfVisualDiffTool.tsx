@@ -29,7 +29,7 @@ export function PdfVisualDiffTool() {
       setIsLoading(true);
       try {
         const pdfjsLib = await import('pdfjs-dist');
-        pdfjsLib.GlobalWorkerOptions.workerSrc = `https://cdn.jsdelivr.net/npm/pdfjs-dist@${pdfjsLib.version}/build/pdf.worker.min.mjs`;
+        pdfjsLib.GlobalWorkerOptions.workerSrc = `/workers/pdf.worker.min.mjs`;
 
         const bufferA = await fileA.arrayBuffer();
         const bufferB = await fileB.arrayBuffer();

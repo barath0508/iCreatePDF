@@ -4,6 +4,7 @@ import FooterSection from '@/components/landing/footer-section';
 import { ShieldCheck, ChevronRight } from 'lucide-react';
 import Link from 'next/link';
 import { GlobalDragOverlay } from '@/components/tools/shared/GlobalDragOverlay';
+import { PrivacyVerifierBadge } from '@/components/tools/shared/PrivacyVerifierBadge';
 
 interface ToolPageShellProps {
   title: string;
@@ -92,28 +93,31 @@ export function ToolPageShell({
 
       <Navigation />
 
-      <div className="pt-24 sm:pt-32 lg:pt-40 pb-16 sm:pb-24 px-3 sm:px-6 lg:px-8 max-w-7xl mx-auto space-y-6 sm:space-y-10 lg:space-y-12">
-        {/* Breadcrumb Navigation */}
-        <nav aria-label="Breadcrumb" className="flex items-center gap-2 text-xs sm:text-sm font-mono text-muted-foreground font-medium">
-          <Link href="/" className="hover:text-foreground transition-colors">
-            Home
-          </Link>
-          <ChevronRight className="h-3.5 w-3.5 stroke-[1.5]" />
-          <span className="text-foreground font-semibold truncate max-w-[200px] sm:max-w-none">{title}</span>
-        </nav>
+      <div className="pt-20 sm:pt-24 lg:pt-28 pb-12 sm:pb-20 px-3 sm:px-6 lg:px-8 max-w-7xl mx-auto space-y-5 sm:space-y-8 lg:space-y-10">
+        {/* Breadcrumb Navigation & Privacy Status Bar */}
+        <div className="flex flex-wrap items-center justify-between gap-3 text-xs sm:text-sm font-mono text-muted-foreground font-medium">
+          <nav aria-label="Breadcrumb" className="flex items-center gap-2">
+            <Link href="/" className="hover:text-foreground transition-colors">
+              Home
+            </Link>
+            <ChevronRight className="h-3.5 w-3.5 stroke-[1.5]" />
+            <span className="text-foreground font-semibold truncate max-w-[200px] sm:max-w-none">{title}</span>
+          </nav>
+          <PrivacyVerifierBadge toolName={title} />
+        </div>
 
         {/* Tool Page Editorial Header */}
-        <div className="text-center max-w-4xl mx-auto space-y-3 sm:space-y-5">
+        <div className="text-center max-w-4xl mx-auto space-y-2 sm:space-y-3.5">
           <div className="inline-flex items-center gap-2 rounded-full border border-border bg-card px-3 sm:px-4 py-1 text-[11px] sm:text-xs font-mono font-bold text-foreground tracking-wider uppercase shadow-2xs">
             <ShieldCheck className="h-3.5 w-3.5 text-foreground stroke-[2]" />
             <span>{badge}</span>
           </div>
 
-          <h1 className="text-2xl sm:text-4xl md:text-5xl lg:text-6xl font-extrabold tracking-tight text-foreground font-display leading-tight sm:leading-[1.08]">
+          <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-extrabold tracking-tight text-foreground font-display leading-tight sm:leading-[1.12]">
             {title}
           </h1>
 
-          <p className="text-xs sm:text-base lg:text-xl text-muted-foreground font-medium leading-relaxed max-w-2xl mx-auto px-2">
+          <p className="text-xs sm:text-sm lg:text-base text-muted-foreground font-medium leading-relaxed max-w-2xl mx-auto px-2">
             {description}
           </p>
         </div>

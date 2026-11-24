@@ -4,7 +4,7 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
-    "build": "next build && node post-build.js",
+    "build": "node scripts/copy-worker.js && next build && node post-build.js",
     "start": "next start",
     "lint": "eslint .",
     "submit-urls": "node scripts/submit-indexnow.js",
@@ -43,7 +43,6 @@
     "@radix-ui/react-toggle": "1.1.1",
     "@radix-ui/react-toggle-group": "1.1.1",
     "@radix-ui/react-tooltip": "1.1.6",
-    "@react-three/fiber": "9.5.0",
     "@types/qrcode": "^1.5.6",
     "@vercel/analytics": "^1.4.0",
     "@vercel/speed-insights": "^1.1.0",
@@ -79,7 +78,6 @@
     "tailwind-merge": "^3.3.1",
     "tailwindcss-animate": "^1.0.7",
     "tesseract.js": "^7.0.0",
-    "three": "0.183.2",
     "vaul": "^1.1.2",
     "xlsx": "https://cdn.sheetjs.com/xlsx-0.20.2/xlsx-0.20.2.tgz",
     "zod": "3.25.76"

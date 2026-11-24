@@ -31,22 +31,17 @@ export default function SearchTool() {
     }
   }, [selectedIndex]);
 
-  // Global Ctrl/Cmd + K shortcut
+  // Close dropdown on Escape key
   useEffect(() => {
     const handleKeyDown = (e: KeyboardEvent) => {
-      if ((e.ctrlKey || e.metaKey) && e.key === 'k') {
-        e.preventDefault();
-        setIsOpen(true);
-        inputRef.current?.focus();
-      }
-      if (e.key === 'Escape') {
+      if (e.key === 'Escape' && isOpen) {
         setIsOpen(false);
         setSelectedIndex(-1);
       }
     };
     window.addEventListener('keydown', handleKeyDown);
     return () => window.removeEventListener('keydown', handleKeyDown);
-  }, []);
+  }, [isOpen]);
 
   // Close when clicking outside
   useEffect(() => {

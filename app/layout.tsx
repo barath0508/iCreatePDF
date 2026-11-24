@@ -442,60 +442,6 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
                   },
                   "publisher": { "@id": "https://www.icreatepdf.online/#organization" },
                   "screenshot": "https://www.icreatepdf.online/opengraph-image"
-                },
-                {
-                  "@type": "FAQPage",
-                  "@id": "https://www.icreatepdf.online/#faq",
-                  "mainEntity": [
-                    {
-                      "@type": "Question",
-                      "name": "Is iCreatePDF completely free to use?",
-                      "acceptedAnswer": {
-                        "@type": "Answer",
-                        "text": "Yes. All 70+ PDF tools on iCreatePDF are 100% free with no page limits, file size restrictions, subscription fees, or account registration required."
-                      }
-                    },
-                    {
-                      "@type": "Question",
-                      "name": "Are my files uploaded to a server when using iCreatePDF?",
-                      "acceptedAnswer": {
-                        "@type": "Answer",
-                        "text": "Never. iCreatePDF processes all files entirely in your browser using WebAssembly and client-side JavaScript. Your documents never leave your device."
-                      }
-                    },
-                    {
-                      "@type": "Question",
-                      "name": "Can I use iCreatePDF offline?",
-                      "acceptedAnswer": {
-                        "@type": "Answer",
-                        "text": "Yes. Once the page is loaded, all core PDF processing features work without an active internet connection since everything runs locally in your browser."
-                      }
-                    },
-                    {
-                      "@type": "Question",
-                      "name": "What PDF tools does iCreatePDF offer?",
-                      "acceptedAnswer": {
-                        "@type": "Answer",
-                        "text": "iCreatePDF offers 70+ tools including merge PDF, split PDF, compress PDF, convert JPG to PDF, Word to PDF, PDF to JPG, edit PDF, sign PDF, protect PDF, OCR PDF, watermark PDF, and many more — all free with no uploads."
-                      }
-                    },
-                    {
-                      "@type": "Question",
-                      "name": "Is iCreatePDF a good alternative to iLovePDF, Smallpdf, or Adobe Acrobat?",
-                      "acceptedAnswer": {
-                        "@type": "Answer",
-                        "text": "Yes. iCreatePDF is a free, private, and feature-rich alternative to iLovePDF, Smallpdf, and Adobe Acrobat. Unlike those services, iCreatePDF never uploads your files to a server, has no file size limits, and requires no account sign-up."
-                      }
-                    },
-                    {
-                      "@type": "Question",
-                      "name": "What file formats does iCreatePDF support?",
-                      "acceptedAnswer": {
-                        "@type": "Answer",
-                        "text": "iCreatePDF supports JPG, PNG, WEBP, HEIC, BMP, Word (.docx), Excel (.xlsx), TXT, HTML, Markdown, RIS, and Base64 for converting to PDF. For existing PDFs, you can merge, split, compress, edit, sign, protect, unlock, OCR, and more."
-                      }
-                    }
-                  ]
                 }
               ]
             })

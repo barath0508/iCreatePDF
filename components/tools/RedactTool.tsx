@@ -40,7 +40,7 @@ export function RedactTool() {
 
   const renderPage = useCallback(async (pdfBytes: ArrayBuffer, pageNum: number) => {
     const pdfjsLib = await import('pdfjs-dist');
-    pdfjsLib.GlobalWorkerOptions.workerSrc = `https://cdn.jsdelivr.net/npm/pdfjs-dist@${pdfjsLib.version}/build/pdf.worker.min.mjs`;
+    pdfjsLib.GlobalWorkerOptions.workerSrc = `/workers/pdf.worker.min.mjs`;
     const pdf = await pdfjsLib.getDocument({ data: new Uint8Array(pdfBytes) }).promise;
     const page = await pdf.getPage(pageNum);
     const viewport = page.getViewport({ scale: 1.4 });
@@ -75,7 +75,7 @@ export function RedactTool() {
     try {
       const buf = await file.arrayBuffer();
       const pdfjsLib = await import('pdfjs-dist');
-      pdfjsLib.GlobalWorkerOptions.workerSrc = `https://cdn.jsdelivr.net/npm/pdfjs-dist@${pdfjsLib.version}/build/pdf.worker.min.mjs`;
+      pdfjsLib.GlobalWorkerOptions.workerSrc = `/workers/pdf.worker.min.mjs`;
       const pdf = await pdfjsLib.getDocument({ data: new Uint8Array(buf) }).promise;
 
       const found: Suggestion[] = [];
@@ -199,7 +199,7 @@ export function RedactTool() {
     try {
       const buffer = await file.arrayBuffer();
       const pdfjsLib = await import('pdfjs-dist');
-      pdfjsLib.GlobalWorkerOptions.workerSrc = `https://cdn.jsdelivr.net/npm/pdfjs-dist@${pdfjsLib.version}/build/pdf.worker.min.mjs`;
+      pdfjsLib.GlobalWorkerOptions.workerSrc = `/workers/pdf.worker.min.mjs`;
       const srcPdf = await pdfjsLib.getDocument({ data: new Uint8Array(buffer) }).promise;
       const outDoc = await PDFDocument.create();
 
