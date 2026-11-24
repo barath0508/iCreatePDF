@@ -125,7 +125,7 @@ export function Navigation() {
       }`}
     >
       <nav
-        className={`mx-auto backdrop-blur-2xl transition-all duration-300 ease-out ${
+        className={`relative mx-auto backdrop-blur-2xl transition-all duration-300 ease-out ${
           isScrolled
             ? 'rounded-[20px] max-w-[1120px] bg-card/92 shadow-[0_8px_40px_0_rgba(0,0,0,0.22),0_1px_0_0_rgba(255,255,255,0.06)_inset]'
             : 'rounded-none max-w-[1280px] bg-background/60 shadow-[0_1px_0_0_hsl(var(--border)/0.4)]'
@@ -142,11 +142,11 @@ export function Navigation() {
           </Link>
 
           {/* Desktop Navigation Links */}
-          <div className="hidden lg:flex items-center gap-6 xl:gap-8">
+          <div className="hidden lg:flex items-center gap-6 xl:gap-8 h-full">
             {/* Tools Mega Menu Trigger */}
             <div
               ref={toolsDropdownRef}
-              className="relative"
+              className="h-full flex items-center"
               onMouseEnter={() => setIsToolsDropdownOpen(true)}
               onMouseLeave={() => setIsToolsDropdownOpen(false)}
             >
@@ -170,9 +170,9 @@ export function Navigation() {
 
               {/* Mega Menu Dropdown Panel */}
               {isToolsDropdownOpen && (
-                <div className="absolute left-1/2 -translate-x-1/2 top-full pt-3 w-[1020px] max-w-[94vw] z-50">
-                  <div className="rounded-3xl border border-border bg-card/98 backdrop-blur-2xl shadow-2xl p-6 overflow-hidden animate-in fade-in-0 zoom-in-95 duration-150">
-                    <div className="grid grid-cols-5 gap-5">
+                <div className="absolute left-1/2 -translate-x-1/2 top-full pt-2.5 w-[1040px] max-w-[calc(100vw-2rem)] z-50 pointer-events-auto">
+                  <div className="rounded-3xl border border-border bg-card/98 backdrop-blur-2xl shadow-2xl p-5 sm:p-6 overflow-hidden animate-in fade-in-0 zoom-in-95 duration-150">
+                    <div className="grid grid-cols-5 gap-3.5 xl:gap-5">
                       {TOOL_CATEGORIES.map((category) => (
                         <div key={category.title} className="space-y-2.5">
                           <p className="text-[11px] font-mono font-bold uppercase tracking-wider text-muted-foreground/85 border-b border-border/50 pb-1.5 truncate">
