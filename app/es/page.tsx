@@ -17,6 +17,10 @@ export const metadata: Metadata = {
   description: 'Más de 70 herramientas PDF gratuitas en su navegador: unir, comprimir, JPG a PDF, firmar y OCR. 100% privado, sin subir archivos a servidores.',
   keywords: 'herramientas pdf online, unir pdf, comprimir pdf, jpg a pdf, firmar pdf, ocr pdf, convertidor pdf gratis, icreatepdf español',
   alternates: buildAlternates('/es'),
+  robots: {
+    index: false,
+    follow: true,
+  },
 };
 
 const toolsEs = [

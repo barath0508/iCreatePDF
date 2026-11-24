@@ -17,6 +17,10 @@ export const metadata: Metadata = {
   description: 'Junte, divida, comprima e converta arquivos PDF direto no seu navegador. 100% grátis, sem upload para servidores, sem limites e sem marca d\'água.',
   keywords: 'juntar pdf, comprimir pdf, pdf para word, dividir pdf, converter pdf em word, jpg para pdf, juntar pdfs gratis, icreatepdf portugues',
   alternates: buildAlternates('/pt'),
+  robots: {
+    index: false,
+    follow: true,
+  },
 };
 
 const toolsPt = [

@@ -17,6 +17,10 @@ export const metadata: Metadata = {
   description: 'Gabungkan PDF, kompres ukuran file PDF, pisahkan halaman, dan ubah PDF ke Word langsung di browser. 100% gratis tanpa upload file ke server.',
   keywords: 'gabung pdf, kompres pdf, ubah pdf ke word, pisah pdf, menggabungkan pdf, kompres file pdf, hapus halaman pdf, icreatepdf indonesia',
   alternates: buildAlternates('/id'),
+  robots: {
+    index: false,
+    follow: true,
+  },
 };
 
 const toolsId = [

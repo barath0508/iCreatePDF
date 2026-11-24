@@ -2,7 +2,7 @@
 
 import React, { useState, useCallback, useRef } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Upload, X, Shield, FileCheck } from 'lucide-react';
+import { Upload, X, Shield, FileCheck, Sparkles } from 'lucide-react';
 import { cn } from '@/lib/utils';
 
 interface DropzoneProps {
@@ -141,10 +141,27 @@ export function Dropzone({
             </p>
           </div>
 
-          <div className="flex items-center gap-2 pt-1">
+          <div className="flex flex-wrap items-center justify-center gap-2 pt-1">
             <span className="rounded-xl border border-border bg-background px-4 py-2 text-xs font-bold text-foreground shadow-xs hover:border-foreground/40 transition-colors">
               Select files from device
             </span>
+            <button
+              type="button"
+              onClick={async (e) => {
+                e.stopPropagation();
+                try {
+                  const { createSamplePdf } = await import('@/lib/sample-pdf');
+                  const sample = await createSamplePdf();
+                  onFilesSelected([sample]);
+                } catch (err) {
+                  console.error(err);
+                }
+              }}
+              className="inline-flex items-center gap-1.5 rounded-xl border border-brand/30 bg-brand/10 hover:bg-brand/20 px-3.5 py-2 text-xs font-bold text-brand transition-colors shadow-2xs hover:scale-105"
+            >
+              <Sparkles className="w-3.5 h-3.5" />
+              <span>Try sample PDF</span>
+            </button>
           </div>
         </div>
       </motion.div>

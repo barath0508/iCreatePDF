@@ -171,17 +171,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
     '/no-upload-pdf-tools',
   ];
 
-  const langRoutes = [
-    '/es',
-    '/pt',
-    '/id',
-    '/de',
-    '/ja',
-    '/fr',
-    '/hi',
-    '/ta',
-  ];
-
   return [
     // Homepage — highest priority
     {
@@ -189,20 +178,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
       lastModified: TODAY,
       changeFrequency: 'daily',
       priority: 1.0,
-      alternates: {
-        languages: {
-          en: `${baseUrl}/`,
-          es: `${baseUrl}/es`,
-          pt: `${baseUrl}/pt`,
-          id: `${baseUrl}/id`,
-          de: `${baseUrl}/de`,
-          ja: `${baseUrl}/ja`,
-          fr: `${baseUrl}/fr`,
-          hi: `${baseUrl}/hi`,
-          ta: `${baseUrl}/ta`,
-          'x-default': `${baseUrl}/`,
-        },
-      },
     },
     // Tool pages — core content
     ...toolRoutes.map((route) => {
@@ -242,12 +217,5 @@ export default function sitemap(): MetadataRoute.Sitemap {
         priority: 0.7,
       };
     }),
-    // Localised landing pages
-    ...langRoutes.map((route) => ({
-      url: `${baseUrl}${route}`,
-      lastModified: TODAY,
-      changeFrequency: 'weekly' as const,
-      priority: 0.7,
-    })),
   ];
 }

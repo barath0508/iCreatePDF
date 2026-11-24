@@ -17,6 +17,10 @@ export const metadata: Metadata = {
   description: '70+ मुफ़्त ऑनलाइन पीडीएफ टूल्स: मर्ज करें, कंप्रेस करें, जेपीजी टू पीडीएफ, साइन करें, और ओसीआर। बिना किसी सर्वर अपलोड के सीधे अपने ब्राउज़र में 100% प्राइवेट।',
   keywords: 'पीडीएफ टूल्स, पीडीएफ मर्ज, पीडीएफ कंप्रेस, जेपीजी टू पीडीएफ, वर्ड टू पीडीएफ, सुरक्षित पीडीएफ कनवर्टर, icreatepdf hindi',
   alternates: buildAlternates('/hi'),
+  robots: {
+    index: false,
+    follow: true,
+  },
 };
 
 const toolsHi = [

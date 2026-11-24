@@ -13,7 +13,8 @@ import {
   RefreshCw,
   Plus,
   Layers,
-  ArrowRight
+  ArrowRight,
+  Sparkles
 } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { toast } from 'sonner';
@@ -22,6 +23,7 @@ import { MobileActionDock } from '@/components/tools/shared/MobileActionDock';
 import { useClipboardFile } from '@/hooks/use-clipboard-file';
 import { detectFileIntent, SmartIntentSuggestion } from '@/lib/file-intent';
 import { SmartIntentModal } from '@/components/tools/shared/SmartIntentModal';
+import { createSamplePdf } from '@/lib/sample-pdf';
 
 export interface WorkspaceFileItem {
   id: string;
@@ -273,9 +275,32 @@ export function ToolWorkspace({
               <p className="text-xs sm:text-sm text-muted-foreground max-w-md mx-auto leading-relaxed">
                 {dropPromptSubtitle}
               </p>
-              <div className="mt-4 flex items-center gap-2 text-[11px] font-mono text-muted-foreground/75">
-                <kbd className="px-2 py-0.5 rounded border border-border bg-background/80 shadow-2xs">Ctrl + V</kbd>
-                <span>to paste from clipboard</span>
+              <div className="mt-4 flex flex-wrap items-center justify-center gap-3 text-[11px] font-mono text-muted-foreground/75">
+                <div className="flex items-center gap-1.5">
+                  <kbd className="px-2 py-0.5 rounded border border-border bg-background/80 shadow-2xs">Ctrl + V</kbd>
+                  <span>to paste</span>
+                </div>
+                {accept.includes('pdf') && (
+                  <>
+                    <span>•</span>
+                    <button
+                      type="button"
+                      onClick={async (e) => {
+                        e.stopPropagation();
+                        try {
+                          const sample = await createSamplePdf();
+                          handleIncomingFiles([sample]);
+                        } catch (err) {
+                          console.error('Failed to generate sample PDF:', err);
+                        }
+                      }}
+                      className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-brand/10 hover:bg-brand/20 text-brand font-bold transition-all shadow-2xs hover:scale-105"
+                    >
+                      <Sparkles className="w-3.5 h-3.5" />
+                      <span>Try sample document</span>
+                    </button>
+                  </>
+                )}
               </div>
             </div>
           ) : (

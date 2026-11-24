@@ -17,6 +17,10 @@ export const metadata: Metadata = {
   description: 'PDFs zusammenfügen, teilen, komprimieren und konvertieren direkt im Browser. 100% kostenlos, DSGVO-konform, ohne Server-Upload und ohne Registrierung.',
   keywords: 'pdf zusammenfügen, pdf komprimieren, pdf teilen, pdf in jpg, pdf bearbeiten kostenlos, word in pdf, icreatepdf deutsch',
   alternates: buildAlternates('/de'),
+  robots: {
+    index: false,
+    follow: true,
+  },
 };
 
 const toolsDe = [

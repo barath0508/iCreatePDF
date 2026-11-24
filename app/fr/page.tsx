@@ -17,6 +17,10 @@ export const metadata: Metadata = {
   description: 'Outils PDF en ligne 100% gratuits et confidentiels. Fusionnez, compressez, divisez et convertissez vos fichiers directement dans votre navigateur sans téléversement sur serveur.',
   keywords: 'fusionner pdf, compresser pdf, convertir pdf en word, diviser pdf, pdf en jpg, jpg en pdf, icreatepdf francais',
   alternates: buildAlternates('/fr'),
+  robots: {
+    index: false,
+    follow: true,
+  },
 };
 
 const toolsFr = [

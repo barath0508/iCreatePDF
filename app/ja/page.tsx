@@ -17,6 +17,10 @@ export const metadata: Metadata = {
   description: 'ブラウザ上で安全にPDFの結合、圧縮、ページ分割、Word変換ができる無料ツール。ファイルがサーバーにアップロードされないため機密文書も安心。',
   keywords: 'pdf 結合, pdf 圧縮, pdf ページ 削除, pdf ロック解除, jpg pdf 変換, pdf 分割, icreatepdf 日本語',
   alternates: buildAlternates('/ja'),
+  robots: {
+    index: false,
+    follow: true,
+  },
 };
 
 const toolsJa = [

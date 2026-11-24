@@ -17,6 +17,10 @@ export const metadata: Metadata = {
   description: '70+ இலவச ஆன்லைன் PDF கருவிகள்: ஒன்றிணைக்க, சுருக்க, JPG டு PDF, கையொப்பமிட மற்றும் OCR. உங்கள் உலாவியிலேயே 100% தனிப்பட்ட மற்றும் பாதுகாப்பான செயலாக்கம்.',
   keywords: 'படத்தை PDF ஆக மாற்றுதல், PDF மாற்றி, தமிழ் PDF கன்வெர்ட்டர், icreatepdf, இலவச பிடிஎப் கன்வெர்ட்டர், ஆன்லைன் பிடிஎப் டூல்ஸ், படங்களை பிடிஎப் ஆக மாற்ற',
   alternates: buildAlternates('/ta'),
+  robots: {
+    index: false,
+    follow: true,
+  },
 };
 
 const toolsTa = [
