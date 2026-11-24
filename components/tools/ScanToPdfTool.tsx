@@ -21,6 +21,8 @@ export function ScanToPdfTool() {
   const [selectedDeviceId, setSelectedDeviceId] = useState<string>('');
   const [autoCrop, setAutoCrop] = useState(true);
   const [forcePortrait, setForcePortrait] = useState(true);
+  const [documentFilter, setDocumentFilter] = useState<'bw' | 'grayscale' | 'original'>('bw');
+  const [customFileName, setCustomFileName] = useState(`scan-${Date.now()}.pdf`);
   
   const [isProcessing, setIsProcessing] = useState(false);
   const [progress, setProgress] = useState(0);
@@ -209,6 +211,29 @@ export function ScanToPdfTool() {
     let targetCanvas = canvas;
     if (autoCrop) {
       targetCanvas = performAutoCrop(canvas);
+    }
+
+    // Apply document contrast enhancement filter
+    if (documentFilter !== 'original') {
+      const filterCtx = targetCanvas.getContext('2d');
+      if (filterCtx) {
+        const imgData = filterCtx.getImageData(0, 0, targetCanvas.width, targetCanvas.height);
+        const d = imgData.data;
+        for (let i = 0; i < d.length; i += 4) {
+          const gray = 0.299 * d[i] + 0.587 * d[i + 1] + 0.114 * d[i + 2];
+          if (documentFilter === 'bw') {
+            const val = gray > 135 ? 255 : 0;
+            d[i] = val;
+            d[i + 1] = val;
+            d[i + 2] = val;
+          } else if (documentFilter === 'grayscale') {
+            d[i] = gray;
+            d[i + 1] = gray;
+            d[i + 2] = gray;
+          }
+        }
+        filterCtx.putImageData(imgData, 0, 0);
+      }
     }
 
     // Get Data URL
@@ -492,6 +517,48 @@ export function ScanToPdfTool() {
                 onChange={(e) => setForcePortrait(e.target.checked)}
                 className="w-4 h-4 accent-brand cursor-pointer"
               />
+            </div>
+
+            {/* Document Filter Mode */}
+            <div className="space-y-1.5 pt-1">
+              <span className="text-[11px] font-mono font-medium text-foreground/70 block">
+                Document Enhancement Filter
+              </span>
+              <div className="grid grid-cols-3 gap-1.5">
+                <button
+                  type="button"
+                  onClick={() => setDocumentFilter('bw')}
+                  className={`py-1.5 px-2 rounded-lg text-[10px] font-mono font-bold transition-all border ${
+                    documentFilter === 'bw'
+                      ? 'bg-brand text-brand-foreground border-brand'
+                      : 'bg-background/60 text-muted-foreground border-border/60 hover:text-foreground'
+                  }`}
+                >
+                  Clean B&W
+                </button>
+                <button
+                  type="button"
+                  onClick={() => setDocumentFilter('grayscale')}
+                  className={`py-1.5 px-2 rounded-lg text-[10px] font-mono font-bold transition-all border ${
+                    documentFilter === 'grayscale'
+                      ? 'bg-brand text-brand-foreground border-brand'
+                      : 'bg-background/60 text-muted-foreground border-border/60 hover:text-foreground'
+                  }`}
+                >
+                  Grayscale
+                </button>
+                <button
+                  type="button"
+                  onClick={() => setDocumentFilter('original')}
+                  className={`py-1.5 px-2 rounded-lg text-[10px] font-mono font-bold transition-all border ${
+                    documentFilter === 'original'
+                      ? 'bg-brand text-brand-foreground border-brand'
+                      : 'bg-background/60 text-muted-foreground border-border/60 hover:text-foreground'
+                  }`}
+                >
+                  Original
+                </button>
+              </div>
             </div>
           </div>
 

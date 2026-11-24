@@ -14,11 +14,14 @@ const TOOL_CATEGORIES = [
   {
     title: 'Convert to PDF',
     tools: [
-      { name: 'Word to PDF', href: '/word-to-pdf', desc: 'Convert DOCX to clean PDF' },
-      { name: 'JPG to PDF', href: '/jpg-to-pdf', desc: 'Convert JPG, PNG, WEBP' },
+      { name: 'Word to PDF', href: '/word-to-pdf', desc: 'DOCX to clean PDF' },
+      { name: 'JPG to PDF', href: '/jpg-to-pdf', desc: 'JPG, PNG, WEBP' },
       { name: 'Excel to PDF', href: '/excel-to-pdf', desc: 'Spreadsheets to tables' },
       { name: 'Scan to PDF', href: '/scan-to-pdf', desc: 'Camera document scanner' },
-      { name: 'HTML to PDF', href: '/html-to-pdf', desc: 'Webpages and code' },
+      { name: 'HEIC to PDF', href: '/heic-to-pdf', desc: 'iPhone photos to PDF' },
+      { name: 'HTML to PDF', href: '/html-to-pdf', desc: 'Webpages & code' },
+      { name: 'Markdown to PDF', href: '/markdown-to-pdf', desc: 'Formatted markdown' },
+      { name: 'EPUB to PDF', href: '/epub-to-pdf', desc: 'eBooks to PDF' },
     ],
   },
   {
@@ -29,27 +32,47 @@ const TOOL_CATEGORIES = [
       { name: 'PDF to PNG', href: '/pdf-to-png', desc: 'Lossless transparent PNG' },
       { name: 'PDF to Excel', href: '/pdf-to-excel', desc: 'Extract table data' },
       { name: 'PDF to Text', href: '/pdf-to-text', desc: 'Plain text extraction' },
-      { name: 'Extract Images', href: '/extract-pdf-images', desc: 'Export embedded photos' },
+      { name: 'Extract Images', href: '/extract-pdf-images', desc: 'Export photos to ZIP' },
+      { name: 'PDF to Audio', href: '/pdf-to-audio', desc: 'Text-to-speech audio' },
     ],
   },
   {
-    title: 'Organize & Optimize',
+    title: 'Organize & Pages',
     tools: [
       { name: 'Merge PDF', href: '/merge-pdf', desc: 'Combine multiple files' },
-      { name: 'Compress PDF', href: '/compress-pdf', desc: 'Reduce MB in browser' },
       { name: 'Split PDF', href: '/split-pdf', desc: 'Extract page ranges' },
-      { name: 'Organize PDF', href: '/organize-pdf', desc: 'Rearrange and rotate' },
+      { name: 'Organize PDF', href: '/organize-pdf', desc: 'Rearrange & rotate' },
       { name: 'Delete Pages', href: '/delete-pdf-pages', desc: 'Remove unwanted pages' },
+      { name: 'Rotate PDF', href: '/rotate-pdf', desc: 'Clockwise rotation' },
+      { name: 'Crop PDF', href: '/crop-pdf', desc: 'Trim margins & whitespace' },
+      { name: 'N-up PDF', href: '/n-up-pdf', desc: '2, 4, 6 pages per sheet' },
+      { name: 'Booklet Maker', href: '/booklet-pdf', desc: 'Saddle-stitch printing' },
     ],
   },
   {
-    title: 'Edit & Security',
+    title: 'Optimize & Edit',
     tools: [
-      { name: 'Edit PDF', href: '/edit-pdf', desc: 'Add text & annotations' },
-      { name: 'Sign PDF', href: '/sign-pdf', desc: 'Draw & stamp signatures' },
+      { name: 'Compress PDF', href: '/compress-pdf', desc: 'Reduce MB locally' },
+      { name: 'Edit PDF', href: '/edit-pdf', desc: 'Text annotations' },
+      { name: 'Watermark PDF', href: '/watermark-pdf', desc: 'Stamp text overlays' },
+      { name: 'Page Numbers', href: '/add-page-numbers', desc: 'Custom numbering' },
+      { name: 'Header & Footer', href: '/header-footer', desc: 'Top/bottom labels' },
+      { name: 'Bates Numbering', href: '/bates-numbering', desc: 'Sequential legal stamps' },
+      { name: 'Equalize Page Sizes', href: '/equalize-pdf-page-sizes', desc: 'Uniform A4/Letter' },
+      { name: 'Adjust Margins', href: '/adjust-pdf-margins', desc: 'Hole-punch padding' },
+    ],
+  },
+  {
+    title: 'Security & Utilities',
+    tools: [
       { name: 'Protect PDF', href: '/protect-pdf', desc: 'Password encryption' },
-      { name: 'Unlock PDF', href: '/unlock-pdf', desc: 'Remove passwords' },
-      { name: 'PDF OCR', href: '/pdf-ocr', desc: 'Scanned text recognition' },
+      { name: 'Unlock PDF', href: '/unlock-pdf', desc: 'Remove password lock' },
+      { name: 'Sign PDF', href: '/sign-pdf', desc: 'Draw & stamp signature' },
+      { name: 'Auto-Redact PII', href: '/auto-redact-pdf', desc: 'AI mask SSN & emails' },
+      { name: 'PDF OCR', href: '/pdf-ocr', desc: 'Scan text recognition' },
+      { name: 'Form Builder', href: '/fillable-pdf-builder', desc: 'Create fillable forms' },
+      { name: 'Accessibility Check', href: '/pdf-accessibility-checker', desc: 'WCAG compliance' },
+      { name: '3D Flipbook', href: '/pdf-3d-flipbook', desc: 'Interactive double-page' },
     ],
   },
 ];
@@ -147,25 +170,25 @@ export function Navigation() {
 
               {/* Mega Menu Dropdown Panel */}
               {isToolsDropdownOpen && (
-                <div className="absolute left-1/2 -translate-x-1/2 top-full pt-3 w-[820px] z-50">
-                  <div className="rounded-2xl border border-border bg-card/98 backdrop-blur-2xl shadow-2xl p-6 overflow-hidden animate-in fade-in-0 zoom-in-95 duration-150">
-                    <div className="grid grid-cols-4 gap-6">
+                <div className="absolute left-1/2 -translate-x-1/2 top-full pt-3 w-[1020px] max-w-[94vw] z-50">
+                  <div className="rounded-3xl border border-border bg-card/98 backdrop-blur-2xl shadow-2xl p-6 overflow-hidden animate-in fade-in-0 zoom-in-95 duration-150">
+                    <div className="grid grid-cols-5 gap-5">
                       {TOOL_CATEGORIES.map((category) => (
-                        <div key={category.title} className="space-y-3">
-                          <p className="text-[11px] font-mono font-bold uppercase tracking-wider text-muted-foreground/80 border-b border-border/50 pb-1.5">
+                        <div key={category.title} className="space-y-2.5">
+                          <p className="text-[11px] font-mono font-bold uppercase tracking-wider text-muted-foreground/85 border-b border-border/50 pb-1.5 truncate">
                             {category.title}
                           </p>
-                          <ul className="space-y-1">
+                          <ul className="space-y-0.5">
                             {category.tools.map((tool) => (
                               <li key={tool.href}>
                                 <Link
                                   href={tool.href}
-                                  className="group block p-1.5 rounded-lg hover:bg-muted/60 transition-colors"
+                                  className="group block p-1.5 rounded-xl hover:bg-muted/70 transition-colors"
                                 >
-                                  <p className="text-xs font-semibold text-foreground group-hover:text-brand transition-colors">
+                                  <p className="text-xs font-semibold text-foreground group-hover:text-brand transition-colors truncate">
                                     {tool.name}
                                   </p>
-                                  <p className="text-[10px] text-muted-foreground/75 truncate mt-0.5">
+                                  <p className="text-[10px] text-muted-foreground/75 truncate">
                                     {tool.desc}
                                   </p>
                                 </Link>
@@ -179,13 +202,13 @@ export function Navigation() {
                     {/* Bottom Action Strip */}
                     <div className="mt-5 pt-3 border-t border-border flex items-center justify-between text-xs font-mono">
                       <span className="text-muted-foreground flex items-center gap-1.5 text-[11px]">
-                        <Sparkles className="w-3.5 h-3.5 text-brand" /> 100% In-Browser &bull; Zero Uploads
+                        <Sparkles className="w-3.5 h-3.5 text-brand" /> 100% In-Browser &bull; Zero Server Uploads
                       </span>
                       <Link
                         href="/#tools"
                         className="font-bold text-foreground hover:text-brand transition-colors flex items-center gap-1"
                       >
-                        <span>Explore all 69+ tools</span>
+                        <span>Explore all 70+ tools</span>
                         <ArrowRight className="w-3.5 h-3.5" />
                       </Link>
                     </div>

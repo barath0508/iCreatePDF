@@ -1,293 +1,193 @@
 'use client';
 
-import React, { useState, useRef, useEffect } from 'react';
-import { Upload, Layers, Loader2, Download, FileImage } from 'lucide-react';
-import { Button } from '@/components/ui/button';
-import { WorkflowNextActions } from '@/components/tools/shared/WorkflowNextActions';
-import { useClipboardFile } from '@/hooks/use-clipboard-file';
+import React, { useState, useEffect } from 'react';
+import { FileImage, Image as ImageIcon, Sliders } from 'lucide-react';
+import { toast } from 'sonner';
+import { ToolWorkspace, WorkspaceFileItem } from '@/components/tools/shared/ToolWorkspace';
+import { getPdfjs } from '@/lib/pdfjs-init';
 
 export function PdfToJpgTool() {
-  const [file, setFile] = useState<File | null>(null);
-  const [pagesCount, setPagesCount] = useState(0);
+  const [files, setFiles] = useState<WorkspaceFileItem[]>([]);
+  const [renderDpi, setRenderDpi] = useState<'standard' | 'high'>('standard');
   const [isProcessing, setIsProcessing] = useState(false);
   const [progress, setProgress] = useState(0);
   const [error, setError] = useState<string | null>(null);
   const [downloadUrl, setDownloadUrl] = useState<string | null>(null);
-  const [isDraggingOver, setIsDraggingOver] = useState(false);
+  const [zipBlob, setZipBlob] = useState<Blob | null>(null);
 
-  const fileInputRef = useRef<HTMLInputElement>(null);
-  // Preload pdfjs-dist on mount so worker CDN fetch is done before file selection
-  const pdfjsRef = useRef<typeof import('pdfjs-dist') | null>(null);
   useEffect(() => {
-    import('pdfjs-dist').then((lib) => {
-      lib.GlobalWorkerOptions.workerSrc = `/workers/pdf.worker.min.mjs`;
-      pdfjsRef.current = lib;
-    }).catch(() => {/* silently ignore — will lazy-load on demand */});
+    const { getPreloadedFiles, hasPreloadedFiles } = require('@/lib/preloader');
+    if (hasPreloadedFiles()) {
+      const preloaded: File[] = getPreloadedFiles();
+      if (preloaded.length > 0) {
+        setFiles([{ id: 'preloaded-1', file: preloaded[0] }]);
+      }
+    }
   }, []);
 
-  useClipboardFile({ onFilePasted: (files) => handleFiles(files) });
-
-  const handleFiles = async (uploadedFiles: FileList | File[]) => {
-    setError(null);
-    setDownloadUrl(null);
-    
-    const uploadedFile = uploadedFiles[0];
-    if (!uploadedFile) return;
-
-    const ext = uploadedFile.name.split('.').pop()?.toLowerCase();
-    if (ext !== 'pdf') {
-      setError('Only PDF files are supported.');
-      return;
-    }
-
-    try {
-      const arrayBuffer = await uploadedFile.arrayBuffer();
-      const pdfjsLib = pdfjsRef.current ?? await import('pdfjs-dist');
-      if (!pdfjsRef.current) {
-        pdfjsLib.GlobalWorkerOptions.workerSrc = `/workers/pdf.worker.min.mjs`;
-        pdfjsRef.current = pdfjsLib;
-      }
-
-      const loadingTask = pdfjsLib.getDocument({ data: new Uint8Array(arrayBuffer) });
-      const pdf = await loadingTask.promise;
-      setFile(uploadedFile);
-      setPagesCount(pdf.numPages);
-    } catch (err) {
-      console.error(err);
-      setError(`Failed to read PDF file: ${uploadedFile.name}`);
-    }
-  };
-
-  const onDragOver = (e: React.DragEvent) => {
-    e.preventDefault();
-    setIsDraggingOver(true);
-  };
-
-  const onDragLeave = () => {
-    setIsDraggingOver(false);
-  };
-
-  const onDrop = (e: React.DragEvent) => {
-    e.preventDefault();
-    setIsDraggingOver(false);
-    if (e.dataTransfer.files && e.dataTransfer.files.length > 0) {
-      handleFiles(e.dataTransfer.files);
-    }
-  };
-
   const triggerPdfToJpg = async () => {
-    if (!file) return;
+    if (files.length === 0) return;
+    const currentFile = files[0].file;
+
     setIsProcessing(true);
-    setProgress(0);
+    setProgress(5);
     setError(null);
 
     try {
       const JSZip = (await import('jszip')).default;
       const zip = new JSZip();
 
-      const arrayBuffer = await file.arrayBuffer();
-      const pdfjsLib = pdfjsRef.current ?? await import('pdfjs-dist');
-      if (!pdfjsRef.current) {
-        pdfjsLib.GlobalWorkerOptions.workerSrc = `/workers/pdf.worker.min.mjs`;
-        pdfjsRef.current = pdfjsLib;
-      }
+      const arrayBuffer = await currentFile.arrayBuffer();
+      const pdfjsLib = await getPdfjs();
 
       const loadingTask = pdfjsLib.getDocument({ data: new Uint8Array(arrayBuffer) });
       const pdf = await loadingTask.promise;
       const count = pdf.numPages;
 
+      const scale = renderDpi === 'high' ? 2.0 : 1.5;
+
       for (let i = 1; i <= count; i++) {
         const page = await pdf.getPage(i);
-        const viewport = page.getViewport({ scale: 1.5 }); // High quality render scale
-        
+        const viewport = page.getViewport({ scale });
+
         const canvas = document.createElement('canvas');
+        canvas.width = Math.floor(viewport.width);
+        canvas.height = Math.floor(viewport.height);
         const context = canvas.getContext('2d');
-        if (!context) continue;
 
-        canvas.width = viewport.width;
-        canvas.height = viewport.height;
-        
-        await page.render({ canvasContext: context, viewport, canvas }).promise;
-        
-        // Convert page to jpeg blob
-        const blob: Blob | null = await new Promise((resolve) => {
-          canvas.toBlob((b) => resolve(b), 'image/jpeg', 0.9);
-        });
+        if (context) {
+          await page.render({ canvasContext: context, viewport, canvas }).promise;
 
-        if (blob) {
-          zip.file(`page-${i}.jpg`, blob);
+          const blob: Blob | null = await new Promise((resolve) => {
+            canvas.toBlob((b) => resolve(b), 'image/jpeg', renderDpi === 'high' ? 0.95 : 0.88);
+          });
+
+          if (blob) {
+            zip.file(`page-${String(i).padStart(3, '0')}.jpg`, blob);
+          }
         }
 
-        setProgress(Math.round((i / count) * 100));
+        // Free canvas memory immediately
+        canvas.width = 0;
+        canvas.height = 0;
+
+        setProgress(Math.round((i / count) * 90));
       }
 
       const zipContent = await zip.generateAsync({ type: 'blob' });
       const url = URL.createObjectURL(zipContent);
       setDownloadUrl(url);
+      setZipBlob(zipContent);
+      setProgress(100);
 
-      // Cache reference in IndexedDB
-      const { addRecentFile } = require('@/lib/db');
-      addRecentFile({
-        name: `images-${file?.name.replace('.pdf', '')}.zip`,
-        size: zipContent.size,
-        toolName: 'PDF to JPG',
-        href: '/pdf-to-jpg',
-        downloadUrl: url,
-        blob: zipContent,
-      });
+      toast.success(`Converted ${count} pages to JPG images successfully!`);
+
+      try {
+        const { addRecentFile } = require('@/lib/db');
+        addRecentFile({
+          name: `${currentFile.name.replace(/\.pdf$/i, '')}_jpg.zip`,
+          size: zipContent.size,
+          toolName: 'PDF to JPG',
+          href: '/pdf-to-jpg',
+          downloadUrl: url,
+          blob: zipContent,
+        });
+      } catch {}
     } catch (err: any) {
       console.error(err);
-      setError(err?.message || 'Failed to extract JPG pages.');
+      const msg = err?.message || 'Failed to convert PDF to JPG images.';
+      setError(msg);
+      toast.error(msg);
     } finally {
       setIsProcessing(false);
     }
   };
 
-  const handleDownload = () => {
-    if (!downloadUrl) return;
-    const link = document.createElement('a');
-    link.href = downloadUrl;
-    link.download = `images-${file?.name.replace('.pdf', '')}.zip`;
-    document.body.appendChild(link);
-    link.click();
-    document.body.removeChild(link);
-  };
+  const currentFile = files[0]?.file;
+  const defaultZipName = currentFile
+    ? `${currentFile.name.replace(/\.pdf$/i, '')}_jpg_images.zip`
+    : 'pdf_pages_jpg.zip';
 
   return (
-    <div className="w-full max-w-6xl mx-auto px-6 lg:px-12 py-16">
-      <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-stretch">
-        
-        {/* Workspace */}
-        <div className="lg:col-span-8 space-y-6 flex flex-col">
-          {!file ? (
-            <div
-              onDragOver={onDragOver}
-              onDragLeave={onDragLeave}
-              onDrop={onDrop}
-              onClick={() => fileInputRef.current?.click()}
-              className={`relative cursor-pointer touch-manipulation border border-dashed rounded-2xl p-12 transition-all duration-300 text-center flex-1 flex flex-col items-center justify-center min-h-[220px] ${
-                isDraggingOver
-                  ? 'border-brand bg-brand/5'
-                  : 'border-foreground/10 bg-card/40 hover:border-foreground/20'
+    <ToolWorkspace
+      toolId="pdf-to-jpg"
+      toolName="PDF to JPG"
+      actionButtonText="Extract Pages as JPG"
+      actionButtonIcon={<FileImage className="w-4 h-4" />}
+      accept="application/pdf,.pdf"
+      multiple={false}
+      dropPromptTitle="Drop a PDF to convert each page into JPG images"
+      dropPromptSubtitle="100% private in-browser rendering. High resolution extraction packaged into a clean ZIP."
+      files={files}
+      onFilesChange={(updated) => {
+        setFiles(updated);
+        setDownloadUrl(null);
+        setZipBlob(null);
+      }}
+      isProcessing={isProcessing}
+      progress={progress}
+      progressStatusText="Rendering pages to JPG..."
+      error={error}
+      onClearError={() => setError(null)}
+      downloadUrl={downloadUrl}
+      outputBlob={zipBlob}
+      defaultOutputFileName={defaultZipName}
+      onExecute={triggerPdfToJpg}
+      onReset={() => {
+        setFiles([]);
+        setDownloadUrl(null);
+        setZipBlob(null);
+      }}
+      optionsSlot={
+        <div className="space-y-4">
+          <label className="text-xs font-mono font-bold uppercase tracking-wider text-muted-foreground block">
+            Image Quality & Resolution
+          </label>
+          <div className="space-y-2">
+            <button
+              type="button"
+              disabled={isProcessing}
+              onClick={() => setRenderDpi('standard')}
+              className={`w-full text-left p-3 rounded-xl border transition-all ${
+                renderDpi === 'standard'
+                  ? 'border-brand bg-brand/5 ring-1 ring-brand/30'
+                  : 'border-border/60 bg-background/50 hover:border-foreground/20'
               }`}
             >
-              <input
-                type="file"
-                ref={fileInputRef}
-                onChange={(e) => e.target.files && handleFiles(e.target.files)}
-                accept="application/pdf,.pdf"
-                onClick={(e) => {
-                e.stopPropagation();
-                (e.target as HTMLInputElement).value = '';
-              }}
-              className="hidden"
-              />
-              <div className="p-4 rounded-full bg-foreground/5 mb-4 border border-foreground/10">
-                <Upload className="w-6 h-6 text-brand" />
+              <div className="flex items-center justify-between">
+                <span className="text-xs font-bold text-foreground">Standard Web (150 DPI)</span>
+                <span className="text-[10px] font-mono text-emerald-500 bg-emerald-500/10 px-2 py-0.5 rounded-full font-bold">
+                  Fast
+                </span>
               </div>
-              <h3 className="text-xl font-display text-foreground mb-2">
-                Select or drag a PDF file
-              </h3>
-              <p className="text-xs text-foreground/40">
-                PDF pages are rendered as JPGs and packaged in a ZIP locally.
+              <p className="text-[11px] text-muted-foreground mt-0.5">
+                Fast extraction, perfect for email and web document sharing.
               </p>
-            </div>
-          ) : (
-            <div className="p-6 bg-card border border-foreground/10 rounded-2xl space-y-4">
-              <div className="flex justify-between items-start">
-                <div>
-                  <h4 className="text-lg font-display text-foreground">{file.name}</h4>
-                  <p className="text-xs text-foreground/40">
-                    {pagesCount} pages • {(file.size / (1024 * 1024)).toFixed(2)} MB
-                  </p>
-                </div>
-                <Button
-                  variant="ghost"
-                  size="sm"
-                  onClick={() => {
-                    setFile(null);
-                    setDownloadUrl(null);
-                  }}
-                  className="text-xs text-foreground/40 hover:text-foreground"
-                >
-                  Change File
-                </Button>
+            </button>
+
+            <button
+              type="button"
+              disabled={isProcessing}
+              onClick={() => setRenderDpi('high')}
+              className={`w-full text-left p-3 rounded-xl border transition-all ${
+                renderDpi === 'high'
+                  ? 'border-brand bg-brand/5 ring-1 ring-brand/30'
+                  : 'border-border/60 bg-background/50 hover:border-foreground/20'
+              }`}
+            >
+              <div className="flex items-center justify-between">
+                <span className="text-xs font-bold text-foreground">High Resolution (300 DPI)</span>
+                <span className="text-[10px] font-mono text-muted-foreground bg-muted px-2 py-0.5 rounded-full font-bold">
+                  Print
+                </span>
               </div>
-            </div>
-          )}
-
-          {error && (
-            <div className="p-4 rounded-xl bg-red-500/10 border border-red-500/20 text-red-200 text-sm">
-              {error}
-            </div>
-          )}
-        </div>
-
-        {/* Action Panel */}
-        <div className="lg:col-span-4 h-full bg-card border border-foreground/10 rounded-2xl p-6 space-y-6">
-          <div className="flex items-center gap-2 border-b border-foreground/5 pb-4">
-            <Layers className="w-4 h-4 text-brand" />
-            <h3 className="font-mono text-sm uppercase tracking-wider text-foreground">PDF to JPG</h3>
-          </div>
-
-          <p className="text-xs text-foreground/50 leading-relaxed">
-            Extract each page of your PDF document as a separate, high-quality JPG image. Download them compiled as a single ZIP archive.
-          </p>
-
-          <div className="pt-4 border-t border-foreground/5">
-            {isProcessing ? (
-              <div className="space-y-2">
-                <div className="flex justify-between items-center text-xs font-mono text-foreground/60">
-                  <span className="flex items-center gap-2">
-                    <Loader2 className="w-3.5 h-3.5 text-brand animate-spin" />
-                    Extracting images...
-                  </span>
-                  <span>{progress}%</span>
-                </div>
-                <div className="w-full bg-foreground/5 rounded-full h-1.5 overflow-hidden">
-                  <div className="bg-brand h-full rounded-full" style={{ width: `${progress}%` }} />
-                </div>
-              </div>
-            ) : downloadUrl ? (
-              <div className="space-y-2">
-                <Button
-                  onClick={handleDownload}
-                  className="w-full bg-emerald-600 hover:bg-emerald-700 text-white font-medium py-6 rounded-xl flex items-center justify-center gap-2"
-                >
-                  <Download className="w-5 h-5" />
-                  Download ZIP
-                </Button>
-                <Button
-                  variant="ghost"
-                  onClick={() => {
-                    setFile(null);
-                    setDownloadUrl(null);
-                  }}
-                  className="w-full text-foreground/50 hover:text-foreground text-xs h-8"
-                >
-                  Extract new file
-                </Button>
-              </div>
-            ) : (
-              <Button
-                disabled={!file}
-                onClick={triggerPdfToJpg}
-                className={`w-full font-medium py-6 rounded-xl flex items-center justify-center gap-2 ${
-                  file ? 'bg-primary text-primary-foreground hover:bg-primary/90 font-bold' : 'bg-foreground/5 text-muted-foreground/60 cursor-not-allowed'
-                }`}
-              >
-                <FileImage className="w-4 h-4" />
-                Convert PDF to JPG
-              </Button>
-            )}
+              <p className="text-[11px] text-muted-foreground mt-0.5">
+                Ultra-sharp vector render, ideal for printing and graphics archiving.
+              </p>
+            </button>
           </div>
         </div>
-
-      </div>
-
-      {downloadUrl && (
-        <WorkflowNextActions currentTool="pdf-to-jpg" />
-      )}
-    </div>
+      }
+    />
   );
 }
